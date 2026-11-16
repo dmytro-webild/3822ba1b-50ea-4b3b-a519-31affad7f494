@@ -17,19 +17,19 @@ function FloatingCartButton() {
   return (
     <button
       onClick={() => setIsCartOpen(true)}
-      className="fixed bottom-6 right-6 z-40 bg-[#0a192f] hover:bg-[#162a4d] text-white p-3.5 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-3 group transition transform hover:scale-105 active:scale-95"
+      className="fixed bottom-6 right-6 z-40 bg-[#0A1C3A] hover:bg-[#12284c] text-white p-3.5 rounded-2xl shadow-2xl border border-slate-300 flex items-center gap-3 group transition transform hover:scale-105 active:scale-95"
       aria-label="Warenkorb öffnen"
     >
       <div className="relative">
-        <ShoppingBag className="w-6 h-6 text-[#d4af37]" />
+        <ShoppingBag className="w-6 h-6 text-slate-200" />
         {totalItemCount > 0 && (
-          <span className="absolute -top-2 -right-2 bg-[#c59b27] text-[#081427] text-[10px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center border border-[#0a192f]">
+          <span className="absolute -top-2 -right-2 bg-white text-[#0A1C3A] text-[10px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center border border-[#0A1C3A]">
             {totalItemCount}
           </span>
         )}
       </div>
       <div className="hidden sm:block text-left text-xs font-bold leading-tight pr-1">
-        <span className="block text-[#d4af37] uppercase text-[10px] tracking-wider">Warenkorb</span>
+        <span className="block text-slate-300 uppercase text-[10px] tracking-wider">Warenkorb</span>
         <span>{totalPrice.toFixed(2)} €</span>
       </div>
     </button>
@@ -41,12 +41,12 @@ function LayoutContent() {
 
   return (
     <div
-      className="relative isolate min-h-svh flex flex-col bg-background text-foreground selection:bg-[#d4af37] selection:text-[#081427]"
+      className="relative isolate min-h-svh flex flex-col bg-background text-foreground selection:bg-[#0A1C3A] selection:text-white"
       data-button="default"
       data-card="filled"
       data-pattern="none"
     >
-      {/* 2D Parallax Floating Water Drops */}
+      {/* 2D Water drops removed for static clean design */}
       <WaterDropsBackground />
 
       <header data-webild-section="Header">
@@ -171,23 +171,23 @@ function LayoutContent() {
         />
 
         {/* Footer Legal Quick Bar */}
-        <div className="bg-[#061122] text-slate-400 text-xs py-4 px-6 border-t border-slate-800 text-center flex flex-wrap justify-center items-center gap-6">
-          <button onClick={() => openLegalModal("impressum")} className="hover:text-[#d4af37] transition">
+        <div className="bg-[#f4f6f8] text-[#0A1C3A] text-xs py-4 px-6 border-t border-slate-300 text-center flex flex-wrap justify-center items-center gap-6">
+          <button onClick={() => openLegalModal("impressum")} className="font-semibold hover:underline transition">
             Impressum
           </button>
-          <span className="text-slate-600">•</span>
-          <button onClick={() => openLegalModal("datenschutz")} className="hover:text-[#d4af37] transition">
+          <span className="text-slate-400">•</span>
+          <button onClick={() => openLegalModal("datenschutz")} className="font-semibold hover:underline transition">
             Datenschutz
           </button>
-          <span className="text-slate-600">•</span>
-          <button onClick={() => openLegalModal("agb")} className="hover:text-[#d4af37] transition">
+          <span className="text-slate-400">•</span>
+          <button onClick={() => openLegalModal("agb")} className="font-semibold hover:underline transition">
             AGB
           </button>
-          <span className="text-slate-600">•</span>
-          <button onClick={() => openLegalModal("widerruf")} className="hover:text-[#d4af37] transition">
+          <span className="text-slate-400">•</span>
+          <button onClick={() => openLegalModal("widerruf")} className="font-semibold hover:underline transition">
             Widerrufsbelehrung
           </button>
-          <span className="text-slate-600">•</span>
+          <span className="text-slate-400">•</span>
           <span>Bestellungen: bestellung@fonsvitae.de | Tel: 017660945171</span>
         </div>
       </footer>

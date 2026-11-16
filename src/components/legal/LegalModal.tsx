@@ -32,17 +32,17 @@ export default function LegalModal() {
 
       <div className="relative bg-[#e5e9ec] w-full max-w-3xl rounded-2xl shadow-2xl border border-slate-300 overflow-hidden text-[#081427]">
         {/* Header */}
-        <div className="bg-[#0a192f] text-white p-6 flex items-center justify-between border-b border-slate-700">
+        <div className="bg-[#0A1C3A] text-white p-6 flex items-center justify-between border-b border-slate-300">
           <div className="flex items-center gap-3">
-            <Icon className="w-6 h-6 text-[#d4af37]" />
+            <Icon className="w-6 h-6 text-slate-200" />
             <div>
-              <span className="text-[#d4af37] text-xs font-extrabold uppercase tracking-widest block">Rechtliche Hinweise</span>
+              <span className="text-slate-300 text-xs font-extrabold uppercase tracking-widest block">Rechtliche Hinweise</span>
               <h2 className="text-2xl font-bold uppercase tracking-tight">{titles[activeLegalModal]}</h2>
             </div>
           </div>
           <button
             onClick={closeLegalModal}
-            className="text-slate-300 hover:text-white p-1 rounded-lg hover:bg-slate-800 transition"
+            className="text-slate-300 hover:text-white p-1 rounded-lg hover:bg-[#12284c] transition"
           >
             <X className="w-6 h-6" />
           </button>
@@ -153,7 +153,7 @@ export default function LegalModal() {
           <div className="pt-4 border-t border-slate-300 flex justify-end">
             <button
               onClick={closeLegalModal}
-              className="bg-[#0a192f] text-white px-6 py-2.5 rounded-xl font-bold uppercase tracking-wider text-xs hover:bg-[#162a4d] transition"
+              className="bg-[#0A1C3A] text-white px-6 py-2.5 rounded-xl font-bold uppercase tracking-wider text-xs hover:bg-[#12284c] transition"
             >
               Schließen
             </button>

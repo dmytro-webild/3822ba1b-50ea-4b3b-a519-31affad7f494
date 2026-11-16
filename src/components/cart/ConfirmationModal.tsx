@@ -16,12 +16,11 @@ export default function ConfirmationModal() {
 
       <div className="relative bg-white w-full max-w-xl rounded-2xl shadow-2xl border border-slate-200 overflow-hidden text-[#081427]">
         {/* Banner */}
-        <div className="bg-[#0a192f] text-white p-8 text-center relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-[#d4af37]/10 rounded-full blur-2xl" />
-          <div className="w-16 h-16 bg-[#c59b27] text-[#081427] rounded-full mx-auto flex items-center justify-center mb-4 shadow-lg">
+        <div className="bg-[#0A1C3A] text-white p-8 text-center relative overflow-hidden">
+          <div className="w-16 h-16 bg-white text-[#0A1C3A] rounded-full mx-auto flex items-center justify-center mb-4 shadow-lg">
             <CheckCircle className="w-10 h-10 stroke-[2.5]" />
           </div>
-          <span className="text-[#d4af37] text-xs font-extrabold uppercase tracking-widest block mb-1">
+          <span className="text-slate-200 text-xs font-extrabold uppercase tracking-widest block mb-1">
             Vielen Dank für Deine Bestellung!
           </span>
           <h2 className="text-3xl font-extrabold uppercase tracking-tight">Bestätigt & In Bearbeitung</h2>
@@ -33,8 +32,8 @@ export default function ConfirmationModal() {
         <div className="p-6 space-y-6">
           {/* Status steps */}
           <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 flex items-center justify-between text-xs">
-            <div className="flex items-center gap-2 font-semibold text-[#0a192f]">
-              <Package className="w-4 h-4 text-[#c59b27]" />
+            <div className="flex items-center gap-2 font-semibold text-[#0A1C3A]">
+              <Package className="w-4 h-4 text-[#0A1C3A]" />
               <span>Bestellung empfangen</span>
             </div>
             <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
@@ -81,7 +80,7 @@ export default function ConfirmationModal() {
 
           <button
             onClick={() => setIsConfirmationOpen(false)}
-            className="w-full bg-[#0a192f] hover:bg-[#162a4d] text-white py-3 rounded-xl font-bold uppercase tracking-wider text-xs shadow-md transition"
+            className="w-full bg-[#0A1C3A] hover:bg-[#12284c] text-white py-3 rounded-xl font-bold uppercase tracking-wider text-xs shadow-md transition"
           >
             Zurück zum Shop
           </button>

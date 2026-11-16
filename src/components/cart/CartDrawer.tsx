@@ -28,17 +28,17 @@ export default function CartDrawer() {
       <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
         <div className="w-screen max-w-md bg-[#e5e9ec] border-l border-slate-300 shadow-2xl flex flex-col text-[#081427]">
           {/* Header */}
-          <div className="p-5 bg-[#0a192f] text-white flex items-center justify-between border-b border-slate-700">
+          <div className="p-5 bg-[#0A1C3A] text-white flex items-center justify-between border-b border-slate-300">
             <div className="flex items-center gap-2">
-              <ShoppingBag className="w-5 h-5 text-[#d4af37]" />
+              <ShoppingBag className="w-5 h-5 text-white" />
               <h2 className="text-xl font-bold tracking-tight uppercase">Warenkorb</h2>
-              <span className="bg-[#c59b27] text-[#081427] text-xs font-bold px-2 py-0.5 rounded-full">
+              <span className="bg-white text-[#0A1C3A] text-xs font-bold px-2 py-0.5 rounded-full">
                 {cartItems.reduce((a, b) => a + b.quantity, 0)} Artikel
               </span>
             </div>
             <button
               onClick={() => setIsCartOpen(false)}
-              className="text-slate-300 hover:text-white p-1 rounded-lg hover:bg-slate-800 transition"
+              className="text-slate-300 hover:text-white p-1 rounded-lg hover:bg-[#12284c] transition"
               aria-label="Schließen"
             >
               <X className="w-6 h-6" />
@@ -77,7 +77,7 @@ export default function CartDrawer() {
                   <div className="flex-1 min-w-0">
                     <h4 className="font-bold text-sm text-[#081427] truncate">{item.title}</h4>
                     {item.flavor && (
-                      <span className="text-xs text-[#c59b27] font-semibold block">Sorte: {item.flavor}</span>
+                      <span className="text-xs text-[#0A1C3A] font-semibold block">Sorte: {item.flavor}</span>
                     )}
                     <p className="text-xs text-slate-500">{item.packInfo}</p>
                     <div className="flex items-center gap-2 mt-2">
@@ -129,13 +129,13 @@ export default function CartDrawer() {
                   <span>Enthaltenes Dosenpfand ({totalCans} Dosen):</span>
                   <span>{totalDeposit.toFixed(2)} €</span>
                 </div>
-                <div className="flex justify-between text-[#d4af37] font-semibold">
+                <div className="flex justify-between text-[#0A1C3A] font-semibold">
                   <span>Versandkosten:</span>
                   <span>KOSTENLOS</span>
                 </div>
                 <div className="border-t border-slate-200 pt-2 flex justify-between text-base font-bold text-[#081427]">
                   <span>Gesamtsumme:</span>
-                  <span className="text-[#0a192f] text-lg font-extrabold">{totalPrice.toFixed(2)} €</span>
+                  <span className="text-[#0A1C3A] text-lg font-extrabold">{totalPrice.toFixed(2)} €</span>
                 </div>
                 <p className="text-[10px] text-slate-400 text-right">Inkl. 19% MwSt. und Dosenpfand (0,25 € / Dose)</p>
               </div>
@@ -150,10 +150,10 @@ export default function CartDrawer() {
                   setIsCartOpen(false);
                   setIsCheckoutOpen(true);
                 }}
-                className="w-full bg-[#0a192f] hover:bg-[#162a4d] text-white py-3.5 rounded-xl font-bold uppercase tracking-wider text-sm flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition"
+                className="w-full bg-[#0A1C3A] hover:bg-[#12284c] text-white py-3.5 rounded-xl font-bold uppercase tracking-wider text-sm flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition"
               >
                 <span>Zur Kasse gehen</span>
-                <ArrowRight className="w-4 h-4 text-[#d4af37]" />
+                <ArrowRight className="w-4 h-4 text-white" />
               </button>
             </div>
           )}
