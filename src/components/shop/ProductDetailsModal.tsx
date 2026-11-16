@@ -75,7 +75,7 @@ export default function ProductDetailsModal() {
             </div>
             <div className="bg-white p-3 rounded-xl border border-slate-200 space-y-1 shadow-xs">
               <Zap className="w-5 h-5 text-[#0A1C3A] mx-auto" />
-              <span className="text-[11px] font-bold text-[#081427] block">100% Vegan</span>
+              <span className="text-[11px] font-bold text-[#081427] block">0% Zucker & Kalorien</span>
               <span className="text-[10px] text-slate-500">Reine Qualität</span>
             </div>
             <div className="bg-white p-3 rounded-xl border border-slate-200 space-y-1 shadow-xs">
