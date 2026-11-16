@@ -1,0 +1,10 @@
+src/components/Layout.tsx
+src/components/sections/contact/ContactPanelForm.tsx
+src/components/sections/faq/FaqCircleRows.tsx
+src/components/sections/footer/FooterPanelWordmark.tsx
+src/components/sections/gallery/GalleryTiltedFrames.tsx
+src/components/sections/hero/HeroWordmarkProduct.tsx
+src/components/sections/pricing/PricingRingCards.tsx
+src/components/sections/product/ProductCompareTable.tsx
+src/components/sections/testimonial/TestimonialPhotoRail.tsx
+src/pages/HomePage.tsx
