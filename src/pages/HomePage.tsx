@@ -53,11 +53,20 @@ const H2_DETAILS: ProductDetailInfo = {
   specs: [
     "Mind. 2.8 mg/L gelöster Wasserstoff",
     "BPA-freie Aluminiumdose",
-    "0 kcal, 0 g Zucker, 100% Vegan",
+    "0 kcal, 0 g Zucker, BPA-frei",
     "Laborgeprüfte Reinheit aus Deutschland",
     "Gezieltes Antioxidans für Zellschutz",
     "Mindestens 3 Dosen täglich empfohlen"
   ]
+};
+
+const JUICE_DESCRIPTIONS: Record<string, string> = {
+  "Blaubeere": "100% Vegan. Köstlicher Direktsaft aus sonnengereiften Blaubeeren, reich an natürlichen Vitaminen & Antioxidantien. 100% pflanzlich.",
+  "Himbeere": "100% Vegan. Fruchtiges Himbeer-Erlebnis voller natürlicher Frische. 100% pflanzlich und vegan hergestellt.",
+  "Apfel-Limette": "100% Vegan. Spritzige Kombination aus knackigem Apfel und frischer Limette. 100% vegan & natürlich.",
+  "Apfel-Ingwer": "100% Vegan. Belebt die Sinne mit feiner Ingwerschärfe und frischem Apfelsaft. 100% vegan.",
+  "Traube": "100% Vegan. Edler Traubensaft aus besten Weintrauben, natursüß und erfrischend. 100% pflanzlich.",
+  "Kirsche": "100% Vegan. Intensiv-fruchtiger Kirschsaft für volle Vitalität im Alltag. 100% pflanzlich und vegan.",
 };
 
 export default function HomePage() {
@@ -78,9 +87,9 @@ export default function HomePage() {
     const pack = juicePrices[selectedJuicePack];
     addToCart({
       id: `juice-${selectedJuiceFlavor}-${selectedJuicePack}`,
-      title: `FONS VITAE Fruchtsaft (${selectedJuiceFlavor})`,
+      title: `FONS VITAE Fruchtsaft (${selectedJuiceFlavor}) - 100% Vegan`,
       flavor: selectedJuiceFlavor,
-      packInfo: `${pack.count}er-Pack (${pack.count}x 250 ml)`,
+      packInfo: `${pack.count}er-Pack (100% Vegan, ${pack.count}x 250 ml)`,
       price: pack.price,
       cansCount: pack.count,
       deposit: pack.deposit,
@@ -124,7 +133,7 @@ export default function HomePage() {
             {
               value: "100",
               unit: "%",
-              title: "BPA-Frei & Vegan"
+              title: "BPA-Frei & Rein"
             }
           ]}
           introDelay={1.4}
@@ -223,7 +232,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-[#0A1C3A] shrink-0" />
-                  <span>0 kcal, 0 g Zucker, 100% Vegan</span>
+                  <span>0 kcal, 0 g Zucker, BPA-frei</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-[#0A1C3A] shrink-0" />
@@ -272,7 +281,7 @@ export default function HomePage() {
               Empfehlung
             </div>
             <div className="space-y-4 pt-1">
-              <div className="relative bg-white rounded-xl p-6 border border-slate-200 text-center">
+              <div className="relative bg-[#0A1C3A]/5 rounded-xl p-6 border border-slate-200 text-center">
                 <img
                   src={CAN_IMAGE_URL}
                   alt="FONS VITAE H2 Wasser 24er-Pack"
@@ -339,9 +348,14 @@ export default function HomePage() {
           <div className="bg-[#f4f6f8] rounded-2xl p-6 border border-slate-300 shadow-lg flex flex-col justify-between hover:border-[#0A1C3A] transition group">
             <div className="space-y-4">
               <div className="relative bg-white rounded-xl p-6 border border-slate-200 text-center">
-                <span className="absolute top-3 left-3 bg-[#0A1C3A] text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md uppercase">
-                  6 Sorten
-                </span>
+                <div className="absolute top-3 left-3 flex gap-1">
+                  <span className="bg-[#0A1C3A] text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md uppercase">
+                    6 Sorten
+                  </span>
+                  <span className="bg-emerald-700 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md uppercase">
+                    100% Vegan
+                  </span>
+                </div>
                 <img
                   src={JUICE_IMAGE_URL}
                   alt="FONS VITAE Fruchtsäfte"
@@ -349,27 +363,35 @@ export default function HomePage() {
                 />
               </div>
               <div>
-                <span className="text-xs text-[#0A1C3A] font-extrabold uppercase">Vital-Fruchtsäfte (250 ml)</span>
+                <span className="text-xs text-[#0A1C3A] font-extrabold uppercase">Vital-Fruchtsäfte (250 ml) • 100% Vegan</span>
                 <h3 className="text-2xl font-black text-[#0A1C3A] uppercase tracking-tight">Fruchtsäfte</h3>
-                <p className="text-xs text-slate-600 mt-1">Vitamine aus echten Früchten</p>
+                <p className="text-xs text-slate-600 mt-1">100% Vegane Vital-Säfte aus echten Früchten</p>
               </div>
 
-              {/* Flavor selector dropdown */}
-              <div className="space-y-2 bg-white p-3.5 rounded-xl border border-slate-200 text-xs">
+              {/* Flavor selector dropdown & Vegan description */}
+              <div className="space-y-3 bg-white p-3.5 rounded-xl border border-slate-200 text-xs">
                 <div>
-                  <label className="block font-bold text-[#0A1C3A] mb-1">Geschmack wählen:</label>
+                  <label className="block font-bold text-[#0A1C3A] mb-1">Geschmack wählen (Alle 100% Vegan):</label>
                   <select
                     value={selectedJuiceFlavor}
                     onChange={(e) => setSelectedJuiceFlavor(e.target.value)}
                     className="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 font-semibold text-[#0A1C3A] focus:outline-none focus:ring-2 focus:ring-[#0A1C3A]"
                   >
-                    <option value="Blaubeere">🫐 Blaubeere (Blueberry)</option>
-                    <option value="Himbeere">🍓 Himbeere (Raspberry)</option>
-                    <option value="Apfel-Limette">🍏 Apfel-Limette (Apple Lime)</option>
-                    <option value="Apfel-Ingwer">🫚 Apfel-Ingwer (Apple Ginger)</option>
-                    <option value="Traube">🍇 Traube (Grape)</option>
-                    <option value="Kirsche">🍒 Kirsche (Cherry)</option>
+                    <option value="Blaubeere">🫐 Blaubeere (Blueberry) – 100% Vegan</option>
+                    <option value="Himbeere">🍓 Himbeere (Raspberry) – 100% Vegan</option>
+                    <option value="Apfel-Limette">🍏 Apfel-Limette (Apple Lime) – 100% Vegan</option>
+                    <option value="Apfel-Ingwer">🫚 Apfel-Ingwer (Apple Ginger) – 100% Vegan</option>
+                    <option value="Traube">🍇 Traube (Grape) – 100% Vegan</option>
+                    <option value="Kirsche">🍒 Kirsche (Cherry) – 100% Vegan</option>
                   </select>
+                </div>
+
+                {/* Active Flavor Vegan Description Box */}
+                <div className="bg-emerald-50/60 border border-emerald-200 p-2.5 rounded-lg text-slate-700 leading-snug">
+                  <span className="font-extrabold text-[#0A1C3A] block mb-0.5 text-[11px] uppercase tracking-wider">
+                    {selectedJuiceFlavor} Details:
+                  </span>
+                  <span>{JUICE_DESCRIPTIONS[selectedJuiceFlavor]}</span>
                 </div>
 
                 {/* Pack size selector */}
@@ -585,7 +607,7 @@ export default function HomePage() {
               other: false
             },
             {
-              title: "100% vegan & laborgeprüft",
+              title: "Laborgeprüfte Reinheit & Qualität",
               ours: true,
               other: true
             },
@@ -838,7 +860,7 @@ export default function HomePage() {
             },
             {
               title: "Welche Nährwerte bietet das H2 Wasser?",
-              description: "0 kcal, 0 g Fett, 0 g Zucker, 0 g Kohlenhydrate. 100% Vegan und frei von künstlichen Zusatzstoffen."
+              description: "0 kcal, 0 g Fett, 0 g Zucker, 0 g Kohlenhydrate. Frei von künstlichen Zusatzstoffen."
             },
             {
               title: "Wie lange dauert der Versand?",
