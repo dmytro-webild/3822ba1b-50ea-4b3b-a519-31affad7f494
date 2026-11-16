@@ -7,7 +7,10 @@ import FaqCircleRows from "@/components/sections/faq/FaqCircleRows";
 import ContactPanelForm from "@/components/sections/contact/ContactPanelForm";
 import ScrollToneBackdrop from "@/components/kit/ScrollToneBackdrop";
 import ModelStage from "@/components/kit/ModelStage";
+import FonsVitaeCan from "@/components/models/FonsVitaeCan";
 import LoaderWordmarkRise from "@/components/loaders/LoaderWordmarkRise";
+
+const CAN_IMAGE_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794859089079-l4uuk7or.jpg";
 
 export default function HomePage() {
   return (
@@ -17,16 +20,7 @@ export default function HomePage() {
       />
 
       <ModelStage
-        src="https://storage.googleapis.com/webild/default/models/can/model.f6f3982ffc0d.glb"
-        node="Soda can (Short)"
-        finishes={{
-          "Can metal material": {
-            color: "#e4e7ea",
-            metalness: 1,
-            roughness: 0.22
-          }
-        }}
-        hide={[]}
+        model={<FonsVitaeCan />}
         scale={1.05}
       />
 
@@ -38,6 +32,8 @@ export default function HomePage() {
       <div id="hero" data-webild-section="HeroWordmarkProduct" data-webild-section-id="HeroWordmarkProduct-1" data-section="hero">
         <HeroWordmarkProduct
           media="model"
+          productImageSrc={CAN_IMAGE_URL}
+          productImageAlt="FONS VITAE H2 Hydrogen Water 250ml Dose"
           brand="FONS"
           title="PURE HYDRATION"
           description="Molekulares Wasserstoffwasser für Zellschutz, Energie und maximale Leistung im Alltag und Sport."
@@ -94,8 +90,8 @@ export default function HomePage() {
       <div id="product" data-webild-section="ProductCompareTable" data-webild-section-id="ProductCompareTable-1" data-section="product">
         <ProductCompareTable
           media="model"
-          productImageSrc="https://img.b2bpic.net/free-photo/cold-beverage-can-with-water-drops_53876-160725.jpg"
-          productImageAlt="Cold beverage can with water drops"
+          productImageSrc={CAN_IMAGE_URL}
+          productImageAlt="FONS VITAE H2 Hydrogen Water 250ml Dose"
           title="Der Vergleich."
           accent="Mehr für dich."
           benefitsLabel="Vorteile"
