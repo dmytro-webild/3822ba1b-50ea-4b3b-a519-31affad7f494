@@ -10,7 +10,7 @@ import ModelStage from "@/components/kit/ModelStage";
 import FonsVitaeCan from "@/components/models/FonsVitaeCan";
 import LoaderWordmarkRise from "@/components/loaders/LoaderWordmarkRise";
 
-const CAN_IMAGE_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794859089079-l4uuk7or.jpg";
+const CAN_IMAGE_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794859388392-vrlwghmp.png";
 
 export default function HomePage() {
   return (
