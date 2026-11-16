@@ -4,8 +4,6 @@ import ProductCompareTable from "@/components/sections/product/ProductCompareTab
 import TestimonialPhotoRail from "@/components/sections/testimonial/TestimonialPhotoRail";
 import FaqCircleRows from "@/components/sections/faq/FaqCircleRows";
 import ScrollToneBackdrop from "@/components/kit/ScrollToneBackdrop";
-import ModelStage from "@/components/kit/ModelStage";
-import FonsVitaeCan from "@/components/models/FonsVitaeCan";
 import LoaderWordmarkRise from "@/components/loaders/LoaderWordmarkRise";
 import { useCart, type ProductDetailInfo } from "@/context/CartContext";
 import {
@@ -94,12 +92,6 @@ export default function HomePage() {
     <>
       <ScrollToneBackdrop />
 
-      {/* 3D Model Stage with slowly rotating 250ml blank metallic silver can on clean background */}
-      <ModelStage
-        model={<FonsVitaeCan />}
-        scale={1.05}
-      />
-
       <LoaderWordmarkRise
         brand="FONS VITAE"
         introDelay={1.4}
@@ -108,11 +100,11 @@ export default function HomePage() {
       {/* Hero Section */}
       <div id="hero" data-webild-section="HeroWordmarkProduct" data-webild-section-id="HeroWordmarkProduct-1" data-section="hero">
         <HeroWordmarkProduct
-          media="model"
+          media="image"
           productImageSrc={CAN_IMAGE_URL}
           productImageAlt="FONS VITAE H2 Wasserstoff Dose"
           brand=""
-          title="H2 HYDROGEN WATER"
+          title="H2 - HYDROGEN WATER"
           description="CLEAN & PURE – Maximale Hydration mit molekularem Wasserstoff"
           primaryButton={{
             text: "Jetzt Shop entdecken",
@@ -137,30 +129,6 @@ export default function HomePage() {
           ]}
           introDelay={1.4}
           marquee="CLEAN & PURE H2 WATER • FONS VITAE • DIE QUELLE DES LEBENS •"
-          model={[
-            {
-              at: 0,
-              rz: -12,
-              ry: -25,
-              rx: 6,
-              scale: 1,
-              sm: {
-                scale: 0.85
-              }
-            },
-            {
-              at: 0.6,
-              free: 1,
-              rz: -4,
-              ry: 55,
-              rx: 4,
-              scale: 0.75,
-              sm: {
-                free: 0,
-                scale: 0.85
-              }
-            }
-          ]}
         />
       </div>
 
@@ -587,7 +555,7 @@ export default function HomePage() {
       {/* Product Compare Section */}
       <div id="product" data-webild-section="ProductCompareTable" data-webild-section-id="ProductCompareTable-1" data-section="product">
         <ProductCompareTable
-          media="model"
+          media="image"
           productImageSrc={CAN_IMAGE_URL}
           productImageAlt="FONS VITAE H2 Dose"
           title="Vergleich"
