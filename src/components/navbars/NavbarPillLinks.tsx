@@ -61,8 +61,15 @@ const NavbarPillLinks = ({
       >
         <div className="flex items-center justify-between gap-[1rem] min-[94.5rem]:grid min-[94.5rem]:grid-cols-[1fr_auto_1fr]">
           <div className="flex min-w-0 items-center gap-[0.75rem]">
-            <a href="#" className="min-w-0">
-              <p className="truncate font-[family-name:var(--font-heading)] text-[length:var(--text-body-lg)] font-semibold leading-none tracking-[-0.02em] text-foreground pb-[0.2em] -mb-[0.2em]">{brand}</p>
+            <a href="#" className="min-w-0 flex items-center gap-2.5">
+              <img
+                src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794862275041-s5qagrxx.jpg"
+                alt="FONS VITAE Logo"
+                className="h-7 w-auto object-contain rounded"
+              />
+              <span className="font-[family-name:var(--font-heading)] text-lg font-bold tracking-tight text-[#0A1C3A] uppercase">
+                {brand}
+              </span>
             </a>
             {socials.length > 0 && (
               <div className="hidden items-center gap-[0.3rem] min-[94.5rem]:flex">

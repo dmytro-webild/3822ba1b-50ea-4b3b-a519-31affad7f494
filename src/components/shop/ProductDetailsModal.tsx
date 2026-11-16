@@ -30,14 +30,14 @@ export default function ProductDetailsModal() {
 
       <div className="relative bg-[#e5e9ec] w-full max-w-2xl rounded-2xl shadow-2xl border border-slate-300 overflow-hidden text-[#081427]">
         {/* Header */}
-        <div className="bg-[#0a192f] text-white p-6 flex items-center justify-between border-b border-slate-700">
+        <div className="bg-[#0A1C3A] text-white p-6 flex items-center justify-between border-b border-slate-300">
           <div>
-            <span className="text-[#d4af37] text-xs font-extrabold uppercase tracking-widest block">Produktdetails</span>
+            <span className="text-slate-300 text-xs font-extrabold uppercase tracking-widest block">Produktdetails</span>
             <h2 className="text-2xl font-bold uppercase tracking-tight">{activeProductDetail.title}</h2>
           </div>
           <button
             onClick={closeProductDetail}
-            className="text-slate-300 hover:text-white p-1 rounded-lg hover:bg-slate-800 transition"
+            className="text-slate-300 hover:text-white p-1 rounded-lg hover:bg-[#12284c] transition"
           >
             <X className="w-6 h-6" />
           </button>
@@ -55,8 +55,8 @@ export default function ProductDetailsModal() {
             </div>
             <div className="md:col-span-2 space-y-2">
               <span className="text-xs text-slate-500 block">{activeProductDetail.subtitle}</span>
-              <div className="text-2xl font-extrabold text-[#0a192f]">{activeProductDetail.price}</div>
-              <span className="text-xs text-[#c59b27] font-semibold block">{activeProductDetail.depositInfo}</span>
+              <div className="text-2xl font-extrabold text-[#0A1C3A]">{activeProductDetail.price}</div>
+              <span className="text-xs text-[#0A1C3A] font-semibold block">{activeProductDetail.depositInfo}</span>
               <p className="text-xs text-slate-600 leading-relaxed">{activeProductDetail.description}</p>
             </div>
           </div>
@@ -64,22 +64,22 @@ export default function ProductDetailsModal() {
           {/* Key Specifications Badges */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
             <div className="bg-white p-3 rounded-xl border border-slate-200 space-y-1 shadow-xs">
-              <Droplets className="w-5 h-5 text-[#0a192f] mx-auto" />
+              <Droplets className="w-5 h-5 text-[#0A1C3A] mx-auto" />
               <span className="text-[11px] font-bold text-[#081427] block">Min. 2.8 mg/L H2</span>
               <span className="text-[10px] text-slate-500">Molekular gelöst</span>
             </div>
             <div className="bg-white p-3 rounded-xl border border-slate-200 space-y-1 shadow-xs">
-              <ShieldCheck className="w-5 h-5 text-[#c59b27] mx-auto" />
+              <ShieldCheck className="w-5 h-5 text-[#0A1C3A] mx-auto" />
               <span className="text-[11px] font-bold text-[#081427] block">BPA-freie Alu-Dose</span>
               <span className="text-[10px] text-slate-500">Recyclebar</span>
             </div>
             <div className="bg-white p-3 rounded-xl border border-slate-200 space-y-1 shadow-xs">
-              <Zap className="w-5 h-5 text-[#0a192f] mx-auto" />
+              <Zap className="w-5 h-5 text-[#0A1C3A] mx-auto" />
               <span className="text-[11px] font-bold text-[#081427] block">100% Vegan</span>
               <span className="text-[10px] text-slate-500">Reine Qualität</span>
             </div>
             <div className="bg-white p-3 rounded-xl border border-slate-200 space-y-1 shadow-xs">
-              <HeartPulse className="w-5 h-5 text-[#c59b27] mx-auto" />
+              <HeartPulse className="w-5 h-5 text-[#0A1C3A] mx-auto" />
               <span className="text-[11px] font-bold text-[#081427] block">Mind. 3 Dosen/Tag</span>
               <span className="text-[10px] text-slate-500">Verzehrempfehlung</span>
             </div>
@@ -134,7 +134,7 @@ export default function ProductDetailsModal() {
             </button>
             <button
               onClick={handleAddToCartFromModal}
-              className="bg-[#0a192f] hover:bg-[#162a4d] text-white px-6 py-3 rounded-xl font-bold uppercase tracking-wider text-xs shadow-lg transition"
+              className="bg-[#0A1C3A] hover:bg-[#12284c] text-white px-6 py-3 rounded-xl font-bold uppercase tracking-wider text-xs shadow-lg transition"
             >
               In den Warenkorb legen
             </button>
