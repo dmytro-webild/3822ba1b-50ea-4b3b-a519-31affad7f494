@@ -3,7 +3,7 @@ import { useMemo } from "react";
 import { useTexture } from "@react-three/drei";
 import * as THREE from "three";
 
-const CAN_TEXTURE_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794859089079-l4uuk7or.jpg";
+const CAN_TEXTURE_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794859388392-vrlwghmp.png";
 
 // Generate points for a helical water stream wrapping around the can
 function createHelixCurve(radius: number, height: number, turns: number, offsetAngle = 0) {
@@ -143,7 +143,7 @@ export default function FonsVitaeCan() {
       {/* 250ml Slim Can Body */}
       <group name="part-can-body">
         {/* Main Cylindrical Label Body */}
-        <mesh position={[0, 0, 0]} rotation={[0, -Math.PI / 2, 0]} material={labelMaterial}>
+        <mesh position={[0, 0, 0]} rotation={[0, Math.PI / 2, 0]} material={labelMaterial}>
           <cylinderGeometry args={[0.75, 0.75, 2.2, 64, 1, false]} />
         </mesh>
 
