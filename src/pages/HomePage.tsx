@@ -28,7 +28,8 @@ import {
   Youtube
 } from "lucide-react";
 
-const CAN_IMAGE_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794859388392-vrlwghmp.png";
+const CAN_IMAGE_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794865744193-o2e363kc.png";
+const CAN_BACK_IMAGE_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794865744195-vid929mb.png";
 const JUICE_IMAGE_URL = "https://images.pexels.com/photos/1337825/pexels-photo-1337825.jpeg?auto=compress&w=800";
 const BUNDLE_IMAGE_URL = "https://images.pexels.com/photos/5946081/pexels-photo-5946081.jpeg?auto=compress&w=800";
 
@@ -67,6 +68,7 @@ export default function HomePage() {
   // Juice selection state
   const [selectedJuiceFlavor, setSelectedJuiceFlavor] = useState("Blaubeere");
   const [selectedJuicePack, setSelectedJuicePack] = useState<"6" | "12" | "24">("12");
+  const [canCardSide, setCanCardSide] = useState<"front" | "back">("front");
 
   const juicePrices = {
     "6": { price: 11.10, count: 6, deposit: 1.50, label: "6er-Pack (€11,10)" },
@@ -108,8 +110,8 @@ export default function HomePage() {
         <HeroWordmarkProduct
           media="model"
           productImageSrc={CAN_IMAGE_URL}
-          productImageAlt="FONS VITAE 3D Dose Metallic Silber"
-          brand="H2 HYDROGEN WATER"
+          productImageAlt="FONS VITAE H2 Wasserstoff Dose"
+          brand=""
           title="H2 HYDROGEN WATER"
           description="CLEAN & PURE – Maximale Hydration mit molekularem Wasserstoff"
           primaryButton={{
@@ -220,8 +222,22 @@ export default function HomePage() {
                 <span className="absolute top-3 left-3 bg-[#0A1C3A] text-white text-[10px] font-bold px-2.5 py-1 rounded-md uppercase">
                   12er-Pack
                 </span>
+                <div className="absolute top-3 right-3 flex gap-1">
+                  <button
+                    onClick={() => setCanCardSide("front")}
+                    className={`text-[9px] font-bold px-2 py-0.5 rounded transition ${canCardSide === "front" ? "bg-[#0A1C3A] text-white" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
+                  >
+                    Vorne
+                  </button>
+                  <button
+                    onClick={() => setCanCardSide("back")}
+                    className={`text-[9px] font-bold px-2 py-0.5 rounded transition ${canCardSide === "back" ? "bg-[#0A1C3A] text-white" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
+                  >
+                    Hinten
+                  </button>
+                </div>
                 <img
-                  src={CAN_IMAGE_URL}
+                  src={canCardSide === "front" ? CAN_IMAGE_URL : CAN_BACK_IMAGE_URL}
                   alt="FONS VITAE H2 Wasser 12er-Pack"
                   className="w-40 h-40 object-contain mx-auto group-hover:scale-105 transition duration-300"
                 />

@@ -25,7 +25,6 @@ const socialIcons: Partial<Record<SocialPlatform, LucideIcon>> = { instagram: In
 const EASE = [0.19, 1, 0.22, 1] as const;
 
 const NavbarPillLinks = ({
-  brand = "Verde",
   navItems = [
     { name: "Nutrition", href: "#product" },
     { name: "Benefits", href: "#services" },
@@ -65,11 +64,8 @@ const NavbarPillLinks = ({
               <img
                 src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794862275041-s5qagrxx.jpg"
                 alt="FONS VITAE Logo"
-                className="h-7 w-auto object-contain rounded"
+                className="h-8 w-auto object-contain rounded"
               />
-              <span className="font-[family-name:var(--font-heading)] text-lg font-bold tracking-tight text-[#0A1C3A] uppercase">
-                {brand}
-              </span>
             </a>
             {socials.length > 0 && (
               <div className="hidden items-center gap-[0.3rem] min-[94.5rem]:flex">
