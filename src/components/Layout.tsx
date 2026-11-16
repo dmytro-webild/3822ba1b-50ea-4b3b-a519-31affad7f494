@@ -155,7 +155,7 @@ function LayoutContent() {
             text: "Impressum & Legal",
             href: "#"
           }}
-          imageSrc="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794859388392-vrlwghmp.png"
+          imageSrc="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794865744193-o2e363kc.png"
           imageAlt="FONS VITAE H2 Dose"
           model={{
             at: 0,

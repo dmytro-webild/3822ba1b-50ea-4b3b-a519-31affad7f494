@@ -133,21 +133,25 @@ const HeroWordmarkProduct = ({
       )}
     >
       <motion.div style={{ y: drift }} className="relative z-10 flex flex-col items-center gap-[clamp(1.5rem,2.1vw,1.875rem)] will-change-transform">
-        <p className="sr-only">{brand}</p>
-        <div
-          ref={brandBox}
-          data-hero-wordmark
-          aria-hidden="true"
-          className="mx-auto w-[calc(var(--container)*0.7)] whitespace-nowrap lg:w-[calc(var(--container)/2)] text-center font-[family-name:var(--font-heading)] text-[length:10rem] font-semibold leading-[0.8] tracking-[-0.03em] text-card-foreground"
-        >
-          <div ref={brandRow} className="inline-flex">
-            {letters.map((char, i) => (
-              <div key={i} className="inline-block overflow-hidden pb-[0.15em] -mb-[0.15em]">
-                <div className="whitespace-pre">{char}</div>
+        {brand && brand.trim().length > 0 && (
+          <>
+            <p className="sr-only">{brand}</p>
+            <div
+              ref={brandBox}
+              data-hero-wordmark
+              aria-hidden="true"
+              className="mx-auto w-[calc(var(--container)*0.7)] whitespace-nowrap lg:w-[calc(var(--container)/2)] text-center font-[family-name:var(--font-heading)] text-[length:10rem] font-semibold leading-[0.8] tracking-[-0.03em] text-card-foreground"
+            >
+              <div ref={brandRow} className="inline-flex">
+                {letters.map((char, i) => (
+                  <div key={i} className="inline-block overflow-hidden pb-[0.15em] -mb-[0.15em]">
+                    <div className="whitespace-pre">{char}</div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
+          </>
+        )}
         {primaryButton && (
           <motion.div
             initial={reduce ? false : { opacity: 0, y: 16 }}
@@ -242,7 +246,7 @@ const HeroWordmarkProduct = ({
             className="w-full font-[family-name:var(--font-heading)] text-[length:clamp(5rem,26vw,7rem)] font-semibold uppercase leading-[0.84] tracking-[-0.03em] lg:text-[length:clamp(4rem,min(7.8vw,11svh),7rem)]"
           >
             {lines.map((words, l) => (
-              <FitLine key={l} text={words.join(" ")} className={l === 0 ? "text-secondary" : "mt-[clamp(0.875rem,1.4vw,1.25rem)] leading-none tracking-[0.02em] text-card-foreground"}>
+              <FitLine key={l} text={words.join(" ")} className={l === 0 ? "text-[#0A1C3A]" : "mt-[clamp(0.875rem,1.4vw,1.25rem)] leading-none tracking-[0.02em] text-[#0A1C3A]"}>
                 {words.map((word, w) => {
                   const index = wordIndex++;
                   return (

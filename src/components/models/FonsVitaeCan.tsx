@@ -1,19 +1,26 @@
 import { useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
+import { useTexture } from "@react-three/drei";
 import * as THREE from "three";
+
+const FRONT_CAN_IMAGE = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794865744193-o2e363kc.png";
+const BACK_CAN_IMAGE = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794865744195-vid929mb.png";
 
 export default function FonsVitaeCan() {
   const canGroupRef = useRef<THREE.Group>(null);
 
-  // High-precision metallic silver materials for an unbranded, photorealistic aluminum can
-  const { silverMetal, canTopRimMaterial, tabMaterial } = useMemo(() => {
+  // Load textures for front and back of the product can
+  const [frontTexture, backTexture] = useTexture([FRONT_CAN_IMAGE, BACK_CAN_IMAGE]);
+
+  // Materials for aluminum can parts and textured faces
+  const { silverMetal, canTopRimMaterial, tabMaterial, frontMaterial, backMaterial } = useMemo(() => {
     const silverMetal = new THREE.MeshPhysicalMaterial({
       name: "paint",
-      color: "#e2e8f0",
-      metalness: 0.96,
+      color: "#f1f5f9",
+      metalness: 0.95,
       roughness: 0.12,
-      clearcoat: 0.95,
-      clearcoatRoughness: 0.05,
+      clearcoat: 0.9,
+      clearcoatRoughness: 0.08,
       reflectivity: 0.9,
     });
 
@@ -31,10 +38,34 @@ export default function FonsVitaeCan() {
       roughness: 0.1,
     });
 
-    return { silverMetal, canTopRimMaterial, tabMaterial };
+    const frontMaterial = new THREE.MeshStandardMaterial({
+      map: frontTexture,
+      roughness: 0.18,
+      metalness: 0.45,
+      side: THREE.FrontSide,
+    });
+
+    const backMaterial = new THREE.MeshStandardMaterial({
+      map: backTexture,
+      roughness: 0.18,
+      metalness: 0.45,
+      side: THREE.FrontSide,
+    });
+
+    return { silverMetal, canTopRimMaterial, tabMaterial, frontMaterial, backMaterial };
+  }, [frontTexture, backTexture]);
+
+  // Front semi-cylinder geometry (facing front +Z)
+  const frontCylinderGeo = useMemo(() => {
+    return new THREE.CylinderGeometry(0.62, 0.62, 2.0, 32, 1, true, -Math.PI / 2, Math.PI);
   }, []);
 
-  // Upper Neck Shoulder Lathe Profile (Smooth contoured transition)
+  // Back semi-cylinder geometry (facing back -Z)
+  const backCylinderGeo = useMemo(() => {
+    return new THREE.CylinderGeometry(0.62, 0.62, 2.0, 32, 1, true, Math.PI / 2, Math.PI);
+  }, []);
+
+  // Upper Neck Shoulder Lathe Profile
   const shoulderGeometry = useMemo(() => {
     const points: THREE.Vector2[] = [];
     const steps = 24;
@@ -62,7 +93,6 @@ export default function FonsVitaeCan() {
 
     points.push(new THREE.Vector2(0.48, -1.28));
 
-    // Inverted pressure dome curving inwards and upwards
     const domeSteps = 16;
     for (let i = 0; i <= domeSteps; i++) {
       const t = i / domeSteps;
@@ -74,7 +104,7 @@ export default function FonsVitaeCan() {
     return new THREE.LatheGeometry(points, 64);
   }, []);
 
-  // Top Lid Disk with Recessed Countersink Lathe Profile
+  // Top Lid Disk
   const lidGeometry = useMemo(() => {
     const points: THREE.Vector2[] = [];
     points.push(new THREE.Vector2(0.515, 1.34));
@@ -94,12 +124,13 @@ export default function FonsVitaeCan() {
 
   return (
     <group name="fons-vitae-can-scene">
-      {/* Rotating Blank Metallic Silver Can */}
+      {/* Rotating 3D Metallic Can with Front and Back Branding Images */}
       <group ref={canGroupRef} name="part-can-body">
-        {/* Main Cylindrical Body (Blank, unbranded metallic silver) */}
-        <mesh position={[0, 0, 0]} material={silverMetal}>
-          <cylinderGeometry args={[0.62, 0.62, 2.0, 64]} />
-        </mesh>
+        {/* Front Can Face (Vorne Dose) */}
+        <mesh geometry={frontCylinderGeo} material={frontMaterial} position={[0, 0, 0]} />
+
+        {/* Back Can Face (Hinten Dose) */}
+        <mesh geometry={backCylinderGeo} material={backMaterial} position={[0, 0, 0]} />
 
         {/* Can Top Curved Shoulder & Neck */}
         <mesh geometry={shoulderGeometry} material={silverMetal} />
@@ -114,15 +145,12 @@ export default function FonsVitaeCan() {
 
         {/* Can Pull-Tab Assembly */}
         <group position={[0, 1.33, 0.06]} rotation={[-0.06, 0.12, 0]}>
-          {/* Rivet Button */}
           <mesh position={[0, 0.005, 0]} material={tabMaterial}>
             <cylinderGeometry args={[0.032, 0.032, 0.015, 16]} />
           </mesh>
-          {/* Tab Ring / Body */}
           <mesh position={[0, 0.01, 0.08]} rotation={[Math.PI / 2, 0, 0]} material={tabMaterial}>
             <torusGeometry args={[0.065, 0.016, 12, 32]} />
           </mesh>
-          {/* Tab Lever Bridge */}
           <mesh position={[0, 0.01, 0.02]} material={tabMaterial}>
             <boxGeometry args={[0.07, 0.012, 0.08]} />
           </mesh>
