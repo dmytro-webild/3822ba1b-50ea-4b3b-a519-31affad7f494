@@ -88,7 +88,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         id: "h2-12pack",
         title: "FONS VITAE H2 Wasser",
         packInfo: "12er-Pack (12x 250 ml)",
-        price: 33.00,
+        price: 39.64,
         cansCount: 12,
         deposit: 3.00,
         quantity: 1,
