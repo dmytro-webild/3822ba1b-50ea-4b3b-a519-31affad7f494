@@ -58,6 +58,10 @@ function LayoutContent() {
               href: "#shop"
             },
             {
+              name: "Quelle & Mineralien",
+              href: "#quelle"
+            },
+            {
               name: "Pakete",
               href: "#bundles"
             },
