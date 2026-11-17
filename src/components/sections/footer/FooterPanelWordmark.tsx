@@ -83,7 +83,7 @@ const SORTIMENT_ITEMS = [
     title: "Himbeere (Raspberry)",
     subtitle: "Fruchtiges Himbeer-Erlebnis voller natürlicher Vitalität",
     badge: "100% Fruchtsaft",
-    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794876969120-9lcoxonc.png",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794874862680-jc370nfv.png",
     isLineup: false,
   },
   {
