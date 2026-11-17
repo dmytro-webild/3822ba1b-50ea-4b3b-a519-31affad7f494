@@ -3,6 +3,10 @@
 @import "./styles/animations.css";
 @import "./styles/masks.css";
 
+html {
+  scroll-behavior: smooth;
+}
+
 @theme {
   --breakpoint-lg: 55rem;
 }

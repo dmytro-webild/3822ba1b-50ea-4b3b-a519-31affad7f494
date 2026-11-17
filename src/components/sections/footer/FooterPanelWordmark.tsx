@@ -1,10 +1,11 @@
-import { motion, useReducedMotion } from "motion/react";
+import { useState, useEffect } from "react";
+import { motion, useReducedMotion, AnimatePresence } from "motion/react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { useKitMotion } from "@/components/kit/kitMotion";
 import { modelChapter, type ModelChapter } from "@/components/kit/modelPose";
-import MoreArrowPill from "@/components/kit/MoreArrowPill";
 import type { SocialPlatform } from "@/components/shared/socialPlatforms";
+import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 
 const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
 
@@ -41,14 +42,63 @@ const ICONS: Partial<Record<SocialPlatform, string>> = {
   x: "M3 3h5l4.2 5.8L17.5 3H21l-7.1 8.1L21.5 21h-5l-4.6-6.3L6.3 21H2.8l7.5-8.6z",
 };
 
-const FLAVOR_PILLS = [
-  { name: "Ingwer", sub: "Tonic Ginger" },
-  { name: "Traube", sub: "Grape" },
-  { name: "Apfel & Limette", sub: "Apple & Lime" },
-  { name: "Himbeere", sub: "Raspberry" },
-  { name: "Apfel & Ingwer", sub: "Apple & Ginger" },
-  { name: "Heidelbeere", sub: "Blueberry" },
-  { name: "H2 Water", sub: "Molekular" },
+const SORTIMENT_ITEMS = [
+  {
+    title: "Das gesamte Sortiment (7 Dosen)",
+    subtitle: "H2 Wasserstoff-Wasser & 6 edle Fruchtsaft-Kreationen",
+    badge: "Komplett-Lineup",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794880807544-312gbdxq.png",
+    isLineup: true,
+  },
+  {
+    title: "FONS VITAE H2 Water",
+    subtitle: "Molekular gelöstes Wasserstoff-Wasser (min. 2.8 mg/L H2)",
+    badge: "H2 Molekular",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794867451637-29z20xuu.png",
+    isLineup: false,
+  },
+  {
+    title: "Ingwer (Ginger Tonic)",
+    subtitle: "100% natürlicher Direktsaft mit belebender Schärfe",
+    badge: "100% Fruchtsaft",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794876969120-9lcoxonc.png",
+    isLineup: false,
+  },
+  {
+    title: "Traube (Grape)",
+    subtitle: "Edler Traubensaft aus sonnenverwöhnten Weintrauben",
+    badge: "100% Fruchtsaft",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794876969120-9lcoxonc.png",
+    isLineup: false,
+  },
+  {
+    title: "Apfel Limette (Apple & Lime)",
+    subtitle: "Spritzig-frische Kombination aus Apfel und feiner Limette",
+    badge: "100% Fruchtsaft",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794876969120-9lcoxonc.png",
+    isLineup: false,
+  },
+  {
+    title: "Himbeere (Raspberry)",
+    subtitle: "Fruchtiges Himbeer-Erlebnis voller natürlicher Vitalität",
+    badge: "100% Fruchtsaft",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794876969120-9lcoxonc.png",
+    isLineup: false,
+  },
+  {
+    title: "Apfel Ingwer (Apple & Ginger)",
+    subtitle: "Belebende Harmonie aus süßem Apfel und würzigem Ingwer",
+    badge: "100% Fruchtsaft",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794876969120-9lcoxonc.png",
+    isLineup: false,
+  },
+  {
+    title: "Blaubeere (Blueberry)",
+    subtitle: "Köstlicher Direktsaft aus sonnengereiften Blaubeeren",
+    badge: "100% Fruchtsaft",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794876969120-9lcoxonc.png",
+    isLineup: false,
+  },
 ];
 
 const FooterPanelWordmark = ({
@@ -56,7 +106,6 @@ const FooterPanelWordmark = ({
   subtitle = "H2 WASSERSTOFF-WASSER & 6 EDLE FRUCHTSAFT-KREATIONEN",
   lineupImageSrc = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794880807544-312gbdxq.png",
   logoSrc = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794862275041-s5qagrxx.jpg",
-  button = { text: "Jetzt Produkte entdecken", href: "#shop" },
   socials = [
     { label: "Instagram", href: "#", icon: "instagram" },
     { label: "YouTube", href: "#", icon: "youtube" },
@@ -68,6 +117,25 @@ const FooterPanelWordmark = ({
 }: FooterPanelWordmarkProps) => {
   const reduce = useReducedMotion();
   const { ease, slow } = useKitMotion();
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % SORTIMENT_ITEMS.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + SORTIMENT_ITEMS.length) % SORTIMENT_ITEMS.length);
+  };
+
+  useEffect(() => {
+    if (reduce) return;
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % SORTIMENT_ITEMS.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [reduce]);
+
+  const currentItem = SORTIMENT_ITEMS[currentIndex];
 
   return (
     <section
@@ -179,12 +247,12 @@ const FooterPanelWordmark = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: slow, ease, delay: 0.1 }}
-          className="relative w-full max-w-6xl my-4 sm:my-8 bg-white/70 backdrop-blur-md rounded-3xl border border-slate-200/90 p-4 sm:p-8 shadow-2xl overflow-hidden"
+          className="relative w-full max-w-6xl my-4 sm:my-8 bg-white/80 backdrop-blur-md rounded-3xl border border-slate-200/90 p-6 sm:p-10 shadow-2xl overflow-hidden"
         >
           {/* Internal Stream Banner Glow */}
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-blue-500/10 to-indigo-500/5 pointer-events-none" />
 
-          {/* SVG Animated Water Ribbon Weaving Horizontally Behind Cans */}
+          {/* SVG Animated Water Ribbon Weaving Horizontally Behind Carousel */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" preserveAspectRatio="none" viewBox="0 0 1000 300">
             <path
               d="M -50 150 Q 200 40, 450 160 T 950 140 T 1050 160"
@@ -229,49 +297,101 @@ const FooterPanelWordmark = ({
             </path>
           </svg>
 
-          {/* High-Resolution Lineup Image of all 7 Cans */}
+          {/* Smooth Product Carousel Slider */}
           <div className="relative z-10 flex flex-col items-center">
-            <motion.img
-              src={lineupImageSrc}
-              alt="FONS VITAE H2 Wasser & 6 Direktsaft-Variationen Produktaufreihung"
-              className="w-full h-auto max-h-[380px] sm:max-h-[460px] md:max-h-[520px] object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-[1.02]"
-              initial={reduce ? false : { opacity: 0, scale: 0.96 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: slow, ease, delay: 0.2 }}
-            />
+            <div className="relative w-full flex items-center justify-between min-h-[320px] sm:min-h-[400px]">
+              {/* Prev Button */}
+              <button
+                onClick={prevSlide}
+                className="absolute left-0 sm:left-2 z-20 bg-white/90 hover:bg-[#0A1C3A] text-[#0A1C3A] hover:text-white p-3 rounded-full shadow-lg border border-slate-200 transition transform hover:scale-110 active:scale-95"
+                aria-label="Vorheriges Produkt"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
 
-            {/* Flavor Labels Bar */}
-            <div className="w-full mt-6 pt-6 border-t border-slate-200/80 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2 sm:gap-3 text-center">
-              {FLAVOR_PILLS.map((item, idx) => (
-                <div
+              {/* Carousel Content */}
+              <div className="w-full px-12 sm:px-16 flex flex-col items-center justify-center">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentIndex}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
+                    className="flex flex-col items-center text-center space-y-4 max-w-2xl mx-auto"
+                  >
+                    <span className="bg-[#0A1C3A] text-white text-[11px] font-extrabold uppercase tracking-widest px-3.5 py-1 rounded-full shadow-xs">
+                      {currentItem.badge}
+                    </span>
+
+                    <div className="relative flex items-center justify-center my-2">
+                      <img
+                        src={currentItem.isLineup ? (lineupImageSrc || currentItem.image) : currentItem.image}
+                        alt={currentItem.title}
+                        className={`object-contain drop-shadow-2xl transition-all duration-300 ${
+                          currentItem.isLineup
+                            ? "h-48 sm:h-64 md:h-72 w-full max-w-3xl"
+                            : "h-52 sm:h-64 md:h-72 w-auto hover:scale-105"
+                        }`}
+                      />
+                    </div>
+
+                    <div className="space-y-1">
+                      <h3 className="text-xl sm:text-2xl font-black uppercase text-[#0A1C3A] tracking-tight">
+                        {currentItem.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm font-medium text-slate-600">
+                        {currentItem.subtitle}
+                      </p>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+              {/* Next Button */}
+              <button
+                onClick={nextSlide}
+                className="absolute right-0 sm:right-2 z-20 bg-white/90 hover:bg-[#0A1C3A] text-[#0A1C3A] hover:text-white p-3 rounded-full shadow-lg border border-slate-200 transition transform hover:scale-110 active:scale-95"
+                aria-label="Nächstes Produkt"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </div>
+
+            {/* Slider Dots */}
+            <div className="flex items-center justify-center gap-2 mt-6">
+              {SORTIMENT_ITEMS.map((_, idx) => (
+                <button
                   key={idx}
-                  className="bg-white/90 border border-slate-200 rounded-xl py-2 px-2 shadow-xs transition hover:border-[#0A1C3A] hover:bg-white hover:shadow-md"
-                >
-                  <span className="block font-extrabold text-[#0A1C3A] text-xs sm:text-sm tracking-tight leading-tight">
-                    {item.name}
-                  </span>
-                  <span className="block text-[10px] sm:text-xs text-slate-500 font-semibold truncate mt-0.5">
-                    {item.sub}
-                  </span>
-                </div>
+                  onClick={() => setCurrentIndex(idx)}
+                  aria-label={`Gehe zu Slide ${idx + 1}`}
+                  className={`h-2.5 rounded-full transition-all duration-300 ${
+                    currentIndex === idx
+                      ? "w-8 bg-[#0A1C3A]"
+                      : "w-2.5 bg-slate-300 hover:bg-slate-400"
+                  }`}
+                />
               ))}
             </div>
           </div>
         </motion.div>
 
-        {/* Action Button */}
-        {button && (
-          <motion.div
-            initial={reduce ? false : { opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: slow, ease, delay: 0.3 }}
-            className="mt-4 mb-10"
+        {/* Large Prominent "Jetzt bestellen" Button */}
+        <motion.div
+          initial={reduce ? false : { opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: slow, ease, delay: 0.3 }}
+          className="mt-6 mb-12"
+        >
+          <a
+            href="#shop"
+            className="inline-flex items-center justify-center gap-3 bg-[#0A1C3A] hover:bg-[#12284c] text-white font-extrabold text-base sm:text-lg uppercase tracking-wider px-10 py-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 border border-slate-700/50"
           >
-            <MoreArrowPill text={button.text} href={button.href} />
-          </motion.div>
-        )}
+            <span>Jetzt bestellen</span>
+            <ArrowRight className="w-5 h-5 text-sky-400" />
+          </a>
+        </motion.div>
 
         {/* Clean Footer Bottom Bar with Socials & Copyright */}
         <div className="w-full max-w-6xl pt-8 border-t border-slate-300/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-600">

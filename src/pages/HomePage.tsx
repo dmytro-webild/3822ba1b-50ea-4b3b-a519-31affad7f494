@@ -49,7 +49,7 @@ const H2_12_DETAILS: ProductDetailInfo = {
   imageSrc: H2_12PACK_IMAGE_URL,
   description:
     "Reinste Hydration angereichert mit mindestens 2,8 mg/L gelöstem molekularem Wasserstoff (H2). Geliefert im handlichen 12er-Pack in 100 % BPA-Freien Aluminiumdosen. Entwickelt für Biohacker, Athleten, Fitness-Enthusiasten und die Healthy Beauty Branche zur Förderung der Zellenergie.",
-  verzehr: "Wir empfehlen mindestens 3 Dosen täglich zu trinken, vorzugsweise morgens nach dem Aufstehen, vor dem Workout oder bei hoher geistiger Beanspruchung.",
+  verzehr: "Empfohlene tägliche Verzehrmenge: 1 bis 2 Dosen täglich. Ideal für: Morgens zum Start, bei der Arbeit, vor/nach dem Sport oder auf Reisen.",
   nutritionalTable: [
     { name: "Brennwert", value: "0 kJ / 0 kcal" },
     { name: "Fett", value: "0 g" },
@@ -78,7 +78,7 @@ const H2_24_DETAILS: ProductDetailInfo = {
   imageSrc: H2_24PACK_IMAGE_URL,
   description:
     "Der Monatsvorrat für maximale Zellenergie und Vitalität. 24 Dosen FONS VITAE H2 Wasserstoff-Wasser (min. 2.8 mg/L gelöster molekularer Wasserstoff) in 100 % BPA-Freien Aluminiumdosen. Geliefert im stabilen 24er-Pack.",
-  verzehr: "Wir empfehlen mindestens 3 Dosen täglich zu trinken, vorzugsweise morgens nach dem Aufstehen, vor dem Workout oder bei hoher geistiger Beanspruchung.",
+  verzehr: "Empfohlene tägliche Verzehrmenge: 1 bis 2 Dosen täglich. Ideal für: Morgens zum Start, bei der Arbeit, vor/nach dem Sport oder auf Reisen.",
   nutritionalTable: [
     { name: "Brennwert", value: "0 kJ / 0 kcal" },
     { name: "Fett", value: "0 g" },
@@ -93,7 +93,7 @@ const H2_24_DETAILS: ProductDetailInfo = {
     "Mind. 2.8 mg/L gelöster Wasserstoff",
     "Original FONS VITAE 24er-Pack Verpackung",
     "24x 250 ml Aluminiumdosen – 100 % BPA-Frei",
-    "Optimaler Monatsvorrat (mind. 3 Dosen / Tag)",
+    "Optimaler Vorrat (1 bis 2 Dosen / Tag)",
     "0 kcal, 0 g Zucker, 100% BPA-Frei",
     "Laborgeprüfte Reinheit aus Deutschland"
   ]
@@ -332,7 +332,7 @@ export default function HomePage() {
                 />
               </div>
               <div>
-                <span className="text-xs text-[#0A1C3A] font-extrabold uppercase">Monatsvorrat (Mind. 3 Dosen/Tag)</span>
+                <span className="text-xs text-[#0A1C3A] font-extrabold uppercase">Vorrat (1-2 Dosen/Tag)</span>
                 <h3 className="text-2xl font-black text-[#0A1C3A] uppercase tracking-tight">24er-Pack H2 Wasser</h3>
                 <p className="text-xs text-slate-600 mt-1">24x 250 ml Alu-Dosen (100 % BPA-Frei)</p>
               </div>
@@ -694,7 +694,7 @@ export default function HomePage() {
               other: true
             },
             {
-              title: "Mindestens 3 Dosen täglich empfohlen",
+              title: "1 bis 2 Dosen täglich empfohlen",
               ours: true,
               other: false
             }
@@ -824,7 +824,7 @@ export default function HomePage() {
               Anwendung im Alltag
             </h2>
             <p className="text-slate-600 text-sm max-w-xl mx-auto">
-              Empfohlen: Mindestens 3 Dosen täglich für optimale Ergebnisse.
+              Empfohlene tägliche Verzehrmenge: 1 bis 2 Dosen täglich. Ideal für: Morgens zum Start, bei der Arbeit, vor/nach dem Sport oder auf Reisen.
             </p>
           </div>
 
@@ -934,7 +934,7 @@ export default function HomePage() {
             },
             {
               title: "Wie viele Dosen sollte man täglich trinken?",
-              description: "Wir empfehlen mindestens 3 Dosen täglich zu trinken (z. B. morgens, vor dem Sport und nachmittags)."
+              description: "Empfohlene tägliche Verzehrmenge: 1 bis 2 Dosen täglich. Ideal für: Morgens zum Start, bei der Arbeit, vor/nach dem Sport oder auf Reisen."
             },
             {
               title: "Ist das Dosenpfand enthalten?",
