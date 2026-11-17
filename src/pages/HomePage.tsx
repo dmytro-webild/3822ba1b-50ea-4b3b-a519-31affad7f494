@@ -1034,7 +1034,7 @@ export default function HomePage() {
                   SB
                 </div>
                 <h4 className="font-extrabold text-lg text-[#0A1C3A]">Sebastian Behlke</h4>
-                <p className="text-xs text-slate-600 font-semibold">Geschäftsleitung</p>
+                <p className="text-xs text-slate-600 font-semibold">Sales & Communication</p>
               </div>
 
               <div className="bg-white p-6 rounded-2xl border border-slate-300 shadow-sm space-y-2">
