@@ -69,7 +69,7 @@ const SORTIMENT_ITEMS = [
     title: "Traube (Grape)",
     subtitle: "Edler Traubensaft aus sonnenverwöhnten Weintrauben",
     badge: "100% Fruchtsaft",
-    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794876969120-9lcoxonc.png",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794874862677-cd34mdsd.png",
     isLineup: false,
   },
   {
