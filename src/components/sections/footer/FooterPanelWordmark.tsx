@@ -6,6 +6,7 @@ import { useKitMotion } from "@/components/kit/kitMotion";
 import { modelChapter, type ModelChapter } from "@/components/kit/modelPose";
 import type { SocialPlatform } from "@/components/shared/socialPlatforms";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import Media from "@/components/kit/Media";
 
 const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
 
@@ -54,7 +55,7 @@ const SORTIMENT_ITEMS = [
     title: "FONS VITAE H2 Water",
     subtitle: "Molekular gelöstes Wasserstoff-Wasser (min. 2.8 mg/L H2)",
     badge: "H2 Molekular",
-    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794867451637-29z20xuu.png",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794876824895-o64qlmg5.png",
     isLineup: false,
   },
   {
@@ -214,7 +215,7 @@ const FooterPanelWordmark = ({
                     </span>
 
                     <div className="relative flex items-center justify-center my-2">
-                      <img
+                      <Media
                         src={currentItem.isLineup ? (lineupImageSrc || currentItem.image) : currentItem.image}
                         alt={currentItem.title}
                         className={`object-contain drop-shadow-2xl transition-all duration-300 ${
