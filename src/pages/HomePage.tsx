@@ -496,6 +496,72 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* SECTION: UNSERE QUELLE */}
+      <div id="quelle" data-webild-section="WaterSourceMinerals" data-webild-section-id="WaterSourceMinerals-1" data-section="source">
+        <section className="py-20 px-6 bg-white font-sans text-[#0A1C3A] border-b border-slate-300">
+          <div className="max-w-5xl mx-auto space-y-10">
+            <div className="text-center space-y-3">
+              <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-[#f4f6f8] px-4 py-1.5 rounded-full inline-block border border-slate-300">
+                Natürliche Reinheit
+              </span>
+              <h2 className="text-4xl lg:text-5xl font-black text-[#0A1C3A] uppercase tracking-tight">
+                UNSERE QUELLE
+              </h2>
+              <p className="text-slate-700 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed font-medium">
+                Unser Quellwasser entspringt aus 136 Metern Tiefe und wird durch natürliche Gesteinsschichten gefiltered und tiefenmineralisiert. Diese geschützte Tiefenquelle garantiert höchste mikrobiologische Reinheit sowie ein ausgewogenes Mineralstoffprofil mit optimalem pH-Wert – die reine, unbelastete Basis für unser molekular angereichertes H2-Wasserstoffwasser.
+              </p>
+            </div>
+
+            {/* Mineral Table */}
+            <div className="bg-white rounded-2xl border border-slate-300 shadow-xl overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="bg-[#0A1C3A] text-white text-xs sm:text-sm uppercase font-black tracking-wider">
+                      <th className="py-4 px-6 border-b border-[#0A1C3A]">Parameter / Mineralstoff</th>
+                      <th className="py-4 px-6 border-b border-[#0A1C3A]">Wert / Konzentration</th>
+                      <th className="py-4 px-6 border-b border-[#0A1C3A]">Bedeutung &amp; Eigenschaften</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 text-xs sm:text-sm text-slate-800 font-semibold">
+                    <tr className="hover:bg-slate-50 transition">
+                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">pH-Wert</td>
+                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">7,8 (Leicht basisch)</td>
+                      <td className="py-4 px-6 text-slate-600">Unterstützt ein natürliches Säure-Basen-Gleichgewicht</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50 transition">
+                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Calcium (Ca²⁺)</td>
+                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">68 mg/L</td>
+                      <td className="py-4 px-6 text-slate-600">Essentieller Mineralstoff für Knochen, Zähne und Muskelkontraktion</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50 transition">
+                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Magnesium (Mg²⁺)</td>
+                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">18 mg/L</td>
+                      <td className="py-4 px-6 text-slate-600">Unterstützt den Energiestoffwechsel und das Nervensystem</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50 transition">
+                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Natrium (Na⁺)</td>
+                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">9,5 mg/L (Natriumarm)</td>
+                      <td className="py-4 px-6 text-slate-600">Sehr geringer Natriumgehalt – ideal für täglichen Konsum</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50 transition">
+                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Kalium (K⁺)</td>
+                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">2,4 mg/L</td>
+                      <td className="py-4 px-6 text-slate-600">Trägt zur Zellhydratation und normalen Muskelfunktion bei</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50 transition">
+                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Nitrat (NO₃⁻)</td>
+                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">&lt; 1,0 mg/L (Reinste Qualität)</td>
+                      <td className="py-4 px-6 text-slate-600">Nahezu nitratfrei – garantiert frei von Umweltbelastungen</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
       {/* BUNDLES & COMBOS SECTION */}
       <div id="bundles" data-webild-section="PricingRingCards" data-webild-section-id="PricingRingCards-1" data-section="pricing">
         <section className="py-20 bg-[#f4f6f8] text-[#0A1C3A] font-sans border-y border-slate-300">
@@ -597,139 +663,6 @@ export default function HomePage() {
           </div>
         </section>
       </div>
-
-      {/* SECTION: Unsere Quelle & Mineralien */}
-      <div id="quelle" data-webild-section="WaterSourceMinerals" data-webild-section-id="WaterSourceMinerals-1" data-section="source">
-        <section className="py-20 px-6 bg-white font-sans text-[#0A1C3A] border-b border-slate-300">
-          <div className="max-w-5xl mx-auto space-y-10">
-            <div className="text-center space-y-3">
-              <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-[#f4f6f8] px-4 py-1.5 rounded-full inline-block border border-slate-300">
-                Natürliche Reinheit
-              </span>
-              <h2 className="text-4xl lg:text-5xl font-black text-[#0A1C3A] uppercase tracking-tight">
-                Unsere Quelle &amp; Mineralien
-              </h2>
-              <p className="text-slate-700 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed font-medium">
-                Unser Quellwasser entspringt aus 136 Metern Tiefe und wird durch natürliche Gesteinsschichten gefiltert und tiefenmineralisiert. Diese geschützte Tiefenquelle garantiert höchste mikrobiologische Reinheit sowie ein ausgewogenes Mineralstoffprofil mit optimalem pH-Wert – die reine, unbelastete Basis für unser molekular angereichertes H2-Wasserstoffwasser.
-              </p>
-            </div>
-
-            {/* Mineral Table */}
-            <div className="bg-white rounded-2xl border border-slate-300 shadow-xl overflow-hidden">
-              <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse">
-                  <thead>
-                    <tr className="bg-[#0A1C3A] text-white text-xs sm:text-sm uppercase font-black tracking-wider">
-                      <th className="py-4 px-6 border-b border-[#0A1C3A]">Parameter / Mineralstoff</th>
-                      <th className="py-4 px-6 border-b border-[#0A1C3A]">Wert / Konzentration</th>
-                      <th className="py-4 px-6 border-b border-[#0A1C3A]">Bedeutung &amp; Eigenschaften</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-200 text-xs sm:text-sm text-slate-800 font-semibold">
-                    <tr className="hover:bg-slate-50 transition">
-                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">pH-Wert</td>
-                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">7,8 (Leicht basisch)</td>
-                      <td className="py-4 px-6 text-slate-600">Unterstützt ein natürliches Säure-Basen-Gleichgewicht</td>
-                    </tr>
-                    <tr className="hover:bg-slate-50 transition">
-                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Calcium (Ca²⁺)</td>
-                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">68 mg/L</td>
-                      <td className="py-4 px-6 text-slate-600">Essentieller Mineralstoff für Knochen, Zähne und Muskelkontraktion</td>
-                    </tr>
-                    <tr className="hover:bg-slate-50 transition">
-                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Magnesium (Mg²⁺)</td>
-                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">18 mg/L</td>
-                      <td className="py-4 px-6 text-slate-600">Unterstützt den Energiestoffwechsel und das Nervensystem</td>
-                    </tr>
-                    <tr className="hover:bg-slate-50 transition">
-                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Natrium (Na⁺)</td>
-                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">9,5 mg/L (Natriumarm)</td>
-                      <td className="py-4 px-6 text-slate-600">Sehr geringer Natriumgehalt – ideal für täglichen Konsum</td>
-                    </tr>
-                    <tr className="hover:bg-slate-50 transition">
-                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Kalium (K⁺)</td>
-                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">2,4 mg/L</td>
-                      <td className="py-4 px-6 text-slate-600">Trägt zur Zellhydratation und normalen Muskelfunktion bei</td>
-                    </tr>
-                    <tr className="hover:bg-slate-50 transition">
-                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Nitrat (NO₃⁻)</td>
-                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">&lt; 1,0 mg/L (Reinste Qualität)</td>
-                      <td className="py-4 px-6 text-slate-600">Nahezu nitratfrei – garantiert frei von Umweltbelastungen</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      {/* 4. ANWENDUNGSBEREICHE (Compact Icon Layout) */}
-      <section id="usecases" className="py-20 bg-[#f4f6f8] text-[#0A1C3A] font-sans border-t border-slate-300">
-        <div className="max-w-7xl mx-auto px-6 space-y-10">
-          <div className="text-center space-y-3">
-            <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-white px-4 py-1.5 rounded-full inline-block border border-slate-300 shadow-sm">
-              Einsatzbereiche
-            </span>
-            <h2 className="text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#0A1C3A]">
-              Anwendungsbereiche
-            </h2>
-            <p className="text-slate-600 text-sm max-w-xl mx-auto font-medium">
-              Empfohlene tägliche Verzehrmenge: 1 bis 2 Dosen täglich. Ideal abgestimmt auf deinen Alltag.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white p-6 rounded-2xl border border-slate-300 shadow-md flex flex-col items-center text-center space-y-3 hover:border-[#0A1C3A] transition">
-              <div className="w-14 h-14 rounded-2xl bg-[#0A1C3A] text-white flex items-center justify-center text-2xl shadow-sm">
-                <span>☀️</span>
-              </div>
-              <h3 className="text-lg font-black uppercase text-[#0A1C3A] tracking-tight">
-                MORGENS
-              </h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                Für den bewussten Start in den Tag
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl border border-slate-300 shadow-md flex flex-col items-center text-center space-y-3 hover:border-[#0A1C3A] transition">
-              <div className="w-14 h-14 rounded-2xl bg-[#0A1C3A] text-white flex items-center justify-center text-2xl shadow-sm">
-                <span>💼</span>
-              </div>
-              <h3 className="text-lg font-black uppercase text-[#0A1C3A] tracking-tight">
-                ARBEIT &amp; FOKUS
-              </h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                Für den modernen Arbeitsalltag
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl border border-slate-300 shadow-md flex flex-col items-center text-center space-y-3 hover:border-[#0A1C3A] transition">
-              <div className="w-14 h-14 rounded-2xl bg-[#0A1C3A] text-white flex items-center justify-center text-2xl shadow-sm">
-                <span>🏃</span>
-              </div>
-              <h3 className="text-lg font-black uppercase text-[#0A1C3A] tracking-tight">
-                SPORT
-              </h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                Rund um Training und Bewegung
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl border border-slate-300 shadow-md flex flex-col items-center text-center space-y-3 hover:border-[#0A1C3A] transition">
-              <div className="w-14 h-14 rounded-2xl bg-[#0A1C3A] text-white flex items-center justify-center text-2xl shadow-sm">
-                <span>✈️</span>
-              </div>
-              <h3 className="text-lg font-black uppercase text-[#0A1C3A] tracking-tight">
-                REISEN
-              </h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                Praktisch für unterwegs
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* 5. ÜBER UNS (Brand Philosophy Section) */}
       <section id="about" className="py-24 bg-white text-[#0A1C3A] font-sans border-t border-slate-300">

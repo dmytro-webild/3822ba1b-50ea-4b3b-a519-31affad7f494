@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { Sun, Briefcase, Dumbbell, Plane } from "lucide-react";
 import { useKitMotion } from "@/components/kit/kitMotion";
 import { modelChapter, type ModelChapter } from "@/components/kit/modelPose";
 import MoreProductPhoto from "@/components/kit/MoreProductPhoto";
@@ -10,6 +11,11 @@ import MoreTwoTone from "@/components/kit/MoreTwoTone";
 const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
 
 type Row = { title: string; ours?: boolean; other?: boolean };
+
+type ApplicationArea = {
+  icon: React.ReactNode;
+  label: string;
+};
 
 type ProductCompareTableProps = {
   title?: string;
@@ -24,7 +30,16 @@ type ProductCompareTableProps = {
   productImageAlt?: string;
   ariaLabel?: string;
   className?: string;
+  suitableForTitle?: string;
+  applicationAreas?: ApplicationArea[];
 };
+
+const DEFAULT_APPLICATION_AREAS: ApplicationArea[] = [
+  { icon: <Sun className="w-4 h-4 text-white" />, label: "MORGENS" },
+  { icon: <Briefcase className="w-4 h-4 text-white" />, label: "ARBEIT & FOKUS" },
+  { icon: <Dumbbell className="w-4 h-4 text-white" />, label: "SPORT" },
+  { icon: <Plane className="w-4 h-4 text-white" />, label: "REISEN" },
+];
 
 const POP: [number, number, number, number] = [0.34, 1.56, 0.64, 1];
 
@@ -60,6 +75,8 @@ const ProductCompareTable = ({
   productImageAlt = "Amber bottles lined up on a warm set",
   ariaLabel,
   className,
+  suitableForTitle = "BESONDERS GEEIGNET FÜR",
+  applicationAreas = DEFAULT_APPLICATION_AREAS,
 }: ProductCompareTableProps) => {
   const frameRef = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
@@ -143,6 +160,26 @@ const ProductCompareTable = ({
                 ))}
               </tbody>
             </table>
+
+            {suitableForTitle && applicationAreas && applicationAreas.length > 0 && (
+              <div className="mt-5 pt-5 border-t border-secondary-foreground/20">
+                <p className="text-[11px] font-black uppercase tracking-widest text-[#0A1C3A] mb-3">
+                  {suitableForTitle}
+                </p>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  {applicationAreas.map((area, idx) => (
+                    <div key={idx} className="flex items-center gap-2.5">
+                      <div className="w-8 h-8 rounded-lg bg-[#0A1C3A] text-white flex items-center justify-center shrink-0 shadow-sm">
+                        {area.icon}
+                      </div>
+                      <span className="text-xs font-black text-[#0A1C3A] uppercase tracking-tight leading-tight">
+                        {area.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
