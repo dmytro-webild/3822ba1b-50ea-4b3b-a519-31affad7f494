@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import HeroWordmarkProduct from "@/components/sections/hero/HeroWordmarkProduct";
 import ProductCompareTable from "@/components/sections/product/ProductCompareTable";
 import TestimonialPhotoRail from "@/components/sections/testimonial/TestimonialPhotoRail";
-import FaqCircleRows from "@/components/sections/faq/FaqCircleRows";
 import ScrollToneBackdrop from "@/components/kit/ScrollToneBackdrop";
 import LoaderWordmarkRise from "@/components/loaders/LoaderWordmarkRise";
 import { useCart, type ProductDetailInfo } from "@/context/CartContext";
@@ -873,11 +872,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* REVIEWS & TESTIMONIALS */}
+      {/* REVIEWS & TESTIMONIALS (DAS SAGEN UNSERE KUNDEN) */}
       <div id="testimonial" data-webild-section="TestimonialPhotoRail" data-webild-section-id="TestimonialPhotoRail-1" data-section="testimonial">
         <TestimonialPhotoRail
           media="image"
-          title="Bewertungen"
+          title="DAS SAGEN UNSERE KUNDEN"
           label="Erfahrungen"
           imageSrc="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794876824895-o64qlmg5.png"
           items={[
@@ -913,50 +912,6 @@ export default function HomePage() {
             scale: 0.75,
             sm: {
               scale: 0.85
-            }
-          }}
-        />
-      </div>
-
-      {/* FAQ SECTION */}
-      <div id="faq" data-webild-section="FaqCircleRows" data-webild-section-id="FaqCircleRows-1" data-section="faq">
-        <FaqCircleRows
-          media="image"
-          title="Häufige Fragen"
-          accent="Informationen"
-          items={[
-            {
-              title: "Was ist H2 Wasserstoff-Wasser?",
-              description: "FONS VITAE H2 Wasser ist mit mindestens 2,8 mg/L molekular gelöstem Wasserstoff (H2) angereichert. Es dient als selektives Antioxidans und unterstützt zelluläre Prozesse."
-            },
-            {
-              title: "Sind die Aluminiumdosen BPA-frei?",
-              description: "Ja, alle 250-ml-Aluminiumdosen von FONS VITAE sind 100 % BPA-frei und nachhaltig recycelbar."
-            },
-            {
-              title: "Wie viele Dosen sollte man täglich trinken?",
-              description: "Empfohlene tägliche Verzehrmenge: 1 bis 2 Dosen täglich. Ideal für: Morgens zum Start, bei der Arbeit, vor/nach dem Sport oder auf Reisen."
-            },
-            {
-              title: "Ist das Dosenpfand enthalten?",
-              description: "Ja! Bei allen Bestellungen wird das gesetzliche Dosenpfand in Höhe von 0,25 € pro Dose transparent ausgewiesen und eingerechnet."
-            },
-            {
-              title: "Welche Nährwerte bietet das H2 Wasser?",
-              description: "0 kcal, 0 g Fett, 0 g Zucker, 0 g Kohlenhydrate. Frei von künstlichen Zusatzstoffen."
-            },
-            {
-              title: "Wie lange dauert der Versand?",
-              description: "Der Versand erfolgt direkt aus Deutschland und dauert standardmäßig 1-2 Werktage."
-            }
-          ]}
-          model={{
-            rz: 10,
-            ry: 700,
-            rx: -6,
-            scale: 0.56,
-            sm: {
-              scale: 0.62
             }
           }}
         />
