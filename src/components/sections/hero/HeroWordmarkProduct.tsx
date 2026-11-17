@@ -13,7 +13,7 @@ type Stat = { value: string; unit?: string; title: string };
 
 type HeroWordmarkProductProps = {
   brand?: string;
-  title?: string;
+  title?: React.ReactNode;
   description?: string;
   primaryButton?: Button;
   items?: Stat[];
@@ -145,11 +145,36 @@ const HeroWordmarkProduct = ({
     };
   }, [go, introDelay]);
 
-  const mainTitle = title || "H2 - HYDROGEN WATER";
+  const renderTitle = (input: React.ReactNode) => {
+    if (typeof input === "string") {
+      if (input.includes("H2")) {
+        const parts = input.split("H2");
+        return (
+          <>
+            {parts.map((part, index) => (
+              <span key={index}>
+                {part}
+                {index < parts.length - 1 && (
+                  <>
+                    H<sub className="text-[#D4AF37] text-[0.6em] relative bottom-[-0.15em] font-extrabold">2</sub>
+                  </>
+                )}
+              </span>
+            ))}
+          </>
+        );
+      }
+    }
+    return input;
+  };
+
+  const rawTitle = title || "H2 - HYDROGEN WATER";
+  const formattedTitle = renderTitle(rawTitle);
+  const sectionAriaLabel = ariaLabel ?? (typeof rawTitle === "string" ? rawTitle : "H2 - HYDROGEN WATER");
 
   return (
     <section
-      aria-label={ariaLabel ?? mainTitle}
+      aria-label={sectionAriaLabel}
       className={cn(
         "relative flex min-h-svh flex-col items-center justify-between overflow-hidden bg-gradient-to-b from-[#f8fafc] via-white to-[#f1f5f9] text-[#0A1C3A] pt-28 pb-12 md:pt-36 lg:pt-40",
         className
@@ -163,7 +188,7 @@ const HeroWordmarkProduct = ({
           transition={{ duration: slow, ease }}
           className="font-extrabold not-italic text-[#0A1C3A] text-center uppercase tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight"
         >
-          {mainTitle}
+          {formattedTitle}
         </motion.h1>
 
         {description && (
