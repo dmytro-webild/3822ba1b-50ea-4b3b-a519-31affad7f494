@@ -52,7 +52,7 @@ function WaterMesh() {
         roughness={0.1}
         metalness={0.15}
         transparent
-        opacity={0.14}
+        opacity={0.04}
         wireframe={false}
         side={THREE.DoubleSide}
       />
@@ -69,7 +69,7 @@ function WaterBubbles({ count = 45 }: { count?: number }) {
   const meshRef = useRef<THREE.InstancedMesh>(null);
   const dummy = useMemo(() => new THREE.Object3D(), []);
 
-  // Pre-generate bubble parameters
+  // Pre-generate bubble parameters with smaller scales
   const bubbleData = useMemo(() => {
     const data = [];
     for (let i = 0; i < count; i++) {
@@ -77,7 +77,7 @@ function WaterBubbles({ count = 45 }: { count?: number }) {
         x: (pseudoRandom(i * 4 + 1) - 0.5) * 22,
         y: (pseudoRandom(i * 4 + 2) - 0.5) * 16,
         z: (pseudoRandom(i * 4 + 3) - 0.5) * 4 - 0.5,
-        scale: 0.1 + pseudoRandom(i * 4 + 4) * 0.25,
+        scale: 0.03 + pseudoRandom(i * 4 + 4) * 0.08,
         speed: 0.5 + pseudoRandom(i + 200) * 0.7,
         wobbleSpeed: 1.2 + pseudoRandom(i + 300) * 1.8,
         wobbleAmp: 0.12 + pseudoRandom(i + 400) * 0.2,
@@ -119,11 +119,11 @@ function WaterBubbles({ count = 45 }: { count?: number }) {
       <meshStandardMaterial
         color="#7dd3fc"
         emissive="#38bdf8"
-        emissiveIntensity={0.2}
+        emissiveIntensity={0.05}
         roughness={0.08}
         metalness={0.1}
         transparent
-        opacity={0.45}
+        opacity={0.15}
       />
     </instancedMesh>
   );
@@ -168,10 +168,10 @@ function WaterParticles() {
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.14}
+        size={0.06}
         color="#bae6fd"
         transparent
-        opacity={0.4}
+        opacity={0.15}
         sizeAttenuation
       />
     </points>
@@ -180,14 +180,14 @@ function WaterParticles() {
 
 export default function WaterDropsBackground() {
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-90" aria-hidden="true">
+    <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden" aria-hidden="true">
       <Canvas
         camera={{ position: [0, 0, 6], fov: 55 }}
         gl={{ alpha: true, antialias: true }}
       >
-        <ambientLight intensity={1.2} />
-        <directionalLight position={[5, 8, 5]} intensity={1.8} color="#e0f2fe" />
-        <pointLight position={[-5, -5, 2]} intensity={1.2} color="#38bdf8" />
+        <ambientLight intensity={1.0} />
+        <directionalLight position={[5, 8, 5]} intensity={1.2} color="#e0f2fe" />
+        <pointLight position={[-5, -5, 2]} intensity={0.8} color="#38bdf8" />
 
         <WaterMesh />
         <WaterBubbles />

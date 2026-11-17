@@ -49,7 +49,7 @@ function LayoutContent() {
       {/* 2D Water drops removed for static clean design */}
       <WaterDropsBackground />
 
-      <header data-webild-section="Header">
+      <header data-webild-section="Header" className="relative z-20">
         <NavbarPillLinks
           brand="FONS VITAE"
           navItems={[
@@ -99,7 +99,7 @@ function LayoutContent() {
         />
       </header>
 
-      <main className="flex-grow" data-button="default" data-card="filled" data-pattern="none">
+      <main className="flex-grow relative z-10" data-button="default" data-card="filled" data-pattern="none">
         <Outlet />
       </main>
 
@@ -114,7 +114,7 @@ function LayoutContent() {
       <LegalModal />
       <VideoModal />
 
-      <footer data-webild-section="Footer" data-section="footer">
+      <footer data-webild-section="Footer" data-section="footer" className="relative z-10">
         <FooterPanelWordmark
           title="CLEAN & PURE HYDRATION"
           button={{
