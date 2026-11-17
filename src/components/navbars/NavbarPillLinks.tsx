@@ -2,10 +2,12 @@
 
 import { useRef, useState } from "react";
 import { AnimatePresence, animate, motion, useMotionValue, useMotionValueEvent, useReducedMotion, useScroll } from "motion/react";
-import { Dribbble, Facebook, Github, Globe, Instagram, Linkedin, Mail, Twitter, Youtube, type LucideIcon } from "lucide-react";
+import { Dribbble, Facebook, Github, Globe, Instagram, Linkedin, Mail, Twitter, Youtube, ShoppingBag, type LucideIcon } from "lucide-react";
 import { socialName, type SocialPlatform } from "@/components/shared/socialPlatforms";
 import useMenuDialog from "@/components/kit/useMenuDialog";
 import MoreArrowPill from "@/components/kit/MoreArrowPill";
+import { useCart } from "@/context/CartContext";
+import HeaderSearch from "@/components/search/HeaderSearch";
 
 type NavItem = { name: string; href: string };
 type Button = { text: string; href: string };
@@ -41,6 +43,7 @@ const NavbarPillLinks = ({
   const hidden = useRef(false);
   const shift = useMotionValue(0);
   const { scrollY } = useScroll();
+  const { setIsCartOpen, totalItemCount } = useCart();
   useMenuDialog(open, panelRef, () => setOpen(false));
 
   useMotionValueEvent(scrollY, "change", (value) => {
@@ -110,6 +113,24 @@ const NavbarPillLinks = ({
           )}
 
           <div className="flex shrink-0 items-center justify-end gap-[0.4rem]">
+            {/* Minimalist Header Search */}
+            <HeaderSearch />
+
+            {/* Header Shopping Cart Trigger */}
+            <button
+              type="button"
+              onClick={() => setIsCartOpen(true)}
+              className="relative flex size-[clamp(2.5rem,2.2rem+1vw,3rem)] items-center justify-center rounded-full bg-[#0A1C3A] text-white hover:bg-[#12284c] active:scale-95 transition shadow-sm border border-slate-700/50"
+              aria-label="Warenkorb öffnen"
+            >
+              <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5 text-slate-100" />
+              {totalItemCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-sky-400 text-[#0A1C3A] text-[10px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center border border-[#0A1C3A]">
+                  {totalItemCount}
+                </span>
+              )}
+            </button>
+
             {primaryButton && <MoreArrowPill text={primaryButton.text} href={primaryButton.href} tone="light" />}
             <button
               type="button"
