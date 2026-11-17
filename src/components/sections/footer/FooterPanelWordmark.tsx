@@ -3,12 +3,8 @@ import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { useKitMotion } from "@/components/kit/kitMotion";
 import { modelChapter, type ModelChapter } from "@/components/kit/modelPose";
-import MoreTwoTone from "@/components/kit/MoreTwoTone";
 import MoreArrowPill from "@/components/kit/MoreArrowPill";
-import FitText from "@/components/library/osmo/utilities/FitText";
-import { useMemo } from "react";
 import type { SocialPlatform } from "@/components/shared/socialPlatforms";
-import Media from "@/components/kit/Media";
 
 const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
 
@@ -17,13 +13,14 @@ type Social = { label: string; href: string; icon: SocialPlatform };
 
 type FooterPanelWordmarkProps = {
   title?: string;
+  subtitle?: string;
   imageSrc?: string;
-  imageAlt?: string;
+  lineupImageSrc?: string;
+  logoSrc?: string;
   button?: Link;
   brand?: string;
   brandAccent?: string;
   wordmark?: string;
-  logoSrc?: string;
   links?: Link[];
   socials?: Social[];
   copyright?: string;
@@ -44,132 +41,261 @@ const ICONS: Partial<Record<SocialPlatform, string>> = {
   x: "M3 3h5l4.2 5.8L17.5 3H21l-7.1 8.1L21.5 21h-5l-4.6-6.3L6.3 21H2.8l7.5-8.6z",
 };
 
+const FLAVOR_PILLS = [
+  { name: "Ingwer", sub: "Tonic Ginger" },
+  { name: "Traube", sub: "Grape" },
+  { name: "Apfel & Limette", sub: "Apple & Lime" },
+  { name: "Himbeere", sub: "Raspberry" },
+  { name: "Apfel & Ingwer", sub: "Apple & Ginger" },
+  { name: "Heidelbeere", sub: "Blueberry" },
+  { name: "H2 Water", sub: "Molekular" },
+];
+
 const FooterPanelWordmark = ({
-  title = "Matcha meets protein",
-  imageSrc = "https://images.pexels.com/photos/2615323/pexels-photo-2615323.jpeg?auto=compress&w=1400",
-  imageAlt = "Iced drink in a tall glass",
-  button = { text: "Buy now", href: "#" },
-  brand = "Iced Matcha Latte",
-  brandAccent = "Verde London",
-  wordmark = "Verde",
-  logoSrc,
-  links = [
-    { text: "Shop all", href: "#" },
-    { text: "Samples", href: "#" },
-    { text: "Shipping and delivery", href: "#" },
-    { text: "Returns and exchanges", href: "#" },
-  ],
+  title = "DAS GESAMTE FONS VITAE SORTIMENT",
+  subtitle = "H2 WASSERSTOFF-WASSER & 6 EDLE FRUCHTSAFT-KREATIONEN",
+  lineupImageSrc = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794880807544-312gbdxq.png",
+  logoSrc = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794862275041-s5qagrxx.jpg",
+  button = { text: "Jetzt Produkte entdecken", href: "#shop" },
   socials = [
     { label: "Instagram", href: "#", icon: "instagram" },
-    { label: "TikTok", href: "#", icon: "tiktok" },
     { label: "YouTube", href: "#", icon: "youtube" },
   ],
-  copyright = "© Verde. All rights reserved.",
-  credit = { text: "Site credits", href: "#" },
+  copyright = "© FONS VITAE – Die Quelle des Lebens. Alle Rechte vorbehalten.",
   model,
   ariaLabel,
   className,
 }: FooterPanelWordmarkProps) => {
   const reduce = useReducedMotion();
   const { ease, slow } = useKitMotion();
-  const wordmarkLines = useMemo(() => (wordmark.trim() ? [wordmark.trim()] : []), [wordmark]);
-  const lines = title.trim().split(/\s+/).filter(Boolean);
 
   return (
-    <section aria-label={ariaLabel ?? "Footer"} {...modelChapter(model)} className={cn("relative pt-[var(--section-space)] text-foreground", className)}>
-      <footer className="relative mx-auto w-[var(--container)]">
-        <div className="grid grid-cols-1 gap-[8px] lg:grid-cols-2 lg:gap-[12px]">
-          <div className="@container relative aspect-[374/600] overflow-hidden rounded-[var(--radius-card)] bg-card lg:aspect-square">
-            {imageSrc && (
-              <>
-                <Media src={imageSrc} alt={imageAlt} loading="lazy" className="absolute inset-0 size-full object-cover" />
-                <div aria-hidden="true" className="absolute inset-0 bg-black/30" />
-              </>
+    <section
+      aria-label={ariaLabel ?? "Product Showcase & Footer"}
+      {...modelChapter(model)}
+      className={cn(
+        "relative py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-white via-slate-50 to-slate-100/70 text-[#0A1C3A] overflow-hidden border-t border-slate-200/80 font-sans",
+        className
+      )}
+    >
+      {/* Background Water Wave / Stream Effect */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+        <svg
+          className="absolute w-[200%] h-full top-0 left-0 opacity-25"
+          viewBox="0 0 1440 600"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <linearGradient id="streamGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.4" />
+              <stop offset="35%" stopColor="#0284c7" stopOpacity="0.7" />
+              <stop offset="70%" stopColor="#0A1C3A" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.4" />
+            </linearGradient>
+            <linearGradient id="streamGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#e0f2fe" stopOpacity="0.6" />
+              <stop offset="50%" stopColor="#7dd3fc" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="#e0f2fe" stopOpacity="0.6" />
+            </linearGradient>
+          </defs>
+
+          {/* Dynamic flowing wave path 1 */}
+          <path
+            fill="none"
+            stroke="url(#streamGrad1)"
+            strokeWidth="14"
+            d="M 0,320 C 300,180 600,420 900,260 C 1200,100 1500,380 1800,240"
+          >
+            {!reduce && (
+              <animate
+                attributeName="d"
+                dur="12s"
+                repeatCount="indefinite"
+                values="
+                  M 0,320 C 300,180 600,420 900,260 C 1200,100 1500,380 1800,240;
+                  M 0,260 C 300,400 600,180 900,340 C 1200,200 1500,160 1800,300;
+                  M 0,320 C 300,180 600,420 900,260 C 1200,100 1500,380 1800,240
+                "
+              />
             )}
-            <div className="relative flex size-full flex-col items-center justify-between p-[7cqw] pb-[8cqw]">
-              {lines.length > 0 && (
-                <h2 aria-label={title} className="flex flex-col items-center text-center text-[length:min(20cqw,8rem)] font-bold uppercase leading-[0.84] tracking-[-0.03em] text-white">
-                  {lines.map((line, index) => (
-                    <div key={index} aria-hidden="true" className="overflow-hidden pb-[0.15em] -mb-[0.15em]">
-                      <motion.div
-                        initial={reduce ? false : { y: "110%" }}
-                        whileInView={{ y: "0%" }}
-                        viewport={{ once: true, margin: "0px 0px -8% 0px" }}
-                        transition={{ duration: slow, ease, delay: index * 0.09 }}
-                        className="whitespace-nowrap"
-                      >
-                        {line}
-                      </motion.div>
-                    </div>
-                  ))}
-                </h2>
+          </path>
+
+          {/* Dynamic flowing wave path 2 (Secondary water ribbon) */}
+          <path
+            fill="none"
+            stroke="url(#streamGrad2)"
+            strokeWidth="8"
+            strokeDasharray="16 8"
+            d="M 0,220 C 350,380 700,140 1050,320 C 1400,500 1600,200 1800,320"
+          >
+            {!reduce && (
+              <animate
+                attributeName="d"
+                dur="16s"
+                repeatCount="indefinite"
+                values="
+                  M 0,220 C 350,380 700,140 1050,320 C 1400,500 1600,200 1800,320;
+                  M 0,340 C 350,160 700,360 1050,180 C 1400,280 1600,400 1800,220;
+                  M 0,220 C 350,380 700,140 1050,320 C 1400,500 1600,200 1800,320
+                "
+              />
+            )}
+          </path>
+        </svg>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 flex flex-col items-center text-center">
+        {/* Prominent FONS VITAE Logo */}
+        {logoSrc && (
+          <motion.div
+            initial={reduce ? false : { opacity: 0, scale: 0.9, y: 16 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: slow, ease }}
+            className="flex flex-col items-center justify-center space-y-4 mb-6 sm:mb-8"
+          >
+            <div className="relative group cursor-pointer">
+              <div className="absolute -inset-1.5 rounded-3xl bg-gradient-to-r from-sky-400 via-blue-600 to-[#0A1C3A] opacity-25 blur-md group-hover:opacity-45 transition duration-500" />
+              <img
+                src={logoSrc}
+                alt="FONS VITAE Logo"
+                className="relative h-20 sm:h-28 md:h-36 w-auto object-contain rounded-2xl shadow-xl border border-slate-200/90 bg-white p-3.5 sm:p-4 transition hover:scale-105 duration-300"
+              />
+            </div>
+            <div className="space-y-1.5">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-[#0A1C3A]">
+                {title}
+              </h2>
+              <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-slate-500 max-w-xl mx-auto">
+                {subtitle}
+              </p>
+            </div>
+          </motion.div>
+        )}
+
+        {/* Horizontal Product Showcase Container with Flowing Water Stream Accent */}
+        <motion.div
+          initial={reduce ? false : { opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: slow, ease, delay: 0.1 }}
+          className="relative w-full max-w-6xl my-4 sm:my-8 bg-white/70 backdrop-blur-md rounded-3xl border border-slate-200/90 p-4 sm:p-8 shadow-2xl overflow-hidden"
+        >
+          {/* Internal Stream Banner Glow */}
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-blue-500/10 to-indigo-500/5 pointer-events-none" />
+
+          {/* SVG Animated Water Ribbon Weaving Horizontally Behind Cans */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" preserveAspectRatio="none" viewBox="0 0 1000 300">
+            <path
+              d="M -50 150 Q 200 40, 450 160 T 950 140 T 1050 160"
+              fill="none"
+              stroke="#0284c7"
+              strokeWidth="12"
+              strokeOpacity="0.2"
+            >
+              {!reduce && (
+                <animate
+                  attributeName="d"
+                  dur="8s"
+                  repeatCount="indefinite"
+                  values="
+                    M -50 150 Q 200 40, 450 160 T 950 140 T 1050 160;
+                    M -50 140 Q 200 240, 450 120 T 950 180 T 1050 140;
+                    M -50 150 Q 200 40, 450 160 T 950 140 T 1050 160
+                  "
+                />
               )}
-              {button && <MoreArrowPill text={button.text} href={button.href} tone="light" />}
-            </div>
-          </div>
+            </path>
+            <path
+              d="M -50 150 Q 200 40, 450 160 T 950 140 T 1050 160"
+              fill="none"
+              stroke="#38bdf8"
+              strokeWidth="4"
+              strokeOpacity="0.4"
+              strokeDasharray="12 12"
+            >
+              {!reduce && (
+                <animate
+                  attributeName="d"
+                  dur="8s"
+                  repeatCount="indefinite"
+                  values="
+                    M -50 150 Q 200 40, 450 160 T 950 140 T 1050 160;
+                    M -50 140 Q 200 240, 450 120 T 950 180 T 1050 140;
+                    M -50 150 Q 200 40, 450 160 T 950 140 T 1050 160
+                  "
+                />
+              )}
+            </path>
+          </svg>
 
-          <div className="flex flex-col">
-            <div className="flex flex-1 flex-col justify-between gap-[48px] pb-[24px] pt-[48px] lg:px-[clamp(1.5rem,3vw,3rem)] lg:pb-[clamp(1.5rem,3vw,3rem)] lg:pt-[clamp(1.5rem,3vw,3rem)]">
-              <MoreTwoTone title={brand} accent={brandAccent} accentFirst balance tag="h3" className="max-w-[9em] text-left text-[length:clamp(3rem,2rem+3vw,6rem)] leading-[0.86]" />
-              <div className="flex flex-col items-start gap-[32px] lg:flex-row lg:items-end lg:justify-between">
-                {links.length > 0 && (
-                  <ul className="flex flex-col items-start gap-[14px]">
-                    {links.map((link, index) => (
-                      <li key={index}>
-                        <a
-                          href={link.href}
-                          className="text-[length:1.375rem] leading-[1] tracking-[-0.02em] underline decoration-1 underline-offset-[0.3em] transition-opacity duration-500 hover:opacity-60"
-                        >
-                          {link.text}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                {socials.length > 0 && (
-                  <ul className="flex gap-[6px]">
-                    {socials.map((social, index) => (
-                      <li key={index}>
-                        <a
-                          href={social.href}
-                          aria-label={social.label}
-                          className="flex size-[44px] items-center justify-center rounded-full bg-secondary text-secondary-foreground transition-colors duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] hover:bg-primary hover:text-primary-foreground"
-                        >
-                          <svg viewBox="0 0 24 24" aria-hidden="true" className="size-[22px]" fill="currentColor" fillRule="evenodd">
-                            <path d={ICONS[social.icon] ?? FALLBACK_ICON} />
-                          </svg>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {logoSrc ? (
-          <div className="mt-[clamp(1.5rem,3vw,3rem)] py-6 flex justify-center items-center">
-            <img
-              src={logoSrc}
-              alt="FONS VITAE Logo"
-              className="h-20 sm:h-28 md:h-36 lg:h-44 w-auto object-contain rounded-2xl shadow-xl border border-slate-200/50 bg-white p-3"
+          {/* High-Resolution Lineup Image of all 7 Cans */}
+          <div className="relative z-10 flex flex-col items-center">
+            <motion.img
+              src={lineupImageSrc}
+              alt="FONS VITAE H2 Wasser & 6 Direktsaft-Variationen Produktaufreihung"
+              className="w-full h-auto max-h-[380px] sm:max-h-[460px] md:max-h-[520px] object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-[1.02]"
+              initial={reduce ? false : { opacity: 0, scale: 0.96 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: slow, ease, delay: 0.2 }}
             />
+
+            {/* Flavor Labels Bar */}
+            <div className="w-full mt-6 pt-6 border-t border-slate-200/80 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2 sm:gap-3 text-center">
+              {FLAVOR_PILLS.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white/90 border border-slate-200 rounded-xl py-2 px-2 shadow-xs transition hover:border-[#0A1C3A] hover:bg-white hover:shadow-md"
+                >
+                  <span className="block font-extrabold text-[#0A1C3A] text-xs sm:text-sm tracking-tight leading-tight">
+                    {item.name}
+                  </span>
+                  <span className="block text-[10px] sm:text-xs text-slate-500 font-semibold truncate mt-0.5">
+                    {item.sub}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
-        ) : wordmarkLines.length > 0 ? (
-          <div className="mt-[clamp(1.5rem,3vw,3rem)] pb-[0.04em]">
-            <FitText lines={wordmarkLines} ariaLabel={wordmark} className="text-foreground" lineClassName="text-center text-[length:var(--text-display)] font-bold leading-[0.8] tracking-[-0.03em]" />
-          </div>
-        ) : null}
-        <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-t border-foreground/15 py-[22px] lg:py-[28px]">
-          <p className="text-[length:1.125rem] leading-[0.92] tracking-[-0.02em]">{copyright}</p>
-          {credit && (
-            <a href={credit.href} className="text-[length:1.125rem] leading-[0.92] tracking-[-0.02em] underline decoration-1 underline-offset-[0.3em]">
-              {credit.text}
-            </a>
+        </motion.div>
+
+        {/* Action Button */}
+        {button && (
+          <motion.div
+            initial={reduce ? false : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: slow, ease, delay: 0.3 }}
+            className="mt-4 mb-10"
+          >
+            <MoreArrowPill text={button.text} href={button.href} />
+          </motion.div>
+        )}
+
+        {/* Clean Footer Bottom Bar with Socials & Copyright */}
+        <div className="w-full max-w-6xl pt-8 border-t border-slate-300/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-600">
+          <p className="font-semibold text-center sm:text-left">{copyright}</p>
+
+          {socials.length > 0 && (
+            <ul className="flex items-center gap-3">
+              {socials.map((social, index) => (
+                <li key={index}>
+                  <a
+                    href={social.href}
+                    aria-label={social.label}
+                    className="flex size-9 items-center justify-center rounded-full bg-slate-200/80 text-[#0A1C3A] hover:bg-[#0A1C3A] hover:text-white transition-colors duration-300 shadow-xs"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true" className="size-4" fill="currentColor" fillRule="evenodd">
+                      <path d={ICONS[social.icon] ?? FALLBACK_ICON} />
+                    </svg>
+                  </a>
+                </li>
+              ))}
+            </ul>
           )}
         </div>
-      </footer>
+      </div>
     </section>
   );
 };

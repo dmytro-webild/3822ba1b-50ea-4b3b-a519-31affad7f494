@@ -116,33 +116,15 @@ function LayoutContent() {
 
       <footer data-webild-section="Footer" data-section="footer" className="relative z-10">
         <FooterPanelWordmark
-          title="CLEAN & PURE HYDRATION"
+          title="DAS GESAMTE FONS VITAE SORTIMENT"
+          subtitle="H2 WASSERSTOFF-WASSER & 6 EDLE FRUCHTSAFT-KREATIONEN"
           button={{
-            text: "Jetzt Produkte wählen",
+            text: "Jetzt Produkte entdecken",
             href: "#shop"
           }}
           brand="FONS VITAE"
-          brandAccent="Industriestr. 23 A, 61449 Steinbach Ts."
-          wordmark=""
           logoSrc="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794862275041-s5qagrxx.jpg"
-          links={[
-            {
-              text: "Impressum",
-              href: "#",
-            },
-            {
-              text: "Datenschutz",
-              href: "#",
-            },
-            {
-              text: "AGB",
-              href: "#",
-            },
-            {
-              text: "Widerrufsbelehrung",
-              href: "#",
-            }
-          ]}
+          lineupImageSrc="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794880807544-312gbdxq.png"
           socials={[
             {
               label: "Instagram (Coming Soon)",
@@ -156,23 +138,6 @@ function LayoutContent() {
             }
           ]}
           copyright="© FONS VITAE – Die Quelle des Lebens. Alle Rechte vorbehalten. Kundenservice: 017660945171 | info@fonsvitae.de"
-          credit={{
-            text: "Impressum & Legal",
-            href: "#"
-          }}
-          imageSrc="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794865744193-o2e363kc.png"
-          imageAlt="FONS VITAE H2 Dose"
-          model={{
-            at: 0,
-            rz: 0,
-            ry: 1080,
-            rx: 6,
-            scale: 0.66,
-            y: 6,
-            sm: {
-              opacity: 0
-            }
-          }}
         />
 
         {/* Footer Legal Quick Bar */}
