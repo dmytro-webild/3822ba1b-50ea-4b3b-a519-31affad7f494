@@ -35,7 +35,6 @@ const NavbarPillLinks = ({
   primaryButton = { text: "Shop all", href: "#pricing" },
   socials = [],
   menuText = "Menu",
-  closeText = "Close",
 }: NavbarPillLinksProps) => {
   const reduce = useReducedMotion();
   const [open, setOpen] = useState(false);
@@ -132,16 +131,6 @@ const NavbarPillLinks = ({
             </button>
 
             {primaryButton && <MoreArrowPill text={primaryButton.text} href={primaryButton.href} tone="light" />}
-            <button
-              type="button"
-              aria-expanded={open}
-              aria-label={open ? closeText : menuText}
-              onClick={() => setOpen((value) => !value)}
-              className="relative flex size-[clamp(2.5rem,2.2rem+1vw,3rem)] items-center justify-center rounded-full bg-primary text-primary-foreground min-[94.5rem]:hidden"
-            >
-              <div aria-hidden="true" className={`absolute h-[1.5px] w-[1rem] bg-current transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] ${open ? "rotate-45" : "-translate-y-[0.2rem]"}`} />
-              <div aria-hidden="true" className={`absolute h-[1.5px] w-[1rem] bg-current transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] ${open ? "-rotate-45" : "translate-y-[0.2rem]"}`} />
-            </button>
           </div>
         </div>
       </motion.nav>
