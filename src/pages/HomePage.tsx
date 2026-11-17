@@ -905,7 +905,7 @@ export default function HomePage() {
           media="image"
           title="Bewertungen"
           label="Erfahrungen"
-          imageSrc="https://img.b2bpic.net/free-photo/refreshing-drink-with-apple-arrangement_23-2150928884.jpg"
+          imageSrc="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794876824895-o64qlmg5.png"
           items={[
             {
               title: "Schnelle Erholung",
