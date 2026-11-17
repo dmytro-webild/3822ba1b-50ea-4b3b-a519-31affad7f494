@@ -186,51 +186,6 @@ const FooterPanelWordmark = ({
           {/* Internal Stream Banner Glow */}
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-blue-500/10 to-indigo-500/5 pointer-events-none" />
 
-          {/* SVG Animated Water Ribbon Weaving Horizontally Behind Carousel */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" preserveAspectRatio="none" viewBox="0 0 1000 300">
-            <path
-              d="M -50 150 Q 200 40, 450 160 T 950 140 T 1050 160"
-              fill="none"
-              stroke="#0284c7"
-              strokeWidth="12"
-              strokeOpacity="0.2"
-            >
-              {!reduce && (
-                <animate
-                  attributeName="d"
-                  dur="8s"
-                  repeatCount="indefinite"
-                  values="
-                    M -50 150 Q 200 40, 450 160 T 950 140 T 1050 160;
-                    M -50 140 Q 200 240, 450 120 T 950 180 T 1050 140;
-                    M -50 150 Q 200 40, 450 160 T 950 140 T 1050 160
-                  "
-                />
-              )}
-            </path>
-            <path
-              d="M -50 150 Q 200 40, 450 160 T 950 140 T 1050 160"
-              fill="none"
-              stroke="#38bdf8"
-              strokeWidth="4"
-              strokeOpacity="0.4"
-              strokeDasharray="12 12"
-            >
-              {!reduce && (
-                <animate
-                  attributeName="d"
-                  dur="8s"
-                  repeatCount="indefinite"
-                  values="
-                    M -50 150 Q 200 40, 450 160 T 950 140 T 1050 160;
-                    M -50 140 Q 200 240, 450 120 T 950 180 T 1050 140;
-                    M -50 150 Q 200 40, 450 160 T 950 140 T 1050 160
-                  "
-                />
-              )}
-            </path>
-          </svg>
-
           {/* Smooth Product Carousel Slider */}
           <div className="relative z-10 flex flex-col items-center">
             <div className="relative w-full flex items-center justify-between min-h-[320px] sm:min-h-[400px]">
