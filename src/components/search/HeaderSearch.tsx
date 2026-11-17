@@ -127,11 +127,107 @@ const SEARCH_DATABASE: SearchItem[] = [
   },
 ];
 
+interface SearchResultsListProps {
+  results: SearchItem[];
+  selectedIndex: number;
+  setSelectedIndex: (i: number) => void;
+  handleSelect: (href: string) => void;
+  query: string;
+}
+
+function SearchResultsList({
+  results,
+  selectedIndex,
+  setSelectedIndex,
+  handleSelect,
+  query,
+}: SearchResultsListProps) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 4 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 4 }}
+      className="mt-2 bg-white border border-slate-200 shadow-2xl rounded-2xl p-3 max-h-[60vh] sm:max-h-[70vh] overflow-y-auto space-y-2 text-[#0A1C3A] w-full box-border"
+    >
+      <div className="px-3 pt-1 pb-2 flex items-center justify-between border-b border-slate-100">
+        <span className="text-[11px] font-extrabold uppercase tracking-wider text-slate-500">
+          Suchergebnisse ({results.length})
+        </span>
+        <span className="text-[10px] text-slate-400 font-medium">
+          Esc zum Schließen
+        </span>
+      </div>
+
+      {results.length > 0 ? (
+        <ul className="space-y-1.5" role="listbox">
+          {results.map((item, index) => {
+            const IconComp = item.icon;
+            const isSelected = index === selectedIndex;
+
+            return (
+              <li key={item.id} role="option" aria-selected={isSelected}>
+                <button
+                  type="button"
+                  onClick={() => handleSelect(item.href)}
+                  onMouseEnter={() => setSelectedIndex(index)}
+                  className={`w-full text-left p-3 rounded-xl transition flex items-start gap-3 group border ${
+                    isSelected
+                      ? "bg-slate-100 border-[#0A1C3A]/30 text-[#0A1C3A] shadow-sm"
+                      : "bg-white border-transparent hover:bg-slate-50 text-slate-800"
+                  }`}
+                >
+                  <div
+                    className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition ${
+                      isSelected
+                        ? "bg-[#0A1C3A] text-white"
+                        : "bg-slate-100 text-[#0A1C3A] group-hover:bg-[#0A1C3A] group-hover:text-white"
+                    }`}
+                  >
+                    <IconComp className="w-4 h-4" />
+                  </div>
+
+                  <div className="flex-grow min-w-0">
+                    <div className="flex items-center gap-2 mb-0.5 flex-wrap">
+                      <span className="text-[10px] font-extrabold uppercase tracking-wider bg-sky-50 text-sky-700 px-2 py-0.5 rounded border border-sky-200/60">
+                        {item.category}
+                      </span>
+                      <span className="text-xs font-black text-[#0A1C3A] truncate">
+                        {item.title}
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+
+                  <div className="shrink-0 self-center opacity-0 group-hover:opacity-100 transition text-[#0A1C3A]">
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <div className="py-8 text-center space-y-2">
+          <p className="text-sm font-bold text-[#0A1C3A]">
+            Keine Ergebnisse gefunden
+          </p>
+          <p className="text-xs text-slate-500 max-w-[260px] mx-auto">
+            Für &quot;{query}&quot; konnte nichts Passendes gefunden werden. Versuchen Sie es mit Begriffen wie &quot;Wasserstoff&quot;, &quot;Studien&quot; oder &quot;Quelle&quot;.
+          </p>
+        </div>
+      )}
+    </motion.div>
+  );
+}
+
 export default function HeaderSearch() {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [selectedIndex, setSelectedIndex] = useState(-1);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const desktopInputRef = useRef<HTMLInputElement>(null);
+  const mobileInputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const searchInputId = useId();
 
@@ -157,7 +253,11 @@ export default function HeaderSearch() {
   useEffect(() => {
     if (isOpen) {
       setTimeout(() => {
-        inputRef.current?.focus();
+        if (window.innerWidth < 640) {
+          mobileInputRef.current?.focus();
+        } else {
+          desktopInputRef.current?.focus();
+        }
       }, 50);
     } else {
       setQuery("");
@@ -167,16 +267,18 @@ export default function HeaderSearch() {
 
   // Click outside listener
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
+    function handleClickOutside(event: MouseEvent | TouchEvent) {
       if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
         setIsOpen(false);
       }
     }
     if (isOpen) {
       document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("touchstart", handleClickOutside);
     }
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
     };
   }, [isOpen]);
 
@@ -239,158 +341,153 @@ export default function HeaderSearch() {
 
   return (
     <div ref={containerRef} className="relative">
-      {/* Search Toggle Icon Button */}
-      {!isOpen && (
-        <button
-          type="button"
-          onClick={() => setIsOpen(true)}
-          className="flex size-[clamp(2.5rem,2.2rem+1vw,3rem)] items-center justify-center rounded-full bg-[#0A1C3A] text-white hover:bg-[#12284c] active:scale-95 transition shadow-sm border border-slate-700/50"
-          aria-label="Suche öffnen"
-          aria-expanded={false}
-        >
-          <Search className="w-4 h-4 sm:w-5 sm:h-5 text-slate-100" />
-        </button>
-      )}
+      {/* Search Toggle Icon Button - Always visible in Row 1 */}
+      <button
+        type="button"
+        onClick={() => setIsOpen((prev) => !prev)}
+        className={`flex size-[clamp(2.5rem,2.2rem+1vw,3rem)] items-center justify-center rounded-full bg-[#0A1C3A] text-white hover:bg-[#12284c] active:scale-95 transition shadow-sm border border-slate-700/50 ${
+          isOpen ? "ring-2 ring-sky-400 bg-[#12284c]" : ""
+        }`}
+        aria-label={isOpen ? "Suche schließen" : "Suche öffnen"}
+        aria-expanded={isOpen}
+      >
+        <Search className="w-4 h-4 sm:w-5 sm:h-5 text-slate-100" />
+      </button>
 
-      {/* Expandable Search Input and Results */}
+      {/* Expandable Search Overlay & Second Row */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: -5 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: -5 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute right-0 top-0 z-50 w-[85vw] max-w-[420px] sm:w-[380px] md:w-[420px]"
-          >
-            {/* Search Input Bar Container */}
-            <div className="bg-white border border-slate-300 shadow-2xl rounded-2xl p-2 flex items-center gap-2 ring-2 ring-[#0A1C3A]/20">
-              <div className="pl-3 text-[#0A1C3A] flex items-center justify-center shrink-0">
-                <Search className="w-5 h-5 text-[#0A1C3A]" />
-              </div>
+          <>
+            {/* DESKTOP SEARCH OVERLAY (sm: and above) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: -5 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: -5 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="hidden sm:block absolute right-0 top-0 z-50 sm:w-[380px] md:w-[420px]"
+            >
+              <div className="bg-white border border-slate-300 shadow-2xl rounded-2xl p-2 flex items-center gap-2 ring-2 ring-[#0A1C3A]/20">
+                <div className="pl-3 text-[#0A1C3A] flex items-center justify-center shrink-0">
+                  <Search className="w-5 h-5 text-[#0A1C3A]" />
+                </div>
 
-              <label htmlFor={searchInputId} className="sr-only">Was suchen Sie?</label>
-              <input
-                id={searchInputId}
-                ref={inputRef}
-                type="text"
-                value={query}
-                onChange={(e) => {
-                  setQuery(e.target.value);
-                  setSelectedIndex(-1);
-                }}
-                onKeyDown={handleKeyDown}
-                placeholder="Was suchen Sie?"
-                className="w-full bg-transparent text-[#0A1C3A] placeholder:text-slate-400 text-sm font-semibold focus:outline-none py-1.5"
-                autoComplete="off"
-              />
+                <label htmlFor={`${searchInputId}-desktop`} className="sr-only">Was suchen Sie?</label>
+                <input
+                  id={`${searchInputId}-desktop`}
+                  ref={desktopInputRef}
+                  type="text"
+                  value={query}
+                  onChange={(e) => {
+                    setQuery(e.target.value);
+                    setSelectedIndex(-1);
+                  }}
+                  onKeyDown={handleKeyDown}
+                  placeholder="Was suchen Sie?"
+                  className="w-full bg-transparent text-[#0A1C3A] placeholder:text-slate-400 text-sm font-semibold focus:outline-none py-1.5"
+                  autoComplete="off"
+                />
 
-              {/* Clear button if text entered */}
-              {query.length > 0 && (
+                {query.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setQuery("");
+                      setSelectedIndex(-1);
+                      desktopInputRef.current?.focus();
+                    }}
+                    className="p-1 rounded-full text-slate-400 hover:text-[#0A1C3A] hover:bg-slate-100 transition shrink-0"
+                    aria-label="Eingabe löschen"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                )}
+
                 <button
                   type="button"
-                  onClick={() => {
-                    setQuery("");
-                    setSelectedIndex(-1);
-                    inputRef.current?.focus();
-                  }}
-                  className="p-1 rounded-full text-slate-400 hover:text-[#0A1C3A] hover:bg-slate-100 transition"
-                  aria-label="Eingabe löschen"
+                  onClick={() => setIsOpen(false)}
+                  className="p-1.5 rounded-xl bg-[#0A1C3A] text-white hover:bg-[#12284c] transition shrink-0"
+                  aria-label="Suche schließen"
                 >
                   <X className="w-4 h-4" />
                 </button>
+              </div>
+
+              {query.trim().length > 0 && (
+                <SearchResultsList
+                  results={results}
+                  selectedIndex={selectedIndex}
+                  setSelectedIndex={setSelectedIndex}
+                  handleSelect={handleSelect}
+                  query={query}
+                />
               )}
+            </motion.div>
 
-              {/* Close Button */}
-              <button
-                type="button"
-                onClick={() => setIsOpen(false)}
-                className="p-1.5 rounded-xl bg-[#0A1C3A] text-white hover:bg-[#12284c] transition shrink-0"
-                aria-label="Suche schließen"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
-
-            {/* Results Dropdown Container */}
-            {query.trim().length > 0 && (
-              <motion.div
-                initial={{ opacity: 0, y: 4 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 4 }}
-                className="mt-2 bg-white border border-slate-200 shadow-2xl rounded-2xl p-3 max-h-[70vh] overflow-y-auto space-y-2 text-[#0A1C3A]"
-              >
-                <div className="px-3 pt-1 pb-2 flex items-center justify-between border-b border-slate-100">
-                  <span className="text-[11px] font-extrabold uppercase tracking-wider text-slate-500">
-                    Suchergebnisse ({results.length})
-                  </span>
-                  <span className="text-[10px] text-slate-400 font-medium">
-                    Esc zum Schließen
-                  </span>
+            {/* MOBILE SEARCH ROW 2 (under sm breakpoint) */}
+            <motion.div
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="block sm:hidden fixed left-0 right-0 top-[clamp(4.25rem,14vw,5rem)] px-4 z-50 w-full max-w-full box-border"
+            >
+              <div className="bg-white border border-slate-300 shadow-2xl rounded-2xl p-2 flex items-center gap-2 ring-2 ring-[#0A1C3A]/20 w-full box-border">
+                <div className="pl-3 text-[#0A1C3A] flex items-center justify-center shrink-0">
+                  <Search className="w-5 h-5 text-[#0A1C3A]" />
                 </div>
 
-                {results.length > 0 ? (
-                  <ul className="space-y-1.5" role="listbox">
-                    {results.map((item, index) => {
-                      const IconComp = item.icon;
-                      const isSelected = index === selectedIndex;
+                <label htmlFor={`${searchInputId}-mobile`} className="sr-only">Was suchen Sie?</label>
+                <input
+                  id={`${searchInputId}-mobile`}
+                  ref={mobileInputRef}
+                  type="text"
+                  value={query}
+                  onChange={(e) => {
+                    setQuery(e.target.value);
+                    setSelectedIndex(-1);
+                  }}
+                  onKeyDown={handleKeyDown}
+                  placeholder="Was suchen Sie?"
+                  className="w-full bg-transparent text-[#0A1C3A] placeholder:text-slate-400 text-sm font-semibold focus:outline-none py-1.5"
+                  autoComplete="off"
+                />
 
-                      return (
-                        <li key={item.id} role="option" aria-selected={isSelected}>
-                          <button
-                            type="button"
-                            onClick={() => handleSelect(item.href)}
-                            onMouseEnter={() => setSelectedIndex(index)}
-                            className={`w-full text-left p-3 rounded-xl transition flex items-start gap-3 group border ${
-                              isSelected
-                                ? "bg-slate-100 border-[#0A1C3A]/30 text-[#0A1C3A] shadow-sm"
-                                : "bg-white border-transparent hover:bg-slate-50 text-slate-800"
-                            }`}
-                          >
-                            <div
-                              className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition ${
-                                isSelected
-                                  ? "bg-[#0A1C3A] text-white"
-                                  : "bg-slate-100 text-[#0A1C3A] group-hover:bg-[#0A1C3A] group-hover:text-white"
-                              }`}
-                            >
-                              <IconComp className="w-4 h-4" />
-                            </div>
-
-                            <div className="flex-grow min-w-0">
-                              <div className="flex items-center gap-2 mb-0.5 flex-wrap">
-                                <span className="text-[10px] font-extrabold uppercase tracking-wider bg-sky-50 text-sky-700 px-2 py-0.5 rounded border border-sky-200/60">
-                                  {item.category}
-                                </span>
-                                <span className="text-xs font-black text-[#0A1C3A] truncate">
-                                  {item.title}
-                                </span>
-                              </div>
-                              <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
-                                {item.description}
-                              </p>
-                            </div>
-
-                            <div className="shrink-0 self-center opacity-0 group-hover:opacity-100 transition text-[#0A1C3A]">
-                              <ArrowRight className="w-4 h-4" />
-                            </div>
-                          </button>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                ) : (
-                  <div className="py-8 text-center space-y-2">
-                    <p className="text-sm font-bold text-[#0A1C3A]">
-                      Keine Ergebnisse gefunden
-                    </p>
-                    <p className="text-xs text-slate-500 max-w-[260px] mx-auto">
-                      Für &quot;{query}&quot; konnte nichts Passendes gefunden werden. Versuchen Sie es mit Begriffen wie &quot;Wasserstoff&quot;, &quot;Studien&quot; oder &quot;Quelle&quot;.
-                    </p>
-                  </div>
+                {query.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setQuery("");
+                      setSelectedIndex(-1);
+                      mobileInputRef.current?.focus();
+                    }}
+                    className="p-1 rounded-full text-slate-400 hover:text-[#0A1C3A] hover:bg-slate-100 transition shrink-0"
+                    aria-label="Eingabe löschen"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
                 )}
-              </motion.div>
-            )}
-          </motion.div>
+
+                <button
+                  type="button"
+                  onClick={() => setIsOpen(false)}
+                  className="p-1.5 rounded-xl bg-[#0A1C3A] text-white hover:bg-[#12284c] transition shrink-0"
+                  aria-label="Suche schließen"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+
+              {query.trim().length > 0 && (
+                <SearchResultsList
+                  results={results}
+                  selectedIndex={selectedIndex}
+                  setSelectedIndex={setSelectedIndex}
+                  handleSelect={handleSelect}
+                  query={query}
+                />
+              )}
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </div>
