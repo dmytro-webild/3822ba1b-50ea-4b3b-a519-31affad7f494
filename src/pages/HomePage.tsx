@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import HeroWordmarkProduct from "@/components/sections/hero/HeroWordmarkProduct";
 import ProductCompareTable from "@/components/sections/product/ProductCompareTable";
 import TestimonialPhotoRail from "@/components/sections/testimonial/TestimonialPhotoRail";
@@ -9,9 +8,7 @@ import { useCart, type ProductDetailInfo } from "@/context/CartContext";
 import {
   ShoppingBag,
   Info,
-  Check,
-  Play,
-  ArrowRight
+  Check
 } from "lucide-react";
 
 const CAN_IMAGE_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794865744193-o2e363kc.png";
@@ -97,7 +94,7 @@ const JUICE_DESCRIPTIONS: Record<string, string> = {
 };
 
 export default function HomePage() {
-  const { addToCart, openProductDetail, openVideoModal } = useCart();
+  const { addToCart, openProductDetail } = useCart();
 
   // Juice selection state
   const [selectedJuiceFlavor, setSelectedJuiceFlavor] = useState("Blaubeere (Blueberry)");
@@ -166,7 +163,73 @@ export default function HomePage() {
         />
       </div>
 
-      {/* 2. VORTEILE IM VERGLEICH (Product Comparison Section) */}
+      {/* 2. UNSERE QUELLE */}
+      <div id="quelle" data-webild-section="WaterSourceMinerals" data-webild-section-id="WaterSourceMinerals-1" data-section="source">
+        <section className="py-20 px-6 bg-white font-sans text-[#0A1C3A] border-b border-slate-300">
+          <div className="max-w-5xl mx-auto space-y-10">
+            <div className="text-center space-y-3">
+              <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-[#f4f6f8] px-4 py-1.5 rounded-full inline-block border border-slate-300">
+                Natürliche Reinheit
+              </span>
+              <h2 className="text-4xl lg:text-5xl font-black text-[#0A1C3A] uppercase tracking-tight">
+                UNSERE QUELLE
+              </h2>
+              <p className="text-slate-700 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed font-medium">
+                Unser Quellwasser entspringt aus 136 Metern Tiefe und wird durch natürliche Gesteinsschichten gefiltered und tiefenmineralisiert. Diese geschützte Tiefenquelle garantiert höchste mikrobiologische Reinheit sowie ein ausgewogenes Mineralstoffprofil mit optimalem pH-Wert – die reine, unbelastete Basis für unser molekular angereichertes H2-Wasserstoffwasser.
+              </p>
+            </div>
+
+            {/* Mineral Table */}
+            <div className="bg-white rounded-2xl border border-slate-300 shadow-xl overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="bg-[#0A1C3A] text-white text-xs sm:text-sm uppercase font-black tracking-wider">
+                      <th className="py-4 px-6 border-b border-[#0A1C3A]">Parameter / Mineralstoff</th>
+                      <th className="py-4 px-6 border-b border-[#0A1C3A]">Wert / Konzentration</th>
+                      <th className="py-4 px-6 border-b border-[#0A1C3A]">Bedeutung &amp; Eigenschaften</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 text-xs sm:text-sm text-slate-800 font-semibold">
+                    <tr className="hover:bg-slate-50 transition">
+                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">pH-Wert</td>
+                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">7,8 (Leicht basisch)</td>
+                      <td className="py-4 px-6 text-slate-600">Unterstützt ein natürliches Säure-Basen-Gleichgewicht</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50 transition">
+                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Calcium (Ca²⁺)</td>
+                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">68 mg/L</td>
+                      <td className="py-4 px-6 text-slate-600">Essentieller Mineralstoff für Knochen, Zähne und Muskelkontraktion</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50 transition">
+                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Magnesium (Mg²⁺)</td>
+                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">18 mg/L</td>
+                      <td className="py-4 px-6 text-slate-600">Unterstützt den Energiestoffwechsel und das Nervensystem</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50 transition">
+                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Natrium (Na⁺)</td>
+                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">9,5 mg/L (Natriumarm)</td>
+                      <td className="py-4 px-6 text-slate-600">Sehr geringer Natriumgehalt – ideal für täglichen Konsum</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50 transition">
+                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Kalium (K⁺)</td>
+                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">2,4 mg/L</td>
+                      <td className="py-4 px-6 text-slate-600">Trägt zur Zellhydratation und normalen Muskelfunktion bei</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50 transition">
+                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Nitrat (NO₃⁻)</td>
+                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">&lt; 1,0 mg/L (Reinste Qualität)</td>
+                      <td className="py-4 px-6 text-slate-600">Nahezu nitratfrei – garantiert frei von Umweltbelastungen</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {/* 3. VORTEILE IM VERGLEICH (Product Comparison Section) */}
       <div id="vergleich" data-webild-section="ProductCompareTable" data-webild-section-id="ProductCompareTable-1" data-section="product">
         <ProductCompareTable
           media="image"
@@ -220,7 +283,7 @@ export default function HomePage() {
         />
       </div>
 
-      {/* 3. UNSERE PRODUKTE (Shop & Bundles Section) */}
+      {/* 4. UNSERE PRODUKTE (Shop & Bundles Section) */}
       <section id="shop" className="py-20 px-6 max-w-7xl mx-auto font-sans">
         <div className="text-center space-y-3 mb-16">
           <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-[#e2e8f0] px-4 py-1.5 rounded-full inline-block border border-slate-300">
@@ -492,73 +555,52 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION: UNSERE QUELLE */}
-      <div id="quelle" data-webild-section="WaterSourceMinerals" data-webild-section-id="WaterSourceMinerals-1" data-section="source">
-        <section className="py-20 px-6 bg-white font-sans text-[#0A1C3A] border-b border-slate-300">
-          <div className="max-w-5xl mx-auto space-y-10">
-            <div className="text-center space-y-3">
-              <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-[#f4f6f8] px-4 py-1.5 rounded-full inline-block border border-slate-300">
-                Natürliche Reinheit
-              </span>
-              <h2 className="text-4xl lg:text-5xl font-black text-[#0A1C3A] uppercase tracking-tight">
-                UNSERE QUELLE
-              </h2>
-              <p className="text-slate-700 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed font-medium">
-                Unser Quellwasser entspringt aus 136 Metern Tiefe und wird durch natürliche Gesteinsschichten gefiltered und tiefenmineralisiert. Diese geschützte Tiefenquelle garantiert höchste mikrobiologische Reinheit sowie ein ausgewogenes Mineralstoffprofil mit optimalem pH-Wert – die reine, unbelastete Basis für unser molekular angereichertes H2-Wasserstoffwasser.
-              </p>
-            </div>
-
-            {/* Mineral Table */}
-            <div className="bg-white rounded-2xl border border-slate-300 shadow-xl overflow-hidden">
-              <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse">
-                  <thead>
-                    <tr className="bg-[#0A1C3A] text-white text-xs sm:text-sm uppercase font-black tracking-wider">
-                      <th className="py-4 px-6 border-b border-[#0A1C3A]">Parameter / Mineralstoff</th>
-                      <th className="py-4 px-6 border-b border-[#0A1C3A]">Wert / Konzentration</th>
-                      <th className="py-4 px-6 border-b border-[#0A1C3A]">Bedeutung &amp; Eigenschaften</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-200 text-xs sm:text-sm text-slate-800 font-semibold">
-                    <tr className="hover:bg-slate-50 transition">
-                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">pH-Wert</td>
-                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">7,8 (Leicht basisch)</td>
-                      <td className="py-4 px-6 text-slate-600">Unterstützt ein natürliches Säure-Basen-Gleichgewicht</td>
-                    </tr>
-                    <tr className="hover:bg-slate-50 transition">
-                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Calcium (Ca²⁺)</td>
-                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">68 mg/L</td>
-                      <td className="py-4 px-6 text-slate-600">Essentieller Mineralstoff für Knochen, Zähne und Muskelkontraktion</td>
-                    </tr>
-                    <tr className="hover:bg-slate-50 transition">
-                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Magnesium (Mg²⁺)</td>
-                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">18 mg/L</td>
-                      <td className="py-4 px-6 text-slate-600">Unterstützt den Energiestoffwechsel und das Nervensystem</td>
-                    </tr>
-                    <tr className="hover:bg-slate-50 transition">
-                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Natrium (Na⁺)</td>
-                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">9,5 mg/L (Natriumarm)</td>
-                      <td className="py-4 px-6 text-slate-600">Sehr geringer Natriumgehalt – ideal für täglichen Konsum</td>
-                    </tr>
-                    <tr className="hover:bg-slate-50 transition">
-                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Kalium (K⁺)</td>
-                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">2,4 mg/L</td>
-                      <td className="py-4 px-6 text-slate-600">Trägt zur Zellhydratation und normalen Muskelfunktion bei</td>
-                    </tr>
-                    <tr className="hover:bg-slate-50 transition">
-                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Nitrat (NO₃⁻)</td>
-                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">&lt; 1,0 mg/L (Reinste Qualität)</td>
-                      <td className="py-4 px-6 text-slate-600">Nahezu nitratfrei – garantiert frei von Umweltbelastungen</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </section>
+      {/* 5. KUNDENBEWERTUNGEN (DAS SAGEN UNSERE KUNDEN) */}
+      <div id="testimonial" data-webild-section="TestimonialPhotoRail" data-webild-section-id="TestimonialPhotoRail-1" data-section="testimonial">
+        <TestimonialPhotoRail
+          media="image"
+          title="DAS SAGEN UNSERE KUNDEN"
+          label="Erfahrungen"
+          imageSrc="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794876824895-o64qlmg5.png"
+          items={[
+            {
+              title: "Schnelle Erholung",
+              quote: "Seit ich H2-Wasser vor harten Einheiten trinke, erhole ich mich spürbar schneller.",
+              name: "Maximilian Fischer",
+              badge: "Athlet"
+            },
+            {
+              title: "Geistige Klarheit",
+              quote: "Kein Nachmittagstief mehr im Büro. Reinstes Wasserstoff-Wasser für Fokus.",
+              name: "Nina Richter",
+              badge: "Biohackerin"
+            },
+            {
+              title: "Healthy Beauty",
+              quote: "Ich trinke mindestens 3 Dosen täglich. Die Haut wirkt viel strahlender.",
+              name: "Stefan Wolf",
+              badge: "Fitness-Coach"
+            },
+            {
+              title: "Höchste Qualität",
+              quote: "Endlich echtes H2 Wasser in unkomplizierten BPA-freien Dosen.",
+              name: "Anna Wagner",
+              badge: "Sportlerin"
+            }
+          ]}
+          model={{
+            rx: 25,
+            ry: 520,
+            rz: 0,
+            scale: 0.75,
+            sm: {
+              scale: 0.85
+            }
+          }}
+        />
       </div>
 
-      {/* BUNDLES & COMBOS SECTION */}
+      {/* 6. EMPFOHLENE BUNDLES */}
       <div id="bundles" data-webild-section="PricingRingCards" data-webild-section-id="PricingRingCards-1" data-section="pricing">
         <section className="py-20 bg-[#f4f6f8] text-[#0A1C3A] font-sans border-y border-slate-300">
           <div className="max-w-7xl mx-auto px-6">
@@ -567,7 +609,7 @@ export default function HomePage() {
                 Vorteilspakete
               </span>
               <h2 className="text-4xl lg:text-5xl font-black text-[#0A1C3A] uppercase tracking-tight">
-                Bundles
+                Empfohlene Bundles
               </h2>
               <p className="text-slate-600 text-sm max-w-xl mx-auto">
                 Kombiniere molekulares H2 Wasserstoff-Wasser und Fruchtsäfte im Sparpaket.
@@ -658,260 +700,6 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-      </div>
-
-      {/* 5. ÜBER UNS (Brand Philosophy Section) */}
-      <section id="about" className="py-24 bg-white text-[#0A1C3A] font-sans border-t border-slate-300">
-        <div className="max-w-5xl mx-auto px-6 space-y-10 text-center">
-          <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-[#f4f6f8] px-4 py-1.5 rounded-full inline-block border border-slate-300 shadow-sm">
-            Über uns
-          </span>
-          <h2 className="text-4xl lg:text-6xl font-black uppercase tracking-tight text-[#0A1C3A]">
-            FONS VITAE – Die Quelle des Lebens
-          </h2>
-          <div className="w-24 h-1 bg-[#0A1C3A] mx-auto rounded-full" />
-
-          <p className="text-base sm:text-lg lg:text-xl font-medium leading-relaxed text-slate-800 max-w-4xl mx-auto bg-[#f4f6f8] p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-lg text-left sm:text-center">
-            „FONS VITAE – Die Quelle des Lebens. Unser Name ist unser Auftrag: Wir glauben, dass wahre Gesundheit bei der Quelle beginnt. Inspiriert von der jahrhundertealten philosophischen Idee der 'Lebensquelle' verbinden wir dieses tiefe Verständnis mit modernster Wissenschaft. Unsere Philosophie basiert auf drei Säulen: Absolute Qualität, kompromisslose Transparenz und wissenschaftliche Fundierung. Jede Charge unseres molekularen Wasserstoffs wird streng geprüft. Wir bieten keine leeren Versprechen, sondern messbare Hydration auf zellulärer Ebene – für deine Energie, deinen Zellschutz und deine Vitalität.“
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left pt-2">
-            <div className="bg-[#f4f6f8] p-6 rounded-2xl border border-slate-200 shadow-md space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center font-black">
-                01
-              </div>
-              <h3 className="text-lg font-black text-[#0A1C3A] uppercase">Absolute Qualität</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Reinstes Wasserstoff-Wasser in BPA-freien, 100% nachhaltigen Aluminiumdosen für maximale Haltbarkeit des gelösten H2-Gases.
-              </p>
-            </div>
-
-            <div className="bg-[#f4f6f8] p-6 rounded-2xl border border-slate-200 shadow-md space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center font-black">
-                02
-              </div>
-              <h3 className="text-lg font-black text-[#0A1C3A] uppercase">Kompromisslose Transparenz</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Vollständige Deklaration aller Nährwerte. 0 kcal, 0 g Zucker, 0 künstliche Zusatzstoffe. Dosenpfand transparent ausgewiesen.
-              </p>
-            </div>
-
-            <div className="bg-[#f4f6f8] p-6 rounded-2xl border border-slate-200 shadow-md space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center font-black">
-                03
-              </div>
-              <h3 className="text-lg font-black text-[#0A1C3A] uppercase">Wissenschaftliche Fundierung</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Basierend auf aktuellen Studien zur Wirkung von gelöstem Wasserstoff auf Mitochondrien, Laktatabbau und Zellschutz.
-              </p>
-            </div>
-          </div>
-
-          <div className="pt-4">
-            <Link
-              to="/studien"
-              className="inline-flex items-center gap-2 bg-[#0A1C3A] hover:bg-[#12284c] text-white px-8 py-4 rounded-xl text-xs sm:text-sm font-extrabold uppercase tracking-wider shadow-lg transition transform hover:scale-105"
-            >
-              Zu den wissenschaftlichen Studien <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. WISSENSCHAFT & STUDIEN (Science & News Section) */}
-      <section id="science" className="py-24 bg-[#f4f6f8] text-[#0A1C3A] font-sans border-t border-slate-300">
-        <div className="max-w-7xl mx-auto px-6 space-y-12">
-          <div className="text-center space-y-3">
-            <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-white px-4 py-1.5 rounded-full inline-block border border-slate-300">
-              Wissenschaft & News
-            </span>
-            <h2 className="text-4xl lg:text-5xl font-black text-[#0A1C3A] uppercase tracking-tight">
-              Wissenschaft &amp; Studien
-            </h2>
-            <p className="text-slate-600 text-sm max-w-xl mx-auto">
-              Aktuelle Vorträge und klinische Berichte über die Wirkung von molekularem Wasserstoff auf Zellgesundheit, Langlebigkeit und Regeneration.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Video 1 */}
-            <div className="bg-white rounded-2xl border border-slate-300 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-md transition">
-              <div className="space-y-4 p-5">
-                <div
-                  onClick={() => openVideoModal("https://www.youtube-nocookie.com/embed/SDZtVonFPXM")}
-                  className="relative aspect-video rounded-xl overflow-hidden bg-[#0A1C3A] cursor-pointer group"
-                >
-                  <img
-                    src="https://img.youtube.com/vi/SDZtVonFPXM/hqdefault.jpg"
-                    alt="Tyler LeBaron Wasserstoffwasser"
-                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                  />
-                  <div className="absolute inset-0 bg-slate-900/40 flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-[#0A1C3A] text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition border border-white/20">
-                      <Play className="w-5 h-5 fill-current ml-0.5" />
-                    </div>
-                  </div>
-                </div>
-
-                <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#0A1C3A] bg-[#f4f6f8] px-2.5 py-1 rounded-md inline-block border border-slate-200">
-                  Wissenschaft &amp; Langlebigkeit
-                </span>
-
-                <h3 className="text-sm font-extrabold text-[#0A1C3A] leading-snug">
-                  Tyler LeBaron: Wasserstoffwasser, Mitochondriengesundheit, selektive Antioxidantien und Langlebigkeit
-                </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Vortrag von Molekularbiologe Tyler LeBaron über die molekulare Wirkungsweise von H2 im menschlichen Organismus.
-                </p>
-              </div>
-
-              <div className="p-5 pt-0">
-                <button
-                  onClick={() => openVideoModal("https://www.youtube-nocookie.com/embed/SDZtVonFPXM")}
-                  className="w-full bg-[#0A1C3A] hover:bg-[#12284c] text-white py-2.5 rounded-xl text-xs font-extrabold uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition"
-                >
-                  <Play className="w-3.5 h-3.5 fill-current" /> Video ansehen
-                </button>
-              </div>
-            </div>
-
-            {/* Video 2 */}
-            <div className="bg-white rounded-2xl border border-slate-300 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-md transition">
-              <div className="space-y-4 p-5">
-                <div
-                  onClick={() => openVideoModal("https://www.youtube-nocookie.com/embed/uvZgOupWwzg")}
-                  className="relative aspect-video rounded-xl overflow-hidden bg-[#0A1C3A] cursor-pointer group"
-                >
-                  <img
-                    src="https://img.youtube.com/vi/uvZgOupWwzg/hqdefault.jpg"
-                    alt="Erfahrungsbericht Demenz Alzheimer H2 Japan"
-                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                  />
-                  <div className="absolute inset-0 bg-slate-900/40 flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-[#0A1C3A] text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition border border-white/20">
-                      <Play className="w-5 h-5 fill-current ml-0.5" />
-                    </div>
-                  </div>
-                </div>
-
-                <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#0A1C3A] bg-[#f4f6f8] px-2.5 py-1 rounded-md inline-block border border-slate-200">
-                  Zellschutz &amp; Medizin
-                </span>
-
-                <h3 className="text-sm font-extrabold text-[#0A1C3A] leading-snug">
-                  Erfahrungsbericht zu Demenz und Alzheimer: H2-Wasserstoff aus Japan
-                </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Klinische Erkenntnisse und Erfahrungsberichte aus japanischen Forschungszentren zum Einsatz von molekularem Wasserstoff.
-                </p>
-              </div>
-
-              <div className="p-5 pt-0">
-                <button
-                  onClick={() => openVideoModal("https://www.youtube-nocookie.com/embed/uvZgOupWwzg")}
-                  className="w-full bg-[#0A1C3A] hover:bg-[#12284c] text-white py-2.5 rounded-xl text-xs font-extrabold uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition"
-                >
-                  <Play className="w-3.5 h-3.5 fill-current" /> Video ansehen
-                </button>
-              </div>
-            </div>
-
-            {/* Video 3 */}
-            <div className="bg-white rounded-2xl border border-slate-300 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-md transition">
-              <div className="space-y-4 p-5">
-                <div
-                  onClick={() => openVideoModal("https://www.youtube-nocookie.com/embed/-2Go-J4V3o0")}
-                  className="relative aspect-video rounded-xl overflow-hidden bg-[#0A1C3A] cursor-pointer group"
-                >
-                  <img
-                    src="https://img.youtube.com/vi/-2Go-J4V3o0/hqdefault.jpg"
-                    alt="Die Wissenschaft Vorteile von molekularem Wasserstoffwasser"
-                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                  />
-                  <div className="absolute inset-0 bg-slate-900/40 flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-[#0A1C3A] text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition border border-white/20">
-                      <Play className="w-5 h-5 fill-current ml-0.5" />
-                    </div>
-                  </div>
-                </div>
-
-                <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#0A1C3A] bg-[#f4f6f8] px-2.5 py-1 rounded-md inline-block border border-slate-200">
-                  Zell-Hydration &amp; Vitalität
-                </span>
-
-                <h3 className="text-sm font-extrabold text-[#0A1C3A] leading-snug">
-                  Die Wissenschaft + Vorteile von molekularem Wasserstoffwasser (Heiliger Wasserstoff)
-                </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Umfassende wissenschaftliche Zusammenfassung der Vorteile von gelöstem Wasserstoffwasser für Zellgesundheit und Regeneration.
-                </p>
-              </div>
-
-              <div className="p-5 pt-0">
-                <button
-                  onClick={() => openVideoModal("https://www.youtube-nocookie.com/embed/-2Go-J4V3o0")}
-                  className="w-full bg-[#0A1C3A] hover:bg-[#12284c] text-white py-2.5 rounded-xl text-xs font-extrabold uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition"
-                >
-                  <Play className="w-3.5 h-3.5 fill-current" /> Video ansehen
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center pt-4">
-            <Link
-              to="/studien"
-              className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-[#0A1C3A] bg-white hover:bg-slate-200 px-6 py-3 rounded-xl border border-slate-300 shadow-sm transition"
-            >
-              Alle Studien &amp; Forschungsdetails ansehen <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* REVIEWS & TESTIMONIALS (DAS SAGEN UNSERE KUNDEN) */}
-      <div id="testimonial" data-webild-section="TestimonialPhotoRail" data-webild-section-id="TestimonialPhotoRail-1" data-section="testimonial">
-        <TestimonialPhotoRail
-          media="image"
-          title="DAS SAGEN UNSERE KUNDEN"
-          label="Erfahrungen"
-          imageSrc="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794876824895-o64qlmg5.png"
-          items={[
-            {
-              title: "Schnelle Erholung",
-              quote: "Seit ich H2-Wasser vor harten Einheiten trinke, erhole ich mich spürbar schneller.",
-              name: "Maximilian Fischer",
-              badge: "Athlet"
-            },
-            {
-              title: "Geistige Klarheit",
-              quote: "Kein Nachmittagstief mehr im Büro. Reinstes Wasserstoff-Wasser für Fokus.",
-              name: "Nina Richter",
-              badge: "Biohackerin"
-            },
-            {
-              title: "Healthy Beauty",
-              quote: "Ich trinke mindestens 3 Dosen täglich. Die Haut wirkt viel strahlender.",
-              name: "Stefan Wolf",
-              badge: "Fitness-Coach"
-            },
-            {
-              title: "Höchste Qualität",
-              quote: "Endlich echtes H2 Wasser in unkomplizierten BPA-freien Dosen.",
-              name: "Anna Wagner",
-              badge: "Sportlerin"
-            }
-          ]}
-          model={{
-            rx: 25,
-            ry: 520,
-            rz: 0,
-            scale: 0.75,
-            sm: {
-              scale: 0.85
-            }
-          }}
-        />
       </div>
     </>
   );

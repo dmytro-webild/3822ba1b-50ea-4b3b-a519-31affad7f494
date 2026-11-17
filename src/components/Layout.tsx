@@ -43,7 +43,8 @@ function MobileBottomBar() {
   const navItems = [
     { id: "home", label: "Home", href: "/", icon: Home },
     { id: "shop", label: "Shop", href: "/#shop", icon: ShoppingBag },
-    { id: "science", label: "Studien", href: "/studien", icon: GraduationCap },
+    { id: "about", label: "Über uns", href: "/ueber-uns", icon: Home },
+    { id: "science", label: "Wissenschaft", href: "/wissenschaft", icon: GraduationCap },
     { id: "contact", label: "Kontakt", href: "/kontakt", icon: PhoneCall },
   ];
 
@@ -118,6 +119,10 @@ function LayoutContent() {
           brand="FONS VITAE"
           navItems={[
             {
+              name: "Unsere Quelle",
+              href: "/#quelle"
+            },
+            {
               name: "Vorteile",
               href: "/#vergleich"
             },
@@ -126,20 +131,16 @@ function LayoutContent() {
               href: "/#shop"
             },
             {
-              name: "Unsere Quelle",
-              href: "/#quelle"
-            },
-            {
               name: "Bundles",
               href: "/#bundles"
             },
             {
               name: "Über uns",
-              href: "/#about"
+              href: "/ueber-uns"
             },
             {
               name: "Wissenschaft & Studien",
-              href: "/studien"
+              href: "/wissenschaft"
             },
             {
               name: "Kontakt",

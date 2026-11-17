@@ -226,6 +226,7 @@ function App() {
         >
           <Routes>
             <Route element={<Layout />}>
+              <Route path="/studien" element={<Navigate to="/wissenschaft" replace />} />
               {routes.map((route) => {
                 const Page = getPageComponent(route.pageFile)
                 if (!Page) return null
