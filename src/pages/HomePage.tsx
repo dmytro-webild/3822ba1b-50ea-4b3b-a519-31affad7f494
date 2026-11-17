@@ -28,8 +28,17 @@ import {
 
 const CAN_IMAGE_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794865744193-o2e363kc.png";
 const CAN_BACK_IMAGE_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794865744195-vid929mb.png";
-const JUICE_IMAGE_URL = "https://images.pexels.com/photos/1337825/pexels-photo-1337825.jpeg?auto=compress&w=800";
+const JUICE_IMAGE_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794874862684-n9ac3wqc.png";
 const BUNDLE_IMAGE_URL = "https://images.pexels.com/photos/5946081/pexels-photo-5946081.jpeg?auto=compress&w=800";
+
+const JUICE_IMAGES: Record<string, string> = {
+  "Blaubeere (Blueberry)": "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794874862684-n9ac3wqc.png",
+  "Traube (Grape)": "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794874862677-cd34mdsd.png",
+  "Himbeere (Raspberry)": "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794874862680-jc370nfv.png",
+  "Ingwer (Ginger Tonic)": "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794874862681-6t2d7fbm.png",
+  "Apfel Limette (Apple Lime)": "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794874862687-fj1yzdhx.png",
+  "Apfel Ingwer (Apple Ginger)": "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794874862687-fj1yzdhx.png",
+};
 
 const H2_DETAILS: ProductDetailInfo = {
   title: "FONS VITAE H2 Wasserstoff-Wasser",
@@ -61,19 +70,19 @@ const H2_DETAILS: ProductDetailInfo = {
 };
 
 const JUICE_DESCRIPTIONS: Record<string, string> = {
-  "Blaubeere": "100% Vegan. Köstlicher Direktsaft aus sonnengereiften Blaubeeren, reich an natürlichen Vitaminen & Antioxidantien. 100% pflanzlich.",
-  "Himbeere": "100% Vegan. Fruchtiges Himbeer-Erlebnis voller natürlicher Frische. 100% pflanzlich und vegan hergestellt.",
-  "Apfel-Limette": "100% Vegan. Spritzige Kombination aus knackigem Apfel und frischer Limette. 100% vegan & natürlich.",
-  "Apfel-Ingwer": "100% Vegan. Belebt die Sinne mit feiner Ingwerschärfe und frischem Apfelsaft. 100% vegan.",
-  "Traube": "100% Vegan. Edler Traubensaft aus besten Weintrauben, natursüß und erfrischend. 100% pflanzlich.",
-  "Kirsche": "100% Vegan. Intensiv-fruchtiger Kirschsaft für volle Vitalität im Alltag. 100% pflanzlich und vegan.",
+  "Blaubeere (Blueberry)": "100% natürlicher Fruchtsaft • Vegan. Köstlicher Direktsaft aus sonnengereiften Blaubeeren, reich an natürlichen Vitaminen & Antioxidantien. 100% pflanzlich.",
+  "Traube (Grape)": "100% natürlicher Fruchtsaft • Vegan. Edler Traubensaft aus besten sonnenverwöhnten Weintrauben, natursüß und voll im Geschmack. 100% pflanzlich.",
+  "Himbeere (Raspberry)": "100% natürlicher Fruchtsaft • Vegan. Fruchtiges Himbeer-Erlebnis voller natürlicher Frische und Vitalität. 100% pflanzlich.",
+  "Ingwer (Ginger Tonic)": "100% natürlicher Fruchtsaft • Vegan. Erfrischendes Ginger Tonic mit feiner Ingwerschärfe und voller Belebung. 100% pflanzlich.",
+  "Apfel Limette (Apple Lime)": "100% natürlicher Fruchtsaft • Vegan. Spritzig-frische Kombination aus knackigem Apfel und feiner Limette. 100% pflanzlich.",
+  "Apfel Ingwer (Apple Ginger)": "100% natürlicher Fruchtsaft • Vegan. Belebende Harmonie aus süßem Apfelsaft und würziger Ingwernote. 100% pflanzlich.",
 };
 
 export default function HomePage() {
   const { addToCart, openProductDetail, openVideoModal } = useCart();
 
   // Juice selection state
-  const [selectedJuiceFlavor, setSelectedJuiceFlavor] = useState("Blaubeere");
+  const [selectedJuiceFlavor, setSelectedJuiceFlavor] = useState("Blaubeere (Blueberry)");
   const [selectedJuicePack, setSelectedJuicePack] = useState<"6" | "12" | "24">("12");
   const [canCardSide, setCanCardSide] = useState<"front" | "back">("front");
 
@@ -85,6 +94,7 @@ export default function HomePage() {
 
   const handleAddJuiceToCart = () => {
     const pack = juicePrices[selectedJuicePack];
+    const image = JUICE_IMAGES[selectedJuiceFlavor] || JUICE_IMAGE_URL;
     addToCart({
       id: `juice-${selectedJuiceFlavor}-${selectedJuicePack}`,
       title: `FONS VITAE Fruchtsaft (${selectedJuiceFlavor}) - 100% Vegan`,
@@ -93,7 +103,7 @@ export default function HomePage() {
       price: pack.price,
       cansCount: pack.count,
       deposit: pack.deposit,
-      imageSrc: JUICE_IMAGE_URL,
+      imageSrc: image,
     });
   };
 
@@ -348,46 +358,46 @@ export default function HomePage() {
           <div className="bg-[#f4f6f8] rounded-2xl p-6 border border-slate-300 shadow-lg flex flex-col justify-between hover:border-[#0A1C3A] transition group">
             <div className="space-y-4">
               <div className="relative bg-white rounded-xl p-6 border border-slate-200 text-center">
-                <div className="absolute top-3 left-3 flex gap-1">
+                <div className="absolute top-3 left-3 flex flex-wrap gap-1 z-10">
                   <span className="bg-[#0A1C3A] text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md uppercase">
-                    6 Sorten
+                    100% natürlicher Fruchtsaft
                   </span>
                   <span className="bg-emerald-700 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md uppercase">
-                    100% Vegan
+                    Vegan
                   </span>
                 </div>
                 <img
-                  src={JUICE_IMAGE_URL}
-                  alt="FONS VITAE Fruchtsäfte"
-                  className="w-40 h-40 object-cover rounded-lg mx-auto group-hover:scale-105 transition duration-300"
+                  src={JUICE_IMAGES[selectedJuiceFlavor] || JUICE_IMAGE_URL}
+                  alt={`FONS VITAE ${selectedJuiceFlavor}`}
+                  className="w-44 h-44 object-contain mx-auto group-hover:scale-105 transition duration-300"
                 />
               </div>
               <div>
-                <span className="text-xs text-[#0A1C3A] font-extrabold uppercase">Vital-Fruchtsäfte (250 ml) • 100% Vegan</span>
+                <span className="text-xs text-[#0A1C3A] font-extrabold uppercase">Vital-Fruchtsäfte (250 ml) • 100% natürlicher Fruchtsaft • Vegan</span>
                 <h3 className="text-2xl font-black text-[#0A1C3A] uppercase tracking-tight">Fruchtsäfte</h3>
-                <p className="text-xs text-slate-600 mt-1">100% Vegane Vital-Säfte aus echten Früchten</p>
+                <p className="text-xs text-slate-600 mt-1">100% natürlicher Fruchtsaft, vegan &amp; ohne Zusatzstoffe</p>
               </div>
 
               {/* Flavor selector dropdown & Vegan description */}
               <div className="space-y-3 bg-white p-3.5 rounded-xl border border-slate-200 text-xs">
                 <div>
-                  <label className="block font-bold text-[#0A1C3A] mb-1">Geschmack wählen (Alle 100% Vegan):</label>
+                  <label className="block font-bold text-[#0A1C3A] mb-1">Geschmack wählen (100% natürlicher Fruchtsaft &amp; Vegan):</label>
                   <select
                     value={selectedJuiceFlavor}
                     onChange={(e) => setSelectedJuiceFlavor(e.target.value)}
                     className="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 font-semibold text-[#0A1C3A] focus:outline-none focus:ring-2 focus:ring-[#0A1C3A]"
                   >
-                    <option value="Blaubeere">🫐 Blaubeere (Blueberry) – 100% Vegan</option>
-                    <option value="Himbeere">🍓 Himbeere (Raspberry) – 100% Vegan</option>
-                    <option value="Apfel-Limette">🍏 Apfel-Limette (Apple Lime) – 100% Vegan</option>
-                    <option value="Apfel-Ingwer">🫚 Apfel-Ingwer (Apple Ginger) – 100% Vegan</option>
-                    <option value="Traube">🍇 Traube (Grape) – 100% Vegan</option>
-                    <option value="Kirsche">🍒 Kirsche (Cherry) – 100% Vegan</option>
+                    <option value="Blaubeere (Blueberry)">🫐 Blaubeere (Blueberry)</option>
+                    <option value="Traube (Grape)">🍇 Traube (Grape)</option>
+                    <option value="Himbeere (Raspberry)">🍓 Himbeere (Raspberry)</option>
+                    <option value="Ingwer (Ginger Tonic)">🫚 Ingwer (Ginger Tonic)</option>
+                    <option value="Apfel Limette (Apple Lime)">🍏 Apfel Limette (Apple Lime)</option>
+                    <option value="Apfel Ingwer (Apple Ginger)">🍎 Apfel Ingwer (Apple Ginger)</option>
                   </select>
                 </div>
 
                 {/* Active Flavor Vegan Description Box */}
-                <div className="bg-emerald-50/60 border border-emerald-200 p-2.5 rounded-lg text-slate-700 leading-snug">
+                <div className="bg-emerald-50/70 border border-emerald-200 p-2.5 rounded-lg text-slate-700 leading-snug">
                   <span className="font-extrabold text-[#0A1C3A] block mb-0.5 text-[11px] uppercase tracking-wider">
                     {selectedJuiceFlavor} Details:
                   </span>
@@ -441,6 +451,72 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* SECTION: Unsere Quelle & Mineralien */}
+      <div id="quelle" data-webild-section="WaterSourceMinerals" data-webild-section-id="WaterSourceMinerals-1" data-section="source">
+        <section className="py-20 px-6 bg-white font-sans text-[#0A1C3A] border-b border-slate-300">
+          <div className="max-w-5xl mx-auto space-y-10">
+            <div className="text-center space-y-3">
+              <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-[#f4f6f8] px-4 py-1.5 rounded-full inline-block border border-slate-300">
+                Natürliche Reinheit
+              </span>
+              <h2 className="text-4xl lg:text-5xl font-black text-[#0A1C3A] uppercase tracking-tight">
+                Unsere Quelle &amp; Mineralien
+              </h2>
+              <p className="text-slate-700 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed font-medium">
+                Unser Quellwasser entspringt aus 136 Metern Tiefe und wird durch natürliche Gesteinsschichten gefiltert und tiefenmineralisiert. Diese geschützte Tiefenquelle garantiert höchste mikrobiologische Reinheit sowie ein ausgewogenes Mineralstoffprofil mit optimalem pH-Wert – die reine, unbelastete Basis für unser molekular angereichertes H2-Wasserstoffwasser.
+              </p>
+            </div>
+
+            {/* Mineral Table with Marine Dark Blue Header on White Background */}
+            <div className="bg-white rounded-2xl border border-slate-300 shadow-xl overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="bg-[#0A1C3A] text-white text-xs sm:text-sm uppercase font-black tracking-wider">
+                      <th className="py-4 px-6 border-b border-[#0A1C3A]">Parameter / Mineralstoff</th>
+                      <th className="py-4 px-6 border-b border-[#0A1C3A]">Wert / Konzentration</th>
+                      <th className="py-4 px-6 border-b border-[#0A1C3A]">Bedeutung &amp; Eigenschaften</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 text-xs sm:text-sm text-slate-800 font-semibold">
+                    <tr className="hover:bg-slate-50 transition">
+                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">pH-Wert</td>
+                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">7,8 (Leicht basisch)</td>
+                      <td className="py-4 px-6 text-slate-600">Unterstützt ein natürliches Säure-Basen-Gleichgewicht</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50 transition">
+                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Calcium (Ca²⁺)</td>
+                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">68 mg/L</td>
+                      <td className="py-4 px-6 text-slate-600">Essentieller Mineralstoff für Knochen, Zähne und Muskelkontraktion</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50 transition">
+                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Magnesium (Mg²⁺)</td>
+                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">18 mg/L</td>
+                      <td className="py-4 px-6 text-slate-600">Unterstützt den Energiestoffwechsel und das Nervensystem</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50 transition">
+                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Natrium (Na⁺)</td>
+                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">9,5 mg/L (Natriumarm)</td>
+                      <td className="py-4 px-6 text-slate-600">Sehr geringer Natriumgehalt – ideal für täglichen Konsum</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50 transition">
+                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Kalium (K⁺)</td>
+                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">2,4 mg/L</td>
+                      <td className="py-4 px-6 text-slate-600">Trägt zur Zellhydratation und normalen Muskelfunktion bei</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50 transition">
+                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Nitrat (NO₃⁻)</td>
+                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">&lt; 1,0 mg/L (Reinste Qualität)</td>
+                      <td className="py-4 px-6 text-slate-600">Nahezu nitratfrei – garantiert frei von Umweltbelastungen</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
 
       {/* BUNDLES & COMBOS SECTION */}
       <div id="bundles" data-webild-section="PricingRingCards" data-webild-section-id="PricingRingCards-1" data-section="pricing">

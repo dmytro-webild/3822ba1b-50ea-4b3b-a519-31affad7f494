@@ -4,7 +4,7 @@ import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { useKitMotion } from "@/components/kit/kitMotion";
 import MoreArrowPill from "@/components/kit/MoreArrowPill";
-import { ShieldCheck, Ban, Zap, Sparkles, X } from "lucide-react";
+import { ShieldCheck, Droplets, Zap, Sparkles, X } from "lucide-react";
 
 const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
 
@@ -48,10 +48,10 @@ const BUBBLES: BubbleItem[] = [
     floatDuration: 3.8,
   },
   {
-    id: "zuckerfrei",
-    title: "ZUCKERFREI",
-    popupContent: "0 Kalorien, 0 Zucker. Ganz ohne Süßstoffe wie Aspartam oder künstliche Sirupe.",
-    icon: Ban,
+    id: "h2-konzentration",
+    title: "2,8 mg/L H2",
+    popupContent: "Höchste Konzentration. Basierend auf der bahnbrechenden Forschung von Dr. Shigeo Ohta (Japan) wirkt molekularer Wasserstoff als selektives Antioxidans und schützt die Zellen.",
+    icon: Droplets,
     positionDesktop: "top-[6%] right-2 sm:right-6 md:-right-10 lg:-right-24",
     svgLine: { x2: "82%", y2: "20%" },
     floatDuration: 4.2,
@@ -68,7 +68,7 @@ const BUBBLES: BubbleItem[] = [
   {
     id: "molekularer-wasserstoff",
     title: "MOLEKULARER WASSERSTOFF",
-    popupContent: "Das kleinste Molekül der Natur. Es dringt tief in die Zellen ein, wirkt als selektives Antioxidans und schützt vor oxidativem Stress.",
+    popupContent: "Das kleinste Molekül der Natur. Es dringt tief in die Zellen ein und neutralisiert freie Radikale.",
     icon: Sparkles,
     positionDesktop: "bottom-[18%] right-2 sm:right-6 md:-right-10 lg:-right-24",
     svgLine: { x2: "82%", y2: "74%" },
