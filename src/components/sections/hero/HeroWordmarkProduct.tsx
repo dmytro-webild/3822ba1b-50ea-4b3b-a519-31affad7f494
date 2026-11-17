@@ -147,11 +147,6 @@ const HeroWordmarkProduct = ({
   title = "H2 - HYDROGEN WATER",
   description = "CLEAN & PURE – Maximale Hydration mit molekularem Wasserstoff",
   primaryButton = { text: "Jetzt Shop entdecken", href: "#shop" },
-  items = [
-    { value: "2.8", unit: "mg/L", title: "Gelöster Wasserstoff" },
-    { value: "0", unit: "kcal", title: "Zucker & Kalorien" },
-    { value: "100", unit: "%", title: "BPA-Frei & Rein" },
-  ],
   marquee = "CLEAN & PURE H2 WATER • FONS VITAE • DIE QUELLE DES LEBENS •",
   introDelay = 0,
   productImageSrc = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794865744193-o2e363kc.png",
@@ -343,29 +338,6 @@ const HeroWordmarkProduct = ({
           })}
         </div>
 
-        {/* Feature Badges / Metric Pills */}
-        {items.length > 0 && (
-          <motion.ul
-            initial={reduce ? false : { opacity: 0, y: 20 }}
-            animate={show({ opacity: 1, y: 0 })}
-            transition={{ duration: slow, ease, delay: 0.3 }}
-            className="flex flex-wrap justify-center gap-4 sm:gap-6 max-w-4xl z-10"
-          >
-            {items.map((item, i) => (
-              <li
-                key={`${i}-${item.title}`}
-                className="bg-white border border-slate-300 shadow-md rounded-full px-5 py-2.5 flex items-center gap-3 transition hover:border-[#0A1C3A]"
-              >
-                <span className="font-extrabold text-[#0A1C3A] text-base sm:text-lg font-mono">
-                  {item.value} {item.unit}
-                </span>
-                <span className="text-xs sm:text-sm font-extrabold text-slate-700 border-l border-slate-300 pl-3">
-                  {item.title}
-                </span>
-              </li>
-            ))}
-          </motion.ul>
-        )}
       </div>
 
       {/* Interactive Popup Modal when Clicking Floating Bubble */}
