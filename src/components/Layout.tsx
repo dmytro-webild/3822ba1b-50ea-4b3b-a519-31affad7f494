@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import NavbarPillLinks from "@/components/navbars/NavbarPillLinks";
 import FooterPanelWordmark from "@/components/sections/footer/FooterPanelWordmark";
 import { CartProvider, useCart } from "@/context/CartContext";
@@ -38,14 +38,13 @@ function FloatingCartButton() {
 }
 
 function MobileBottomBar() {
-  const { openLegalModal } = useCart();
   const [activeTab, setActiveTab] = useState("home");
 
   const navItems = [
     { id: "home", label: "Home", href: "/", icon: Home },
     { id: "shop", label: "Shop", href: "/#shop", icon: ShoppingBag },
     { id: "science", label: "Studien", href: "/studien", icon: GraduationCap },
-    { id: "contact", label: "Kontakt", href: "#impressum", icon: PhoneCall, action: () => openLegalModal("impressum") },
+    { id: "contact", label: "Kontakt", href: "/kontakt", icon: PhoneCall },
   ];
 
   return (
@@ -60,12 +59,8 @@ function MobileBottomBar() {
           <a
             key={item.id}
             href={item.href}
-            onClick={(e) => {
+            onClick={() => {
               setActiveTab(item.id);
-              if (item.action) {
-                e.preventDefault();
-                item.action();
-              }
             }}
             className={`flex flex-col items-center justify-center gap-0.5 transition py-1 px-3 rounded-lg ${
               isActive ? "text-sky-400 font-extrabold" : "text-slate-300 hover:text-white"
@@ -124,32 +119,36 @@ function LayoutContent() {
           navItems={[
             {
               name: "Vorteile",
-              href: "#vergleich"
+              href: "/#vergleich"
             },
             {
               name: "Unsere Produkte",
-              href: "#shop"
+              href: "/#shop"
             },
             {
               name: "Unsere Quelle",
-              href: "#quelle"
+              href: "/#quelle"
             },
             {
               name: "Bundles",
-              href: "#bundles"
+              href: "/#bundles"
             },
             {
               name: "Über uns",
-              href: "#about"
+              href: "/#about"
             },
             {
               name: "Wissenschaft & Studien",
               href: "/studien"
+            },
+            {
+              name: "Kontakt",
+              href: "/kontakt"
             }
           ]}
           primaryButton={{
             text: "Jetzt bestellen",
-            href: "#shop"
+            href: "/#shop"
           }}
           socials={[
             {
@@ -189,7 +188,7 @@ function LayoutContent() {
           subtitle="H2 WASSERSTOFF-WASSER & 6 EDLE FRUCHTSAFT-KREATIONEN"
           button={{
             text: "Jetzt Produkte entdecken",
-            href: "#shop"
+            href: "/#shop"
           }}
           brand="FONS VITAE"
           logoSrc="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794862275041-s5qagrxx.jpg"
@@ -211,9 +210,13 @@ function LayoutContent() {
 
         {/* Footer Legal Quick Bar */}
         <div className="bg-[#f4f6f8] text-[#0A1C3A] text-xs py-4 px-6 border-t border-slate-300 text-center flex flex-wrap justify-center items-center gap-6">
-          <button onClick={() => openLegalModal("impressum")} className="font-semibold hover:underline transition">
+          <Link to="/impressum" className="font-semibold hover:underline transition">
             Impressum
-          </button>
+          </Link>
+          <span className="text-slate-400">•</span>
+          <Link to="/kontakt" className="font-semibold hover:underline transition">
+            Kontakt
+          </Link>
           <span className="text-slate-400">•</span>
           <button onClick={() => openLegalModal("datenschutz")} className="font-semibold hover:underline transition">
             Datenschutz
