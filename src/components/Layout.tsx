@@ -123,28 +123,24 @@ function LayoutContent() {
           brand="FONS VITAE"
           navItems={[
             {
-              name: "Shop",
+              name: "Vorteile",
+              href: "#vergleich"
+            },
+            {
+              name: "Unsere Produkte",
               href: "#shop"
             },
             {
-              name: "Quelle & Mineralien",
-              href: "#quelle"
-            },
-            {
-              name: "Pakete",
-              href: "#bundles"
+              name: "Anwendungsbereiche",
+              href: "#usecases"
             },
             {
               name: "Über uns",
               href: "#about"
             },
             {
-              name: "Studien & News",
+              name: "Wissenschaft & Studien",
               href: "/studien"
-            },
-            {
-              name: "Einsatzbereiche",
-              href: "#usecases"
             }
           ]}
           primaryButton={{
