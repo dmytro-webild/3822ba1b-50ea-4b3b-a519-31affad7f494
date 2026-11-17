@@ -23,6 +23,7 @@ type FooterPanelWordmarkProps = {
   brand?: string;
   brandAccent?: string;
   wordmark?: string;
+  logoSrc?: string;
   links?: Link[];
   socials?: Social[];
   copyright?: string;
@@ -51,6 +52,7 @@ const FooterPanelWordmark = ({
   brand = "Iced Matcha Latte",
   brandAccent = "Verde London",
   wordmark = "Verde",
+  logoSrc,
   links = [
     { text: "Shop all", href: "#" },
     { text: "Samples", href: "#" },
@@ -146,11 +148,19 @@ const FooterPanelWordmark = ({
           </div>
         </div>
 
-        {wordmarkLines.length > 0 && (
+        {logoSrc ? (
+          <div className="mt-[clamp(1.5rem,3vw,3rem)] py-6 flex justify-center items-center">
+            <img
+              src={logoSrc}
+              alt="FONS VITAE Logo"
+              className="h-20 sm:h-28 md:h-36 lg:h-44 w-auto object-contain rounded-2xl shadow-xl border border-slate-200/50 bg-white p-3"
+            />
+          </div>
+        ) : wordmarkLines.length > 0 ? (
           <div className="mt-[clamp(1.5rem,3vw,3rem)] pb-[0.04em]">
             <FitText lines={wordmarkLines} ariaLabel={wordmark} className="text-foreground" lineClassName="text-center text-[length:var(--text-display)] font-bold leading-[0.8] tracking-[-0.03em]" />
           </div>
-        )}
+        ) : null}
         <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-t border-foreground/15 py-[22px] lg:py-[28px]">
           <p className="text-[length:1.125rem] leading-[0.92] tracking-[-0.02em]">{copyright}</p>
           {credit && (

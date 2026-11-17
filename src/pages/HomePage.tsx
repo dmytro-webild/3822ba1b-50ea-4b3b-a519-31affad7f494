@@ -43,12 +43,12 @@ const JUICE_IMAGES: Record<string, string> = {
 
 const H2_12_DETAILS: ProductDetailInfo = {
   title: "FONS VITAE H2 Wasserstoff-Wasser (12er-Pack)",
-  subtitle: "12x 250 ml Aluminiumdosen (BPA-frei)",
-  price: "33,00 € (12er-Pack)",
-  depositInfo: "Inklusive 3,00 € Dosenpfand (0,25 € pro Dose)",
+  subtitle: "12x 250 ml Aluminiumdosen (100 % BPA-Frei)",
+  price: "39,64 € (12er-Pack)",
+  depositInfo: "Inklusive 19 % MwSt. & 3,00 € Dosenpfand (0,25 € pro Dose)",
   imageSrc: H2_12PACK_IMAGE_URL,
   description:
-    "Reinste Hydration angereichert mit mindestens 2,8 mg/L gelöstem molekularem Wasserstoff (H2). Geliefert im handlichen 12er-Pack. Entwickelt für Biohacker, Athleten, Fitness-Enthusiasten und die Healthy Beauty Branche zur Förderung der Zellenergie.",
+    "Reinste Hydration angereichert mit mindestens 2,8 mg/L gelöstem molekularem Wasserstoff (H2). Geliefert im handlichen 12er-Pack in 100 % BPA-Freien Aluminiumdosen. Entwickelt für Biohacker, Athleten, Fitness-Enthusiasten und die Healthy Beauty Branche zur Förderung der Zellenergie.",
   verzehr: "Wir empfehlen mindestens 3 Dosen täglich zu trinken, vorzugsweise morgens nach dem Aufstehen, vor dem Workout oder bei hoher geistiger Beanspruchung.",
   nutritionalTable: [
     { name: "Brennwert", value: "0 kJ / 0 kcal" },
@@ -63,8 +63,8 @@ const H2_12_DETAILS: ProductDetailInfo = {
   specs: [
     "Mind. 2.8 mg/L gelöster Wasserstoff",
     "Original FONS VITAE 12er-Pack Verpackung",
-    "12x 250 ml BPA-freie Aluminiumdosen",
-    "0 kcal, 0 g Zucker, BPA-frei",
+    "12x 250 ml Aluminiumdosen – 100 % BPA-Frei",
+    "0 kcal, 0 g Zucker, 100% BPA-Frei",
     "Laborgeprüfte Reinheit aus Deutschland",
     "Gezieltes Antioxidans für Zellschutz"
   ]
@@ -72,12 +72,12 @@ const H2_12_DETAILS: ProductDetailInfo = {
 
 const H2_24_DETAILS: ProductDetailInfo = {
   title: "FONS VITAE H2 Wasserstoff-Wasser (24er-Pack)",
-  subtitle: "24x 250 ml Aluminiumdosen (BPA-frei)",
-  price: "66,00 € (24er-Pack)",
-  depositInfo: "Inklusive 6,00 € Dosenpfand (0,25 € pro Dose)",
+  subtitle: "24x 250 ml Aluminiumdosen (100 % BPA-Frei)",
+  price: "79,28 € (24er-Pack)",
+  depositInfo: "Inklusive 19 % MwSt. & 6,00 € Dosenpfand (0,25 € pro Dose)",
   imageSrc: H2_24PACK_IMAGE_URL,
   description:
-    "Der Monatsvorrat für maximale Zellenergie und Vitalität. 24 Dosen FONS VITAE H2 Wasserstoff-Wasser (min. 2.8 mg/L gelöster molekularer Wasserstoff). Geliefert im stabilen 24er-Pack.",
+    "Der Monatsvorrat für maximale Zellenergie und Vitalität. 24 Dosen FONS VITAE H2 Wasserstoff-Wasser (min. 2.8 mg/L gelöster molekularer Wasserstoff) in 100 % BPA-Freien Aluminiumdosen. Geliefert im stabilen 24er-Pack.",
   verzehr: "Wir empfehlen mindestens 3 Dosen täglich zu trinken, vorzugsweise morgens nach dem Aufstehen, vor dem Workout oder bei hoher geistiger Beanspruchung.",
   nutritionalTable: [
     { name: "Brennwert", value: "0 kJ / 0 kcal" },
@@ -92,20 +92,20 @@ const H2_24_DETAILS: ProductDetailInfo = {
   specs: [
     "Mind. 2.8 mg/L gelöster Wasserstoff",
     "Original FONS VITAE 24er-Pack Verpackung",
-    "24x 250 ml BPA-freie Aluminiumdosen",
+    "24x 250 ml Aluminiumdosen – 100 % BPA-Frei",
     "Optimaler Monatsvorrat (mind. 3 Dosen / Tag)",
-    "0 kcal, 0 g Zucker, BPA-frei",
+    "0 kcal, 0 g Zucker, 100% BPA-Frei",
     "Laborgeprüfte Reinheit aus Deutschland"
   ]
 };
 
 const JUICE_DESCRIPTIONS: Record<string, string> = {
-  "Blaubeere (Blueberry)": "100% natürlicher Fruchtsaft • Vegan. Köstlicher Direktsaft aus sonnengereiften Blaubeeren, reich an natürlichen Vitaminen & Antioxidantien. 100% pflanzlich.",
-  "Traube (Grape)": "100% natürlicher Fruchtsaft • Vegan. Edler Traubensaft aus besten sonnenverwöhnten Weintrauben, natursüß und voll im Geschmack. 100% pflanzlich.",
-  "Himbeere (Raspberry)": "100% natürlicher Fruchtsaft • Vegan. Fruchtiges Himbeer-Erlebnis voller natürlicher Frische und Vitalität. 100% pflanzlich.",
-  "Ingwer (Ginger Tonic)": "100% natürlicher Fruchtsaft • Vegan. Erfrischendes Ginger Tonic mit feiner Ingwerschärfe und voller Belebung. 100% pflanzlich.",
-  "Apfel Limette (Apple Lime)": "100% natürlicher Fruchtsaft • Vegan. Spritzig-frische Kombination aus knackigem Apfel und feiner Limette. 100% pflanzlich.",
-  "Apfel Ingwer (Apple Ginger)": "100% natürlicher Fruchtsaft • Vegan. Belebende Harmonie aus süßem Apfelsaft und würziger Ingwernote. 100% pflanzlich.",
+  "Blaubeere (Blueberry)": "100% natürlicher Fruchtsaft • Vegan • 100% BPA-Frei. Köstlicher Direktsaft aus sonnengereiften Blaubeeren in BPA-freien Alu-Dosen, reich an natürlichen Vitaminen & Antioxidantien. 100% pflanzlich.",
+  "Traube (Grape)": "100% natürlicher Fruchtsaft • Vegan • 100% BPA-Frei. Edler Traubensaft aus besten sonnenverwöhnten Weintrauben in BPA-freien Alu-Dosen, natursüß und voll im Geschmack. 100% pflanzlich.",
+  "Himbeere (Raspberry)": "100% natürlicher Fruchtsaft • Vegan • 100% BPA-Frei. Fruchtiges Himbeer-Erlebnis in BPA-freien Alu-Dosen voller natürlicher Frische und Vitalität. 100% pflanzlich.",
+  "Ingwer (Ginger Tonic)": "100% natürlicher Fruchtsaft • Vegan • 100% BPA-Frei. Erfrischendes Ginger Tonic in BPA-freien Alu-Dosen mit feiner Ingwerschärfe und voller Belebung. 100% pflanzlich.",
+  "Apfel Limette (Apple Lime)": "100% natürlicher Fruchtsaft • Vegan • 100% BPA-Frei. Spritzig-frische Kombination aus knackigem Apfel und feiner Limette in BPA-freien Alu-Dosen. 100% pflanzlich.",
+  "Apfel Ingwer (Apple Ginger)": "100% natürlicher Fruchtsaft • Vegan • 100% BPA-Frei. Belebende Harmonie aus süßem Apfelsaft und würziger Ingwernote in BPA-freien Alu-Dosen. 100% pflanzlich.",
 };
 
 export default function HomePage() {
@@ -117,9 +117,9 @@ export default function HomePage() {
   const [canCardSide, setCanCardSide] = useState<"front" | "back">("front");
 
   const juicePrices = {
-    "6": { price: 11.10, count: 6, deposit: 1.50, label: "6er-Pack (€11,10)" },
-    "12": { price: 22.20, count: 12, deposit: 3.00, label: "12er-Pack (€22,20)" },
-    "24": { price: 44.40, count: 24, deposit: 6.00, label: "24er-Pack (€44,40)" }
+    "6": { price: 15.92, count: 6, deposit: 1.50, label: "6er-Pack (€15,92)" },
+    "12": { price: 31.84, count: 12, deposit: 3.00, label: "12er-Pack (€31,84)" },
+    "24": { price: 63.68, count: 24, deposit: 6.00, label: "24er-Pack (€63,68)" }
   };
 
   const handleAddJuiceToCart = () => {
@@ -262,7 +262,7 @@ export default function HomePage() {
               <div>
                 <span className="text-xs text-[#0A1C3A] font-extrabold uppercase">H2 Wasserstoff-Wasser</span>
                 <h3 className="text-2xl font-black text-[#0A1C3A] uppercase tracking-tight">12er-Pack H2 Wasser</h3>
-                <p className="text-xs text-slate-600 mt-1">12x 250 ml Alu-Dosen (BPA-frei)</p>
+                <p className="text-xs text-slate-600 mt-1">12x 250 ml Alu-Dosen (100 % BPA-Frei)</p>
               </div>
 
               <div className="space-y-1.5 text-xs text-slate-700 bg-white p-3.5 rounded-xl border border-slate-200">
@@ -272,11 +272,11 @@ export default function HomePage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-[#0A1C3A] shrink-0" />
-                  <span>0 kcal, 0 g Zucker, BPA-frei</span>
+                  <span>0 kcal, 0 g Zucker, BPA-Frei</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-[#0A1C3A] shrink-0" />
-                  <span>Inkl. 3,00 € Dosenpfand enthalten</span>
+                  <span>inkl. 19 % MwSt. &amp; Pfand (3,00 €)</span>
                 </div>
               </div>
             </div>
@@ -284,8 +284,8 @@ export default function HomePage() {
             <div className="mt-6 pt-4 border-t border-slate-300 space-y-3">
               <div className="flex justify-between items-baseline">
                 <div>
-                  <span className="text-2xl font-black text-[#0A1C3A]">33,00 €</span>
-                  <span className="text-[10px] text-slate-500 block">inkl. 3,00 € Dosenpfand</span>
+                  <span className="text-2xl font-black text-[#0A1C3A]">39,64 €</span>
+                  <span className="text-[10px] text-slate-500 block">inkl. 19 % MwSt. &amp; Pfand</span>
                 </div>
                 <button
                   onClick={() => openProductDetail(H2_12_DETAILS)}
@@ -301,7 +301,7 @@ export default function HomePage() {
                     id: "h2-12pack",
                     title: "FONS VITAE H2 Wasser (12er-Pack)",
                     packInfo: "12er-Pack (12x 250 ml)",
-                    price: 33.00,
+                    price: 39.64,
                     cansCount: 12,
                     deposit: 3.00,
                     imageSrc: H2_12PACK_IMAGE_URL,
@@ -310,7 +310,7 @@ export default function HomePage() {
                 className="w-full bg-[#0A1C3A] hover:bg-[#12284c] text-white py-3 rounded-xl font-bold uppercase text-xs tracking-wider flex items-center justify-center gap-2 shadow-md transition"
               >
                 <ShoppingBag className="w-4 h-4 text-white" />
-                In den Warenkorb (33,00 €)
+                In den Warenkorb (39,64 €)
               </button>
             </div>
           </div>
@@ -334,7 +334,7 @@ export default function HomePage() {
               <div>
                 <span className="text-xs text-[#0A1C3A] font-extrabold uppercase">Monatsvorrat (Mind. 3 Dosen/Tag)</span>
                 <h3 className="text-2xl font-black text-[#0A1C3A] uppercase tracking-tight">24er-Pack H2 Wasser</h3>
-                <p className="text-xs text-slate-600 mt-1">24x 250 ml Alu-Dosen (BPA-frei)</p>
+                <p className="text-xs text-slate-600 mt-1">24x 250 ml Alu-Dosen (100 % BPA-Frei)</p>
               </div>
 
               <div className="space-y-1.5 text-xs text-slate-700 bg-white p-3.5 rounded-xl border border-slate-200">
@@ -344,11 +344,11 @@ export default function HomePage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-[#0A1C3A] shrink-0" />
-                  <span>Mindestens 3 Dosen täglich</span>
+                  <span>0 kcal, 0 g Zucker, BPA-Frei</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-[#0A1C3A] shrink-0" />
-                  <span>Inkl. 6,00 € Dosenpfand enthalten</span>
+                  <span>inkl. 19 % MwSt. &amp; Pfand (6,00 €)</span>
                 </div>
               </div>
             </div>
@@ -356,8 +356,8 @@ export default function HomePage() {
             <div className="mt-6 pt-4 border-t border-slate-300 space-y-3">
               <div className="flex justify-between items-baseline">
                 <div>
-                  <span className="text-3xl font-black text-[#0A1C3A]">66,00 €</span>
-                  <span className="text-[10px] text-slate-500 block">inkl. 6,00 € Dosenpfand</span>
+                  <span className="text-3xl font-black text-[#0A1C3A]">79,28 €</span>
+                  <span className="text-[10px] text-slate-500 block">inkl. 19 % MwSt. &amp; Pfand</span>
                 </div>
                 <button
                   onClick={() => openProductDetail(H2_24_DETAILS)}
@@ -373,7 +373,7 @@ export default function HomePage() {
                     id: "h2-24pack",
                     title: "FONS VITAE H2 Wasser (24er-Pack)",
                     packInfo: "24er-Pack (24x 250 ml)",
-                    price: 66.00,
+                    price: 79.28,
                     cansCount: 24,
                     deposit: 6.00,
                     imageSrc: H2_24PACK_IMAGE_URL,
@@ -382,7 +382,7 @@ export default function HomePage() {
                 className="w-full bg-[#0A1C3A] hover:bg-[#12284c] text-white py-3 rounded-xl font-black uppercase text-xs tracking-wider flex items-center justify-center gap-2 shadow-lg transition"
               >
                 <ShoppingBag className="w-4 h-4 text-white" />
-                In den Warenkorb (66,00 €)
+                In den Warenkorb (79,28 €)
               </button>
             </div>
           </div>
@@ -398,6 +398,9 @@ export default function HomePage() {
                   <span className="bg-emerald-700 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md uppercase">
                     Vegan
                   </span>
+                  <span className="bg-cyan-700 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md uppercase">
+                    BPA-Frei
+                  </span>
                 </div>
                 <img
                   src={JUICE_IMAGES[selectedJuiceFlavor] || JUICE_IMAGE_URL}
@@ -406,15 +409,15 @@ export default function HomePage() {
                 />
               </div>
               <div>
-                <span className="text-xs text-[#0A1C3A] font-extrabold uppercase">Vital-Fruchtsäfte (250 ml) • 100% natürlicher Fruchtsaft • Vegan</span>
+                <span className="text-xs text-[#0A1C3A] font-extrabold uppercase">Vital-Fruchtsäfte (250 ml) • 100% Vegan • BPA-Frei</span>
                 <h3 className="text-2xl font-black text-[#0A1C3A] uppercase tracking-tight">Fruchtsäfte</h3>
-                <p className="text-xs text-slate-600 mt-1">100% natürlicher Fruchtsaft, vegan &amp; ohne Zusatzstoffe</p>
+                <p className="text-xs text-slate-600 mt-1">100% natürlicher Fruchtsaft, vegan, BPA-Frei &amp; ohne Zusatzstoffe</p>
               </div>
 
               {/* Flavor selector dropdown & Vegan description */}
               <div className="space-y-3 bg-white p-3.5 rounded-xl border border-slate-200 text-xs">
                 <div>
-                  <label className="block font-bold text-[#0A1C3A] mb-1">Geschmack wählen (100% natürlicher Fruchtsaft &amp; Vegan):</label>
+                  <label className="block font-bold text-[#0A1C3A] mb-1">Geschmack wählen (100% natürlicher Fruchtsaft &amp; BPA-Frei):</label>
                   <select
                     value={selectedJuiceFlavor}
                     onChange={(e) => setSelectedJuiceFlavor(e.target.value)}
@@ -464,10 +467,10 @@ export default function HomePage() {
               <div className="flex justify-between items-baseline">
                 <div>
                   <span className="text-2xl font-black text-[#0A1C3A]">
-                    {juicePrices[selectedJuicePack].price.toFixed(2)} €
+                    {juicePrices[selectedJuicePack].price.toFixed(2).replace('.', ',')} €
                   </span>
                   <span className="text-[10px] text-slate-500 block">
-                    inkl. {juicePrices[selectedJuicePack].deposit.toFixed(2)} € Pfand
+                    inkl. 19 % MwSt. &amp; Pfand ({juicePrices[selectedJuicePack].deposit.toFixed(2).replace('.', ',')} € Pfand)
                   </span>
                 </div>
                 <span className="text-xs text-slate-600 font-semibold">{selectedJuiceFlavor}</span>
@@ -478,7 +481,7 @@ export default function HomePage() {
                 className="w-full bg-[#0A1C3A] hover:bg-[#12284c] text-white py-3 rounded-xl font-bold uppercase text-xs tracking-wider flex items-center justify-center gap-2 shadow-md transition"
               >
                 <ShoppingBag className="w-4 h-4 text-white" />
-                Säfte in den Warenkorb ({juicePrices[selectedJuicePack].price.toFixed(2)} €)
+                Säfte in den Warenkorb ({juicePrices[selectedJuicePack].price.toFixed(2).replace('.', ',')} €)
               </button>
             </div>
           </div>
@@ -572,8 +575,11 @@ export default function HomePage() {
               <div className="bg-white rounded-2xl p-6 border border-slate-300 flex flex-col justify-between hover:border-[#0A1C3A] transition shadow-md">
                 <div className="space-y-4">
                   <h3 className="text-2xl font-black text-[#0A1C3A] uppercase">24x H2 Wasser</h3>
-                  <div className="text-3xl font-black text-[#0A1C3A]">66,00 €</div>
-                  <p className="text-xs text-slate-600">24 Dosen H2 Wasserstoff-Wasser in 250 ml Alu-Dosen.</p>
+                  <div>
+                    <div className="text-3xl font-black text-[#0A1C3A]">79,28 €</div>
+                    <span className="text-[10px] text-slate-500 font-bold block">inkl. 19 % MwSt. &amp; Pfand</span>
+                  </div>
+                  <p className="text-xs text-slate-600">24 Dosen H2 Wasserstoff-Wasser in 250 ml Alu-Dosen (BPA-Frei).</p>
                   <ul className="text-xs text-slate-700 space-y-2 border-t border-slate-200 pt-3">
                     <li className="flex items-center gap-2">
                       <Check className="w-4 h-4 text-[#0A1C3A]" /> Min. 2.8 mg/L gelöster Wasserstoff
@@ -582,7 +588,7 @@ export default function HomePage() {
                       <Check className="w-4 h-4 text-[#0A1C3A]" /> Inkl. 6,00 € Dosenpfand
                     </li>
                     <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-[#0A1C3A]" /> BPA-freie Alu-Dosen
+                      <Check className="w-4 h-4 text-[#0A1C3A]" /> 100 % BPA-Freie Alu-Dosen
                     </li>
                   </ul>
                 </div>
@@ -592,7 +598,7 @@ export default function HomePage() {
                       id: "bundle-24h2",
                       title: "Bundle 24x H2 Wasser",
                       packInfo: "24 Dosen",
-                      price: 66.00,
+                      price: 79.28,
                       cansCount: 24,
                       deposit: 6.00,
                       imageSrc: H2_24PACK_IMAGE_URL,
@@ -600,7 +606,7 @@ export default function HomePage() {
                   }
                   className="mt-6 w-full bg-[#0A1C3A] text-white font-extrabold py-3 rounded-xl uppercase text-xs tracking-wider hover:bg-[#12284c] transition"
                 >
-                  Paket wählen (66,00 €)
+                  Paket wählen (79,28 €)
                 </button>
               </div>
 
@@ -608,8 +614,11 @@ export default function HomePage() {
               <div className="bg-white rounded-2xl p-6 border border-slate-300 flex flex-col justify-between hover:border-[#0A1C3A] transition shadow-md">
                 <div className="space-y-4">
                   <h3 className="text-2xl font-black text-[#0A1C3A] uppercase">12x Juice Mix</h3>
-                  <div className="text-3xl font-black text-[#0A1C3A]">22,20 €</div>
-                  <p className="text-xs text-slate-600">12 Dosen Fruchtsaft-Mix (Blaubeere, Himbeere, Kirsche, etc.)</p>
+                  <div>
+                    <div className="text-3xl font-black text-[#0A1C3A]">31,84 €</div>
+                    <span className="text-[10px] text-slate-500 font-bold block">inkl. 19 % MwSt. &amp; Pfand</span>
+                  </div>
+                  <p className="text-xs text-slate-600">12 Dosen Fruchtsaft-Mix in 250 ml BPA-freien Alu-Dosen.</p>
                   <ul className="text-xs text-slate-700 space-y-2 border-t border-slate-200 pt-3">
                     <li className="flex items-center gap-2">
                       <Check className="w-4 h-4 text-[#0A1C3A]" /> 6 fruchtige Geschmacksrichtungen
@@ -618,7 +627,7 @@ export default function HomePage() {
                       <Check className="w-4 h-4 text-[#0A1C3A]" /> Inkl. 3,00 € Dosenpfand
                     </li>
                     <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-[#0A1C3A]" /> 250 ml Portionen
+                      <Check className="w-4 h-4 text-[#0A1C3A]" /> 100 % BPA-Frei &amp; Vegan
                     </li>
                   </ul>
                 </div>
@@ -628,7 +637,7 @@ export default function HomePage() {
                       id: "bundle-12juices",
                       title: "Bundle 12x Juice Mix",
                       packInfo: "12 Dosen Mix",
-                      price: 22.20,
+                      price: 31.84,
                       cansCount: 12,
                       deposit: 3.00,
                       imageSrc: JUICE_IMAGE_URL,
@@ -636,7 +645,7 @@ export default function HomePage() {
                   }
                   className="mt-6 w-full bg-[#0A1C3A] text-white font-extrabold py-3 rounded-xl uppercase text-xs tracking-wider hover:bg-[#12284c] transition"
                 >
-                  Paket wählen (22,20 €)
+                  Paket wählen (31,84 €)
                 </button>
               </div>
 
@@ -647,8 +656,11 @@ export default function HomePage() {
                 </div>
                 <div className="space-y-4 pt-2">
                   <h3 className="text-2xl font-black text-[#0A1C3A] uppercase">Großes Kombi-Paket</h3>
-                  <div className="text-4xl font-black text-[#0A1C3A]">110,40 €</div>
-                  <p className="text-xs text-slate-600">24x H2 Wasser + 12x Juice Mix (Insgesamt 48 Dosen)</p>
+                  <div>
+                    <div className="text-4xl font-black text-[#0A1C3A]">142,96 €</div>
+                    <span className="text-[10px] text-slate-500 font-bold block">inkl. 19 % MwSt. &amp; Pfand</span>
+                  </div>
+                  <p className="text-xs text-slate-600">24x H2 Wasser + 24x Juice Mix (Insgesamt 48 Dosen)</p>
                   <ul className="text-xs text-slate-700 space-y-2 border-t border-slate-200 pt-3">
                     <li className="flex items-center gap-2">
                       <Check className="w-4 h-4 text-[#0A1C3A]" /> 24x H2 Wasser (Min. 2.8 mg/L H2)
@@ -657,7 +669,7 @@ export default function HomePage() {
                       <Check className="w-4 h-4 text-[#0A1C3A]" /> 24x Fruchtsäfte Mix
                     </li>
                     <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-[#0A1C3A]" /> Inkl. 12,00 € Dosenpfand enthalten
+                      <Check className="w-4 h-4 text-[#0A1C3A]" /> Inkl. 12,00 € Dosenpfand &amp; 100 % BPA-Frei
                     </li>
                   </ul>
                 </div>
@@ -667,7 +679,7 @@ export default function HomePage() {
                       id: "bundle-combo-48",
                       title: "Großes Kombi-Paket (24x H2 Water + 24x Juice Mix)",
                       packInfo: "24x H2 Water + 24x Juice Mix",
-                      price: 110.40,
+                      price: 142.96,
                       cansCount: 48,
                       deposit: 12.00,
                       imageSrc: BUNDLE_IMAGE_URL,
@@ -675,7 +687,7 @@ export default function HomePage() {
                   }
                   className="mt-6 w-full bg-[#0A1C3A] hover:bg-[#12284c] text-white font-black py-3.5 rounded-xl uppercase text-xs tracking-wider shadow-lg transition"
                 >
-                  Kombi-Paket kaufen (110,40 €)
+                  Kombi-Paket kaufen (142,96 €)
                 </button>
               </div>
             </div>
@@ -1141,6 +1153,39 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* LARGE HIGHLIGHT CAN IMAGE AT THE BOTTOM OF HOMEPAGE */}
+      <section className="py-20 bg-[#0A1C3A] text-white font-sans overflow-hidden relative border-t border-slate-700">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
+          <div className="space-y-6 text-center md:text-left max-w-xl">
+            <span className="bg-white/10 text-cyan-300 border border-cyan-400/30 text-xs font-extrabold px-4 py-1.5 rounded-full uppercase tracking-widest inline-block">
+              FONS VITAE H2 Water • Pure Vitality
+            </span>
+            <h2 className="text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-tight">
+              Die Schönheit kommt von innen
+            </h2>
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+              Erlebe molekularen Wasserstoff mit mindestens 2,8 mg/L gelöstem H2. Reinste Zellhydratation in der 250-ml Aluminiumdose – 100 % BPA-Frei und nachhaltig recycelbar.
+            </p>
+            <div className="pt-2 flex flex-wrap gap-4 justify-center md:justify-start">
+              <a
+                href="#shop"
+                className="bg-white text-[#0A1C3A] hover:bg-slate-100 font-extrabold px-8 py-4 rounded-xl uppercase text-xs tracking-wider shadow-xl transition transform hover:scale-105"
+              >
+                Jetzt im Shop bestellen
+              </a>
+            </div>
+          </div>
+          <div className="relative shrink-0 w-full max-w-md flex justify-center">
+            <div className="absolute inset-0 bg-cyan-400/20 blur-3xl rounded-full transform scale-90 pointer-events-none" />
+            <img
+              src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794878206365-gr7oah65.jpg"
+              alt="FONS VITAE H2 Wasserstoff Dose - Die Schönheit kommt von innen"
+              className="relative z-10 max-h-[480px] w-auto object-contain rounded-2xl shadow-2xl border-2 border-white/20 transform hover:scale-105 transition duration-500"
+            />
           </div>
         </div>
       </section>

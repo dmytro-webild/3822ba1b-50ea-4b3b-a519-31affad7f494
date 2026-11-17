@@ -123,7 +123,8 @@ function LayoutContent() {
           }}
           brand="FONS VITAE"
           brandAccent="Industriestr. 23 A, 61449 Steinbach Ts."
-          wordmark="FONS VITAE"
+          wordmark=""
+          logoSrc="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794862275041-s5qagrxx.jpg"
           links={[
             {
               text: "Impressum",

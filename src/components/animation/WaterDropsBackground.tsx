@@ -189,21 +189,84 @@ function WaterParticles() {
   );
 }
 
+function SideBubblesOverlay() {
+  const leftBubbles = [
+    { id: "l1", size: 14, left: "15%", duration: 9, delay: 0 },
+    { id: "l2", size: 22, left: "45%", duration: 12, delay: 2 },
+    { id: "l3", size: 10, left: "70%", duration: 8, delay: 4 },
+    { id: "l4", size: 18, left: "28%", duration: 11, delay: 1 },
+    { id: "l5", size: 26, left: "60%", duration: 14, delay: 3.5 },
+    { id: "l6", size: 12, left: "85%", duration: 10, delay: 5.5 },
+  ];
+
+  const rightBubbles = [
+    { id: "r1", size: 16, right: "20%", duration: 10, delay: 1 },
+    { id: "r2", size: 24, right: "50%", duration: 13, delay: 3 },
+    { id: "r3", size: 12, right: "75%", duration: 9, delay: 0.5 },
+    { id: "r4", size: 20, right: "35%", duration: 11.5, delay: 2.5 },
+    { id: "r5", size: 28, right: "65%", duration: 15, delay: 4.5 },
+    { id: "r6", size: 14, right: "85%", duration: 8.5, delay: 6 },
+  ];
+
+  return (
+    <>
+      {/* Left side floating transparent water bubbles */}
+      <div className="fixed top-0 bottom-0 left-0 w-12 sm:w-20 md:w-28 pointer-events-none z-20 overflow-hidden" aria-hidden="true">
+        {leftBubbles.map((b) => (
+          <div
+            key={b.id}
+            className="absolute rounded-full border border-sky-300/50 bg-sky-400/15 backdrop-blur-[0.5px] shadow-[inset_0_0_8px_rgba(255,255,255,0.7)] animate-side-bubble"
+            style={{
+              width: `${b.size}px`,
+              height: `${b.size}px`,
+              left: b.left,
+              bottom: "-40px",
+              animationDuration: `${b.duration}s`,
+              animationDelay: `${b.delay}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Right side floating transparent water bubbles */}
+      <div className="fixed top-0 bottom-0 right-0 w-12 sm:w-20 md:w-28 pointer-events-none z-20 overflow-hidden" aria-hidden="true">
+        {rightBubbles.map((b) => (
+          <div
+            key={b.id}
+            className="absolute rounded-full border border-sky-300/50 bg-sky-400/15 backdrop-blur-[0.5px] shadow-[inset_0_0_8px_rgba(255,255,255,0.7)] animate-side-bubble"
+            style={{
+              width: `${b.size}px`,
+              height: `${b.size}px`,
+              right: b.right,
+              bottom: "-40px",
+              animationDuration: `${b.duration}s`,
+              animationDelay: `${b.delay}s`,
+            }}
+          />
+        ))}
+      </div>
+    </>
+  );
+}
+
 export default function WaterDropsBackground() {
   return (
-    <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden" aria-hidden="true">
-      <Canvas
-        camera={{ position: [0, 0, 6], fov: 55 }}
-        gl={{ alpha: true, antialias: true }}
-      >
-        <ambientLight intensity={1.0} />
-        <directionalLight position={[5, 8, 5]} intensity={1.2} color="#e0f2fe" />
-        <pointLight position={[-5, -5, 2]} intensity={0.8} color="#38bdf8" />
+    <>
+      <SideBubblesOverlay />
+      <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden" aria-hidden="true">
+        <Canvas
+          camera={{ position: [0, 0, 6], fov: 55 }}
+          gl={{ alpha: true, antialias: true }}
+        >
+          <ambientLight intensity={1.0} />
+          <directionalLight position={[5, 8, 5]} intensity={1.2} color="#e0f2fe" />
+          <pointLight position={[-5, -5, 2]} intensity={0.8} color="#38bdf8" />
 
-        <WaterMesh />
-        <WaterBubbles />
-        <WaterParticles />
-      </Canvas>
-    </div>
+          <WaterMesh />
+          <WaterBubbles />
+          <WaterParticles />
+        </Canvas>
+      </div>
+    </>
   );
 }
