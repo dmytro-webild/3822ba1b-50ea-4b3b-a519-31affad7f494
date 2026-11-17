@@ -12,10 +12,6 @@ import {
   Info,
   Check,
   Play,
-  Sun,
-  Briefcase,
-  Dumbbell,
-  Plane,
   ArrowRight
 } from "lucide-react";
 
@@ -139,7 +135,7 @@ export default function HomePage() {
         introDelay={1.4}
       />
 
-      {/* Hero Section */}
+      {/* 1. HERO SECTION */}
       <div id="hero" data-webild-section="HeroWordmarkProduct" data-webild-section-id="HeroWordmarkProduct-1" data-section="hero">
         <HeroWordmarkProduct
           media="image"
@@ -174,14 +170,68 @@ export default function HomePage() {
         />
       </div>
 
-      {/* CORE E-COMMERCE SHOP SECTION */}
+      {/* 2. VORTEILE IM VERGLEICH (Product Comparison Section) */}
+      <div id="vergleich" data-webild-section="ProductCompareTable" data-webild-section-id="ProductCompareTable-1" data-section="product">
+        <ProductCompareTable
+          media="image"
+          productImageSrc={CAN_IMAGE_URL}
+          productImageAlt="FONS VITAE H2 Dose"
+          title="IM VERGLEICH"
+          accent="VORTEILE"
+          benefitsLabel="Merkmale"
+          name="FONS VITAE H2"
+          otherLabel="Herkömmliches Wasser"
+          items={[
+            {
+              title: "Min. 2.8 mg/L molekular gelöster Wasserstoff",
+              ours: true,
+              other: false
+            },
+            {
+              title: "Gezieltes Abfangen schädlicher Radikale",
+              ours: true,
+              other: false
+            },
+            {
+              title: "0 kcal & 0 g Zucker & 0 Zusatzstoffe",
+              ours: true,
+              other: false
+            },
+            {
+              title: "BPA-freie Aluminiumdose",
+              ours: true,
+              other: false
+            },
+            {
+              title: "Laborgeprüfte Reinheit & Qualität",
+              ours: true,
+              other: true
+            },
+            {
+              title: "1 bis 2 Dosen täglich empfohlen",
+              ours: true,
+              other: false
+            }
+          ]}
+          model={{
+            ry: 20,
+            rz: 0,
+            scale: 0.5,
+            sm: {
+              scale: 0.78
+            }
+          }}
+        />
+      </div>
+
+      {/* 3. UNSERE PRODUKTE (Shop & Bundles Section) */}
       <section id="shop" className="py-20 px-6 max-w-7xl mx-auto font-sans">
         <div className="text-center space-y-3 mb-16">
           <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-[#e2e8f0] px-4 py-1.5 rounded-full inline-block border border-slate-300">
             FONS VITAE Online-Shop
           </span>
           <h2 className="text-4xl lg:text-5xl font-black text-[#0A1C3A] uppercase tracking-tight">
-            Produkte & Hydration
+            UNSERE PRODUKTE
           </h2>
           <p className="text-slate-600 text-sm max-w-2xl mx-auto">
             Molekulares H2 Wasserstoff-Wasser und nahrhafte Fruchtsäfte in 250-ml-Aluminiumdosen.
@@ -446,72 +496,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION: Unsere Quelle & Mineralien */}
-      <div id="quelle" data-webild-section="WaterSourceMinerals" data-webild-section-id="WaterSourceMinerals-1" data-section="source">
-        <section className="py-20 px-6 bg-white font-sans text-[#0A1C3A] border-b border-slate-300">
-          <div className="max-w-5xl mx-auto space-y-10">
-            <div className="text-center space-y-3">
-              <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-[#f4f6f8] px-4 py-1.5 rounded-full inline-block border border-slate-300">
-                Natürliche Reinheit
-              </span>
-              <h2 className="text-4xl lg:text-5xl font-black text-[#0A1C3A] uppercase tracking-tight">
-                Unsere Quelle &amp; Mineralien
-              </h2>
-              <p className="text-slate-700 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed font-medium">
-                Unser Quellwasser entspringt aus 136 Metern Tiefe und wird durch natürliche Gesteinsschichten gefiltert und tiefenmineralisiert. Diese geschützte Tiefenquelle garantiert höchste mikrobiologische Reinheit sowie ein ausgewogenes Mineralstoffprofil mit optimalem pH-Wert – die reine, unbelastete Basis für unser molekular angereichertes H2-Wasserstoffwasser.
-              </p>
-            </div>
-
-            {/* Mineral Table with Marine Dark Blue Header on White Background */}
-            <div className="bg-white rounded-2xl border border-slate-300 shadow-xl overflow-hidden">
-              <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse">
-                  <thead>
-                    <tr className="bg-[#0A1C3A] text-white text-xs sm:text-sm uppercase font-black tracking-wider">
-                      <th className="py-4 px-6 border-b border-[#0A1C3A]">Parameter / Mineralstoff</th>
-                      <th className="py-4 px-6 border-b border-[#0A1C3A]">Wert / Konzentration</th>
-                      <th className="py-4 px-6 border-b border-[#0A1C3A]">Bedeutung &amp; Eigenschaften</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-200 text-xs sm:text-sm text-slate-800 font-semibold">
-                    <tr className="hover:bg-slate-50 transition">
-                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">pH-Wert</td>
-                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">7,8 (Leicht basisch)</td>
-                      <td className="py-4 px-6 text-slate-600">Unterstützt ein natürliches Säure-Basen-Gleichgewicht</td>
-                    </tr>
-                    <tr className="hover:bg-slate-50 transition">
-                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Calcium (Ca²⁺)</td>
-                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">68 mg/L</td>
-                      <td className="py-4 px-6 text-slate-600">Essentieller Mineralstoff für Knochen, Zähne und Muskelkontraktion</td>
-                    </tr>
-                    <tr className="hover:bg-slate-50 transition">
-                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Magnesium (Mg²⁺)</td>
-                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">18 mg/L</td>
-                      <td className="py-4 px-6 text-slate-600">Unterstützt den Energiestoffwechsel und das Nervensystem</td>
-                    </tr>
-                    <tr className="hover:bg-slate-50 transition">
-                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Natrium (Na⁺)</td>
-                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">9,5 mg/L (Natriumarm)</td>
-                      <td className="py-4 px-6 text-slate-600">Sehr geringer Natriumgehalt – ideal für täglichen Konsum</td>
-                    </tr>
-                    <tr className="hover:bg-slate-50 transition">
-                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Kalium (K⁺)</td>
-                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">2,4 mg/L</td>
-                      <td className="py-4 px-6 text-slate-600">Trägt zur Zellhydratation und normalen Muskelfunktion bei</td>
-                    </tr>
-                    <tr className="hover:bg-slate-50 transition">
-                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Nitrat (NO₃⁻)</td>
-                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">&lt; 1,0 mg/L (Reinste Qualität)</td>
-                      <td className="py-4 px-6 text-slate-600">Nahezu nitratfrei – garantiert frei von Umweltbelastungen</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-
       {/* BUNDLES & COMBOS SECTION */}
       <div id="bundles" data-webild-section="PricingRingCards" data-webild-section-id="PricingRingCards-1" data-section="pricing">
         <section className="py-20 bg-[#f4f6f8] text-[#0A1C3A] font-sans border-y border-slate-300">
@@ -614,64 +598,143 @@ export default function HomePage() {
         </section>
       </div>
 
-      {/* Product Compare Section */}
-      <div id="product" data-webild-section="ProductCompareTable" data-webild-section-id="ProductCompareTable-1" data-section="product">
-        <ProductCompareTable
-          media="image"
-          productImageSrc={CAN_IMAGE_URL}
-          productImageAlt="FONS VITAE H2 Dose"
-          title="Vergleich"
-          accent="Vorteile"
-          benefitsLabel="Merkmale"
-          name="FONS VITAE H2"
-          otherLabel="Herkömmliches Wasser"
-          items={[
-            {
-              title: "Min. 2.8 mg/L molekular gelöster Wasserstoff",
-              ours: true,
-              other: false
-            },
-            {
-              title: "Gezieltes Abfangen schädlicher Radikale",
-              ours: true,
-              other: false
-            },
-            {
-              title: "0 kcal & 0 g Zucker & 0 Zusatzstoffe",
-              ours: true,
-              other: false
-            },
-            {
-              title: "BPA-freie Aluminiumdose",
-              ours: true,
-              other: false
-            },
-            {
-              title: "Laborgeprüfte Reinheit & Qualität",
-              ours: true,
-              other: true
-            },
-            {
-              title: "1 bis 2 Dosen täglich empfohlen",
-              ours: true,
-              other: false
-            }
-          ]}
-          model={{
-            ry: 20,
-            rz: 0,
-            scale: 0.5,
-            sm: {
-              scale: 0.78
-            }
-          }}
-        />
+      {/* SECTION: Unsere Quelle & Mineralien */}
+      <div id="quelle" data-webild-section="WaterSourceMinerals" data-webild-section-id="WaterSourceMinerals-1" data-section="source">
+        <section className="py-20 px-6 bg-white font-sans text-[#0A1C3A] border-b border-slate-300">
+          <div className="max-w-5xl mx-auto space-y-10">
+            <div className="text-center space-y-3">
+              <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-[#f4f6f8] px-4 py-1.5 rounded-full inline-block border border-slate-300">
+                Natürliche Reinheit
+              </span>
+              <h2 className="text-4xl lg:text-5xl font-black text-[#0A1C3A] uppercase tracking-tight">
+                Unsere Quelle &amp; Mineralien
+              </h2>
+              <p className="text-slate-700 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed font-medium">
+                Unser Quellwasser entspringt aus 136 Metern Tiefe und wird durch natürliche Gesteinsschichten gefiltert und tiefenmineralisiert. Diese geschützte Tiefenquelle garantiert höchste mikrobiologische Reinheit sowie ein ausgewogenes Mineralstoffprofil mit optimalem pH-Wert – die reine, unbelastete Basis für unser molekular angereichertes H2-Wasserstoffwasser.
+              </p>
+            </div>
+
+            {/* Mineral Table */}
+            <div className="bg-white rounded-2xl border border-slate-300 shadow-xl overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="bg-[#0A1C3A] text-white text-xs sm:text-sm uppercase font-black tracking-wider">
+                      <th className="py-4 px-6 border-b border-[#0A1C3A]">Parameter / Mineralstoff</th>
+                      <th className="py-4 px-6 border-b border-[#0A1C3A]">Wert / Konzentration</th>
+                      <th className="py-4 px-6 border-b border-[#0A1C3A]">Bedeutung &amp; Eigenschaften</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 text-xs sm:text-sm text-slate-800 font-semibold">
+                    <tr className="hover:bg-slate-50 transition">
+                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">pH-Wert</td>
+                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">7,8 (Leicht basisch)</td>
+                      <td className="py-4 px-6 text-slate-600">Unterstützt ein natürliches Säure-Basen-Gleichgewicht</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50 transition">
+                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Calcium (Ca²⁺)</td>
+                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">68 mg/L</td>
+                      <td className="py-4 px-6 text-slate-600">Essentieller Mineralstoff für Knochen, Zähne und Muskelkontraktion</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50 transition">
+                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Magnesium (Mg²⁺)</td>
+                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">18 mg/L</td>
+                      <td className="py-4 px-6 text-slate-600">Unterstützt den Energiestoffwechsel und das Nervensystem</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50 transition">
+                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Natrium (Na⁺)</td>
+                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">9,5 mg/L (Natriumarm)</td>
+                      <td className="py-4 px-6 text-slate-600">Sehr geringer Natriumgehalt – ideal für täglichen Konsum</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50 transition">
+                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Kalium (K⁺)</td>
+                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">2,4 mg/L</td>
+                      <td className="py-4 px-6 text-slate-600">Trägt zur Zellhydratation und normalen Muskelfunktion bei</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50 transition">
+                      <td className="py-4 px-6 font-bold text-[#0A1C3A]">Nitrat (NO₃⁻)</td>
+                      <td className="py-4 px-6 text-[#0A1C3A] font-bold">&lt; 1,0 mg/L (Reinste Qualität)</td>
+                      <td className="py-4 px-6 text-slate-600">Nahezu nitratfrei – garantiert frei von Umweltbelastungen</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
 
-      {/* ABOUT US (ÜBER UNS) PHILOSOPHICAL SECTION */}
-      <section id="about" className="py-24 bg-[#f4f6f8] text-[#0A1C3A] font-sans border-t border-slate-300">
+      {/* 4. ANWENDUNGSBEREICHE (Compact Icon Layout) */}
+      <section id="usecases" className="py-20 bg-[#f4f6f8] text-[#0A1C3A] font-sans border-t border-slate-300">
+        <div className="max-w-7xl mx-auto px-6 space-y-10">
+          <div className="text-center space-y-3">
+            <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-white px-4 py-1.5 rounded-full inline-block border border-slate-300 shadow-sm">
+              Einsatzbereiche
+            </span>
+            <h2 className="text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#0A1C3A]">
+              Anwendungsbereiche
+            </h2>
+            <p className="text-slate-600 text-sm max-w-xl mx-auto font-medium">
+              Empfohlene tägliche Verzehrmenge: 1 bis 2 Dosen täglich. Ideal abgestimmt auf deinen Alltag.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white p-6 rounded-2xl border border-slate-300 shadow-md flex flex-col items-center text-center space-y-3 hover:border-[#0A1C3A] transition">
+              <div className="w-14 h-14 rounded-2xl bg-[#0A1C3A] text-white flex items-center justify-center text-2xl shadow-sm">
+                <span>☀️</span>
+              </div>
+              <h3 className="text-lg font-black uppercase text-[#0A1C3A] tracking-tight">
+                MORGENS
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed font-medium">
+                Für den bewussten Start in den Tag
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-2xl border border-slate-300 shadow-md flex flex-col items-center text-center space-y-3 hover:border-[#0A1C3A] transition">
+              <div className="w-14 h-14 rounded-2xl bg-[#0A1C3A] text-white flex items-center justify-center text-2xl shadow-sm">
+                <span>💼</span>
+              </div>
+              <h3 className="text-lg font-black uppercase text-[#0A1C3A] tracking-tight">
+                ARBEIT &amp; FOKUS
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed font-medium">
+                Für den modernen Arbeitsalltag
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-2xl border border-slate-300 shadow-md flex flex-col items-center text-center space-y-3 hover:border-[#0A1C3A] transition">
+              <div className="w-14 h-14 rounded-2xl bg-[#0A1C3A] text-white flex items-center justify-center text-2xl shadow-sm">
+                <span>🏃</span>
+              </div>
+              <h3 className="text-lg font-black uppercase text-[#0A1C3A] tracking-tight">
+                SPORT
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed font-medium">
+                Rund um Training und Bewegung
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-2xl border border-slate-300 shadow-md flex flex-col items-center text-center space-y-3 hover:border-[#0A1C3A] transition">
+              <div className="w-14 h-14 rounded-2xl bg-[#0A1C3A] text-white flex items-center justify-center text-2xl shadow-sm">
+                <span>✈️</span>
+              </div>
+              <h3 className="text-lg font-black uppercase text-[#0A1C3A] tracking-tight">
+                REISEN
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed font-medium">
+                Praktisch für unterwegs
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. ÜBER UNS (Brand Philosophy Section) */}
+      <section id="about" className="py-24 bg-white text-[#0A1C3A] font-sans border-t border-slate-300">
         <div className="max-w-5xl mx-auto px-6 space-y-10 text-center">
-          <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-white px-4 py-1.5 rounded-full inline-block border border-slate-300 shadow-sm">
+          <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-[#f4f6f8] px-4 py-1.5 rounded-full inline-block border border-slate-300 shadow-sm">
             Über uns
           </span>
           <h2 className="text-4xl lg:text-6xl font-black uppercase tracking-tight text-[#0A1C3A]">
@@ -679,12 +742,12 @@ export default function HomePage() {
           </h2>
           <div className="w-24 h-1 bg-[#0A1C3A] mx-auto rounded-full" />
 
-          <p className="text-base sm:text-lg lg:text-xl font-medium leading-relaxed text-slate-800 max-w-4xl mx-auto bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-lg text-left sm:text-center">
+          <p className="text-base sm:text-lg lg:text-xl font-medium leading-relaxed text-slate-800 max-w-4xl mx-auto bg-[#f4f6f8] p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-lg text-left sm:text-center">
             „FONS VITAE – Die Quelle des Lebens. Unser Name ist unser Auftrag: Wir glauben, dass wahre Gesundheit bei der Quelle beginnt. Inspiriert von der jahrhundertealten philosophischen Idee der 'Lebensquelle' verbinden wir dieses tiefe Verständnis mit modernster Wissenschaft. Unsere Philosophie basiert auf drei Säulen: Absolute Qualität, kompromisslose Transparenz und wissenschaftliche Fundierung. Jede Charge unseres molekularen Wasserstoffs wird streng geprüft. Wir bieten keine leeren Versprechen, sondern messbare Hydration auf zellulärer Ebene – für deine Energie, deinen Zellschutz und deine Vitalität.“
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left pt-2">
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-md space-y-3">
+            <div className="bg-[#f4f6f8] p-6 rounded-2xl border border-slate-200 shadow-md space-y-3">
               <div className="w-10 h-10 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center font-black">
                 01
               </div>
@@ -694,7 +757,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-md space-y-3">
+            <div className="bg-[#f4f6f8] p-6 rounded-2xl border border-slate-200 shadow-md space-y-3">
               <div className="w-10 h-10 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center font-black">
                 02
               </div>
@@ -704,7 +767,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-md space-y-3">
+            <div className="bg-[#f4f6f8] p-6 rounded-2xl border border-slate-200 shadow-md space-y-3">
               <div className="w-10 h-10 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center font-black">
                 03
               </div>
@@ -726,15 +789,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SCIENCE & NEWS (STUDIEN & NEWS) SECTION */}
-      <section id="science" className="py-24 bg-white text-[#0A1C3A] font-sans border-t border-slate-300">
+      {/* 6. WISSENSCHAFT & STUDIEN (Science & News Section) */}
+      <section id="science" className="py-24 bg-[#f4f6f8] text-[#0A1C3A] font-sans border-t border-slate-300">
         <div className="max-w-7xl mx-auto px-6 space-y-12">
           <div className="text-center space-y-3">
-            <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-[#f4f6f8] px-4 py-1.5 rounded-full inline-block border border-slate-300">
+            <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-white px-4 py-1.5 rounded-full inline-block border border-slate-300">
               Wissenschaft & News
             </span>
             <h2 className="text-4xl lg:text-5xl font-black text-[#0A1C3A] uppercase tracking-tight">
-              Studien & News
+              Wissenschaft &amp; Studien
             </h2>
             <p className="text-slate-600 text-sm max-w-xl mx-auto">
               Aktuelle Vorträge und klinische Berichte über die Wirkung von molekularem Wasserstoff auf Zellgesundheit, Langlebigkeit und Regeneration.
@@ -743,7 +806,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Video 1 */}
-            <div className="bg-[#f4f6f8] rounded-2xl border border-slate-300 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-md transition">
+            <div className="bg-white rounded-2xl border border-slate-300 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-md transition">
               <div className="space-y-4 p-5">
                 <div
                   onClick={() => openVideoModal("https://www.youtube-nocookie.com/embed/SDZtVonFPXM")}
@@ -761,8 +824,8 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#0A1C3A] bg-white px-2.5 py-1 rounded-md inline-block border border-slate-200">
-                  Wissenschaft & Langlebigkeit
+                <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#0A1C3A] bg-[#f4f6f8] px-2.5 py-1 rounded-md inline-block border border-slate-200">
+                  Wissenschaft &amp; Langlebigkeit
                 </span>
 
                 <h3 className="text-sm font-extrabold text-[#0A1C3A] leading-snug">
@@ -784,7 +847,7 @@ export default function HomePage() {
             </div>
 
             {/* Video 2 */}
-            <div className="bg-[#f4f6f8] rounded-2xl border border-slate-300 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-md transition">
+            <div className="bg-white rounded-2xl border border-slate-300 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-md transition">
               <div className="space-y-4 p-5">
                 <div
                   onClick={() => openVideoModal("https://www.youtube-nocookie.com/embed/uvZgOupWwzg")}
@@ -802,8 +865,8 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#0A1C3A] bg-white px-2.5 py-1 rounded-md inline-block border border-slate-200">
-                  Zellschutz & Medizin
+                <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#0A1C3A] bg-[#f4f6f8] px-2.5 py-1 rounded-md inline-block border border-slate-200">
+                  Zellschutz &amp; Medizin
                 </span>
 
                 <h3 className="text-sm font-extrabold text-[#0A1C3A] leading-snug">
@@ -825,7 +888,7 @@ export default function HomePage() {
             </div>
 
             {/* Video 3 */}
-            <div className="bg-[#f4f6f8] rounded-2xl border border-slate-300 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-md transition">
+            <div className="bg-white rounded-2xl border border-slate-300 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-md transition">
               <div className="space-y-4 p-5">
                 <div
                   onClick={() => openVideoModal("https://www.youtube-nocookie.com/embed/-2Go-J4V3o0")}
@@ -843,8 +906,8 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#0A1C3A] bg-white px-2.5 py-1 rounded-md inline-block border border-slate-200">
-                  Zell-Hydration & Vitalität
+                <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#0A1C3A] bg-[#f4f6f8] px-2.5 py-1 rounded-md inline-block border border-slate-200">
+                  Zell-Hydration &amp; Vitalität
                 </span>
 
                 <h3 className="text-sm font-extrabold text-[#0A1C3A] leading-snug">
@@ -869,69 +932,10 @@ export default function HomePage() {
           <div className="text-center pt-4">
             <Link
               to="/studien"
-              className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-[#0A1C3A] bg-[#f4f6f8] hover:bg-slate-200 px-6 py-3 rounded-xl border border-slate-300 transition"
+              className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-[#0A1C3A] bg-white hover:bg-slate-200 px-6 py-3 rounded-xl border border-slate-300 shadow-sm transition"
             >
-              Alle Studien & Forschungsdetails ansehen <ArrowRight className="w-4 h-4" />
+              Alle Studien &amp; Forschungsdetails ansehen <ArrowRight className="w-4 h-4" />
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* USE CASES SECTION */}
-      <section id="usecases" className="py-24 bg-[#f4f6f8] text-[#0A1C3A] font-sans border-t border-slate-300">
-        <div className="max-w-7xl mx-auto px-6 space-y-12">
-          <div className="text-center space-y-3">
-            <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-white px-4 py-1.5 rounded-full inline-block border border-slate-300">
-              Einsatzbereiche
-            </span>
-            <h2 className="text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#0A1C3A]">
-              Anwendung im Alltag
-            </h2>
-            <p className="text-slate-600 text-sm max-w-xl mx-auto">
-              Empfohlene tägliche Verzehrmenge: 1 bis 2 Dosen täglich. Ideal für: Morgens zum Start, bei der Arbeit, vor/nach dem Sport oder auf Reisen.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white p-6 rounded-2xl border border-slate-300 shadow-md space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center">
-                <Sun className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold uppercase text-[#0A1C3A]">Morning (Morgens)</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Erste Dose nach dem Aufstehen zur Aktivierung des Zellstoffwechsels und sofortigen Rehydrierung.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl border border-slate-300 shadow-md space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center">
-                <Briefcase className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold uppercase text-[#0A1C3A]">Work (Arbeit & Fokus)</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Geistige Frische und Konzentration bei hoher mentaler Beanspruchung im Büro ohne Nachmittagstief.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl border border-slate-300 shadow-md space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center">
-                <Dumbbell className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold uppercase text-[#0A1C3A]">Exercise & Sports</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Vor und während dem Training für verbesserte Sauerstoffaufnahme und verminderte Übersäuerung.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl border border-slate-300 shadow-md space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center">
-                <Plane className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold uppercase text-[#0A1C3A]">Travel (Reise)</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Schutz vor Reisestress, Luftfeuchtigkeitsabfall in Flugzeugen und Jetlag in handlicher 250-ml-Dose.
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -1024,7 +1028,6 @@ export default function HomePage() {
           }}
         />
       </div>
-
     </>
   );
 }
