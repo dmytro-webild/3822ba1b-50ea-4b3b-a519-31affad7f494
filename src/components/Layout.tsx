@@ -131,8 +131,12 @@ function LayoutContent() {
               href: "#shop"
             },
             {
-              name: "Anwendungsbereiche",
-              href: "#usecases"
+              name: "Unsere Quelle",
+              href: "#quelle"
+            },
+            {
+              name: "Bundles",
+              href: "#bundles"
             },
             {
               name: "Über uns",
