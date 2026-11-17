@@ -4,7 +4,7 @@ import HeroWordmarkProduct from "@/components/sections/hero/HeroWordmarkProduct"
 import ProductCompareTable from "@/components/sections/product/ProductCompareTable";
 import TestimonialPhotoRail from "@/components/sections/testimonial/TestimonialPhotoRail";
 import ScrollToneBackdrop from "@/components/kit/ScrollToneBackdrop";
-import LoaderWordmarkRise from "@/components/loaders/LoaderWordmarkRise";
+import WaterDropIntro from "@/components/loaders/WaterDropIntro";
 import { useCart, type ProductDetailInfo } from "@/context/CartContext";
 import {
   ShoppingBag,
@@ -129,10 +129,7 @@ export default function HomePage() {
     <>
       <ScrollToneBackdrop />
 
-      <LoaderWordmarkRise
-        brand="FONS VITAE"
-        introDelay={1.4}
-      />
+      <WaterDropIntro />
 
       {/* 1. HERO SECTION */}
       <div id="hero" data-webild-section="HeroWordmarkProduct" data-webild-section-id="HeroWordmarkProduct-1" data-section="hero">
