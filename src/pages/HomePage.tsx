@@ -570,46 +570,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Bundle 1 */}
-              <div className="bg-white rounded-2xl p-6 border border-slate-300 flex flex-col justify-between hover:border-[#0A1C3A] transition shadow-md">
-                <div className="space-y-4">
-                  <h3 className="text-2xl font-black text-[#0A1C3A] uppercase">24x H2 Wasser</h3>
-                  <div>
-                    <div className="text-3xl font-black text-[#0A1C3A]">79,28 €</div>
-                    <span className="text-[10px] text-slate-500 font-bold block">inkl. 19 % MwSt. &amp; Pfand</span>
-                  </div>
-                  <p className="text-xs text-slate-600">24 Dosen H2 Wasserstoff-Wasser in 250 ml Alu-Dosen (BPA-Frei).</p>
-                  <ul className="text-xs text-slate-700 space-y-2 border-t border-slate-200 pt-3">
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-[#0A1C3A]" /> Min. 2.8 mg/L gelöster Wasserstoff
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-[#0A1C3A]" /> Inkl. 6,00 € Dosenpfand
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-[#0A1C3A]" /> 100 % BPA-Freie Alu-Dosen
-                    </li>
-                  </ul>
-                </div>
-                <button
-                  onClick={() =>
-                    addToCart({
-                      id: "bundle-24h2",
-                      title: "Bundle 24x H2 Wasser",
-                      packInfo: "24 Dosen",
-                      price: 79.28,
-                      cansCount: 24,
-                      deposit: 6.00,
-                      imageSrc: H2_24PACK_IMAGE_URL,
-                    })
-                  }
-                  className="mt-6 w-full bg-[#0A1C3A] text-white font-extrabold py-3 rounded-xl uppercase text-xs tracking-wider hover:bg-[#12284c] transition"
-                >
-                  Paket wählen (79,28 €)
-                </button>
-              </div>
-
+            <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-8">
               {/* Bundle 2 */}
               <div className="bg-white rounded-2xl p-6 border border-slate-300 flex flex-col justify-between hover:border-[#0A1C3A] transition shadow-md">
                 <div className="space-y-4">
