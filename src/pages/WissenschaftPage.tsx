@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Activity, ShieldCheck, RefreshCw, Play, ArrowLeft, ExternalLink, CheckCircle2 } from "lucide-react";
+import { Activity, ShieldCheck, RefreshCw, Play, ArrowLeft, CheckCircle2 } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
 interface VideoItem {
@@ -289,24 +289,6 @@ export default function WissenschaftPage() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Bottom CTA section back to shop */}
-        <div className="bg-[#0A1C3A] text-white rounded-3xl p-8 sm:p-12 text-center space-y-6 shadow-2xl">
-          <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight">
-            Erlebe messbare Zell-Hydration selbst
-          </h2>
-          <p className="text-slate-300 text-xs sm:text-sm max-w-xl mx-auto">
-            Teste FONS VITAE H2-Wasserstoff in reinsten Aluminiumdosen. 0 kcal, 0 g Zucker, höchste Qualität.
-          </p>
-          <div className="pt-2">
-            <Link
-              to="/#shop"
-              className="inline-flex items-center gap-2 bg-white text-[#0A1C3A] hover:bg-slate-100 px-8 py-3.5 rounded-xl text-xs font-black uppercase tracking-wider shadow-lg transition transform hover:scale-105"
-            >
-              Jetzt im Shop bestellen <ExternalLink className="w-4 h-4" />
-            </Link>
           </div>
         </div>
       </section>
