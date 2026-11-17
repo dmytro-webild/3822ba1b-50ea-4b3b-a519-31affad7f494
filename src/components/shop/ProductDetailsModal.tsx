@@ -80,7 +80,7 @@ export default function ProductDetailsModal() {
             </div>
             <div className="bg-white p-3 rounded-xl border border-slate-200 space-y-1 shadow-xs">
               <HeartPulse className="w-5 h-5 text-[#0A1C3A] mx-auto" />
-              <span className="text-[11px] font-bold text-[#081427] block">Mind. 3 Dosen/Tag</span>
+              <span className="text-[11px] font-bold text-[#081427] block">1 bis 2 Dosen/Tag</span>
               <span className="text-[10px] text-slate-500">Verzehrempfehlung</span>
             </div>
           </div>

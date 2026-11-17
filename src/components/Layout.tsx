@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import NavbarPillLinks from "@/components/navbars/NavbarPillLinks";
 import FooterPanelWordmark from "@/components/sections/footer/FooterPanelWordmark";
@@ -9,7 +10,7 @@ import ProductDetailsModal from "@/components/shop/ProductDetailsModal";
 import LegalModal from "@/components/legal/LegalModal";
 import VideoModal from "@/components/video/VideoModal";
 import WaterDropsBackground from "@/components/animation/WaterDropsBackground";
-import { ShoppingBag } from "lucide-react";
+import { ShoppingBag, Home, GraduationCap, PhoneCall, ArrowUp } from "lucide-react";
 
 function FloatingCartButton() {
   const { setIsCartOpen, totalItemCount, totalPrice } = useCart();
@@ -17,7 +18,7 @@ function FloatingCartButton() {
   return (
     <button
       onClick={() => setIsCartOpen(true)}
-      className="fixed bottom-6 right-6 z-40 bg-[#0A1C3A] hover:bg-[#12284c] text-white p-3.5 rounded-2xl shadow-2xl border border-slate-300 flex items-center gap-3 group transition transform hover:scale-105 active:scale-95"
+      className="fixed bottom-20 right-4 min-[94.5rem]:bottom-6 min-[94.5rem]:right-6 z-40 bg-[#0A1C3A] hover:bg-[#12284c] text-white p-3.5 rounded-2xl shadow-2xl border border-slate-300 flex items-center gap-3 group transition transform hover:scale-105 active:scale-95"
       aria-label="Warenkorb öffnen"
     >
       <div className="relative">
@@ -36,11 +37,72 @@ function FloatingCartButton() {
   );
 }
 
+function MobileBottomBar() {
+  const [activeTab, setActiveTab] = useState("home");
+
+  const navItems = [
+    { id: "home", label: "Home", href: "#top", icon: Home },
+    { id: "shop", label: "Shop", href: "#shop", icon: ShoppingBag },
+    { id: "science", label: "Studien", href: "#science", icon: GraduationCap },
+    { id: "contact", label: "Kontakt", href: "#contact", icon: PhoneCall },
+  ];
+
+  return (
+    <nav
+      aria-label="Mobile Bottom Navigation"
+      className="fixed bottom-0 inset-x-0 z-40 bg-[#0A1C3A] text-white border-t border-slate-700/80 shadow-2xl py-2 px-3 flex items-center justify-around min-[94.5rem]:hidden font-sans"
+    >
+      {navItems.map((item) => {
+        const Icon = item.icon;
+        const isActive = activeTab === item.id;
+        return (
+          <a
+            key={item.id}
+            href={item.href}
+            onClick={() => setActiveTab(item.id)}
+            className={`flex flex-col items-center justify-center gap-0.5 transition py-1 px-3 rounded-lg ${
+              isActive ? "text-sky-400 font-extrabold" : "text-slate-300 hover:text-white"
+            }`}
+          >
+            <Icon className={`w-5 h-5 ${isActive ? "text-sky-400" : "text-slate-300"}`} />
+            <span className="text-[11px] tracking-tight">{item.label}</span>
+          </a>
+        );
+      })}
+    </nav>
+  );
+}
+
+function MobileBackToTop() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setVisible(window.scrollY > 200);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  if (!visible) return null;
+
+  return (
+    <button
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      className="fixed bottom-20 left-4 z-40 bg-[#0A1C3A]/90 backdrop-blur-md text-white p-3 rounded-full shadow-2xl border border-slate-300/40 hover:bg-[#0A1C3A] transition transform active:scale-90 min-[94.5rem]:hidden flex items-center justify-center"
+      aria-label="Nach oben scrollen"
+    >
+      <ArrowUp className="w-5 h-5 text-sky-400" />
+    </button>
+  );
+}
+
 function LayoutContent() {
   const { openLegalModal } = useCart();
 
   return (
     <div
+      id="top"
       className="relative isolate min-h-svh flex flex-col bg-background text-foreground selection:bg-[#0A1C3A] selection:text-white"
       data-button="default"
       data-card="filled"
@@ -105,6 +167,10 @@ function LayoutContent() {
 
       {/* Floating Cart Launcher Button */}
       <FloatingCartButton />
+
+      {/* Sticky Mobile Bottom Navigation & Back to Top */}
+      <MobileBottomBar />
+      <MobileBackToTop />
 
       {/* All Drawers & Modals */}
       <CartDrawer />
