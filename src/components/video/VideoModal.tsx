@@ -17,7 +17,7 @@ export default function VideoModal() {
       <div className="relative bg-[#0a192f] w-full max-w-3xl rounded-2xl shadow-2xl border border-slate-700 overflow-hidden text-white">
         {/* Header */}
         <div className="p-4 flex items-center justify-between border-b border-slate-800">
-          <div className="flex items-center gap-2 text-xs font-semibold text-[#d4af37]">
+          <div className="flex items-center gap-2 text-xs font-semibold text-sky-400">
             <PlayCircle className="w-4 h-4" />
             <span>FONS VITAE Wissenschaftsvideo</span>
           </div>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import HeroWordmarkProduct from "@/components/sections/hero/HeroWordmarkProduct";
 import ProductCompareTable from "@/components/sections/product/ProductCompareTable";
 import TestimonialPhotoRail from "@/components/sections/testimonial/TestimonialPhotoRail";
@@ -18,12 +19,7 @@ import {
   Briefcase,
   Dumbbell,
   Plane,
-  Mail,
-  Phone,
-  MapPin,
-  Users,
-  Instagram,
-  Youtube
+  ArrowRight
 } from "lucide-react";
 
 const CAN_IMAGE_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794865744193-o2e363kc.png";
@@ -712,8 +708,8 @@ export default function HomePage() {
 
       {/* ABOUT US (ÜBER UNS) PHILOSOPHICAL SECTION */}
       <section id="about" className="py-24 bg-[#f4f6f8] text-[#0A1C3A] font-sans border-t border-slate-300">
-        <div className="max-w-5xl mx-auto px-6 space-y-8 text-center">
-          <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-white px-4 py-1.5 rounded-full inline-block border border-slate-300">
+        <div className="max-w-5xl mx-auto px-6 space-y-10 text-center">
+          <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-white px-4 py-1.5 rounded-full inline-block border border-slate-300 shadow-sm">
             Über uns
           </span>
           <h2 className="text-4xl lg:text-6xl font-black uppercase tracking-tight text-[#0A1C3A]">
@@ -721,24 +717,49 @@ export default function HomePage() {
           </h2>
           <div className="w-24 h-1 bg-[#0A1C3A] mx-auto rounded-full" />
 
-          <blockquote className="text-lg lg:text-xl font-medium leading-relaxed italic text-slate-700 max-w-3xl mx-auto">
-            „FONS VITAE – Die Quelle des Lebens. Wir wissen aus eigener Erfahrung, wie schwer es ist, wahre Qualität zu finden...“
-          </blockquote>
+          <p className="text-base sm:text-lg lg:text-xl font-medium leading-relaxed text-slate-800 max-w-4xl mx-auto bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-lg text-left sm:text-center">
+            „FONS VITAE – Die Quelle des Lebens. Unser Name ist unser Auftrag: Wir glauben, dass wahre Gesundheit bei der Quelle beginnt. Inspiriert von der jahrhundertealten philosophischen Idee der 'Lebensquelle' verbinden wir dieses tiefe Verständnis mit modernster Wissenschaft. Unsere Philosophie basiert auf drei Säulen: Absolute Qualität, kompromisslose Transparenz und wissenschaftliche Fundierung. Jede Charge unseres molekularen Wasserstoffs wird streng geprüft. Wir bieten keine leeren Versprechen, sondern messbare Hydration auf zellulärer Ebene – für deine Energie, deinen Zellschutz und deine Vitalität.“
+          </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left pt-6">
-            <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-md space-y-3">
-              <h3 className="text-xl font-black text-[#0A1C3A] uppercase">Unsere Philosophie</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left pt-2">
+            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-md space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center font-black">
+                01
+              </div>
+              <h3 className="text-lg font-black text-[#0A1C3A] uppercase">Absolute Qualität</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                FONS VITAE steht für unkompromisslose Reinheit und höchste funktionale Hydration. Wir bieten Athleten, Fitness-Enthusiasten, Biohackern und der Healthy Beauty Branche die perfekte Kombination aus molekularem Wasserstoff und reinsten Nährstoffen.
+                Reinstes Wasserstoff-Wasser in BPA-freien, 100% nachhaltigen Aluminiumdosen für maximale Haltbarkeit des gelösten H2-Gases.
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-md space-y-3">
-              <h3 className="text-xl font-black text-[#0A1C3A] uppercase">Qualität & Verpackung</h3>
+            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-md space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center font-black">
+                02
+              </div>
+              <h3 className="text-lg font-black text-[#0A1C3A] uppercase">Kompromisslose Transparenz</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Jede 250-ml-Aluminiumdose von FONS VITAE ist 100% BPA-frei und nachhaltig recycelbar. Sie schützt das gelöste H2-Gas zuverlässig vor dem Entweichen für maximale Wirksamkeit bei jedem Schluck.
+                Vollständige Deklaration aller Nährwerte. 0 kcal, 0 g Zucker, 0 künstliche Zusatzstoffe. Dosenpfand transparent ausgewiesen.
               </p>
             </div>
+
+            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-md space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center font-black">
+                03
+              </div>
+              <h3 className="text-lg font-black text-[#0A1C3A] uppercase">Wissenschaftliche Fundierung</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Basierend auf aktuellen Studien zur Wirkung von gelöstem Wasserstoff auf Mitochondrien, Laktatabbau und Zellschutz.
+              </p>
+            </div>
+          </div>
+
+          <div className="pt-4">
+            <Link
+              to="/studien"
+              className="inline-flex items-center gap-2 bg-[#0A1C3A] hover:bg-[#12284c] text-white px-8 py-4 rounded-xl text-xs sm:text-sm font-extrabold uppercase tracking-wider shadow-lg transition transform hover:scale-105"
+            >
+              Zu den wissenschaftlichen Studien <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>
@@ -754,61 +775,142 @@ export default function HomePage() {
               Studien & News
             </h2>
             <p className="text-slate-600 text-sm max-w-xl mx-auto">
-              Wissenschaftliche Einordnung für Sport, Entzündungsprozesse/Zellschutz und Healthy Beauty.
+              Aktuelle Vorträge und klinische Berichte über die Wirkung von molekularem Wasserstoff auf Zellgesundheit, Langlebigkeit und Regeneration.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Pillar 1: Sports */}
-            <div className="bg-[#f4f6f8] rounded-2xl p-6 border border-slate-300 space-y-4 flex flex-col justify-between shadow-sm">
-              <div className="space-y-3">
-                <span className="text-xs text-[#0A1C3A] font-extrabold uppercase tracking-wider">01. Sport & Leistung</span>
-                <h3 className="text-xl font-bold uppercase text-[#0A1C3A]">Laktat & Ausdauer</h3>
+            {/* Video 1 */}
+            <div className="bg-[#f4f6f8] rounded-2xl border border-slate-300 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-md transition">
+              <div className="space-y-4 p-5">
+                <div
+                  onClick={() => openVideoModal("https://www.youtube-nocookie.com/embed/SDZtVonFPXM")}
+                  className="relative aspect-video rounded-xl overflow-hidden bg-[#0A1C3A] cursor-pointer group"
+                >
+                  <img
+                    src="https://img.youtube.com/vi/SDZtVonFPXM/hqdefault.jpg"
+                    alt="Tyler LeBaron Wasserstoffwasser"
+                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  />
+                  <div className="absolute inset-0 bg-slate-900/40 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-[#0A1C3A] text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition border border-white/20">
+                      <Play className="w-5 h-5 fill-current ml-0.5" />
+                    </div>
+                  </div>
+                </div>
+
+                <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#0A1C3A] bg-white px-2.5 py-1 rounded-md inline-block border border-slate-200">
+                  Wissenschaft & Langlebigkeit
+                </span>
+
+                <h3 className="text-sm font-extrabold text-[#0A1C3A] leading-snug">
+                  Tyler LeBaron: Wasserstoffwasser, Mitochondriengesundheit, selektive Antioxidantien und Langlebigkeit
+                </h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Studien belegen die Reduktion von Laktatansammlungen und Muskelermüdung bei intensivem Training durch molekularen Wasserstoff.
+                  Vortrag von Molekularbiologe Tyler LeBaron über die molekulare Wirkungsweise von H2 im menschlichen Organismus.
                 </p>
               </div>
-              <button
-                onClick={() => openVideoModal("https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ")}
-                className="inline-flex items-center gap-2 text-xs font-bold text-[#0A1C3A] hover:underline pt-4"
-              >
-                <Play className="w-4 h-4 fill-current" /> Video von Mediziner ansehen
-              </button>
+
+              <div className="p-5 pt-0">
+                <button
+                  onClick={() => openVideoModal("https://www.youtube-nocookie.com/embed/SDZtVonFPXM")}
+                  className="w-full bg-[#0A1C3A] hover:bg-[#12284c] text-white py-2.5 rounded-xl text-xs font-extrabold uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition"
+                >
+                  <Play className="w-3.5 h-3.5 fill-current" /> Video ansehen
+                </button>
+              </div>
             </div>
 
-            {/* Pillar 2: Inflammation / Cell protection */}
-            <div className="bg-[#f4f6f8] rounded-2xl p-6 border border-slate-300 space-y-4 flex flex-col justify-between shadow-sm">
-              <div className="space-y-3">
-                <span className="text-xs text-[#0A1C3A] font-extrabold uppercase tracking-wider">02. Zellschutz</span>
-                <h3 className="text-xl font-bold uppercase text-[#0A1C3A]">Selektiver Oxidationsschutz</h3>
+            {/* Video 2 */}
+            <div className="bg-[#f4f6f8] rounded-2xl border border-slate-300 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-md transition">
+              <div className="space-y-4 p-5">
+                <div
+                  onClick={() => openVideoModal("https://www.youtube-nocookie.com/embed/uvZgOupWwzg")}
+                  className="relative aspect-video rounded-xl overflow-hidden bg-[#0A1C3A] cursor-pointer group"
+                >
+                  <img
+                    src="https://img.youtube.com/vi/uvZgOupWwzg/hqdefault.jpg"
+                    alt="Erfahrungsbericht Demenz Alzheimer H2 Japan"
+                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  />
+                  <div className="absolute inset-0 bg-slate-900/40 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-[#0A1C3A] text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition border border-white/20">
+                      <Play className="w-5 h-5 fill-current ml-0.5" />
+                    </div>
+                  </div>
+                </div>
+
+                <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#0A1C3A] bg-white px-2.5 py-1 rounded-md inline-block border border-slate-200">
+                  Zellschutz & Medizin
+                </span>
+
+                <h3 className="text-sm font-extrabold text-[#0A1C3A] leading-snug">
+                  Erfahrungsbericht zu Demenz und Alzheimer: H2-Wasserstoff aus Japan
+                </h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  H2 neutralisiert gezielt zellschädigende Hydroxyl-Radikale und schützt biologische Membranen ohne Nebenwirkungen.
+                  Klinische Erkenntnisse und Erfahrungsberichte aus japanischen Forschungszentren zum Einsatz von molekularem Wasserstoff.
                 </p>
               </div>
-              <button
-                onClick={() => openVideoModal("https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ")}
-                className="inline-flex items-center gap-2 text-xs font-bold text-[#0A1C3A] hover:underline pt-4"
-              >
-                <Play className="w-4 h-4 fill-current" /> Vortrag von Professor ansehen
-              </button>
+
+              <div className="p-5 pt-0">
+                <button
+                  onClick={() => openVideoModal("https://www.youtube-nocookie.com/embed/uvZgOupWwzg")}
+                  className="w-full bg-[#0A1C3A] hover:bg-[#12284c] text-white py-2.5 rounded-xl text-xs font-extrabold uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition"
+                >
+                  <Play className="w-3.5 h-3.5 fill-current" /> Video ansehen
+                </button>
+              </div>
             </div>
 
-            {/* Pillar 3: Beauty */}
-            <div className="bg-[#f4f6f8] rounded-2xl p-6 border border-slate-300 space-y-4 flex flex-col justify-between shadow-sm">
-              <div className="space-y-3">
-                <span className="text-xs text-[#0A1C3A] font-extrabold uppercase tracking-wider">03. Healthy Beauty</span>
-                <h3 className="text-xl font-bold uppercase text-[#0A1C3A]">Zell-Hydration</h3>
+            {/* Video 3 */}
+            <div className="bg-[#f4f6f8] rounded-2xl border border-slate-300 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-md transition">
+              <div className="space-y-4 p-5">
+                <div
+                  onClick={() => openVideoModal("https://www.youtube-nocookie.com/embed/-2Go-J4V3o0")}
+                  className="relative aspect-video rounded-xl overflow-hidden bg-[#0A1C3A] cursor-pointer group"
+                >
+                  <img
+                    src="https://img.youtube.com/vi/-2Go-J4V3o0/hqdefault.jpg"
+                    alt="Die Wissenschaft Vorteile von molekularem Wasserstoffwasser"
+                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  />
+                  <div className="absolute inset-0 bg-slate-900/40 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-[#0A1C3A] text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition border border-white/20">
+                      <Play className="w-5 h-5 fill-current ml-0.5" />
+                    </div>
+                  </div>
+                </div>
+
+                <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#0A1C3A] bg-white px-2.5 py-1 rounded-md inline-block border border-slate-200">
+                  Zell-Hydration & Vitalität
+                </span>
+
+                <h3 className="text-sm font-extrabold text-[#0A1C3A] leading-snug">
+                  Die Wissenschaft + Vorteile von molekularem Wasserstoffwasser (Heiliger Wasserstoff)
+                </h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Von innen wirkende Hydration: Molekularer Wasserstoff dringt tief in Gewebe ein und fördert die Hautelastizität.
+                  Umfassende wissenschaftliche Zusammenfassung der Vorteile von gelöstem Wasserstoffwasser für Zellgesundheit und Regeneration.
                 </p>
               </div>
-              <button
-                onClick={() => openVideoModal("https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ")}
-                className="inline-flex items-center gap-2 text-xs font-bold text-[#0A1C3A] hover:underline pt-4"
-              >
-                <Play className="w-4 h-4 fill-current" /> Experteneinschätzung ansehen
-              </button>
+
+              <div className="p-5 pt-0">
+                <button
+                  onClick={() => openVideoModal("https://www.youtube-nocookie.com/embed/-2Go-J4V3o0")}
+                  className="w-full bg-[#0A1C3A] hover:bg-[#12284c] text-white py-2.5 rounded-xl text-xs font-extrabold uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition"
+                >
+                  <Play className="w-3.5 h-3.5 fill-current" /> Video ansehen
+                </button>
+              </div>
             </div>
+          </div>
+
+          <div className="text-center pt-4">
+            <Link
+              to="/studien"
+              className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-[#0A1C3A] bg-[#f4f6f8] hover:bg-slate-200 px-6 py-3 rounded-xl border border-slate-300 transition"
+            >
+              Alle Studien & Forschungsdetails ansehen <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>
@@ -961,162 +1063,6 @@ export default function HomePage() {
         />
       </div>
 
-      {/* CONTACT, SERVICE & TEAM SECTION */}
-      <section id="contact" className="py-24 bg-[#f4f6f8] text-[#0A1C3A] font-sans border-t border-slate-300">
-        <div className="max-w-7xl mx-auto px-6 space-y-16">
-          <div className="text-center space-y-3">
-            <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-white px-4 py-1.5 rounded-full inline-block border border-slate-300">
-              Kontakt & Service
-            </span>
-            <h2 className="text-4xl lg:text-5xl font-black text-[#0A1C3A] uppercase tracking-tight">
-              Ansprechpartner & Kundenservice
-            </h2>
-            <p className="text-slate-600 text-sm max-w-xl mx-auto">
-              Unser Team steht Dir bei allen Fragen zu Produkten und Bestellungen zur Seite.
-            </p>
-          </div>
-
-          {/* Team Showcase */}
-          <div className="space-y-6">
-            <h3 className="text-[#0A1C3A] text-sm font-bold uppercase tracking-wider text-center flex items-center justify-center gap-2">
-              <Users className="w-4 h-4" /> Das FONS VITAE Team
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-              <div className="bg-white p-6 rounded-2xl border border-slate-300 shadow-sm space-y-2">
-                <div className="w-16 h-16 rounded-full bg-[#0A1C3A] text-white font-black text-xl flex items-center justify-center mx-auto shadow-md">
-                  IT
-                </div>
-                <h4 className="font-extrabold text-lg text-[#0A1C3A]">Iwona Török</h4>
-                <p className="text-xs text-slate-600 font-semibold">Geschäftsleitung</p>
-              </div>
-
-              <div className="bg-white p-6 rounded-2xl border border-slate-300 shadow-sm space-y-2">
-                <div className="w-16 h-16 rounded-full bg-[#0A1C3A] text-white font-black text-xl flex items-center justify-center mx-auto shadow-md">
-                  SB
-                </div>
-                <h4 className="font-extrabold text-lg text-[#0A1C3A]">Sebastian Behlke</h4>
-                <p className="text-xs text-slate-600 font-semibold">Sales & Communication</p>
-              </div>
-
-              <div className="bg-white p-6 rounded-2xl border border-slate-300 shadow-sm space-y-2">
-                <div className="w-16 h-16 rounded-full bg-[#0A1C3A] text-white font-black text-xl flex items-center justify-center mx-auto shadow-md">
-                  MT
-                </div>
-                <h4 className="font-extrabold text-lg text-[#0A1C3A]">Miroslav Török</h4>
-                <p className="text-xs text-slate-600 font-semibold">Geschäftsleitung</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start pt-6">
-            {/* Contact Form */}
-            <div className="bg-white p-8 rounded-2xl border border-slate-300 space-y-6 shadow-md">
-              <h3 className="text-2xl font-bold uppercase tracking-tight text-[#0A1C3A]">Kontaktformular</h3>
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  alert("Vielen Dank! Ihre Nachricht wurde erfolgreich übermittelt.");
-                }}
-                className="space-y-4 text-xs"
-              >
-                <div>
-                  <label className="block text-slate-700 font-semibold mb-1">Dein Name *</label>
-                  <input
-                    type="text"
-                    required
-                    className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-[#0A1C3A] focus:outline-none focus:ring-2 focus:ring-[#0A1C3A]"
-                    placeholder="Vor- und Nachname"
-                  />
-                </div>
-                <div>
-                  <label className="block text-slate-700 font-semibold mb-1">E-Mail-Adresse *</label>
-                  <input
-                    type="email"
-                    required
-                    className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-[#0A1C3A] focus:outline-none focus:ring-2 focus:ring-[#0A1C3A]"
-                    placeholder="info@fonsvitae.de"
-                  />
-                </div>
-                <div>
-                  <label className="block text-slate-700 font-semibold mb-1">Telefonnummer</label>
-                  <input
-                    type="tel"
-                    className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-[#0A1C3A] focus:outline-none focus:ring-2 focus:ring-[#0A1C3A]"
-                    placeholder="017660945171"
-                  />
-                </div>
-                <div>
-                  <label className="block text-slate-700 font-semibold mb-1">Deine Nachricht *</label>
-                  <textarea
-                    rows={4}
-                    required
-                    className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-[#0A1C3A] focus:outline-none focus:ring-2 focus:ring-[#0A1C3A]"
-                    placeholder="Fragen zu Produkteigenschaften, Lieferung oder Bestellung..."
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-[#0A1C3A] hover:bg-[#12284c] text-white py-3.5 rounded-xl font-extrabold uppercase text-xs tracking-wider shadow-md transition"
-                >
-                  Nachricht jetzt senden
-                </button>
-              </form>
-            </div>
-
-            {/* Direct Details & Google Maps Placeholder */}
-            <div className="space-y-6">
-              <div className="bg-white p-8 rounded-2xl border border-slate-300 space-y-4 shadow-md">
-                <h3 className="text-2xl font-bold uppercase tracking-tight text-[#0A1C3A]">FONS VITAE Details</h3>
-                <div className="space-y-3 text-sm text-slate-700">
-                  <div className="flex items-center gap-3">
-                    <Phone className="w-5 h-5 text-[#0A1C3A]" />
-                    <span>Telefon: <strong>017660945171</strong></span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Mail className="w-5 h-5 text-[#0A1C3A]" />
-                    <span>Informationen: <strong>info@fonsvitae.de</strong></span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Mail className="w-5 h-5 text-[#0A1C3A]" />
-                    <span>Bestellungen: <strong>bestellung@fonsvitae.de</strong></span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <MapPin className="w-5 h-5 text-[#0A1C3A] shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="block text-[#0A1C3A]">FONS VITAE Hauptsitz</strong>
-                      <span>Industriestr. 23 A, 61449 Steinbach Ts.</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="pt-4 border-t border-slate-200 flex items-center gap-4">
-                  <span className="text-xs text-slate-500 font-semibold">Social Media:</span>
-                  <div className="flex gap-2">
-                    <span className="bg-slate-100 text-[#0A1C3A] text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1 border border-slate-300">
-                      <Instagram className="w-3 h-3" /> Instagram (Coming Soon)
-                    </span>
-                    <span className="bg-slate-100 text-[#0A1C3A] text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1 border border-slate-300">
-                      <Youtube className="w-3 h-3" /> YouTube (Coming Soon)
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Google Maps Placeholder */}
-              <div className="bg-white rounded-2xl border border-slate-300 overflow-hidden text-center p-8 space-y-3 shadow-md relative">
-                <div className="w-12 h-12 bg-[#f4f6f8] border border-slate-300 rounded-full flex items-center justify-center mx-auto text-[#0A1C3A]">
-                  <MapPin className="w-6 h-6" />
-                </div>
-                <h4 className="font-bold text-[#0A1C3A] text-base">Standort Steinbach Ts.</h4>
-                <p className="text-xs text-slate-600">FONS VITAE • Industriestr. 23 A, 61449 Steinbach Ts.</p>
-                <div className="w-full h-40 bg-[#f4f6f8] rounded-xl border border-slate-300 flex items-center justify-center text-xs text-slate-500 font-mono">
-                  [ Google Maps Standortsicht - Industriestr. 23 A, 61449 Steinbach Ts. ]
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

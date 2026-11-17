@@ -38,13 +38,14 @@ function FloatingCartButton() {
 }
 
 function MobileBottomBar() {
+  const { openLegalModal } = useCart();
   const [activeTab, setActiveTab] = useState("home");
 
   const navItems = [
-    { id: "home", label: "Home", href: "#top", icon: Home },
-    { id: "shop", label: "Shop", href: "#shop", icon: ShoppingBag },
-    { id: "science", label: "Studien", href: "#science", icon: GraduationCap },
-    { id: "contact", label: "Kontakt", href: "#contact", icon: PhoneCall },
+    { id: "home", label: "Home", href: "/", icon: Home },
+    { id: "shop", label: "Shop", href: "/#shop", icon: ShoppingBag },
+    { id: "science", label: "Studien", href: "/studien", icon: GraduationCap },
+    { id: "contact", label: "Kontakt", href: "#impressum", icon: PhoneCall, action: () => openLegalModal("impressum") },
   ];
 
   return (
@@ -59,7 +60,13 @@ function MobileBottomBar() {
           <a
             key={item.id}
             href={item.href}
-            onClick={() => setActiveTab(item.id)}
+            onClick={(e) => {
+              setActiveTab(item.id);
+              if (item.action) {
+                e.preventDefault();
+                item.action();
+              }
+            }}
             className={`flex flex-col items-center justify-center gap-0.5 transition py-1 px-3 rounded-lg ${
               isActive ? "text-sky-400 font-extrabold" : "text-slate-300 hover:text-white"
             }`}
@@ -133,15 +140,11 @@ function LayoutContent() {
             },
             {
               name: "Studien & News",
-              href: "#science"
+              href: "/studien"
             },
             {
               name: "Einsatzbereiche",
               href: "#usecases"
-            },
-            {
-              name: "Kontakt",
-              href: "#contact"
             }
           ]}
           primaryButton={{
