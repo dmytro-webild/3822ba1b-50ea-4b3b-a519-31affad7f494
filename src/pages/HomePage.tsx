@@ -27,7 +27,8 @@ import {
 } from "lucide-react";
 
 const CAN_IMAGE_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794865744193-o2e363kc.png";
-const CAN_BACK_IMAGE_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794865744195-vid929mb.png";
+const H2_12PACK_IMAGE_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794876509264-c5xnooyr.png";
+const H2_24PACK_IMAGE_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794876509262-p9spm6ut.png";
 const JUICE_IMAGE_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794874862684-n9ac3wqc.png";
 const BUNDLE_IMAGE_URL = "https://images.pexels.com/photos/5946081/pexels-photo-5946081.jpeg?auto=compress&w=800";
 
@@ -40,14 +41,14 @@ const JUICE_IMAGES: Record<string, string> = {
   "Apfel Ingwer (Apple Ginger)": "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794874862687-fj1yzdhx.png",
 };
 
-const H2_DETAILS: ProductDetailInfo = {
-  title: "FONS VITAE H2 Wasserstoff-Wasser",
-  subtitle: "250 ml Aluminiumdose (BPA-frei)",
+const H2_12_DETAILS: ProductDetailInfo = {
+  title: "FONS VITAE H2 Wasserstoff-Wasser (12er-Pack)",
+  subtitle: "12x 250 ml Aluminiumdosen (BPA-frei)",
   price: "33,00 € (12er-Pack)",
-  depositInfo: "Inklusive 0,25 € gesetzlichem Dosenpfand pro Dose",
-  imageSrc: CAN_IMAGE_URL,
+  depositInfo: "Inklusive 3,00 € Dosenpfand (0,25 € pro Dose)",
+  imageSrc: H2_12PACK_IMAGE_URL,
   description:
-    "Reinste Hydration angereichert mit mindestens 2,8 mg/L gelöstem molekularem Wasserstoff (H2). Entwickelt für Biohacker, Athleten, Fitness-Enthusiasten und die Healthy Beauty Branche zur Förderung der Zellenergie.",
+    "Reinste Hydration angereichert mit mindestens 2,8 mg/L gelöstem molekularem Wasserstoff (H2). Geliefert im handlichen 12er-Pack. Entwickelt für Biohacker, Athleten, Fitness-Enthusiasten und die Healthy Beauty Branche zur Förderung der Zellenergie.",
   verzehr: "Wir empfehlen mindestens 3 Dosen täglich zu trinken, vorzugsweise morgens nach dem Aufstehen, vor dem Workout oder bei hoher geistiger Beanspruchung.",
   nutritionalTable: [
     { name: "Brennwert", value: "0 kJ / 0 kcal" },
@@ -61,11 +62,40 @@ const H2_DETAILS: ProductDetailInfo = {
   ],
   specs: [
     "Mind. 2.8 mg/L gelöster Wasserstoff",
-    "BPA-freie Aluminiumdose",
+    "Original FONS VITAE 12er-Pack Verpackung",
+    "12x 250 ml BPA-freie Aluminiumdosen",
     "0 kcal, 0 g Zucker, BPA-frei",
     "Laborgeprüfte Reinheit aus Deutschland",
-    "Gezieltes Antioxidans für Zellschutz",
-    "Mindestens 3 Dosen täglich empfohlen"
+    "Gezieltes Antioxidans für Zellschutz"
+  ]
+};
+
+const H2_24_DETAILS: ProductDetailInfo = {
+  title: "FONS VITAE H2 Wasserstoff-Wasser (24er-Pack)",
+  subtitle: "24x 250 ml Aluminiumdosen (BPA-frei)",
+  price: "66,00 € (24er-Pack)",
+  depositInfo: "Inklusive 6,00 € Dosenpfand (0,25 € pro Dose)",
+  imageSrc: H2_24PACK_IMAGE_URL,
+  description:
+    "Der Monatsvorrat für maximale Zellenergie und Vitalität. 24 Dosen FONS VITAE H2 Wasserstoff-Wasser (min. 2.8 mg/L gelöster molekularer Wasserstoff). Geliefert im stabilen 24er-Pack.",
+  verzehr: "Wir empfehlen mindestens 3 Dosen täglich zu trinken, vorzugsweise morgens nach dem Aufstehen, vor dem Workout oder bei hoher geistiger Beanspruchung.",
+  nutritionalTable: [
+    { name: "Brennwert", value: "0 kJ / 0 kcal" },
+    { name: "Fett", value: "0 g" },
+    { name: "davon gesättigte Fettsäuren", value: "0 g" },
+    { name: "Kohlenhydrate", value: "0 g" },
+    { name: "davon Zucker", value: "0 g" },
+    { name: "Eiweiß", value: "0 g" },
+    { name: "Salz", value: "0 g" },
+    { name: "Molekularer Wasserstoff (H2)", value: "≥ 2.8 mg/L" },
+  ],
+  specs: [
+    "Mind. 2.8 mg/L gelöster Wasserstoff",
+    "Original FONS VITAE 24er-Pack Verpackung",
+    "24x 250 ml BPA-freie Aluminiumdosen",
+    "Optimaler Monatsvorrat (mind. 3 Dosen / Tag)",
+    "0 kcal, 0 g Zucker, BPA-frei",
+    "Laborgeprüfte Reinheit aus Deutschland"
   ]
 };
 
@@ -205,28 +235,28 @@ export default function HomePage() {
           {/* Card 1: H2 Wasser 12er-Pack */}
           <div className="bg-[#f4f6f8] rounded-2xl p-6 border border-slate-300 shadow-lg flex flex-col justify-between hover:border-[#0A1C3A] transition group">
             <div className="space-y-4">
-              <div className="relative bg-white rounded-xl p-6 border border-slate-200 text-center">
-                <span className="absolute top-3 left-3 bg-[#0A1C3A] text-white text-[10px] font-bold px-2.5 py-1 rounded-md uppercase">
+              <div className="relative bg-white rounded-xl p-4 border border-slate-200 text-center">
+                <span className="absolute top-3 left-3 bg-[#0A1C3A] text-white text-[10px] font-bold px-2.5 py-1 rounded-md uppercase z-10">
                   12er-Pack
                 </span>
-                <div className="absolute top-3 right-3 flex gap-1">
+                <div className="absolute top-3 right-3 flex gap-1 z-10">
                   <button
                     onClick={() => setCanCardSide("front")}
                     className={`text-[9px] font-bold px-2 py-0.5 rounded transition ${canCardSide === "front" ? "bg-[#0A1C3A] text-white" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
                   >
-                    Vorne
+                    Packung
                   </button>
                   <button
                     onClick={() => setCanCardSide("back")}
                     className={`text-[9px] font-bold px-2 py-0.5 rounded transition ${canCardSide === "back" ? "bg-[#0A1C3A] text-white" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
                   >
-                    Hinten
+                    Dose
                   </button>
                 </div>
                 <img
-                  src={canCardSide === "front" ? CAN_IMAGE_URL : CAN_BACK_IMAGE_URL}
-                  alt="FONS VITAE H2 Wasser 12er-Pack"
-                  className="w-40 h-40 object-contain mx-auto group-hover:scale-105 transition duration-300"
+                  src={canCardSide === "front" ? H2_12PACK_IMAGE_URL : CAN_IMAGE_URL}
+                  alt="FONS VITAE H2 Wasser 12er-Pack Originalverpackung"
+                  className="w-full h-44 object-contain mx-auto group-hover:scale-105 transition duration-300"
                 />
               </div>
               <div>
@@ -258,7 +288,7 @@ export default function HomePage() {
                   <span className="text-[10px] text-slate-500 block">inkl. 3,00 € Dosenpfand</span>
                 </div>
                 <button
-                  onClick={() => openProductDetail(H2_DETAILS)}
+                  onClick={() => openProductDetail(H2_12_DETAILS)}
                   className="text-xs text-[#0A1C3A] hover:underline font-bold flex items-center gap-1"
                 >
                   <Info className="w-3.5 h-3.5" /> Details
@@ -269,12 +299,12 @@ export default function HomePage() {
                 onClick={() =>
                   addToCart({
                     id: "h2-12pack",
-                    title: "FONS VITAE H2 Wasser",
+                    title: "FONS VITAE H2 Wasser (12er-Pack)",
                     packInfo: "12er-Pack (12x 250 ml)",
                     price: 33.00,
                     cansCount: 12,
                     deposit: 3.00,
-                    imageSrc: CAN_IMAGE_URL,
+                    imageSrc: H2_12PACK_IMAGE_URL,
                   })
                 }
                 className="w-full bg-[#0A1C3A] hover:bg-[#12284c] text-white py-3 rounded-xl font-bold uppercase text-xs tracking-wider flex items-center justify-center gap-2 shadow-md transition"
@@ -287,15 +317,18 @@ export default function HomePage() {
 
           {/* Card 2: H2 Wasser 24er-Pack */}
           <div className="bg-[#f4f6f8] rounded-2xl p-6 border-2 border-[#0A1C3A] shadow-xl flex flex-col justify-between group relative">
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0A1C3A] text-white text-[10px] font-black px-3 py-0.5 rounded-full uppercase tracking-wider">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0A1C3A] text-white text-[10px] font-black px-3 py-0.5 rounded-full uppercase tracking-wider z-10">
               Empfehlung
             </div>
             <div className="space-y-4 pt-1">
-              <div className="relative bg-[#0A1C3A]/5 rounded-xl p-6 border border-slate-200 text-center">
+              <div className="relative bg-white rounded-xl p-4 border border-slate-200 text-center">
+                <span className="absolute top-3 left-3 bg-[#0A1C3A] text-white text-[10px] font-bold px-2.5 py-1 rounded-md uppercase z-10">
+                  24er-Pack
+                </span>
                 <img
-                  src={CAN_IMAGE_URL}
-                  alt="FONS VITAE H2 Wasser 24er-Pack"
-                  className="w-40 h-40 object-contain mx-auto group-hover:scale-105 transition duration-300"
+                  src={H2_24PACK_IMAGE_URL}
+                  alt="FONS VITAE H2 Wasser 24er-Pack Originalverpackung"
+                  className="w-full h-44 object-contain mx-auto group-hover:scale-105 transition duration-300"
                 />
               </div>
               <div>
@@ -327,7 +360,7 @@ export default function HomePage() {
                   <span className="text-[10px] text-slate-500 block">inkl. 6,00 € Dosenpfand</span>
                 </div>
                 <button
-                  onClick={() => openProductDetail(H2_DETAILS)}
+                  onClick={() => openProductDetail(H2_24_DETAILS)}
                   className="text-xs text-[#0A1C3A] hover:underline font-bold flex items-center gap-1"
                 >
                   <Info className="w-3.5 h-3.5" /> Details
@@ -338,12 +371,12 @@ export default function HomePage() {
                 onClick={() =>
                   addToCart({
                     id: "h2-24pack",
-                    title: "FONS VITAE H2 Wasser",
+                    title: "FONS VITAE H2 Wasser (24er-Pack)",
                     packInfo: "24er-Pack (24x 250 ml)",
                     price: 66.00,
                     cansCount: 24,
                     deposit: 6.00,
-                    imageSrc: CAN_IMAGE_URL,
+                    imageSrc: H2_24PACK_IMAGE_URL,
                   })
                 }
                 className="w-full bg-[#0A1C3A] hover:bg-[#12284c] text-white py-3 rounded-xl font-black uppercase text-xs tracking-wider flex items-center justify-center gap-2 shadow-lg transition"
@@ -562,7 +595,7 @@ export default function HomePage() {
                       price: 66.00,
                       cansCount: 24,
                       deposit: 6.00,
-                      imageSrc: CAN_IMAGE_URL,
+                      imageSrc: H2_24PACK_IMAGE_URL,
                     })
                   }
                   className="mt-6 w-full bg-[#0A1C3A] text-white font-extrabold py-3 rounded-xl uppercase text-xs tracking-wider hover:bg-[#12284c] transition"

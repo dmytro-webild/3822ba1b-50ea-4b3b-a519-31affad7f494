@@ -52,7 +52,7 @@ function WaterMesh() {
         roughness={0.1}
         metalness={0.15}
         transparent
-        opacity={0.04}
+        opacity={0.035}
         wireframe={false}
         side={THREE.DoubleSide}
       />
@@ -65,22 +65,29 @@ function pseudoRandom(seed: number): number {
   return x - Math.floor(x);
 }
 
-function WaterBubbles({ count = 45 }: { count?: number }) {
+function WaterBubbles({ count = 50 }: { count?: number }) {
   const meshRef = useRef<THREE.InstancedMesh>(null);
   const dummy = useMemo(() => new THREE.Object3D(), []);
 
-  // Pre-generate bubble parameters with smaller scales
+  // Pre-generate bubble parameters positioned subtley along the left & right sides
   const bubbleData = useMemo(() => {
     const data = [];
     for (let i = 0; i < count; i++) {
+      const isRight = i % 2 === 0;
+      // Position on outer sides of viewport: Left (-12 to -5) or Right (5 to 12)
+      const sideX = isRight
+        ? 5 + pseudoRandom(i * 3 + 1) * 7
+        : -12 + pseudoRandom(i * 3 + 1) * 7;
+
       data.push({
-        x: (pseudoRandom(i * 4 + 1) - 0.5) * 22,
-        y: (pseudoRandom(i * 4 + 2) - 0.5) * 16,
+        x: sideX,
+        isRight,
+        y: (pseudoRandom(i * 4 + 2) - 0.5) * 18,
         z: (pseudoRandom(i * 4 + 3) - 0.5) * 4 - 0.5,
-        scale: 0.03 + pseudoRandom(i * 4 + 4) * 0.08,
-        speed: 0.5 + pseudoRandom(i + 200) * 0.7,
-        wobbleSpeed: 1.2 + pseudoRandom(i + 300) * 1.8,
-        wobbleAmp: 0.12 + pseudoRandom(i + 400) * 0.2,
+        scale: 0.02 + pseudoRandom(i * 4 + 4) * 0.06,
+        speed: 0.4 + pseudoRandom(i + 200) * 0.6,
+        wobbleSpeed: 1.0 + pseudoRandom(i + 300) * 1.5,
+        wobbleAmp: 0.08 + pseudoRandom(i + 400) * 0.12,
         phase: pseudoRandom(i + 500) * Math.PI * 2,
       });
     }
@@ -94,9 +101,12 @@ function WaterBubbles({ count = 45 }: { count?: number }) {
     bubbleData.forEach((b, i) => {
       // Move upward continuously
       b.y += b.speed * delta;
-      if (b.y > 9) {
-        b.y = -9;
-        b.x = (pseudoRandom(i * 7 + time) - 0.5) * 22;
+      if (b.y > 9.5) {
+        b.y = -9.5;
+        const newSide = b.isRight
+          ? 5 + pseudoRandom(i * 7 + time) * 7
+          : -12 + pseudoRandom(i * 7 + time) * 7;
+        b.x = newSide;
       }
 
       // Smooth horizontal wobble
@@ -119,11 +129,11 @@ function WaterBubbles({ count = 45 }: { count?: number }) {
       <meshStandardMaterial
         color="#7dd3fc"
         emissive="#38bdf8"
-        emissiveIntensity={0.05}
-        roughness={0.08}
-        metalness={0.1}
+        emissiveIntensity={0.03}
+        roughness={0.05}
+        metalness={0.05}
         transparent
-        opacity={0.15}
+        opacity={0.10}
       />
     </instancedMesh>
   );
@@ -131,17 +141,18 @@ function WaterBubbles({ count = 45 }: { count?: number }) {
 
 function WaterParticles() {
   const pointsRef = useRef<THREE.Points>(null);
-  const count = 100;
+  const count = 90;
 
   const [positions, speeds] = useMemo(() => {
     const posArray = new Float32Array(count * 3);
     const speedArray = new Float32Array(count);
 
     for (let i = 0; i < count; i++) {
-      posArray[i * 3] = (pseudoRandom(i * 3 + 1) - 0.5) * 20;
+      const isRight = i % 2 === 0;
+      posArray[i * 3] = isRight ? 5 + pseudoRandom(i * 3 + 1) * 7 : -12 + pseudoRandom(i * 3 + 1) * 7;
       posArray[i * 3 + 1] = (pseudoRandom(i * 3 + 2) - 0.5) * 16;
       posArray[i * 3 + 2] = (pseudoRandom(i * 3 + 3) - 0.5) * 4 - 1;
-      speedArray[i] = 0.3 + pseudoRandom(i + 100) * 0.6;
+      speedArray[i] = 0.3 + pseudoRandom(i + 100) * 0.5;
     }
     return [posArray, speedArray];
   }, [count]);
@@ -152,8 +163,8 @@ function WaterParticles() {
     const pos = geo.attributes.position;
 
     for (let i = 0; i < count; i++) {
-      let y = pos.getY(i) + speeds[i] * delta * 1.2;
-      if (y > 8) y = -8;
+      let y = pos.getY(i) + speeds[i] * delta * 1.1;
+      if (y > 8.5) y = -8.5;
       pos.setY(i, y);
     }
     pos.needsUpdate = true;
@@ -168,10 +179,10 @@ function WaterParticles() {
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.06}
+        size={0.05}
         color="#bae6fd"
         transparent
-        opacity={0.15}
+        opacity={0.12}
         sizeAttenuation
       />
     </points>
