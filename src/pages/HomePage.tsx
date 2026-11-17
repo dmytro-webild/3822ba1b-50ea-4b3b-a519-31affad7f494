@@ -8,9 +8,6 @@ import ScrollToneBackdrop from "@/components/kit/ScrollToneBackdrop";
 import LoaderWordmarkRise from "@/components/loaders/LoaderWordmarkRise";
 import { useCart, type ProductDetailInfo } from "@/context/CartContext";
 import {
-  Zap,
-  ShieldCheck,
-  Droplets,
   ShoppingBag,
   Info,
   Check,
@@ -176,41 +173,6 @@ export default function HomePage() {
           marquee="CLEAN & PURE H2 WATER • FONS VITAE • DIE QUELLE DES LEBENS •"
         />
       </div>
-
-      {/* USP Bar */}
-      <section className="bg-[#f4f6f8] text-[#0A1C3A] py-8 border-y border-slate-300 font-sans shadow-xs">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-          <div className="flex items-center justify-center gap-4 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-            <div className="w-12 h-12 rounded-full bg-[#0A1C3A] text-white flex items-center justify-center shrink-0">
-              <Zap className="w-6 h-6" />
-            </div>
-            <div className="text-left">
-              <h3 className="font-extrabold text-base tracking-wide text-[#0A1C3A] uppercase">Energie</h3>
-              <p className="text-xs text-slate-600">Unterstützt die zelluläre ATP-Produktion</p>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-center gap-4 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-            <div className="w-12 h-12 rounded-full bg-[#0A1C3A] text-white flex items-center justify-center shrink-0">
-              <ShieldCheck className="w-6 h-6" />
-            </div>
-            <div className="text-left">
-              <h3 className="font-extrabold text-base tracking-wide text-[#0A1C3A] uppercase">Zellschutz</h3>
-              <p className="text-xs text-slate-600">Gezielter Schutz vor freiem Radikalen-Stress</p>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-center gap-4 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-            <div className="w-12 h-12 rounded-full bg-[#0A1C3A] text-white flex items-center justify-center shrink-0">
-              <Droplets className="w-6 h-6" />
-            </div>
-            <div className="text-left">
-              <h3 className="font-extrabold text-base tracking-wide text-[#0A1C3A] uppercase">Vitalität</h3>
-              <p className="text-xs text-slate-600">Maximale Muskel-Hydration & Regeneration</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CORE E-COMMERCE SHOP SECTION */}
       <section id="shop" className="py-20 px-6 max-w-7xl mx-auto font-sans">
