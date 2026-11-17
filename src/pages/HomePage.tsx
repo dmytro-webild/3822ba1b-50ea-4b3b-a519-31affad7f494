@@ -1156,39 +1156,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* LARGE HIGHLIGHT CAN IMAGE AT THE BOTTOM OF HOMEPAGE */}
-      <section className="py-20 bg-[#0A1C3A] text-white font-sans overflow-hidden relative border-t border-slate-700">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
-          <div className="space-y-6 text-center md:text-left max-w-xl">
-            <span className="bg-white/10 text-cyan-300 border border-cyan-400/30 text-xs font-extrabold px-4 py-1.5 rounded-full uppercase tracking-widest inline-block">
-              FONS VITAE H2 Water • Pure Vitality
-            </span>
-            <h2 className="text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-tight">
-              Die Schönheit kommt von innen
-            </h2>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Erlebe molekularen Wasserstoff mit mindestens 2,8 mg/L gelöstem H2. Reinste Zellhydratation in der 250-ml Aluminiumdose – 100 % BPA-Frei und nachhaltig recycelbar.
-            </p>
-            <div className="pt-2 flex flex-wrap gap-4 justify-center md:justify-start">
-              <a
-                href="#shop"
-                className="bg-white text-[#0A1C3A] hover:bg-slate-100 font-extrabold px-8 py-4 rounded-xl uppercase text-xs tracking-wider shadow-xl transition transform hover:scale-105"
-              >
-                Jetzt im Shop bestellen
-              </a>
-            </div>
-          </div>
-          <div className="relative shrink-0 w-full max-w-md flex justify-center">
-            <div className="absolute inset-0 bg-cyan-400/20 blur-3xl rounded-full transform scale-90 pointer-events-none" />
-            <img
-              src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794878206365-gr7oah65.jpg"
-              alt="FONS VITAE H2 Wasserstoff Dose - Die Schönheit kommt von innen"
-              className="relative z-10 max-h-[480px] w-auto object-contain rounded-2xl shadow-2xl border-2 border-white/20 transform hover:scale-105 transition duration-500"
-            />
-          </div>
-        </div>
-      </section>
     </>
   );
 }
