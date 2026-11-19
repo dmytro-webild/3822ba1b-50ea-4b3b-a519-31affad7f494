@@ -7,12 +7,14 @@ export default function ProductDetailsModal() {
   if (!activeProductDetail) return null;
 
   const handleAddToCartFromModal = () => {
-    // derive cart item
+    const numMatch = activeProductDetail.price.replace(",", ".").match(/\d+\.?\d*/);
+    const parsedPrice = numMatch ? parseFloat(numMatch[0]) : 39.64;
+
     addToCart({
-      id: "h2-details-cart-item",
+      id: `modal-${activeProductDetail.title.toLowerCase().replace(/[^a-z0-9]/g, "-")}`,
       title: activeProductDetail.title,
       packInfo: activeProductDetail.subtitle,
-      price: parseFloat(activeProductDetail.price.replace("€", "").replace(",", ".")),
+      price: parsedPrice,
       cansCount: 12,
       deposit: 3.00,
       imageSrc: activeProductDetail.imageSrc,
