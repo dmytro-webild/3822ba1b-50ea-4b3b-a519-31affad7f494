@@ -751,7 +751,7 @@ export default function HomePage() {
               <div className="bg-white rounded-2xl overflow-hidden border border-slate-300 shadow-lg flex flex-col justify-between hover:border-[#0A1C3A] transition group">
                 <div className="relative h-44 overflow-hidden bg-slate-200">
                   <img
-                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=compress&w=800&q=80"
+                    src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795131470431-6qvssxou.png"
                     alt="Segler auf dem Meer"
                     className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
                   />
