@@ -185,7 +185,7 @@ function LayoutContent() {
 
       <footer data-webild-section="Footer" data-section="footer" className="relative z-10">
         <FooterPanelWordmark
-          title="DAS GESAMTE FONS VITAE SORTIMENT"
+          title="DAS GESAMTE FONTES VITAE SORTIMENT"
           subtitle="H2 WASSERSTOFF-WASSER & 6 EDLE FRUCHTSAFT-KREATIONEN"
           button={{
             text: "Jetzt Produkte entdecken",
