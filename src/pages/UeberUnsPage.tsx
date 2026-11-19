@@ -61,7 +61,7 @@ export default function UeberUnsPage() {
               ÜBER UNS – FONTES VITEA
             </h1>
             <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-light">
-              Die Quelle des Lebens. Als familiengeführtes Unternehmen und exklusiver Vertriebspartner bringen wir reinstes molekulares H₂-Wasserstoffwasser und Premium-Fruchtsäfte zu unseren Kunden in Deutschland, Österreich und der Schweiz.
+              Die Quelle des Lebens. Als familiengeführtes Unternehmen und exklusiver Vertriebspartner von WRC SR s.r.o.  bringen wir reinstes molekulares H₂-Wasserstoffwasser und Premium-Fruchtsäfte zu unseren Kunden in Deutschland, Österreich und der Schweiz.
             </p>
           </div>
         </div>
