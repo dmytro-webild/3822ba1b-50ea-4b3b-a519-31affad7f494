@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Outlet, Link } from "react-router-dom";
 import NavbarPillLinks from "@/components/navbars/NavbarPillLinks";
-import FooterPanelWordmark from "@/components/sections/footer/FooterPanelWordmark";
 import { CartProvider, useCart } from "@/context/CartContext";
 import CartDrawer from "@/components/cart/CartDrawer";
 import CheckoutModal from "@/components/cart/CheckoutModal";
@@ -179,55 +178,62 @@ function LayoutContent() {
       <LegalModal />
       <VideoModal />
 
-      <footer data-webild-section="Footer" data-section="footer" className="relative z-10">
-        <FooterPanelWordmark
-          title="DAS GESAMTE FONTES VITEA SORTIMENT"
-          subtitle="H2 WASSERSTOFF-WASSER & 6 EDLE FRUCHTSAFT-KREATIONEN"
-          button={{
-            text: "Jetzt im Shop entdecken",
-            href: "/shop"
-          }}
-          brand="FONTES VITEA"
-          logoSrc="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795103673176-908st9q6.png"
-          lineupImageSrc="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794880807544-312gbdxq.png"
-          socials={[
-            {
-              label: "Instagram (Coming Soon)",
-              href: "#",
-              icon: "instagram"
-            },
-            {
-              label: "YouTube (Coming Soon)",
-              href: "#",
-              icon: "youtube"
-            }
-          ]}
-          copyright="© FONTES VITEA – Die Quelle des Lebens. Alle Rechte vorbehalten. Kundenservice: 017660945171 | info@fontesvitea.de"
-        />
+      <footer data-webild-section="Footer" data-section="footer" className="relative z-10 bg-[#0A1C3A] text-white pt-12 pb-8 border-t border-slate-800 font-sans">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-slate-800/80">
+          {/* Brand & Logo */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-3">
+            <Link to="/" className="inline-block">
+              <img
+                src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795103673176-908st9q6.png"
+                alt="FONTES VITEA Logo"
+                className="h-14 w-auto object-contain rounded-xl bg-white p-2 shadow-md"
+              />
+            </Link>
+            <div>
+              <p className="font-extrabold text-sm tracking-wider uppercase">FONTES VITEA</p>
+              <p className="text-xs text-slate-400 mt-1 max-w-xs">
+                Exklusiver Vertriebspartner für molekulares H2 Wasserstoff-Wasser &amp; edle Fruchtsaft-Kreationen in der DACH-Region.
+              </p>
+            </div>
+          </div>
 
-        {/* Footer Legal Quick Bar */}
-        <div className="bg-[#f4f6f8] text-[#0A1C3A] text-xs py-4 px-6 border-t border-slate-300 text-center flex flex-wrap justify-center items-center gap-6">
-          <Link to="/impressum" className="font-semibold hover:underline transition">
-            Impressum
-          </Link>
-          <span className="text-slate-400">•</span>
-          <Link to="/kontakt" className="font-semibold hover:underline transition">
-            Kontakt
-          </Link>
-          <span className="text-slate-400">•</span>
-          <button onClick={() => openLegalModal("datenschutz")} className="font-semibold hover:underline transition">
-            Datenschutz
-          </button>
-          <span className="text-slate-400">•</span>
-          <button onClick={() => openLegalModal("agb")} className="font-semibold hover:underline transition">
-            AGB
-          </button>
-          <span className="text-slate-400">•</span>
-          <button onClick={() => openLegalModal("widerruf")} className="font-semibold hover:underline transition">
-            Widerrufsbelehrung
-          </button>
-          <span className="text-slate-400">•</span>
-          <span>Bestellungen: bestellung@fontesvitea.de | Tel: 017660945171</span>
+          {/* Quick Navigation Links */}
+          <div className="flex flex-col items-center md:items-start space-y-2">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-sky-400 mb-1">Navigation</h4>
+            <div className="flex flex-col space-y-1.5 text-xs text-slate-300">
+              <Link to="/#quelle" className="hover:text-white transition">Das Quellwasser</Link>
+              <Link to="/#vergleich" className="hover:text-white transition">Vorteile</Link>
+              <Link to="/shop" className="hover:text-white transition">Shop</Link>
+              <Link to="/ueber-uns" className="hover:text-white transition">Über uns</Link>
+              <Link to="/wissenschaft" className="hover:text-white transition">News &amp; Studien</Link>
+              <Link to="/kontakt" className="hover:text-white transition">Kontakt</Link>
+            </div>
+          </div>
+
+          {/* Contact & Customer Info */}
+          <div className="flex flex-col items-center md:items-start space-y-2 text-center md:text-left">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-sky-400 mb-1">Kontakt & Service</h4>
+            <p className="text-xs text-slate-300">Kundenservice &amp; Beratung:</p>
+            <p className="text-xs font-semibold text-white">Tel: 017660945171</p>
+            <p className="text-xs text-slate-300">E-Mail: info@fontesvitea.de</p>
+            <p className="text-xs text-slate-400 pt-1">Bestellungen: bestellung@fontesvitea.de</p>
+          </div>
+        </div>
+
+        {/* Legal Links & Copyright */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400 text-center md:text-left">
+          <p>© {new Date().getFullYear()} FONTES VITEA. Alle Rechte vorbehalten.</p>
+          <div className="flex flex-wrap justify-center items-center gap-4 text-slate-300">
+            <Link to="/impressum" className="hover:text-white transition">Impressum</Link>
+            <span>•</span>
+            <Link to="/kontakt" className="hover:text-white transition">Kontakt</Link>
+            <span>•</span>
+            <button onClick={() => openLegalModal("datenschutz")} className="hover:text-white transition">Datenschutz</button>
+            <span>•</span>
+            <button onClick={() => openLegalModal("agb")} className="hover:text-white transition">AGB</button>
+            <span>•</span>
+            <button onClick={() => openLegalModal("widerruf")} className="hover:text-white transition">Widerrufsbelehrung</button>
+          </div>
         </div>
       </footer>
     </div>
