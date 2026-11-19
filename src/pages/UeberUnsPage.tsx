@@ -216,7 +216,7 @@ export default function UeberUnsPage() {
                   className="bg-[#0A1C3A] hover:bg-[#12284c] text-white text-xs font-extrabold uppercase px-6 py-3 rounded-xl tracking-wider shrink-0 flex items-center gap-2 shadow-md transition transform hover:scale-105"
                 >
                   <ExternalLink className="w-4 h-4 text-sky-400" />
-                  <span>Scan anzeigen</span>
+                  <span>OFFIZIELLER PROTOKOLL</span>
                 </button>
               </div>
             </div>
