@@ -206,7 +206,7 @@ function LayoutContent() {
               icon: "youtube"
             }
           ]}
-          copyright="© FONS VITAE – Die Quelle des Lebens. Alle Rechte vorbehalten. Kundenservice: 017660945171 | info@fonsvitae.de"
+          copyright="© FONTES VITAE – Die Quelle des Lebens. Alle Rechte vorbehalten. Kundenservice: 017660945171 | info@fonsvitae.de"
         />
 
         {/* Footer Legal Quick Bar */}
