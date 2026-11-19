@@ -7,16 +7,28 @@ export default function ProductDetailsModal() {
   if (!activeProductDetail) return null;
 
   const handleAddToCartFromModal = () => {
-    const numMatch = activeProductDetail.price.replace(",", ".").match(/\d+\.?\d*/);
-    const parsedPrice = numMatch ? parseFloat(numMatch[0]) : 39.64;
+    let cans = activeProductDetail.cansCount ?? 12;
+    if (!activeProductDetail.cansCount) {
+      if (activeProductDetail.title.includes("6er") || activeProductDetail.subtitle.includes("6er")) cans = 6;
+      else if (activeProductDetail.title.includes("24er") || activeProductDetail.subtitle.includes("24er")) cans = 24;
+    }
+
+    let parsedPrice = activeProductDetail.rawPrice;
+    if (parsedPrice === undefined) {
+      const numMatch = activeProductDetail.price.replace(",", ".").match(/\d+\.?\d*/);
+      parsedPrice = numMatch ? parseFloat(numMatch[0]) : 39.64;
+    }
+
+    const calculatedDeposit = activeProductDetail.deposit ?? (cans * 0.25);
 
     addToCart({
       id: `modal-${activeProductDetail.title.toLowerCase().replace(/[^a-z0-9]/g, "-")}`,
       title: activeProductDetail.title,
-      packInfo: activeProductDetail.subtitle,
+      flavor: activeProductDetail.flavor,
+      packInfo: activeProductDetail.packInfo ?? activeProductDetail.subtitle,
       price: parsedPrice,
-      cansCount: 12,
-      deposit: 3.00,
+      cansCount: cans,
+      deposit: calculatedDeposit,
       imageSrc: activeProductDetail.imageSrc,
     });
     closeProductDetail();

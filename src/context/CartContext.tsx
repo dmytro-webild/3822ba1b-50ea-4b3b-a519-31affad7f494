@@ -23,6 +23,11 @@ export interface ProductDetailInfo {
   specs: string[];
   description: string;
   verzehr: string;
+  cansCount?: number;
+  deposit?: number;
+  rawPrice?: number;
+  packInfo?: string;
+  flavor?: string;
 }
 
 export interface OrderCustomerDetails {

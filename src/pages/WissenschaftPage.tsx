@@ -1,6 +1,19 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Activity, ShieldCheck, RefreshCw, Play, ArrowLeft, CheckCircle2 } from "lucide-react";
+import {
+  Activity,
+  ShieldCheck,
+  RefreshCw,
+  Play,
+  ArrowLeft,
+  CheckCircle2,
+  BookOpen,
+  FileText,
+  Award,
+  ChevronDown,
+  Zap,
+  HelpCircle
+} from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
 interface VideoItem {
@@ -39,9 +52,50 @@ const SCIENTIFIC_VIDEOS: VideoItem[] = [
   }
 ];
 
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+const FAQ_ITEMS: FaqItem[] = [
+  {
+    question: "Was ist molekularer Wasserstoff (H₂) und wie wirkt er im Körper?",
+    answer: "Molekularer Wasserstoff (H₂) ist das kleinste und leichteste Molekül im Universum. Durch seine winzige Molekülgröße kann er Zellmembranen sowie die Blut-Hirn-Schranke mühelos durchdringen und direkt in Zellkerne und Mitochondrien gelangen. Dort wirkt H₂ als selektives Antioxidans: Es neutralisiert gezielt hochreaktive, schädliche Hydroxyl-Radikale (•OH), ohne nützliche Signalmoleküle wie Stickstoffmonoxid zu beeinträchtigen."
+  },
+  {
+    question: "Sind die FONTES VITEA Aluminiumdosen 100 % BPA-frei?",
+    answer: "Ja, absolut. Sämtliche FONTES VITEA 250-ml-Aluminiumdosen besitzen eine modernste, lebensmittelechte Innenbeschichtung, die zu 100 % frei von Bisphenol A (BPA), Phthalaten und Weichmachern ist. Dadurch wird garantiert, dass keinerlei hormonell wirksame Stoffe oder schädliche Chemikalien an das Wasserstoff-Wasser abgegeben werden."
+  },
+  {
+    question: "Werden für FONTES VITEA Produkte oder Inhaltsstoffe Tierversuche durchgeführt?",
+    answer: "Nein, garantiert nicht! FONTES VITEA steht für strikten Tierschutz und ethische Verantwortung. Für keines unserer Produkte, Abfüllverfahren oder Inhaltsstoffe werden Tierversuche durchgeführt oder in Auftrag gegeben. Unsere Produkte sind zu 100 % tierversuchsfrei und vegan."
+  },
+  {
+    question: "Wie stabil ist das gelöste H₂-Gas in der Aluminiumdose?",
+    answer: "Die Aluminiumdose bietet die weltweit undurchlässigste Verpackungsbarriere gegen das Entweichen von Wasserstoffgas. In der verschlossenen Dose bleibt die H₂-Konzentration von mindestens 2,8 mg/L über viele Monate stabil. Nach dem Öffnen der Dose bleibt das gelöste H₂-Gas durch unser spezielles Anreicherungsverfahren 6 Stunden lang hochwirksam (ca. 99 % nach 2 Std., ca. 80 % nach 6 Std.)."
+  },
+  {
+    question: "Wie lautet die tägliche Verzehrempfehlung?",
+    answer: "Wir empfehlen die Einnahme von 1 bis 2 Dosen (250 ml) FONTES VITEA H₂ Wasserstoff-Wasser täglich. Ideal ist das Trinken direkt nach dem Aufstehen für den optimalen Start in den Tag, vor oder nach dem Sport zur Förderung der Regeneration, bei intensiver geistiger Arbeit im Büro oder auf Reisen."
+  },
+  {
+    question: "Wie funktioniert das Dosenpfand und die Rückgabe?",
+    answer: "Im Kaufpreis jeder Dose ist ein gesetzliches Dosenpfand von 0,25 € enthalten, das transparent ausgewiesen wird (z. B. 3,00 € Pfand bei einem 12er-Pack). Die leeren Aluminiumdosen können an jedem üblichen Leergutautomaten in Supermärkten und Getränkemärkten zurückgegeben werden. Aluminium ist zu 100 % unendlich oft ohne Qualitätsverlust recycelbar."
+  },
+  {
+    question: "In welche Länder liefert FONTES VITEA?",
+    answer: "FONTES VITEA beliefert Privatkunden und Geschäftspartner in der gesamten DACH-Region: Deutschland, Österreich und die Schweiz. Die Lieferung erfolgt schnell, zuverlässig und sicher verpackt über unsere Logistikpartner."
+  }
+];
+
 export default function WissenschaftPage() {
   const { openVideoModal } = useCart();
   const [activeCategory, setActiveCategory] = useState<"all" | "sport" | "zellschutz" | "regeneration">("all");
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
 
   return (
     <div className="bg-[#f8fafc] min-h-screen text-[#0A1C3A] font-sans pb-24">
@@ -57,20 +111,20 @@ export default function WissenschaftPage() {
 
           <div className="space-y-4 max-w-3xl">
             <span className="text-sky-400 text-xs font-extrabold tracking-widest uppercase bg-sky-950/60 px-4 py-1.5 rounded-full inline-block border border-sky-800/50">
-              Wissenschaftliche Evidenz
+              Wissenschaftliche Evidenz &amp; Studien
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-tight">
-              WISSENSCHAFT &amp; STUDIEN
+              WISSEN &amp; STUDIEN
             </h1>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
-              FONTES VITEA basiert auf fundierten wissenschaftlichen Studienergebnissen zu molekularem Wasserstoff (H2). Entdecke die Forschungskategorien, Laborerkenntnisse und Expertenberichte zur Wirkung auf zellulärer Ebene.
+              FONTES VITEA basiert auf über 1.000 wissenschaftlichen Studien zur Wirkung von molekularem Wasserstoff (H₂). Entdecke biochemische Grundlagen, Studien zu Laktatabbau und Mitochondrien, laborgeprüfte Zertifikate und Expertenberichte.
             </p>
           </div>
         </div>
       </section>
 
       {/* Main Categories Overview */}
-      <section className="max-w-7xl mx-auto px-6 py-16 space-y-16">
+      <section className="max-w-7xl mx-auto px-6 py-16 space-y-20">
         {/* Category Filter Pills */}
         <div className="flex flex-wrap items-center justify-center gap-3">
           <button
@@ -129,7 +183,7 @@ export default function WissenschaftPage() {
                   <h2 className="text-2xl font-black uppercase text-[#0A1C3A]">Sport &amp; Performance</h2>
                 </div>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Molekularer Wasserstoff reduziert nachweislich die Ansammlung von Laktat im Blut während intensiver sportlicher Belastung.
+                  Molekularer Wasserstoff reduziert nachweislich die Ansammlung von Laktat im Blut während intensiver sportlicher Belastung und schützt vor Mikrotraumata.
                 </p>
 
                 <ul className="space-y-2.5 pt-2 text-xs text-slate-700">
@@ -166,7 +220,7 @@ export default function WissenschaftPage() {
                   <h2 className="text-2xl font-black uppercase text-[#0A1C3A]">Zellschutz</h2>
                 </div>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  H2 fungiert als selektives Antioxidans. Es neutralisiert gezielt zellschädigende Hydroxyl-Radikale (.OH), ohne physiologisch wichtige Sauerstoffspezies zu beeinträchtigen.
+                  H₂ fungiert als selektives Antioxidans. Es neutralisiert gezielt zellschädigende Hydroxyl-Radikale (•OH), ohne physiologisch wichtige Sauerstoffspezies zu beeinträchtigen.
                 </p>
 
                 <ul className="space-y-2.5 pt-2 text-xs text-slate-700">
@@ -203,7 +257,7 @@ export default function WissenschaftPage() {
                   <h2 className="text-2xl font-black uppercase text-[#0A1C3A]">Regeneration</h2>
                 </div>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Durch seine winzige Molekülgröße durchdringt H2 mühelos Biomembranen und gelangt direkt in Zellkerne sowie Mitochondrien für rasche Hydration und Erholung.
+                  Durch seine winzige Molekülgröße durchdringt H₂ mühelos Biomembranen und gelangt direkt in Zellkerne sowie Mitochondrien für rasche Hydration und Erholung.
                 </p>
 
                 <ul className="space-y-2.5 pt-2 text-xs text-slate-700">
@@ -229,6 +283,49 @@ export default function WissenschaftPage() {
           )}
         </div>
 
+        {/* Scientific Publications & PubMed References */}
+        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-xl space-y-8">
+          <div className="space-y-3">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-sky-600 bg-sky-50 px-3 py-1 rounded-md border border-sky-100 inline-block">
+              Internationale Fachliteratur &amp; PubMed
+            </span>
+            <h2 className="text-3xl font-black uppercase text-[#0A1C3A]">
+              Internationale Forschung &amp; Publikationen
+            </h2>
+            <p className="text-slate-600 text-xs sm:text-sm max-w-3xl leading-relaxed">
+              Seit der Pionierstudie in <em>Nature Medicine (2007)</em> von Prof. Shigeo Ohta haben Forscher weltweit in über 1.000 wissenschaftlichen Arbeiten die therapeutische Wirkung von molekularem Wasserstoff nachgewiesen.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-[#f8fafc] p-6 rounded-2xl border border-slate-200 space-y-3">
+              <div className="flex items-center gap-2 text-xs font-bold text-[#0A1C3A]">
+                <FileText className="w-4 h-4 text-sky-600" />
+                <span>Nature Medicine (2007) – Ohsawa et al.</span>
+              </div>
+              <h3 className="text-sm font-bold text-[#0A1C3A]">
+                „Hydrogen acts as a therapeutic antioxidant by selectively reducing cytotoxic oxygen radicals“
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Der wissenschaftliche Durchbruch: Molekularer Wasserstoff neutralisiert gezielt Hydroxylradikale (•OH), ohne physiologische Signalmoleküle zu schädigen.
+              </p>
+            </div>
+
+            <div className="bg-[#f8fafc] p-6 rounded-2xl border border-slate-200 space-y-3">
+              <div className="flex items-center gap-2 text-xs font-bold text-[#0A1C3A]">
+                <FileText className="w-4 h-4 text-sky-600" />
+                <span>Medical Gas Research (2012) – LeBaron et al.</span>
+              </div>
+              <h3 className="text-sm font-bold text-[#0A1C3A]">
+                „Molecular hydrogen as an emerging therapeutic medical gas for sports medicine“
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Untersuchung von gelöstem Wasserstoff bei Leistungssportlern: Signifikante Senkung von Blut-Laktatwerten und Muskelkater.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Video Studies Showcase Section */}
         <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-xl space-y-10">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
@@ -239,7 +336,7 @@ export default function WissenschaftPage() {
               Wissenschaftliche Videos &amp; Analysen
             </h2>
             <p className="text-slate-600 text-xs sm:text-sm">
-              Sieh dir hochkarätige Vorträge und Berichte renommierter Forscher über die Wirkungsweise von H2-Wasserstoff an.
+              Sieh dir hochkarätige Vorträge und Berichte renommierter Forscher über die Wirkungsweise von H₂-Wasserstoff an.
             </p>
           </div>
 
@@ -290,6 +387,161 @@ export default function WissenschaftPage() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Quellen, Zertifikate & Buchempfehlung Brigitte Hamann */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Certificate & Sources Box */}
+          <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg space-y-6 flex flex-col justify-between">
+            <div className="space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-[#0A1C3A] text-sky-400 flex items-center justify-center font-bold">
+                  <Award className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-sky-600 block">Zertifizierung &amp; Reinheit</span>
+                  <h3 className="text-xl font-black text-[#0A1C3A] uppercase">Quellen &amp; Prüfsiegel</h3>
+                </div>
+              </div>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Jede Abfüllung von FONTES VITEA wird strengsten unabhängigen Laborkontrollen in Deutschland unterzogen.
+              </p>
+
+              <div className="space-y-3 pt-2">
+                <div className="bg-[#f8fafc] p-3.5 rounded-xl border border-slate-200 flex items-center gap-3">
+                  <ShieldCheck className="w-5 h-5 text-emerald-600 shrink-0" />
+                  <div>
+                    <span className="text-xs font-bold text-[#0A1C3A] block">100 % BPA-Frei Zertifikat</span>
+                    <span className="text-[11px] text-slate-500">Unabhängig geprüfte Innenbeschichtung ohne Weichmacher</span>
+                  </div>
+                </div>
+
+                <div className="bg-[#f8fafc] p-3.5 rounded-xl border border-slate-200 flex items-center gap-3">
+                  <Zap className="w-5 h-5 text-sky-600 shrink-0" />
+                  <div>
+                    <span className="text-xs font-bold text-[#0A1C3A] block">Mind. 2.8 mg/L H₂-Gaskonzentration</span>
+                    <span className="text-[11px] text-slate-500">Laborgeprüfte Gaslöslichkeit &amp; Langzeit-Stabilität</span>
+                  </div>
+                </div>
+
+                <div className="bg-[#f8fafc] p-3.5 rounded-xl border border-slate-200 flex items-center gap-3">
+                  <Award className="w-5 h-5 text-amber-600 shrink-0" />
+                  <div>
+                    <span className="text-xs font-bold text-[#0A1C3A] block">ISO 9001 Abfüllstandard</span>
+                    <span className="text-[11px] text-slate-500">Garantierte Hygiene &amp; Mikrobiologische Reinheit aus Tiefenquelle</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-4 border-t border-slate-100 text-[11px] text-slate-500 font-semibold">
+              Laboranalysen auf Anfrage für Geschäftspartner verfügbar.
+            </div>
+          </div>
+
+          {/* Book Recommendation Brigitte Hamann */}
+          <div className="bg-[#0A1C3A] text-white rounded-3xl p-8 border border-slate-800 shadow-xl space-y-6 flex flex-col justify-between relative overflow-hidden">
+            <div className="space-y-4 relative z-10">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold border border-sky-500/30">
+                  <BookOpen className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-sky-400 block">Buchempfehlung</span>
+                  <h3 className="text-xl font-black text-white uppercase">Brigitte Hamann</h3>
+                </div>
+              </div>
+
+              <div className="bg-white/10 p-5 rounded-2xl border border-white/10 space-y-3">
+                <span className="text-xs font-black uppercase text-sky-300 block">
+                  „Wasserstoff: Das Element des Lebens“
+                </span>
+                <p className="text-xs text-slate-200 leading-relaxed font-light">
+                  Fachbuch-Empfehlung von Bestseller-Autorin <strong>Brigitte Hamann</strong>. Das Werk erläutert verständlich und wissenschaftlich fundiert, wie gelöster molekularer Wasserstoff als Jungbrunnen für die Zellen wirkt, oxidativen Stress abwendet und die Mitochondrienfunktion belebt.
+                </p>
+              </div>
+
+              <ul className="space-y-2 text-xs text-slate-300">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
+                  <span>Detaillierter Überblick über biochemische Wirkmechanismen</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
+                  <span>Praktische Leitfäden für zelluläre Entgiftung &amp; Vitalität</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
+                  <span>Fundiertes Wissen für gesundheitsbewusste Menschen</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="pt-4 border-t border-slate-700/80 text-xs text-slate-300 flex items-center justify-between relative z-10">
+              <span>Empfohlen für FONTES VITEA Kunden</span>
+              <span className="text-sky-400 font-bold">Standardwerk</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Structured Expandable FAQ Section */}
+        <div id="faq" className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-xl space-y-10">
+          <div className="text-center space-y-3 max-w-2xl mx-auto">
+            <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-[#f4f6f8] px-4 py-1.5 rounded-full inline-block border border-slate-300">
+              Häufige Fragen &amp; Antworten
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black text-[#0A1C3A] uppercase tracking-tight">
+              FACHLICHER FAQ-BEREICH
+            </h2>
+            <p className="text-slate-600 text-xs sm:text-sm">
+              Präzise und transparente Antworten zu molekularem Wasserstoff, BPA-Freiheit, Tierversuchsfreiheit, Verzehrempfehlung und Dosenpfand.
+            </p>
+          </div>
+
+          <div className="space-y-4 max-w-4xl mx-auto">
+            {FAQ_ITEMS.map((item, idx) => {
+              const isOpen = openFaqIndex === idx;
+              return (
+                <div
+                  key={idx}
+                  className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                    isOpen ? "bg-[#f8fafc] border-[#0A1C3A] shadow-md" : "bg-white border-slate-200 hover:border-slate-300"
+                  }`}
+                >
+                  <button
+                    onClick={() => toggleFaq(idx)}
+                    className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-[#0A1C3A] focus:outline-none"
+                  >
+                    <span className="flex items-center gap-3">
+                      <HelpCircle className={`w-5 h-5 shrink-0 ${isOpen ? "text-sky-600" : "text-slate-400"}`} />
+                      <span>{item.question}</span>
+                    </span>
+                    <ChevronDown
+                      className={`w-5 h-5 text-[#0A1C3A] shrink-0 transition-transform duration-300 ${
+                        isOpen ? "rotate-180 text-sky-600" : ""
+                      }`}
+                    />
+                  </button>
+
+                  {isOpen && (
+                    <div className="px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-700 leading-relaxed border-t border-slate-200/80">
+                      {item.answer}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Back to Shop CTA */}
+        <div className="text-center pt-6">
+          <Link
+            to="/#shop"
+            className="inline-flex items-center gap-2 bg-[#0A1C3A] hover:bg-[#12284c] text-white px-8 py-4 rounded-xl text-xs font-black uppercase tracking-wider shadow-md transition"
+          >
+            Jetzt FONTES VITEA im Shop bestellen <ArrowLeft className="w-4 h-4 rotate-180" />
+          </Link>
         </div>
       </section>
     </div>
