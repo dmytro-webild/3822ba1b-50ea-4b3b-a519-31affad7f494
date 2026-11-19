@@ -66,7 +66,7 @@ const NavbarPillLinks = ({
             <a href="#" className="min-w-0 flex items-center gap-2.5">
               <Media
                 src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795103673176-908st9q6.png"
-                alt="FONS VITAE Logo"
+                alt="FONTES VITEA Logo"
                 className="h-8 w-auto object-contain rounded"
               />
             </a>

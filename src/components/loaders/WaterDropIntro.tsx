@@ -241,7 +241,7 @@ export default function WaterDropIntro({ onComplete }: WaterDropIntroProps) {
       } else if (elapsed < 3.0) {
         // ==========================================
         // SCENE 4 (2.0 - 3.0s): Website Reveal Mask
-        // Expanding circular water ripple reveals FONS VITAE.
+        // Expanding circular water ripple reveals FONTES VITEA.
         // ==========================================
         const revealProgress = Math.min(1.0, (elapsed - 2.0) / 1.0); // 0.0 to 1.0
         

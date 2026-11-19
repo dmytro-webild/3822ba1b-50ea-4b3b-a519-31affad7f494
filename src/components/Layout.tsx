@@ -116,7 +116,7 @@ function LayoutContent() {
 
       <header data-webild-section="Header" className="relative z-20">
         <NavbarPillLinks
-          brand="FONS VITAE"
+          brand="FONTES VITEA"
           navItems={[
             {
               name: "Unsere Quelle",
@@ -185,13 +185,13 @@ function LayoutContent() {
 
       <footer data-webild-section="Footer" data-section="footer" className="relative z-10">
         <FooterPanelWordmark
-          title="DAS GESAMTE FONTES VITAE SORTIMENT"
+          title="DAS GESAMTE FONTES VITEA SORTIMENT"
           subtitle="H2 WASSERSTOFF-WASSER & 6 EDLE FRUCHTSAFT-KREATIONEN"
           button={{
             text: "Jetzt Produkte entdecken",
             href: "/#shop"
           }}
-          brand="FONS VITAE"
+          brand="FONTES VITEA"
           logoSrc="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795103673176-908st9q6.png"
           lineupImageSrc="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794880807544-312gbdxq.png"
           socials={[
@@ -206,7 +206,7 @@ function LayoutContent() {
               icon: "youtube"
             }
           ]}
-          copyright="© FONTES VITAE – Die Quelle des Lebens. Alle Rechte vorbehalten. Kundenservice: 017660945171 | info@fonsvitae.de"
+          copyright="© FONTES VITEA – Die Quelle des Lebens. Alle Rechte vorbehalten. Kundenservice: 017660945171 | info@fontesvitea.de"
         />
 
         {/* Footer Legal Quick Bar */}
@@ -231,7 +231,7 @@ function LayoutContent() {
             Widerrufsbelehrung
           </button>
           <span className="text-slate-400">•</span>
-          <span>Bestellungen: bestellung@fonsvitae.de | Tel: 017660945171</span>
+          <span>Bestellungen: bestellung@fontesvitea.de | Tel: 017660945171</span>
         </div>
       </footer>
     </div>

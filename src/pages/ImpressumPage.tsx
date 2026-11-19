@@ -14,7 +14,7 @@ export default function ImpressumPage() {
             Impressum
           </h1>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
-            Angaben gemäß § 5 TMG und rechtliche Hinweise zur FONS VITAE Website.
+            Angaben gemäß § 5 TMG und rechtliche Hinweise zur FONTES VITEA Website.
           </p>
         </div>
 
@@ -32,7 +32,7 @@ export default function ImpressumPage() {
               </h2>
             </div>
             <div className="text-sm text-slate-700 leading-relaxed space-y-1 border-t border-slate-200 pt-4 font-semibold">
-              <p className="text-base text-[#0A1C3A] font-black">FONS VITAE</p>
+              <p className="text-base text-[#0A1C3A] font-black">FONTES VITEA</p>
               <p>Industriestr. 23 A</p>
               <p>61449 Steinbach Ts.</p>
               <p>Deutschland</p>
@@ -73,11 +73,11 @@ export default function ImpressumPage() {
               </p>
               <p className="flex items-center gap-2">
                 <span className="text-slate-500 uppercase text-xs font-bold w-32">E-Mail (Allgemein):</span>
-                <a href="mailto:info@fonsvitae.de" className="text-[#0A1C3A] hover:underline font-extrabold">info@fonsvitae.de</a>
+                <a href="mailto:info@fontesvitea.de" className="text-[#0A1C3A] hover:underline font-extrabold">info@fontesvitea.de</a>
               </p>
               <p className="flex items-center gap-2">
                 <span className="text-slate-500 uppercase text-xs font-bold w-32">E-Mail (Bestellung):</span>
-                <a href="mailto:bestellung@fonsvitae.de" className="text-[#0A1C3A] hover:underline font-extrabold">bestellung@fonsvitae.de</a>
+                <a href="mailto:bestellung@fontesvitea.de" className="text-[#0A1C3A] hover:underline font-extrabold">bestellung@fontesvitea.de</a>
               </p>
             </div>
           </div>

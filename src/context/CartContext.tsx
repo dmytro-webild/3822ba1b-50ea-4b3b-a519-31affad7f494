@@ -78,7 +78,7 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export function CartProvider({ children }: { children: ReactNode }) {
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
     if (typeof window !== "undefined") {
-      const saved = localStorage.getItem("fons_vitae_cart");
+      const saved = localStorage.getItem("fontes_vitea_cart") || localStorage.getItem("fons_vitae_cart");
       if (saved) {
         try { return JSON.parse(saved); } catch { return []; }
       }
@@ -86,7 +86,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     return [
       {
         id: "h2-12pack",
-        title: "FONS VITAE H2 Wasser",
+        title: "FONTES VITEA H2 Wasser",
         packInfo: "12er-Pack (12x 250 ml)",
         price: 39.64,
         cansCount: 12,
@@ -113,7 +113,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      localStorage.setItem("fons_vitae_cart", JSON.stringify(cartItems));
+      localStorage.setItem("fontes_vitea_cart", JSON.stringify(cartItems));
     }
   }, [cartItems]);
 

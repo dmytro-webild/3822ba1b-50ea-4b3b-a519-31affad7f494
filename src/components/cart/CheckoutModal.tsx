@@ -48,7 +48,7 @@ export default function CheckoutModal() {
         {/* Header */}
         <div className="bg-[#0A1C3A] text-white p-6 flex items-center justify-between border-b border-slate-300">
           <div>
-            <span className="text-slate-300 text-xs font-extrabold uppercase tracking-widest block">FONS VITAE Shop</span>
+            <span className="text-slate-300 text-xs font-extrabold uppercase tracking-widest block">FONTES VITEA Shop</span>
             <h2 className="text-2xl font-bold uppercase tracking-tight">Kasse & Bestellung</h2>
           </div>
           <button

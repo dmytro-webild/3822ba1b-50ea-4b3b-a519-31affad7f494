@@ -19,7 +19,7 @@ export default function UeberUnsPage() {
               Über uns
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-tight">
-              ÜBER UNS – FONTES VITAE
+              ÜBER UNS – FONTES VITEA
             </h1>
             <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-light">
               Die Quelle des Lebens. Wir verbinden jahrhundertealte Naturphilosophie mit fortschrittlichster Zell-Wissenschaft für Deine maximale Hydration und Vitalität.
@@ -42,7 +42,7 @@ export default function UeberUnsPage() {
           </div>
 
           <h2 className="text-2xl sm:text-3xl font-black text-[#0A1C3A] uppercase tracking-tight">
-            „FONTES VITAE – Die Quelle des Lebens“
+            „FONTES VITEA – Die Quelle des Lebens“
           </h2>
 
           <p className="text-base sm:text-lg font-medium leading-relaxed text-slate-700">
@@ -101,7 +101,7 @@ export default function UeberUnsPage() {
               Technologie &amp; Innovation
             </span>
             <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight">
-              Was FONTES VITAE besonders macht
+              Was FONTES VITEA besonders macht
             </h2>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
               Unsere proprietäre H2-Wasserstoff-Technologie verbindet unberührte Tiefenquelle mit hochpräziser physikalischer Wasserstoffanreicherung.
