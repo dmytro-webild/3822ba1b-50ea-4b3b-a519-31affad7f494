@@ -39,12 +39,48 @@ const JUICE_IMAGES: Record<string, string> = {
   "Apfel Ingwer (Apple Ginger)": "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794874862684-n9ac3wqc.png",
 };
 
+const H2_6_DETAILS: ProductDetailInfo = {
+  title: "FONTES VITEA H2 Wasserstoff-Wasser (6er-Pack)",
+  subtitle: "6x 250 ml Aluminiumdosen (100 % BPA-Frei)",
+  price: "19,82 € (6er-Pack)",
+  depositInfo: "Inklusive 19 % MwSt. & 1,50 € Dosenpfand (0,25 € pro Dose)",
+  imageSrc: H2_12PACK_IMAGE_URL,
+  rawPrice: 19.82,
+  cansCount: 6,
+  deposit: 1.50,
+  packInfo: "6er-Pack (6x 250 ml)",
+  description:
+    "Das Kennenlern-Paket für pure Zell-Hydration. 6 Aluminiumdosen FONTES VITEA H2 Wasserstoff-Wasser mit mindestens 2,8 mg/L gelöstem Wasserstoff. 100 % BPA-Frei, 0 kcal, 0 g Zucker.",
+  verzehr: "Empfohlene tägliche Verzehrmenge: 1 bis 2 Dosen täglich. Ideal morgens, vor/nach dem Sport oder unterwegs.",
+  nutritionalTable: [
+    { name: "Brennwert", value: "0 kJ / 0 kcal" },
+    { name: "Fett", value: "0 g" },
+    { name: "davon gesättigte Fettsäuren", value: "0 g" },
+    { name: "Kohlenhydrate", value: "0 g" },
+    { name: "davon Zucker", value: "0 g" },
+    { name: "Eiweiß", value: "0 g" },
+    { name: "Salz", value: "0 g" },
+    { name: "Molekularer Wasserstoff (H2)", value: "≥ 2.8 mg/L" },
+  ],
+  specs: [
+    "Mind. 2.8 mg/L gelöster Wasserstoff",
+    "6x 250 ml Aluminiumdosen – 100 % BPA-Frei",
+    "0 kcal, 0 g Zucker, 100% BPA-Frei",
+    "Laborgeprüfte Reinheit aus Deutschland",
+    "Gezieltes Antioxidans für Zellschutz"
+  ]
+};
+
 const H2_12_DETAILS: ProductDetailInfo = {
   title: "FONTES VITEA H2 Wasserstoff-Wasser (12er-Pack)",
   subtitle: "12x 250 ml Aluminiumdosen (100 % BPA-Frei)",
   price: "39,64 € (12er-Pack)",
   depositInfo: "Inklusive 19 % MwSt. & 3,00 € Dosenpfand (0,25 € pro Dose)",
   imageSrc: H2_12PACK_IMAGE_URL,
+  rawPrice: 39.64,
+  cansCount: 12,
+  deposit: 3.00,
+  packInfo: "12er-Pack (12x 250 ml)",
   description:
     "Reinste Hydration angereichert mit mindestens 2,8 mg/L gelöstem molekularem Wasserstoff (H2). Geliefert im handlichen 12er-Pack in 100 % BPA-Freien Aluminiumdosen. Entwickelt für Biohacker, Athleten, Fitness-Enthusiasten und die Healthy Beauty Branche zur Förderung der Zellenergie.",
   verzehr: "Empfohlene tägliche Verzehrmenge: 1 bis 2 Dosen täglich. Ideal für: Morgens zum Start, bei der Arbeit, vor/nach dem Sport oder auf Reisen.",
@@ -74,6 +110,10 @@ const H2_24_DETAILS: ProductDetailInfo = {
   price: "79,28 € (24er-Pack)",
   depositInfo: "Inklusive 19 % MwSt. & 6,00 € Dosenpfand (0,25 € pro Dose)",
   imageSrc: H2_24PACK_IMAGE_URL,
+  rawPrice: 79.28,
+  cansCount: 24,
+  deposit: 6.00,
+  packInfo: "24er-Pack (24x 250 ml)",
   description:
     "Der Monatsvorrat für maximale Zellenergie und Vitalität. 24 Dosen FONTES VITEA H2 Wasserstoff-Wasser (min. 2.8 mg/L gelöster molekularer Wasserstoff) in 100 % BPA-Freien Aluminiumdosen. Geliefert im stabilen 24er-Pack.",
   verzehr: "Empfohlene tägliche Verzehrmenge: 1 bis 2 Dosen täglich. Ideal für: Morgens zum Start, bei der Arbeit, vor/nach dem Sport oder auf Reisen.",
@@ -327,6 +367,15 @@ const SEVEN_VARIETIES: VarietyItem[] = [
 
 export default function HomePage() {
   const { addToCart, openProductDetail } = useCart();
+
+  // H2 Pack selection state
+  const [selectedH2Pack, setSelectedH2Pack] = useState<"6" | "12" | "24">("12");
+
+  const h2PackInfo = {
+    "6": { price: 19.82, count: 6, deposit: 1.50, label: "6er-Pack (19,82 €)", detail: H2_6_DETAILS, image: H2_12PACK_IMAGE_URL },
+    "12": { price: 39.64, count: 12, deposit: 3.00, label: "12er-Pack (39,64 €)", detail: H2_12_DETAILS, image: H2_12PACK_IMAGE_URL },
+    "24": { price: 79.28, count: 24, deposit: 6.00, label: "24er-Pack (79,28 €)", detail: H2_24_DETAILS, image: H2_24PACK_IMAGE_URL }
+  };
 
   // Juice selection state
   const [selectedJuiceFlavor, setSelectedJuiceFlavor] = useState("Blaubeere (Blueberry)");
@@ -778,12 +827,12 @@ export default function HomePage() {
 
         {/* Product Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Card 1: H2 Wasser 12er-Pack */}
+          {/* Card 1: H2 Wasser (6er / 12er / 24er Pack) */}
           <div className="bg-[#f4f6f8] rounded-2xl p-6 border border-slate-300 shadow-lg flex flex-col justify-between hover:border-[#0A1C3A] transition group">
             <div className="space-y-4">
               <div className="relative bg-white rounded-xl p-4 border border-slate-200 text-center">
                 <span className="absolute top-3 left-3 bg-[#0A1C3A] text-white text-[10px] font-bold px-2.5 py-1 rounded-md uppercase z-10">
-                  12er-Pack
+                  {selectedH2Pack}er-Pack
                 </span>
                 <div className="absolute top-3 right-3 flex gap-1 z-10">
                   <button
@@ -800,15 +849,36 @@ export default function HomePage() {
                   </button>
                 </div>
                 <img
-                  src={canCardSide === "front" ? H2_12PACK_IMAGE_URL : CAN_IMAGE_URL}
-                  alt="FONTES VITEA H2 Wasser 12er-Pack Originalverpackung"
+                  src={canCardSide === "front" ? (selectedH2Pack === "24" ? H2_24PACK_IMAGE_URL : H2_12PACK_IMAGE_URL) : CAN_IMAGE_URL}
+                  alt={`FONTES VITEA H2 Wasser ${selectedH2Pack}er-Pack`}
                   className="w-full h-44 object-contain mx-auto group-hover:scale-105 transition duration-300"
                 />
               </div>
               <div>
                 <span className="text-xs text-[#0A1C3A] font-extrabold uppercase">H2 Wasserstoff-Wasser</span>
-                <h3 className="text-2xl font-black text-[#0A1C3A] uppercase tracking-tight">12er-Pack H2 Wasser</h3>
-                <p className="text-xs text-slate-600 mt-1">12x 250 ml Alu-Dosen (100 % BPA-Frei)</p>
+                <h3 className="text-2xl font-black text-[#0A1C3A] uppercase tracking-tight">{selectedH2Pack}er-Pack H2 Wasser</h3>
+                <p className="text-xs text-slate-600 mt-1">{selectedH2Pack}x 250 ml Alu-Dosen (100 % BPA-Frei)</p>
+              </div>
+
+              {/* Pack size selector */}
+              <div className="space-y-2 bg-white p-3.5 rounded-xl border border-slate-200 text-xs">
+                <label className="block font-bold text-[#0A1C3A]">Paketgröße wählen:</label>
+                <div className="grid grid-cols-3 gap-1.5">
+                  {(["6", "12", "24"] as const).map((pk) => (
+                    <button
+                      key={pk}
+                      type="button"
+                      onClick={() => setSelectedH2Pack(pk)}
+                      className={`py-1.5 rounded-lg font-bold text-xs border transition ${
+                        selectedH2Pack === pk
+                          ? "bg-[#0A1C3A] text-white border-[#0A1C3A]"
+                          : "bg-slate-100 text-slate-700 border-slate-300 hover:bg-slate-200"
+                      }`}
+                    >
+                      {pk}er-Pack
+                    </button>
+                  ))}
+                </div>
               </div>
 
               <div className="space-y-1.5 text-xs text-slate-700 bg-white p-3.5 rounded-xl border border-slate-200">
@@ -822,7 +892,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-[#0A1C3A] shrink-0" />
-                  <span>inkl. 19 % MwSt. &amp; Pfand (3,00 €)</span>
+                  <span>inkl. MwSt. &amp; Pfand ({h2PackInfo[selectedH2Pack].deposit.toFixed(2).replace('.', ',')} €)</span>
                 </div>
               </div>
             </div>
@@ -830,11 +900,13 @@ export default function HomePage() {
             <div className="mt-6 pt-4 border-t border-slate-300 space-y-3">
               <div className="flex justify-between items-baseline">
                 <div>
-                  <span className="text-2xl font-black text-[#0A1C3A]">39,64 €</span>
+                  <span className="text-2xl font-black text-[#0A1C3A]">
+                    {h2PackInfo[selectedH2Pack].price.toFixed(2).replace('.', ',')} €
+                  </span>
                   <span className="text-[10px] text-slate-500 block">inkl. 19 % MwSt. &amp; Pfand</span>
                 </div>
                 <button
-                  onClick={() => openProductDetail(H2_12_DETAILS)}
+                  onClick={() => openProductDetail(h2PackInfo[selectedH2Pack].detail)}
                   className="text-xs text-[#0A1C3A] hover:underline font-bold flex items-center gap-1"
                 >
                   <Info className="w-3.5 h-3.5" /> Details
@@ -844,19 +916,19 @@ export default function HomePage() {
               <button
                 onClick={() =>
                   addToCart({
-                    id: "h2-12pack",
-                    title: "FONTES VITEA H2 Wasser (12er-Pack)",
-                    packInfo: "12er-Pack (12x 250 ml)",
-                    price: 39.64,
-                    cansCount: 12,
-                    deposit: 3.00,
-                    imageSrc: H2_12PACK_IMAGE_URL,
+                    id: `h2-${selectedH2Pack}pack`,
+                    title: `FONTES VITEA H2 Wasser (${selectedH2Pack}er-Pack)`,
+                    packInfo: `${selectedH2Pack}er-Pack (${selectedH2Pack}x 250 ml)`,
+                    price: h2PackInfo[selectedH2Pack].price,
+                    cansCount: h2PackInfo[selectedH2Pack].count,
+                    deposit: h2PackInfo[selectedH2Pack].deposit,
+                    imageSrc: h2PackInfo[selectedH2Pack].image,
                   })
                 }
                 className="w-full bg-[#0A1C3A] hover:bg-[#12284c] text-white py-3 rounded-xl font-bold uppercase text-xs tracking-wider flex items-center justify-center gap-2 shadow-md transition"
               >
                 <ShoppingBag className="w-4 h-4 text-white" />
-                In den Warenkorb (39,64 €)
+                In den Warenkorb ({h2PackInfo[selectedH2Pack].price.toFixed(2).replace('.', ',')} €)
               </button>
             </div>
           </div>
