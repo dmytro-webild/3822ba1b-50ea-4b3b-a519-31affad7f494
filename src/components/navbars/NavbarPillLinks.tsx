@@ -8,6 +8,7 @@ import useMenuDialog from "@/components/kit/useMenuDialog";
 import MoreArrowPill from "@/components/kit/MoreArrowPill";
 import { useCart } from "@/context/CartContext";
 import HeaderSearch from "@/components/search/HeaderSearch";
+import Media from "@/components/kit/Media";
 
 type NavItem = { name: string; href: string };
 type Button = { text: string; href: string };
@@ -63,8 +64,8 @@ const NavbarPillLinks = ({
         <div className="flex items-center justify-between gap-[1rem] min-[94.5rem]:grid min-[94.5rem]:grid-cols-[1fr_auto_1fr]">
           <div className="flex min-w-0 items-center gap-[0.75rem]">
             <a href="#" className="min-w-0 flex items-center gap-2.5">
-              <img
-                src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794862275041-s5qagrxx.jpg"
+              <Media
+                src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795103673176-908st9q6.png"
                 alt="FONS VITAE Logo"
                 className="h-8 w-auto object-contain rounded"
               />

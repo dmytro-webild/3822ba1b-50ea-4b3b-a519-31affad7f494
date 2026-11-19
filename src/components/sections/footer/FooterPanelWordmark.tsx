@@ -106,7 +106,7 @@ const FooterPanelWordmark = ({
   title = "DAS GESAMTE FONS VITAE SORTIMENT",
   subtitle = "H2 WASSERSTOFF-WASSER & 6 EDLE FRUCHTSAFT-KREATIONEN",
   lineupImageSrc = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794880807544-312gbdxq.png",
-  logoSrc = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794862275041-s5qagrxx.jpg",
+  logoSrc = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795103673176-908st9q6.png",
   socials = [
     { label: "Instagram", href: "#", icon: "instagram" },
     { label: "YouTube", href: "#", icon: "youtube" },
@@ -159,7 +159,7 @@ const FooterPanelWordmark = ({
           >
             <div className="relative group cursor-pointer">
               <div className="absolute -inset-1.5 rounded-3xl bg-gradient-to-r from-sky-400 via-blue-600 to-[#0A1C3A] opacity-25 blur-md group-hover:opacity-45 transition duration-500" />
-              <img
+              <Media
                 src={logoSrc}
                 alt="FONS VITAE Logo"
                 className="relative h-20 sm:h-28 md:h-36 w-auto object-contain rounded-2xl shadow-xl border border-slate-200/90 bg-white p-3.5 sm:p-4 transition hover:scale-105 duration-300"
