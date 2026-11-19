@@ -139,7 +139,7 @@ function LayoutContent() {
               href: "/ueber-uns"
             },
             {
-              name: "Wissen & Studien",
+              name: "News & Studien",
               href: "/wissenschaft"
             },
             {
