@@ -190,7 +190,7 @@ function LayoutContent() {
               />
             </Link>
             <div>
-              <p className="font-extrabold text-sm tracking-wider uppercase">FONTES VITEA</p>
+              <p className="font-extrabold text-sm tracking-wider uppercase"></p>
               <p className="text-xs text-slate-400 mt-1 max-w-xs">
                 Exklusiver Vertriebspartner für molekulares H2 Wasserstoff-Wasser &amp; edle Fruchtsaft-Kreationen in der DACH-Region.
               </p>
