@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -107,47 +107,10 @@ const BUBBLES: BubbleItem[] = [
   },
 ];
 
-const BAND = "M-71 371.6C126.3 260 593.5 65.8 934.5 80.8c313 13.8 497 136 572 200";
-
-const CurvedMarquee = ({ text }: { text: string }) => {
-  const id = useId();
-  const measureRef = useRef<SVGTextElement>(null);
-  const reduce = useReducedMotion();
-  const [unit, setUnit] = useState(0);
-  const phrase = `${text.trim()} · `;
-
-  useEffect(() => {
-    const measure = () => setUnit(measureRef.current?.getComputedTextLength() ?? 0);
-    measure();
-    document.fonts?.ready.then(measure);
-  }, [phrase]);
-
-  const repeats = unit > 0 ? Math.ceil(2400 / unit) + 2 : 12;
-
-  return (
-    <div aria-hidden="true" className="pointer-events-none relative mt-12 w-full">
-      <svg viewBox="0 0 1440 442" fill="none" className="block w-full overflow-visible">
-        <path d={`${BAND}V442H-71Z`} fill="#ffffff" />
-        <path id={`${id}-band`} d={BAND} stroke="#e2e8f0" strokeWidth="160" />
-        <text ref={measureRef} className="invisible font-sans font-extrabold uppercase tracking-tight" fontSize={110}>
-          {phrase}
-        </text>
-        <text className="fill-[#0A1C3A] font-sans font-extrabold uppercase tracking-tight" fontSize={110}>
-          <textPath href={`#${id}-band`} dominantBaseline="central" startOffset="0">
-            {phrase.repeat(repeats)}
-            {!reduce && unit > 0 && <animate attributeName="startOffset" from="0" to={-unit} dur={`${(unit / 90).toFixed(2)}s`} repeatCount="indefinite" />}
-          </textPath>
-        </text>
-      </svg>
-    </div>
-  );
-};
-
 const HeroWordmarkProduct = ({
   title = "H2 - HYDROGEN WATER",
   description = "CLEAN & PURE – Maximale Hydration mit molekularem Wasserstoff",
   primaryButton = { text: "Jetzt Shop entdecken", href: "#shop" },
-  marquee = "CLEAN & PURE H2 WATER • FONTES VITEA • DIE QUELLE DES LEBENS •",
   introDelay = 0,
   productImageSrc = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794865744193-o2e363kc.png",
   productImageAlt = "FONTES VITEA H2 Wasserstoff Dose",
@@ -390,9 +353,6 @@ const HeroWordmarkProduct = ({
           </motion.div>
         </div>
       )}
-
-      {/* Curved Marquee */}
-      {marquee && <CurvedMarquee text={marquee} />}
     </section>
   );
 };

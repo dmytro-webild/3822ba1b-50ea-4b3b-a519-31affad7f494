@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import HeroWordmarkProduct from "@/components/sections/hero/HeroWordmarkProduct";
 import ProductCompareTable from "@/components/sections/product/ProductCompareTable";
 import TestimonialPhotoRail from "@/components/sections/testimonial/TestimonialPhotoRail";
@@ -8,7 +9,19 @@ import { useCart, type ProductDetailInfo } from "@/context/CartContext";
 import {
   ShoppingBag,
   Info,
-  Check
+  Check,
+  Sun,
+  Briefcase,
+  Dumbbell,
+  Plane,
+  Droplets,
+  ShieldCheck,
+  Cpu,
+  BookOpen,
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  Sparkles
 } from "lucide-react";
 
 const CAN_IMAGE_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794865744193-o2e363kc.png";
@@ -93,6 +106,225 @@ const JUICE_DESCRIPTIONS: Record<string, string> = {
   "Apfel Ingwer (Apple Ginger)": "100% natürlicher Fruchtsaft • Vegan • 100% BPA-Frei. Belebende Harmonie aus süßem Apfelsaft und würziger Ingwernote in BPA-freien Alu-Dosen. 100% pflanzlich.",
 };
 
+// 7 Sorten Product List for Carousel
+interface VarietyItem {
+  id: string;
+  name: string;
+  badge: string;
+  category: string;
+  image: string;
+  price: string;
+  deposit: string;
+  description: string;
+  detail: ProductDetailInfo;
+}
+
+const SEVEN_VARIETIES: VarietyItem[] = [
+  {
+    id: "sorte-h2",
+    name: "FONTES VITEA H2 Wasser",
+    badge: "H2 Molekular",
+    category: "Wasserstoff-Wasser",
+    image: CAN_IMAGE_URL,
+    price: "39,64 € (12er-Pack)",
+    deposit: "Inkl. 3,00 € Pfand",
+    description: "Reinste Hydration mit mind. 2,8 mg/L gelöstem molekularem Wasserstoff (H2). 0 kcal, 0 g Zucker, BPA-Frei.",
+    detail: H2_12_DETAILS,
+  },
+  {
+    id: "sorte-blaubeere",
+    name: "Blaubeere (Blueberry)",
+    badge: "100% Fruchtsaft",
+    category: "Vital-Fruchtsaft",
+    image: JUICE_IMAGES["Blaubeere (Blueberry)"],
+    price: "31,84 € (12er-Pack)",
+    deposit: "Inkl. 3,00 € Pfand",
+    description: "Köstlicher Direktsaft aus sonnengereiften Blaubeeren. Reich an pflanzlichen Antioxidantien, 100% Vegan.",
+    detail: {
+      title: "FONTES VITEA Fruchtsaft - Blaubeere (Blueberry)",
+      subtitle: "100% natürlicher Direktsaft • 100% Vegan • 250 ml Alu-Dose",
+      price: "31,84 € (12er-Pack)",
+      depositInfo: "Inklusive 19 % MwSt. & 3,00 € Dosenpfand (0,25 € pro Dose)",
+      imageSrc: JUICE_IMAGES["Blaubeere (Blueberry)"],
+      description: "Direktsaft aus sonnengereiften Blaubeeren in 100 % BPA-freien Aluminiumdosen. Natursüß, intensiv und voller Vitalstoffe.",
+      verzehr: "Ideal als frischer Energieschub am Morgen oder als nahrhafter Fruchttank zwischendurch.",
+      nutritionalTable: [
+        { name: "Brennwert", value: "185 kJ / 44 kcal" },
+        { name: "Fett", value: "< 0,1 g" },
+        { name: "Kohlenhydrate", value: "10,5 g" },
+        { name: "davon Zucker", value: "9,8 g" },
+        { name: "Eiweiß", value: "0,3 g" }
+      ],
+      specs: [
+        "100% natürlicher Blaubeersaft",
+        "100% Vegan & BPA-Frei",
+        "Reich an Vitamin C & Antioxidantien",
+        "Laborgeprüfte Reinheit"
+      ]
+    }
+  },
+  {
+    id: "sorte-traube",
+    name: "Traube (Grape)",
+    badge: "100% Fruchtsaft",
+    category: "Vital-Fruchtsaft",
+    image: JUICE_IMAGES["Traube (Grape)"],
+    price: "31,84 € (12er-Pack)",
+    deposit: "Inkl. 3,00 € Pfand",
+    description: "Edler Traubensaft aus sonnenverwöhnten Weintrauben. Natursüß, reich an Polyphenolen und BPA-Frei.",
+    detail: {
+      title: "FONTES VITEA Fruchtsaft - Traube (Grape)",
+      subtitle: "100% natürlicher Direktsaft • 100% Vegan • 250 ml Alu-Dose",
+      price: "31,84 € (12er-Pack)",
+      depositInfo: "Inklusive 19 % MwSt. & 3,00 € Dosenpfand (0,25 € pro Dose)",
+      imageSrc: JUICE_IMAGES["Traube (Grape)"],
+      description: "Intensiver Traubensaft aus Weintrauben höchster Güteklasse in 100 % BPA-freien Alu-Dosen.",
+      verzehr: "Perfekter natürlicher Durstlöscher und Kraftspender im Alltag.",
+      nutritionalTable: [
+        { name: "Brennwert", value: "270 kJ / 64 kcal" },
+        { name: "Fett", value: "< 0,1 g" },
+        { name: "Kohlenhydrate", value: "15,5 g" },
+        { name: "davon Zucker", value: "15,2 g" },
+        { name: "Eiweiß", value: "0,2 g" }
+      ],
+      specs: [
+        "100% edler Traubensaft",
+        "100% Vegan & BPA-Frei",
+        "Wertvolle Pflanzenstoffe",
+        "Ohne Zuckerzusatz"
+      ]
+    }
+  },
+  {
+    id: "sorte-himbeere",
+    name: "Himbeere (Raspberry)",
+    badge: "100% Fruchtsaft",
+    category: "Vital-Fruchtsaft",
+    image: JUICE_IMAGES["Himbeere (Raspberry)"],
+    price: "31,84 € (12er-Pack)",
+    deposit: "Inkl. 3,00 € Pfand",
+    description: "Fruchtiges Himbeer-Erlebnis voller natürlicher Frische und Vitalität. In BPA-freien Aluminiumdosen.",
+    detail: {
+      title: "FONTES VITEA Fruchtsaft - Himbeere (Raspberry)",
+      subtitle: "100% natürlicher Fruchtsaft • 100% Vegan • 250 ml Alu-Dose",
+      price: "31,84 € (12er-Pack)",
+      depositInfo: "Inklusive 19 % MwSt. & 3,00 € Dosenpfand (0,25 € pro Dose)",
+      imageSrc: JUICE_IMAGES["Himbeere (Raspberry)"],
+      description: "Erfrischender Himbeersaft mit voller Fruchtkraft. 100% pflanzlich abgefüllt in BPA-freien Alu-Dosen.",
+      verzehr: "Gekühlt genießen für maximale fruchtige Erfrischung.",
+      nutritionalTable: [
+        { name: "Brennwert", value: "172 kJ / 41 kcal" },
+        { name: "Fett", value: "< 0,1 g" },
+        { name: "Kohlenhydrate", value: "9,2 g" },
+        { name: "davon Zucker", value: "8,5 g" },
+        { name: "Eiweiß", value: "0,4 g" }
+      ],
+      specs: [
+        "Voller Himbeergeschmack",
+        "100% Vegan & BPA-Frei",
+        "Erfrischende Fruchtsäure",
+        "Laborgeprüfte Qualität"
+      ]
+    }
+  },
+  {
+    id: "sorte-ingwer",
+    name: "Ingwer (Ginger Tonic)",
+    badge: "100% Fruchtsaft",
+    category: "Vital-Fruchtsaft",
+    image: JUICE_IMAGES["Ingwer (Ginger Tonic)"],
+    price: "31,84 € (12er-Pack)",
+    deposit: "Inkl. 3,00 € Pfand",
+    description: "Erfrischendes Ginger Tonic mit angenehmer Ingwerschärfe. Belebt Sinne und Kreislauf.",
+    detail: {
+      title: "FONTES VITEA Fruchtsaft - Ingwer (Ginger Tonic)",
+      subtitle: "100% natürlicher Fruchtsaft • 100% Vegan • 250 ml Alu-Dose",
+      price: "31,84 € (12er-Pack)",
+      depositInfo: "Inklusive 19 % MwSt. & 3,00 € Dosenpfand (0,25 € pro Dose)",
+      imageSrc: JUICE_IMAGES["Ingwer (Ginger Tonic)"],
+      description: "Kräftig-belebender Ingwersaft mit natürlicher Schärfe in BPA-freien Aluminiumdosen.",
+      verzehr: "Optimal als Immun-Kick am Morgen oder Energiekick bei der Arbeit.",
+      nutritionalTable: [
+        { name: "Brennwert", value: "148 kJ / 35 kcal" },
+        { name: "Fett", value: "< 0,1 g" },
+        { name: "Kohlenhydrate", value: "8,1 g" },
+        { name: "davon Zucker", value: "7,6 g" },
+        { name: "Eiweiß", value: "0,2 g" }
+      ],
+      specs: [
+        "Fein-schcontent Ingwer-Kick",
+        "100% Vegan & BPA-Frei",
+        "Belebend & erfrischend",
+        "Ohne Konservierungsmittel"
+      ]
+    }
+  },
+  {
+    id: "sorte-apfel-limette",
+    name: "Apfel Limette (Apple Lime)",
+    badge: "100% Fruchtsaft",
+    category: "Vital-Fruchtsaft",
+    image: JUICE_IMAGES["Apfel Limette (Apple Lime)"],
+    price: "31,84 € (12er-Pack)",
+    deposit: "Inkl. 3,00 € Pfand",
+    description: "Spritzig-frische Kombination aus knackigem Apfel und feiner Limette in BPA-freien Alu-Dosen.",
+    detail: {
+      title: "FONTES VITEA Fruchtsaft - Apfel Limette (Apple Lime)",
+      subtitle: "100% natürlicher Fruchtsaft • 100% Vegan • 250 ml Alu-Dose",
+      price: "31,84 € (12er-Pack)",
+      depositInfo: "Inklusive 19 % MwSt. & 3,00 € Dosenpfand (0,25 € pro Dose)",
+      imageSrc: JUICE_IMAGES["Apfel Limette (Apple Lime)"],
+      description: "Die perfekte Harmonie aus knackigem Apfel und spritziger Limette. Natürliche Vitamine in recycelbarer Dose.",
+      verzehr: "Fruchtige Erfrischung nach dem Sport oder in der Pause.",
+      nutritionalTable: [
+        { name: "Brennwert", value: "195 kJ / 46 kcal" },
+        { name: "Fett", value: "< 0,1 g" },
+        { name: "Kohlenhydrate", value: "11,0 g" },
+        { name: "davon Zucker", value: "10,2 g" },
+        { name: "Eiweiß", value: "0,1 g" }
+      ],
+      specs: [
+        "Apfel-Limette Frische",
+        "100% Vegan & BPA-Frei",
+        "Spritzig & leicht",
+        "Qualität aus Deutschland"
+      ]
+    }
+  },
+  {
+    id: "sorte-apfel-ingwer",
+    name: "Apfel Ingwer (Apple Ginger)",
+    badge: "100% Fruchtsaft",
+    category: "Vital-Fruchtsaft",
+    image: JUICE_IMAGES["Apfel Ingwer (Apple Ginger)"],
+    price: "31,84 € (12er-Pack)",
+    deposit: "Inkl. 3,00 € Pfand",
+    description: "Belebende Harmonie aus süßem Apfelsaft und würziger Ingwernote in BPA-freien Alu-Dosen.",
+    detail: {
+      title: "FONTES VITEA Fruchtsaft - Apfel Ingwer (Apple Ginger)",
+      subtitle: "100% natürlicher Fruchtsaft • 100% Vegan • 250 ml Alu-Dose",
+      price: "31,84 € (12er-Pack)",
+      depositInfo: "Inklusive 19 % MwSt. & 3,00 € Dosenpfand (0,25 € pro Dose)",
+      imageSrc: JUICE_IMAGES["Apfel Ingwer (Apple Ginger)"],
+      description: "Ausgewogenes Geschmackserlebnis aus heimischem Apfelsaft und aromatischer Ingwerwurzel.",
+      verzehr: "Genieße die dezente Schärfe mit fruchtiger Note zu jeder Tageszeit.",
+      nutritionalTable: [
+        { name: "Brennwert", value: "188 kJ / 44 kcal" },
+        { name: "Fett", value: "< 0,1 g" },
+        { name: "Kohlenhydrate", value: "10,4 g" },
+        { name: "davon Zucker", value: "9,7 g" },
+        { name: "Eiweiß", value: "0,2 g" }
+      ],
+      specs: [
+        "Fruchtig-würziger Apfel-Ingwer",
+        "100% Vegan & BPA-Frei",
+        "Ohne Zusatz von Rohrzucker",
+        "Reinste Zutaten"
+      ]
+    }
+  }
+];
+
 export default function HomePage() {
   const { addToCart, openProductDetail } = useCart();
 
@@ -100,6 +332,26 @@ export default function HomePage() {
   const [selectedJuiceFlavor, setSelectedJuiceFlavor] = useState("Blaubeere (Blueberry)");
   const [selectedJuicePack, setSelectedJuicePack] = useState<"6" | "12" | "24">("12");
   const [canCardSide, setCanCardSide] = useState<"front" | "back">("front");
+
+  // Bottom Carousel state
+  const [carouselIndex, setCarouselIndex] = useState(0);
+
+  const prevVariety = () => {
+    setCarouselIndex((prev) => (prev - 1 + SEVEN_VARIETIES.length) % SEVEN_VARIETIES.length);
+  };
+
+  const nextVariety = () => {
+    setCarouselIndex((prev) => (prev + 1) % SEVEN_VARIETIES.length);
+  };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCarouselIndex((prev) => (prev + 1) % SEVEN_VARIETIES.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const currentVariety = SEVEN_VARIETIES[carouselIndex];
 
   const juicePrices = {
     "6": { price: 15.92, count: 6, deposit: 1.50, label: "6er-Pack (€15,92)" },
@@ -128,7 +380,7 @@ export default function HomePage() {
 
       <WaterDropIntro />
 
-      {/* 1. HERO SECTION */}
+      {/* 1. HERO SECTION (Without Curved Marquee) */}
       <div id="hero" data-webild-section="HeroWordmarkProduct" data-webild-section-id="HeroWordmarkProduct-1" data-section="hero">
         <HeroWordmarkProduct
           media="image"
@@ -159,11 +411,10 @@ export default function HomePage() {
             }
           ]}
           introDelay={1.4}
-          marquee="CLEAN & PURE H2 WATER • FONTES VITEA • DIE QUELLE DES LEBENS •"
         />
       </div>
 
-      {/* 2. UNSERE QUELLE */}
+      {/* 2. UNSERE QUELLE (inkl. Mineralstofftabelle) */}
       <div id="quelle" data-webild-section="WaterSourceMinerals" data-webild-section-id="WaterSourceMinerals-1" data-section="source">
         <section className="py-20 px-6 bg-white font-sans text-[#0A1C3A] border-b border-slate-300">
           <div className="max-w-5xl mx-auto space-y-10">
@@ -175,7 +426,7 @@ export default function HomePage() {
                 UNSERE QUELLE
               </h2>
               <p className="text-slate-700 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed font-medium">
-                Unser Quellwasser entspringt aus 136 Metern Tiefe und wird durch natürliche Gesteinsschichten gefiltered und tiefenmineralisiert. Diese geschützte Tiefenquelle garantiert höchste mikrobiologische Reinheit sowie ein ausgewogenes Mineralstoffprofil mit optimalem pH-Wert – die reine, unbelastete Basis für unser molekular angereichertes H2-Wasserstoffwasser.
+                Unser Quellwasser entspringt aus 136 Metern Tiefe und wird durch natürliche Gesteinsschichten gefiltert und tiefenmineralisiert. Diese geschützte Tiefenquelle garantiert höchste mikrobiologische Reinheit sowie ein ausgewogenes Mineralstoffprofil mit optimalem pH-Wert – die reine, unbelastete Basis für unser molekular angereichertes H2-Wasserstoffwasser.
               </p>
             </div>
 
@@ -229,7 +480,235 @@ export default function HomePage() {
         </section>
       </div>
 
-      {/* 3. VORTEILE IM VERGLEICH (Product Comparison Section) */}
+      {/* 3. HYDRATION IM ALLTAG (4 spezifische Icon-Bereiche) */}
+      <div id="hydration" data-webild-section="HydrationAlltag" data-webild-section-id="HydrationAlltag-1" data-section="hydration">
+        <section className="py-20 px-6 bg-[#f8fafc] text-[#0A1C3A] font-sans border-b border-slate-300">
+          <div className="max-w-6xl mx-auto space-y-12">
+            <div className="text-center space-y-3">
+              <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-white px-4 py-1.5 rounded-full inline-block border border-slate-300 shadow-xs">
+                Perfekt für jeden Moment
+              </span>
+              <h2 className="text-4xl lg:text-5xl font-black text-[#0A1C3A] uppercase tracking-tight">
+                HYDRATION IM ALLTAG
+              </h2>
+              <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+                Ob beim Start in den Tag, im Fokus des Arbeitsalltags, beim schweißtreibenden Sport oder auf Reisen – FONTES VITEA schenkt dir reinste Energie.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Icon Area 1: Morgens */}
+              <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-md flex flex-col justify-between hover:border-[#0A1C3A] hover:shadow-xl transition group">
+                <div className="space-y-4">
+                  <div className="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center group-hover:bg-[#0A1C3A] group-hover:text-white transition duration-300 shadow-xs">
+                    <Sun className="w-7 h-7" />
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-extrabold uppercase tracking-wider text-amber-600 block mb-1">Phase 01</span>
+                    <h3 className="text-2xl font-black text-[#0A1C3A] uppercase">Morgens</h3>
+                  </div>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    Frischer Kick für den Tag. Aktiviert sanft den Stoffwechsel und versorgt den Körper direkt nach dem Aufstehen mit zellulärer Hydration.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-slate-100 text-[11px] font-bold text-[#0A1C3A]">
+                  • ZELLULÄRE ENERGIE &amp; VITALITÄT
+                </div>
+              </div>
+
+              {/* Icon Area 2: Arbeit */}
+              <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-md flex flex-col justify-between hover:border-[#0A1C3A] hover:shadow-xl transition group">
+                <div className="space-y-4">
+                  <div className="w-14 h-14 rounded-2xl bg-sky-500/10 text-sky-600 flex items-center justify-center group-hover:bg-[#0A1C3A] group-hover:text-white transition duration-300 shadow-xs">
+                    <Briefcase className="w-7 h-7" />
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-extrabold uppercase tracking-wider text-sky-600 block mb-1">Phase 02</span>
+                    <h3 className="text-2xl font-black text-[#0A1C3A] uppercase">Arbeit</h3>
+                  </div>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    Mentale Klarheit ohne Koffeintief. Unterstützt die Konzentration und Leistungsfähigkeit bei langen Arbeitstagen und intensiven Meetings.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-slate-100 text-[11px] font-bold text-[#0A1C3A]">
+                  • KONSISTENTER FOKUS
+                </div>
+              </div>
+
+              {/* Icon Area 3: Sport */}
+              <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-md flex flex-col justify-between hover:border-[#0A1C3A] hover:shadow-xl transition group">
+                <div className="space-y-4">
+                  <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center group-hover:bg-[#0A1C3A] group-hover:text-white transition duration-300 shadow-xs">
+                    <Dumbbell className="w-7 h-7" />
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-extrabold uppercase tracking-wider text-emerald-600 block mb-1">Phase 03</span>
+                    <h3 className="text-2xl font-black text-[#0A1C3A] uppercase">Sport</h3>
+                  </div>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    Ideal vor oder nach dem Workout. Reduziert die Laktatansammlung im Blut und beschleunigt die muskuläre Regeneration nach Belastungen.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-slate-100 text-[11px] font-bold text-[#0A1C3A]">
+                  • SCHNELLE ERHOLUNG
+                </div>
+              </div>
+
+              {/* Icon Area 4: Reisen */}
+              <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-md flex flex-col justify-between hover:border-[#0A1C3A] hover:shadow-xl transition group">
+                <div className="space-y-4">
+                  <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 text-indigo-600 flex items-center justify-center group-hover:bg-[#0A1C3A] group-hover:text-white transition duration-300 shadow-xs">
+                    <Plane className="w-7 h-7" />
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-extrabold uppercase tracking-wider text-indigo-600 block mb-1">Phase 04</span>
+                    <h3 className="text-2xl font-black text-[#0A1C3A] uppercase">Reisen</h3>
+                  </div>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    Kompakt und robust in der BPA-freien 250-ml-Aluminiumdose. Der perfekte frische Begleiter im Flugzeug, Auto oder bei Ausflügen.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-slate-100 text-[11px] font-bold text-[#0A1C3A]">
+                  • MAXIMALE FLEXIBILITÄT
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {/* 4. TECHNOLOGIE & INNOVATION */}
+      <div id="technologie" data-webild-section="TechnologyInnovation" data-webild-section-id="TechnologyInnovation-1" data-section="tech">
+        <section className="py-20 px-6 bg-white text-[#0A1C3A] font-sans border-b border-slate-300">
+          <div className="max-w-6xl mx-auto space-y-12">
+            <div className="text-center space-y-3">
+              <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-[#f4f6f8] px-4 py-1.5 rounded-full inline-block border border-slate-300">
+                Höchste Standards
+              </span>
+              <h2 className="text-4xl lg:text-5xl font-black text-[#0A1C3A] uppercase tracking-tight">
+                TECHNOLOGIE &amp; INNOVATION
+              </h2>
+              <p className="text-slate-600 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed">
+                Fortschrittlichste Anreicherungsmethoden und innovative Verpackungstechnologie garantieren höchste H2-Stabilität und absolute Reinheit.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Feature 1: H2-Konzentration */}
+              <div className="bg-[#f8fafc] rounded-2xl p-8 border border-slate-300 shadow-md space-y-4 hover:border-[#0A1C3A] transition">
+                <div className="w-14 h-14 rounded-2xl bg-[#0A1C3A] text-white flex items-center justify-center shadow-md">
+                  <Droplets className="w-7 h-7" />
+                </div>
+                <h3 className="text-2xl font-black uppercase text-[#0A1C3A]">H₂-Konzentration</h3>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Mindestens <strong>2,8 mg/L</strong> gelöster molekularer Wasserstoff. Dank unserem geschützten Anreicherungsverfahren bleibt das H2 selbst nach dem Öffnen 6 Stunden lang stabil (99 % nach 2 Std., 80 % nach 6 Std.).
+                </p>
+                <div className="pt-3 text-xs font-bold text-[#0A1C3A] flex items-center gap-1.5">
+                  <Sparkles className="w-4 h-4 text-amber-500" /> Höchste Wirkdosis am Markt
+                </div>
+              </div>
+
+              {/* Feature 2: Aluminiumdosentechnologie */}
+              <div className="bg-[#f8fafc] rounded-2xl p-8 border border-slate-300 shadow-md space-y-4 hover:border-[#0A1C3A] transition">
+                <div className="w-14 h-14 rounded-2xl bg-[#0A1C3A] text-white flex items-center justify-center shadow-md">
+                  <Cpu className="w-7 h-7" />
+                </div>
+                <h3 className="text-2xl font-black uppercase text-[#0A1C3A]">Aluminiumdosentechnologie</h3>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Spezielle 250-ml-Aluminiumdosen bieten die absolut undurchlässige Barriere gegen das Entweichen des extrem kleinen H2-Gases. Lichtgeschützt, unempfindlich und 100 % unendlich recycelbar.
+                </p>
+                <div className="pt-3 text-xs font-bold text-[#0A1C3A] flex items-center gap-1.5">
+                  <Check className="w-4 h-4 text-emerald-600" /> Optimaler Gasschutz &amp; Nachhaltig
+                </div>
+              </div>
+
+              {/* Feature 3: BPA-Freiheit */}
+              <div className="bg-[#f8fafc] rounded-2xl p-8 border border-slate-300 shadow-md space-y-4 hover:border-[#0A1C3A] transition">
+                <div className="w-14 h-14 rounded-2xl bg-[#0A1C3A] text-white flex items-center justify-center shadow-md">
+                  <ShieldCheck className="w-7 h-7" />
+                </div>
+                <h3 className="text-2xl font-black uppercase text-[#0A1C3A]">BPA-Freiheit</h3>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Unsere Aluminiumdosen besitzen eine modernste Innenbeschichtung ohne Bisphenol A (BPA), ohne Phthalate und ohne Weichmacher. Für 100 % hormonell unbedenklichen und reinen Trinkgenuss.
+                </p>
+                <div className="pt-3 text-xs font-bold text-[#0A1C3A] flex items-center gap-1.5">
+                  <ShieldCheck className="w-4 h-4 text-sky-600" /> Zero Schadstoffe &amp; Maximaler Schutz
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {/* 5. VORSCHAU ZUR SEITE WISSEN & STUDIEN */}
+      <div id="wissen-vorschau" data-webild-section="SciencePreview" data-webild-section-id="SciencePreview-1" data-section="science">
+        <section className="py-20 px-6 bg-[#0A1C3A] text-white font-sans relative overflow-hidden">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div className="space-y-6">
+              <span className="text-sky-400 text-xs font-extrabold tracking-widest uppercase bg-sky-950/80 px-4 py-1.5 rounded-full inline-block border border-sky-800/60">
+                Wissenschaftlich Fundiert
+              </span>
+              <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tight leading-tight">
+                WISSEN &amp; STUDIEN VORSCHAU
+              </h2>
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                Molekularer Wasserstoff (H2) ist in über 1.000 wissenschaftlichen Publikationen erforscht. Er wirkt als selektives Antioxidans, neutralisiert schädliche freie Radikale (.OH) und fördert die zelluläre ATP-Synthese.
+              </p>
+
+              <div className="space-y-3 pt-2">
+                <div className="flex items-center gap-3 bg-white/10 p-3.5 rounded-xl border border-white/10 text-xs">
+                  <Check className="w-5 h-5 text-sky-400 shrink-0" />
+                  <span>Reduzierung von Laktat im Muskelgewebe während Belastung</span>
+                </div>
+                <div className="flex items-center gap-3 bg-white/10 p-3.5 rounded-xl border border-white/10 text-xs">
+                  <Check className="w-5 h-5 text-sky-400 shrink-0" />
+                  <span>Selektive Neutralisation von Oxidativem Stress (ROS)</span>
+                </div>
+                <div className="flex items-center gap-3 bg-white/10 p-3.5 rounded-xl border border-white/10 text-xs">
+                  <Check className="w-5 h-5 text-sky-400 shrink-0" />
+                  <span>Direkte Bioverfügbarkeit &amp; rasche zelluläre Aufnahme</span>
+                </div>
+              </div>
+
+              <div className="pt-4">
+                <Link
+                  to="/wissenschaft"
+                  className="inline-flex items-center gap-3 bg-white hover:bg-slate-100 text-[#0A1C3A] font-extrabold text-xs uppercase tracking-wider px-8 py-4 rounded-full shadow-xl transition transform hover:scale-105"
+                >
+                  <BookOpen className="w-4 h-4 text-[#0A1C3A]" />
+                  <span>Alle Studien &amp; Videos entdecken</span>
+                  <ArrowRight className="w-4 h-4 text-[#0A1C3A]" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Visual Box / Video Preview Card */}
+            <div className="bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-white/15 space-y-6 text-center">
+              <span className="text-xs text-sky-400 font-extrabold uppercase tracking-widest block">
+                Forschungs-Highlight
+              </span>
+              <h3 className="text-2xl font-black uppercase text-white">
+                Mitochondrien &amp; Zell-Langlebigkeit
+              </h3>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                Erfahre in detaillierten Vorträgen von führenden Molekularbiologen wie Tyler LeBaron, wie Wasserstoffwasser die zelluläre Mitochondrienfunktion schützt und verjüngt.
+              </p>
+
+              <div className="pt-4 flex justify-center">
+                <Link
+                  to="/wissenschaft"
+                  className="bg-sky-500 hover:bg-sky-400 text-white font-extrabold text-xs uppercase px-6 py-3 rounded-xl tracking-wider transition shadow-lg inline-flex items-center gap-2"
+                >
+                  <span>Zur Wissenschafts-Übersicht</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {/* 6. VORTEILE IM VERGLEICH (Product Comparison Section) */}
       <div id="vergleich" data-webild-section="ProductCompareTable" data-webild-section-id="ProductCompareTable-1" data-section="product">
         <ProductCompareTable
           media="image"
@@ -283,7 +762,7 @@ export default function HomePage() {
         />
       </div>
 
-      {/* 4. UNSERE PRODUKTE (Shop & Bundles Section) */}
+      {/* 7. UNSERE PRODUKTE (Shop & Bundles Section) */}
       <section id="shop" className="py-20 px-6 max-w-7xl mx-auto font-sans">
         <div className="text-center space-y-3 mb-16">
           <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-[#e2e8f0] px-4 py-1.5 rounded-full inline-block border border-slate-300">
@@ -555,7 +1034,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. KUNDENBEWERTUNGEN (DAS SAGEN UNSERE KUNDEN) */}
+      {/* 8. KUNDENBEWERTUNGEN (DAS SAGEN UNSERE KUNDEN) */}
       <div id="testimonial" data-webild-section="TestimonialPhotoRail" data-webild-section-id="TestimonialPhotoRail-1" data-section="testimonial">
         <TestimonialPhotoRail
           media="image"
@@ -600,7 +1079,7 @@ export default function HomePage() {
         />
       </div>
 
-      {/* 6. EMPFOHLENE BUNDLES */}
+      {/* 9. EMPFOHLENE BUNDLES */}
       <div id="bundles" data-webild-section="PricingRingCards" data-webild-section-id="PricingRingCards-1" data-section="pricing">
         <section className="py-20 bg-[#f4f6f8] text-[#0A1C3A] font-sans border-y border-slate-300">
           <div className="max-w-7xl mx-auto px-6">
@@ -696,6 +1175,122 @@ export default function HomePage() {
                 >
                   Kombi-Paket kaufen (142,96 €)
                 </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {/* 10. HOCHWERTIGES PRODUKT-KARUSSELL AM ENDE DER STARTSEITE (ALLE 7 SORTEN) */}
+      <div id="produkt-karussell" data-webild-section="ProductCarouselSeven" data-webild-section-id="ProductCarouselSeven-1" data-section="carousel">
+        <section className="py-20 px-6 bg-gradient-to-b from-white via-slate-50 to-slate-100 text-[#0A1C3A] font-sans border-t border-slate-300">
+          <div className="max-w-7xl mx-auto space-y-12">
+            <div className="text-center space-y-3">
+              <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-white px-4 py-1.5 rounded-full inline-block border border-slate-300 shadow-xs">
+                Alle 7 Sorten entdecken
+              </span>
+              <h2 className="text-4xl lg:text-5xl font-black text-[#0A1C3A] uppercase tracking-tight">
+                DIE FONTES VITEA SORTEN-VIELFALT
+              </h2>
+              <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto">
+                Klicke auf eine Sorte für alle Details, Nährwerte und die direkte Bestellen-Option.
+              </p>
+            </div>
+
+            {/* Premium Carousel Box */}
+            <div className="relative bg-white rounded-3xl border border-slate-300 p-6 sm:p-10 shadow-2xl overflow-hidden max-w-5xl mx-auto">
+              {/* Internal Accent background */}
+              <div className="absolute inset-0 bg-gradient-to-r from-sky-500/5 via-blue-500/10 to-indigo-500/5 pointer-events-none" />
+
+              <div className="relative z-10 flex flex-col items-center">
+                <div className="relative w-full flex items-center justify-between min-h-[380px] sm:min-h-[420px]">
+                  {/* Prev Button */}
+                  <button
+                    onClick={prevVariety}
+                    className="absolute left-0 sm:left-2 z-20 bg-white/95 hover:bg-[#0A1C3A] text-[#0A1C3A] hover:text-white p-3.5 rounded-full shadow-xl border border-slate-300 transition transform hover:scale-110 active:scale-95"
+                    aria-label="Vorherige Sorte"
+                  >
+                    <ChevronLeft className="w-6 h-6" />
+                  </button>
+
+                  {/* Active Variety Content Card */}
+                  <div className="w-full px-12 sm:px-16 flex flex-col md:flex-row items-center justify-center gap-8 text-center md:text-left">
+                    {/* Image */}
+                    <div className="shrink-0 relative group cursor-pointer" onClick={() => openProductDetail(currentVariety.detail)}>
+                      <div className="absolute -inset-2 bg-gradient-to-r from-cyan-400 via-blue-600 to-[#0A1C3A] opacity-20 blur-xl rounded-full group-hover:opacity-40 transition duration-500" />
+                      <img
+                        src={currentVariety.image}
+                        alt={currentVariety.name}
+                        className="relative w-44 sm:w-56 h-56 sm:h-64 object-contain filter drop-shadow-2xl transition duration-300 transform group-hover:scale-105"
+                      />
+                    </div>
+
+                    {/* Info */}
+                    <div className="space-y-4 max-w-lg">
+                      <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
+                        <span className="bg-[#0A1C3A] text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow-xs">
+                          {currentVariety.badge}
+                        </span>
+                        <span className="bg-slate-100 text-slate-700 border border-slate-300 text-[10px] font-extrabold uppercase px-3 py-1 rounded-full">
+                          Sorte {carouselIndex + 1} von 7
+                        </span>
+                      </div>
+
+                      <div className="space-y-1">
+                        <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">{currentVariety.category}</span>
+                        <h3 className="text-3xl sm:text-4xl font-black uppercase text-[#0A1C3A] tracking-tight">
+                          {currentVariety.name}
+                        </h3>
+                      </div>
+
+                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                        {currentVariety.description}
+                      </p>
+
+                      <div className="pt-2 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+                        <div>
+                          <div className="text-2xl font-black text-[#0A1C3A]">{currentVariety.price}</div>
+                          <span className="text-[10px] text-slate-500 font-bold block">{currentVariety.deposit}</span>
+                        </div>
+
+                        <button
+                          onClick={() => openProductDetail(currentVariety.detail)}
+                          className="bg-[#0A1C3A] hover:bg-[#12284c] text-white text-xs font-extrabold uppercase tracking-wider px-6 py-3.5 rounded-xl shadow-lg transition transform hover:scale-105 flex items-center gap-2"
+                        >
+                          <Info className="w-4 h-4 text-sky-400" />
+                          <span>Details &amp; Bestellen</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Next Button */}
+                  <button
+                    onClick={nextVariety}
+                    className="absolute right-0 sm:right-2 z-20 bg-white/95 hover:bg-[#0A1C3A] text-[#0A1C3A] hover:text-white p-3.5 rounded-full shadow-xl border border-slate-300 transition transform hover:scale-110 active:scale-95"
+                    aria-label="Nächste Sorte"
+                  >
+                    <ChevronRight className="w-6 h-6" />
+                  </button>
+                </div>
+
+                {/* Grid of 7 Thumbnails */}
+                <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mt-8 pt-6 border-t border-slate-200 w-full">
+                  {SEVEN_VARIETIES.map((v, idx) => (
+                    <button
+                      key={v.id}
+                      onClick={() => setCarouselIndex(idx)}
+                      className={`p-2 rounded-xl border transition flex items-center gap-2 ${
+                        carouselIndex === idx
+                          ? "bg-[#0A1C3A] text-white border-[#0A1C3A] shadow-md scale-105"
+                          : "bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100"
+                      }`}
+                    >
+                      <img src={v.image} alt={v.name} className="w-6 h-6 object-contain" />
+                      <span className="text-[11px] font-extrabold truncate max-w-[100px]">{v.name.split(" ")[0]}</span>
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
