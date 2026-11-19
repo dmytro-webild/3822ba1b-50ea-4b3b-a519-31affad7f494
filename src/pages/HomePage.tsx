@@ -477,7 +477,7 @@ export default function HomePage() {
               </div>
               <div>
                 <span className="text-xs text-[#0A1C3A] font-extrabold uppercase">Vital-Fruchtsäfte (250 ml) • 100% Vegan • BPA-Frei</span>
-                <h3 className="text-2xl font-black text-[#0A1C3A] uppercase tracking-tight">Fruchtsäfte</h3>
+                <h3 className="text-2xl font-black text-[#0A1C3A] uppercase tracking-tight">FRUCHTSÄFTE</h3>
                 <p className="text-xs text-slate-600 mt-1">100% natürlicher Fruchtsaft, vegan, BPA-Frei &amp; ohne Zusatzstoffe</p>
               </div>
 
