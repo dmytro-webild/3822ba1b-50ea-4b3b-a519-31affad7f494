@@ -27,7 +27,7 @@ const JUICE_IMAGES: Record<string, string> = {
 };
 
 const H2_12_DETAILS: ProductDetailInfo = {
-  title: "FONS VITAE H2 Wasserstoff-Wasser (12er-Pack)",
+  title: "FONTES VITEA H2 Wasserstoff-Wasser (12er-Pack)",
   subtitle: "12x 250 ml Aluminiumdosen (100 % BPA-Frei)",
   price: "39,64 € (12er-Pack)",
   depositInfo: "Inklusive 19 % MwSt. & 3,00 € Dosenpfand (0,25 € pro Dose)",
@@ -47,7 +47,7 @@ const H2_12_DETAILS: ProductDetailInfo = {
   ],
   specs: [
     "Mind. 2.8 mg/L gelöster Wasserstoff",
-    "Original FONS VITAE 12er-Pack Verpackung",
+    "Original FONTES VITEA 12er-Pack Verpackung",
     "12x 250 ml Aluminiumdosen – 100 % BPA-Frei",
     "0 kcal, 0 g Zucker, 100% BPA-Frei",
     "Laborgeprüfte Reinheit aus Deutschland",
@@ -56,13 +56,13 @@ const H2_12_DETAILS: ProductDetailInfo = {
 };
 
 const H2_24_DETAILS: ProductDetailInfo = {
-  title: "FONS VITAE H2 Wasserstoff-Wasser (24er-Pack)",
+  title: "FONTES VITEA H2 Wasserstoff-Wasser (24er-Pack)",
   subtitle: "24x 250 ml Aluminiumdosen (100 % BPA-Frei)",
   price: "79,28 € (24er-Pack)",
   depositInfo: "Inklusive 19 % MwSt. & 6,00 € Dosenpfand (0,25 € pro Dose)",
   imageSrc: H2_24PACK_IMAGE_URL,
   description:
-    "Der Monatsvorrat für maximale Zellenergie und Vitalität. 24 Dosen FONS VITAE H2 Wasserstoff-Wasser (min. 2.8 mg/L gelöster molekularer Wasserstoff) in 100 % BPA-Freien Aluminiumdosen. Geliefert im stabilen 24er-Pack.",
+    "Der Monatsvorrat für maximale Zellenergie und Vitalität. 24 Dosen FONTES VITEA H2 Wasserstoff-Wasser (min. 2.8 mg/L gelöster molekularer Wasserstoff) in 100 % BPA-Freien Aluminiumdosen. Geliefert im stabilen 24er-Pack.",
   verzehr: "Empfohlene tägliche Verzehrmenge: 1 bis 2 Dosen täglich. Ideal für: Morgens zum Start, bei der Arbeit, vor/nach dem Sport oder auf Reisen.",
   nutritionalTable: [
     { name: "Brennwert", value: "0 kJ / 0 kcal" },
@@ -76,7 +76,7 @@ const H2_24_DETAILS: ProductDetailInfo = {
   ],
   specs: [
     "Mind. 2.8 mg/L gelöster Wasserstoff",
-    "Original FONS VITAE 24er-Pack Verpackung",
+    "Original FONTES VITEA 24er-Pack Verpackung",
     "24x 250 ml Aluminiumdosen – 100 % BPA-Frei",
     "Optimaler Vorrat (1 bis 2 Dosen / Tag)",
     "0 kcal, 0 g Zucker, 100% BPA-Frei",
@@ -112,7 +112,7 @@ export default function HomePage() {
     const image = JUICE_IMAGES[selectedJuiceFlavor] || JUICE_IMAGE_URL;
     addToCart({
       id: `juice-${selectedJuiceFlavor}-${selectedJuicePack}`,
-      title: `FONS VITAE Fruchtsaft (${selectedJuiceFlavor}) - 100% Vegan`,
+      title: `FONTES VITEA Fruchtsaft (${selectedJuiceFlavor}) - 100% Vegan`,
       flavor: selectedJuiceFlavor,
       packInfo: `${pack.count}er-Pack (100% Vegan, ${pack.count}x 250 ml)`,
       price: pack.price,
@@ -133,7 +133,7 @@ export default function HomePage() {
         <HeroWordmarkProduct
           media="image"
           productImageSrc={CAN_IMAGE_URL}
-          productImageAlt="FONS VITAE H2 Wasserstoff Dose"
+          productImageAlt="FONTES VITEA H2 Wasserstoff Dose"
           brand=""
           title="H2 - HYDROGEN WATER"
           description="CLEAN & PURE – Maximale Hydration mit molekularem Wasserstoff"
@@ -159,7 +159,7 @@ export default function HomePage() {
             }
           ]}
           introDelay={1.4}
-          marquee="CLEAN & PURE H2 WATER • FONS VITAE • DIE QUELLE DES LEBENS •"
+          marquee="CLEAN & PURE H2 WATER • FONTES VITEA • DIE QUELLE DES LEBENS •"
         />
       </div>
 
@@ -234,11 +234,11 @@ export default function HomePage() {
         <ProductCompareTable
           media="image"
           productImageSrc={CAN_IMAGE_URL}
-          productImageAlt="FONS VITAE H2 Dose"
+          productImageAlt="FONTES VITEA H2 Dose"
           title="IM VERGLEICH"
           accent="VORTEILE"
           benefitsLabel="Merkmale"
-          name="FONS VITAE H2"
+          name="FONTES VITEA H2"
           otherLabel="Herkömmliches Wasser"
           items={[
             {
@@ -287,7 +287,7 @@ export default function HomePage() {
       <section id="shop" className="py-20 px-6 max-w-7xl mx-auto font-sans">
         <div className="text-center space-y-3 mb-16">
           <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-[#e2e8f0] px-4 py-1.5 rounded-full inline-block border border-slate-300">
-            FONS VITAE Online-Shop
+            FONTES VITEA Online-Shop
           </span>
           <h2 className="text-4xl lg:text-5xl font-black text-[#0A1C3A] uppercase tracking-tight">
             UNSERE PRODUKTE
@@ -322,7 +322,7 @@ export default function HomePage() {
                 </div>
                 <img
                   src={canCardSide === "front" ? H2_12PACK_IMAGE_URL : CAN_IMAGE_URL}
-                  alt="FONS VITAE H2 Wasser 12er-Pack Originalverpackung"
+                  alt="FONTES VITEA H2 Wasser 12er-Pack Originalverpackung"
                   className="w-full h-44 object-contain mx-auto group-hover:scale-105 transition duration-300"
                 />
               </div>
@@ -366,7 +366,7 @@ export default function HomePage() {
                 onClick={() =>
                   addToCart({
                     id: "h2-12pack",
-                    title: "FONS VITAE H2 Wasser (12er-Pack)",
+                    title: "FONTES VITEA H2 Wasser (12er-Pack)",
                     packInfo: "12er-Pack (12x 250 ml)",
                     price: 39.64,
                     cansCount: 12,
@@ -394,7 +394,7 @@ export default function HomePage() {
                 </span>
                 <img
                   src={H2_24PACK_IMAGE_URL}
-                  alt="FONS VITAE H2 Wasser 24er-Pack Originalverpackung"
+                  alt="FONTES VITEA H2 Wasser 24er-Pack Originalverpackung"
                   className="w-full h-44 object-contain mx-auto group-hover:scale-105 transition duration-300"
                 />
               </div>
@@ -438,7 +438,7 @@ export default function HomePage() {
                 onClick={() =>
                   addToCart({
                     id: "h2-24pack",
-                    title: "FONS VITAE H2 Wasser (24er-Pack)",
+                    title: "FONTES VITEA H2 Wasser (24er-Pack)",
                     packInfo: "24er-Pack (24x 250 ml)",
                     price: 79.28,
                     cansCount: 24,
@@ -471,7 +471,7 @@ export default function HomePage() {
                 </div>
                 <img
                   src={JUICE_IMAGES[selectedJuiceFlavor] || JUICE_IMAGE_URL}
-                  alt={`FONS VITAE ${selectedJuiceFlavor}`}
+                  alt={`FONTES VITEA ${selectedJuiceFlavor}`}
                   className="w-44 h-44 object-contain mx-auto group-hover:scale-105 transition duration-300"
                 />
               </div>

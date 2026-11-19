@@ -63,7 +63,7 @@ export default function WissenschaftPage() {
               WISSENSCHAFT &amp; STUDIEN
             </h1>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
-              FONS VITAE basiert auf fundierten wissenschaftlichen Studienergebnissen zu molekularem Wasserstoff (H2). Entdecke die Forschungskategorien, Laborerkenntnisse und Expertenberichte zur Wirkung auf zellulärer Ebene.
+              FONTES VITEA basiert auf fundierten wissenschaftlichen Studienergebnissen zu molekularem Wasserstoff (H2). Entdecke die Forschungskategorien, Laborerkenntnisse und Expertenberichte zur Wirkung auf zellulärer Ebene.
             </p>
           </div>
         </div>

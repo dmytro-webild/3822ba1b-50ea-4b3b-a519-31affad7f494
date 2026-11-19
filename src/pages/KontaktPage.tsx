@@ -68,7 +68,7 @@ export default function KontaktPage() {
 
     setIsSubmitting(true);
 
-    // Simulate reliable form submission feedback to info@fonsvitae.de
+    // Simulate reliable form submission feedback to info@fontesvitea.de
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitStatus("success");
@@ -95,7 +95,7 @@ export default function KontaktPage() {
             Kontakt
           </h1>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
-            Haben Sie Fragen zu unseren FONS VITAE H2 Wasserstoff-Wasser Produkten, Ihrer Bestellung oder Kooperationen? Unser Team ist gerne für Sie da.
+            Haben Sie Fragen zu unseren FONTES VITEA H2 Wasserstoff-Wasser Produkten, Ihrer Bestellung oder Kooperationen? Unser Team ist gerne für Sie da.
           </p>
         </div>
 
@@ -109,7 +109,7 @@ export default function KontaktPage() {
                 Direkter Kontakt
               </span>
               <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight">
-                FONS VITAE TEAM
+                FONTES VITEA TEAM
               </h2>
               <p className="text-slate-300 text-xs leading-relaxed mt-2">
                 Sie erreichen uns telefonisch oder per E-Mail. Wir freuen uns auf Ihre Anfrage!
@@ -135,12 +135,12 @@ export default function KontaktPage() {
                 </div>
                 <div>
                   <span className="text-slate-400 text-xs font-bold block uppercase tracking-wider">E-Mail (Allgemein)</span>
-                  <a href="mailto:info@fonsvitae.de" className="font-extrabold text-white hover:text-sky-300 transition block text-sm sm:text-base">
-                    info@fonsvitae.de
+                  <a href="mailto:info@fontesvitea.de" className="font-extrabold text-white hover:text-sky-300 transition block text-sm sm:text-base">
+                    info@fontesvitea.de
                   </a>
                   <span className="text-slate-400 text-xs font-bold block uppercase tracking-wider mt-2">E-Mail (Bestellungen)</span>
-                  <a href="mailto:bestellung@fonsvitae.de" className="font-extrabold text-white hover:text-sky-300 transition block text-sm">
-                    bestellung@fonsvitae.de
+                  <a href="mailto:bestellung@fontesvitea.de" className="font-extrabold text-white hover:text-sky-300 transition block text-sm">
+                    bestellung@fontesvitea.de
                   </a>
                 </div>
               </div>
@@ -152,7 +152,7 @@ export default function KontaktPage() {
                 <div>
                   <span className="text-slate-400 text-xs font-bold block uppercase tracking-wider">Unternehmenssitz</span>
                   <p className="font-semibold text-slate-200 text-sm leading-snug">
-                    FONS VITAE<br />
+                    FONTES VITEA<br />
                     Industriestr. 23 A<br />
                     61449 Steinbach Ts.<br />
                     Deutschland
@@ -184,7 +184,7 @@ export default function KontaktPage() {
                 <div>
                   <p className="font-bold text-sm text-emerald-950 mb-1">Vielen Dank für Ihre Anfrage!</p>
                   <p>
-                    Ihre Nachricht wurde erfolgreich an <strong className="font-bold">info@fonsvitae.de</strong> gesendet. Wir antworten Ihnen schnellstmöglich auf Ihre Anfrage.
+                    Ihre Nachricht wurde erfolgreich an <strong className="font-bold">info@fontesvitea.de</strong> gesendet. Wir antworten Ihnen schnellstmöglich auf Ihre Anfrage.
                   </p>
                 </div>
               </div>
@@ -326,13 +326,13 @@ export default function KontaktPage() {
               UNSER STANDORT
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
-              FONS VITAE • Industriestr. 23 A, 61449 Steinbach Ts., Deutschland
+              FONTES VITEA • Industriestr. 23 A, 61449 Steinbach Ts., Deutschland
             </p>
           </div>
 
           <div className="w-full h-[400px] sm:h-[480px] rounded-3xl overflow-hidden border border-slate-300 shadow-xl relative bg-slate-200">
             <iframe
-              title="FONS VITAE Unternehmensstandort - Industriestr. 23 A, 61449 Steinbach Ts."
+              title="FONTES VITEA Unternehmensstandort - Industriestr. 23 A, 61449 Steinbach Ts."
               src="https://maps.google.com/maps?q=Industriestr.%2023%20A,%2061449%20Steinbach%20Ts.&t=&z=15&ie=UTF8&iwloc=&output=embed"
               className="w-full h-full border-0"
               allowFullScreen

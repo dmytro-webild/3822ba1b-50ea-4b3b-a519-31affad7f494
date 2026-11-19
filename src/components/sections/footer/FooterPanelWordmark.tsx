@@ -52,7 +52,7 @@ const SORTIMENT_ITEMS = [
     isLineup: true,
   },
   {
-    title: "FONS VITAE H2 Water",
+    title: "FONTES VITEA H2 Water",
     subtitle: "Molekular gelöstes Wasserstoff-Wasser (min. 2.8 mg/L H2)",
     badge: "H2 Molekular",
     image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794876824895-o64qlmg5.png",
@@ -103,7 +103,7 @@ const SORTIMENT_ITEMS = [
 ];
 
 const FooterPanelWordmark = ({
-  title = "DAS GESAMTE FONS VITAE SORTIMENT",
+  title = "DAS GESAMTE FONTES VITEA SORTIMENT",
   subtitle = "H2 WASSERSTOFF-WASSER & 6 EDLE FRUCHTSAFT-KREATIONEN",
   lineupImageSrc = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794880807544-312gbdxq.png",
   logoSrc = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795103673176-908st9q6.png",
@@ -111,7 +111,7 @@ const FooterPanelWordmark = ({
     { label: "Instagram", href: "#", icon: "instagram" },
     { label: "YouTube", href: "#", icon: "youtube" },
   ],
-  copyright = "© FONS VITAE – Die Quelle des Lebens. Alle Rechte vorbehalten.",
+  copyright = "© FONTES VITEA – Die Quelle des Lebens. Alle Rechte vorbehalten.",
   model,
   ariaLabel,
   className,
@@ -148,7 +148,7 @@ const FooterPanelWordmark = ({
       )}
     >
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 flex flex-col items-center text-center">
-        {/* Prominent FONS VITAE Logo */}
+        {/* Prominent FONTES VITEA Logo */}
         {logoSrc && (
           <motion.div
             initial={reduce ? false : { opacity: 0, scale: 0.9, y: 16 }}
@@ -161,7 +161,7 @@ const FooterPanelWordmark = ({
               <div className="absolute -inset-1.5 rounded-3xl bg-gradient-to-r from-sky-400 via-blue-600 to-[#0A1C3A] opacity-25 blur-md group-hover:opacity-45 transition duration-500" />
               <Media
                 src={logoSrc}
-                alt="FONS VITAE Logo"
+                alt="FONTES VITEA Logo"
                 className="relative h-20 sm:h-28 md:h-36 w-auto object-contain rounded-2xl shadow-xl border border-slate-200/90 bg-white p-3.5 sm:p-4 transition hover:scale-105 duration-300"
               />
             </div>

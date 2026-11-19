@@ -147,10 +147,10 @@ const HeroWordmarkProduct = ({
   title = "H2 - HYDROGEN WATER",
   description = "CLEAN & PURE – Maximale Hydration mit molekularem Wasserstoff",
   primaryButton = { text: "Jetzt Shop entdecken", href: "#shop" },
-  marquee = "CLEAN & PURE H2 WATER • FONS VITAE • DIE QUELLE DES LEBENS •",
+  marquee = "CLEAN & PURE H2 WATER • FONTES VITEA • DIE QUELLE DES LEBENS •",
   introDelay = 0,
   productImageSrc = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794865744193-o2e363kc.png",
-  productImageAlt = "FONS VITAE H2 Wasserstoff Dose",
+  productImageAlt = "FONTES VITEA H2 Wasserstoff Dose",
   ariaLabel,
   className,
 }: HeroWordmarkProductProps) => {
@@ -367,7 +367,7 @@ const HeroWordmarkProduct = ({
               </div>
               <div>
                 <span className="text-[10px] font-extrabold uppercase tracking-widest text-slate-500 block">
-                  FONS VITAE Qualitätsversprechen
+                  FONTES VITEA Qualitätsversprechen
                 </span>
                 <h3 className="text-xl sm:text-2xl font-black text-[#0A1C3A] uppercase tracking-tight">
                   {activeBubble.title}
