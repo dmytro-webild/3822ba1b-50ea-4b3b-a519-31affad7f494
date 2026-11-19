@@ -11,11 +11,22 @@ import {
   Send,
   Building,
   Heart,
-  Globe2
+  Globe2,
+  FileCheck2,
+  ExternalLink,
+  X,
+  Award,
+  Flame,
+  FileText
 } from "lucide-react";
+
+const CERT_WATER_SCAN_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795130857695-2otnb1rt.webp";
+const CERT_H2_SCAN_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795130857695-m3v1128k.webp";
 
 export default function UeberUnsPage() {
   const [b2bSubmitted, setB2bSubmitted] = useState(false);
+  const [activeCertModal, setActiveCertModal] = useState<{ title: string; imageSrc: string } | null>(null);
+  
   const [b2bFormData, setB2bFormData] = useState({
     company: "",
     contactPerson: "",
@@ -44,13 +55,13 @@ export default function UeberUnsPage() {
 
           <div className="space-y-4 max-w-3xl">
             <span className="text-sky-400 text-xs font-extrabold tracking-widest uppercase bg-sky-950/60 px-4 py-1.5 rounded-full inline-block border border-sky-800/50">
-              Familienunternehmen &amp; B2B-Vertrieb
+              Vertriebspartner DACH &amp; Familienunternehmen
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-tight">
               ÜBER UNS – FONTES VITEA
             </h1>
             <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-light">
-              Die Quelle des Lebens. Als familiengeführtes Unternehmen mit Herz und Hingabe vertreiben wir reinstes molekulares H₂-Wasserstoffwasser in Deutschland, Österreich und der Schweiz.
+              Die Quelle des Lebens. Als familiengeführtes Unternehmen und exklusiver Vertriebspartner bringen wir reinstes molekulares H₂-Wasserstoffwasser und Premium-Fruchtsäfte zu unseren Kunden in Deutschland, Österreich und der Schweiz.
             </p>
           </div>
         </div>
@@ -58,26 +69,26 @@ export default function UeberUnsPage() {
 
       {/* Main Story & Philosophy */}
       <section className="max-w-5xl mx-auto px-6 py-16 space-y-20">
-        {/* Family Business Story Card */}
+        {/* Family Business Story Card (Distributor Role) */}
         <div className="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-xl space-y-8 relative overflow-hidden">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center shadow-md">
               <Heart className="w-5 h-5 text-sky-400" />
             </div>
             <span className="text-xs font-extrabold uppercase tracking-widest text-[#0A1C3A]">
-              Unsere Familiengeschichte &amp; Herkunft
+              Unsere Familiengeschichte &amp; Vertriebsrolle
             </span>
           </div>
 
           <div className="space-y-4">
             <h2 className="text-3xl sm:text-4xl font-black text-[#0A1C3A] uppercase tracking-tight">
-              Aus Familienerfahrung geboren – Für Deine maximale Lebensqualität
+              Engagierter Vertriebspartner – Für Deine maximale Lebensqualität
             </h2>
             <p className="text-base sm:text-lg font-medium leading-relaxed text-slate-700">
-              FONTES VITEA ist kein anonymer Großkonzern, sondern ein leidenschaftliches Familienunternehmen mit tiefen Wurzeln im mitteleuropäischen Raum. Unsere Reise begann mit dem persönlichen Wunsch nach reiner, bioverfügbarer Hydration für unsere eigene Familie. Was einst als Suche nach der reinsten Wasserquelle und den positiven Eigenschaften von gelöstem molekularem Wasserstoff begann, wuchs zu einer Vision heran: Höchste Qualität für bewusste Menschen in Deutschland, Österreich und der Schweiz zugänglich zu machen.
+              FONTES VITEA steht für leidenschaftlichen Vertrieb und höchsten Kundenservice. Als unabhängiger Vertriebspartner konzentrieren wir uns vollkommen darauf, erstklassige H₂-Wasserstoffgetränke und naturbelassene Fruchtsäfte in der gesamten DACH-Region (Deutschland, Österreich und Schweiz) verfügbar zu machen. Die Herstellung erfolgt durch hochspezialisierte, ISO-zertifizierte externe Produktionspartner an der Tiefenquelle.
             </p>
             <p className="text-sm sm:text-base leading-relaxed text-slate-600">
-              Von der sorgfältigen Auswahl unserer 136 Meter tiefen Mineralquelle über die physikalische Anreicherung mit reinem H₂-Gas bis hin zur Abfüllung in 100 % BPA-freie Aluminiumdosen begleiten wir jeden Schritt persönlich. Wir stehen mit unserem Familiennamen für kompromisslose Reinheit, Transparenz und ehrlichen Service.
+              Wir betreiben keine eigene Wasserquelle oder Abfüllanlage, sondern wählen unsere Produktionspartner nach strengsten internationalen Qualitätskriterien (HACCP, EU-Lebensmittelrecht, ISO 17025 Laboranalysen) aus. So stellen wir sicher, dass jede gelieferte Dose mindestens 2,8 mg/L gelösten Wasserstoff enthält und 100 % BPA-frei ist. Wir stehen mit unserem Familiennamen für kompromisslose Transparenz und verlässliche Logistik.
             </p>
           </div>
 
@@ -87,34 +98,188 @@ export default function UeberUnsPage() {
               <Globe2 className="w-6 h-6 text-[#0A1C3A] shrink-0" />
               <div>
                 <span className="text-xs font-black uppercase text-[#0A1C3A] block">Deutschland 🇩🇪</span>
-                <span className="text-[11px] text-slate-500">Zentrales Lager &amp; Vertrieb</span>
+                <span className="text-[11px] text-slate-500">Zentraler Vertrieb &amp; Service</span>
               </div>
             </div>
             <div className="bg-[#f8fafc] p-4 rounded-2xl border border-slate-200 flex items-center gap-3">
               <Globe2 className="w-6 h-6 text-[#0A1C3A] shrink-0" />
               <div>
                 <span className="text-xs font-black uppercase text-[#0A1C3A] block">Österreich 🇦🇹</span>
-                <span className="text-[11px] text-slate-500">Direkte Belieferung</span>
+                <span className="text-[11px] text-slate-500">Direkter Kundenversand</span>
               </div>
             </div>
             <div className="bg-[#f8fafc] p-4 rounded-2xl border border-slate-200 flex items-center gap-3">
               <Globe2 className="w-6 h-6 text-[#0A1C3A] shrink-0" />
               <div>
                 <span className="text-xs font-black uppercase text-[#0A1C3A] block">Schweiz 🇨🇭</span>
-                <span className="text-[11px] text-slate-500">Express-Versand DACH</span>
+                <span className="text-[11px] text-slate-500">Express-Belieferung DACH</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Dedicated Family Photos Visual Container */}
+        {/* INTEGRATED CERTIFICATES & COMPLIANCE SECTION */}
+        <div id="zertifikate" className="space-y-8">
+          <div className="text-center space-y-3">
+            <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-sky-100/80 text-sky-900 px-4 py-1.5 rounded-full inline-block border border-sky-300">
+              Prüfprotokolle &amp; Dokumentation
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#0A1C3A]">
+              ZERTIFIKATE &amp; COMPLIANCE
+            </h2>
+            <p className="text-slate-600 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
+              Unabhängig geprüft — Produktsicherheit, Wasserqualität und Wasserstoffversorgung sind vollständig in akkreditierten europäischen Prüflaboren dokumentiert.
+            </p>
+          </div>
+
+          {/* Compliance Cards Accordion Style Grid */}
+          <div className="space-y-6">
+            {/* Category 1: Produktzertifizierung */}
+            <div className="bg-white rounded-3xl border border-slate-300 p-6 sm:p-8 shadow-md space-y-6">
+              <div className="flex items-center gap-3 border-b border-slate-200 pb-4">
+                <div className="w-10 h-10 rounded-xl bg-[#0A1C3A] text-sky-400 flex items-center justify-center shadow-xs">
+                  <Award className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-black uppercase text-[#0A1C3A]">Produktzertifizierung &amp; Standards</h3>
+                  <span className="text-xs text-slate-500 font-bold">4 bestätigte Qualitätsnachweis-Einträge</span>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="bg-[#f8fafc] p-4 rounded-2xl border border-slate-200 space-y-2">
+                  <div className="flex items-center gap-2 text-sky-600 font-extrabold text-xs">
+                    <ShieldCheck className="w-4 h-4" /> HACCP
+                  </div>
+                  <p className="text-[11px] text-slate-600 leading-snug">
+                    Gefahrenanalyse und kritische Kontrollpunkte — Lebensmittelsicherheits-Managementsystem im Abfüllbetrieb.
+                  </p>
+                </div>
+
+                <div className="bg-[#f8fafc] p-4 rounded-2xl border border-slate-200 space-y-2">
+                  <div className="flex items-center gap-2 text-sky-600 font-extrabold text-xs">
+                    <Building className="w-4 h-4" /> EU Food Legislation
+                  </div>
+                  <p className="text-[11px] text-slate-600 leading-snug">
+                    EG 178/2002, EG 852/2004, EU 1169/2011 — Lebensmittelsicherheit, Hygiene &amp; Kennzeichnung.
+                  </p>
+                </div>
+
+                <div className="bg-[#f8fafc] p-4 rounded-2xl border border-slate-200 space-y-2">
+                  <div className="flex items-center gap-2 text-sky-600 font-extrabold text-xs">
+                    <FileCheck2 className="w-4 h-4" /> SISPO
+                  </div>
+                  <p className="text-[11px] text-slate-600 leading-snug">
+                    Slowakisches System zur Registrierung der Verpackungs- und Abfallkonformität.
+                  </p>
+                </div>
+
+                <div className="bg-[#f8fafc] p-4 rounded-2xl border border-slate-200 space-y-2">
+                  <div className="flex items-center gap-2 text-sky-600 font-extrabold text-xs">
+                    <FileText className="w-4 h-4" /> Traceability
+                  </div>
+                  <p className="text-[11px] text-slate-600 leading-snug">
+                    Lückenlose Chargendokumentation, Musterarchivierung und wiederkehrende Laboranalysen.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Category 2: Wasserqualität & Prüfung */}
+            <div className="bg-white rounded-3xl border border-slate-300 p-6 sm:p-8 shadow-md space-y-6">
+              <div className="flex items-center gap-3 border-b border-slate-200 pb-4">
+                <div className="w-10 h-10 rounded-xl bg-[#0A1C3A] text-sky-400 flex items-center justify-center shadow-xs">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-black uppercase text-[#0A1C3A]">Wasserqualität &amp; Laborprüfung</h3>
+                  <span className="text-xs text-slate-500 font-bold">Akkreditiertes Prüflabor Středočeské vodárny, a.s.</span>
+                </div>
+              </div>
+
+              <div className="bg-[#f8fafc] p-6 rounded-2xl border border-slate-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                <div className="space-y-2 max-w-2xl">
+                  <div className="flex items-center gap-2">
+                    <span className="bg-[#0A1C3A] text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase">
+                      Protokoll Nr. 1406/1/2024
+                    </span>
+                    <span className="text-xs font-bold text-slate-700">Akkreditiertes Prüflabor (ČIA L1429)</span>
+                  </div>
+                  <h4 className="text-base font-black text-[#0A1C3A] uppercase">Trinkwasseranalyse — Alle Parameter konform</h4>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    Vollständige Prüfung mikrobiologischer und chemischer Parameter (pH 7,3, Calcium 109 mg/L, Natrium 7.5 mg/L, Nitrat 12.7 mg/L, Eisen 0.04 mg/L). Alle Grenzwerte gemäß EU-Richtlinien unterschritten.
+                  </p>
+                </div>
+
+                <button
+                  onClick={() => setActiveCertModal({ title: "Wasserqualitätsprotokoll Nr. 1406/1/2024 (Středočeské vodárny, a.s.)", imageSrc: CERT_WATER_SCAN_URL })}
+                  className="bg-[#0A1C3A] hover:bg-[#12284c] text-white text-xs font-extrabold uppercase px-6 py-3 rounded-xl tracking-wider shrink-0 flex items-center gap-2 shadow-md transition transform hover:scale-105"
+                >
+                  <ExternalLink className="w-4 h-4 text-sky-400" />
+                  <span>Scan anzeigen</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Category 3: Wasserstoffversorgung & -konzentration */}
+            <div className="bg-white rounded-3xl border border-slate-300 p-6 sm:p-8 shadow-md space-y-6">
+              <div className="flex items-center gap-3 border-b border-slate-200 pb-4">
+                <div className="w-10 h-10 rounded-xl bg-[#0A1C3A] text-sky-400 flex items-center justify-center shadow-xs">
+                  <Flame className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-black uppercase text-[#0A1C3A]">Wasserstoffversorgung &amp; H₂-Konzentration</h3>
+                  <span className="text-xs text-slate-500 font-bold">Linde Gas &amp; Technopark Kralupy UCT Prague</span>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Linde Gas */}
+                <div className="bg-[#f8fafc] p-6 rounded-2xl border border-slate-200 space-y-3">
+                  <span className="text-xs font-black uppercase text-[#0A1C3A] bg-white px-3 py-1 rounded-full border border-slate-200 inline-block">
+                    Linde Gas — Hydrogen 4.0
+                  </span>
+                  <h4 className="text-base font-extrabold text-[#0A1C3A]">Höchste Gas-Reinheit</h4>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    Reinheitszertifizierung ≥ 99,99 % H₂ für die physikalische Anreicherung des Wassers ohne chemische Zusätze.
+                  </p>
+                </div>
+
+                {/* Technopark Kralupy UCT Prague */}
+                <div className="bg-[#f8fafc] p-6 rounded-2xl border border-slate-200 space-y-3 flex flex-col justify-between">
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-black uppercase text-[#0A1C3A] bg-white px-3 py-1 rounded-full border border-slate-200 inline-block">
+                        University of Chemistry and Technology, Prague
+                      </span>
+                    </div>
+                    <h4 className="text-base font-extrabold text-[#0A1C3A]">Analyse: 2,91 ± 0,10 mg/L H₂ gelöst</h4>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      Technopark Kralupy — Protokoll Nr. A1/2026. Bestimmung mittels Silberionen-Reduktion &amp; ICP-OES in versiegelten 250-ml-Aluminiumdosen.
+                    </p>
+                  </div>
+
+                  <button
+                    onClick={() => setActiveCertModal({ title: "Technopark Kralupy UCT Prague — Protokoll Nr. A1/2026", imageSrc: CERT_H2_SCAN_URL })}
+                    className="mt-4 bg-[#0A1C3A] hover:bg-[#12284c] text-white text-xs font-extrabold uppercase px-5 py-2.5 rounded-xl tracking-wider flex items-center justify-center gap-2 shadow-sm transition"
+                  >
+                    <ExternalLink className="w-4 h-4 text-sky-400" />
+                    <span>Zertifikat A1/2026 Scan öffnen</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Dedicated Founder & Family Photo Impressions */}
         <div className="space-y-6">
           <div className="text-center space-y-2">
             <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-[#e2e8f0] px-4 py-1.5 rounded-full inline-block border border-slate-300">
               Einblick &amp; Werte
             </span>
             <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#0A1C3A]">
-              Unsere Gründer &amp; Familie
+              Unsere Gründer &amp; Philosophie
             </h2>
             <p className="text-slate-600 text-xs sm:text-sm max-w-xl mx-auto">
               Persönlicher Kontakt, ehrlicher Austausch und gelebte Familienwerte stehen bei uns an erster Stelle.
@@ -122,15 +287,14 @@ export default function UeberUnsPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Visual Photo Card 1 */}
             <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg space-y-6 flex flex-col justify-between">
               <div className="space-y-4">
-                <div className="h-52 bg-slate-100 rounded-2xl border border-dashed border-slate-300 flex flex-col items-center justify-center text-center p-6 space-y-3">
+                <div className="h-52 bg-[#f4f6f8] rounded-2xl border border-slate-300 flex flex-col items-center justify-center text-center p-6 space-y-3">
                   <div className="w-14 h-14 rounded-full bg-[#0A1C3A]/10 text-[#0A1C3A] flex items-center justify-center">
                     <Users className="w-7 h-7" />
                   </div>
                   <div>
-                    <h3 className="text-base font-bold text-[#0A1C3A]">Familienführung &amp; Management</h3>
+                    <h3 className="text-base font-bold text-[#0A1C3A]">Familienführung &amp; Kundenservice</h3>
                     <p className="text-xs text-slate-500 max-w-xs mx-auto">
                       Familie FONTES VITEA – Qualität und Herzlichkeit in zweiter Generation
                     </p>
@@ -143,79 +307,34 @@ export default function UeberUnsPage() {
               </div>
 
               <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-bold">
-                <span>📍 Hauptsitz &amp; Logistik Deutschland</span>
+                <span>📍 Hauptsitz &amp; Kundenservice Deutschland</span>
                 <span className="text-sky-600">Familiengeführt</span>
               </div>
             </div>
 
-            {/* Visual Photo Card 2 */}
             <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg space-y-6 flex flex-col justify-between">
               <div className="space-y-4">
-                <div className="h-52 bg-slate-100 rounded-2xl border border-dashed border-slate-300 flex flex-col items-center justify-center text-center p-6 space-y-3">
+                <div className="h-52 bg-[#f4f6f8] rounded-2xl border border-slate-300 flex flex-col items-center justify-center text-center p-6 space-y-3">
                   <div className="w-14 h-14 rounded-full bg-[#0A1C3A]/10 text-[#0A1C3A] flex items-center justify-center">
                     <Building2 className="w-7 h-7" />
                   </div>
                   <div>
-                    <h3 className="text-base font-bold text-[#0A1C3A]">Qualitätssicherung &amp; Quellabfüllung</h3>
+                    <h3 className="text-base font-bold text-[#0A1C3A]">Sorgfältige Partnerauswahl</h3>
                     <p className="text-xs text-slate-500 max-w-xs mx-auto">
-                      Strenge Kontrollen direkt an der Tiefenquelle (136 m)
+                      Zusammenarbeit mit ISO-zertifizierten Abfüllbetrieben
                     </p>
                   </div>
                 </div>
                 <h3 className="text-xl font-bold text-[#0A1C3A]">Laborgeprüfte Sicherheit</h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Jede Charge wird in unabhängigen deutschen Laboratorien auf Reinheit, H₂-Gaskonzentration und Haltbarkeit geprüft. So gewährleisten wir gleichbleibende Höchstqualität.
+                  Jede Charge wird in unabhängigen europäischen Laboratorien auf Reinheit, H₂-Gaskonzentration und Haltbarkeit geprüft. So gewährleisten wir gleichbleibende Höchstqualität.
                 </p>
               </div>
 
               <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-bold">
-                <span>🛡️ ISO-Zertifiziert &amp; BPA-Frei</span>
-                <span className="text-sky-600">100% Sicher</span>
+                <span>🛡️ ISO 17025 Laboranalysen</span>
+                <span className="text-sky-600">100% Geprüft</span>
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* The 3 Pillars */}
-        <div className="space-y-8">
-          <div className="text-center space-y-2">
-            <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-[#e2e8f0] px-4 py-1.5 rounded-full inline-block border border-slate-300">
-              Drei Fundamente
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#0A1C3A]">
-              Unsere 3 Säulen
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-md space-y-4 hover:shadow-lg transition">
-              <div className="w-12 h-12 rounded-xl bg-[#0A1C3A] text-sky-400 flex items-center justify-center font-black text-lg shadow-md">
-                01
-              </div>
-              <h3 className="text-xl font-black text-[#0A1C3A] uppercase">Absolute Qualität</h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Reinstes Wasserstoff-Wasser in BPA-freien, 100% nachhaltigen Aluminiumdosen für maximale Haltbarkeit des gelösten H2-Gases.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-md space-y-4 hover:shadow-lg transition">
-              <div className="w-12 h-12 rounded-xl bg-[#0A1C3A] text-sky-400 flex items-center justify-center font-black text-lg shadow-md">
-                02
-              </div>
-              <h3 className="text-xl font-black text-[#0A1C3A] uppercase">Kompromisslose Transparenz</h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Vollständige Deklaration aller Nährwerte. 0 kcal, 0 g Zucker, 0 künstliche Zusatzstoffe. Dosenpfand transparent ausgewiesen.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-md space-y-4 hover:shadow-lg transition">
-              <div className="w-12 h-12 rounded-xl bg-[#0A1C3A] text-sky-400 flex items-center justify-center font-black text-lg shadow-md">
-                03
-              </div>
-              <h3 className="text-xl font-black text-[#0A1C3A] uppercase">Wissenschaftliche Fundierung</h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Basierend auf aktuellen Studien zur Wirkung von gelöstem Wasserstoff auf Mitochondrien, Laktatabbau und Zellschutz.
-              </p>
             </div>
           </div>
         </div>
@@ -230,11 +349,10 @@ export default function UeberUnsPage() {
               B2B-PARTNER WERDEN
             </h2>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
-              Werden Sie Vertriebspartner von FONTES VITEA. Wir beliefern Getränkehändler, Fitnessstudios, Biohacking-Zentren, Sportvereine, Premium-Hotels, Wellness-Resorts, den gehobenen Einzelhandel und Unternehmen in Deutschland, Österreich und der Schweiz.
+              Werden Sie B2B-Vertriebspartner von FONTES VITEA. Wir beliefern Getränkehändler, Fitnessstudios, Biohacking-Zentren, Sportvereine, Premium-Hotels, Wellness-Resorts, den gehobenen Einzelhandel und Unternehmen in Deutschland, Österreich und der Schweiz.
             </p>
           </div>
 
-          {/* B2B Advantages Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white/10 p-6 rounded-2xl border border-white/10 space-y-2">
               <Building className="w-7 h-7 text-sky-400" />
@@ -261,7 +379,7 @@ export default function UeberUnsPage() {
             </div>
           </div>
 
-          {/* Partner Logos Row (Placeholder required: "Ihr Logo könnte als Erstes hier stehen") */}
+          {/* Partner Logos Row */}
           <div className="space-y-4 pt-4 border-t border-slate-700">
             <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block text-center">
               Partner-Netzwerk in der DACH-Region
@@ -404,10 +522,10 @@ export default function UeberUnsPage() {
           </div>
         </div>
 
-        {/* Navigation & Science Link CTA */}
+        {/* Navigation CTAs */}
         <div className="flex flex-wrap items-center justify-between gap-4 pt-6">
           <RouterLink
-            to="/#shop"
+            to="/shop"
             className="inline-flex items-center gap-2 bg-[#0A1C3A] hover:bg-[#12284c] text-white px-8 py-4 rounded-xl text-xs font-black uppercase tracking-wider shadow-md transition"
           >
             Jetzt Produkte im Shop bestellen <ArrowRight className="w-4 h-4" />
@@ -420,6 +538,42 @@ export default function UeberUnsPage() {
           </RouterLink>
         </div>
       </section>
+
+      {/* Certificate Viewer Modal */}
+      {activeCertModal && (
+        <div className="fixed inset-0 z-50 overflow-y-auto font-sans flex items-center justify-center p-4">
+          <div className="fixed inset-0 bg-slate-950/80 backdrop-blur-md" onClick={() => setActiveCertModal(null)} />
+          <div className="relative bg-white w-full max-w-4xl rounded-2xl shadow-2xl border border-slate-300 overflow-hidden text-[#081427]">
+            <div className="bg-[#0A1C3A] text-white p-4 sm:p-6 flex items-center justify-between">
+              <div>
+                <span className="text-sky-400 text-xs font-extrabold uppercase tracking-widest block">Akkreditiertes Prüfprotokoll</span>
+                <h3 className="text-lg sm:text-xl font-bold uppercase tracking-tight">{activeCertModal.title}</h3>
+              </div>
+              <button
+                onClick={() => setActiveCertModal(null)}
+                className="text-slate-300 hover:text-white p-2 rounded-lg hover:bg-white/10 transition"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            <div className="p-4 sm:p-6 bg-slate-100 flex justify-center max-h-[75vh] overflow-y-auto">
+              <img
+                src={activeCertModal.imageSrc}
+                alt={activeCertModal.title}
+                className="w-full max-w-2xl h-auto object-contain shadow-md rounded-lg border border-slate-300"
+              />
+            </div>
+            <div className="p-4 bg-white border-t border-slate-200 flex justify-end">
+              <button
+                onClick={() => setActiveCertModal(null)}
+                className="bg-[#0A1C3A] text-white px-6 py-2.5 rounded-xl text-xs font-extrabold uppercase tracking-wider"
+              >
+                Schließen
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
