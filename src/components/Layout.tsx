@@ -42,7 +42,7 @@ function MobileBottomBar() {
 
   const navItems = [
     { id: "home", label: "Home", href: "/", icon: Home },
-    { id: "shop", label: "Shop", href: "/#shop", icon: ShoppingBag },
+    { id: "shop", label: "Shop", href: "/shop", icon: ShoppingBag },
     { id: "about", label: "Über uns", href: "/ueber-uns", icon: Home },
     { id: "science", label: "Wissenschaft", href: "/wissenschaft", icon: GraduationCap },
     { id: "contact", label: "Kontakt", href: "/kontakt", icon: PhoneCall },
@@ -119,7 +119,7 @@ function LayoutContent() {
           brand="FONTES VITEA"
           navItems={[
             {
-              name: "Unsere Quelle",
+              name: "Das Quellwasser",
               href: "/#quelle"
             },
             {
@@ -127,12 +127,8 @@ function LayoutContent() {
               href: "/#vergleich"
             },
             {
-              name: "Unsere Produkte",
-              href: "/#shop"
-            },
-            {
-              name: "Bundles",
-              href: "/#bundles"
+              name: "Shop",
+              href: "/shop"
             },
             {
               name: "Über uns",
@@ -148,8 +144,8 @@ function LayoutContent() {
             }
           ]}
           primaryButton={{
-            text: "Jetzt bestellen",
-            href: "/#shop"
+            text: "Zum Shop",
+            href: "/shop"
           }}
           socials={[
             {
@@ -188,8 +184,8 @@ function LayoutContent() {
           title="DAS GESAMTE FONTES VITEA SORTIMENT"
           subtitle="H2 WASSERSTOFF-WASSER & 6 EDLE FRUCHTSAFT-KREATIONEN"
           button={{
-            text: "Jetzt Produkte entdecken",
-            href: "/#shop"
+            text: "Jetzt im Shop entdecken",
+            href: "/shop"
           }}
           brand="FONTES VITEA"
           logoSrc="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795103673176-908st9q6.png"
