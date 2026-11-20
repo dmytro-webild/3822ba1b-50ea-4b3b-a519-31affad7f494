@@ -232,8 +232,8 @@ function LayoutContent() {
             <h4 className="text-xs font-bold uppercase tracking-widest text-sky-400 mb-1">Kontakt & Service</h4>
             <p className="text-xs text-slate-300">Kundenservice &amp; Beratung:</p>
             <p className="text-xs font-semibold text-white">Tel: 017660945171</p>
-            <p className="text-xs text-slate-300">E-Mail: info@fontesvitea.de</p>
-            <p className="text-xs text-slate-400 pt-1">Bestellungen: bestellung@fontesvitea.de</p>
+            <p className="text-xs text-slate-300">E-Mail: info@fontes-vitae.com</p>
+            <p className="text-xs text-slate-400 pt-1">Bestellungen: bestellung@fontes-vitae.com</p>
           </div>
         </div>
 

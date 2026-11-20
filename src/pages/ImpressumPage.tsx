@@ -73,11 +73,11 @@ export default function ImpressumPage() {
               </p>
               <p className="flex items-center gap-2">
                 <span className="text-slate-500 uppercase text-xs font-bold w-32">E-Mail (Allgemein):</span>
-                <a href="mailto:info@fontesvitea.de" className="text-[#0A1C3A] hover:underline font-extrabold">info@fontesvitea.de</a>
+                <a href="mailto:info@fontes-vitae.com" className="text-[#0A1C3A] hover:underline font-extrabold">info@fontes-vitae.com</a>
               </p>
               <p className="flex items-center gap-2">
                 <span className="text-slate-500 uppercase text-xs font-bold w-32">E-Mail (Bestellung):</span>
-                <a href="mailto:bestellung@fontesvitea.de" className="text-[#0A1C3A] hover:underline font-extrabold">bestellung@fontesvitea.de</a>
+                <a href="mailto:bestellung@fontes-vitae.com" className="text-[#0A1C3A] hover:underline font-extrabold">bestellung@fontes-vitae.com</a>
               </p>
             </div>
           </div>
