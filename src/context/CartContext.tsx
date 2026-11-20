@@ -28,6 +28,7 @@ export interface ProductDetailInfo {
   rawPrice?: number;
   packInfo?: string;
   flavor?: string;
+  isOutOfStock?: boolean;
 }
 
 export interface OrderCustomerDetails {

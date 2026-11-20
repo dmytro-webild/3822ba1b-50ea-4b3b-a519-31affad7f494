@@ -34,6 +34,11 @@ export default function ProductDetailsModal() {
     closeProductDetail();
   };
 
+  const isOutOfStock = Boolean(
+    activeProductDetail.isOutOfStock ||
+    activeProductDetail.price.toLowerCase().includes("ausverkauft")
+  );
+
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto font-sans flex items-center justify-center p-4">
       {/* Backdrop */}
@@ -146,12 +151,21 @@ export default function ProductDetailsModal() {
             >
               Schließen
             </button>
-            <button
-              onClick={handleAddToCartFromModal}
-              className="bg-[#0A1C3A] hover:bg-[#12284c] text-white px-6 py-3 rounded-xl font-bold uppercase tracking-wider text-xs shadow-lg transition"
-            >
-              In den Warenkorb legen
-            </button>
+            {isOutOfStock ? (
+              <button
+                disabled
+                className="bg-slate-300 text-slate-600 border border-slate-400 px-6 py-3 rounded-xl font-bold uppercase tracking-wider text-xs cursor-not-allowed opacity-90"
+              >
+                Nicht vorrätig – ausverkauft
+              </button>
+            ) : (
+              <button
+                onClick={handleAddToCartFromModal}
+                className="bg-[#0A1C3A] hover:bg-[#12284c] text-white px-6 py-3 rounded-xl font-bold uppercase tracking-wider text-xs shadow-lg transition"
+              >
+                In den Warenkorb legen
+              </button>
+            )}
           </div>
         </div>
       </div>

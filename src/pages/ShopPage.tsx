@@ -309,9 +309,208 @@ const JUICE_PRODUCTS: ShopProduct[] = [
   }
 ];
 
+export interface KinderserienProduct {
+  id: string;
+  name: string;
+  flavor: string;
+  badge: string;
+  image: string;
+  description: string;
+  specs: string[];
+  detail: ProductDetailInfo;
+}
+
+const KINDERSERIEN_PRODUCTS: KinderserienProduct[] = [
+  {
+    id: "kids-gingerix",
+    name: "Gingerix (Ingwer Tonic)",
+    flavor: "Ingwer Tonic",
+    badge: "Kinderserie • Special",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216737-r3370ev4.png",
+    description: "100 % natürlicher Direktsaft mit angenehmer Ingwerschärfe, speziell kreiert für die Kinderserie. Ohne Zuckerzusatz.",
+    specs: [
+      "100 % natürlicher Direktsaft",
+      "Ohne Zuckerzusatz",
+      "Ohne Konservierungsstoffe & Aromen",
+      "BPA-freie Alu-Dose (250 ml)"
+    ],
+    detail: {
+      title: "FONTES VITEA Kinderserie - Gingerix (Ingwer Tonic)",
+      subtitle: "100 % natürlicher Direktsaft • Special Edition • 250 ml Alu-Dose",
+      price: "Nicht vorrätig – ausverkauft",
+      depositInfo: "Status: Derzeit nicht auf Lager",
+      imageSrc: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216737-r3370ev4.png",
+      description: "Belebendes Ginger Tonic aus 100 % natürlichem Direktsaft. Frei von Zuckerzusätzen, Konservierungsstoffen, Farbstoffen und künstlichen Aromen.",
+      verzehr: "Ideal gekühlt für die erfrischende Pause zwischendurch.",
+      nutritionalTable: [
+        { name: "Brennwert", value: "148 kJ / 35 kcal" },
+        { name: "Fett", value: "< 0,1 g" },
+        { name: "Kohlenhydrate", value: "8,1 g" },
+        { name: "davon Zucker", value: "7,6 g" },
+        { name: "Eiweiß", value: "0,2 g" }
+      ],
+      specs: [
+        "100 % natürlicher Direktsaft",
+        "Ohne Zuckerzusatz",
+        "Ohne Konservierungsstoffe & Aromen",
+        "Doseninnenbeschichtung ohne BPA"
+      ],
+      isOutOfStock: true
+    }
+  },
+  {
+    id: "kids-limetix",
+    name: "Limetix (Limette mit Apfel)",
+    flavor: "Limette mit Apfel",
+    badge: "Kinderserie • Special",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216742-q4yi2mw1.png",
+    description: "Spritzige Kombination aus frischer Limette und knackigem Apfel. 100 % natürlich und ohne künstliche Zusätze.",
+    specs: [
+      "Erfrischende Limette & Apfel",
+      "Ohne Zuckerzusatz",
+      "Ohne Konservierungsstoffe & Aromen",
+      "BPA-freie Alu-Dose (250 ml)"
+    ],
+    detail: {
+      title: "FONTES VITEA Kinderserie - Limetix (Limette mit Apfel)",
+      subtitle: "Fruchtiges Erfrischungsgetränk • Special Edition • 250 ml Alu-Dose",
+      price: "Nicht vorrätig – ausverkauft",
+      depositInfo: "Status: Derzeit nicht auf Lager",
+      imageSrc: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216742-q4yi2mw1.png",
+      description: "Die spritzig-fruchtige Harmonie aus sonnengereifter Limette und heimischem Apfel in der limitierten Kinderserien-Dose.",
+      verzehr: "Gekühlt genießen als fruchtiger Durstlöscher im Alltag.",
+      nutritionalTable: [
+        { name: "Brennwert", value: "195 kJ / 46 kcal" },
+        { name: "Fett", value: "< 0,1 g" },
+        { name: "Kohlenhydrate", value: "11,0 g" },
+        { name: "davon Zucker", value: "10,2 g" },
+        { name: "Eiweiß", value: "0,1 g" }
+      ],
+      specs: [
+        "Fruchtige Limette & Apfel",
+        "Ohne Zuckerzusatz",
+        "Ohne Konservierungsstoffe & Farbstoffe",
+        "Doseninnenbeschichtung ohne BPA"
+      ],
+      isOutOfStock: true
+    }
+  },
+  {
+    id: "kids-heidelberix",
+    name: "Heidelberix (Heidelbeere)",
+    flavor: "Heidelbeere",
+    badge: "Kinderserie • Special",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216738-2s53ficu.png",
+    description: "Heidelbeer-Erfrischungsgetränk mit 30 % natürlichem Heidelbeersaft. Natursüß, beerenstark & zuckerfrei.",
+    specs: [
+      "30 % natürlicher Heidelbeersaft",
+      "Ohne Zuckerzusatz",
+      "Ohne Konservierungsstoffe & Farbstoffe",
+      "BPA-freie Alu-Dose (250 ml)"
+    ],
+    detail: {
+      title: "FONTES VITEA Kinderserie - Heidelberix (Heidelbeere)",
+      subtitle: "30 % Heidelbeersaft • Special Edition • 250 ml Alu-Dose",
+      price: "Nicht vorrätig – ausverkauft",
+      depositInfo: "Status: Derzeit nicht auf Lager",
+      imageSrc: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216738-2s53ficu.png",
+      description: "Intensiver Heidelbeergeschmack mit 30 % echtem Fruchtsaft. Perfekt abgestimmt für den Geschmack kleiner Entdecker.",
+      verzehr: "Gut gekühlt servieren für volle Beerenfrische.",
+      nutritionalTable: [
+        { name: "Brennwert", value: "185 kJ / 44 kcal" },
+        { name: "Fett", value: "< 0,1 g" },
+        { name: "Kohlenhydrate", value: "10,5 g" },
+        { name: "davon Zucker", value: "9,8 g" },
+        { name: "Eiweiß", value: "0,3 g" }
+      ],
+      specs: [
+        "30 % natürlicher Heidelbeersaft",
+        "Ohne Zuckerzusatz",
+        "Ohne Konservierungsstoffe & Aromen",
+        "Doseninnenbeschichtung ohne BPA"
+      ],
+      isOutOfStock: true
+    }
+  },
+  {
+    id: "kids-himbeerixa",
+    name: "Himbeerixa (Himbeere)",
+    flavor: "Himbeere",
+    badge: "Kinderserie • Special",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216740-l82r4ka1.png",
+    description: "Himbeer-Erfrischungsgetränk mit 30 % natürlichem Himbeersaft. Beerenstark, fruchtig und ohne Zuckerzusatz.",
+    specs: [
+      "30 % natürlicher Himbeersaft",
+      "Ohne Zuckerzusatz",
+      "Ohne Konservierungsstoffe & Aromen",
+      "BPA-freie Alu-Dose (250 ml)"
+    ],
+    detail: {
+      title: "FONTES VITEA Kinderserie - Himbeerixa (Himbeere)",
+      subtitle: "30 % Himbeersaft • Special Edition • 250 ml Alu-Dose",
+      price: "Nicht vorrätig – ausverkauft",
+      depositInfo: "Status: Derzeit nicht auf Lager",
+      imageSrc: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216740-l82r4ka1.png",
+      description: "Fruchtiges Himbeergetränk mit 30 % echtem Himbeersaft aus sonnengereiften Früchten. Ohne künstliche Farbstoffe oder Aromen.",
+      verzehr: "Die fruchtige Erfrischung für zwischendurch.",
+      nutritionalTable: [
+        { name: "Brennwert", value: "172 kJ / 41 kcal" },
+        { name: "Fett", value: "< 0,1 g" },
+        { name: "Kohlenhydrate", value: "9,2 g" },
+        { name: "davon Zucker", value: "8,5 g" },
+        { name: "Eiweiß", value: "0,4 g" }
+      ],
+      specs: [
+        "30 % natürlicher Himbeersaft",
+        "Ohne Zuckerzusatz",
+        "Ohne Konservierungsstoffe & Aromen",
+        "Doseninnenbeschichtung ohne BPA"
+      ],
+      isOutOfStock: true
+    }
+  },
+  {
+    id: "kids-apfelrix",
+    name: "Apfelrix (Apfel)",
+    flavor: "Apfel",
+    badge: "Kinderserie • Special",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216735-kk46ygff.png",
+    description: "Apfel-Erfrischungsgetränk mit 30 % natürlichem Apfelsaft. Frischer Apfelgeschmack aus heimischen Früchten.",
+    specs: [
+      "30 % natürlicher Apfelsaft",
+      "Ohne Zuckerzusatz",
+      "Ohne Konservierungsstoffe & Aromen",
+      "BPA-freie Alu-Dose (250 ml)"
+    ],
+    detail: {
+      title: "FONTES VITEA Kinderserie - Apfelrix (Apfel)",
+      subtitle: "30 % Apfelsaft • Special Edition • 250 ml Alu-Dose",
+      price: "Nicht vorrätig – ausverkauft",
+      depositInfo: "Status: Derzeit nicht auf Lager",
+      imageSrc: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216735-kk46ygff.png",
+      description: "Knackiger Apfelsaftgeschmack mit 30 % Fruchtsaftgehalt. Der bewährte Klassiker neu aufgelegt in der beliebten Kinderserie.",
+      verzehr: "Ideal gekühlt als fruchtiger Begleiter im Alltag.",
+      nutritionalTable: [
+        { name: "Brennwert", value: "180 kJ / 42 kcal" },
+        { name: "Fett", value: "< 0,1 g" },
+        { name: "Kohlenhydrate", value: "10,1 g" },
+        { name: "davon Zucker", value: "9,5 g" },
+        { name: "Eiweiß", value: "0,1 g" }
+      ],
+      specs: [
+        "30 % natürlicher Apfelsaft",
+        "Ohne Zuckerzusatz",
+        "Ohne Konservierungsstoffe & Aromen",
+        "Doseninnenbeschichtung ohne BPA"
+      ],
+      isOutOfStock: true
+    }
+  }
+];
+
 export default function ShopPage() {
   const { addToCart, openProductDetail } = useCart();
-  const [activeTab, setActiveTab] = useState<"all" | "h2" | "juice" | "bundle">("all");
+  const [activeTab, setActiveTab] = useState<"all" | "h2" | "juice" | "bundle" | "kids">("all");
   const [packSizes, setPackSizes] = useState<Record<string, "6" | "12" | "24">>({
     "h2-water": "12",
     "juice-blaubeere": "12",
@@ -391,7 +590,7 @@ export default function ShopPage() {
                 : "text-slate-600 hover:text-[#0A1C3A] hover:bg-slate-100"
             }`}
           >
-            Alle 7 Sorten ({allProducts.length})
+            Alle Sorten ({allProducts.length})
           </button>
           <button
             onClick={() => setActiveTab("h2")}
@@ -423,10 +622,21 @@ export default function ShopPage() {
           >
             Vorteilspakete &amp; Bundles
           </button>
+          <button
+            onClick={() => setActiveTab("kids")}
+            className={`px-5 py-2.5 rounded-xl font-bold text-xs uppercase transition flex items-center gap-1.5 ${
+              activeTab === "kids"
+                ? "bg-[#0A1C3A] text-white shadow-md"
+                : "text-amber-800 bg-amber-50/80 hover:bg-amber-100/80 border border-amber-200"
+            }`}
+          >
+            <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+            Kinderserien Special (5 Sorten)
+          </button>
         </div>
 
-        {/* Products Grid (when not purely bundles view) */}
-        {activeTab !== "bundle" && (
+        {/* Products Grid (when not purely bundles or kids view) */}
+        {activeTab !== "bundle" && activeTab !== "kids" && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProducts.map((product) => {
               const currentSize = packSizes[product.id] || "12";
@@ -636,6 +846,95 @@ export default function ShopPage() {
                   Kombi-Paket kaufen (142,96 €)
                 </button>
               </div>
+            </div>
+          </div>
+        )}
+
+        {/* Kinderserien Special Section (placed right under Bundles) */}
+        {(activeTab === "all" || activeTab === "kids") && (
+          <div id="kinderserien" className="space-y-6 pt-10 border-t border-slate-200">
+            <div className="space-y-2">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                <span className="text-xs text-amber-900 bg-amber-100 font-extrabold uppercase tracking-widest px-3.5 py-1 rounded-full border border-amber-300 inline-block">
+                  Kinderserie Special Edition
+                </span>
+                <span className="text-xs text-red-700 bg-red-100 font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-red-200 font-mono">
+                  nicht vorrätig – ausverkauft
+                </span>
+              </div>
+              <h2 className="text-3xl font-black uppercase tracking-tight text-[#0A1C3A]">
+                KINDERSERIEN SPECIAL
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600 max-w-3xl leading-relaxed">
+                Unsere fröhliche Kinderserie in den 5 beliebten Sorten Gingerix, Limetix, Heidelberix, Himbeerixa und Apfelrix – 100 % frei von Zuckerzusatz und Konservierungsstoffen in 100 % BPA-freien Alu-Dosen.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {KINDERSERIEN_PRODUCTS.map((product) => (
+                <div
+                  key={product.id}
+                  className="bg-white rounded-2xl p-6 border border-slate-300 shadow-md flex flex-col justify-between hover:border-[#0A1C3A] hover:shadow-xl transition group relative overflow-hidden"
+                >
+                  <div className="space-y-4">
+                    {/* Image Box */}
+                    <div
+                      className="relative bg-[#f4f6f8] rounded-xl p-6 border border-slate-200 text-center cursor-pointer"
+                      onClick={() => openProductDetail(product.detail)}
+                    >
+                      <span className="absolute top-3 left-3 bg-[#0A1C3A] text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md uppercase z-10 shadow-xs">
+                        {product.badge}
+                      </span>
+                      <span className="absolute top-3 right-3 bg-red-100 text-red-800 text-[10px] font-bold px-2 py-0.5 rounded border border-red-300 z-10">
+                        Ausverkauft
+                      </span>
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-44 object-contain mx-auto group-hover:scale-105 transition duration-300"
+                      />
+                    </div>
+
+                    <div>
+                      <span className="text-[11px] text-[#0A1C3A] font-extrabold uppercase tracking-wider">Limitiertes Special</span>
+                      <h3 className="text-2xl font-black text-[#0A1C3A] uppercase tracking-tight">{product.name}</h3>
+                      <p className="text-xs text-slate-600 mt-1 leading-relaxed">{product.description}</p>
+                    </div>
+
+                    {/* Quick Bullet Specs */}
+                    <div className="space-y-1.5 text-xs text-slate-700 bg-[#f8fafc] p-3 rounded-xl border border-slate-200">
+                      {product.specs.map((spec, idx) => (
+                        <div key={idx} className="flex items-center gap-2">
+                          <Check className="w-4 h-4 text-[#0A1C3A] shrink-0" />
+                          <span>{spec}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Status & Details CTA */}
+                  <div className="mt-6 pt-4 border-t border-slate-200 space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-[11px] font-bold text-red-600 bg-red-50 px-2.5 py-1 rounded border border-red-200 uppercase tracking-wider">
+                        nicht vorrätig – ausverkauft
+                      </span>
+                      <button
+                        onClick={() => openProductDetail(product.detail)}
+                        className="text-xs text-[#0A1C3A] hover:underline font-bold flex items-center gap-1"
+                      >
+                        <Info className="w-3.5 h-3.5" /> Details
+                      </button>
+                    </div>
+
+                    <button
+                      disabled
+                      className="w-full bg-slate-200 text-slate-500 py-3 rounded-xl font-bold uppercase text-xs tracking-wider flex items-center justify-center gap-2 border border-slate-300 cursor-not-allowed"
+                    >
+                      nicht vorrätig – ausverkauft
+                    </button>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         )}
