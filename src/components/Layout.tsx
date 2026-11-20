@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
 import NavbarPillLinks from "@/components/navbars/NavbarPillLinks";
 import { CartProvider, useCart } from "@/context/CartContext";
 import CartDrawer from "@/components/cart/CartDrawer";
@@ -37,14 +37,14 @@ function FloatingCartButton() {
 }
 
 function MobileBottomBar() {
-  const [activeTab, setActiveTab] = useState("home");
+  const location = useLocation();
 
   const navItems = [
-    { id: "home", label: "Home", href: "/", icon: Home },
-    { id: "shop", label: "Shop", href: "/shop", icon: ShoppingBag },
-    { id: "about", label: "Über uns", href: "/ueber-uns", icon: Home },
-    { id: "science", label: "Wissenschaft", href: "/wissenschaft", icon: GraduationCap },
-    { id: "contact", label: "Kontakt", href: "/kontakt", icon: PhoneCall },
+    { label: "Home", href: "/", icon: Home },
+    { label: "Shop", href: "/shop", icon: ShoppingBag },
+    { label: "Über uns", href: "/ueber-uns", icon: Home },
+    { label: "Wissenschaft", href: "/wissenschaft", icon: GraduationCap },
+    { label: "Kontakt", href: "/kontakt", icon: PhoneCall },
   ];
 
   return (
@@ -54,21 +54,18 @@ function MobileBottomBar() {
     >
       {navItems.map((item) => {
         const Icon = item.icon;
-        const isActive = activeTab === item.id;
+        const isActive = location.pathname === item.href;
         return (
-          <a
-            key={item.id}
-            href={item.href}
-            onClick={() => {
-              setActiveTab(item.id);
-            }}
+          <Link
+            key={item.href}
+            to={item.href}
             className={`flex flex-col items-center justify-center gap-0.5 transition py-1 px-3 rounded-lg ${
               isActive ? "text-sky-400 font-extrabold" : "text-slate-300 hover:text-white"
             }`}
           >
             <Icon className={`w-5 h-5 ${isActive ? "text-sky-400" : "text-slate-300"}`} />
             <span className="text-[11px] tracking-tight">{item.label}</span>
-          </a>
+          </Link>
         );
       })}
     </nav>

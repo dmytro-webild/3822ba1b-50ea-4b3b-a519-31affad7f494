@@ -32,7 +32,7 @@ const SEARCH_DATABASE: SearchItem[] = [
     category: "Produkt",
     description: "Reinstes Wasserstoff-Wasser mit min. 2.8 mg/L gelöstem H2 in 100% BPA-freier Alu-Dose. 0 kcal, 0 g Zucker.",
     keywords: ["wasserstoff", "h2", "wasser", "dose", "aludose", "shop", "kaufen", "bestellen", "einzelne", "einzeldose", "gehalt", "0 kcal", "zuckerfrei"],
-    href: "/#shop",
+    href: "/shop?product=h2-water",
     icon: Package,
   },
   {
@@ -41,7 +41,7 @@ const SEARCH_DATABASE: SearchItem[] = [
     category: "Produkt",
     description: "6 erfrischende Direktsaft-Sorten (Orange-Apfel, Granatapfel-Beere, Exotic u.v.m.) angereichert mit H2-Wasserstoff.",
     keywords: ["fruchtsaft", "saft", "orange", "granatapfel", "beere", "exotic", "ingwer", "zitrone", "mango", "maracuja", "johannisbeere", "kreationen", "geschmack", "sorten"],
-    href: "/#shop",
+    href: "/shop?category=juice",
     icon: Package,
   },
   {
@@ -50,7 +50,7 @@ const SEARCH_DATABASE: SearchItem[] = [
     category: "Produkt",
     description: "Exklusive Sparsets: Starter Bundle, Vitality Box & Executive Paket zum Vorzugspreis.",
     keywords: ["bundle", "bundles", "paket", "probierpaket", "starter", "vitality", "executive", "rabatt", "sparset", "angebote", "vorteilspaket"],
-    href: "/#bundles",
+    href: "/shop?category=bundle",
     icon: Package,
   },
   {
@@ -59,7 +59,7 @@ const SEARCH_DATABASE: SearchItem[] = [
     category: "Produkt",
     description: "Limitiertes Special für Kinder ohne Zuckerzusatz & BPA-frei (Status: nicht vorrätig – ausverkauft).",
     keywords: ["kinderserien", "kinder", "gingerix", "limetix", "heidelberix", "himbeerixa", "apfelrix", "special", "ingwer tonic", "limette", "heidelbeere", "himbeere", "apfel", "ausverkauft"],
-    href: "/shop#kinderserien",
+    href: "/shop?category=kids",
     icon: Sparkles,
   },
   {

@@ -537,7 +537,7 @@ export default function WissenschaftPage() {
         {/* Back to Shop CTA */}
         <div className="text-center pt-6">
           <Link
-            to="/#shop"
+            to="/shop"
             className="inline-flex items-center gap-2 bg-[#0A1C3A] hover:bg-[#12284c] text-white px-8 py-4 rounded-xl text-xs font-black uppercase tracking-wider shadow-md transition"
           >
             Jetzt FONTES VITEA im Shop bestellen <ArrowLeft className="w-4 h-4 rotate-180" />

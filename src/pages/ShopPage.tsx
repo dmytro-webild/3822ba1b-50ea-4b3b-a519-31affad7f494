@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { useCart, type ProductDetailInfo } from "@/context/CartContext";
 import {
   ShoppingBag,
@@ -509,6 +509,7 @@ const KINDERSERIEN_PRODUCTS: KinderserienProduct[] = [
 ];
 
 export default function ShopPage() {
+  const location = useLocation();
   const { addToCart, openProductDetail } = useCart();
   const [activeTab, setActiveTab] = useState<"all" | "h2" | "juice" | "bundle" | "kids">("all");
   const [packSizes, setPackSizes] = useState<Record<string, "6" | "12" | "24">>({
@@ -521,11 +522,66 @@ export default function ShopPage() {
     "juice-apfel-ingwer": "12",
   });
 
+  const allProducts = [H2_PRODUCT, ...JUICE_PRODUCTS];
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const productId = searchParams.get("product") || (location.hash ? location.hash.replace("#", "") : null);
+    const categoryParam = searchParams.get("category");
+
+    if (categoryParam && ["all", "h2", "juice", "bundle", "kids"].includes(categoryParam)) {
+      setActiveTab(categoryParam as "all" | "h2" | "juice" | "bundle" | "kids");
+    }
+
+    if (productId) {
+      const mainProd = allProducts.find((p) => p.id === productId);
+      if (mainProd) {
+        if (mainProd.category === "juice") setActiveTab("juice");
+        else if (mainProd.category === "h2") setActiveTab("h2");
+        const currentSize = packSizes[mainProd.id] || "12";
+        const packData = mainProd.prices[currentSize];
+        const displayImg = mainProd.id === "h2-water" && currentSize === "24" ? H2_24PACK_IMAGE_URL : (mainProd.id === "h2-water" ? H2_12PACK_IMAGE_URL : mainProd.image);
+        openProductDetail({
+          ...mainProd.detail,
+          imageSrc: displayImg,
+          rawPrice: packData.price,
+          price: `${packData.price.toFixed(2).replace('.', ',')} € (${currentSize}er-Pack)`,
+          deposit: packData.deposit,
+          cansCount: packData.count,
+        });
+        setTimeout(() => {
+          const el = document.getElementById(productId);
+          if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 100);
+        return;
+      }
+
+      const kidsProd = KINDERSERIEN_PRODUCTS.find((p) => p.id === productId);
+      if (kidsProd) {
+        setActiveTab("kids");
+        openProductDetail(kidsProd.detail);
+        setTimeout(() => {
+          const el = document.getElementById(productId);
+          if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 100);
+        return;
+      }
+
+      if (productId === "bundle-12juices" || productId === "bundle-combo-48") {
+        setActiveTab("bundle");
+        setTimeout(() => {
+          const el = document.getElementById(productId);
+          if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 100);
+        return;
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.search, location.hash, openProductDetail]);
+
   const handlePackChange = (productId: string, size: "6" | "12" | "24") => {
     setPackSizes((prev) => ({ ...prev, [productId]: size }));
   };
-
-  const allProducts = [H2_PRODUCT, ...JUICE_PRODUCTS];
 
   const filteredProducts = allProducts.filter((p) => {
     if (activeTab === "all") return true;
@@ -646,6 +702,7 @@ export default function ShopPage() {
               return (
                 <div
                   key={product.id}
+                  id={product.id}
                   className="bg-white rounded-2xl p-6 border border-slate-300 shadow-md flex flex-col justify-between hover:border-[#0A1C3A] hover:shadow-xl transition group"
                 >
                   <div className="space-y-4">
@@ -762,7 +819,7 @@ export default function ShopPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Bundle 1 */}
-              <div className="bg-white rounded-2xl p-8 border border-slate-300 shadow-md flex flex-col justify-between hover:border-[#0A1C3A] transition">
+              <div id="bundle-12juices" className="bg-white rounded-2xl p-8 border border-slate-300 shadow-md flex flex-col justify-between hover:border-[#0A1C3A] transition">
                 <div className="space-y-4">
                   <span className="bg-[#0A1C3A] text-white text-[10px] font-extrabold px-3 py-1 rounded-md uppercase">
                     100 % Vegan Fruchtsaft Mix
@@ -803,7 +860,7 @@ export default function ShopPage() {
               </div>
 
               {/* Bundle 2 */}
-              <div className="bg-white rounded-2xl p-8 border-2 border-[#0A1C3A] shadow-xl flex flex-col justify-between relative overflow-hidden">
+              <div id="bundle-combo-48" className="bg-white rounded-2xl p-8 border-2 border-[#0A1C3A] shadow-xl flex flex-col justify-between relative overflow-hidden">
                 <div className="absolute top-0 right-0 bg-[#0A1C3A] text-white text-[10px] font-black px-4 py-1.5 rounded-bl-xl uppercase tracking-wider">
                   Bestseller Kombi
                 </div>
@@ -874,6 +931,7 @@ export default function ShopPage() {
               {KINDERSERIEN_PRODUCTS.map((product) => (
                 <div
                   key={product.id}
+                  id={product.id}
                   className="bg-white rounded-2xl p-6 border border-slate-300 shadow-md flex flex-col justify-between hover:border-[#0A1C3A] hover:shadow-xl transition group relative overflow-hidden"
                 >
                   <div className="space-y-4">
