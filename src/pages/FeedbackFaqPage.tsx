@@ -4,7 +4,6 @@ import FeedbackForm from "@/components/sections/feedback/FeedbackForm";
 import AdminModerationPanel from "@/components/sections/feedback/AdminModerationPanel";
 import CustomerReviewsSection from "@/components/sections/feedback/CustomerReviewsSection";
 import FaqSection from "@/components/sections/feedback/FaqSection";
-import SubtleWaveTransition from "@/components/shared/SubtleWaveTransition";
 import { MessageSquareHeart, Shield } from "lucide-react";
 
 export default function FeedbackFaqPage() {
@@ -47,14 +46,10 @@ export default function FeedbackFaqPage() {
         <PhotoContestLoyaltyCard />
       </section>
 
-      <SubtleWaveTransition variant="silver" />
-
       {/* 2. Customer Feedback Submission Form */}
       <section id="bewertung-einreichen">
         <FeedbackForm />
       </section>
-
-      <SubtleWaveTransition variant="iceblue" />
 
       {/* 3. Approved Public Customer Reviews Carousel */}
       <section id="bewertungen">
@@ -65,8 +60,6 @@ export default function FeedbackFaqPage() {
           showGoogleReviews={true}
         />
       </section>
-
-      <SubtleWaveTransition variant="pearl" />
 
       {/* 4. Integrated FAQ Section */}
       <section id="faq">

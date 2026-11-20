@@ -44,7 +44,7 @@ export default function UeberUnsPage() {
   return (
     <div className="bg-transparent min-h-screen text-[#0A1C3A] font-sans pb-24">
       {/* Hero Header */}
-      <section className="bg-[#0A1C3A] text-white py-20 px-6 border-b border-slate-800 relative overflow-hidden">
+      <section className="bg-[#0A1C3A] text-white py-20 px-6 relative overflow-hidden">
         <div className="max-w-5xl mx-auto space-y-6 relative z-10">
           <RouterLink
             to="/"

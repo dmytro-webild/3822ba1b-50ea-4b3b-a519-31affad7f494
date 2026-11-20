@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useCart, type ProductDetailInfo } from "@/context/CartContext";
 import CustomerReviewsSection from "@/components/sections/feedback/CustomerReviewsSection";
-import SubtleWaveTransition from "@/components/shared/SubtleWaveTransition";
 import {
   ShoppingBag,
   Info,
@@ -595,7 +594,7 @@ export default function ShopPage() {
   return (
     <div className="bg-transparent min-h-screen text-[#0A1C3A] font-sans pb-24">
       {/* Header Banner */}
-      <section className="bg-[#0A1C3A] text-white py-16 px-6 border-b border-slate-800 relative overflow-hidden">
+      <section className="bg-[#0A1C3A] text-white py-16 px-6 relative overflow-hidden">
         <div className="max-w-6xl mx-auto space-y-6 relative z-10 text-center sm:text-left">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <span className="text-sky-400 text-xs font-extrabold tracking-widest uppercase bg-sky-950/80 px-4 py-1.5 rounded-full border border-sky-800/60">
@@ -637,8 +636,6 @@ export default function ShopPage() {
           </div>
         </div>
       </section>
-
-      <SubtleWaveTransition variant="iceblue" />
 
       {/* Main Shop Content Area */}
       <section className="max-w-7xl mx-auto px-6 py-12 space-y-10">
@@ -810,8 +807,6 @@ export default function ShopPage() {
             })}
           </div>
         )}
-
-        <SubtleWaveTransition variant="silver" />
 
         {/* Bundles Section */}
         {(activeTab === "all" || activeTab === "bundle") && (
@@ -1009,8 +1004,6 @@ export default function ShopPage() {
           </div>
         )}
 
-        <SubtleWaveTransition variant="pearl" />
-
         {/* Kinderserien Special Section (placed right under Bundles) */}
         {(activeTab === "all" || activeTab === "kids") && (
           <div id="kinderserien" className="space-y-6 pt-10 border-t border-slate-200">
@@ -1101,8 +1094,6 @@ export default function ShopPage() {
           </div>
         )}
 
-        <SubtleWaveTransition variant="iceblue" />
-
         {/* FREIGEGEBENE KUNDENBEWERTUNGEN UNTER DER KINDERSERIE */}
         <div id="kundenbewertungen-shop" className="pt-2">
           <CustomerReviewsSection
@@ -1112,8 +1103,6 @@ export default function ShopPage() {
             showGoogleReviews={true}
           />
         </div>
-
-        <SubtleWaveTransition variant="silver" />
 
         {/* Distributor Guarantee Banner */}
         <div className="bg-[#0A1C3A] text-white rounded-3xl p-8 sm:p-10 space-y-4 shadow-xl border border-slate-800">
