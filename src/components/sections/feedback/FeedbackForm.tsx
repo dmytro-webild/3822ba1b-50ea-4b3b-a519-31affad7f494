@@ -67,11 +67,6 @@ export default function FeedbackForm() {
       return;
     }
 
-    if (!photoUrl) {
-      setErrorMsg("Ein Foto-Upload (JPG, PNG, WEBP) ist zwingend erforderlich.");
-      return;
-    }
-
     if (!consent) {
       setErrorMsg("Bitte stimmen Sie der Veröffentlichung Ihrer Bewertung und Ihres Fotos zu.");
       return;
@@ -104,12 +99,12 @@ export default function FeedbackForm() {
           tartness,
         },
         comment: comment.trim(),
-        photoUrl,
+        photoUrl: photoUrl ?? "",
         contestEntry,
       });
 
       setSuccessMsg(
-        "Vielen Dank! Ihre Bewertung und Ihr Foto wurden erfolgreich eingereicht. Nach Prüfung durch unser Moderations-Team wird Ihr Feedback auf der Website veröffentlicht."
+        "Vielen Dank! Ihre Bewertung wurde erfolgreich eingereicht. Nach Prüfung durch unser Moderations-Team wird Ihr Feedback auf der Website veröffentlicht."
       );
 
       // Reset form
@@ -139,7 +134,7 @@ export default function FeedbackForm() {
           IHRE BEWERTUNG MIT FOTO EINREICHEN
         </h2>
         <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
-          Teilen Sie Ihre Erfahrungen und laden Sie Ihr Foto hoch. Jede freigegebene Foto-Bewertung nimmt automatisch am Fotowettbewerb „DEIN FONTES VITEA MOMENT“ teil!
+          Teilen Sie Ihre Erfahrungen und senden Sie uns Ihr Foto per E-Mail. Jede freigegebene Foto-Bewertung nimmt automatisch am Fotowettbewerb „DEIN FONTES VITEA MOMENT“ teil!
         </p>
       </div>
 
@@ -313,37 +308,16 @@ export default function FeedbackForm() {
           />
         </div>
 
-        {/* Mandatory Image Upload */}
-        <div className="bg-[#f8fafc] p-6 rounded-2xl border border-dashed border-slate-300 space-y-4">
-          <div className="flex items-center justify-between">
-            <label className="block text-xs font-extrabold uppercase tracking-wider text-[#0A1C3A] flex items-center gap-2">
-              <Upload className="w-4 h-4 text-[#0A1C3A]" />
-              Foto-Upload (Pflichtfeld: JPG, PNG, WEBP) *
-            </label>
-            <span className="text-[10px] bg-red-100 text-red-800 font-bold px-2.5 py-0.5 rounded border border-red-200 uppercase">
-              Erforderlich
-            </span>
-          </div>
-
-          <input
-            type="file"
-            accept="image/jpeg,image/png,image/webp"
-            onChange={handlePhotoUpload}
-            className="block w-full text-xs text-slate-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-[#0A1C3A] file:text-white hover:file:bg-[#12284c] cursor-pointer"
-          />
-
-          {/* Image Live Preview */}
-          {photoUrl && (
-            <div className="pt-2 space-y-2">
-              <span className="text-[11px] font-bold text-slate-600 block">Vorschau Ihres hochgeladenen Fotos:</span>
-              <div className="relative w-40 h-40 rounded-2xl overflow-hidden border-2 border-[#0A1C3A] shadow-md bg-white">
-                <img src={photoUrl} alt="Upload Vorschau" className="w-full h-full object-cover" />
-                <span className="absolute bottom-1 right-1 bg-emerald-600 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">
-                  Bereit
-                </span>
-              </div>
-            </div>
-          )}
+        {/* Photo by email */}
+        <div className="bg-[#f8fafc] p-6 rounded-2xl border border-dashed border-slate-300 space-y-2">
+          <p className="text-xs font-extrabold uppercase tracking-wider text-[#0A1C3A] flex items-center gap-2">
+            <Camera className="w-4 h-4 text-[#0A1C3A]" />
+            Foto für den Fotowettbewerb
+          </p>
+          <p className="text-xs text-slate-600 leading-snug">
+            Senden Sie Ihr Foto mit Ihrem Vornamen per E-Mail an{" "}
+            <a href="mailto:info@fontes-vitae.com" className="font-bold text-[#0A1C3A] underline">info@fontes-vitae.com</a>.
+          </p>
         </div>
 
         {/* Consent Checkboxes */}
@@ -382,7 +356,7 @@ export default function FeedbackForm() {
             className="w-full bg-[#0A1C3A] hover:bg-[#12284c] text-white py-4 rounded-xl font-bold uppercase tracking-wider text-sm shadow-xl transition transform hover:scale-[1.01] active:scale-95 disabled:opacity-50 flex items-center justify-center gap-2 border border-slate-700"
           >
             <Upload className="w-4 h-4 text-sky-400" />
-            <span>{isSubmitting ? "Wird eingereicht..." : "Bewertung & Foto jetzt einreichen"}</span>
+            <span>{isSubmitting ? "Wird eingereicht..." : "Bewertung jetzt einreichen"}</span>
           </button>
         </div>
       </form>
