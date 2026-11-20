@@ -1,4 +1,6 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
+import { ShoppingBag } from "lucide-react";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -23,6 +25,9 @@ type ProductCompareTableProps = {
   productImageAlt?: string;
   ariaLabel?: string;
   className?: string;
+  showShopButtons?: boolean;
+  shopUrl?: string;
+  shopButtonText?: string;
 };
 
 const POP: [number, number, number, number] = [0.34, 1.56, 0.64, 1];
@@ -59,6 +64,9 @@ const ProductCompareTable = ({
   productImageAlt = "Amber bottles lined up on a warm set",
   ariaLabel,
   className,
+  showShopButtons = true,
+  shopUrl = "/shop",
+  shopButtonText = "Zum Shop",
 }: ProductCompareTableProps) => {
   const frameRef = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
@@ -163,6 +171,31 @@ const ProductCompareTable = ({
                     </motion.tr>
                   ))}
                 </tbody>
+                {showShopButtons && (
+                  <tfoot>
+                    <tr className="border-t border-secondary-foreground/20">
+                      <td className="pt-4 pr-2"></td>
+                      <td className="px-1 pt-4 text-center align-middle">
+                        <Link
+                          to={shopUrl}
+                          className="inline-flex items-center justify-center gap-1.5 w-full max-w-[130px] px-2.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-[#0A1C3A] hover:bg-[#0A1C3A]/90 text-white text-[11px] sm:text-xs font-bold transition-all shadow-md hover:shadow-lg active:scale-95 text-center"
+                        >
+                          <ShoppingBag className="w-3.5 h-3.5 shrink-0" />
+                          <span className="truncate">{shopButtonText}</span>
+                        </Link>
+                      </td>
+                      <td className="px-1 pt-4 text-center align-middle">
+                        <Link
+                          to={shopUrl}
+                          className="inline-flex items-center justify-center gap-1.5 w-full max-w-[130px] px-2.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-slate-200/90 hover:bg-slate-300 text-[#0A1C3A] text-[11px] sm:text-xs font-bold transition-all shadow-sm active:scale-95 text-center"
+                        >
+                          <ShoppingBag className="w-3.5 h-3.5 shrink-0" />
+                          <span className="truncate">{shopButtonText}</span>
+                        </Link>
+                      </td>
+                    </tr>
+                  </tfoot>
+                )}
               </table>
             </div>
           </div>

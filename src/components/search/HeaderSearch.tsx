@@ -229,9 +229,10 @@ const SEARCH_DATABASE: SearchItem[] = [
     category: "Vorteile",
     description: "Maximale Zellhydratation, Laktatabbau bei Sportlern, selektiver Schutz vor freien Radikalen & mentale Fokus-Steigerung.",
     keywords: [
-      "vorteile", "vergleich", "anwendung", "anwendungsbereiche", "sportler", "laktat",
+      "vorteile", "vergleich", "anwendung", "anwendungsbereiche", "einsatzbereiche", "sportler", "laktat",
       "antioxidans", "ros", "energie", "fokus", "mitochondrien", "regeneration", "zellschutz",
-      "zellhydratation", "leistung"
+      "zellhydratation", "leistung", "restaurant", "restaurants", "bar", "bars", "gastronomie",
+      "universität", "universitäten", "mensa", "mensen", "universitätsmensen"
     ],
     href: "/#vergleich",
     icon: ShieldCheck,
