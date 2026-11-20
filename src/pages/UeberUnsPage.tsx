@@ -61,8 +61,25 @@ export default function UeberUnsPage() {
               ÜBER UNS – FONTES VITEA
             </h1>
             <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-light">
-              Die Quelle des Lebens. Als familiengeführtes Unternehmen und exklusiver Vertriebspartner von WRC SR s.r.o. bringen wir reinstes molekulares H₂-Wasserstoffwasser und Premium-Fruchtsäfte zu unseren Kunden in Deutschland, Österreich und der Schweiz.
+              Die Quelle des Lebens. Als familiengeführtes Unternehmen und exklusiver Vertriebspartner (Distributor) von WRC SR s.r.o. bringen wir reinstes molekulares H₂-Wasserstoffwasser und Premium-Fruchtsäfte zu unseren Kunden in Deutschland, Österreich und der Schweiz.
             </p>
+
+            <div className="pt-3 flex flex-wrap gap-3">
+              <a
+                href="#b2b"
+                className="inline-flex items-center gap-2 bg-sky-400 hover:bg-sky-300 text-[#0A1C3A] font-black uppercase text-xs tracking-wider px-5 py-3 rounded-xl shadow-lg transition transform hover:scale-105"
+              >
+                <Users className="w-4 h-4" />
+                <span>B2B Partner werden</span>
+              </a>
+              <a
+                href="#zertifikate"
+                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold uppercase text-xs tracking-wider px-5 py-3 rounded-xl border border-white/20 transition"
+              >
+                <ShieldCheck className="w-4 h-4 text-sky-400" />
+                <span>Zertifikate &amp; Laboranalysen</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -341,16 +358,25 @@ export default function UeberUnsPage() {
 
         {/* Dedicated B2B Area: PARTNER WERDEN */}
         <div id="b2b" className="bg-[#0A1C3A] text-white rounded-3xl p-8 sm:p-14 space-y-12 shadow-2xl relative overflow-hidden">
-          <div className="space-y-4 max-w-3xl">
-            <span className="text-sky-400 text-xs font-extrabold tracking-widest uppercase bg-sky-950 px-4 py-1.5 rounded-full inline-block border border-sky-800">
-              Partner werden &amp; B2B-Vertrieb
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight">
-              B2B-PARTNER WERDEN
-            </h2>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
-              Werden Sie B2B-Vertriebspartner von FONTES VITEA. Wir beliefern Getränkehändler, Fitnessstudios, Biohacking-Zentren, Sportvereine, Premium-Hotels, Wellness-Resorts, den gehobenen Einzelhandel und Unternehmen in Deutschland, Österreich und der Schweiz.
-            </p>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 max-w-5xl">
+            <div className="space-y-4 max-w-3xl">
+              <span className="text-sky-400 text-xs font-extrabold tracking-widest uppercase bg-sky-950 px-4 py-1.5 rounded-full inline-block border border-sky-800">
+                B2B-Distributor &amp; Partnernetzwerk DACH
+              </span>
+              <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight">
+                PARTNER WERDEN (B2B)
+              </h2>
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+                Werden Sie B2B-Vertriebspartner von FONTES VITEA. Als spezialisierter Distributor (kein Eigenhersteller) beliefern wir Getränkehändler, Fitnessstudios, Biohacking-Zentren, Sportvereine, Premium-Hotels, Wellness-Resorts und den gehobenen Einzelhandel in Deutschland, Österreich und der Schweiz mit höchster Verlässlichkeit und erstklassigem Service.
+              </p>
+            </div>
+            <a
+              href="#b2b-form"
+              className="shrink-0 bg-sky-400 hover:bg-sky-300 text-[#0A1C3A] font-black uppercase px-6 py-3.5 rounded-xl text-xs tracking-wider flex items-center justify-center gap-2 shadow-lg transition transform hover:scale-105"
+            >
+              <Send className="w-4 h-4 text-[#0A1C3A]" />
+              <span>Jetzt Partner werden</span>
+            </a>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -385,10 +411,13 @@ export default function UeberUnsPage() {
               Partner-Netzwerk in der DACH-Region
             </span>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="bg-white/5 border border-dashed border-sky-400/50 p-6 rounded-2xl text-center space-y-1 hover:bg-white/10 transition">
+              <a
+                href="#b2b-form"
+                className="bg-white/5 border border-dashed border-sky-400/50 p-6 rounded-2xl text-center space-y-1 hover:bg-white/10 transition block"
+              >
                 <span className="text-xs font-black text-sky-400 uppercase block">„Ihr Logo könnte als Erstes hier stehen“</span>
-                <span className="text-[11px] text-slate-400">Erster Partner in Ihrer Region werden</span>
-              </div>
+                <span className="text-[11px] text-slate-400">Erster Partner in Ihrer Region werden →</span>
+              </a>
               <div className="bg-white/5 border border-white/10 p-6 rounded-2xl text-center space-y-1">
                 <span className="text-xs font-bold text-slate-300 uppercase block">Fitness &amp; Sport Club Partner</span>
                 <span className="text-[11px] text-slate-400">Jetzt anfragen &amp; Exklusivität sichern</span>
@@ -401,11 +430,14 @@ export default function UeberUnsPage() {
           </div>
 
           {/* B2B Contact Form */}
-          <div className="bg-white text-[#0A1C3A] rounded-2xl p-6 sm:p-10 space-y-6 shadow-xl">
+          <div id="b2b-form" className="bg-white text-[#0A1C3A] rounded-2xl p-6 sm:p-10 space-y-6 shadow-xl scroll-mt-24">
             <div className="space-y-2">
-              <h3 className="text-2xl font-black uppercase text-[#0A1C3A]">
-                Geschäftliche Anfrage senden (B2B)
-              </h3>
+              <div className="flex items-center gap-2">
+                <Users className="w-5 h-5 text-sky-600" />
+                <h3 className="text-2xl font-black uppercase text-[#0A1C3A]">
+                  Geschäftliche Anfrage senden (B2B-Partner werden)
+                </h3>
+              </div>
               <p className="text-xs text-slate-600">
                 Füllen Sie das Formular aus. Unser B2B-Vertriebsteam meldet sich innerhalb von 24 Stunden persönlich bei Ihnen.
               </p>
