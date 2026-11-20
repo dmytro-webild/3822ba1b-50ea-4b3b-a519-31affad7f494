@@ -90,14 +90,14 @@ const SORTIMENT_ITEMS = [
     title: "Apfel Ingwer (Apple & Ginger)",
     subtitle: "Belebende Harmonie aus süßem Apfel und würzigem Ingwer",
     badge: "100% Fruchtsaft",
-    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794876969120-9lcoxonc.png",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795134384023-6vwzgda1.png",
     isLineup: false,
   },
   {
     title: "Blaubeere (Blueberry)",
     subtitle: "Köstlicher Direktsaft aus sonnengereiften Blaubeeren",
     badge: "100% Fruchtsaft",
-    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794876969120-9lcoxonc.png",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795134384024-101x5eut.png",
     isLineup: false,
   },
 ];
