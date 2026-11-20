@@ -69,8 +69,8 @@ export default function LegalModal() {
               <div className="bg-white p-5 rounded-xl border border-slate-200 space-y-2">
                 <h3 className="font-bold text-[#0a192f] text-sm">Kontakt</h3>
                 <p>Telefon: 017660945171</p>
-                <p>E-Mail Allgemein: info@fontesvitea.de</p>
-                <p>E-Mail Bestellungen: bestellung@fontesvitea.de</p>
+                <p>E-Mail Allgemein: info@fontes-vitae.com</p>
+                <p>E-Mail Bestellungen: bestellung@fontes-vitae.com</p>
               </div>
 
               <div className="bg-white p-5 rounded-xl border border-slate-200 space-y-2">
@@ -144,7 +144,7 @@ export default function LegalModal() {
               <div className="bg-white p-5 rounded-xl border border-slate-200 space-y-2">
                 <h3 className="font-bold text-[#0a192f] text-sm">Ausübung des Widerrufs</h3>
                 <p>
-                  Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (FONTES VITEA, Industriestr. 23 A, 61449 Steinbach Ts., E-Mail: bestellung@fontesvitea.de) mittels einer eindeutigen Erklärung über Ihren Entschluss informieren.
+                  Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (FONTES VITEA, Industriestr. 23 A, 61449 Steinbach Ts., E-Mail: bestellung@fontes-vitae.com) mittels einer eindeutigen Erklärung über Ihren Entschluss informieren.
                 </p>
               </div>
             </div>

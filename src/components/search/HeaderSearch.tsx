@@ -281,7 +281,7 @@ const SEARCH_DATABASE: SearchItem[] = [
     id: "page-kontakt",
     title: "Kontakt & Kundenservice",
     category: "Kontakt",
-    description: "Erreiche das FONTES VITEA Kundenservice-Team per Formular, E-Mail (info@fontesvitea.de) oder Telefon (017660945171).",
+    description: "Erreiche das FONTES VITEA Kundenservice-Team per Formular, E-Mail (info@fontes-vitae.com) oder Telefon (017660945171).",
     keywords: [
       "kontakt", "kundenservice", "anfrage", "formular", "telefon", "email", "e-mail",
       "adresse", "standort", "maps", "steinbach", "hilfe", "support", "bestellung"

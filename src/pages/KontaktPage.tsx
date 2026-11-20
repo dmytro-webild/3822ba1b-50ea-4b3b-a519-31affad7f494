@@ -68,7 +68,7 @@ export default function KontaktPage() {
 
     setIsSubmitting(true);
 
-    // Simulate reliable form submission feedback to info@fontesvitea.de
+    // Simulate reliable form submission feedback to info@fontes-vitae.com
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitStatus("success");
@@ -135,12 +135,12 @@ export default function KontaktPage() {
                 </div>
                 <div>
                   <span className="text-slate-400 text-xs font-bold block uppercase tracking-wider">E-Mail (Allgemein)</span>
-                  <a href="mailto:info@fontesvitea.de" className="font-extrabold text-white hover:text-sky-300 transition block text-sm sm:text-base">
-                    info@fontesvitea.de
+                  <a href="mailto:info@fontes-vitae.com" className="font-extrabold text-white hover:text-sky-300 transition block text-sm sm:text-base">
+                    info@fontes-vitae.com
                   </a>
                   <span className="text-slate-400 text-xs font-bold block uppercase tracking-wider mt-2">E-Mail (Bestellungen)</span>
-                  <a href="mailto:bestellung@fontesvitea.de" className="font-extrabold text-white hover:text-sky-300 transition block text-sm">
-                    bestellung@fontesvitea.de
+                  <a href="mailto:bestellung@fontes-vitae.com" className="font-extrabold text-white hover:text-sky-300 transition block text-sm">
+                    bestellung@fontes-vitae.com
                   </a>
                 </div>
               </div>
@@ -184,7 +184,7 @@ export default function KontaktPage() {
                 <div>
                   <p className="font-bold text-sm text-emerald-950 mb-1">Vielen Dank für Ihre Anfrage!</p>
                   <p>
-                    Ihre Nachricht wurde erfolgreich an <strong className="font-bold">info@fontesvitea.de</strong> gesendet. Wir antworten Ihnen schnellstmöglich auf Ihre Anfrage.
+                    Ihre Nachricht wurde erfolgreich an <strong className="font-bold">info@fontes-vitae.com</strong> gesendet. Wir antworten Ihnen schnellstmöglich auf Ihre Anfrage.
                   </p>
                 </div>
               </div>

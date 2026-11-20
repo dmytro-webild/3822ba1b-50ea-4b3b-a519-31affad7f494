@@ -539,7 +539,7 @@ export default function UeberUnsPage() {
 
                 <div className="pt-2 flex flex-wrap justify-between items-center gap-4">
                   <div className="text-[11px] text-slate-500">
-                    Direkte Anfragen: <span className="font-bold text-[#0A1C3A]">info@fontesvitea.de</span> | Tel: <span className="font-bold text-[#0A1C3A]">017660945171</span>
+                    Direkte Anfragen: <span className="font-bold text-[#0A1C3A]">info@fontes-vitae.com</span> | Tel: <span className="font-bold text-[#0A1C3A]">017660945171</span>
                   </div>
                   <button
                     type="submit"
