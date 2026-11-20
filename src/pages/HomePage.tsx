@@ -27,7 +27,10 @@ import {
   Users,
   UserCheck,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Utensils,
+  Wine,
+  GraduationCap
 } from "lucide-react";
 
 const CAN_IMAGE_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795132125149-eraq7h8f.png";
@@ -141,6 +144,33 @@ const EINSATZBEREICHE: EinsatzbereichCard[] = [
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=compress&w=800&q=80",
     icon: Briefcase,
     badgeColor: "text-indigo-400",
+  },
+  {
+    id: "restaurants",
+    title: "Restaurants",
+    category: "Gastronomie & Dining",
+    description: "Das exklusive Erfrischungserlebnis für gehobene Gastronomie – feinstes H₂-Wasser als edler Speisenbegleiter.",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=compress&w=800&q=80",
+    icon: Utensils,
+    badgeColor: "text-amber-400",
+  },
+  {
+    id: "bars",
+    title: "Bars & Lounges",
+    category: "Nightlife & Gastro",
+    description: "Alkoholfreier Premium-Genuss & belebende Hydration für lange Nächte und anspruchsvolle Bargäste.",
+    image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=compress&w=800&q=80",
+    icon: Wine,
+    badgeColor: "text-rose-400",
+  },
+  {
+    id: "universitaetsmensen",
+    title: "Universitätsmensen",
+    category: "Campus & Studium",
+    description: "Fokus & Energie für Studierende im Vorlesungsmarathon – die gesunde Hydrationsalternative auf dem Campus.",
+    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=compress&w=800&q=80",
+    icon: GraduationCap,
+    badgeColor: "text-sky-400",
   },
 ];
 
@@ -525,10 +555,10 @@ export default function HomePage() {
                   Performance &amp; Zielgruppen
                 </span>
                 <h2 className="text-4xl lg:text-5xl font-black text-[#0A1C3A] uppercase tracking-tight">
-                  EINSATZBEREICHE &amp; ANWENDUNGSGIEBIETE
+                  EINSATZBEREICHE &amp; ANWENDUNGSGEBIETE
                 </h2>
                 <p className="text-slate-600 text-sm sm:text-base">
-                  Ob Fitnessstudio, Boxstudio, Trainingscamp, Sportverein, Personal Training oder Profisport – FONTES VITEA liefert zielgerichtete zelluläre Hydration.
+                  Ob Fitnessstudio, Gastronomie &amp; Restaurants, Bars, Universitätsmensen, Sportverein, Personal Training oder Profisport – FONTES VITEA liefert zielgerichtete zelluläre Hydration.
                 </p>
               </div>
 
