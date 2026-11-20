@@ -6,7 +6,6 @@ import { AnimatePresence, animate, motion, useMotionValue, useMotionValueEvent, 
 import { Dribbble, Facebook, Github, Globe, Instagram, Linkedin, Mail, Twitter, Youtube, ShoppingBag, Menu, X, type LucideIcon } from "lucide-react";
 import { socialName, type SocialPlatform } from "@/components/shared/socialPlatforms";
 import useMenuDialog from "@/components/kit/useMenuDialog";
-import MoreArrowPill from "@/components/kit/MoreArrowPill";
 import { useCart } from "@/context/CartContext";
 import HeaderSearch from "@/components/search/HeaderSearch";
 import Media from "@/components/kit/Media";
@@ -94,7 +93,7 @@ const NavbarPillLinks = ({
           </div>
 
           {navItems.length > 0 && (
-            <ul className="hidden items-center gap-[0.6rem] lg:flex">
+            <ul className="hidden items-center gap-[0.5rem] lg:flex">
               {navItems.map((item, i) => (
                 <motion.li
                   key={`${i}-${item.href}`}
@@ -104,7 +103,7 @@ const NavbarPillLinks = ({
                 >
                   <a
                     href={item.href}
-                    className="flex h-[2.25rem] items-center rounded-full bg-background/70 px-[0.7em] font-[family-name:var(--font-label)] text-[length:var(--text-label)] font-semibold leading-none tracking-[var(--label-tracking)] text-foreground transition-colors duration-300 hover:bg-background"
+                    className="flex h-[2.35rem] items-center rounded-xl bg-white px-3.5 sm:px-4 font-[family-name:var(--font-label)] text-xs sm:text-sm font-extrabold leading-none tracking-tight text-[#0A1C3A] border border-slate-200/90 shadow-xs hover:bg-slate-50 hover:shadow-sm transition-all"
                   >
                     <p className="whitespace-nowrap">{item.name}</p>
                   </a>
@@ -121,12 +120,12 @@ const NavbarPillLinks = ({
             <button
               type="button"
               onClick={() => setIsCartOpen(true)}
-              className="relative flex size-[clamp(2.5rem,2.2rem+1vw,3rem)] items-center justify-center rounded-full bg-[#0A1C3A] text-white hover:bg-[#12284c] active:scale-95 transition shadow-sm border border-slate-700/50"
+              className="relative flex size-[clamp(2.5rem,2.2rem+1vw,3rem)] items-center justify-center rounded-xl bg-white text-[#0A1C3A] hover:bg-slate-50 active:scale-95 transition shadow-xs border border-slate-200"
               aria-label="Warenkorb öffnen"
             >
-              <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5 text-slate-100" />
+              <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5 text-[#0A1C3A]" />
               {totalItemCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-sky-400 text-[#0A1C3A] text-[10px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center border border-[#0A1C3A]">
+                <span className="absolute -top-1 -right-1 bg-[#0A1C3A] text-white text-[10px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center border border-white">
                   {totalItemCount}
                 </span>
               )}
@@ -134,7 +133,12 @@ const NavbarPillLinks = ({
 
             {primaryButton && (
               <div className="hidden sm:block">
-                <MoreArrowPill text={primaryButton.text} href={primaryButton.href} tone="light" />
+                <Link
+                  to={primaryButton.href}
+                  className="flex h-[2.35rem] items-center justify-center rounded-xl bg-white text-[#0A1C3A] px-4 font-black text-xs uppercase tracking-wider border border-slate-200 shadow-xs hover:bg-slate-50 hover:shadow-sm transition"
+                >
+                  {primaryButton.text}
+                </Link>
               </div>
             )}
 
@@ -142,7 +146,7 @@ const NavbarPillLinks = ({
             <button
               type="button"
               onClick={() => setOpen((prev) => !prev)}
-              className="flex lg:hidden size-[clamp(2.5rem,2.2rem+1vw,3rem)] items-center justify-center rounded-full bg-[#0A1C3A] text-white hover:bg-[#12284c] active:scale-95 transition shadow-sm border border-slate-700/50"
+              className="flex lg:hidden size-[clamp(2.5rem,2.2rem+1vw,3rem)] items-center justify-center rounded-xl bg-white text-[#0A1C3A] hover:bg-slate-50 active:scale-95 transition shadow-xs border border-slate-200"
               aria-label={open ? "Menü schließen" : "Menü öffnen"}
             >
               {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -163,20 +167,20 @@ const NavbarPillLinks = ({
             animate={reduce ? { opacity: 1 } : { y: "0%" }}
             exit={reduce ? { opacity: 0 } : { y: "-100%" }}
             transition={{ duration: 0.8, ease: EASE }}
-            className="fixed inset-x-0 top-0 z-[45] flex h-svh flex-col bg-card px-[var(--gutter)] pb-[2.5rem] pt-[clamp(6.5rem,20vw,8rem)] text-card-foreground lg:hidden"
+            className="fixed inset-x-0 top-0 z-[45] flex h-svh flex-col bg-slate-900/95 backdrop-blur-md px-[var(--gutter)] pb-[2.5rem] pt-[clamp(6.5rem,20vw,8rem)] text-card-foreground lg:hidden"
           >
-            <ul className="flex flex-col gap-[0.5rem]">
+            <ul className="flex flex-col gap-[0.75rem]">
               {navItems.map((item, i) => (
-                <li key={`${i}-${item.href}`} className="overflow-hidden pb-[0.15em] -mb-[0.15em]">
+                <li key={`${i}-${item.href}`}>
                   <motion.a
                     href={item.href}
                     onClick={() => setOpen(false)}
                     initial={reduce ? false : { y: "110%" }}
                     animate={{ y: "0%" }}
                     transition={{ duration: 0.9, ease: EASE, delay: 0.25 + i * 0.06 }}
-                    className="block font-[family-name:var(--font-heading)] text-[length:var(--text-h2)] font-semibold uppercase leading-[0.9] tracking-[-0.02em] [overflow-wrap:anywhere]"
+                    className="flex items-center justify-between font-extrabold text-base uppercase bg-white text-[#0A1C3A] px-5 py-3.5 rounded-xl border border-slate-200 shadow-sm hover:bg-slate-50 transition-colors"
                   >
-                    {item.name}
+                    <span>{item.name}</span>
                   </motion.a>
                 </li>
               ))}

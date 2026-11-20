@@ -98,6 +98,13 @@ function MobileBackToTop() {
 
 function LayoutContent() {
   const { openLegalModal } = useCart();
+  const location = useLocation();
+
+  const isShopPage = location.pathname === "/shop";
+
+  const bgImageUrl = isShopPage
+    ? "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795142711128-m3i2hd7i.png"
+    : "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795142711130-drighgg1.png";
 
   return (
     <div
@@ -109,9 +116,9 @@ function LayoutContent() {
     >
       {/* Site-wide continuous background image */}
       <div
-        className="fixed inset-0 pointer-events-none -z-20 bg-cover bg-center bg-no-repeat bg-fixed opacity-95"
+        className="fixed inset-0 pointer-events-none -z-20 bg-cover bg-center bg-no-repeat bg-fixed opacity-100 transition-all duration-300"
         style={{
-          backgroundImage: `url("https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795141318653-q4fp6ask.png")`
+          backgroundImage: `url("${bgImageUrl}")`
         }}
         aria-hidden="true"
       />
