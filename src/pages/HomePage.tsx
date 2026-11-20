@@ -86,7 +86,7 @@ interface VarietyItem {
 
 const SEVEN_VARIETIES: VarietyItem[] = [
   {
-    id: "sorte-h2",
+    id: "h2-water",
     name: "FONTES VITEA H2 Wasser",
     badge: "H2 Molekular",
     category: "Wasserstoff-Wasser",
@@ -97,7 +97,7 @@ const SEVEN_VARIETIES: VarietyItem[] = [
     detail: H2_12_DETAILS,
   },
   {
-    id: "sorte-blaubeere",
+    id: "juice-blaubeere",
     name: "Blaubeere (Blueberry)",
     badge: "100% Fruchtsaft",
     category: "Vital-Fruchtsaft",
@@ -129,7 +129,7 @@ const SEVEN_VARIETIES: VarietyItem[] = [
     }
   },
   {
-    id: "sorte-traube",
+    id: "juice-traube",
     name: "Traube (Grape)",
     badge: "100% Fruchtsaft",
     category: "Vital-Fruchtsaft",
@@ -161,7 +161,7 @@ const SEVEN_VARIETIES: VarietyItem[] = [
     }
   },
   {
-    id: "sorte-himbeere",
+    id: "juice-himbeere",
     name: "Himbeere (Raspberry)",
     badge: "100% Fruchtsaft",
     category: "Vital-Fruchtsaft",
@@ -193,7 +193,7 @@ const SEVEN_VARIETIES: VarietyItem[] = [
     }
   },
   {
-    id: "sorte-ingwer",
+    id: "juice-ingwer",
     name: "Ingwer (Ginger Tonic)",
     badge: "100% Fruchtsaft",
     category: "Vital-Fruchtsaft",
@@ -225,7 +225,7 @@ const SEVEN_VARIETIES: VarietyItem[] = [
     }
   },
   {
-    id: "sorte-apfel-limette",
+    id: "juice-apfel-limette",
     name: "Apfel Limette (Apple Lime)",
     badge: "100% Fruchtsaft",
     category: "Vital-Fruchtsaft",
@@ -257,7 +257,7 @@ const SEVEN_VARIETIES: VarietyItem[] = [
     }
   },
   {
-    id: "sorte-apfel-ingwer",
+    id: "juice-apfel-ingwer",
     name: "Apfel Ingwer (Apple Ginger)",
     badge: "100% Fruchtsaft",
     category: "Vital-Fruchtsaft",
@@ -988,11 +988,11 @@ export default function HomePage() {
                             <span>Details</span>
                           </button>
                           <Link
-                            to="/shop"
+                            to={`/shop?product=${currentVariety.id}`}
                             className="bg-sky-600 hover:bg-sky-500 text-white text-xs font-extrabold uppercase tracking-wider px-5 py-3.5 rounded-xl shadow-lg transition transform hover:scale-105 flex items-center gap-2"
                           >
                             <ShoppingBag className="w-4 h-4" />
-                            <span>Zum Shop</span>
+                            <span>Im Shop ansehen</span>
                           </Link>
                         </div>
                       </div>

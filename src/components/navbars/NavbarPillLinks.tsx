@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { AnimatePresence, animate, motion, useMotionValue, useMotionValueEvent, useReducedMotion, useScroll } from "motion/react";
 import { Dribbble, Facebook, Github, Globe, Instagram, Linkedin, Mail, Twitter, Youtube, ShoppingBag, Menu, X, type LucideIcon } from "lucide-react";
 import { socialName, type SocialPlatform } from "@/components/shared/socialPlatforms";
@@ -29,11 +30,11 @@ const EASE = [0.19, 1, 0.22, 1] as const;
 
 const NavbarPillLinks = ({
   navItems = [
-    { name: "Nutrition", href: "#product" },
-    { name: "Benefits", href: "#services" },
-    { name: "Reviews", href: "#testimonial" },
+    { name: "Das Quellwasser", href: "/#quelle" },
+    { name: "Vorteile", href: "/#vergleich" },
+    { name: "Shop", href: "/shop" },
   ],
-  primaryButton = { text: "Shop all", href: "#pricing" },
+  primaryButton = { text: "Zum Shop", href: "/shop" },
   socials = [],
   menuText = "Menu",
 }: NavbarPillLinksProps) => {
@@ -63,13 +64,13 @@ const NavbarPillLinks = ({
       >
         <div className="flex items-center justify-between gap-[0.5rem] sm:gap-[1rem] lg:grid lg:grid-cols-[1fr_auto_1fr]">
           <div className="flex min-w-0 items-center gap-[0.75rem]">
-            <a href="#" className="min-w-0 flex items-center gap-2.5">
+            <Link to="/" className="min-w-0 flex items-center gap-2.5">
               <Media
                 src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795103673176-908st9q6.png"
                 alt="FONTES VITEA Logo"
                 className="h-8 w-auto object-contain rounded"
               />
-            </a>
+            </Link>
             {socials.length > 0 && (
               <div className="hidden items-center gap-[0.3rem] lg:flex">
                 {socials.map((social, i) => {

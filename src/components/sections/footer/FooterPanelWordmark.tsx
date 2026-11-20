@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion, useReducedMotion, AnimatePresence } from "motion/react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -274,13 +275,13 @@ const FooterPanelWordmark = ({
           transition={{ duration: slow, ease, delay: 0.3 }}
           className="mt-6 mb-12"
         >
-          <a
-            href="#shop"
+          <Link
+            to="/shop"
             className="inline-flex items-center justify-center gap-3 bg-[#0A1C3A] hover:bg-[#12284c] text-white font-extrabold text-base sm:text-lg uppercase tracking-wider px-10 py-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 border border-slate-700/50"
           >
             <span>Jetzt bestellen</span>
             <ArrowRight className="w-5 h-5 text-sky-400" />
-          </a>
+          </Link>
         </motion.div>
 
         {/* Clean Footer Bottom Bar with Socials & Copyright */}

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -12,18 +13,16 @@ type MoreArrowPillProps = {
 };
 
 const MoreArrowPill = ({ text, href = "#", tone = "primary", className, type }: MoreArrowPillProps) => {
-  const Tag = type ? "button" : "a";
+  const isRouterLink = !type && href && href.startsWith("/") && !href.startsWith("/#");
   const fill = tone === "primary" ? "bg-primary text-primary-foreground" : "bg-background text-foreground";
   const arrow = (
     <svg viewBox="0 0 16 16" className="size-[46%]" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="square" strokeLinejoin="miter">
       <path d="M3.5 12.5l8.5-8.5M5 3.5h7.5V11" />
     </svg>
   );
-  return (
-    <Tag
-      {...(type ? { type } : { href })}
-      className={cn("group inline-flex h-[clamp(2.5rem,2.2rem+1vw,3rem)] shrink-0 items-center outline-none [--b:clamp(2.5rem,2.2rem+1vw,3rem)]", className)}
-    >
+
+  const innerContent = (
+    <>
       <div aria-hidden="true" className="flex h-full w-[var(--b)] shrink-0 items-center justify-center transition-[width] duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:w-0 group-focus-visible:w-0">
         <div className={cn("flex size-[var(--b)] shrink-0 items-center justify-center rounded-full transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-0 group-hover:-rotate-90 group-focus-visible:scale-0", fill)}>{arrow}</div>
       </div>
@@ -33,7 +32,31 @@ const MoreArrowPill = ({ text, href = "#", tone = "primary", className, type }: 
       <div aria-hidden="true" className="flex h-full w-0 shrink-0 items-center justify-center transition-[width] duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:w-[var(--b)] group-focus-visible:w-[var(--b)]">
         <div className={cn("flex size-[var(--b)] shrink-0 scale-0 rotate-90 items-center justify-center rounded-full transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-100 group-hover:rotate-0 group-focus-visible:scale-100 group-focus-visible:rotate-0", fill)}>{arrow}</div>
       </div>
-    </Tag>
+    </>
+  );
+
+  const combinedClass = cn("group inline-flex h-[clamp(2.5rem,2.2rem+1vw,3rem)] shrink-0 items-center outline-none [--b:clamp(2.5rem,2.2rem+1vw,3rem)]", className);
+
+  if (type) {
+    return (
+      <button type={type} className={combinedClass}>
+        {innerContent}
+      </button>
+    );
+  }
+
+  if (isRouterLink) {
+    return (
+      <Link to={href} className={combinedClass}>
+        {innerContent}
+      </Link>
+    );
+  }
+
+  return (
+    <a href={href} className={combinedClass}>
+      {innerContent}
+    </a>
   );
 };
 
