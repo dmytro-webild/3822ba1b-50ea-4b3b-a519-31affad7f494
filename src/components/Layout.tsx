@@ -130,7 +130,7 @@ function LayoutContent() {
           brand="FONTES VITEA"
           navItems={[
             {
-              name: "Das Quellwasser",
+              name: "H2 Wasser",
               href: "/#quelle"
             },
             {
@@ -217,7 +217,7 @@ function LayoutContent() {
           <div className="flex flex-col items-center md:items-start space-y-2">
             <h4 className="text-xs font-bold uppercase tracking-widest text-sky-400 mb-1">Navigation</h4>
             <div className="flex flex-col space-y-1.5 text-xs text-slate-300">
-              <Link to="/#quelle" className="hover:text-white transition">Das Quellwasser</Link>
+              <Link to="/#quelle" className="hover:text-white transition">H2 Wasser</Link>
               <Link to="/#vergleich" className="hover:text-white transition">Vorteile</Link>
               <Link to="/shop" className="hover:text-white transition">Shop</Link>
               <Link to="/feedback-faq" className="hover:text-white transition">Feedback &amp; FAQ</Link>
