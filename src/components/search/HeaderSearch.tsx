@@ -9,10 +9,10 @@ import {
   Sparkles,
   ShieldCheck,
   Info,
-  Zap,
   GraduationCap,
   Phone,
   FileText,
+  Users,
 } from "lucide-react";
 
 interface SearchItem {
@@ -25,103 +25,264 @@ interface SearchItem {
   icon: typeof Package;
 }
 
+const SYNONYMS_MAP: Record<string, string[]> = {
+  blueberry: ["blaubeere", "heidelbeere", "heidelbeeren", "blueberries", "beere"],
+  blaubeere: ["blueberry", "heidelbeere", "heidelbeeren", "blueberries", "beere"],
+  heidelbeere: ["blueberry", "blaubeere", "heidelbeeren", "blueberries", "beere"],
+  heidelbeeren: ["blueberry", "blaubeere", "heidelbeere", "blueberries", "beere"],
+
+  zertifikat: ["zertifikate", "laboranalyse", "laboranalysen", "labor", "iso", "qualitätsnachweis", "bpa-frei", "akkreditiert"],
+  zertifikate: ["zertifikat", "laboranalyse", "laboranalysen", "labor", "iso", "qualitätsnachweis", "bpa-frei", "akkreditiert"],
+  laboranalyse: ["laboranalysen", "zertifikat", "zertifikate", "labor", "prüflabor", "analyse", "iso 17025"],
+  laboranalysen: ["laboranalyse", "zertifikat", "zertifikate", "labor", "prüflabor", "analyse", "iso 17025"],
+  labor: ["laboranalyse", "laboranalysen", "zertifikat", "zertifikate", "prüflabor", "analyse"],
+
+  partner: ["partnernetzwerk", "b2b", "partner werden", "vertriebspartner", "distributor", "großhandel", "b2b-partner", "händler"],
+  partnernetzwerk: ["partner", "b2b", "partner werden", "vertriebspartner", "distributor", "b2b-partner", "großhandel"],
+  b2b: ["partner", "partnernetzwerk", "partner werden", "vertriebspartner", "distributor", "großhandel", "b2b-partner"],
+  "partner werden": ["partner", "partnernetzwerk", "b2b", "vertriebspartner", "distributor", "großhandel"],
+
+  saft: ["fruchtsaft", "direktsaft", "juice"],
+  fruchtsaft: ["saft", "direktsaft", "juice"],
+  juice: ["saft", "fruchtsaft", "direktsaft"],
+
+  ingwer: ["ginger", "ginger tonic"],
+  ginger: ["ingwer", "ginger tonic"],
+
+  himbeere: ["raspberry", "himbeeren"],
+  raspberry: ["himbeere", "himbeeren"],
+
+  traube: ["grape", "weintraube"],
+  grape: ["traube", "weintraube"],
+
+  apfel: ["apple"],
+  apple: ["apfel"],
+};
+
 const SEARCH_DATABASE: SearchItem[] = [
   {
     id: "prod-h2-wasser",
-    title: "H2 Wasserstoff-Wasser (Einzeldose & Cases)",
+    title: "FONTES VITEA H2 Wasserstoff-Wasser",
     category: "Produkt",
-    description: "Reinstes Wasserstoff-Wasser mit min. 2.8 mg/L gelöstem H2 in 100% BPA-freier Alu-Dose. 0 kcal, 0 g Zucker.",
-    keywords: ["wasserstoff", "h2", "wasser", "dose", "aludose", "shop", "kaufen", "bestellen", "einzelne", "einzeldose", "gehalt", "0 kcal", "zuckerfrei"],
+    description: "Reinste zelluläre Hydration mit mindestens 2,8 mg/L gelöstem molekularem Wasserstoff (H₂). 0 kcal, 0 g Zucker, BPA-Frei.",
+    keywords: [
+      "wasserstoff", "h2", "wasser", "dose", "aludose", "shop", "kaufen", "bestellen",
+      "einzeldose", "2.8 mg", "2,8 mg", "0 kcal", "zuckerfrei", "original", "hydrogen",
+      "hydrogen water", "quellwasser", "dosen", "gehalt", "mineralwasser"
+    ],
     href: "/shop?product=h2-water",
     icon: Package,
   },
   {
-    id: "prod-fruchtsaft",
-    title: "6 Edle Fruchtsaft-Kreationen mit H2",
+    id: "prod-juice-blaubeere",
+    title: "Blaubeere (Blueberry / Heidelbeere) – Vital-Fruchtsaft",
     category: "Produkt",
-    description: "6 erfrischende Direktsaft-Sorten (Orange-Apfel, Granatapfel-Beere, Exotic u.v.m.) angereichert mit H2-Wasserstoff.",
-    keywords: ["fruchtsaft", "saft", "orange", "granatapfel", "beere", "exotic", "ingwer", "zitrone", "mango", "maracuja", "johannisbeere", "kreationen", "geschmack", "sorten"],
-    href: "/shop?category=juice",
+    description: "Köstlicher Direktsaft aus sonnengereiften Blaubeeren (Heidelbeeren). Reich an pflanzlichen Antioxidantien, 100% Vegan & BPA-Frei.",
+    keywords: [
+      "blaubeere", "blueberry", "heidelbeere", "heidelbeeren", "beere", "beeren",
+      "fruchtsaft", "direktsaft", "saft", "blaubeersaft", "heidelbeersaft", "blueberries",
+      "geschmack", "sorte", "juice"
+    ],
+    href: "/shop?product=juice-blaubeere",
     icon: Package,
   },
   {
-    id: "prod-bundles",
-    title: "FONTES VITEA Probierpaket & Bundles",
+    id: "prod-juice-traube",
+    title: "Traube (Grape) – Vital-Fruchtsaft",
     category: "Produkt",
-    description: "Exklusive Sparsets: Starter Bundle, Vitality Box & Executive Paket zum Vorzugspreis.",
-    keywords: ["bundle", "bundles", "paket", "probierpaket", "starter", "vitality", "executive", "rabatt", "sparset", "angebote", "vorteilspaket"],
-    href: "/shop?category=bundle",
+    description: "Edler Traubensaft aus sonnenverwöhnten Weintrauben. Natursüß, reich an Polyphenolen und BPA-Frei.",
+    keywords: [
+      "traube", "grape", "weintraube", "weintrauben", "traubensaft", "fruchtsaft",
+      "direktsaft", "saft", "grapes", "geschmack", "sorte", "juice"
+    ],
+    href: "/shop?product=juice-traube",
     icon: Package,
+  },
+  {
+    id: "prod-juice-himbeere",
+    title: "Himbeere (Raspberry) – Vital-Fruchtsaft",
+    category: "Produkt",
+    description: "Fruchtiges Himbeer-Erlebnis voller natürlicher Frische und Vitalität. In BPA-freien Aluminiumdosen.",
+    keywords: [
+      "himbeere", "raspberry", "himbeeren", "himbeersaft", "beere", "fruchtsaft",
+      "direktsaft", "saft", "raspberries", "geschmack", "sorte", "juice"
+    ],
+    href: "/shop?product=juice-himbeere",
+    icon: Package,
+  },
+  {
+    id: "prod-juice-ingwer",
+    title: "Ingwer (Ginger Tonic) – Vital-Fruchtsaft",
+    category: "Produkt",
+    description: "Erfrischendes Ginger Tonic mit angenehmer Ingwerschärfe. Belebt Sinne und Kreislauf.",
+    keywords: [
+      "ingwer", "ginger", "ginger tonic", "tonic", "ingwersaft", "fruchtsaft",
+      "direktsaft", "saft", "schärfe", "geschmack", "sorte", "juice"
+    ],
+    href: "/shop?product=juice-ingwer",
+    icon: Package,
+  },
+  {
+    id: "prod-juice-apfel-limette",
+    title: "Apfel Limette (Apple Lime) – Vital-Fruchtsaft",
+    category: "Produkt",
+    description: "Spritzig-frische Kombination aus knackigem Apfel und feiner Limette in BPA-freien Alu-Dosen.",
+    keywords: [
+      "apfel limette", "apple lime", "apfel", "limette", "apple", "lime", "fruchtsaft",
+      "direktsaft", "saft", "citrus", "geschmack", "sorte", "juice"
+    ],
+    href: "/shop?product=juice-apfel-limette",
+    icon: Package,
+  },
+  {
+    id: "prod-juice-apfel-ingwer",
+    title: "Apfel Ingwer (Apple Ginger) – Vital-Fruchtsaft",
+    category: "Produkt",
+    description: "Belebende Harmonie aus süßem Apfelsaft und würziger Ingwernote in BPA-freien Alu-Dosen.",
+    keywords: [
+      "apfel ingwer", "apple ginger", "apfel", "ingwer", "apple", "ginger", "fruchtsaft",
+      "direktsaft", "saft", "geschmack", "sorte", "juice"
+    ],
+    href: "/shop?product=juice-apfel-ingwer",
+    icon: Package,
+  },
+  {
+    id: "prod-bundle-juice-mix",
+    title: "Probierpaket 12x Juice Mix Bundle",
+    category: "Produkt",
+    description: "Exklusives Probierpaket mit 12 Dosen: Je 2 Dosen aller 6 Fruchtsaft-Sorten zum Vorzugspreis.",
+    keywords: [
+      "bundle", "bundles", "probierpaket", "12er", "juice mix", "mix", "fruchtsaft mix",
+      "sparset", "vorteilspaket", "paket", "angebot", "rabatt"
+    ],
+    href: "/shop?product=bundle-12juices",
+    icon: Sparkles,
+  },
+  {
+    id: "prod-bundle-combo-48",
+    title: "Großes Kombi-Paket (48 Dosen H2 + Fruchtsäfte)",
+    category: "Produkt",
+    description: "24x H₂-Wasserstoff-Wasser + 24x Fruchtsaft-Mix (48 Dosen à 250 ml). Maximale Frische & Vorrat.",
+    keywords: [
+      "bundle", "bundles", "kombi-paket", "kombipaket", "48 dosen", "bestseller",
+      "vorratspaket", "grosses paket", "48er", "sparset", "vorteilspaket"
+    ],
+    href: "/shop?product=bundle-combo-48",
+    icon: Sparkles,
   },
   {
     id: "prod-kinderserien",
-    title: "Kinderserien Special (Gingerix, Limetix, Heidelberix, Himbeerixa, Apfelrix)",
+    title: "Kinderserien Special Edition (Gingerix, Limetix, Heidelberix, Himbeerixa, Apfelrix)",
     category: "Produkt",
-    description: "Limitiertes Special für Kinder ohne Zuckerzusatz & BPA-frei (Status: nicht vorrätig – ausverkauft).",
-    keywords: ["kinderserien", "kinder", "gingerix", "limetix", "heidelberix", "himbeerixa", "apfelrix", "special", "ingwer tonic", "limette", "heidelbeere", "himbeere", "apfel", "ausverkauft"],
+    description: "Limitiertes Special für Kinder ohne Zuckerzusatz & BPA-frei (Status: derzeit ausverkauft).",
+    keywords: [
+      "kinderserien", "kinder", "gingerix", "limetix", "heidelberix", "himbeerixa",
+      "apfelrix", "special", "ingwer tonic", "limette", "heidelbeere", "himbeere",
+      "apfel", "blueberry", "blaubeere", "ausverkauft"
+    ],
     href: "/shop?category=kids",
     icon: Sparkles,
+  },
+  {
+    id: "sec-zertifikate",
+    title: "Zertifikate & Laboranalysen (ISO 17025 & BPA-Frei)",
+    category: "Wissenschaft",
+    description: "Unabhängige Laborprüfungen, ISO 17025 Akkreditierung (ČIA L1429), 100% BPA-Freiheit und ≥ 99,99% H₂ Reinheitszertifikat.",
+    keywords: [
+      "zertifikat", "zertifikate", "laboranalyse", "laboranalysen", "labor", "analyse",
+      "analysen", "qualitätsnachweis", "zertifizierung", "prüflabor", "iso 17025",
+      "bpa-frei", "prüfsiegel", "akkreditiert", "wasserqualität", "reinheit", "haccp",
+      "labore", "gutachten", "prüfbericht"
+    ],
+    href: "/ueber-uns#zertifikate",
+    icon: ShieldCheck,
+  },
+  {
+    id: "sec-b2b-partner",
+    title: "B2B-Partnernetzwerk & Partner werden (Vertriebspartner DACH)",
+    category: "Über uns",
+    description: "Werden Sie B2B-Vertriebspartner von FONTES VITEA für Getränkehändler, Fitnessstudios, Hotels, Spas & Einzelhandel. Attraktive Margen & DACH-Logistik.",
+    keywords: [
+      "partner", "partnernetzwerk", "b2b", "b2b-partner", "partner werden", "vertriebspartner",
+      "distributor", "grosshandel", "großhandel", "b2b-vertrieb", "händler", "hotel partner",
+      "fitness partner", "reseller", "lieferant", "kooperation", "wiederverkäufer", "b2b anfrage"
+    ],
+    href: "/ueber-uns#b2b",
+    icon: Users,
   },
   {
     id: "sec-quelle",
     title: "Unsere Quelle – Tiefenquelle (136 m)",
     category: "Quelle",
-    description: "Natürlich gefiltertes Wasser aus 136 m Tiefe im Vulkangestein. Natriumarm, idealer pH-Wert 7,8 & mineralisiert.",
-    keywords: ["quelle", "unsere quelle", "tiefenquelle", "vulkangestein", "mineralien", "reinheit", "natriumarm", "ph-wert", "herkunft", "gestein", "136m", "ursprung"],
+    description: "Natürlich gefiltertes Wasser aus 136 m Tiefe im Vulkangestein. Natriumarm, idealer pH-Wert 7,8 & ausgewogene Mineralisierung.",
+    keywords: [
+      "quelle", "unsere quelle", "tiefenquelle", "vulkangestein", "mineralien", "reinheit",
+      "natriumarm", "ph-wert", "herkunft", "gestein", "136m", "ursprung", "trinkwasserqualität",
+      "wasserqualität", "analyse"
+    ],
     href: "/#quelle",
     icon: Sparkles,
   },
   {
     id: "sec-vorteile",
-    title: "Vorteile im Vergleich – Anwendungsbereiche",
+    title: "Vorteile & Anwendungsbereiche",
     category: "Vorteile",
     description: "Maximale Zellhydratation, Laktatabbau bei Sportlern, selektiver Schutz vor freien Radikalen & mentale Fokus-Steigerung.",
-    keywords: ["vorteile", "vergleich", "anwendung", "anwendungsbereiche", "sportler", "laktat", "antioxidans", "ros", "energie", "fokus", "mitochondrien", "regeneration", "zellschutz", "zellhydratation", "leistung"],
+    keywords: [
+      "vorteile", "vergleich", "anwendung", "anwendungsbereiche", "sportler", "laktat",
+      "antioxidans", "ros", "energie", "fokus", "mitochondrien", "regeneration", "zellschutz",
+      "zellhydratation", "leistung"
+    ],
     href: "/#vergleich",
     icon: ShieldCheck,
   },
   {
     id: "page-ueber-uns",
-    title: "Über uns – Philosophie & Markenstory",
+    title: "Über uns – Philosophie & Vertriebspartner-Rolle",
     category: "Über uns",
-    description: "Die Quelle des Lebens: Erfahre mehr über die Mission, Philosophie und die 3 Säulen der Marke FONTES VITEA.",
-    keywords: ["über uns", "ueber uns", "philosophie", "mission", "geschichte", "markenstory", "3 säulen", "qualität", "transparenz", "fundierung", "wer wir sind", "fontes vitea"],
+    description: "Die Quelle des Lebens: Erfahre mehr über FONTES VITEA als exklusiver Vertriebspartner in der DACH-Region und unsere Familienphilosophie.",
+    keywords: [
+      "über uns", "ueber uns", "philosophie", "mission", "geschichte", "markenstory",
+      "3 säulen", "qualität", "transparenz", "wer wir sind", "fontes vitea", "familienunternehmen",
+      "vertriebspartner", "distributor"
+    ],
     href: "/ueber-uns",
     icon: Info,
-  },
-  {
-    id: "sec-technologie",
-    title: "Eigene H2-Technologie & Innovation",
-    category: "Technologie",
-    description: "Proprietiäre Wasserstoffanreicherung (PEM/SPE Elektrolyse) & laborgeprüfte BPA-freie Aluminium-Dosenversiegelung.",
-    keywords: ["technologie", "h2-technologie", "pem", "spe", "elektrolyse", "wasserstoffgehalt", "aludose", "bpa-frei", "labor", "anreicherung", "entwicklung", "innovation", "2.8 mg"],
-    href: "/ueber-uns",
-    icon: Zap,
   },
   {
     id: "page-wissenschaft",
     title: "Wissenschaft & Studien",
     category: "Wissenschaft",
     description: "Fundierte wissenschaftliche Evidenz zur Wirkung von molekularem Wasserstoff auf Zellschutz, Mitochondrien & Regeneration.",
-    keywords: ["wissenschaft", "studien", "forschung", "evidenz", "mitochondrien", "laktatabbau", "antioxidantien", "ergebnisse", "laboranalysen", "fachberichte", "daten"],
+    keywords: [
+      "wissenschaft", "studien", "forschung", "evidenz", "mitochondrien", "laktatabbau",
+      "antioxidantien", "ergebnisse", "laboranalysen", "fachberichte", "daten", "zertifikat",
+      "zertifikate"
+    ],
     href: "/wissenschaft",
     icon: GraduationCap,
   },
   {
-    id: "sec-videos",
-    title: "Experten-Videos & Studienanalysen",
-    category: "Wissenschaft",
-    description: "Vorträge von Molekularbiologe Tyler LeBaron (MHI) und klinische Berichte aus der Wasserstoff-Forschung in Japan.",
-    keywords: ["video", "videos", "vortrag", "tyler lebaron", "japan", "experten", "youtube", "analysen", "holy hydrogen", "aufzeichnung", "film"],
-    href: "/wissenschaft",
-    icon: GraduationCap,
+    id: "sec-faq",
+    title: "Häufig gestellte Fragen (FAQ)",
+    category: "Über uns",
+    description: "Antworten zu H₂-Wasserstoff, Aluminiumdosen, BPA-Freiheit, Tierversuchsfreiheit, Dosenpfand und Fotowettbewerb.",
+    keywords: [
+      "faq", "häufige fragen", "fragen", "antworten", "dosenpfand", "pfand", "versand",
+      "lieferung", "tierversuchsfrei", "vegan", "verzehrempfehlung", "bewertung", "fotowettbewerb"
+    ],
+    href: "/feedback-faq",
+    icon: Info,
   },
   {
     id: "page-kontakt",
     title: "Kontakt & Kundenservice",
     category: "Kontakt",
     description: "Erreiche das FONTES VITEA Kundenservice-Team per Formular, E-Mail (info@fontesvitea.de) oder Telefon (017660945171).",
-    keywords: ["kontakt", "kundenservice", "anfrage", "formular", "telefon", "email", "e-mail", "adresse", "standort", "maps", "steinbach", "hilfe", "support", "bestellung"],
+    keywords: [
+      "kontakt", "kundenservice", "anfrage", "formular", "telefon", "email", "e-mail",
+      "adresse", "standort", "maps", "steinbach", "hilfe", "support", "bestellung"
+    ],
     href: "/kontakt",
     icon: Phone,
   },
@@ -130,7 +291,9 @@ const SEARCH_DATABASE: SearchItem[] = [
     title: "Impressum & Legal Information",
     category: "Rechtliches",
     description: "Impressum, Anbieterkennzeichnung, Firmenanschrift in Steinbach Ts. und rechtliche Angaben.",
-    keywords: ["impressum", "datenschutz", "agb", "widerruf", "rechtliches", "anschrift", "steinbach"],
+    keywords: [
+      "impressum", "datenschutz", "agb", "widerruf", "rechtliches", "anschrift", "steinbach"
+    ],
     href: "/impressum",
     icon: FileText,
   },
@@ -156,7 +319,7 @@ function SearchResultsList({
       initial={{ opacity: 0, y: 4 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 4 }}
-      className="mt-2 bg-white border border-slate-200 shadow-2xl rounded-2xl p-3 max-h-[60vh] sm:max-h-[70vh] overflow-y-auto space-y-2 text-[#0A1C3A] w-full box-border"
+      className="mt-2 bg-white border border-slate-200 shadow-2xl rounded-2xl p-3 max-h-[60vh] sm:max-h-[70vh] overflow-y-auto space-y-2 text-[#0A1C3A] w-full box-border font-sans"
     >
       <div className="px-3 pt-1 pb-2 flex items-center justify-between border-b border-slate-100">
         <span className="text-[11px] font-extrabold uppercase tracking-wider text-slate-500">
@@ -223,7 +386,7 @@ function SearchResultsList({
             Keine Ergebnisse gefunden
           </p>
           <p className="text-xs text-slate-500 max-w-[260px] mx-auto">
-            Für &quot;{query}&quot; konnte nichts Passendes gefunden werden. Versuchen Sie es mit Begriffen wie &quot;Wasserstoff&quot;, &quot;Studien&quot; oder &quot;Quelle&quot;.
+            Für &quot;{query}&quot; konnte nichts Passendes gefunden werden. Versuchen Sie es mit Begriffen wie &quot;Blaubeere&quot;, &quot;Zertifikat&quot; oder &quot;Partner werden&quot;.
           </p>
         </div>
       )}
@@ -247,12 +410,34 @@ export default function HeaderSearch() {
     const cleanQuery = q.trim().toLowerCase();
     if (!cleanQuery) return [];
 
+    const queryTokens = cleanQuery.split(/\s+/).filter(Boolean);
+    const expandedTokens = new Set<string>([cleanQuery, ...queryTokens]);
+
+    queryTokens.forEach((token) => {
+      if (SYNONYMS_MAP[token]) {
+        SYNONYMS_MAP[token].forEach((syn) => expandedTokens.add(syn));
+      }
+    });
+
+    if (SYNONYMS_MAP[cleanQuery]) {
+      SYNONYMS_MAP[cleanQuery].forEach((syn) => expandedTokens.add(syn));
+    }
+
+    const candidateList = Array.from(expandedTokens);
+
     return SEARCH_DATABASE.filter((item) => {
-      const inTitle = item.title.toLowerCase().includes(cleanQuery);
-      const inDesc = item.description.toLowerCase().includes(cleanQuery);
-      const inCategory = item.category.toLowerCase().includes(cleanQuery);
-      const inKeywords = item.keywords.some((kw) => kw.toLowerCase().includes(cleanQuery));
-      return inTitle || inDesc || inCategory || inKeywords;
+      const itemTitle = item.title.toLowerCase();
+      const itemDesc = item.description.toLowerCase();
+      const itemCat = item.category.toLowerCase();
+      const itemKeywords = item.keywords.map((k) => k.toLowerCase());
+
+      return candidateList.some((term) => {
+        const inTitle = itemTitle.includes(term);
+        const inDesc = itemDesc.includes(term);
+        const inCat = itemCat.includes(term);
+        const inKw = itemKeywords.some((kw) => kw.includes(term) || term.includes(kw));
+        return inTitle || inDesc || inCat || inKw;
+      });
     });
   }, []);
 
@@ -297,17 +482,23 @@ export default function HeaderSearch() {
     setQuery("");
     setSelectedIndex(-1);
 
-    if (href.startsWith("/#")) {
-      const hashId = href.replace("/", "");
-      if (location.pathname === "/") {
-        const el = document.querySelector(hashId);
+    if (href.includes("#")) {
+      const [path, hash] = href.split("#");
+      const targetPath = path || "/";
+
+      if (location.pathname === targetPath) {
+        const el = document.getElementById(hash);
         if (el) {
           el.scrollIntoView({ behavior: "smooth" });
         } else {
-          window.location.hash = hashId;
+          window.location.hash = hash;
         }
       } else {
         navigate(href);
+        setTimeout(() => {
+          const el = document.getElementById(hash);
+          if (el) el.scrollIntoView({ behavior: "smooth" });
+        }, 150);
       }
     } else {
       navigate(href);
