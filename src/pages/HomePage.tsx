@@ -87,7 +87,7 @@ const EINSATZBEREICHE: EinsatzbereichCard[] = [
     title: "Militär & Streitkräfte",
     category: "Taktischer Einsatz",
     description: "Höchste Belastungsfähigkeit & mentale Ausdauer unter Extrembedingungen für Streitkräfte und Spezialkräfte.",
-    image: "https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=compress&w=800&q=80",
+    image: "https://images.pexels.com/photos/28288637/pexels-photo-28288637.jpeg?auto=compress&cs=tinysrgb&h=650&w=940&id=28288637",
     icon: Shield,
     badgeColor: "text-emerald-400",
   },
