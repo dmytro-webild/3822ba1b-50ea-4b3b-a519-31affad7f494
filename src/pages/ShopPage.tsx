@@ -985,7 +985,7 @@ export default function ShopPage() {
 
                 <div className="space-y-4 pt-2">
                   <a
-                    href="https://www.amazon.de/dp/3864455829?tag=fontesvitea-21"
+                    href="https://link.amazon/B015fmeph"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 bg-sky-500 hover:bg-sky-400 text-[#0A1C3A] font-black uppercase text-xs sm:text-sm tracking-wider py-3.5 px-8 rounded-xl shadow-lg transition duration-200"
