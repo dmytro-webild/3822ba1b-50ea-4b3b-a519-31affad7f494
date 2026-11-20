@@ -29,7 +29,7 @@ const EASE = [0.19, 1, 0.22, 1] as const;
 
 const NavbarPillLinks = ({
   navItems = [
-    { name: "Das Quellwasser", href: "/#quelle" },
+    { name: "H2 Wasser", href: "/#quelle" },
     { name: "Vorteile", href: "/#vergleich" },
     { name: "Shop", href: "/shop" },
   ],
