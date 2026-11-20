@@ -12,7 +12,8 @@ import {
   Award,
   ChevronDown,
   Zap,
-  HelpCircle
+  HelpCircle,
+  ExternalLink
 } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
@@ -389,97 +390,154 @@ export default function WissenschaftPage() {
           </div>
         </div>
 
-        {/* Quellen, Zertifikate & Buchempfehlung Brigitte Hamann */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Certificate & Sources Box */}
-          <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg space-y-6 flex flex-col justify-between">
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#0A1C3A] text-sky-400 flex items-center justify-center font-bold">
-                  <Award className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-sky-600 block">Zertifizierung &amp; Reinheit</span>
-                  <h3 className="text-xl font-black text-[#0A1C3A] uppercase">Quellen &amp; Prüfsiegel</h3>
-                </div>
+        {/* Zertifizierung & Prüfsiegel Section */}
+        <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg space-y-6">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-6">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-[#0A1C3A] text-sky-400 flex items-center justify-center font-bold">
+                <Award className="w-5 h-5" />
               </div>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Jede Abfüllung von FONTES VITEA wird strengsten unabhängigen Laborkontrollen in Deutschland unterzogen.
-              </p>
-
-              <div className="space-y-3 pt-2">
-                <div className="bg-[#f8fafc] p-3.5 rounded-xl border border-slate-200 flex items-center gap-3">
-                  <ShieldCheck className="w-5 h-5 text-emerald-600 shrink-0" />
-                  <div>
-                    <span className="text-xs font-bold text-[#0A1C3A] block">100 % BPA-Frei Zertifikat</span>
-                    <span className="text-[11px] text-slate-500">Unabhängig geprüfte Innenbeschichtung ohne Weichmacher</span>
-                  </div>
-                </div>
-
-                <div className="bg-[#f8fafc] p-3.5 rounded-xl border border-slate-200 flex items-center gap-3">
-                  <Zap className="w-5 h-5 text-sky-600 shrink-0" />
-                  <div>
-                    <span className="text-xs font-bold text-[#0A1C3A] block">Mind. 2.8 mg/L H₂-Gaskonzentration</span>
-                    <span className="text-[11px] text-slate-500">Laborgeprüfte Gaslöslichkeit &amp; Langzeit-Stabilität</span>
-                  </div>
-                </div>
-
-                <div className="bg-[#f8fafc] p-3.5 rounded-xl border border-slate-200 flex items-center gap-3">
-                  <Award className="w-5 h-5 text-amber-600 shrink-0" />
-                  <div>
-                    <span className="text-xs font-bold text-[#0A1C3A] block">ISO 9001 Abfüllstandard</span>
-                    <span className="text-[11px] text-slate-500">Garantierte Hygiene &amp; Mikrobiologische Reinheit aus Tiefenquelle</span>
-                  </div>
-                </div>
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-sky-600 block">Zertifizierung &amp; Reinheit</span>
+                <h3 className="text-xl font-black text-[#0A1C3A] uppercase">Quellen &amp; Prüfsiegel</h3>
               </div>
             </div>
-
-            <div className="pt-4 border-t border-slate-100 text-[11px] text-slate-500 font-semibold">
-              Laboranalysen auf Anfrage für Geschäftspartner verfügbar.
-            </div>
+            <p className="text-xs text-slate-500 font-semibold max-w-md">
+              Jede Abfüllung von FONTES VITEA wird strengsten unabhängigen Laborkontrollen in Deutschland unterzogen.
+            </p>
           </div>
 
-          {/* Book Recommendation Brigitte Hamann */}
-          <div className="bg-[#0A1C3A] text-white rounded-3xl p-8 border border-slate-800 shadow-xl space-y-6 flex flex-col justify-between relative overflow-hidden">
-            <div className="space-y-4 relative z-10">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold border border-sky-500/30">
-                  <BookOpen className="w-5 h-5" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="bg-[#f8fafc] p-4 rounded-xl border border-slate-200 flex items-center gap-3">
+              <ShieldCheck className="w-5 h-5 text-emerald-600 shrink-0" />
+              <div>
+                <span className="text-xs font-bold text-[#0A1C3A] block">100 % BPA-Frei Zertifikat</span>
+                <span className="text-[11px] text-slate-500">Innenbeschichtung ohne Weichmacher</span>
+              </div>
+            </div>
+
+            <div className="bg-[#f8fafc] p-4 rounded-xl border border-slate-200 flex items-center gap-3">
+              <Zap className="w-5 h-5 text-sky-600 shrink-0" />
+              <div>
+                <span className="text-xs font-bold text-[#0A1C3A] block">Mind. 2.8 mg/L H₂-Gaskonzentration</span>
+                <span className="text-[11px] text-slate-500">Laborgeprüfte Gaslöslichkeit</span>
+              </div>
+            </div>
+
+            <div className="bg-[#f8fafc] p-4 rounded-xl border border-slate-200 flex items-center gap-3">
+              <Award className="w-5 h-5 text-amber-600 shrink-0" />
+              <div>
+                <span className="text-xs font-bold text-[#0A1C3A] block">ISO 9001 Abfüllstandard</span>
+                <span className="text-[11px] text-slate-500">Garantierte Hygiene &amp; Reinheit</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Dedicated Section: Weiterführende Literatur */}
+        <div id="weiterfuehrende-literatur" className="bg-[#0A1C3A] text-white rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-2xl space-y-8 relative overflow-hidden">
+          {/* Subtle Background Glow */}
+          <div className="absolute -top-32 -right-32 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="space-y-3 relative z-10 text-center sm:text-left">
+            <span className="text-sky-400 text-xs font-extrabold tracking-widest uppercase bg-sky-950/80 px-4 py-1.5 rounded-full border border-sky-800/60 inline-block">
+              Buchempfehlung
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white">
+              WEITERFÜHRENDE LITERATUR
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-300 max-w-2xl">
+              Wissenschaftlich fundierte Lektüre über die Wirkweise und Anwendungsfelder von molekularem Wasserstoff.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+            {/* Book Cover Visual */}
+            <div className="lg:col-span-4 flex justify-center">
+              <div className="relative w-48 sm:w-56 aspect-[1/1.5] bg-gradient-to-br from-[#0B1E3F] via-[#162B4E] to-[#0A1C3A] rounded-r-xl rounded-l-sm border-l-8 border-l-slate-400 border-t border-r border-b border-sky-400/40 shadow-2xl p-5 flex flex-col justify-between text-white overflow-hidden group">
+                <div className="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-white/20 to-transparent pointer-events-none" />
+                
+                <div className="space-y-3 z-10">
+                  <div className="text-[10px] font-black uppercase tracking-widest text-sky-300 border-b border-sky-400/20 pb-1.5 flex justify-between items-center">
+                    <span>Kopp Verlag</span>
+                    <span className="text-[9px] font-mono text-slate-400">FACHBUCH</span>
+                  </div>
+                  
+                  <div className="pt-2">
+                    <span className="text-[11px] font-bold text-slate-300 block uppercase tracking-wider">Brigitte Hamann</span>
+                    <h3 className="text-base sm:text-lg font-black uppercase leading-tight tracking-tight text-white mt-1">
+                      Praxisbuch molekularer Wasserstoff
+                    </h3>
+                    <p className="text-[11px] font-semibold text-sky-300 italic mt-1.5 leading-snug">
+                      Die natürliche Medizin der Zukunft
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-sky-400 block">Buchempfehlung</span>
-                  <h3 className="text-xl font-black text-white uppercase">Brigitte Hamann</h3>
+
+                <div className="z-10 pt-4 border-t border-sky-400/20 flex items-end justify-between">
+                  <div className="flex items-center gap-1.5 text-sky-400">
+                    <BookOpen className="w-4 h-4" />
+                    <span className="text-[10px] font-bold uppercase tracking-wider">H₂ Standardwerk</span>
+                  </div>
+                  <span className="text-[9px] font-mono text-slate-400">Kopp Verlag</span>
                 </div>
               </div>
+            </div>
 
-              <div className="bg-white/10 p-5 rounded-2xl border border-white/10 space-y-3">
-                <span className="text-xs font-black uppercase text-sky-300 block">
-                  „Wasserstoff: Das Element des Lebens“
-                </span>
-                <p className="text-xs text-slate-200 leading-relaxed font-light">
-                  Fachbuch-Empfehlung von Bestseller-Autorin <strong>Brigitte Hamann</strong>. Das Werk erläutert verständlich und wissenschaftlich fundiert, wie gelöster molekularer Wasserstoff als Jungbrunnen für die Zellen wirkt, oxidativen Stress abwendet und die Mitochondrienfunktion belebt.
+            {/* Information & Details */}
+            <div className="lg:col-span-8 space-y-6">
+              <div className="space-y-2">
+                <div className="flex flex-wrap items-center gap-2 text-xs font-bold text-sky-400">
+                  <span className="bg-white/10 text-sky-300 px-3 py-1 rounded-full border border-white/10">
+                    Autorin: Brigitte Hamann
+                  </span>
+                  <span className="bg-white/10 text-slate-300 px-3 py-1 rounded-full border border-white/10">
+                    Kopp Verlag
+                  </span>
+                </div>
+                <h3 className="text-2xl font-black uppercase tracking-tight text-white">
+                  Praxisbuch molekularer Wasserstoff
+                </h3>
+                <p className="text-xs sm:text-sm font-semibold text-sky-300 italic">
+                  Die natürliche Medizin der Zukunft
                 </p>
               </div>
 
-              <ul className="space-y-2 text-xs text-slate-300">
-                <li className="flex items-center gap-2">
+              <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                Für alle, die tiefer in die Welt des molekularen Wasserstoffs eintauchen möchten, empfehlen wir das Praxisbuch molekularer Wasserstoff von <strong>Brigitte Hamann</strong>. Das Werk erläutert verständlich und wissenschaftlich fundiert, wie gelöster molekularer Wasserstoff als Jungbrunnen für die Zellen wirkt, oxidativen Stress abwendet und die Mitochondrienfunktion belebt.
+              </p>
+
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300 pt-1">
+                <li className="flex items-center gap-2.5 bg-white/5 p-3 rounded-xl border border-white/10">
                   <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
                   <span>Detaillierter Überblick über biochemische Wirkmechanismen</span>
                 </li>
-                <li className="flex items-center gap-2">
+                <li className="flex items-center gap-2.5 bg-white/5 p-3 rounded-xl border border-white/10">
                   <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
                   <span>Praktische Leitfäden für zelluläre Entgiftung &amp; Vitalität</span>
                 </li>
-                <li className="flex items-center gap-2">
+                <li className="flex items-center gap-2.5 bg-white/5 p-3 rounded-xl border border-white/10 sm:col-span-2">
                   <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
-                  <span>Fundiertes Wissen für gesundheitsbewusste Menschen</span>
+                  <span>Fundiertes Wissen für gesundheitsbewusste Menschen &amp; Fachkreise</span>
                 </li>
               </ul>
-            </div>
 
-            <div className="pt-4 border-t border-slate-700/80 text-xs text-slate-300 flex items-center justify-between relative z-10">
-              <span>Empfohlen für FONTES VITEA Kunden</span>
-              <span className="text-sky-400 font-bold">Standardwerk</span>
+              <div className="space-y-3 pt-3 border-t border-slate-700/80">
+                <a
+                  href="https://www.amazon.de/dp/3864455829?tag=fontesvitea-21"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-sky-500 hover:bg-sky-400 text-[#0A1C3A] font-black uppercase text-xs sm:text-sm tracking-wider py-3.5 px-7 rounded-xl shadow-lg transition duration-200"
+                >
+                  <BookOpen className="w-4 h-4" />
+                  <span>Mehr über das Buch erfahren</span>
+                  <ExternalLink className="w-4 h-4 ml-1" />
+                </a>
+
+                <p className="text-[11px] text-slate-400 italic leading-normal">
+                  *Hinweis: Als Amazon-Partner verdienen wir an qualifizierten Verkäufen. Beim Klick auf den Button werden Sie zu Amazon weitergeleitet.
+                </p>
+              </div>
             </div>
           </div>
         </div>
