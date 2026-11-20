@@ -204,7 +204,7 @@ export default function HomePage() {
 
       {/* 2. DAS QUELLWASSER (inkl. Mineralstoff- & Trinkwasseranalyse) */}
       <div id="quelle" data-webild-section="WaterSourceMinerals" data-webild-section-id="WaterSourceMinerals-1" data-section="source">
-        <section className="py-20 px-6 bg-white font-sans text-[#0A1C3A] border-b border-slate-300">
+        <section className="py-20 px-6 bg-transparent font-sans text-[#0A1C3A] border-b border-slate-300/40">
           <div className="max-w-6xl mx-auto space-y-12">
             <div className="text-center space-y-3">
               <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-[#f4f6f8] px-4 py-1.5 rounded-full inline-block border border-slate-300">
@@ -368,7 +368,7 @@ export default function HomePage() {
 
       {/* 3. HYDRATION IM ALLTAG */}
       <div id="hydration" data-webild-section="HydrationAlltag" data-webild-section-id="HydrationAlltag-1" data-section="hydration">
-        <section className="py-20 px-6 bg-[#f8fafc] text-[#0A1C3A] font-sans border-b border-slate-300">
+        <section className="py-20 px-6 bg-transparent text-[#0A1C3A] font-sans border-b border-slate-300/40">
           <div className="max-w-6xl mx-auto space-y-12">
             <div className="text-center space-y-3">
               <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-white px-4 py-1.5 rounded-full inline-block border border-slate-300 shadow-xs">
@@ -523,7 +523,7 @@ export default function HomePage() {
 
       {/* 5. VORTEILE IM VERGLEICH & EINSATZBEREICHE (HORIZONTAL SWIPEABLE IMAGE CARDS) */}
       <div id="vergleich" data-webild-section="ProductCompareTable" data-webild-section-id="ProductCompareTable-1" data-section="product">
-        <section className="py-20 px-6 bg-[#f4f6f8] text-[#0A1C3A] font-sans border-b border-slate-300">
+        <section className="py-20 px-6 bg-transparent text-[#0A1C3A] font-sans border-b border-slate-300/40">
           <div className="max-w-7xl mx-auto space-y-16">
             {/* Einsatzbereiche Section Header & Navigation */}
             <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
