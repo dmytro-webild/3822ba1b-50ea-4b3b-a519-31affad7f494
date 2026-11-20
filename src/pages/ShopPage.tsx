@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useCart, type ProductDetailInfo } from "@/context/CartContext";
 import CustomerReviewsSection from "@/components/sections/feedback/CustomerReviewsSection";
+import SubtleWaveTransition from "@/components/shared/SubtleWaveTransition";
 import {
   ShoppingBag,
   Info,
@@ -637,6 +638,8 @@ export default function ShopPage() {
         </div>
       </section>
 
+      <SubtleWaveTransition variant="iceblue" />
+
       {/* Main Shop Content Area */}
       <section className="max-w-7xl mx-auto px-6 py-12 space-y-10">
         {/* Category Tabs */}
@@ -807,6 +810,8 @@ export default function ShopPage() {
             })}
           </div>
         )}
+
+        <SubtleWaveTransition variant="silver" />
 
         {/* Bundles Section */}
         {(activeTab === "all" || activeTab === "bundle") && (
@@ -1004,6 +1009,8 @@ export default function ShopPage() {
           </div>
         )}
 
+        <SubtleWaveTransition variant="pearl" />
+
         {/* Kinderserien Special Section (placed right under Bundles) */}
         {(activeTab === "all" || activeTab === "kids") && (
           <div id="kinderserien" className="space-y-6 pt-10 border-t border-slate-200">
@@ -1094,14 +1101,19 @@ export default function ShopPage() {
           </div>
         )}
 
+        <SubtleWaveTransition variant="iceblue" />
+
         {/* FREIGEGEBENE KUNDENBEWERTUNGEN UNTER DER KINDERSERIE */}
-        <div id="kundenbewertungen-shop" className="pt-6">
+        <div id="kundenbewertungen-shop" className="pt-2">
           <CustomerReviewsSection
             title="Kundenbewertungen zu unseren Sorten &amp; Kinderserie"
             subtitle="Lesen Sie echte Kundenerfahrungen zu Geschmack, Inhaltsstoffen und Verträglichkeit."
             showOrderButton={true}
+            showGoogleReviews={true}
           />
         </div>
+
+        <SubtleWaveTransition variant="silver" />
 
         {/* Distributor Guarantee Banner */}
         <div className="bg-[#0A1C3A] text-white rounded-3xl p-8 sm:p-10 space-y-4 shadow-xl border border-slate-800">

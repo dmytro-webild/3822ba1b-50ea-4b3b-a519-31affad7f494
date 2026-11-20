@@ -1,9 +1,11 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import HeroWordmarkProduct from "@/components/sections/hero/HeroWordmarkProduct";
 import ProductCompareTable from "@/components/sections/product/ProductCompareTable";
 import CustomerReviewsSection from "@/components/sections/feedback/CustomerReviewsSection";
 import ScrollToneBackdrop from "@/components/kit/ScrollToneBackdrop";
 import WaterDropIntro from "@/components/loaders/WaterDropIntro";
+import SubtleWaveTransition from "@/components/shared/SubtleWaveTransition";
 import {
   Check,
   Sun,
@@ -20,12 +22,144 @@ import {
   Activity,
   Target,
   Compass,
-  Building2
+  Building2,
+  Flame,
+  Zap,
+  Users,
+  UserCheck,
+  ChevronLeft,
+  ChevronRight
 } from "lucide-react";
 
 const CAN_IMAGE_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795132125149-eraq7h8f.png";
 
+interface EinsatzbereichCard {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  image: string;
+  icon: typeof Dumbbell;
+  badgeColor: string;
+}
+
+const EINSATZBEREICHE: EinsatzbereichCard[] = [
+  {
+    id: "fitnessstudios",
+    title: "Fitnessstudios",
+    category: "Kraft & Ausdauer",
+    description: "Zelluläre Hydration & Erfrischung für intensive Trainingseinheiten und maximale Pump-Leistung.",
+    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=compress&w=800&q=80",
+    icon: Dumbbell,
+    badgeColor: "text-sky-400",
+  },
+  {
+    id: "boxstudios",
+    title: "Boxstudios",
+    category: "Kampfsport & Reflexe",
+    description: "Optimale Flüssigkeitsversorgung im Ring – unterstützt schnelle Reaktionszeit & Ausdauer.",
+    image: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=compress&w=800&q=80",
+    icon: Flame,
+    badgeColor: "text-red-400",
+  },
+  {
+    id: "trainingscamps",
+    title: "Trainingscamps",
+    category: "Intensiv-Bootcamps",
+    description: "Regenerationsschub für mehrtägige Belastungsprofile und kompromisslose Leistungssteigerung.",
+    image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=compress&w=800&q=80",
+    icon: Zap,
+    badgeColor: "text-amber-400",
+  },
+  {
+    id: "sportvereine",
+    title: "Sportvereine",
+    category: "Team & Breitensport",
+    description: "Reines H2-Quellwasser für Mannschaftssportler – Kraft tanken vor, während und nach dem Spiel.",
+    image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=compress&w=800&q=80",
+    icon: Users,
+    badgeColor: "text-emerald-400",
+  },
+  {
+    id: "personaltraining",
+    title: "Personal Training",
+    category: "1-zu-1 Coaching",
+    description: "Das funktionale Premiumingredienz für exklusive Coaching-Kunden und schnelle Trainingserfolge.",
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=compress&w=800&q=80",
+    icon: UserCheck,
+    badgeColor: "text-[#0A1C3A]",
+  },
+  {
+    id: "profisport",
+    title: "Profisport",
+    category: "Elite Performance",
+    description: "Selektive Reduzierung von oxidativem Stress & Laktatansammlungen in den Wettkampfphasen.",
+    image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=compress&w=800&q=80",
+    icon: Trophy,
+    badgeColor: "text-amber-400",
+  },
+  {
+    id: "skifahrer",
+    title: "Skifahrer & Wintersport",
+    category: "Alpin & Höhe",
+    description: "Bessere Sauerstoffverwertung in großer Höhe & schnelle Erholung bei Kältebelastungen.",
+    image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=compress&w=800&q=80",
+    icon: Trophy,
+    badgeColor: "text-sky-400",
+  },
+  {
+    id: "tennisspieler",
+    title: "Tennisspieler",
+    category: "Schnelligkeit & Fokus",
+    description: "Hält die Konzentration über lange Sätze aufrecht & reduziert muskuläre Ermüdung.",
+    image: "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=compress&w=800&q=80",
+    icon: Activity,
+    badgeColor: "text-emerald-400",
+  },
+  {
+    id: "golfspieler",
+    title: "Golfspieler",
+    category: "Präzision & Konstanz",
+    description: "Dauerhafte mentale Schärfe über 18 Löcher hinweg ohne Leistungstiefs.",
+    image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=compress&w=800&q=80",
+    icon: Target,
+    badgeColor: "text-amber-400",
+  },
+  {
+    id: "segler",
+    title: "Segler & Wassersport",
+    category: "Elemente & Sonne",
+    description: "Optimaler Zellschutz vor oxidativem Stress durch Sonnenstrahlung, Wind & Salzwasser.",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795131470431-6qvssxou.png",
+    icon: Compass,
+    badgeColor: "text-sky-400",
+  },
+  {
+    id: "bueroleute",
+    title: "Büroleute & Business",
+    category: "Office & Fokus",
+    description: "Geistige Frische bei Bildschirmarbeit – vertreibt das Nachmittagstief ohne Koffein.",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=compress&w=800&q=80",
+    icon: Briefcase,
+    badgeColor: "text-indigo-400",
+  },
+];
+
 export default function HomePage() {
+  const einsatzbereicheRef = useRef<HTMLDivElement>(null);
+
+  const scrollEinsatzLeft = () => {
+    if (einsatzbereicheRef.current) {
+      einsatzbereicheRef.current.scrollBy({ left: -320, behavior: "smooth" });
+    }
+  };
+
+  const scrollEinsatzRight = () => {
+    if (einsatzbereicheRef.current) {
+      einsatzbereicheRef.current.scrollBy({ left: 320, behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <ScrollToneBackdrop />
@@ -65,6 +199,8 @@ export default function HomePage() {
           introDelay={1.4}
         />
       </div>
+
+      <SubtleWaveTransition variant="iceblue" />
 
       {/* 2. DAS QUELLWASSER (inkl. Mineralstoff- & Trinkwasseranalyse) */}
       <div id="quelle" data-webild-section="WaterSourceMinerals" data-webild-section-id="WaterSourceMinerals-1" data-section="source">
@@ -228,6 +364,8 @@ export default function HomePage() {
         </section>
       </div>
 
+      <SubtleWaveTransition variant="silver" />
+
       {/* 3. HYDRATION IM ALLTAG */}
       <div id="hydration" data-webild-section="HydrationAlltag" data-webild-section-id="HydrationAlltag-1" data-section="hydration">
         <section className="py-20 px-6 bg-[#f8fafc] text-[#0A1C3A] font-sans border-b border-slate-300">
@@ -381,128 +519,78 @@ export default function HomePage() {
         </section>
       </div>
 
-      {/* 5. VORTEILE IM VERGLEICH & BILDERSERIE (SPORTLER & BÜROLEUTE) */}
+      <SubtleWaveTransition variant="pearl" />
+
+      {/* 5. VORTEILE IM VERGLEICH & EINSATZBEREICHE (HORIZONTAL SWIPEABLE IMAGE CARDS) */}
       <div id="vergleich" data-webild-section="ProductCompareTable" data-webild-section-id="ProductCompareTable-1" data-section="product">
         <section className="py-20 px-6 bg-[#f4f6f8] text-[#0A1C3A] font-sans border-b border-slate-300">
           <div className="max-w-7xl mx-auto space-y-16">
-            <div className="text-center space-y-3">
-              <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-white px-4 py-1.5 rounded-full inline-block border border-slate-300">
-                Performance &amp; Zielgruppen
-              </span>
-              <h2 className="text-4xl lg:text-5xl font-black text-[#0A1C3A] uppercase tracking-tight">
-                VORTEILE IM VERGLEICH &amp; EINSATZBEREICHE
-              </h2>
-              <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto">
-                Egal ob Spitzensportler, Alpinist, Segler oder Office-Professional – FONTES VITEA liefert zielgerichtete Hydration für jede Herausforderung.
-              </p>
+            {/* Einsatzbereiche Section Header & Navigation */}
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+              <div className="space-y-3 max-w-2xl">
+                <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-white px-4 py-1.5 rounded-full inline-block border border-slate-300">
+                  Performance &amp; Zielgruppen
+                </span>
+                <h2 className="text-4xl lg:text-5xl font-black text-[#0A1C3A] uppercase tracking-tight">
+                  EINSATZBEREICHE &amp; ANWENDUNGSGIEBIETE
+                </h2>
+                <p className="text-slate-600 text-sm sm:text-base">
+                  Ob Fitnessstudio, Boxstudio, Trainingscamp, Sportverein, Personal Training oder Profisport – FONTES VITEA liefert zielgerichtete zelluläre Hydration.
+                </p>
+              </div>
+
+              {/* Desktop Scroll Controls for Einsatzbereiche */}
+              <div className="flex items-center gap-2 shrink-0">
+                <button
+                  onClick={scrollEinsatzLeft}
+                  aria-label="Nach links scrollen"
+                  className="w-11 h-11 bg-white hover:bg-[#0A1C3A] hover:text-white text-[#0A1C3A] border border-slate-300 rounded-full flex items-center justify-center shadow-md transition transform active:scale-95"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={scrollEinsatzRight}
+                  aria-label="Nach rechts scrollen"
+                  className="w-11 h-11 bg-white hover:bg-[#0A1C3A] hover:text-white text-[#0A1C3A] border border-slate-300 rounded-full flex items-center justify-center shadow-md transition transform active:scale-95"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
             </div>
 
-            {/* Athlete & Professional Image Series Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-              {/* Skifahrer */}
-              <div className="bg-white rounded-2xl overflow-hidden border border-slate-300 shadow-lg flex flex-col justify-between hover:border-[#0A1C3A] transition group">
-                <div className="relative h-44 overflow-hidden bg-slate-200">
-                  <img
-                    src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=compress&w=800&q=80"
-                    alt="Skifahrer im Schnee"
-                    className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1C3A]/80 via-transparent to-transparent" />
-                  <span className="absolute bottom-3 left-3 text-white text-xs font-black uppercase tracking-wider flex items-center gap-1.5">
-                    <Trophy className="w-4 h-4 text-sky-400" /> Skifahrer
-                  </span>
-                </div>
-                <div className="p-4 space-y-2">
-                  <h3 className="text-sm font-extrabold uppercase text-[#0A1C3A]">Alpin- &amp; Wintersport</h3>
-                  <p className="text-[11px] text-slate-600 leading-snug">
-                    Bessere Ausdauer in großer Höhe &amp; schnelle Erholung bei intensiver Kältebelastung.
-                  </p>
-                </div>
-              </div>
-
-              {/* Tennisspieler */}
-              <div className="bg-white rounded-2xl overflow-hidden border border-slate-300 shadow-lg flex flex-col justify-between hover:border-[#0A1C3A] transition group">
-                <div className="relative h-44 overflow-hidden bg-slate-200">
-                  <img
-                    src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=compress&w=800&q=80"
-                    alt="Tennisspieler in Aktion"
-                    className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1C3A]/80 via-transparent to-transparent" />
-                  <span className="absolute bottom-3 left-3 text-white text-xs font-black uppercase tracking-wider flex items-center gap-1.5">
-                    <Activity className="w-4 h-4 text-emerald-400" /> Tennisspieler
-                  </span>
-                </div>
-                <div className="p-4 space-y-2">
-                  <h3 className="text-sm font-extrabold uppercase text-[#0A1C3A]">Schnelle Reflexe</h3>
-                  <p className="text-[11px] text-slate-600 leading-snug">
-                    Reduziert Laktatansammlung bei langen Sätzen &amp; fördert präzise Bewegungsabläufe.
-                  </p>
-                </div>
-              </div>
-
-              {/* Golfspieler */}
-              <div className="bg-white rounded-2xl overflow-hidden border border-slate-300 shadow-lg flex flex-col justify-between hover:border-[#0A1C3A] transition group">
-                <div className="relative h-44 overflow-hidden bg-slate-200">
-                  <img
-                    src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=compress&w=800&q=80"
-                    alt="Golfspieler auf dem Grün"
-                    className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1C3A]/80 via-transparent to-transparent" />
-                  <span className="absolute bottom-3 left-3 text-white text-xs font-black uppercase tracking-wider flex items-center gap-1.5">
-                    <Target className="w-4 h-4 text-amber-400" /> Golfspieler
-                  </span>
-                </div>
-                <div className="p-4 space-y-2">
-                  <h3 className="text-sm font-extrabold uppercase text-[#0A1C3A]">Fokus &amp; Konstanz</h3>
-                  <p className="text-[11px] text-slate-600 leading-snug">
-                    Dauerhafte mentale Schärfe über 18 Löcher hinweg ohne Ermüdungsschübe.
-                  </p>
-                </div>
-              </div>
-
-              {/* Segler */}
-              <div className="bg-white rounded-2xl overflow-hidden border border-slate-300 shadow-lg flex flex-col justify-between hover:border-[#0A1C3A] transition group">
-                <div className="relative h-44 overflow-hidden bg-slate-200">
-                  <img
-                    src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795131470431-6qvssxou.png"
-                    alt="Segler auf dem Meer"
-                    className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1C3A]/80 via-transparent to-transparent" />
-                  <span className="absolute bottom-3 left-3 text-white text-xs font-black uppercase tracking-wider flex items-center gap-1.5">
-                    <Compass className="w-4 h-4 text-sky-400" /> Segler
-                  </span>
-                </div>
-                <div className="p-4 space-y-2">
-                  <h3 className="text-sm font-extrabold uppercase text-[#0A1C3A]">Wassersport &amp; Elemente</h3>
-                  <p className="text-[11px] text-slate-600 leading-snug">
-                    Optimaler Schutz vor oxidativem Stress durch Sonne, Wind &amp; Salzwasser.
-                  </p>
-                </div>
-              </div>
-
-              {/* Büroleute */}
-              <div className="bg-white rounded-2xl overflow-hidden border border-slate-300 shadow-lg flex flex-col justify-between hover:border-[#0A1C3A] transition group">
-                <div className="relative h-44 overflow-hidden bg-slate-200">
-                  <img
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=compress&w=800&q=80"
-                    alt="Büroleute im Meeting"
-                    className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1C3A]/80 via-transparent to-transparent" />
-                  <span className="absolute bottom-3 left-3 text-white text-xs font-black uppercase tracking-wider flex items-center gap-1.5">
-                    <Briefcase className="w-4 h-4 text-indigo-400" /> Büroleute
-                  </span>
-                </div>
-                <div className="p-4 space-y-2">
-                  <h3 className="text-sm font-extrabold uppercase text-[#0A1C3A]">Office &amp; Business</h3>
-                  <p className="text-[11px] text-slate-600 leading-snug">
-                    Geistige Frische bei Bildschirmarbeit – ganz ohne Nachmittagstief.
-                  </p>
-                </div>
-              </div>
+            {/* Horizontally Swipeable Image Cards Carousel */}
+            <div
+              ref={einsatzbereicheRef}
+              className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 pt-2 scrollbar-none scroll-smooth select-none"
+              style={{ WebkitOverflowScrolling: "touch" }}
+            >
+              {EINSATZBEREICHE.map((item) => {
+                const IconComp = item.icon;
+                return (
+                  <div
+                    key={item.id}
+                    className="snap-start shrink-0 w-[280px] sm:w-[320px] bg-white rounded-2xl overflow-hidden border border-slate-300 shadow-lg flex flex-col justify-between hover:border-[#0A1C3A] hover:shadow-xl transition group"
+                  >
+                    <div>
+                      <div className="relative h-48 overflow-hidden bg-slate-200">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0A1C3A]/85 via-transparent to-transparent" />
+                        <span className="absolute bottom-3 left-3 text-white text-xs font-black uppercase tracking-wider flex items-center gap-1.5">
+                          <IconComp className={`w-4 h-4 ${item.badgeColor}`} /> {item.category}
+                        </span>
+                      </div>
+                      <div className="p-5 space-y-2">
+                        <h3 className="text-base font-black uppercase text-[#0A1C3A]">{item.title}</h3>
+                        <p className="text-xs text-slate-600 leading-relaxed">{item.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
 
             {/* Existing Comparison Table */}
@@ -560,14 +648,19 @@ export default function HomePage() {
         </section>
       </div>
 
+      <SubtleWaveTransition variant="iceblue" />
+
       {/* FREIGEGEBENE KUNDENBEWERTUNGEN UNTER DER VERGLEICHSTABELLE */}
       <div id="kundenbewertungen" data-webild-section="CustomerReviews" data-section="reviews">
         <CustomerReviewsSection
           title="Echte Erfahrungen aus der FONTES VITEA Community"
           subtitle="Entdecken Sie, was unsere Kundinnen und Kunden über Geschmack und das Wasserstoff-Erlebnis berichten."
           showOrderButton={true}
+          showGoogleReviews={true}
         />
       </div>
+
+      <SubtleWaveTransition variant="silver" />
 
       {/* 6. VORSCHAU ZUR SEITE WISSEN & STUDIEN */}
       <div id="wissen-vorschau" data-webild-section="SciencePreview" data-webild-section-id="SciencePreview-1" data-section="science">
