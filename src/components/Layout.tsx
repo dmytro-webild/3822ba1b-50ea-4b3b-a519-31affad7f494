@@ -9,7 +9,7 @@ import ProductDetailsModal from "@/components/shop/ProductDetailsModal";
 import LegalModal from "@/components/legal/LegalModal";
 import VideoModal from "@/components/video/VideoModal";
 import WaterDropsBackground from "@/components/animation/WaterDropsBackground";
-import { ShoppingBag, Home, GraduationCap, PhoneCall, ArrowUp } from "lucide-react";
+import { ShoppingBag, Home, GraduationCap, PhoneCall, ArrowUp, MessageSquareHeart } from "lucide-react";
 
 function FloatingCartButton() {
   const { setIsCartOpen, totalItemCount, totalPrice } = useCart();
@@ -42,7 +42,7 @@ function MobileBottomBar() {
   const navItems = [
     { label: "Home", href: "/", icon: Home },
     { label: "Shop", href: "/shop", icon: ShoppingBag },
-    { label: "Über uns", href: "/ueber-uns", icon: Home },
+    { label: "Feedback", href: "/feedback-faq", icon: MessageSquareHeart },
     { label: "Wissenschaft", href: "/wissenschaft", icon: GraduationCap },
     { label: "Kontakt", href: "/kontakt", icon: PhoneCall },
   ];
@@ -127,6 +127,10 @@ function LayoutContent() {
               href: "/shop"
             },
             {
+              name: "Feedback & FAQ",
+              href: "/feedback-faq"
+            },
+            {
               name: "Über uns",
               href: "/ueber-uns"
             },
@@ -201,6 +205,7 @@ function LayoutContent() {
               <Link to="/#quelle" className="hover:text-white transition">Das Quellwasser</Link>
               <Link to="/#vergleich" className="hover:text-white transition">Vorteile</Link>
               <Link to="/shop" className="hover:text-white transition">Shop</Link>
+              <Link to="/feedback-faq" className="hover:text-white transition">Feedback &amp; FAQ</Link>
               <Link to="/ueber-uns" className="hover:text-white transition">Über uns</Link>
               <Link to="/wissenschaft" className="hover:text-white transition">News &amp; Studien</Link>
               <Link to="/kontakt" className="hover:text-white transition">Kontakt</Link>

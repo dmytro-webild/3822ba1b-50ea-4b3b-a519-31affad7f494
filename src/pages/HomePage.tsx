@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import HeroWordmarkProduct from "@/components/sections/hero/HeroWordmarkProduct";
 import ProductCompareTable from "@/components/sections/product/ProductCompareTable";
+import CustomerReviewsSection from "@/components/sections/feedback/CustomerReviewsSection";
 import ScrollToneBackdrop from "@/components/kit/ScrollToneBackdrop";
 import WaterDropIntro from "@/components/loaders/WaterDropIntro";
 import {
@@ -557,6 +558,15 @@ export default function HomePage() {
             />
           </div>
         </section>
+      </div>
+
+      {/* FREIGEGEBENE KUNDENBEWERTUNGEN UNTER DER VERGLEICHSTABELLE */}
+      <div id="kundenbewertungen" data-webild-section="CustomerReviews" data-section="reviews">
+        <CustomerReviewsSection
+          title="Echte Erfahrungen aus der FONTES VITEA Community"
+          subtitle="Entdecken Sie, was unsere Kundinnen und Kunden über Geschmack und das Wasserstoff-Erlebnis berichten."
+          showOrderButton={true}
+        />
       </div>
 
       {/* 6. VORSCHAU ZUR SEITE WISSEN & STUDIEN */}
