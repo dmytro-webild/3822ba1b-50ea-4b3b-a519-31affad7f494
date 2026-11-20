@@ -165,7 +165,7 @@ const HeroWordmarkProduct = ({
     <section
       aria-label={sectionAriaLabel}
       className={cn(
-        "relative flex min-h-svh flex-col items-center justify-between overflow-hidden bg-gradient-to-b from-[#f8fafc] via-white to-[#f1f5f9] text-[#0A1C3A] pt-28 pb-12 md:pt-36 lg:pt-40",
+        "relative flex min-h-svh flex-col items-center justify-between overflow-hidden bg-transparent text-[#0A1C3A] pt-28 pb-12 md:pt-36 lg:pt-40",
         className
       )}
     >

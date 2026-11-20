@@ -593,7 +593,7 @@ export default function ShopPage() {
   });
 
   return (
-    <div className="bg-[#f8fafc] min-h-screen text-[#0A1C3A] font-sans pb-24">
+    <div className="bg-transparent min-h-screen text-[#0A1C3A] font-sans pb-24">
       {/* Header Banner */}
       <section className="bg-[#0A1C3A] text-white py-16 px-6 border-b border-slate-800 relative overflow-hidden">
         <div className="max-w-6xl mx-auto space-y-6 relative z-10 text-center sm:text-left">

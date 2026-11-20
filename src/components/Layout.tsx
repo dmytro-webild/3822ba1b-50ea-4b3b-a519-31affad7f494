@@ -102,12 +102,20 @@ function LayoutContent() {
   return (
     <div
       id="top"
-      className="relative isolate min-h-svh flex flex-col bg-background text-foreground selection:bg-[#0A1C3A] selection:text-white"
+      className="relative isolate min-h-svh flex flex-col bg-transparent text-foreground selection:bg-[#0A1C3A] selection:text-white"
       data-button="default"
       data-card="filled"
       data-pattern="none"
     >
-      {/* 2D Water drops removed for static clean design */}
+      {/* Site-wide continuous background image */}
+      <div
+        className="fixed inset-0 pointer-events-none -z-20 bg-cover bg-center bg-no-repeat bg-fixed opacity-95"
+        style={{
+          backgroundImage: `url("https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795141318653-q4fp6ask.png")`
+        }}
+        aria-hidden="true"
+      />
+
       <WaterDropsBackground />
 
       <header data-webild-section="Header" className="relative z-20">

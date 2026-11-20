@@ -19,7 +19,7 @@ html {
   --secondary-cta-text: #ffffff;
   --background-accent: #e2e8f0;
 
-  --background: #ffffff;
+  --background: transparent;
   --foreground: #0a1c3a;
   --card: #f4f6f8;
   --card-foreground: #0a1c3a;
@@ -127,7 +127,12 @@ html {
 
   body {
     margin: 0;
-    background-color: var(--background);
+    background-color: #f1f5f9;
+    background-image: url("https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795141318653-q4fp6ask.png");
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: var(--foreground);
     font-family: "Barlow Semi Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
     font-weight: 400;

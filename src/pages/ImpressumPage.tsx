@@ -2,7 +2,7 @@ import { Scale, Building2, Phone, ShieldCheck } from "lucide-react";
 
 export default function ImpressumPage() {
   return (
-    <div className="py-24 bg-[#f4f6f8] min-h-svh font-sans text-[#0A1C3A]">
+    <div className="py-24 bg-transparent min-h-svh font-sans text-[#0A1C3A]">
       <div className="max-w-4xl mx-auto px-6 space-y-12">
         
         {/* Header Section */}

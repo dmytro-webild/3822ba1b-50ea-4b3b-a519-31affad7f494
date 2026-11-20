@@ -83,7 +83,7 @@ export default function KontaktPage() {
   };
 
   return (
-    <div className="py-24 bg-[#f4f6f8] min-h-svh font-sans text-[#0A1C3A]">
+    <div className="py-24 bg-transparent min-h-svh font-sans text-[#0A1C3A]">
       <div className="max-w-6xl mx-auto px-6 space-y-16">
         
         {/* Header Section */}
