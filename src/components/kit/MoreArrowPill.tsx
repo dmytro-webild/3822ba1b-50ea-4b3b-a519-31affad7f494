@@ -12,9 +12,9 @@ type MoreArrowPillProps = {
   type?: "submit";
 };
 
-const MoreArrowPill = ({ text, href = "#", tone = "primary", className, type }: MoreArrowPillProps) => {
+const MoreArrowPill = ({ text, href = "#", className, type }: MoreArrowPillProps) => {
   const isRouterLink = !type && href && href.startsWith("/") && !href.startsWith("/#");
-  const fill = tone === "primary" ? "bg-primary text-primary-foreground" : "bg-background text-foreground";
+  const fill = "bg-white text-[#0A1C3A] border border-slate-200 shadow-xs";
   const arrow = (
     <svg viewBox="0 0 16 16" className="size-[46%]" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="square" strokeLinejoin="miter">
       <path d="M3.5 12.5l8.5-8.5M5 3.5h7.5V11" />
