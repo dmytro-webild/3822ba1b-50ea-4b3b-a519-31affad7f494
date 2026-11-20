@@ -97,7 +97,7 @@ export default function AdminModerationPanel() {
               )}
             </div>
             <p className="text-xs text-slate-300">
-              Freigabe von Kundenbewertungen &amp; Punktevergabe für Fotowettbewerb
+              Freigabe von Kundenbewertungen &amp; Prämierung Fotowettbewerb
             </p>
           </div>
         </div>
@@ -174,7 +174,6 @@ export default function AdminModerationPanel() {
                   <div>
                     <div className="flex items-center gap-2">
                       <span className="font-extrabold text-sm text-white">{rev.firstName}</span>
-                      <span className="text-[10px] text-slate-400 font-mono">({rev.email})</span>
                     </div>
                     <span className="text-[11px] text-sky-400 font-semibold">{rev.product}</span>
                   </div>
@@ -256,7 +255,7 @@ export default function AdminModerationPanel() {
                         : "bg-slate-800 text-slate-300 hover:bg-slate-700"
                     }`}
                   >
-                    1. Platz (100 P)
+                    1. Platz
                   </button>
                   <button
                     onClick={() => setContestWinner(rev.id, rev.contestWinnerRank === 2 ? undefined : 2)}
@@ -266,7 +265,7 @@ export default function AdminModerationPanel() {
                         : "bg-slate-800 text-slate-300 hover:bg-slate-700"
                     }`}
                   >
-                    2. Platz (50 P)
+                    2. Platz
                   </button>
                   <button
                     onClick={() => setContestWinner(rev.id, rev.contestWinnerRank === 3 ? undefined : 3)}
@@ -276,7 +275,7 @@ export default function AdminModerationPanel() {
                         : "bg-slate-800 text-slate-300 hover:bg-slate-700"
                     }`}
                   >
-                    3. Platz (20 P)
+                    3. Platz
                   </button>
                   <button
                     onClick={() => deleteReview(rev.id)}

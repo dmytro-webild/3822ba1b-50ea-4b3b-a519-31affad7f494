@@ -1,5 +1,5 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
-import { Star, Upload, CheckCircle2, AlertCircle, Camera, Award, ShieldCheck } from "lucide-react";
+import { Star, Upload, CheckCircle2, AlertCircle, Camera, Award } from "lucide-react";
 import { addReview } from "@/utils/feedbackStore";
 
 const PRODUCTS = [
@@ -14,7 +14,6 @@ const PRODUCTS = [
 
 export default function FeedbackForm() {
   const [firstName, setFirstName] = useState("");
-  const [email, setEmail] = useState("");
   const [product, setProduct] = useState(PRODUCTS[0]);
   const [rating, setRating] = useState(5);
   const [sweetness, setSweetness] = useState(3);
@@ -62,11 +61,6 @@ export default function FeedbackForm() {
       return;
     }
 
-    if (!email.trim() || !email.includes("@")) {
-      setErrorMsg("Bitte geben Sie eine gültige E-Mail-Adresse ein.");
-      return;
-    }
-
     if (!comment.trim()) {
       setErrorMsg("Bitte verfassen Sie eine kurze Bewertung.");
       return;
@@ -87,7 +81,6 @@ export default function FeedbackForm() {
     try {
       addReview({
         firstName: firstName.trim(),
-        email: email.trim(),
         product,
         rating,
         tasteRatings: {
@@ -106,7 +99,6 @@ export default function FeedbackForm() {
 
       // Reset form
       setFirstName("");
-      setEmail("");
       setComment("");
       setPhotoUrl(null);
       setConsent(false);
@@ -132,7 +124,7 @@ export default function FeedbackForm() {
           IHRE BEWERTUNG MIT FOTO EINREICHEN
         </h2>
         <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
-          Teilen Sie Ihre Erfahrungen und laden Sie ein Foto hoch. Jede freigegebene Foto-Bewertung nimmt automatisch am Fotowettbewerb teil!
+          Teilen Sie Ihre Erfahrungen und laden Sie Ihr Foto hoch. Jede freigegebene Foto-Bewertung nimmt automatisch am Fotowettbewerb „DEIN FONTES VITEA MOMENT“ teil!
         </p>
       </div>
 
@@ -151,43 +143,19 @@ export default function FeedbackForm() {
       )}
 
       <form onSubmit={handleSubmit} className="space-y-6 max-w-3xl mx-auto">
-        {/* Name & Email Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div className="space-y-2">
-            <label className="block text-xs font-extrabold uppercase tracking-wider text-[#0A1C3A]">
-              Vorname *
-            </label>
-            <input
-              type="text"
-              required
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-              placeholder="z. B. Maximilian"
-              className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#0A1C3A] text-[#0A1C3A]"
-            />
-          </div>
-
-          <div className="space-y-2">
-            <div className="flex items-center justify-between">
-              <label className="block text-xs font-extrabold uppercase tracking-wider text-[#0A1C3A]">
-                E-Mail-Adresse *
-              </label>
-              <span className="text-[10px] text-slate-500 font-mono flex items-center gap-1">
-                <ShieldCheck className="w-3 h-3 text-emerald-600" /> Vertraulich
-              </span>
-            </div>
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="ihre.email@beispiel.de"
-              className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#0A1C3A] text-[#0A1C3A]"
-            />
-            <p className="text-[10px] text-slate-500">
-              Ihre E-Mail wird streng vertraulich behandelt und NIEMALS öffentlich angezeigt.
-            </p>
-          </div>
+        {/* Vorname */}
+        <div className="space-y-2">
+          <label className="block text-xs font-extrabold uppercase tracking-wider text-[#0A1C3A]">
+            Vorname *
+          </label>
+          <input
+            type="text"
+            required
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            placeholder="z. B. Maximilian"
+            className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#0A1C3A] text-[#0A1C3A]"
+          />
         </div>
 
         {/* Product Selection */}
@@ -373,7 +341,7 @@ export default function FeedbackForm() {
               className="mt-1 w-4 h-4 rounded border-slate-300 text-[#0A1C3A] focus:ring-[#0A1C3A]"
             />
             <span className="text-xs text-slate-700 leading-snug">
-              Ich möchte am Fotowettbewerb <strong>„DEIN FONTES VITEA MOMENT“</strong> teilnehmen und chance haben, monatlich bis zu 100 Treuepunkte zu gewinnen.
+              Ich möchte am Fotowettbewerb <strong>„DEIN FONTES VITEA MOMENT“</strong> teilnehmen.
             </span>
           </label>
 

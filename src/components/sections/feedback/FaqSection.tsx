@@ -13,11 +13,11 @@ const FAQS: FaqItem[] = [
   },
   {
     question: "Wie funktioniert der Fotowettbewerb „DEIN FONTES VITEA MOMENT“?",
-    answer: "Laden Sie bei Ihrer Produktbewertung einfach ein Foto Ihres FONTES VITEA Genussmoments hoch und aktivieren Sie das Häkchen für den Fotowettbewerb. Jeden Monat prämiert unser Team die besten Fotos: 1. Platz erhält 100 Treuepunkte, 2. Platz 50 Treuepunkte und 3. Platz 20 Treuepunkte.",
+    answer: "Laden Sie bei Ihrer Produktbewertung einfach ein Foto Ihres FONTES VITEA Genussmoments hoch und aktivieren Sie das Häkchen für den Fotowettbewerb. Jeden Monat prämiert unser Moderations-Team die besten Kundenfotos und zeichnet die Plätze 1 bis 3 auf unserer Website aus!",
   },
   {
-    question: "Wie erhalte und löse ich meine Treuepunkte für Gutscheine ein?",
-    answer: "Treuepunkte werden Ihnen nach Prämierung oder Aktionen gutgeschrieben. Sie können Ihre Punkte direkt auf dieser Seite einlösen: 150 Punkte entsprechen einem 20 € Gutschein, 50 Punkte einem 10 € Gutschein und 20 Punkte einem 5 € Gutschein. Der generierte Gutscheincode wird direkt im Checkout auf Ihre Bestellung angerechnet.",
+    question: "Welche Daten werden bei der Abgabe einer Kundenbewertung veröffentlicht?",
+    answer: "Öffentlich angezeigt werden ausschließlich Ihr Vorname, das gewählte Produkt, Ihre Sternebewertung, das Geschmacksprofil, Ihr schriftlicher Bericht und Ihr hochgeladenes Foto. Alle eingereichten Beiträge werden vor der Veröffentlichung durch unser Moderations-Team geprüft.",
   },
   {
     question: "Warum werden Aluminiumdosen verwendet und sind sie BPA-frei?",
@@ -29,7 +29,7 @@ const FAQS: FaqItem[] = [
   },
   {
     question: "Wann sehe ich meine eingereichte Bewertung auf der Website?",
-    answer: "Um eine hohe Qualität und Einhaltung unserer Community-Richtlinien zu gewährleisten, werden alle eingereichten Bewertungen und Fotos von unserem Moderations-Team geprüft. Nach erfolgreicher Freigabe erscheint Ihre Bewertung umgehend auf unserer Seite.",
+    answer: "Um eine hohe Qualität und Einhaltung unserer Community-Richtlinien zu gewährleisten, werden alle eingereichten Bewertungen und Fotos von unserem Moderations-Team geprüft. Nach erfolgreicher Freigabe erscheint Ihre Bewertung umgehend im Kundenbewertungs-Karussell auf unserer Seite.",
   },
 ];
 
@@ -51,7 +51,7 @@ export default function FaqSection() {
           Integrierte FAQ-Sektion
         </h2>
         <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
-          Alles, was Sie über FONTES VITEA, den Fotowettbewerb, unser Treuepunktesystem und den Versand wissen müssen.
+          Alles, was Sie über FONTES VITEA, den Fotowettbewerb, Verpackungen und den Versand wissen müssen.
         </p>
       </div>
 

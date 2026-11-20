@@ -4,6 +4,7 @@ import FeedbackForm from "@/components/sections/feedback/FeedbackForm";
 import AdminModerationPanel from "@/components/sections/feedback/AdminModerationPanel";
 import CustomerReviewsSection from "@/components/sections/feedback/CustomerReviewsSection";
 import FaqSection from "@/components/sections/feedback/FaqSection";
+import SubtleWaveTransition from "@/components/shared/SubtleWaveTransition";
 import { MessageSquareHeart, Shield } from "lucide-react";
 
 export default function FeedbackFaqPage() {
@@ -23,7 +24,7 @@ export default function FeedbackFaqPage() {
         </h1>
 
         <p className="text-slate-600 text-xs sm:text-sm sm:text-base leading-relaxed">
-          Erfahren Sie, was unsere Kunden über FONTES VITEA berichten, nehmen Sie am Fotowettbewerb teil, löschen Sie Treuepunkte ein oder finden Sie Antworten in unserer FAQ-Sektion.
+          Erfahren Sie, was unsere Kunden über FONTES VITEA berichten, nehmen Sie am Fotowettbewerb „DEIN FONTES VITEA MOMENT“ teil oder finden Sie Antworten in unserer FAQ-Sektion.
         </p>
 
         {/* Admin Moderation Panel Toggle Button */}
@@ -41,24 +42,31 @@ export default function FeedbackFaqPage() {
       {/* Admin Panel (If open) */}
       {showAdmin && <AdminModerationPanel />}
 
-      {/* 1. Photo Contest & Loyalty Points Section */}
+      {/* 1. Photo Contest Section */}
       <section id="fotowettbewerb">
         <PhotoContestLoyaltyCard />
       </section>
+
+      <SubtleWaveTransition variant="silver" />
 
       {/* 2. Customer Feedback Submission Form */}
       <section id="bewertung-einreichen">
         <FeedbackForm />
       </section>
 
-      {/* 3. Approved Public Customer Reviews Grid */}
+      <SubtleWaveTransition variant="iceblue" />
+
+      {/* 3. Approved Public Customer Reviews Carousel */}
       <section id="bewertungen">
         <CustomerReviewsSection
           title="Echte Kundenbewertungen &amp; Fotos"
           subtitle="Synchronisierte Erfahrungen und Bildnachweise aller freigegebenen Bewertungen unserer Kundinnen und Kunden."
           showOrderButton={true}
+          showGoogleReviews={true}
         />
       </section>
+
+      <SubtleWaveTransition variant="pearl" />
 
       {/* 4. Integrated FAQ Section */}
       <section id="faq">
