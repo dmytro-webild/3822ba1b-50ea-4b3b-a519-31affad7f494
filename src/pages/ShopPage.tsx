@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useCart, type ProductDetailInfo } from "@/context/CartContext";
+import CustomerReviewsSection from "@/components/sections/feedback/CustomerReviewsSection";
 import {
   ShoppingBag,
   Info,
@@ -1092,6 +1093,15 @@ export default function ShopPage() {
             </div>
           </div>
         )}
+
+        {/* FREIGEGEBENE KUNDENBEWERTUNGEN UNTER DER KINDERSERIE */}
+        <div id="kundenbewertungen-shop" className="pt-6">
+          <CustomerReviewsSection
+            title="Kundenbewertungen zu unseren Sorten &amp; Kinderserie"
+            subtitle="Lesen Sie echte Kundenerfahrungen zu Geschmack, Inhaltsstoffen und Verträglichkeit."
+            showOrderButton={true}
+          />
+        </div>
 
         {/* Distributor Guarantee Banner */}
         <div className="bg-[#0A1C3A] text-white rounded-3xl p-8 sm:p-10 space-y-4 shadow-xl border border-slate-800">
