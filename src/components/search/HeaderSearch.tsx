@@ -232,7 +232,9 @@ const SEARCH_DATABASE: SearchItem[] = [
       "vorteile", "vergleich", "anwendung", "anwendungsbereiche", "einsatzbereiche", "sportler", "laktat",
       "antioxidans", "ros", "energie", "fokus", "mitochondrien", "regeneration", "zellschutz",
       "zellhydratation", "leistung", "restaurant", "restaurants", "bar", "bars", "gastronomie",
-      "universität", "universitäten", "mensa", "mensen", "universitätsmensen"
+      "universität", "universitäten", "mensa", "mensen", "universitätsmensen",
+      "militär", "militaer", "streitkräfte", "streitkraefte", "einsatzkräfte", "einsatzkraefte",
+      "polizei", "feuerwehr", "rettungsdienst", "rettung", "thw", "fußball", "fussball", "fußballverein"
     ],
     href: "/#vergleich",
     icon: ShieldCheck,

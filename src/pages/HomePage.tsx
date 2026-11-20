@@ -7,10 +7,8 @@ import ScrollToneBackdrop from "@/components/kit/ScrollToneBackdrop";
 import WaterDropIntro from "@/components/loaders/WaterDropIntro";
 import {
   Check,
-  Sun,
   Briefcase,
   Dumbbell,
-  Plane,
   Droplets,
   ShieldCheck,
   Cpu,
@@ -30,7 +28,9 @@ import {
   ChevronRight,
   Utensils,
   Wine,
-  GraduationCap
+  GraduationCap,
+  Shield,
+  Siren
 } from "lucide-react";
 
 const CAN_IMAGE_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795132125149-eraq7h8f.png";
@@ -75,12 +75,30 @@ const EINSATZBEREICHE: EinsatzbereichCard[] = [
   },
   {
     id: "sportvereine",
-    title: "Sportvereine",
-    category: "Team & Breitensport",
-    description: "Reines H2-Quellwasser für Mannschaftssportler – Kraft tanken vor, während und nach dem Spiel.",
-    image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=compress&w=800&q=80",
+    title: "Fußball- & Sportvereine",
+    category: "Fußball & Team-Sport",
+    description: "Reines H2-Quellwasser für Fußballteams & Mannschaftssportler – Kraft tanken vor, während und nach dem Match.",
+    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=compress&w=800&q=80",
     icon: Users,
     badgeColor: "text-emerald-400",
+  },
+  {
+    id: "militaer",
+    title: "Militär & Streitkräfte",
+    category: "Taktischer Einsatz",
+    description: "Höchste Belastungsfähigkeit & mentale Ausdauer unter Extrembedingungen für Streitkräfte und Spezialkräfte.",
+    image: "https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=compress&w=800&q=80",
+    icon: Shield,
+    badgeColor: "text-emerald-400",
+  },
+  {
+    id: "einsatzkraefte",
+    title: "Zivile Einsatzkräfte",
+    category: "Feuerwehr, Polizei & Rettung",
+    description: "Zuverlässige Hydration im 24/7 Schichteinsatz – schnelle Regeneration für Feuerwehr, Polizei & THW.",
+    image: "https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=compress&w=800&q=80",
+    icon: Siren,
+    badgeColor: "text-red-400",
   },
   {
     id: "personaltraining",
@@ -391,100 +409,7 @@ export default function HomePage() {
         </section>
       </div>
 
-      {/* 3. HYDRATION IM ALLTAG */}
-      <div id="hydration" data-webild-section="HydrationAlltag" data-webild-section-id="HydrationAlltag-1" data-section="hydration">
-        <section className="py-20 px-6 bg-transparent text-[#0A1C3A] font-sans">
-          <div className="max-w-6xl mx-auto space-y-12">
-            <div className="text-center space-y-3">
-              <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-white px-4 py-1.5 rounded-full inline-block border border-slate-300 shadow-xs">
-                Perfekt für jeden Moment
-              </span>
-              <h2 className="text-4xl lg:text-5xl font-black text-[#0A1C3A] uppercase tracking-tight">
-                HYDRATION IM ALLTAG
-              </h2>
-              <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-                Ob beim Start in den Tag, im Fokus des Arbeitsalltags, beim schweißtreibenden Sport oder auf Reisen – FONTES VITEA schenkt dir reinste Energie.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-md flex flex-col justify-between hover:border-[#0A1C3A] hover:shadow-xl transition group">
-                <div className="space-y-4">
-                  <div className="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center group-hover:bg-[#0A1C3A] group-hover:text-white transition duration-300 shadow-xs">
-                    <Sun className="w-7 h-7" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-extrabold uppercase tracking-wider text-amber-600 block mb-1">Phase 01</span>
-                    <h3 className="text-2xl font-black text-[#0A1C3A] uppercase">Morgens</h3>
-                  </div>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    Frischer Kick für den Tag. Aktiviert sanft den Stoffwechsel und versorgt den Körper direkt nach dem Aufstehen mit zellulärer Hydration.
-                  </p>
-                </div>
-                <div className="pt-4 border-t border-slate-100 text-[11px] font-bold text-[#0A1C3A]">
-                  • ZELLULÄRE ENERGIE &amp; VITALITÄT
-                </div>
-              </div>
-
-              <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-md flex flex-col justify-between hover:border-[#0A1C3A] hover:shadow-xl transition group">
-                <div className="space-y-4">
-                  <div className="w-14 h-14 rounded-2xl bg-sky-500/10 text-sky-600 flex items-center justify-center group-hover:bg-[#0A1C3A] group-hover:text-white transition duration-300 shadow-xs">
-                    <Briefcase className="w-7 h-7" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-extrabold uppercase tracking-wider text-sky-600 block mb-1">Phase 02</span>
-                    <h3 className="text-2xl font-black text-[#0A1C3A] uppercase">Arbeit</h3>
-                  </div>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    Mentale Klarheit ohne Koffeintief. Unterstützt die Konzentration und Leistungsfähigkeit bei langen Arbeitstagen und intensiven Meetings.
-                  </p>
-                </div>
-                <div className="pt-4 border-t border-slate-100 text-[11px] font-bold text-[#0A1C3A]">
-                  • KONSISTENTER FOKUS
-                </div>
-              </div>
-
-              <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-md flex flex-col justify-between hover:border-[#0A1C3A] hover:shadow-xl transition group">
-                <div className="space-y-4">
-                  <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center group-hover:bg-[#0A1C3A] group-hover:text-white transition duration-300 shadow-xs">
-                    <Dumbbell className="w-7 h-7" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-extrabold uppercase tracking-wider text-emerald-600 block mb-1">Phase 03</span>
-                    <h3 className="text-2xl font-black text-[#0A1C3A] uppercase">Sport</h3>
-                  </div>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    Ideal vor oder nach dem Workout. Reduziert die Laktatansammlung im Blut und beschleunigt die muskuläre Regeneration nach Belastungen.
-                  </p>
-                </div>
-                <div className="pt-4 border-t border-slate-100 text-[11px] font-bold text-[#0A1C3A]">
-                  • SCHNELLE ERHOLUNG
-                </div>
-              </div>
-
-              <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-md flex flex-col justify-between hover:border-[#0A1C3A] hover:shadow-xl transition group">
-                <div className="space-y-4">
-                  <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 text-indigo-600 flex items-center justify-center group-hover:bg-[#0A1C3A] group-hover:text-white transition duration-300 shadow-xs">
-                    <Plane className="w-7 h-7" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-extrabold uppercase tracking-wider text-indigo-600 block mb-1">Phase 04</span>
-                    <h3 className="text-2xl font-black text-[#0A1C3A] uppercase">Reisen</h3>
-                  </div>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    Kompakt und robust in der BPA-freien 250-ml-Aluminiumdose. Der perfekte frische Begleiter im Flugzeug, Auto oder bei Ausflügen.
-                  </p>
-                </div>
-                <div className="pt-4 border-t border-slate-100 text-[11px] font-bold text-[#0A1C3A]">
-                  • MAXIMALE FLEXIBILITÄT
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      {/* 4. TECHNOLOGIE & INNOVATION */}
+      {/* 3. TECHNOLOGIE & INNOVATION */}
       <div id="technologie" data-webild-section="TechnologyInnovation" data-webild-section-id="TechnologyInnovation-1" data-section="tech">
         <section className="py-20 px-6 bg-transparent text-[#0A1C3A] font-sans">
           <div className="max-w-6xl mx-auto space-y-12">
@@ -558,7 +483,7 @@ export default function HomePage() {
                   EINSATZBEREICHE &amp; ANWENDUNGSGEBIETE
                 </h2>
                 <p className="text-slate-600 text-sm sm:text-base">
-                  Ob Fitnessstudio, Gastronomie &amp; Restaurants, Bars, Universitätsmensen, Sportverein, Personal Training oder Profisport – FONTES VITEA liefert zielgerichtete zelluläre Hydration.
+                  Ob Fitnessstudio, Militär &amp; Streitkräfte, zivile Einsatzkräfte, Fußball- &amp; Sportvereine, Gastronomie, Bars, Universitätsmensen, Personal Training oder Profisport – FONTES VITEA liefert zielgerichtete zelluläre Hydration.
                 </p>
               </div>
 
