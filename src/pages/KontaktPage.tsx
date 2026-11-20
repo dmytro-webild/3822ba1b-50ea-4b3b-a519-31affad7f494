@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from "react";
+import { sendToOwner } from "@/lib/sendToOwner";
 import { Mail, Phone, MapPin, CheckCircle2, AlertCircle, Send } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
@@ -68,18 +69,25 @@ export default function KontaktPage() {
 
     setIsSubmitting(true);
 
-    // Simulate reliable form submission feedback to info@fontes-vitae.com
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus("success");
-      setFormData({
+    sendToOwner(
+      { name: `${formData.vorname} ${formData.nachname}`, email: formData.email, message: formData.anfrage },
+      "Kontaktformular",
+    )
+      .then(() => {
+        setSubmitStatus("success");
+        setFormData({
         vorname: "",
         nachname: "",
         email: "",
         anfrage: "",
         privacyAccepted: false,
       });
-    }, 800);
+      })
+      .catch(() => {
+        setErrorMessage("Ihre Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie an info@fontes-vitae.com.");
+        setSubmitStatus("error");
+      })
+      .finally(() => setIsSubmitting(false));
   };
 
   return (

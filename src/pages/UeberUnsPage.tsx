@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from "react";
+import { sendToOwner } from "@/lib/sendToOwner";
 import { Link as RouterLink } from "react-router-dom";
 import {
   ArrowLeft,
@@ -38,7 +39,19 @@ export default function UeberUnsPage() {
 
   const handleB2bSubmit = (e: FormEvent) => {
     e.preventDefault();
-    setB2bSubmitted(true);
+    sendToOwner(
+      {
+        firma: b2bFormData.company,
+        ansprechpartner: b2bFormData.contactPerson,
+        email: b2bFormData.email,
+        telefon: b2bFormData.phone,
+        kategorie: b2bFormData.category,
+        message: b2bFormData.message,
+      },
+      "B2B Partnerantrag",
+    )
+      .then(() => setB2bSubmitted(true))
+      .catch(() => window.alert("Ihre Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie an info@fontes-vitae.com."));
   };
 
   return (

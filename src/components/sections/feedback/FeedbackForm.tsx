@@ -1,4 +1,5 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
+import { sendToOwner } from "@/lib/sendToOwner";
 import { Star, Upload, CheckCircle2, AlertCircle, Camera, Award } from "lucide-react";
 import { addReview } from "@/utils/feedbackStore";
 
@@ -77,6 +78,20 @@ export default function FeedbackForm() {
     }
 
     setIsSubmitting(true);
+
+    sendToOwner(
+      {
+        vorname: firstName,
+        produkt: product,
+        bewertung: `${rating}/5`,
+        suesse: `${sweetness}/5`,
+        saeure: `${acidity}/5`,
+        herbe: `${tartness}/5`,
+        fotowettbewerb: contestEntry ? "ja" : "nein",
+        message: comment,
+      },
+      "Kundenfeedback",
+    ).catch(() => undefined);
 
     try {
       addReview({
