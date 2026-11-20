@@ -54,6 +54,15 @@ const SEARCH_DATABASE: SearchItem[] = [
     icon: Package,
   },
   {
+    id: "prod-kinderserien",
+    title: "Kinderserien Special (Gingerix, Limetix, Heidelberix, Himbeerixa, Apfelrix)",
+    category: "Produkt",
+    description: "Limitiertes Special für Kinder ohne Zuckerzusatz & BPA-frei (Status: nicht vorrätig – ausverkauft).",
+    keywords: ["kinderserien", "kinder", "gingerix", "limetix", "heidelberix", "himbeerixa", "apfelrix", "special", "ingwer tonic", "limette", "heidelbeere", "himbeere", "apfel", "ausverkauft"],
+    href: "/shop#kinderserien",
+    icon: Sparkles,
+  },
+  {
     id: "sec-quelle",
     title: "Unsere Quelle – Tiefenquelle (136 m)",
     category: "Quelle",
