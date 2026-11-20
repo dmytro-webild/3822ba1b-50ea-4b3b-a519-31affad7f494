@@ -46,7 +46,7 @@ const BUBBLES: BubbleItem[] = [
     popupContent:
       "Angereichertes Quellwasser mit molekularem Wasserstoff. Hält nach dem Öffnen 6 Stunden: 99 % nach 2 Std. und 80 % nach 6 Std. noch messbar.",
     icon: Droplets,
-    positionDesktop: "top-[2%] left-0 sm:left-2 md:-left-12 lg:-left-28",
+    positionDesktop: "top-[2%] left-1 sm:left-2 md:-left-12 lg:-left-28",
     svgLine: { x2: "16%", y2: "15%" },
     floatDuration: 3.8,
   },
@@ -55,9 +55,9 @@ const BUBBLES: BubbleItem[] = [
     title: "136 m Quellwasser",
     subtitle: "Quellentiefengestein",
     popupContent:
-      "Gewonnen aus 136 Metern Tiefe. Natürlich gefiltert durch Gesteinsschichten.",
+      "Gewonnen aus 136 Metern Tiefe. Natürlich gefiltered durch Gesteinsschichten.",
     icon: Mountain,
-    positionDesktop: "top-[36%] left-0 sm:left-2 md:-left-16 lg:-left-32",
+    positionDesktop: "top-[36%] left-1 sm:left-2 md:-left-16 lg:-left-32",
     svgLine: { x2: "12%", y2: "45%" },
     floatDuration: 4.4,
   },
@@ -68,7 +68,7 @@ const BUBBLES: BubbleItem[] = [
     popupContent:
       "Reine Hydration. Ganz ohne Zucker, Kalorien oder künstliche Süßstoffe.",
     icon: Flame,
-    positionDesktop: "bottom-[4%] left-0 sm:left-2 md:-left-12 lg:-left-28",
+    positionDesktop: "bottom-[4%] left-1 sm:left-2 md:-left-12 lg:-left-28",
     svgLine: { x2: "16%", y2: "78%" },
     floatDuration: 4.0,
   },
@@ -79,7 +79,7 @@ const BUBBLES: BubbleItem[] = [
     popupContent:
       "Maximale Sicherheit. Frei von hormonell schädlichem Bisphenol A (BPA).",
     icon: ShieldCheck,
-    positionDesktop: "top-[2%] right-0 sm:right-2 md:-right-12 lg:-right-28",
+    positionDesktop: "top-[2%] right-1 sm:right-2 md:-right-12 lg:-right-28",
     svgLine: { x2: "84%", y2: "15%" },
     floatDuration: 3.6,
   },
@@ -90,7 +90,7 @@ const BUBBLES: BubbleItem[] = [
     popupContent:
       "Unterstützt die zelluläre Energieproduktion für mehr Kraft und Ausdauer.",
     icon: Zap,
-    positionDesktop: "top-[36%] right-0 sm:right-2 md:-right-16 lg:-right-32",
+    positionDesktop: "top-[36%] right-1 sm:right-2 md:-right-16 lg:-right-32",
     svgLine: { x2: "88%", y2: "45%" },
     floatDuration: 4.2,
   },
@@ -101,7 +101,7 @@ const BUBBLES: BubbleItem[] = [
     popupContent:
       "Natürliche Mineralstoffe: Calcium (109 mg/L), Magnesium (14 mg/L), Natrium (7,5 mg/L), Kalium (3,3 mg/L), Sulfat (66,4 mg/L) und Nitrat (12,7 mg/L).",
     icon: Sparkles,
-    positionDesktop: "bottom-[4%] right-0 sm:right-2 md:-right-12 lg:-right-28",
+    positionDesktop: "bottom-[4%] right-1 sm:right-2 md:-right-12 lg:-right-28",
     svgLine: { x2: "84%", y2: "78%" },
     floatDuration: 4.6,
   },
@@ -112,7 +112,7 @@ const HeroWordmarkProduct = ({
   description = "CLEAN & PURE – Maximale Hydration mit molekularem Wasserstoff",
   primaryButton = { text: "Jetzt Shop entdecken", href: "#shop" },
   introDelay = 0,
-  productImageSrc = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794865744193-o2e363kc.png",
+  productImageSrc = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795132125149-eraq7h8f.png",
   productImageAlt = "FONTES VITEA H2 Wasserstoff Dose",
   ariaLabel,
   className,
@@ -281,18 +281,18 @@ const HeroWordmarkProduct = ({
                   y: { duration: bubble.floatDuration, repeat: Infinity, ease: "easeInOut" },
                 }}
                 className={cn(
-                  "absolute z-20 backdrop-blur-md bg-white/90 border border-white/90 shadow-xl rounded-2xl px-4 sm:px-5 py-3 sm:py-3.5 text-[#0A1C3A] hover:bg-white hover:border-[#0A1C3A] hover:scale-105 transition-all duration-300 cursor-pointer flex items-center gap-3.5 min-w-[170px] sm:min-w-[210px] md:min-w-[240px] text-left group",
+                  "absolute z-20 backdrop-blur-md bg-white/90 border border-white/90 shadow-xl rounded-2xl px-2.5 sm:px-4 md:px-5 py-2 sm:py-3 md:py-3.5 text-[#0A1C3A] hover:bg-white hover:border-[#0A1C3A] hover:scale-105 transition-all duration-300 cursor-pointer flex items-center gap-2 sm:gap-3.5 min-w-[130px] sm:min-w-[170px] md:min-w-[210px] lg:min-w-[240px] text-left group",
                   bubble.positionDesktop
                 )}
               >
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#0A1C3A]/10 text-[#0A1C3A] group-hover:bg-[#0A1C3A] group-hover:text-white flex items-center justify-center shrink-0 transition-colors shadow-xs">
-                  <IconComponent className="w-5 h-5 sm:w-5 sm:h-5" />
+                <div className="w-7 h-7 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-xl bg-[#0A1C3A]/10 text-[#0A1C3A] group-hover:bg-[#0A1C3A] group-hover:text-white flex items-center justify-center shrink-0 transition-colors shadow-xs">
+                  <IconComponent className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div className="flex flex-col overflow-hidden">
-                  <span className="font-extrabold text-xs sm:text-sm uppercase tracking-tight text-[#0A1C3A] leading-tight">
+                  <span className="font-extrabold text-[11px] sm:text-xs md:text-sm uppercase tracking-tight text-[#0A1C3A] leading-tight">
                     {bubble.title}
                   </span>
-                  <span className="text-[10px] sm:text-xs text-slate-500 font-semibold group-hover:text-[#0A1C3A] transition-colors truncate">
+                  <span className="text-[9px] sm:text-[10px] md:text-xs text-slate-500 font-semibold group-hover:text-[#0A1C3A] transition-colors truncate">
                     {bubble.subtitle}
                   </span>
                 </div>
