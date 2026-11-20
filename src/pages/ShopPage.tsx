@@ -11,7 +11,9 @@ import {
   Truck,
   RotateCcw,
   PackageCheck,
-  Building2
+  Building2,
+  BookOpen,
+  ExternalLink
 } from "lucide-react";
 
 const CAN_IMAGE_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795132125149-eraq7h8f.png";
@@ -902,6 +904,100 @@ export default function ShopPage() {
                 >
                   Kombi-Paket kaufen (142,96 €)
                 </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Unsere Buchempfehlung Section (placed right under Bundles) */}
+        {(activeTab === "all" || activeTab === "bundle") && (
+          <div id="buchempfehlung" className="space-y-6 pt-10 border-t border-slate-200">
+            <div className="space-y-2">
+              <span className="text-xs text-sky-900 bg-sky-100 font-extrabold uppercase tracking-widest px-3.5 py-1 rounded-full border border-sky-300 inline-block">
+                Wissenschaft &amp; Literatur
+              </span>
+              <h2 className="text-3xl font-black uppercase tracking-tight text-[#0A1C3A]">
+                UNSERE BUCHEMPFEHLUNG
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600 max-w-3xl leading-relaxed">
+                Fachliteratur zu molekularem Wasserstoff, wissenschaftlichen Hintergründen und gesundheitlichen Potenzialen.
+              </p>
+            </div>
+
+            {/* Premium Card Layout */}
+            <div className="bg-[#0A1C3A] text-white rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-2xl flex flex-col md:flex-row items-center md:items-start gap-8 relative overflow-hidden">
+              {/* Background Glow */}
+              <div className="absolute -top-24 -right-24 w-72 h-72 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
+
+              {/* Book Cover Visual */}
+              <div className="relative w-48 sm:w-56 shrink-0 aspect-[1/1.5] bg-gradient-to-br from-[#0B1E3F] via-[#162B4E] to-[#0A1C3A] rounded-r-xl rounded-l-sm border-l-8 border-l-slate-400 border-t border-r border-b border-sky-400/40 shadow-2xl p-5 flex flex-col justify-between text-white overflow-hidden group">
+                <div className="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-white/20 to-transparent pointer-events-none" />
+                
+                <div className="space-y-3 z-10">
+                  <div className="text-[10px] font-black uppercase tracking-widest text-sky-300 border-b border-sky-400/20 pb-1.5 flex justify-between items-center">
+                    <span>Kopp Verlag</span>
+                    <span className="text-[9px] font-mono text-slate-400">FACHBUCH</span>
+                  </div>
+                  
+                  <div className="pt-2">
+                    <span className="text-[11px] font-bold text-slate-300 block uppercase tracking-wider">Brigitte Hamann</span>
+                    <h3 className="text-base sm:text-lg font-black uppercase leading-tight tracking-tight text-white mt-1">
+                      Praxisbuch molekularer Wasserstoff
+                    </h3>
+                    <p className="text-[11px] font-semibold text-sky-300 italic mt-1.5 leading-snug">
+                      Die natürliche Medizin der Zukunft
+                    </p>
+                  </div>
+                </div>
+
+                <div className="z-10 pt-4 border-t border-sky-400/20 flex items-end justify-between">
+                  <div className="flex items-center gap-1.5 text-sky-400">
+                    <BookOpen className="w-4 h-4" />
+                    <span className="text-[10px] font-bold uppercase tracking-wider">H₂ Standardwerk</span>
+                  </div>
+                  <span className="text-[9px] font-mono text-slate-400">Kopp Verlag</span>
+                </div>
+              </div>
+
+              {/* Book Information & Affiliate CTA */}
+              <div className="space-y-6 flex-1 text-center md:text-left z-10">
+                <div className="space-y-2">
+                  <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
+                    <span className="text-[11px] font-extrabold uppercase tracking-wider text-sky-400 bg-sky-950/80 px-3 py-1 rounded-full border border-sky-800">
+                      Bestseller-Autorin Brigitte Hamann
+                    </span>
+                    <span className="text-[11px] font-bold text-slate-400">
+                      Verlag: Kopp Verlag
+                    </span>
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white">
+                    Praxisbuch molekularer Wasserstoff
+                  </h3>
+                  <p className="text-sm font-semibold text-sky-300 italic">
+                    Die natürliche Medizin der Zukunft
+                  </p>
+                </div>
+
+                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-normal">
+                  Sie möchten mehr über molekularen Wasserstoff erfahren? Das Praxisbuch von Brigitte Hamann bietet einen umfassenden Einblick in das Thema und beschäftigt sich mit wissenschaftlichen Hintergründen, Forschungsansätzen und möglichen Anwendungsgebieten.
+                </p>
+
+                <div className="space-y-4 pt-2">
+                  <a
+                    href="https://www.amazon.de/dp/3864455829?tag=fontesvitea-21"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 bg-sky-500 hover:bg-sky-400 text-[#0A1C3A] font-black uppercase text-xs sm:text-sm tracking-wider py-3.5 px-8 rounded-xl shadow-lg transition duration-200"
+                  >
+                    <BookOpen className="w-4 h-4" />
+                    <span>Buch bei Amazon ansehen</span>
+                    <ExternalLink className="w-4 h-4 ml-1" />
+                  </a>
+
+                  <p className="text-[11px] text-slate-400 italic leading-normal max-w-2xl">
+                    *Hinweis: Als Amazon-Partner verdienen wir an qualifizierten Verkäufen. Wenn Sie auf den Button klicken und über diesen externen Link bestellen, erhalten wir eine kleine Provision. Der Preis für Sie bleibt unverändert.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
