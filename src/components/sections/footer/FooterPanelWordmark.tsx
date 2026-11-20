@@ -55,7 +55,7 @@ const SORTIMENT_ITEMS = [
     title: "FONTES VITEA H2 Water",
     subtitle: "Molekular gelöstes Wasserstoff-Wasser (min. 2.8 mg/L H2)",
     badge: "H2 Molekular",
-    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794876824895-o64qlmg5.png",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795132125149-eraq7h8f.png",
     isLineup: false,
   },
   {

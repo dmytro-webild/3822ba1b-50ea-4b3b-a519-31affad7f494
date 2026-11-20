@@ -4,7 +4,6 @@ import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { useKitMotion } from "@/components/kit/kitMotion";
 import { modelChapter, type ModelChapter } from "@/components/kit/modelPose";
-import MoreProductPhoto from "@/components/kit/MoreProductPhoto";
 import MoreTwoTone from "@/components/kit/MoreTwoTone";
 
 const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
@@ -88,14 +87,22 @@ const ProductCompareTable = ({
                 <path d="M-40 300C120 360 220 520 300 640S520 860 680 820" fill="none" stroke="currentColor" strokeLinecap="round" vectorEffect="non-scaling-stroke" style={{ strokeWidth: "clamp(18px, 2.2vw, 36px)" }} />
               </svg>
             </motion.div>
-            <div data-model-anchor={media === "model" ? "" : undefined} aria-hidden={media === "model" || undefined} className="relative h-[34svh] w-[88%] lg:h-[min(76svh,50rem)] lg:w-[90%]">
-              {media === "image" && <MoreProductPhoto imageSrc={productImageSrc} imageAlt={productImageAlt} />}
+            <div data-model-anchor={media === "model" ? "" : undefined} aria-hidden={media === "model" || undefined} className="relative flex items-center justify-center min-h-[300px] sm:min-h-[380px] lg:h-[min(76svh,50rem)] w-full">
+              {media === "image" && (
+                <div className="flex h-full w-full items-center justify-center p-4">
+                  <img
+                    src={productImageSrc}
+                    alt={productImageAlt}
+                    className="max-h-[320px] sm:max-h-[420px] md:max-h-[480px] w-auto max-w-full object-contain filter drop-shadow-2xl transition duration-300 hover:scale-105"
+                  />
+                </div>
+              )}
             </div>
           </div>
-          <div className="flex flex-col justify-center gap-[clamp(1.5rem,3vw,2.5rem)] px-[clamp(0.5rem,2vw,1.5rem)] pb-[clamp(1.5rem,3vw,2.5rem)] lg:pl-[clamp(1rem,3vw,3rem)] lg:pr-[clamp(1rem,2vw,1.5rem)] lg:py-[clamp(1.5rem,3vw,2.5rem)]">
+          <div className="flex flex-col justify-center gap-[clamp(1.25rem,2.5vw,2.5rem)] px-[clamp(0.25rem,1.5vw,1.5rem)] pb-[clamp(1.25rem,2.5vw,2.5rem)] lg:pl-[clamp(1rem,3vw,3rem)] lg:pr-[clamp(1rem,2vw,1.5rem)] lg:py-[clamp(1.5rem,3vw,2.5rem)]">
             <MoreTwoTone title={title} accent={accent} accentFirst accentClassName="text-secondary-foreground/70" className="max-w-none text-[length:var(--text-h3)]" />
             <div className="w-full overflow-x-auto scrollbar-thin">
-              <table className="w-full border-collapse text-left min-w-[460px]">
+              <table className="w-full border-collapse text-left min-w-[320px] sm:min-w-[440px]">
                 <colgroup>
                   <col className="w-[52%]" />
                   <col className="w-[24%]" />
@@ -103,16 +110,16 @@ const ProductCompareTable = ({
                 </colgroup>
                 <thead>
                   <tr className="border-b border-secondary-foreground/25">
-                    <th scope="col" className="pb-3 pr-3 align-bottom font-extrabold text-xs uppercase tracking-wider text-secondary-foreground/70">
+                    <th scope="col" className="pb-3 pr-2 align-bottom font-extrabold text-xs uppercase tracking-wider text-secondary-foreground/70">
                       <p className="leading-tight">{benefitsLabel}</p>
                     </th>
-                    <th scope="col" className="px-2 pb-3 text-center align-bottom">
-                      <p className="font-sans text-sm sm:text-base font-extrabold tracking-tight text-[#0A1C3A] leading-tight text-center">
+                    <th scope="col" className="px-1.5 pb-3 text-center align-bottom">
+                      <p className="font-sans text-xs sm:text-base font-extrabold tracking-tight text-[#0A1C3A] leading-tight text-center">
                         {name}
                       </p>
                     </th>
-                    <th scope="col" className="px-2 pb-3 text-center align-bottom">
-                      <p className="text-xs sm:text-sm font-semibold text-slate-600 leading-tight text-center">
+                    <th scope="col" className="px-1.5 pb-3 text-center align-bottom">
+                      <p className="text-[11px] sm:text-sm font-semibold text-slate-600 leading-tight text-center">
                         {otherLabel}
                       </p>
                     </th>
@@ -127,13 +134,13 @@ const ProductCompareTable = ({
                       viewport={{ once: true, margin: "0px 0px -10% 0px" }}
                       className="border-b border-secondary-foreground/15 last:border-b-0"
                     >
-                      <th scope="row" className="py-3 pr-3 align-middle font-normal">
+                      <th scope="row" className="py-3 pr-2 align-middle font-normal">
                         <p className="text-xs sm:text-sm font-semibold text-[#0A1C3A] leading-snug tracking-normal break-words hyphens-none">
                           {item.title}
                         </p>
                       </th>
                       {[item.ours ?? true, item.other ?? false].map((yes, col) => (
-                        <td key={col} className="px-2 py-3 align-middle text-center">
+                        <td key={col} className="px-1 py-3 align-middle text-center">
                           <motion.div
                             aria-label={yes ? "Yes" : "No"}
                             role="img"
@@ -142,10 +149,10 @@ const ProductCompareTable = ({
                               shown: { scale: 1, opacity: 1, transition: { duration: base, ease: POP, delay: 0.1 + col * 0.08 } },
                             }}
                             className={cn(
-                              "mx-auto flex h-10 sm:h-11 items-center justify-center transition-all",
+                              "mx-auto flex h-9 sm:h-11 items-center justify-center transition-all",
                               col === 0
-                                ? "w-20 sm:w-24 rounded-xl bg-white text-[#0A1C3A] shadow-sm border border-slate-200/80"
-                                : "w-12 sm:w-14 text-slate-400",
+                                ? "w-14 sm:w-20 rounded-xl bg-white text-[#0A1C3A] shadow-sm border border-slate-200/80"
+                                : "w-10 sm:w-14 text-slate-400",
                               !yes && col === 0 && "bg-transparent shadow-none border-transparent text-slate-400"
                             )}
                           >

@@ -412,8 +412,8 @@ export default function HomePage() {
                 </span>
               </div>
 
-              <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse">
+              <div className="overflow-x-auto scrollbar-thin">
+                <table className="w-full text-left border-collapse min-w-[480px]">
                   <thead>
                     <tr className="bg-[#f4f6f8] text-[#0A1C3A] text-xs uppercase font-black tracking-wider border-b border-slate-300">
                       <th className="py-3.5 px-6">Parameter</th>

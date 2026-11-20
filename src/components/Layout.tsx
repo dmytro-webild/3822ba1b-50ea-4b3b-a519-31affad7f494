@@ -17,7 +17,7 @@ function FloatingCartButton() {
   return (
     <button
       onClick={() => setIsCartOpen(true)}
-      className="fixed bottom-20 right-4 min-[94.5rem]:bottom-6 min-[94.5rem]:right-6 z-40 bg-[#0A1C3A] hover:bg-[#12284c] text-white p-3.5 rounded-2xl shadow-2xl border border-slate-300 flex items-center gap-3 group transition transform hover:scale-105 active:scale-95"
+      className="fixed bottom-20 right-4 lg:bottom-6 lg:right-6 z-40 bg-[#0A1C3A] hover:bg-[#12284c] text-white p-3.5 rounded-2xl shadow-2xl border border-slate-300 flex items-center gap-3 group transition transform hover:scale-105 active:scale-95"
       aria-label="Warenkorb öffnen"
     >
       <div className="relative">
@@ -50,7 +50,7 @@ function MobileBottomBar() {
   return (
     <nav
       aria-label="Mobile Bottom Navigation"
-      className="fixed bottom-0 inset-x-0 z-40 bg-[#0A1C3A] text-white border-t border-slate-700/80 shadow-2xl py-2 px-3 flex items-center justify-around min-[94.5rem]:hidden font-sans"
+      className="fixed bottom-0 inset-x-0 z-40 bg-[#0A1C3A] text-white border-t border-slate-700/80 shadow-2xl py-2 px-3 flex items-center justify-around lg:hidden font-sans"
     >
       {navItems.map((item) => {
         const Icon = item.icon;
@@ -91,7 +91,7 @@ function MobileBackToTop() {
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="fixed bottom-20 left-4 z-40 bg-[#0A1C3A]/90 backdrop-blur-md text-white p-3 rounded-full shadow-2xl border border-slate-300/40 hover:bg-[#0A1C3A] transition transform active:scale-90 min-[94.5rem]:hidden flex items-center justify-center"
+      className="fixed bottom-20 left-4 z-40 bg-[#0A1C3A]/90 backdrop-blur-md text-white p-3 rounded-full shadow-2xl border border-slate-300/40 hover:bg-[#0A1C3A] transition transform active:scale-90 lg:hidden flex items-center justify-center"
       aria-label="Nach oben scrollen"
     >
       <ArrowUp className="w-5 h-5 text-sky-400" />

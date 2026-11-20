@@ -98,7 +98,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         cansCount: 12,
         deposit: 3.00,
         quantity: 1,
-        imageSrc: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794865744193-o2e363kc.png",
+        imageSrc: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795132125149-eraq7h8f.png",
       }
     ];
   });

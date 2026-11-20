@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { AnimatePresence, animate, motion, useMotionValue, useMotionValueEvent, useReducedMotion, useScroll } from "motion/react";
-import { Dribbble, Facebook, Github, Globe, Instagram, Linkedin, Mail, Twitter, Youtube, ShoppingBag, type LucideIcon } from "lucide-react";
+import { Dribbble, Facebook, Github, Globe, Instagram, Linkedin, Mail, Twitter, Youtube, ShoppingBag, Menu, X, type LucideIcon } from "lucide-react";
 import { socialName, type SocialPlatform } from "@/components/shared/socialPlatforms";
 import useMenuDialog from "@/components/kit/useMenuDialog";
 import MoreArrowPill from "@/components/kit/MoreArrowPill";
@@ -61,7 +61,7 @@ const NavbarPillLinks = ({
         style={{ y: shift }}
         className="fixed inset-x-0 top-0 z-50 px-[var(--gutter)] pt-[clamp(1.25rem,2.6vw,2.5rem)]"
       >
-        <div className="flex items-center justify-between gap-[1rem] min-[94.5rem]:grid min-[94.5rem]:grid-cols-[1fr_auto_1fr]">
+        <div className="flex items-center justify-between gap-[0.5rem] sm:gap-[1rem] lg:grid lg:grid-cols-[1fr_auto_1fr]">
           <div className="flex min-w-0 items-center gap-[0.75rem]">
             <a href="#" className="min-w-0 flex items-center gap-2.5">
               <Media
@@ -71,7 +71,7 @@ const NavbarPillLinks = ({
               />
             </a>
             {socials.length > 0 && (
-              <div className="hidden items-center gap-[0.3rem] min-[94.5rem]:flex">
+              <div className="hidden items-center gap-[0.3rem] lg:flex">
                 {socials.map((social, i) => {
                   const Icon = socialIcons[social.platform] ?? Globe;
                   return (
@@ -93,7 +93,7 @@ const NavbarPillLinks = ({
           </div>
 
           {navItems.length > 0 && (
-            <ul className="hidden items-center gap-[0.6rem] min-[94.5rem]:flex">
+            <ul className="hidden items-center gap-[0.6rem] lg:flex">
               {navItems.map((item, i) => (
                 <motion.li
                   key={`${i}-${item.href}`}
@@ -131,7 +131,21 @@ const NavbarPillLinks = ({
               )}
             </button>
 
-            {primaryButton && <MoreArrowPill text={primaryButton.text} href={primaryButton.href} tone="light" />}
+            {primaryButton && (
+              <div className="hidden sm:block">
+                <MoreArrowPill text={primaryButton.text} href={primaryButton.href} tone="light" />
+              </div>
+            )}
+
+            {/* Mobile Menu Button */}
+            <button
+              type="button"
+              onClick={() => setOpen((prev) => !prev)}
+              className="flex lg:hidden size-[clamp(2.5rem,2.2rem+1vw,3rem)] items-center justify-center rounded-full bg-[#0A1C3A] text-white hover:bg-[#12284c] active:scale-95 transition shadow-sm border border-slate-700/50"
+              aria-label={open ? "Menü schließen" : "Menü öffnen"}
+            >
+              {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
           </div>
         </div>
       </motion.nav>
@@ -148,7 +162,7 @@ const NavbarPillLinks = ({
             animate={reduce ? { opacity: 1 } : { y: "0%" }}
             exit={reduce ? { opacity: 0 } : { y: "-100%" }}
             transition={{ duration: 0.8, ease: EASE }}
-            className="fixed inset-x-0 top-0 z-[45] flex h-svh flex-col bg-card px-[var(--gutter)] pb-[2.5rem] pt-[clamp(6.5rem,20vw,8rem)] text-card-foreground min-[94.5rem]:hidden"
+            className="fixed inset-x-0 top-0 z-[45] flex h-svh flex-col bg-card px-[var(--gutter)] pb-[2.5rem] pt-[clamp(6.5rem,20vw,8rem)] text-card-foreground lg:hidden"
           >
             <ul className="flex flex-col gap-[0.5rem]">
               {navItems.map((item, i) => (
