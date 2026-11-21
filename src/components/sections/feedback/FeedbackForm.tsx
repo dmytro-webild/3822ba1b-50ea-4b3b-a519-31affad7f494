@@ -1,10 +1,10 @@
-import { useState, type ChangeEvent, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { sendToOwner } from "@/lib/sendToOwner";
 import { Star, Upload, CheckCircle2, AlertCircle, Camera, Award } from "lucide-react";
 import { addReview } from "@/utils/feedbackStore";
 
 const PRODUCTS = [
-  "FONTES VITEA Natural H2 (250 ml)",
+  "FONTES VITEA H2 (250 ml)",
   "FONTES VITEA Sparkling H2 12er-Pack",
   "Kinderserie - Gingerix (Ingwer Tonic)",
   "Kinderserie - Limetix (Limette mit Apfel)",
@@ -29,27 +29,15 @@ export default function FeedbackForm() {
   const [successMsg, setSuccessMsg] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // File Upload Handler (JPG, PNG, WEBP with Base64 Conversion)
-  const handlePhotoUpload = (e: ChangeEvent<HTMLInputElement>) => {
+  const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    if (!file) return;
-
-    if (!["image/jpeg", "image/png", "image/webp"].includes(file.type)) {
-      setErrorMsg("Bitte wählen Sie ein Bild im Format JPG, PNG oder WEBP aus.");
-      return;
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPhotoUrl(reader.result as string);
+      };
+      reader.readAsDataURL(file);
     }
-
-    if (file.size > 5 * 1024 * 1024) { // 5MB limit
-      setErrorMsg("Das Bild darf maximal 5 MB groß sein.");
-      return;
-    }
-
-    setErrorMsg(null);
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setPhotoUrl(reader.result as string);
-    };
-    reader.readAsDataURL(file);
   };
 
   const handleSubmit = (e: FormEvent) => {
@@ -308,16 +296,44 @@ export default function FeedbackForm() {
           />
         </div>
 
-        {/* Photo by email */}
-        <div className="bg-[#f8fafc] p-6 rounded-2xl border border-dashed border-slate-300 space-y-2">
+        {/* Photo Upload for Contest */}
+        <div className="bg-[#f8fafc] p-6 rounded-2xl border border-dashed border-slate-300 space-y-3">
           <p className="text-xs font-extrabold uppercase tracking-wider text-[#0A1C3A] flex items-center gap-2">
             <Camera className="w-4 h-4 text-[#0A1C3A]" />
             Foto für den Fotowettbewerb
           </p>
-          <p className="text-xs text-slate-600 leading-snug">
-            Senden Sie Ihr Foto mit Ihrem Vornamen per E-Mail an{" "}
-            <a href="mailto:info@fontes-vitae.com" className="font-bold text-[#0A1C3A] underline">info@fontes-vitae.com</a>.
-          </p>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+            <label className="cursor-pointer inline-flex items-center gap-2 bg-white hover:bg-slate-100 text-[#0A1C3A] px-4 py-2 rounded-xl text-xs font-bold border border-slate-300 shadow-sm transition">
+              <Upload className="w-4 h-4 text-sky-600" />
+              <span>Foto auswählen</span>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handlePhotoUpload}
+                className="hidden"
+              />
+            </label>
+            {photoUrl ? (
+              <div className="flex items-center gap-2 text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-200">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>Foto ausgewählt!</span>
+                <button
+                  type="button"
+                  onClick={() => setPhotoUrl(null)}
+                  className="ml-2 text-slate-400 hover:text-red-500 text-xs font-normal"
+                >
+                  Entfernen
+                </button>
+              </div>
+            ) : (
+              <span className="text-xs text-slate-500">
+                Oder senden Sie Ihr Foto per E-Mail an{" "}
+                <a href="mailto:info@fontes-vitae.com" className="font-bold text-[#0A1C3A] underline">
+                  info@fontes-vitae.com
+                </a>.
+              </span>
+            )}
+          </div>
         </div>
 
         {/* Consent Checkboxes */}

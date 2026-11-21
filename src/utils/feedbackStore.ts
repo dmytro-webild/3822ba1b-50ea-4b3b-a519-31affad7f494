@@ -24,7 +24,7 @@ const INITIAL_REVIEWS: Review[] = [
   {
     id: 'rev-1',
     firstName: 'Maximilian S.',
-    product: 'FONTES VITEA Natural H2 (250 ml)',
+    product: 'FONTES VITEA H2 (250 ml)',
     rating: 5,
     tasteRatings: { sweetness: 1, acidity: 1, tartness: 1 },
     comment: 'Unglaublich erfrischend und spürbarer Unterschied beim Ausdauersport! Man merkt die Reinheit des Quellwassers sofort. Trinke es jeden Tag vor meinem Lauf.',
@@ -96,6 +96,10 @@ export function getStoredReviews(): Review[] {
       if (rev.photoUrl === 'https://images.pexels.com/photos/11022636/pexels-photo-11022636.jpeg?auto=compress&cs=tinysrgb&h=650&w=940' || rev.photoUrl === 'https://images.pexels.com/photos/4070215/pexels-photo-4070215.jpeg?auto=compress&cs=tinysrgb&h=650&w=940') {
         updated = true;
         return { ...rev, photoUrl: 'https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216740-l82r4ka1.png' };
+      }
+      if (rev.id === 'rev-1' && rev.product === 'FONTES VITEA Natural H2 (250 ml)') {
+        updated = true;
+        return { ...rev, product: 'FONTES VITEA H2 (250 ml)' };
       }
       if (rev.id === 'rev-3' && rev.product === 'FONTES VITEA Sparkling H2 12er-Pack') {
         updated = true;
