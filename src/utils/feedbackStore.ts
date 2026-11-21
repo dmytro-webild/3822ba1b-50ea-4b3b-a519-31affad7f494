@@ -54,7 +54,7 @@ const INITIAL_REVIEWS: Review[] = [
     rating: 5,
     tasteRatings: { sweetness: 1, acidity: 2, tartness: 1 },
     comment: 'Feine Perlage, genialer Geschmack und volle H2-Wasserstoff-Power. Der Versand war superschnell und die Dosen kamen perfekt verpackt an.',
-    photoUrl: 'https://images.pexels.com/photos/39190728/pexels-photo-39190728.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    photoUrl: 'https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795135314654-0dzt7sqw.png',
     status: 'approved',
     submittedAt: '2026-02-10T09:00:00.000Z',
     contestEntry: true,
@@ -67,7 +67,7 @@ const INITIAL_REVIEWS: Review[] = [
     rating: 5,
     tasteRatings: { sweetness: 4, acidity: 2, tartness: 1 },
     comment: 'Fruchtige Himbeere mit quellfrischer Note! Meine Tochter liebt Himbeerixa nach dem Schulsport. 100% weiterzuempfehlen!',
-    photoUrl: 'https://images.pexels.com/photos/4070215/pexels-photo-4070215.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    photoUrl: 'https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216740-l82r4ka1.png',
     status: 'approved',
     submittedAt: '2026-02-08T16:45:00.000Z',
     contestEntry: true,
@@ -85,13 +85,13 @@ export function getStoredReviews(): Review[] {
     const parsed: Review[] = JSON.parse(data);
     let updated = false;
     const migrated = parsed.map((rev) => {
-      if (rev.photoUrl === 'https://images.pexels.com/photos/4161894/pexels-photo-4161894.jpeg?auto=compress&cs=tinysrgb&h=650&w=940') {
+      if (rev.photoUrl === 'https://images.pexels.com/photos/4161894/pexels-photo-4161894.jpeg?auto=compress&cs=tinysrgb&h=650&w=940' || rev.photoUrl === 'https://images.pexels.com/photos/39190728/pexels-photo-39190728.jpeg?auto=compress&cs=tinysrgb&h=650&w=940') {
         updated = true;
         return { ...rev, photoUrl: 'https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795135314654-0dzt7sqw.png' };
       }
-      if (rev.photoUrl === 'https://images.pexels.com/photos/11022636/pexels-photo-11022636.jpeg?auto=compress&cs=tinysrgb&h=650&w=940') {
+      if (rev.photoUrl === 'https://images.pexels.com/photos/11022636/pexels-photo-11022636.jpeg?auto=compress&cs=tinysrgb&h=650&w=940' || rev.photoUrl === 'https://images.pexels.com/photos/4070215/pexels-photo-4070215.jpeg?auto=compress&cs=tinysrgb&h=650&w=940') {
         updated = true;
-        return { ...rev, photoUrl: 'https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216737-r3370ev4.png' };
+        return { ...rev, photoUrl: 'https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216740-l82r4ka1.png' };
       }
       if (rev.id === 'rev-3' && rev.product === 'FONTES VITEA Sparkling H2 12er-Pack') {
         updated = true;
