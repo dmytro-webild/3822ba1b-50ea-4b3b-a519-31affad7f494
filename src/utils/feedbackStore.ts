@@ -50,7 +50,7 @@ const INITIAL_REVIEWS: Review[] = [
   {
     id: 'rev-3',
     firstName: 'Alexander K.',
-    product: 'FONTES VITEA Sparkling H2 12er-Pack',
+    product: 'FONTES VITEA  H2 12er-Pack',
     rating: 5,
     tasteRatings: { sweetness: 1, acidity: 2, tartness: 1 },
     comment: 'Feine Perlage, genialer Geschmack und volle H2-Wasserstoff-Power. Der Versand war superschnell und die Dosen kamen perfekt verpackt an.',
@@ -92,6 +92,10 @@ export function getStoredReviews(): Review[] {
       if (rev.photoUrl === 'https://images.pexels.com/photos/11022636/pexels-photo-11022636.jpeg?auto=compress&cs=tinysrgb&h=650&w=940') {
         updated = true;
         return { ...rev, photoUrl: 'https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216737-r3370ev4.png' };
+      }
+      if (rev.id === 'rev-3' && rev.product === 'FONTES VITEA Sparkling H2 12er-Pack') {
+        updated = true;
+        return { ...rev, product: 'FONTES VITEA  H2 12er-Pack' };
       }
       return rev;
     });
