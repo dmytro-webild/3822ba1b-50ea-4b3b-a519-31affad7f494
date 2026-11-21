@@ -28,7 +28,7 @@ const INITIAL_REVIEWS: Review[] = [
     rating: 5,
     tasteRatings: { sweetness: 1, acidity: 1, tartness: 1 },
     comment: 'Unglaublich erfrischend und spürbarer Unterschied beim Ausdauersport! Man merkt die Reinheit des Quellwassers sofort. Trinke es jeden Tag vor meinem Lauf.',
-    photoUrl: 'https://images.pexels.com/photos/4161894/pexels-photo-4161894.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    photoUrl: 'https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795135314654-0dzt7sqw.png',
     status: 'approved',
     submittedAt: '2026-02-14T10:30:00.000Z',
     contestEntry: true,
@@ -41,7 +41,7 @@ const INITIAL_REVIEWS: Review[] = [
     rating: 5,
     tasteRatings: { sweetness: 3, acidity: 2, tartness: 4 },
     comment: 'Der Gingerix aus der Kinderserie ist bei uns der absolute Favorit! Perfekte Ingwerschärfe ohne jeglichen zugesetzten Zucker. Die Dose sieht super stylisch aus!',
-    photoUrl: 'https://images.pexels.com/photos/11022636/pexels-photo-11022636.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    photoUrl: 'https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216737-r3370ev4.png',
     status: 'approved',
     submittedAt: '2026-02-12T14:15:00.000Z',
     contestEntry: true,
@@ -82,7 +82,23 @@ export function getStoredReviews(): Review[] {
       localStorage.setItem(STORAGE_KEY_REVIEWS, JSON.stringify(INITIAL_REVIEWS));
       return INITIAL_REVIEWS;
     }
-    return JSON.parse(data);
+    const parsed: Review[] = JSON.parse(data);
+    let updated = false;
+    const migrated = parsed.map((rev) => {
+      if (rev.photoUrl === 'https://images.pexels.com/photos/4161894/pexels-photo-4161894.jpeg?auto=compress&cs=tinysrgb&h=650&w=940') {
+        updated = true;
+        return { ...rev, photoUrl: 'https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795135314654-0dzt7sqw.png' };
+      }
+      if (rev.photoUrl === 'https://images.pexels.com/photos/11022636/pexels-photo-11022636.jpeg?auto=compress&cs=tinysrgb&h=650&w=940') {
+        updated = true;
+        return { ...rev, photoUrl: 'https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216737-r3370ev4.png' };
+      }
+      return rev;
+    });
+    if (updated) {
+      localStorage.setItem(STORAGE_KEY_REVIEWS, JSON.stringify(migrated));
+    }
+    return migrated;
   } catch {
     return INITIAL_REVIEWS;
   }

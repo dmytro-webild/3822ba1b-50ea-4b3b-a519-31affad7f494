@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { Star, Trophy, ShoppingBag, ZoomIn, X, CheckCircle2, Award, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import { getApprovedReviews, type Review } from "@/utils/feedbackStore";
+import Media from "@/components/kit/Media";
 
 interface CustomerReviewsSectionProps {
   title?: string;
@@ -106,7 +107,7 @@ export default function CustomerReviewsSection({
                 <div>
                   {/* Photo Section */}
                   <div className="relative h-56 w-full overflow-hidden bg-slate-100 border-b border-slate-100">
-                    <img
+                    <Media
                       src={rev.photoUrl}
                       alt={`Kundenfoto von ${rev.firstName}`}
                       className="w-full h-full object-cover group-hover:scale-105 transition duration-500 cursor-pointer"
@@ -256,7 +257,7 @@ export default function CustomerReviewsSection({
             >
               <X className="w-6 h-6" />
             </button>
-            <img
+            <Media
               src={activePhoto}
               alt="Vergrößertes Kundenfoto"
               className="max-h-[85vh] w-auto object-contain mx-auto"
