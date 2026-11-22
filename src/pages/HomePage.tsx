@@ -443,7 +443,7 @@ export default function HomePage() {
                 <div className="w-14 h-14 rounded-2xl bg-[#0A1C3A] text-white flex items-center justify-center shadow-md">
                   <Cpu className="w-7 h-7 text-sky-400" />
                 </div>
-                <h3 className="text-2xl font-black uppercase text-[#0A1C3A]">Aluminiumdosentechnologie</h3>
+                <h3 className="text-2xl font-black uppercase text-[#0A1C3A]">Aluminiumdosen-technologie</h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
                   Spezielle 250-ml-Aluminiumdosen bieten die absolut undurchlässige Barriere gegen das Entweichen des extrem kleinen H₂-Gases. Lichtgeschützt, unempfindlich und 100 % unendlich recycelbar.
                 </p>
