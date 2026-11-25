@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
-import { Shield, Check, X, Trophy, Trash2, Lock, Unlock, RefreshCw, Star } from "lucide-react";
+import { Shield, Check, X, Trash2, Lock, Unlock, Star } from "lucide-react";
 import {
   getStoredReviews,
   updateReviewStatus,
-  setContestWinner,
   deleteReview,
   type Review,
 } from "@/utils/feedbackStore";
@@ -53,7 +52,7 @@ export default function AdminModerationPanel() {
           <div>
             <h3 className="text-xl font-black uppercase tracking-tight">Admin-Moderationsbereich</h3>
             <p className="text-xs text-slate-300 mt-1">
-              Melden Sie sich an, um ausstehende Kundenbewertungen freizugeben und Fotowettbewerb-Gewinner festzulegen.
+              Melden Sie sich an, um Kundenbewertungen zu verwalten oder zu löschen.
             </p>
           </div>
 
@@ -68,7 +67,7 @@ export default function AdminModerationPanel() {
             {loginError && <p className="text-[11px] text-red-400 font-bold">Ungültiges Passwort.</p>}
             <button
               type="submit"
-              className="w-full bg-sky-500 hover:bg-sky-400 text-[#0A1C3A] font-extrabold uppercase tracking-wider py-2.5 rounded-xl text-xs transition shadow-lg flex items-center justify-center gap-2"
+              className="w-full bg-sky-500 hover:bg-sky-400 text-[#0A1C3A] font-extrabold uppercase tracking-wider py-2.5 rounded-xl text-xs transition shadow-lg flex items-center justify-center gap-2 cursor-pointer"
             >
               <Unlock className="w-4 h-4" />
               <span>Anmelden</span>
@@ -97,104 +96,63 @@ export default function AdminModerationPanel() {
               )}
             </div>
             <p className="text-xs text-slate-300">
-              Freigabe von Kundenbewertungen &amp; Prämierung Fotowettbewerb
+              Verwaltung &amp; Moderation aller Kundenbewertungen
             </p>
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
-          <button
-            onClick={() => loadData()}
-            className="p-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl transition text-xs flex items-center gap-1.5"
-            title="Aktualisieren"
-          >
-            <RefreshCw className="w-4 h-4" />
-            <span className="hidden sm:inline">Aktualisieren</span>
-          </button>
-          <button
-            onClick={() => setIsAdminLoggedIn(false)}
-            className="px-3 py-2 bg-red-950/80 hover:bg-red-900 text-red-200 border border-red-800/80 rounded-xl transition text-xs font-bold uppercase tracking-wider"
-          >
-            Abmelden
-          </button>
+        {/* Filter Badges */}
+        <div className="flex items-center gap-1.5 bg-slate-900/80 p-1.5 rounded-xl border border-slate-700 text-xs">
+          {(["all", "approved", "pending", "rejected"] as const).map((f) => (
+            <button
+              key={f}
+              onClick={() => setFilter(f)}
+              className={`px-3 py-1.5 rounded-lg font-bold capitalize transition cursor-pointer ${
+                filter === f
+                  ? "bg-sky-500 text-[#0A1C3A]"
+                  : "text-slate-400 hover:text-white"
+              }`}
+            >
+              {f === "all" ? "Alle" : f === "approved" ? "Freigegeben" : f === "pending" ? "Offen" : "Abgelehnt"}
+            </button>
+          ))}
         </div>
       </div>
 
-      {/* Filter Tabs */}
-      <div className="flex flex-wrap items-center gap-2">
-        <button
-          onClick={() => setFilter("all")}
-          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition ${
-            filter === "all" ? "bg-sky-400 text-[#0A1C3A]" : "bg-slate-800 text-slate-300 hover:bg-slate-700"
-          }`}
-        >
-          Alle ({reviews.length})
-        </button>
-        <button
-          onClick={() => setFilter("pending")}
-          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition ${
-            filter === "pending" ? "bg-amber-400 text-[#0A1C3A]" : "bg-slate-800 text-slate-300 hover:bg-slate-700"
-          }`}
-        >
-          Ausstehend ({reviews.filter((r) => r.status === "pending").length})
-        </button>
-        <button
-          onClick={() => setFilter("approved")}
-          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition ${
-            filter === "approved" ? "bg-emerald-400 text-[#0A1C3A]" : "bg-slate-800 text-slate-300 hover:bg-slate-700"
-          }`}
-        >
-          Freigegeben ({reviews.filter((r) => r.status === "approved").length})
-        </button>
-        <button
-          onClick={() => setFilter("rejected")}
-          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition ${
-            filter === "rejected" ? "bg-red-400 text-[#0A1C3A]" : "bg-slate-800 text-slate-300 hover:bg-slate-700"
-          }`}
-        >
-          Abgelehnt ({reviews.filter((r) => r.status === "rejected").length})
-        </button>
-      </div>
-
-      {/* Reviews List */}
-      <div className="space-y-4">
-        {filteredReviews.length === 0 ? (
-          <p className="text-xs text-slate-400 italic py-6 text-center">Keine Einträge in dieser Kategorie.</p>
-        ) : (
-          filteredReviews.map((rev) => (
+      {/* Review List */}
+      {filteredReviews.length === 0 ? (
+        <div className="text-center py-8 text-slate-400 text-xs font-mono">
+          Keine Bewertungen für den gewählten Filter gefunden.
+        </div>
+      ) : (
+        <div className="space-y-4">
+          {filteredReviews.map((rev) => (
             <div
               key={rev.id}
-              className="bg-slate-900/90 rounded-2xl p-4 sm:p-5 border border-slate-700 space-y-4 text-xs"
+              className="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 space-y-3 text-xs"
             >
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-slate-800 pb-3">
+              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl overflow-hidden bg-slate-800 shrink-0 border border-slate-700">
-                    <img src={rev.photoUrl} alt="Kundenfoto" className="w-full h-full object-cover" />
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <span className="font-extrabold text-sm text-white">{rev.firstName}</span>
-                    </div>
-                    <span className="text-[11px] text-sky-400 font-semibold">{rev.product}</span>
-                  </div>
+                  <span className="font-extrabold text-white text-sm">{rev.firstName}</span>
+                  {rev.email && <span className="text-slate-400 font-mono">({rev.email})</span>}
+                  <span className="bg-sky-950 text-sky-300 border border-sky-800 px-2 py-0.5 rounded text-[10px] font-bold">
+                    {rev.product}
+                  </span>
                 </div>
-
-                {/* Status Badge */}
                 <div className="flex items-center gap-2">
                   <span
-                    className={`px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider ${
+                    className={`px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase ${
                       rev.status === "approved"
-                        ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40"
-                        : rev.status === "pending"
-                        ? "bg-amber-500/20 text-amber-300 border border-amber-500/40"
-                        : "bg-red-500/20 text-red-300 border border-red-500/40"
+                        ? "bg-emerald-950 text-emerald-400 border border-emerald-800"
+                        : rev.status === "rejected"
+                        ? "bg-red-950 text-red-400 border border-red-800"
+                        : "bg-amber-950 text-amber-400 border border-amber-800"
                     }`}
                   >
-                    {rev.status === "approved"
-                      ? "Freigegeben"
-                      : rev.status === "pending"
-                      ? "Ausstehend"
-                      : "Abgelehnt"}
+                    {rev.status}
+                  </span>
+                  <span className="text-[10px] text-slate-500 font-mono">
+                    {new Date(rev.submittedAt).toLocaleString("de-DE")}
                   </span>
                 </div>
               </div>
@@ -213,7 +171,7 @@ export default function AdminModerationPanel() {
                 <div>
                   <span className="text-[10px] text-slate-400 uppercase font-bold block">Geschmacksprofil</span>
                   <span className="text-[11px] text-slate-200">
-                    Süße: {rev.tasteRatings.sweetness} | Säure: {rev.tasteRatings.acidity} | Herbheit: {rev.tasteRatings.tartness}
+                    Süße: {rev.tasteRatings.sweetness} | Säure: {rev.tasteRatings.acidity} | Herbheit: {rev.tasteRatings.tartness} | Intensität: {rev.tasteRatings.intensity || 3}
                   </span>
                 </div>
               </div>
@@ -221,13 +179,12 @@ export default function AdminModerationPanel() {
               <p className="text-slate-200 italic">"{rev.comment}"</p>
 
               {/* Moderation Action Buttons */}
-              <div className="pt-2 flex flex-wrap items-center justify-between gap-3 border-t border-slate-800">
-                {/* Status actions */}
+              <div className="pt-2 flex items-center justify-between gap-3 border-t border-slate-800">
                 <div className="flex items-center gap-2">
                   {rev.status !== "approved" && (
                     <button
                       onClick={() => updateReviewStatus(rev.id, "approved")}
-                      className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-bold flex items-center gap-1 transition"
+                      className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-bold flex items-center gap-1 transition cursor-pointer"
                     >
                       <Check className="w-3.5 h-3.5" /> Freigeben
                     </button>
@@ -235,61 +192,25 @@ export default function AdminModerationPanel() {
                   {rev.status !== "rejected" && (
                     <button
                       onClick={() => updateReviewStatus(rev.id, "rejected")}
-                      className="px-3 py-1.5 bg-red-800 hover:bg-red-700 text-white rounded-lg font-bold flex items-center gap-1 transition"
+                      className="px-3 py-1.5 bg-red-800 hover:bg-red-700 text-white rounded-lg font-bold flex items-center gap-1 transition cursor-pointer"
                     >
                       <X className="w-3.5 h-3.5" /> Ablehnen
                     </button>
                   )}
                 </div>
 
-                {/* Photo Contest Winner Allocation */}
-                <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-bold text-slate-400 uppercase flex items-center gap-1">
-                    <Trophy className="w-3 h-3 text-amber-400" /> Wettbewerb:
-                  </span>
-                  <button
-                    onClick={() => setContestWinner(rev.id, rev.contestWinnerRank === 1 ? undefined : 1)}
-                    className={`px-2 py-1 rounded text-[10px] font-bold transition ${
-                      rev.contestWinnerRank === 1
-                        ? "bg-amber-400 text-[#0A1C3A]"
-                        : "bg-slate-800 text-slate-300 hover:bg-slate-700"
-                    }`}
-                  >
-                    1. Platz
-                  </button>
-                  <button
-                    onClick={() => setContestWinner(rev.id, rev.contestWinnerRank === 2 ? undefined : 2)}
-                    className={`px-2 py-1 rounded text-[10px] font-bold transition ${
-                      rev.contestWinnerRank === 2
-                        ? "bg-amber-400 text-[#0A1C3A]"
-                        : "bg-slate-800 text-slate-300 hover:bg-slate-700"
-                    }`}
-                  >
-                    2. Platz
-                  </button>
-                  <button
-                    onClick={() => setContestWinner(rev.id, rev.contestWinnerRank === 3 ? undefined : 3)}
-                    className={`px-2 py-1 rounded text-[10px] font-bold transition ${
-                      rev.contestWinnerRank === 3
-                        ? "bg-amber-400 text-[#0A1C3A]"
-                        : "bg-slate-800 text-slate-300 hover:bg-slate-700"
-                    }`}
-                  >
-                    3. Platz
-                  </button>
-                  <button
-                    onClick={() => deleteReview(rev.id)}
-                    className="p-1.5 text-slate-500 hover:text-red-400 transition ml-2"
-                    title="Bewertung löschen"
-                  >
-                    <Trash2 className="w-4 h-4" />
-                  </button>
-                </div>
+                <button
+                  onClick={() => deleteReview(rev.id)}
+                  className="p-1.5 text-slate-500 hover:text-red-400 transition cursor-pointer flex items-center gap-1 font-bold text-xs"
+                  title="Bewertung löschen"
+                >
+                  <Trash2 className="w-4 h-4 text-red-400" /> Löschen
+                </button>
               </div>
             </div>
-          ))
-        )}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

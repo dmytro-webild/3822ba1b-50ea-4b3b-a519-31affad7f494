@@ -9,15 +9,15 @@ interface FaqItem {
 const FAQS: FaqItem[] = [
   {
     question: "Was unterscheidet FONTES VITEA Quellwasser von herkömmlichem Wasser?",
-    answer: "FONTES VITEA ist reinste artesische Quellwasser-Perfektion, angereichert mit mindestens 2.8 mg/L hochreinem molekularem Wasserstoff (H2). Im Gegensatz zu gewöhnlichem Mineralwasser wirkt H2 als gezieltes Antioxidans auf zellulärer Ebene und schützt den Körper vor oxidativem Stress.",
+    answer: "FONTES VITEA ist reinste artesische Quellwasser-Perfektion, angereichert mit mindestens 2,8 mg/L hochreinem molekularem Wasserstoff (H2). Im Gegensatz zu gewöhnlichem Mineralwasser wirkt H2 als gezieltes Antioxidans auf zellulärer Ebene und schützt den Körper vor oxidativem Stress.",
   },
   {
-    question: "Wie funktioniert der Fotowettbewerb „DEIN FONTES VITEA MOMENT“?",
-    answer: "Laden Sie bei Ihrer Produktbewertung einfach ein Foto Ihres FONTES VITEA Genussmoments hoch und aktivieren Sie das Häkchen für den Fotowettbewerb. Jeden Monat prämiert unser Moderations-Team die besten Kundenfotos und zeichnet die Plätze 1 bis 3 auf unserer Website aus!",
+    question: "Wie gebe ich meine Produktbewertung ab?",
+    answer: "Wählen Sie im Bewertungsformular einfach eines unserer 12 Produkte aus, geben Sie Ihren Vornamen und Ihre E-Mail-Adresse ein, bewerten Sie das Geschmacksprofil (Süße, Säure, Herbheit, Intensität) und verfassen Sie Ihren Erfahrungsbericht.",
   },
   {
     question: "Welche Daten werden bei der Abgabe einer Kundenbewertung veröffentlicht?",
-    answer: "Öffentlich angezeigt werden ausschließlich Ihr Vorname, das gewählte Produkt, Ihre Sternebewertung, das Geschmacksprofil, Ihr schriftlicher Bericht und Ihr hochgeladenes Foto. Alle eingereichten Beiträge werden vor der Veröffentlichung durch unser Moderations-Team geprüft.",
+    answer: "Öffentlich angezeigt werden Ihr Vorname, das gewählte Produkt, Ihre Sternebewertung, das Geschmacksprofil und Ihr schriftlicher Erfahrungsbericht. Ihre E-Mail-Adresse bleibt vertraulich.",
   },
   {
     question: "Warum werden Aluminiumdosen verwendet und sind sie BPA-frei?",
@@ -29,7 +29,7 @@ const FAQS: FaqItem[] = [
   },
   {
     question: "Wann sehe ich meine eingereichte Bewertung auf der Website?",
-    answer: "Um eine hohe Qualität und Einhaltung unserer Community-Richtlinien zu gewährleisten, werden alle eingereichten Bewertungen und Fotos von unserem Moderations-Team geprüft. Nach erfolgreicher Freigabe erscheint Ihre Bewertung umgehend im Kundenbewertungs-Karussell auf unserer Seite.",
+    answer: "Nach dem Absenden Ihrer Bewertung wird diese automatisch und sofort im Kundenbewertungs-Karussell auf unserer Website veröffentlicht.",
   },
 ];
 
@@ -51,7 +51,7 @@ export default function FaqSection() {
           Integrierte FAQ-Sektion
         </h2>
         <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
-          Alles, was Sie über FONTES VITEA, den Fotowettbewerb, Verpackungen und den Versand wissen müssen.
+          Alles, was Sie über FONTES VITEA®, Produktbewertungen, Verpackungen und den Versand wissen müssen.
         </p>
       </div>
 
@@ -65,7 +65,7 @@ export default function FaqSection() {
             >
               <button
                 onClick={() => toggle(idx)}
-                className="w-full text-left p-5 font-bold text-sm sm:text-base text-[#0A1C3A] flex items-center justify-between gap-4"
+                className="w-full text-left p-5 font-bold text-sm sm:text-base text-[#0A1C3A] flex items-center justify-between gap-4 cursor-pointer"
               >
                 <span>{faq.question}</span>
                 <div
