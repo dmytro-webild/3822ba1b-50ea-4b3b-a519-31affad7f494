@@ -1,5 +1,4 @@
 import { useState } from "react";
-import PhotoContestLoyaltyCard from "@/components/sections/feedback/PhotoContestLoyaltyCard";
 import FeedbackForm from "@/components/sections/feedback/FeedbackForm";
 import AdminModerationPanel from "@/components/sections/feedback/AdminModerationPanel";
 import CustomerReviewsSection from "@/components/sections/feedback/CustomerReviewsSection";
@@ -23,14 +22,14 @@ export default function FeedbackFaqPage() {
         </h1>
 
         <p className="text-slate-600 text-xs sm:text-sm sm:text-base leading-relaxed">
-          Erfahren Sie, was unsere Kunden über FONTES VITEA berichten, nehmen Sie am Fotowettbewerb „DEIN FONTES VITEA MOMENT“ teil oder finden Sie Antworten in unserer FAQ-Sektion.
+          Erfahren Sie, was unsere Kunden über FONTES VITEA® berichten, geben Sie Ihre eigene Produktbewertung mit Geschmacksprofil ab oder finden Sie Antworten in unserer FAQ-Sektion.
         </p>
 
         {/* Admin Moderation Panel Toggle Button */}
         <div className="pt-2">
           <button
             onClick={() => setShowAdmin(!showAdmin)}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-[#0A1C3A] text-xs font-bold rounded-xl border border-slate-300 transition shadow-xs"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-[#0A1C3A] text-xs font-bold rounded-xl border border-slate-300 transition shadow-xs cursor-pointer"
           >
             <Shield className="w-4 h-4 text-[#0A1C3A]" />
             <span>{showAdmin ? "Admin-Moderationsbereich ausblenden" : "Admin-Moderationsbereich öffnen"}</span>
@@ -41,27 +40,22 @@ export default function FeedbackFaqPage() {
       {/* Admin Panel (If open) */}
       {showAdmin && <AdminModerationPanel />}
 
-      {/* 1. Photo Contest Section */}
-      <section id="fotowettbewerb">
-        <PhotoContestLoyaltyCard />
-      </section>
-
-      {/* 2. Customer Feedback Submission Form */}
+      {/* 1. Customer Feedback Submission Form */}
       <section id="bewertung-einreichen">
         <FeedbackForm />
       </section>
 
-      {/* 3. Approved Public Customer Reviews Carousel */}
+      {/* 2. Approved Public Customer Reviews Carousel */}
       <section id="bewertungen">
         <CustomerReviewsSection
-          title="Echte Kundenbewertungen &amp; Fotos"
-          subtitle="Synchronisierte Erfahrungen und Bildnachweise aller freigegebenen Bewertungen unserer Kundinnen und Kunden."
+          title="Freigegebene Kundenbewertungen"
+          subtitle="Erfahrungen und Geschmacksprofile aller Kundinnen und Kunden auf einen Blick."
           showOrderButton={true}
           showGoogleReviews={true}
         />
       </section>
 
-      {/* 4. Integrated FAQ Section */}
+      {/* 3. Integrated FAQ Section */}
       <section id="faq">
         <FaqSection />
       </section>

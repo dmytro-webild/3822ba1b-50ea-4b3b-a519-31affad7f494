@@ -269,10 +269,10 @@ const SEARCH_DATABASE: SearchItem[] = [
     id: "sec-faq",
     title: "Häufig gestellte Fragen (FAQ)",
     category: "Über uns",
-    description: "Antworten zu H₂-Wasserstoff, Aluminiumdosen, BPA-Freiheit, Tierversuchsfreiheit, Dosenpfand und Fotowettbewerb.",
+    description: "Antworten zu H₂-Wasserstoff, Aluminiumdosen, BPA-Freiheit, Tierversuchsfreiheit, Dosenpfand und Produktbewertungen.",
     keywords: [
       "faq", "häufige fragen", "fragen", "antworten", "dosenpfand", "pfand", "versand",
-      "lieferung", "tierversuchsfrei", "vegan", "verzehrempfehlung", "bewertung", "fotowettbewerb"
+      "lieferung", "tierversuchsfrei", "vegan", "verzehrempfehlung", "bewertung", "kundenbewertung"
     ],
     href: "/feedback-faq",
     icon: Info,
