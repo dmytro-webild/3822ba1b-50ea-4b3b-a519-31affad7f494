@@ -49,7 +49,7 @@ export interface ShopProduct {
 
 const H2_PRODUCT: ShopProduct = {
   id: "h2-water",
-  name: "FONTES VITEA H2 Wasserstoff-Wasser",
+  name: "H2 Wasserstoff-Wasser",
   badge: "Original H2",
   category: "h2",
   categoryLabel: "Wasserstoff-Wasser",
@@ -61,7 +61,7 @@ const H2_PRODUCT: ShopProduct = {
     "24": { price: 79.28, deposit: 6.00, count: 24 },
   },
   detail: {
-    title: "FONTES VITEA H2 Wasserstoff-Wasser",
+    title: "H2 Wasserstoff-Wasser",
     subtitle: "250 ml Aluminiumdosen (100 % BPA-Frei)",
     price: "39,64 € (12er-Pack)",
     depositInfo: "Inklusive 19 % MwSt. & 3,00 € Dosenpfand (0,25 € pro Dose)",
