@@ -580,7 +580,7 @@ export default function SaeftePage() {
             className="mt-6 sm:mt-8 relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-amber-200/40 bg-slate-900/40 backdrop-blur-md group"
           >
             <Media
-              src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795660656824-z8f97335.png"
+              src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795654905969-uzt13zda.png"
               alt="FONTES VITAE Premium Fruchtsäfte Banner"
               className="w-full h-auto object-cover max-h-[520px] transition-transform duration-700 group-hover:scale-[1.01]"
             />
