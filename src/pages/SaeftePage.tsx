@@ -444,6 +444,7 @@ interface CharacterProfile {
   favoriteFruit: string;
   image: string;
   colorTheme: string;
+  bgGradient: string;
   btnBg: string;
 }
 
@@ -458,7 +459,8 @@ const CHARACTERS: CharacterProfile[] = [
       "Himbeerixxa ist die schlaueste Forscherin im Fruchtwald. Wo immer seltene Beeren wachsen, findet sie den Weg! Mit ihrer magischen Lupe prüft sie die Sonne auf den Früchten und sorgt dafür, dass nur die frischesten Himbeeren geerntet werden. Ihr Motto: Natur pur ist das größte Abenteuer!",
     favoriteFruit: "Sonnengereifte Himbeeren",
     image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795663391849-mpo0cl21.png",
-    colorTheme: "border-rose-300 text-rose-950",
+    colorTheme: "border-rose-300/80 bg-rose-50/70 text-rose-950",
+    bgGradient: "bg-gradient-to-b from-rose-100/90 via-rose-200/50 to-rose-300/40 border border-rose-300/60 shadow-inner",
     btnBg: "bg-[#D81B60] hover:bg-[#C2185B]"
   },
   {
@@ -471,7 +473,8 @@ const CHARACTERS: CharacterProfile[] = [
       "Heidelberix liebt den Sport und die freie Natur. Als Anführer der Frucht-Entdecker hat er stets einen klaren Kopf und motiviert das ganze Team. Seine Lieblingsbeere, die blaue Heidelbeere, spendet ihm die nötige Energie für rasante Abenteuer in den Bergen.",
     favoriteFruit: "Wilde Wald-Heidelbeeren",
     image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795663404364-of9lczer.png",
-    colorTheme: "border-purple-300 text-purple-950",
+    colorTheme: "border-purple-300/80 bg-purple-50/70 text-purple-950",
+    bgGradient: "bg-gradient-to-b from-purple-100/90 via-purple-200/50 to-purple-300/40 border border-purple-300/60 shadow-inner",
     btnBg: "bg-purple-700 hover:bg-purple-800"
   },
   {
@@ -484,7 +487,8 @@ const CHARACTERS: CharacterProfile[] = [
       "Kein Weg ist Apfelrix zu weit. Als meisterhafter Kartograf zeichnet er genaue Landkarten für die Truppe. Ein knackiger roter Apfel ist seine liebste Stärkung auf langen Wanderungen über wogende Wiesen und Hügel.",
     favoriteFruit: "Knackige rote Äpfel",
     image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795663417028-s38bgour.png",
-    colorTheme: "border-orange-300 text-orange-950",
+    colorTheme: "border-orange-300/80 bg-orange-50/70 text-orange-950",
+    bgGradient: "bg-gradient-to-b from-orange-100/90 via-orange-200/50 to-orange-300/40 border border-orange-300/60 shadow-inner",
     btnBg: "bg-[#EA580C] hover:bg-[#C2410C]"
   },
   {
@@ -497,7 +501,8 @@ const CHARACTERS: CharacterProfile[] = [
       "Ingwerix trägt ein altes Buch voller Geschichten mit sich. Er weiß exakt, wie wertvoll die Ingwerwurzel seit Jahrtausenden für Wohlbefinden und Vitalität ist. Seine spannenden Erzählungen am Lagerfeuer begeistern alle Entdecker.",
     favoriteFruit: "Frische Ingwerwurzel & Apfel",
     image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795663425234-f2vccuhc.png",
-    colorTheme: "border-amber-300 text-amber-950",
+    colorTheme: "border-amber-300/80 bg-amber-50/70 text-amber-950",
+    bgGradient: "bg-gradient-to-b from-amber-100/90 via-amber-200/50 to-amber-300/40 border border-amber-300/60 shadow-inner",
     btnBg: "bg-[#D97706] hover:bg-[#B45309]"
   },
   {
@@ -510,7 +515,8 @@ const CHARACTERS: CharacterProfile[] = [
       "Limetix ist der Gourmet unter den Entdeckern. Mit geschultem Geschmackssinn findet er die saftigsten grünen Limetten und kombiniert sie mit mildem Apfelsaft. Sein Ergebnis ist eine natürliche Erfrischung, die alle strahlen lässt!",
     favoriteFruit: "Sonnige grüne Limetten",
     image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795663433690-yjxrccds.png",
-    colorTheme: "border-lime-300 text-lime-950",
+    colorTheme: "border-lime-300/80 bg-lime-50/70 text-lime-950",
+    bgGradient: "bg-gradient-to-b from-lime-100/90 via-lime-200/50 to-lime-300/40 border border-lime-300/60 shadow-inner",
     btnBg: "bg-[#15803D] hover:bg-[#166534]"
   }
 ];
@@ -1058,7 +1064,7 @@ export default function SaeftePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
             {KIDS_CANS.map((can, idx) => (
               <motion.div
                 key={can.id}
@@ -1066,25 +1072,25 @@ export default function SaeftePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.06 }}
-                className={`rounded-2xl border ${can.color} bg-white/80 backdrop-blur-md p-5 flex flex-col items-center text-center justify-between shadow-sm hover:shadow-md transition`}
+                className={`rounded-2xl border ${can.color} bg-white/90 backdrop-blur-md p-4 flex flex-col items-center text-center justify-between shadow-md hover:shadow-xl transition group overflow-hidden`}
               >
                 <div className="w-full flex flex-col items-center">
                   
                   {/* Status Badge */}
-                  <span className={`px-2.5 py-0.5 rounded-full text-[11px] font-extrabold uppercase tracking-wider mb-3 ${can.badgeBg}`}>
+                  <span className={`px-3 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider mb-2 shadow-xs ${can.badgeBg}`}>
                     Demnächst
                   </span>
 
-                  {/* Can image */}
-                  <div className="relative my-2 py-2 group">
+                  {/* Significantly enlarged Can & Figure Presentation without unnecessary white space */}
+                  <div className="w-full h-64 sm:h-72 lg:h-80 flex items-center justify-center p-1 my-1 relative overflow-hidden">
                     <Media
                       src={can.image}
-                      alt={`Kinderserie ${can.name} Dose`}
-                      className="h-48 w-auto object-contain filter drop-shadow-md group-hover:scale-105 transition duration-300"
+                      alt={`Kinderserie ${can.name} Dose und Figur`}
+                      className="h-full w-auto max-w-full object-contain filter drop-shadow-xl group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
 
-                  <h3 className="text-lg font-black text-[#0A1C3A] mt-2">
+                  <h3 className="text-lg sm:text-xl font-black text-[#0A1C3A] mt-1">
                     {can.name}
                   </h3>
                   <p className="text-xs font-extrabold text-amber-900 mt-0.5">
@@ -1094,18 +1100,18 @@ export default function SaeftePage() {
                     {can.role}
                   </p>
 
-                  <p className="text-xs text-slate-800 font-medium mt-3 leading-relaxed">
+                  <p className="text-xs text-slate-800 font-medium mt-2 leading-relaxed">
                     {can.desc}
                   </p>
                 </div>
 
-                <div className="w-full mt-4 pt-3 border-t border-slate-300/70 flex flex-col gap-1.5 text-[11px]">
+                <div className="w-full mt-3 pt-2.5 border-t border-slate-300/70 flex flex-col gap-1 text-[11px]">
                   <div className="flex items-center justify-center gap-1 font-bold text-slate-800">
-                    <Sparkles className="w-3 h-3 text-amber-600" />
+                    <Sparkles className="w-3.5 h-3.5 text-amber-600" />
                     <span>Füllmenge: 250 ml</span>
                   </div>
-                  <div className="flex items-center justify-center gap-1 text-slate-800 font-medium">
-                    <CheckCircle2 className="w-3 h-3 text-emerald-600" />
+                  <div className="flex items-center justify-center gap-1 text-slate-800 font-semibold">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
                     <span>Ohne Zuckerzusatz</span>
                   </div>
                 </div>
@@ -1132,7 +1138,7 @@ export default function SaeftePage() {
           </p>
         </div>
 
-        {/* 5 Character Cards */}
+        {/* 5 Character Cards with Large Full-Figure Display & Color-Coordinated Background */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {CHARACTERS.map((char, idx) => (
             <motion.div
@@ -1141,27 +1147,27 @@ export default function SaeftePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.06 }}
-              className={`rounded-2xl border ${char.colorTheme} bg-white/80 backdrop-blur-md p-5 flex flex-col items-center text-center justify-between shadow-sm hover:shadow-lg transition group`}
+              className={`rounded-2xl border ${char.colorTheme} backdrop-blur-md p-4 flex flex-col items-center text-center justify-between shadow-md hover:shadow-xl transition group overflow-hidden`}
             >
               <div className="w-full flex flex-col items-center">
                 
-                {/* Character Circular Avatar / Image */}
-                <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-white shadow-md mb-3 bg-white flex items-center justify-center p-1 group-hover:scale-105 transition duration-300">
+                {/* Full-Figure Character Motif with Color-Coordinated Background Frame */}
+                <div className={`w-full h-64 sm:h-72 rounded-xl overflow-hidden flex items-center justify-center p-3 mb-3 relative group-hover:scale-[1.02] transition duration-300 ${char.bgGradient}`}>
                   <Media
                     src={char.image}
                     alt={char.name}
-                    className="w-full h-full object-contain"
+                    className="h-full w-auto max-w-full object-contain filter drop-shadow-xl"
                   />
                 </div>
 
-                <h3 className="text-lg font-black text-[#0A1C3A]">
+                <h3 className="text-xl font-black text-[#0A1C3A]">
                   {char.name}
                 </h3>
                 <p className="text-xs font-extrabold text-amber-800 mt-0.5">
                   {char.role}
                 </p>
 
-                <p className="text-xs text-slate-800 font-medium mt-3 leading-relaxed">
+                <p className="text-xs text-slate-800 font-medium mt-2 leading-relaxed">
                   {char.summary}
                 </p>
               </div>
@@ -1169,7 +1175,7 @@ export default function SaeftePage() {
               <button
                 type="button"
                 onClick={() => setActiveCharacter(char)}
-                className={`mt-5 w-full py-2.5 px-3 rounded-xl text-white font-extrabold text-xs uppercase tracking-wider shadow-md transition transform active:scale-95 flex items-center justify-center gap-1.5 ${char.btnBg}`}
+                className={`mt-4 w-full py-2.5 px-3 rounded-xl text-white font-extrabold text-xs uppercase tracking-wider shadow-md transition transform active:scale-95 flex items-center justify-center gap-1.5 ${char.btnBg}`}
               >
                 <span>Zum Profil</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -1196,18 +1202,19 @@ export default function SaeftePage() {
               <button
                 type="button"
                 onClick={() => setActiveCharacter(null)}
-                className="absolute top-4 right-4 p-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 transition"
+                className="absolute top-4 right-4 p-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 transition z-10"
                 aria-label="Schließen"
               >
                 <X className="w-5 h-5" />
               </button>
 
               <div className="flex flex-col items-center text-center">
-                <div className="w-28 h-28 rounded-full border-4 border-amber-300 shadow-lg p-2 bg-gradient-to-b from-amber-50 to-amber-100 mb-4">
+                {/* Large Full-Figure Display with Color-Coordinated Background in Modal */}
+                <div className={`w-full h-64 sm:h-72 rounded-2xl p-4 flex items-center justify-center overflow-hidden mb-4 ${activeCharacter.bgGradient}`}>
                   <Media
                     src={activeCharacter.image}
                     alt={activeCharacter.name}
-                    className="w-full h-full object-contain"
+                    className="h-full w-auto max-w-full object-contain filter drop-shadow-2xl"
                   />
                 </div>
 
