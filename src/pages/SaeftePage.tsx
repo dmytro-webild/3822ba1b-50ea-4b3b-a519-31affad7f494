@@ -434,7 +434,7 @@ const KIDS_CANS: KidCan[] = [
   {
     id: "ingwerix",
     name: "Ingwerix",
-    flavor: "Ingwer Tonic",
+    flavor: "Apfel mit Ingwer",
     role: "Der Historiker",
     desc: "Milder Apfel mit mohniger Ingwernote – kinderfreundlich ausbalanciert.",
     productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684315-h4ectgrf.png",
@@ -446,7 +446,7 @@ const KIDS_CANS: KidCan[] = [
   {
     id: "limetix",
     name: "Limetix",
-    flavor: "Limette mit Apfel",
+    flavor: "Apfel mit Limette",
     role: "Der Fruchtexperte",
     desc: "Spritzig-frischer Apfel-Limette-Mix für den ultimativen Erfrischungskick.",
     productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664602289-qq16ntrk.png",
