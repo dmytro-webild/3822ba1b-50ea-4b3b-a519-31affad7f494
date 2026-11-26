@@ -1,5 +1,4 @@
 {
-  "buildCommand": "vite build",
   "outputDirectory": "dist",
   "rewrites": [
     {
@@ -7,5 +6,6 @@
       "destination": "/index.html"
     }
   ],
-  "installCommand": "pnpm install"
+  "buildCommand": "vite build",
+  "installCommand": "pnpm install --no-frozen-lockfile"
 }
