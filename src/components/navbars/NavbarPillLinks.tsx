@@ -30,7 +30,11 @@ const NavbarPillLinks = ({
   navItems = [
     { name: "H2 Wasser", href: "/#top" },
     { name: "Vorteile", href: "/#vergleich" },
-    { name: "Shop", href: "https://shop.fontes-vitae.com" },
+    { name: "News & Studien", href: "/wissenschaft" },
+    { name: "Über uns", href: "/ueber-uns" },
+    { name: "Feedback & FAQ", href: "/feedback-faq" },
+    { name: "SHOP", href: "https://shop.fontes-vitae.com" },
+    { name: "Kontakt", href: "/kontakt" },
   ],
   primaryButton = { text: "Zum Shop", href: "https://shop.fontes-vitae.com" },
   socials = [],
@@ -102,10 +106,18 @@ const NavbarPillLinks = ({
                   <a
                     href={item.href}
                     onClick={(e) => {
-                      if (item.href === "/#top" || item.href === "/") {
+                      if (item.href.startsWith("/#")) {
+                        const targetId = item.href.replace("/#", "");
                         if (window.location.pathname === "/") {
                           e.preventDefault();
-                          window.scrollTo({ top: 0, behavior: "smooth" });
+                          if (targetId === "top" || !targetId) {
+                            window.scrollTo({ top: 0, behavior: "smooth" });
+                          } else {
+                            const elem = document.getElementById(targetId);
+                            if (elem) {
+                              elem.scrollIntoView({ behavior: "smooth" });
+                            }
+                          }
                         }
                       }
                     }}
@@ -176,10 +188,18 @@ const NavbarPillLinks = ({
                     href={item.href}
                     onClick={(e) => {
                       setOpen(false);
-                      if (item.href === "/#top" || item.href === "/") {
+                      if (item.href.startsWith("/#")) {
+                        const targetId = item.href.replace("/#", "");
                         if (window.location.pathname === "/") {
                           e.preventDefault();
-                          window.scrollTo({ top: 0, behavior: "smooth" });
+                          if (targetId === "top" || !targetId) {
+                            window.scrollTo({ top: 0, behavior: "smooth" });
+                          } else {
+                            const elem = document.getElementById(targetId);
+                            if (elem) {
+                              elem.scrollIntoView({ behavior: "smooth" });
+                            }
+                          }
                         }
                       }
                     }}

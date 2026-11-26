@@ -173,23 +173,13 @@ const ProductCompareTable = ({
                 {showShopButtons && (
                   <tfoot>
                     <tr className="border-t border-secondary-foreground/20">
-                      <td className="pt-4 pr-2"></td>
-                      <td className="px-1 pt-4 text-center align-middle">
+                      <td colSpan={3} className="pt-6 text-center align-middle">
                         <a
                           href={shopUrl}
-                          className="inline-flex items-center justify-center gap-1.5 w-full max-w-[130px] px-2.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-[#0A1C3A] hover:bg-[#0A1C3A]/90 text-white text-[11px] sm:text-xs font-bold transition-all shadow-md hover:shadow-lg active:scale-95 text-center"
+                          className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#0A1C3A] hover:bg-[#0A1C3A]/90 text-white text-xs sm:text-sm font-bold transition-all shadow-md hover:shadow-lg active:scale-95 text-center"
                         >
-                          <ShoppingBag className="w-3.5 h-3.5 shrink-0" />
-                          <span className="truncate">{shopButtonText}</span>
-                        </a>
-                      </td>
-                      <td className="px-1 pt-4 text-center align-middle">
-                        <a
-                          href={shopUrl}
-                          className="inline-flex items-center justify-center gap-1.5 w-full max-w-[130px] px-2.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-slate-200/90 hover:bg-slate-300 text-[#0A1C3A] text-[11px] sm:text-xs font-bold transition-all shadow-sm active:scale-95 text-center"
-                        >
-                          <ShoppingBag className="w-3.5 h-3.5 shrink-0" />
-                          <span className="truncate">{shopButtonText}</span>
+                          <ShoppingBag className="w-4 h-4 shrink-0" />
+                          <span>{shopButtonText}</span>
                         </a>
                       </td>
                     </tr>
