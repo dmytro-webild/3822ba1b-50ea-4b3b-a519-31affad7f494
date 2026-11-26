@@ -647,24 +647,18 @@ export default function SaeftePage() {
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                   
-                  {/* Left Column: Can Presentation (Double View) */}
+                  {/* Left Column: Can Presentation (Single View) */}
                   <div className="lg:col-span-4 flex flex-col items-center justify-center relative">
                     <div className="relative group">
                       {/* Glow backdrop */}
                       <div className="absolute inset-0 bg-white/60 blur-2xl rounded-full scale-110 pointer-events-none" />
                       
-                      {/* Can Image (Front & Back stacked representation) */}
+                      {/* Can Image (Single View) */}
                       <div className="relative flex items-center justify-center py-2">
                         <Media
                           src={juice.image}
                           alt={`FONTES VITAE ${juice.name} ${juice.flavor} Dose`}
                           className="h-64 sm:h-72 w-auto object-contain filter drop-shadow-xl transition-transform duration-500 group-hover:scale-105"
-                        />
-                        {/* Slight offset second can for double view feel */}
-                        <Media
-                          src={juice.image}
-                          alt={`FONTES VITAE ${juice.name} Rückseite`}
-                          className="h-56 sm:h-64 w-auto object-contain filter drop-shadow-lg -ml-12 opacity-85 hover:opacity-100 transition-opacity hidden sm:block"
                         />
                       </div>
                     </div>
