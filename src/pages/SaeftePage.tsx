@@ -22,6 +22,12 @@ import {
   Zap,
   Flame,
   Heart,
+  Mountain,
+  Droplets,
+  Trees,
+  Citrus,
+  Timer,
+  Thermometer,
   type LucideIcon,
   type LucideProps
 } from "lucide-react";
@@ -336,6 +342,39 @@ const FEATURES_10 = [
   { label: "Ohne Emulgatoren", sub: "Keine Chemie", icon: Info },
   { label: "BPANI-Schutzbeschichtung", sub: "100% BPA-Frei", icon: LockIcon },
   { label: "Recycelbare Dose", sub: "Nachhaltiges Aluminium", icon: Recycle }
+];
+
+const PREMIUM_FEATURES_6 = [
+  {
+    title: "Isländisches Gletscherwasser",
+    desc: "zur Mazeration der Kräuter beim Botanical Tonic.",
+    icon: Mountain
+  },
+  {
+    title: "Natürliches Quellwasser",
+    desc: "70 % Quellwasser im Himbeergetränk.",
+    icon: Droplets
+  },
+  {
+    title: "Eigene Obstgärten",
+    desc: "ausgewählte Äpfel aus dem Anbau des Herstellers.",
+    icon: Trees
+  },
+  {
+    title: "Schonende Kaltpressung",
+    desc: "direkte Verarbeitung ausgewählter Früchte.",
+    icon: Citrus
+  },
+  {
+    title: "Maximal 60 Minuten",
+    desc: "zwischen Pressung und Abfüllung.",
+    icon: Timer
+  },
+  {
+    title: "Modernes Abfüllverfahren",
+    desc: "Kaltabfüllung und Tunnelpasteurisierung.",
+    icon: Thermometer
+  }
 ];
 
 function LockIcon(props: LucideProps) {
@@ -972,7 +1011,7 @@ export default function SaeftePage() {
 
       </section>
 
-      {/* ─── 3. BESONDERHEITEN UNSERER SÄFTE (10 ICON-GRID) ───────────────────── */}
+      {/* ─── 3. BESONDERHEITEN UNSERER SÄFTE (PREMIUM KACHELN + 10 ICON-GRID) ─── */}
       <section className="py-12 sm:py-16 bg-white/60 backdrop-blur-md border-y border-amber-300/40 my-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           
@@ -986,6 +1025,40 @@ export default function SaeftePage() {
             <p className="text-slate-800 font-medium text-sm sm:text-base mt-2">
               Unverfälschter Fruchtgenuss in einer nachhaltigen Premium-Verpackung.
             </p>
+          </div>
+
+          {/* 6 Premium-Kacheln: Premium beginnt beim Ursprung */}
+          <div className="mb-10">
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0A1C3A] text-center mb-6 tracking-tight">
+              Premium beginnt beim Ursprung
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+              {PREMIUM_FEATURES_6.map((feat, idx) => {
+                const Icon = feat.icon;
+                return (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.05 }}
+                    className="bg-amber-50/70 hover:bg-amber-50 backdrop-blur-sm rounded-2xl p-5 border border-amber-300/80 shadow-sm hover:shadow-md transition text-left flex items-start space-x-4 group"
+                  >
+                    <div className="w-12 h-12 rounded-2xl bg-amber-400/20 text-[#0A1C3A] flex items-center justify-center shrink-0 group-hover:bg-[#0A1C3A] group-hover:text-amber-300 transition duration-300">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h4 className="text-base font-extrabold text-[#0A1C3A] leading-tight">
+                        {feat.title}
+                      </h4>
+                      <p className="text-xs sm:text-sm text-[#0A1C3A]/85 font-medium mt-1 leading-snug">
+                        {feat.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
