@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AnimatePresence, animate, motion, useMotionValue, useMotionValueEvent, useReducedMotion, useScroll } from "motion/react";
 import { Dribbble, Facebook, Github, Globe, Instagram, Linkedin, Mail, Twitter, Youtube, Menu, X, type LucideIcon } from "lucide-react";
 import { socialName, type SocialPlatform } from "@/components/shared/socialPlatforms";
@@ -47,6 +47,8 @@ const NavbarPillLinks = ({
   const hidden = useRef(false);
   const shift = useMotionValue(0);
   const { scrollY } = useScroll();
+  const navigate = useNavigate();
+  const location = useLocation();
   useMenuDialog(open, panelRef, () => setOpen(false));
 
   useMotionValueEvent(scrollY, "change", (value) => {
@@ -56,6 +58,38 @@ const NavbarPillLinks = ({
     hidden.current = hide;
     animate(shift, hide ? -160 : 0, { duration: reduce ? 0 : 0.6, ease: EASE });
   });
+
+  const handleNavClick = (href: string, e: React.MouseEvent) => {
+    if (href.startsWith("/#")) {
+      const targetId = href.replace("/#", "");
+      if (location.pathname === "/") {
+        e.preventDefault();
+        if (targetId === "top" || !targetId) {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          const elem = document.getElementById(targetId);
+          if (elem) {
+            elem.scrollIntoView({ behavior: "smooth" });
+          }
+        }
+      } else {
+        e.preventDefault();
+        navigate("/");
+        setTimeout(() => {
+          if (targetId === "top" || !targetId) {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          } else {
+            const elem = document.getElementById(targetId);
+            if (elem) elem.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
+      }
+    } else if (!href.startsWith("http")) {
+      e.preventDefault();
+      navigate(href);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   return (
     <>
@@ -106,22 +140,7 @@ const NavbarPillLinks = ({
                 >
                   <a
                     href={item.href}
-                    onClick={(e) => {
-                      if (item.href.startsWith("/#")) {
-                        const targetId = item.href.replace("/#", "");
-                        if (window.location.pathname === "/") {
-                          e.preventDefault();
-                          if (targetId === "top" || !targetId) {
-                            window.scrollTo({ top: 0, behavior: "smooth" });
-                          } else {
-                            const elem = document.getElementById(targetId);
-                            if (elem) {
-                              elem.scrollIntoView({ behavior: "smooth" });
-                            }
-                          }
-                        }
-                      }
-                    }}
+                    onClick={(e) => handleNavClick(item.href, e)}
                     className="flex h-[2.35rem] items-center rounded-xl bg-white/80 backdrop-blur-md px-3.5 sm:px-4 font-[family-name:var(--font-label)] text-xs sm:text-sm font-extrabold leading-none tracking-tight text-[#0A1C3A] border border-amber-900/10 shadow-xs hover:bg-white hover:shadow-sm transition-all"
                   >
                     <p className="whitespace-nowrap">{item.name}</p>
@@ -189,20 +208,7 @@ const NavbarPillLinks = ({
                     href={item.href}
                     onClick={(e) => {
                       setOpen(false);
-                      if (item.href.startsWith("/#")) {
-                        const targetId = item.href.replace("/#", "");
-                        if (window.location.pathname === "/") {
-                          e.preventDefault();
-                          if (targetId === "top" || !targetId) {
-                            window.scrollTo({ top: 0, behavior: "smooth" });
-                          } else {
-                            const elem = document.getElementById(targetId);
-                            if (elem) {
-                              elem.scrollIntoView({ behavior: "smooth" });
-                            }
-                          }
-                        }
-                      }
+                      handleNavClick(item.href, e);
                     }}
                     initial={reduce ? false : { y: "110%" }}
                     animate={{ y: "0%" }}
