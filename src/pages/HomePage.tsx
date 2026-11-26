@@ -11,10 +11,8 @@ import {
   Dumbbell,
   Droplets,
   ShieldCheck,
-  Cpu,
   BookOpen,
   ArrowRight,
-  Sparkles,
   Trophy,
   Activity,
   Target,
@@ -30,7 +28,10 @@ import {
   Wine,
   GraduationCap,
   Shield,
-  Siren
+  Siren,
+  Layers,
+  FlaskConical,
+  ChevronsDown
 } from "lucide-react";
 
 const CAN_IMAGE_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795132125149-eraq7h8f.png";
@@ -249,7 +250,348 @@ export default function HomePage() {
         />
       </div>
 
-      {/* 2. DAS QUELLWASSER (inkl. Mineralstoff- & Trinkwasseranalyse) */}
+      {/* 2. TECHNOLOGIE & INNOVATION */}
+      <div id="technologie" data-webild-section="TechnologyInnovation" data-webild-section-id="TechnologyInnovation-1" data-section="tech">
+        <section className="py-20 px-6 bg-transparent text-[#0A1C3A] font-sans">
+          <div className="max-w-6xl mx-auto space-y-14">
+            {/* Header */}
+            <div className="text-center space-y-3">
+              <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-[#f4f6f8] px-4 py-1.5 rounded-full inline-block border border-slate-300">
+                FORTSCHRITTLICHE VERPACKUNGSTECHNOLOGIE
+              </span>
+              <h2 className="text-4xl lg:text-5xl font-black text-[#0A1C3A] uppercase tracking-tight">
+                TECHNOLOGIE &amp; INNOVATION
+              </h2>
+              <p className="text-slate-600 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed font-medium">
+                Moderne Wasserstoff-Technologie und innovative Dosenbeschichtung für höchste Qualität.
+              </p>
+            </div>
+
+            {/* 1) Oberes Raster - 3 Bildkarten */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Card 1 */}
+              <div className="bg-[#f8fafc] rounded-2xl overflow-hidden border border-slate-300 shadow-md hover:border-[#0A1C3A] hover:shadow-xl transition flex flex-col justify-between group">
+                <div>
+                  <div className="relative h-44 overflow-hidden bg-slate-200">
+                    <img
+                      src="https://images.unsplash.com/photo-1548839140-29a749e1bc4e?auto=compress&w=800&q=80"
+                      alt="H2-Konzentration"
+                      className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A1C3A]/70 via-transparent to-transparent" />
+                    <div className="absolute bottom-3 left-4 w-10 h-10 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center shadow-lg border border-slate-700">
+                      <Droplets className="w-5 h-5 text-sky-400" />
+                    </div>
+                  </div>
+                  <div className="p-6 space-y-2">
+                    <h3 className="text-lg font-black uppercase text-[#0A1C3A]">H₂-KONZENTRATION</h3>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                      2,8 mg/L gelöster molekularer Wasserstoff laut Herstellerangabe. Eine spezielle Anreicherungstechnologie ermöglicht diese hohe Konzentration.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 2 */}
+              <div className="bg-[#f8fafc] rounded-2xl overflow-hidden border border-slate-300 shadow-md hover:border-[#0A1C3A] hover:shadow-xl transition flex flex-col justify-between group">
+                <div>
+                  <div className="relative h-44 overflow-hidden bg-slate-200">
+                    <img
+                      src="https://images.unsplash.com/photo-1527960471264-932f39eb5846?auto=compress&w=800&q=80"
+                      alt="Aluminiumdosen-Technologie"
+                      className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A1C3A]/70 via-transparent to-transparent" />
+                    <div className="absolute bottom-3 left-4 w-10 h-10 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center shadow-lg border border-slate-700">
+                      <Layers className="w-5 h-5 text-sky-400" />
+                    </div>
+                  </div>
+                  <div className="p-6 space-y-2">
+                    <h3 className="text-lg font-black uppercase text-[#0A1C3A]">ALUMINIUMDOSEN-TECHNOLOGIE</h3>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                      Eine hochfeste Aluminiumlegierung sorgt für Stabilität und Lichtschutz. Die Verpackung schützt das Getränk vor äußeren Einflüssen.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 3 */}
+              <div className="bg-[#f8fafc] rounded-2xl overflow-hidden border border-slate-300 shadow-md hover:border-[#0A1C3A] hover:shadow-xl transition flex flex-col justify-between group">
+                <div>
+                  <div className="relative h-44 overflow-hidden bg-slate-200">
+                    <img
+                      src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=compress&w=800&q=80"
+                      alt="BPANI-Technologie"
+                      className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A1C3A]/70 via-transparent to-transparent" />
+                    <div className="absolute bottom-3 left-4 w-10 h-10 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center shadow-lg border border-slate-700">
+                      <ShieldCheck className="w-5 h-5 text-sky-400" />
+                    </div>
+                  </div>
+                  <div className="p-6 space-y-2">
+                    <h3 className="text-lg font-black uppercase text-[#0A1C3A]">BPANI-TECHNOLOGIE</h3>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                      Moderne Innenbeschichtung ohne absichtlichen Zusatz von Bisphenol A (BPA). Eine innovative Alternative zu herkömmlichen BPA-basierten Epoxidbeschichtungen.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 2) Großes Hauptbild - Innovative Schutzbarriere (3D Querschnittsdarstellung) */}
+            <div className="bg-[#0A1C3A] text-white rounded-3xl p-6 sm:p-10 border border-slate-700 shadow-2xl relative overflow-hidden">
+              <div className="absolute -top-24 -right-24 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
+
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                {/* Left column */}
+                <div className="lg:col-span-4 space-y-4 text-left">
+                  <div>
+                    <h3 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white leading-none">
+                      INNOVATIVE
+                      <br />
+                      <span className="text-sky-400 border-b-4 border-sky-400 inline-block pb-1 mt-1">
+                        SCHUTZBARRIERE
+                      </span>
+                    </h3>
+                  </div>
+                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed pt-2">
+                    Eine spezielle Innenbeschichtung trennt das Getränk von der Aluminiumoberfläche und unterstützt den Erhalt von Geschmack und Qualität.
+                  </p>
+                </div>
+
+                {/* Center column: 3D Cross-section Graphic */}
+                <div className="lg:col-span-4 flex items-center justify-center relative py-4 lg:py-0">
+                  <div className="relative flex items-center justify-center max-w-[320px] w-full">
+                    <div className="relative z-10 w-36 sm:w-44 shrink-0 transform -rotate-3 hover:rotate-0 transition duration-500">
+                      <img
+                        src={CAN_IMAGE_URL}
+                        alt="FONTES VITEA H2 Dose Querschnitt"
+                        className="w-full h-auto drop-shadow-[0_20px_35px_rgba(0,0,0,0.6)]"
+                      />
+                    </div>
+
+                    <div className="relative z-20 -ml-8 w-44 h-44 sm:w-52 sm:h-52 rounded-full border-4 border-slate-300 shadow-2xl overflow-hidden bg-slate-900 shrink-0">
+                      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-[#061224] to-slate-900 flex items-center justify-center">
+                        {/* Layer 1: Aluminium ring */}
+                        <div className="absolute inset-2 rounded-full border-[10px] border-slate-400/90 shadow-inner flex items-center justify-center">
+                          {/* Layer 2: Inner polymer coating */}
+                          <div className="absolute inset-1 rounded-full border-4 border-sky-400/90 shadow-[0_0_15px_rgba(56,189,248,0.5)] flex items-center justify-center">
+                            {/* Layer 3: Liquid inside with H2 bubbles */}
+                            <div className="w-full h-full rounded-full bg-gradient-to-tr from-amber-600/70 via-sky-900/80 to-amber-500/50 flex items-center justify-center relative overflow-hidden">
+                              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.4)_0%,transparent_70%)] animate-pulse" />
+                              <span className="w-2 h-2 rounded-full bg-sky-200/80 absolute top-4 left-6 animate-bounce" />
+                              <span className="w-3 h-3 rounded-full bg-amber-200/90 absolute bottom-6 right-8 animate-pulse" />
+                              <span className="w-1.5 h-1.5 rounded-full bg-white absolute top-10 right-5" />
+                              <span className="w-2.5 h-2.5 rounded-full bg-sky-300/80 absolute bottom-10 left-8" />
+                            </div>
+                          </div>
+                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent pointer-events-none" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right column: 3 Callouts */}
+                <div className="lg:col-span-4 space-y-4">
+                  <div className="flex items-center gap-4 bg-slate-800/60 p-3.5 rounded-2xl border border-slate-700/80 backdrop-blur-sm">
+                    <div className="w-9 h-9 rounded-full bg-slate-200 text-[#0A1C3A] font-black flex items-center justify-center text-base shrink-0 shadow-md">
+                      1
+                    </div>
+                    <div className="text-left">
+                      <h4 className="text-sm font-extrabold text-white">Aluminiumlegierung</h4>
+                      <p className="text-xs text-slate-300">Stabilität und Schutz</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-4 bg-sky-950/60 p-3.5 rounded-2xl border border-sky-500/40 backdrop-blur-sm">
+                    <div className="w-9 h-9 rounded-full bg-sky-400 text-[#0A1C3A] font-black flex items-center justify-center text-base shrink-0 shadow-md shadow-sky-500/20">
+                      2
+                    </div>
+                    <div className="text-left">
+                      <h4 className="text-sm font-extrabold text-white">Polymerbeschichtung (Innenbeschichtung)</h4>
+                      <p className="text-xs text-sky-200">Funktionale Schutzbarriere</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-4 bg-slate-800/60 p-3.5 rounded-2xl border border-slate-700/80 backdrop-blur-sm">
+                    <div className="w-9 h-9 rounded-full bg-slate-200 text-[#0A1C3A] font-black flex items-center justify-center text-base shrink-0 shadow-md">
+                      3
+                    </div>
+                    <div className="text-left">
+                      <h4 className="text-sm font-extrabold text-white">Getränk</h4>
+                      <p className="text-xs text-slate-300">Kein direkter Metallkontakt bei intakter Beschichtung</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 3) Unteres Raster - 3 Bildkarten */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Card 1 */}
+              <div className="bg-[#f8fafc] rounded-2xl overflow-hidden border border-slate-300 shadow-md hover:border-[#0A1C3A] hover:shadow-xl transition flex flex-col justify-between group">
+                <div>
+                  <div className="relative h-44 overflow-hidden bg-slate-200">
+                    <img
+                      src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=compress&w=800&q=80"
+                      alt="Innere Polymerbeschichtung"
+                      className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A1C3A]/70 via-transparent to-transparent" />
+                    <div className="absolute bottom-3 left-4 w-10 h-10 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center shadow-lg border border-slate-700">
+                      <Layers className="w-5 h-5 text-sky-400" />
+                    </div>
+                  </div>
+                  <div className="p-6 space-y-2">
+                    <h3 className="text-lg font-black uppercase text-[#0A1C3A]">INNERE POLYMERBESCHICHTUNG</h3>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                      Eine ultradünne, durchgehende Polymerschicht bildet eine funktionale Barriere zwischen Getränk und Aluminium.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 2 */}
+              <div className="bg-[#f8fafc] rounded-2xl overflow-hidden border border-slate-300 shadow-md hover:border-[#0A1C3A] hover:shadow-xl transition flex flex-col justify-between group">
+                <div>
+                  <div className="relative h-44 overflow-hidden bg-slate-200">
+                    <img
+                      src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=compress&w=800&q=80"
+                      alt="Geschmacks- und Qualitätsschutz"
+                      className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A1C3A]/70 via-transparent to-transparent" />
+                    <div className="absolute bottom-3 left-4 w-10 h-10 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center shadow-lg border border-slate-700">
+                      <FlaskConical className="w-5 h-5 text-sky-400" />
+                    </div>
+                  </div>
+                  <div className="p-6 space-y-2">
+                    <h3 className="text-lg font-black uppercase text-[#0A1C3A]">GESCHMACKS- UND QUALITÄTSSCHUTZ</h3>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                      Die Innenbeschichtung schützt vor Korrosion und reduziert das Risiko metallischer Geschmacksnoten. Der ursprüngliche Getränkegeschmack bleibt geschützt.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 3 */}
+              <div className="bg-[#f8fafc] rounded-2xl overflow-hidden border border-slate-300 shadow-md hover:border-[#0A1C3A] hover:shadow-xl transition flex flex-col justify-between group">
+                <div>
+                  <div className="relative h-44 overflow-hidden bg-slate-200">
+                    <img
+                      src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=compress&w=800&q=80"
+                      alt="Lebensmittelsicherheit"
+                      className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A1C3A]/70 via-transparent to-transparent" />
+                    <div className="absolute bottom-3 left-4 w-10 h-10 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center shadow-lg border border-slate-700">
+                      <ShieldCheck className="w-5 h-5 text-sky-400" />
+                    </div>
+                  </div>
+                  <div className="p-6 space-y-2">
+                    <h3 className="text-lg font-black uppercase text-[#0A1C3A]">LEBENSMITTELSICHERHEIT</h3>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                      Für den Lebensmittelkontakt vorgesehene Materialien und moderne Beschichtungstechnologien unterstützen die Produktsicherheit.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 4) Vergleichskarten-Bereich für BPANI im Vergleich zu herkömmlichen BPA-Beschichtungen */}
+            <div className="space-y-8 pt-4">
+              <div className="flex items-center gap-4 text-center">
+                <div className="h-px bg-slate-300 flex-1" />
+                <h3 className="text-xs sm:text-sm font-black uppercase tracking-widest text-[#0A1C3A] px-2">
+                  BESCHICHTUNGSTECHNOLOGIE IM VERGLEICH
+                </h3>
+                <div className="h-px bg-slate-300 flex-1" />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Herkömmliche BPA-Beschichtung */}
+                <div className="bg-orange-50/60 rounded-2xl p-6 sm:p-8 border border-orange-200/90 shadow-sm flex flex-col justify-between space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-2xl bg-orange-500 text-white flex items-center justify-center shrink-0 shadow-md font-black text-xl">
+                      !
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-black uppercase text-amber-900 tracking-tight">
+                        HERKÖMMLICHE BPA-BESCHICHTUNG
+                      </h4>
+                      <p className="text-xs text-amber-800/80 mt-0.5">Herkömmliche Standardbeschichtungen</p>
+                    </div>
+                  </div>
+
+                  <ul className="space-y-3 text-xs sm:text-sm font-semibold text-slate-700">
+                    <li className="flex items-center gap-3">
+                      <span className="w-5 h-5 rounded-full bg-orange-200 text-orange-800 flex items-center justify-center shrink-0 text-xs">✕</span>
+                      <span>BPA-basierte Epoxidharze</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span className="w-5 h-5 rounded-full bg-orange-200 text-orange-800 flex items-center justify-center shrink-0 text-xs">✕</span>
+                      <span>Potenzielle Stoffmigration</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span className="w-5 h-5 rounded-full bg-orange-200 text-orange-800 flex items-center justify-center shrink-0 text-xs">✕</span>
+                      <span>Regulatorische Einschränkungen</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Moderne BPANI-Beschichtung */}
+                <div className="bg-emerald-50/60 rounded-2xl p-6 sm:p-8 border border-emerald-300 shadow-sm flex flex-col justify-between space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-md">
+                      <ShieldCheck className="w-7 h-7" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-black uppercase text-emerald-950 tracking-tight">
+                        MODERNE BPANI-BESCHICHTUNG
+                      </h4>
+                      <p className="text-xs text-emerald-800/80 mt-0.5">FONTES VITEA Qualitätsverpackung</p>
+                    </div>
+                  </div>
+
+                  <ul className="space-y-3 text-xs sm:text-sm font-semibold text-slate-800">
+                    <li className="flex items-center gap-3">
+                      <span className="w-5 h-5 rounded-full bg-emerald-200 text-emerald-800 flex items-center justify-center shrink-0 text-xs font-bold">✓</span>
+                      <span>Ohne absichtlichen BPA-Zusatz</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span className="w-5 h-5 rounded-full bg-emerald-200 text-emerald-800 flex items-center justify-center shrink-0 text-xs font-bold">✓</span>
+                      <span>Alternative Polymertechnologie</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span className="w-5 h-5 rounded-full bg-emerald-200 text-emerald-800 flex items-center justify-center shrink-0 text-xs font-bold">✓</span>
+                      <span>Funktionale Schutzbarriere</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span className="w-5 h-5 rounded-full bg-emerald-200 text-emerald-800 flex items-center justify-center shrink-0 text-xs font-bold">✓</span>
+                      <span>Korrosionsbeständigkeit</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Transition pill button */}
+              <div className="pt-6 flex flex-col items-center gap-2">
+                <ChevronsDown className="w-6 h-6 text-sky-600 animate-bounce" />
+                <a
+                  href="#quelle"
+                  className="inline-flex items-center gap-2 bg-[#f4f6f8] hover:bg-slate-200 text-[#0A1C3A] font-extrabold text-xs uppercase px-5 py-2.5 rounded-full border border-slate-300 tracking-wider shadow-sm transition"
+                >
+                  DAS QUELLWASSER
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {/* 3. DAS QUELLWASSER (inkl. Mineralstoff- & Trinkwasseranalyse) */}
       <div id="quelle" data-webild-section="WaterSourceMinerals" data-webild-section-id="WaterSourceMinerals-1" data-section="source">
         <section className="py-20 px-6 bg-transparent font-sans text-[#0A1C3A]">
           <div className="max-w-6xl mx-auto space-y-12">
@@ -398,73 +740,12 @@ export default function HomePage() {
                     <tr className="hover:bg-slate-50 transition">
                       <td className="py-3.5 px-6 font-bold text-[#0A1C3A]">Mangan (Mn)</td>
                       <td className="py-3.5 px-6 font-semibold">0.00 mg/L</td>
-                      <td className="py-3.5 px-6 text-slate-600">0.05 mg/L</td>
                       <td className="py-3.5 px-6 text-right">
                         <span className="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">Konform</span>
                       </td>
                     </tr>
                   </tbody>
                 </table>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      {/* 3. TECHNOLOGIE & INNOVATION */}
-      <div id="technologie" data-webild-section="TechnologyInnovation" data-webild-section-id="TechnologyInnovation-1" data-section="tech">
-        <section className="py-20 px-6 bg-transparent text-[#0A1C3A] font-sans">
-          <div className="max-w-6xl mx-auto space-y-12">
-            <div className="text-center space-y-3">
-              <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-[#f4f6f8] px-4 py-1.5 rounded-full inline-block border border-slate-300">
-                Höchste Standards
-              </span>
-              <h2 className="text-4xl lg:text-5xl font-black text-[#0A1C3A] uppercase tracking-tight">
-                TECHNOLOGIE &amp; INNOVATION
-              </h2>
-              <p className="text-slate-600 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed">
-                Fortschrittlichste Anreicherungsmethoden und innovative Verpackungstechnologie garantieren höchste H2-Stabilität und absolute Reinheit.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-[#f8fafc] rounded-2xl p-8 border border-slate-300 shadow-md space-y-4 hover:border-[#0A1C3A] transition">
-                <div className="w-14 h-14 rounded-2xl bg-[#0A1C3A] text-white flex items-center justify-center shadow-md">
-                  <Droplets className="w-7 h-7 text-sky-400" />
-                </div>
-                <h3 className="text-2xl font-black uppercase text-[#0A1C3A]">H₂-Konzentration</h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Mindestens <strong>2,8 mg/L</strong> gelöster molekularer Wasserstoff. Dank physikalischem Anreicherungsverfahren bleibt das H₂ selbst nach dem Öffnen über 6 Stunden lang stabil.
-                </p>
-                <div className="pt-3 text-xs font-bold text-[#0A1C3A] flex items-center gap-1.5">
-                  <Sparkles className="w-4 h-4 text-amber-500" /> Höchste Wirkdosis am Markt
-                </div>
-              </div>
-
-              <div className="bg-[#f8fafc] rounded-2xl p-8 border border-slate-300 shadow-md space-y-4 hover:border-[#0A1C3A] transition">
-                <div className="w-14 h-14 rounded-2xl bg-[#0A1C3A] text-white flex items-center justify-center shadow-md">
-                  <Cpu className="w-7 h-7 text-sky-400" />
-                </div>
-                <h3 className="text-2xl font-black uppercase text-[#0A1C3A]">Aluminiumdosen-technologie</h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Spezielle 250-ml-Aluminiumdosen bieten die absolut undurchlässige Barriere gegen das Entweichen des extrem kleinen H₂-Gases. Lichtgeschützt, unempfindlich und 100 % unendlich recycelbar.
-                </p>
-                <div className="pt-3 text-xs font-bold text-[#0A1C3A] flex items-center gap-1.5">
-                  <Check className="w-4 h-4 text-emerald-600" /> Optimaler Gasschutz &amp; Nachhaltig
-                </div>
-              </div>
-
-              <div className="bg-[#f8fafc] rounded-2xl p-8 border border-slate-300 shadow-md space-y-4 hover:border-[#0A1C3A] transition">
-                <div className="w-14 h-14 rounded-2xl bg-[#0A1C3A] text-white flex items-center justify-center shadow-md">
-                  <ShieldCheck className="w-7 h-7 text-sky-400" />
-                </div>
-                <h3 className="text-2xl font-black uppercase text-[#0A1C3A]">BPA-Freiheit</h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Unsere Aluminiumdosen besitzen eine modernste Innenbeschichtung ohne Bisphenol A (BPA), ohne Phthalate und ohne Weichmacher. Für 100 % hormonell unbedenklichen und reinen Trinkgenuss.
-                </p>
-                <div className="pt-3 text-xs font-bold text-[#0A1C3A] flex items-center gap-1.5">
-                  <ShieldCheck className="w-4 h-4 text-sky-600" /> Zero Schadstoffe &amp; Maximaler Schutz
-                </div>
               </div>
             </div>
           </div>
