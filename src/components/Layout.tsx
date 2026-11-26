@@ -174,7 +174,7 @@ function LayoutContent() {
           <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-3">
             <Link to="/" className="inline-block">
               <img
-                src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795103673176-908st9q6.png"
+                src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795653887494-6ttxippk.png"
                 alt="FONTES VITEA Logo"
                 className="h-14 w-auto object-contain rounded-xl bg-white p-2 shadow-md"
               />
