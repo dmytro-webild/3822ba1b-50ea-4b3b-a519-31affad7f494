@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import {
   Activity,
@@ -6,6 +6,7 @@ import {
   RefreshCw,
   Play,
   ArrowLeft,
+  ArrowRight,
   CheckCircle2,
   BookOpen,
   FileText,
@@ -13,9 +14,13 @@ import {
   ChevronDown,
   Zap,
   HelpCircle,
-  ExternalLink
+  ExternalLink,
+  Search,
+  X,
+  Calendar
 } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import { STUDY_ARTICLES, STUDY_CATEGORIES, type StudyCategory } from "@/utils/studiesData";
 
 interface VideoItem {
   id: string;
@@ -91,12 +96,32 @@ const FAQ_ITEMS: FaqItem[] = [
 
 export default function WissenschaftPage() {
   const { openVideoModal } = useCart();
-  const [activeCategory, setActiveCategory] = useState<"all" | "sport" | "zellschutz" | "regeneration">("all");
+  const [selectedCategory, setSelectedCategory] = useState<StudyCategory>("Alle Beiträge");
+  const [searchQuery, setSearchQuery] = useState("");
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
+
+  // Filter study articles by selected category and search query
+  const filteredArticles = useMemo(() => {
+    return STUDY_ARTICLES.filter((article) => {
+      const matchesCategory =
+        selectedCategory === "Alle Beiträge" || article.category === selectedCategory;
+
+      const q = searchQuery.toLowerCase().trim();
+      const matchesSearch =
+        !q ||
+        article.title.toLowerCase().includes(q) ||
+        article.subtitle.toLowerCase().includes(q) ||
+        article.shortDescription.toLowerCase().includes(q) ||
+        article.category.toLowerCase().includes(q) ||
+        article.authorOrJournal.toLowerCase().includes(q);
+
+      return matchesCategory && matchesSearch;
+    });
+  }, [selectedCategory, searchQuery]);
 
   return (
     <div className="bg-transparent min-h-screen text-[#0A1C3A] font-sans pb-24">
@@ -115,176 +140,282 @@ export default function WissenschaftPage() {
               Wissenschaftliche Evidenz &amp; Studien
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-tight">
-              WISSEN &amp; STUDIEN
+              NEWS &amp; STUDIENBIBLIOTHEK
             </h1>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
-              FONTES VITAE basiert auf über 1.000 wissenschaftlichen Studien zur Wirkung von molekularem Wasserstoff (H₂). Entdecke biochemische Grundlagen, Studien zu Laktatabbau und Mitochondrien, laborgeprüfte Zertifikate und Expertenberichte.
+              FONTES VITAE basiert auf über 1.000 wissenschaftlichen Studien zur Wirkung von molekularem Wasserstoff (H₂). Entdecke biochemische Grundlagen, Fachbeiträge zu Laktatabbau, Regeneration und Antidoping sowie laborgeprüfte Zertifikate.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Main Categories Overview */}
+      {/* Main Container */}
       <section className="max-w-7xl mx-auto px-6 py-16 space-y-20">
-        {/* Category Filter Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-3">
-          <button
-            onClick={() => setActiveCategory("all")}
-            className={`px-6 py-2.5 rounded-full text-xs font-extrabold uppercase transition border ${
-              activeCategory === "all"
-                ? "bg-[#0A1C3A] text-white border-[#0A1C3A] shadow-md"
-                : "bg-white text-slate-700 border-slate-300 hover:bg-slate-100"
-            }`}
-          >
-            Alle Säulen
-          </button>
-          <button
-            onClick={() => setActiveCategory("sport")}
-            className={`px-6 py-2.5 rounded-full text-xs font-extrabold uppercase transition border ${
-              activeCategory === "sport"
-                ? "bg-[#0A1C3A] text-white border-[#0A1C3A] shadow-md"
-                : "bg-white text-slate-700 border-slate-300 hover:bg-slate-100"
-            }`}
-          >
-            Sport &amp; Performance
-          </button>
-          <button
-            onClick={() => setActiveCategory("zellschutz")}
-            className={`px-6 py-2.5 rounded-full text-xs font-extrabold uppercase transition border ${
-              activeCategory === "zellschutz"
-                ? "bg-[#0A1C3A] text-white border-[#0A1C3A] shadow-md"
-                : "bg-white text-slate-700 border-slate-300 hover:bg-slate-100"
-            }`}
-          >
-            Zellschutz
-          </button>
-          <button
-            onClick={() => setActiveCategory("regeneration")}
-            className={`px-6 py-2.5 rounded-full text-xs font-extrabold uppercase transition border ${
-              activeCategory === "regeneration"
-                ? "bg-[#0A1C3A] text-white border-[#0A1C3A] shadow-md"
-                : "bg-white text-slate-700 border-slate-300 hover:bg-slate-100"
-            }`}
-          >
-            Regeneration
-          </button>
-        </div>
+        
+        {/* ─── NEWS & STUDIENBIBLIOTHEK SECTION ─── */}
+        <div id="news-bibliothek" className="space-y-10">
+          <div className="space-y-3 text-center sm:text-left">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-sky-600 bg-sky-50 px-3.5 py-1.5 rounded-md border border-sky-100 inline-block">
+              Forschungsberichte &amp; Fachbeiträge
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black uppercase text-[#0A1C3A] tracking-tight">
+              Wissenschaftlicher News- &amp; Studienbereich
+            </h2>
+            <p className="text-slate-600 text-xs sm:text-sm max-w-2xl leading-relaxed">
+              Durchsuche unsere kontinuierlich erweiterte Bibliothek an wissenschaftlichen Publikationen, Studien und Berichten zu molekularem Wasserstoff.
+            </p>
+          </div>
 
-        {/* Category Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Category 1: Sport & Performance */}
-          {(activeCategory === "all" || activeCategory === "sport") && (
-            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg space-y-6 flex flex-col justify-between hover:shadow-xl transition">
-              <div className="space-y-4">
-                <div className="w-14 h-14 rounded-2xl bg-[#0A1C3A] text-white flex items-center justify-center shadow-md">
-                  <Activity className="w-7 h-7" />
-                </div>
-                <div className="space-y-1">
-                  <span className="text-xs font-extrabold uppercase tracking-wider text-sky-600">Kategorie 01</span>
-                  <h2 className="text-2xl font-black uppercase text-[#0A1C3A]">Sport &amp; Performance</h2>
-                </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Molekularer Wasserstoff reduziert nachweislich die Ansammlung von Laktat im Blut während intensiver sportlicher Belastung und schützt vor Mikrotraumata.
-                </p>
+          {/* Search bar & Category filters */}
+          <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-md space-y-6">
+            {/* Search Input */}
+            <div className="relative max-w-xl">
+              <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Studien, Themen oder Stichworte suchen..."
+                className="w-full bg-[#f8fafc] border border-slate-200 focus:border-[#0A1C3A] focus:bg-white pl-12 pr-10 py-3 rounded-2xl text-xs sm:text-sm text-[#0A1C3A] placeholder:text-slate-400 focus:outline-none transition"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 p-1 rounded-full transition"
+                  title="Suche zurücksetzen"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              )}
+            </div>
 
-                <ul className="space-y-2.5 pt-2 text-xs text-slate-700">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#0A1C3A] shrink-0 mt-0.5" />
-                    <span>Verringerung von Muskelermüdung &amp; Laktatwerten</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#0A1C3A] shrink-0 mt-0.5" />
-                    <span>Förderung der mitochondrialen ATP-Produktion</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#0A1C3A] shrink-0 mt-0.5" />
-                    <span>Verhinderung von Mikrotraumata in den Muskeln</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="pt-4 border-t border-slate-100">
-                <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Ergebnis: Steigerung der Spitzenleistung</span>
+            {/* Category Pills */}
+            <div className="space-y-2">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 block">Themenfilter:</span>
+              <div className="flex flex-wrap items-center gap-2">
+                {STUDY_CATEGORIES.map((cat) => {
+                  const isActive = selectedCategory === cat;
+                  return (
+                    <button
+                      key={cat}
+                      onClick={() => setSelectedCategory(cat)}
+                      className={`px-4 py-2 rounded-xl text-xs font-bold transition border ${
+                        isActive
+                          ? "bg-[#0A1C3A] text-white border-[#0A1C3A] shadow-sm"
+                          : "bg-[#f8fafc] text-slate-700 border-slate-200 hover:bg-slate-100 hover:text-[#0A1C3A]"
+                      }`}
+                    >
+                      {cat}
+                    </button>
+                  );
+                })}
               </div>
             </div>
+
+            {/* Results counter indicator */}
+            <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
+              <span>
+                Zeige <strong className="text-[#0A1C3A]">{filteredArticles.length}</strong> {filteredArticles.length === 1 ? "Beitrag" : "Beiträge"}
+                {selectedCategory !== "Alle Beiträge" && ` in „${selectedCategory}“`}
+              </span>
+              {(selectedCategory !== "Alle Beiträge" || searchQuery) && (
+                <button
+                  onClick={() => {
+                    setSelectedCategory("Alle Beiträge");
+                    setSearchQuery("");
+                  }}
+                  className="text-sky-600 hover:underline font-bold text-[11px]"
+                >
+                  Alle Filter zurücksetzen
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* Article Grid: Desktop 3 cols, Tablet 2 cols, Phone 1 col */}
+          {filteredArticles.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredArticles.map((article) => (
+                <div
+                  key={article.id}
+                  className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-lg hover:shadow-xl transition flex flex-col justify-between group"
+                >
+                  <div className="space-y-4">
+                    {/* 16:9 Image */}
+                    <div className="relative aspect-video overflow-hidden bg-slate-900">
+                      <img
+                        src={article.imageSrc}
+                        alt={article.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                      />
+                      <div className="absolute top-3 left-3">
+                        <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#0A1C3A] bg-white/95 backdrop-blur-md px-3 py-1 rounded-full shadow-sm border border-slate-200">
+                          {article.category}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Article Card Details */}
+                    <div className="px-6 space-y-3">
+                      <div className="flex items-center gap-2 text-[11px] text-slate-400 font-medium">
+                        <Calendar className="w-3.5 h-3.5 text-sky-600" />
+                        <span>{article.publishDate}</span>
+                        <span>•</span>
+                        <span className="truncate max-w-[150px]">{article.authorOrJournal}</span>
+                      </div>
+
+                      <h3 className="text-base font-extrabold text-[#0A1C3A] leading-snug group-hover:text-sky-700 transition line-clamp-2">
+                        {article.title}
+                      </h3>
+
+                      <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
+                        {article.shortDescription}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Read Article Button */}
+                  <div className="p-6 pt-4">
+                    <Link
+                      to={`/wissenschaft/beitrag/${article.slug}`}
+                      className="w-full bg-[#0A1C3A] hover:bg-[#12284c] text-white py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition"
+                    >
+                      <span>Beitrag lesen</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="bg-white rounded-3xl p-12 text-center border border-slate-200 shadow-md space-y-4">
+              <FileText className="w-10 h-10 text-slate-400 mx-auto" />
+              <h3 className="text-lg font-bold text-[#0A1C3A] uppercase">Keine Beiträge gefunden</h3>
+              <p className="text-xs text-slate-500 max-w-md mx-auto">
+                Für Ihre Suchanfrage „{searchQuery}“ wurden in dieser Kategorie keine Treffer gefunden. Versuchen Sie einen anderen Suchbegriff oder wählen Sie einen anderen Themenfilter.
+              </p>
+              <button
+                onClick={() => {
+                  setSelectedCategory("Alle Beiträge");
+                  setSearchQuery("");
+                }}
+                className="bg-[#0A1C3A] text-white px-6 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider"
+              >
+                Filter zurücksetzen
+              </button>
+            </div>
           )}
+        </div>
+
+        {/* 3 Pillars Category Overview (Preserved) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-6">
+          {/* Category 1: Sport & Performance */}
+          <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg space-y-6 flex flex-col justify-between hover:shadow-xl transition">
+            <div className="space-y-4">
+              <div className="w-14 h-14 rounded-2xl bg-[#0A1C3A] text-white flex items-center justify-center shadow-md">
+                <Activity className="w-7 h-7" />
+              </div>
+              <div className="space-y-1">
+                <span className="text-xs font-extrabold uppercase tracking-wider text-sky-600">Säule 01</span>
+                <h3 className="text-2xl font-black uppercase text-[#0A1C3A]">Sport &amp; Performance</h3>
+              </div>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Molekularer Wasserstoff reduziert nachweislich die Ansammlung von Laktat im Blut während intensiver sportlicher Belastung und schützt vor Mikrotraumata.
+              </p>
+
+              <ul className="space-y-2.5 pt-2 text-xs text-slate-700">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#0A1C3A] shrink-0 mt-0.5" />
+                  <span>Verringerung von Muskelermüdung &amp; Laktatwerten</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#0A1C3A] shrink-0 mt-0.5" />
+                  <span>Förderung der mitochondrialen ATP-Produktion</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#0A1C3A] shrink-0 mt-0.5" />
+                  <span>Verhinderung von Mikrotraumata in den Muskeln</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="pt-4 border-t border-slate-100">
+              <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Ergebnis: Steigerung der Spitzenleistung</span>
+            </div>
+          </div>
 
           {/* Category 2: Zellschutz */}
-          {(activeCategory === "all" || activeCategory === "zellschutz") && (
-            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg space-y-6 flex flex-col justify-between hover:shadow-xl transition">
-              <div className="space-y-4">
-                <div className="w-14 h-14 rounded-2xl bg-[#0A1C3A] text-white flex items-center justify-center shadow-md">
-                  <ShieldCheck className="w-7 h-7" />
-                </div>
-                <div className="space-y-1">
-                  <span className="text-xs font-extrabold uppercase tracking-wider text-sky-600">Kategorie 02</span>
-                  <h2 className="text-2xl font-black uppercase text-[#0A1C3A]">Zellschutz</h2>
-                </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  H₂ fungiert als selektives Antioxidans. Es neutralisiert gezielt zellschädigende Hydroxyl-Radikale (•OH), ohne physiologisch wichtige Sauerstoffspezies zu beeinträchtigen.
-                </p>
-
-                <ul className="space-y-2.5 pt-2 text-xs text-slate-700">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#0A1C3A] shrink-0 mt-0.5" />
-                    <span>Gezielte Neutralisation von ROS (Oxidativer Stress)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#0A1C3A] shrink-0 mt-0.5" />
-                    <span>Schutz biologischer Membranen und der DNA</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#0A1C3A] shrink-0 mt-0.5" />
-                    <span>Unterstützung des körpereigenen Enzymsystems</span>
-                  </li>
-                </ul>
+          <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg space-y-6 flex flex-col justify-between hover:shadow-xl transition">
+            <div className="space-y-4">
+              <div className="w-14 h-14 rounded-2xl bg-[#0A1C3A] text-white flex items-center justify-center shadow-md">
+                <ShieldCheck className="w-7 h-7" />
               </div>
-
-              <div className="pt-4 border-t border-slate-100">
-                <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Ergebnis: Zellulärer Schutz &amp; Langlebigkeit</span>
+              <div className="space-y-1">
+                <span className="text-xs font-extrabold uppercase tracking-wider text-sky-600">Säule 02</span>
+                <h3 className="text-2xl font-black uppercase text-[#0A1C3A]">Zellschutz</h3>
               </div>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                H₂ fungiert als selektives Antioxidans. Es neutralisiert gezielt zellschädigende Hydroxyl-Radikale (•OH), ohne physiologisch wichtige Sauerstoffspezies zu beeinträchtigen.
+              </p>
+
+              <ul className="space-y-2.5 pt-2 text-xs text-slate-700">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#0A1C3A] shrink-0 mt-0.5" />
+                  <span>Gezielte Neutralisation von ROS (Oxidativer Stress)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#0A1C3A] shrink-0 mt-0.5" />
+                  <span>Schutz biologischer Membranen und der DNA</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#0A1C3A] shrink-0 mt-0.5" />
+                  <span>Unterstützung des körpereigenen Enzymsystems</span>
+                </li>
+              </ul>
             </div>
-          )}
+
+            <div className="pt-4 border-t border-slate-100">
+              <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Ergebnis: Zellulärer Schutz &amp; Langlebigkeit</span>
+            </div>
+          </div>
 
           {/* Category 3: Regeneration */}
-          {(activeCategory === "all" || activeCategory === "regeneration") && (
-            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg space-y-6 flex flex-col justify-between hover:shadow-xl transition">
-              <div className="space-y-4">
-                <div className="w-14 h-14 rounded-2xl bg-[#0A1C3A] text-white flex items-center justify-center shadow-md">
-                  <RefreshCw className="w-7 h-7" />
-                </div>
-                <div className="space-y-1">
-                  <span className="text-xs font-extrabold uppercase tracking-wider text-sky-600">Kategorie 03</span>
-                  <h2 className="text-2xl font-black uppercase text-[#0A1C3A]">Regeneration</h2>
-                </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Durch seine winzige Molekülgröße durchdringt H₂ mühelos Biomembranen und gelangt direkt in Zellkerne sowie Mitochondrien für rasche Hydration und Erholung.
-                </p>
-
-                <ul className="space-y-2.5 pt-2 text-xs text-slate-700">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#0A1C3A] shrink-0 mt-0.5" />
-                    <span>Tiefen-Hydration auf zellulärer Ebene</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#0A1C3A] shrink-0 mt-0.5" />
-                    <span>Beschleunigte Erholungszeiten nach Belastungen</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#0A1C3A] shrink-0 mt-0.5" />
-                    <span>Unterstützung des Haut- und Bindegewebes</span>
-                  </li>
-                </ul>
+          <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg space-y-6 flex flex-col justify-between hover:shadow-xl transition">
+            <div className="space-y-4">
+              <div className="w-14 h-14 rounded-2xl bg-[#0A1C3A] text-white flex items-center justify-center shadow-md">
+                <RefreshCw className="w-7 h-7" />
               </div>
-
-              <div className="pt-4 border-t border-slate-100">
-                <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Ergebnis: Optimale Erholung &amp; Wohlbefinden</span>
+              <div className="space-y-1">
+                <span className="text-xs font-extrabold uppercase tracking-wider text-sky-600">Säule 03</span>
+                <h3 className="text-2xl font-black uppercase text-[#0A1C3A]">Regeneration</h3>
               </div>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Durch seine winzige Molekülgröße durchdringt H₂ mühelos Biomembranen und gelangt direkt in Zellkerne sowie Mitochondrien für rasche Hydration und Erholung.
+              </p>
+
+              <ul className="space-y-2.5 pt-2 text-xs text-slate-700">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#0A1C3A] shrink-0 mt-0.5" />
+                  <span>Tiefen-Hydration auf zellulärer Ebene</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#0A1C3A] shrink-0 mt-0.5" />
+                  <span>Beschleunigte Erholungszeiten nach Belastungen</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#0A1C3A] shrink-0 mt-0.5" />
+                  <span>Unterstützung des Haut- und Bindegewebes</span>
+                </li>
+              </ul>
             </div>
-          )}
+
+            <div className="pt-4 border-t border-slate-100">
+              <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Ergebnis: Optimale Erholung &amp; Wohlbefinden</span>
+            </div>
+          </div>
         </div>
 
-        {/* Scientific Publications & PubMed References */}
+        {/* Scientific Publications & PubMed References (Preserved) */}
         <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-xl space-y-8">
           <div className="space-y-3">
             <span className="text-xs font-extrabold uppercase tracking-widest text-sky-600 bg-sky-50 px-3 py-1 rounded-md border border-sky-100 inline-block">
@@ -327,7 +458,7 @@ export default function WissenschaftPage() {
           </div>
         </div>
 
-        {/* Video Studies Showcase Section */}
+        {/* Video Studies Showcase Section (Preserved) */}
         <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-xl space-y-10">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
             <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-[#f4f6f8] px-4 py-1.5 rounded-full inline-block border border-slate-300">
@@ -390,7 +521,7 @@ export default function WissenschaftPage() {
           </div>
         </div>
 
-        {/* Zertifizierung & Prüfsiegel Section */}
+        {/* Zertifizierung & Prüfsiegel Section (Preserved) */}
         <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg space-y-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-6">
             <div className="flex items-center gap-3">
@@ -434,7 +565,7 @@ export default function WissenschaftPage() {
           </div>
         </div>
 
-        {/* Dedicated Section: Weiterführende Literatur */}
+        {/* Dedicated Section: Weiterführende Literatur (Book Recommendation with Original Image) */}
         <div id="weiterfuehrende-literatur" className="bg-[#0A1C3A] text-white rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-2xl space-y-8 relative overflow-hidden">
           {/* Subtle Background Glow */}
           <div className="absolute -top-32 -right-32 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -452,35 +583,15 @@ export default function WissenschaftPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-            {/* Book Cover Visual */}
+            {/* Book Cover Visual with Original Image */}
             <div className="lg:col-span-4 flex justify-center">
-              <div className="relative w-48 sm:w-56 aspect-[1/1.5] bg-gradient-to-br from-[#0B1E3F] via-[#162B4E] to-[#0A1C3A] rounded-r-xl rounded-l-sm border-l-8 border-l-slate-400 border-t border-r border-b border-sky-400/40 shadow-2xl p-5 flex flex-col justify-between text-white overflow-hidden group">
-                <div className="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-white/20 to-transparent pointer-events-none" />
-                
-                <div className="space-y-3 z-10">
-                  <div className="text-[10px] font-black uppercase tracking-widest text-sky-300 border-b border-sky-400/20 pb-1.5 flex justify-between items-center">
-                    <span>Kopp Verlag</span>
-                    <span className="text-[9px] font-mono text-slate-400">FACHBUCH</span>
-                  </div>
-                  
-                  <div className="pt-2">
-                    <span className="text-[11px] font-bold text-slate-300 block uppercase tracking-wider">Brigitte Hamann</span>
-                    <h3 className="text-base sm:text-lg font-black uppercase leading-tight tracking-tight text-white mt-1">
-                      Praxisbuch molekularer Wasserstoff
-                    </h3>
-                    <p className="text-[11px] font-semibold text-sky-300 italic mt-1.5 leading-snug">
-                      Die natürliche Medizin der Zukunft
-                    </p>
-                  </div>
-                </div>
-
-                <div className="z-10 pt-4 border-t border-sky-400/20 flex items-end justify-between">
-                  <div className="flex items-center gap-1.5 text-sky-400">
-                    <BookOpen className="w-4 h-4" />
-                    <span className="text-[10px] font-bold uppercase tracking-wider">H₂ Standardwerk</span>
-                  </div>
-                  <span className="text-[9px] font-mono text-slate-400">Kopp Verlag</span>
-                </div>
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-sky-400/30 to-blue-600/30 rounded-2xl blur-lg opacity-75 group-hover:opacity-100 transition duration-500" />
+                <img
+                  src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795132125149-eraq7h8f.png"
+                  alt="Praxisbuch molekularer Wasserstoff - Brigitte Hamann (Kopp Verlag)"
+                  className="relative w-48 sm:w-56 h-auto max-h-[360px] object-contain rounded-xl shadow-2xl border border-sky-400/30 group-hover:scale-105 transition duration-500"
+                />
               </div>
             </div>
 
@@ -542,7 +653,7 @@ export default function WissenschaftPage() {
           </div>
         </div>
 
-        {/* Structured Expandable FAQ Section */}
+        {/* Structured Expandable FAQ Section (Preserved) */}
         <div id="faq" className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-xl space-y-10">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
             <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-[#f4f6f8] px-4 py-1.5 rounded-full inline-block border border-slate-300">
