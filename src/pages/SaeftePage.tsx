@@ -450,7 +450,7 @@ interface CharacterProfile {
 const CHARACTERS: CharacterProfile[] = [
   {
     id: "himbeerixxa",
-    name: "Himbeerixxa",
+    name: "Himbeerixa",
     role: "Die Sammlerin & Forscherin",
     tagline: "Neugierig, mutig und immer auf der Suche nach den besten Himbeeren.",
     summary: "Himbeerixxa kennt jeden Winkel des magischen Fruchtwaldes. Mit ihrer Lupe spürt sie die saftigsten Himbeeren auf.",
