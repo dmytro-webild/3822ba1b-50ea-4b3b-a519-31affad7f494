@@ -588,7 +588,7 @@ export default function WissenschaftPage() {
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-sky-400/30 to-blue-600/30 rounded-2xl blur-lg opacity-75 group-hover:opacity-100 transition duration-500" />
                 <img
-                  src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795132125149-eraq7h8f.png"
+                  src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795659130409-bbngba3h.avif"
                   alt="Praxisbuch molekularer Wasserstoff - Brigitte Hamann (Kopp Verlag)"
                   className="relative w-48 sm:w-56 h-auto max-h-[360px] object-contain rounded-xl shadow-2xl border border-sky-400/30 group-hover:scale-105 transition duration-500"
                 />
