@@ -192,11 +192,12 @@ function useExternalLinksNewTab() {
       const anchor = (e.target as HTMLElement | null)?.closest?.('a[href]') as
         | HTMLAnchorElement
         | null
-      if (!anchor || anchor.target === '_blank') return
+      if (!anchor || anchor.target === '_blank' || anchor.target === '_self') return
       const raw = anchor.getAttribute('href') || ''
       if (!/^(https?:)?\/\//i.test(raw)) return
       try {
         const url = new URL(anchor.href, window.location.href)
+        if (url.hostname.includes('shop.fontes-vitae.com')) return
         if (url.origin !== window.location.origin) {
           anchor.target = '_blank'
           anchor.rel = 'noopener noreferrer'

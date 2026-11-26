@@ -569,12 +569,12 @@ export default function UeberUnsPage() {
 
         {/* Navigation CTAs */}
         <div className="flex flex-wrap items-center justify-between gap-4 pt-6">
-          <RouterLink
-            to="/shop"
+          <a
+            href="https://shop.fontes-vitae.com"
             className="inline-flex items-center gap-2 bg-[#0A1C3A] hover:bg-[#12284c] text-white px-8 py-4 rounded-xl text-xs font-black uppercase tracking-wider shadow-md transition"
           >
             Jetzt Produkte im Shop bestellen <ArrowRight className="w-4 h-4" />
-          </RouterLink>
+          </a>
           <RouterLink
             to="/wissenschaft"
             className="inline-flex items-center gap-2 bg-white hover:bg-slate-100 text-[#0A1C3A] border border-slate-300 px-8 py-4 rounded-xl text-xs font-black uppercase tracking-wider shadow-sm transition"

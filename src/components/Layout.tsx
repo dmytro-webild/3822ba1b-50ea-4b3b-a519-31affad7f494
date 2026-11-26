@@ -2,46 +2,17 @@ import { useState, useEffect } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import NavbarPillLinks from "@/components/navbars/NavbarPillLinks";
 import { CartProvider, useCart } from "@/context/CartContext";
-import CartDrawer from "@/components/cart/CartDrawer";
-import CheckoutModal from "@/components/cart/CheckoutModal";
-import ConfirmationModal from "@/components/cart/ConfirmationModal";
-import ProductDetailsModal from "@/components/shop/ProductDetailsModal";
 import LegalModal from "@/components/legal/LegalModal";
 import VideoModal from "@/components/video/VideoModal";
 import WaterDropsBackground from "@/components/animation/WaterDropsBackground";
 import { ShoppingBag, Home, GraduationCap, PhoneCall, ArrowUp, MessageSquareHeart } from "lucide-react";
-
-function FloatingCartButton() {
-  const { setIsCartOpen, totalItemCount, totalPrice } = useCart();
-
-  return (
-    <button
-      onClick={() => setIsCartOpen(true)}
-      className="fixed bottom-20 right-4 lg:bottom-6 lg:right-6 z-40 bg-[#0A1C3A] hover:bg-[#12284c] text-white p-3.5 rounded-2xl shadow-2xl border border-slate-300 flex items-center gap-3 group transition transform hover:scale-105 active:scale-95"
-      aria-label="Warenkorb öffnen"
-    >
-      <div className="relative">
-        <ShoppingBag className="w-6 h-6 text-slate-200" />
-        {totalItemCount > 0 && (
-          <span className="absolute -top-2 -right-2 bg-white text-[#0A1C3A] text-[10px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center border border-[#0A1C3A]">
-            {totalItemCount}
-          </span>
-        )}
-      </div>
-      <div className="hidden sm:block text-left text-xs font-bold leading-tight pr-1">
-        <span className="block text-slate-300 uppercase text-[10px] tracking-wider">Warenkorb</span>
-        <span>{totalPrice.toFixed(2)} €</span>
-      </div>
-    </button>
-  );
-}
 
 function MobileBottomBar() {
   const location = useLocation();
 
   const navItems = [
     { label: "Home", href: "/", icon: Home },
-    { label: "Shop", href: "/shop", icon: ShoppingBag },
+    { label: "Shop", href: "https://shop.fontes-vitae.com", icon: ShoppingBag },
     { label: "Feedback", href: "/feedback-faq", icon: MessageSquareHeart },
     { label: "Wissenschaft", href: "/wissenschaft", icon: GraduationCap },
     { label: "Kontakt", href: "/kontakt", icon: PhoneCall },
@@ -54,7 +25,22 @@ function MobileBottomBar() {
     >
       {navItems.map((item) => {
         const Icon = item.icon;
-        const isActive = location.pathname === item.href;
+        const isExternal = item.href.startsWith("http");
+        const isActive = !isExternal && location.pathname === item.href;
+
+        if (isExternal) {
+          return (
+            <a
+              key={item.href}
+              href={item.href}
+              className="flex flex-col items-center justify-center gap-0.5 transition py-1 px-3 rounded-lg text-slate-300 hover:text-white"
+            >
+              <Icon className="w-5 h-5 text-slate-300" />
+              <span className="text-[11px] tracking-tight">{item.label}</span>
+            </a>
+          );
+        }
+
         return (
           <Link
             key={item.href}
@@ -98,13 +84,8 @@ function MobileBackToTop() {
 
 function LayoutContent() {
   const { openLegalModal } = useCart();
-  const location = useLocation();
 
-  const isShopPage = location.pathname === "/shop";
-
-  const bgImageUrl = isShopPage
-    ? "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795142711128-m3i2hd7i.png"
-    : "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795142711130-drighgg1.png";
+  const bgImageUrl = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795142711130-drighgg1.png";
 
   return (
     <div
@@ -139,7 +120,7 @@ function LayoutContent() {
             },
             {
               name: "Shop",
-              href: "/shop"
+              href: "https://shop.fontes-vitae.com"
             },
             {
               name: "Feedback & FAQ",
@@ -160,7 +141,7 @@ function LayoutContent() {
           ]}
           primaryButton={{
             text: "Zum Shop",
-            href: "/shop"
+            href: "https://shop.fontes-vitae.com"
           }}
           socials={[
             {
@@ -179,18 +160,11 @@ function LayoutContent() {
         <Outlet />
       </main>
 
-      {/* Floating Cart Launcher Button */}
-      <FloatingCartButton />
-
       {/* Sticky Mobile Bottom Navigation & Back to Top */}
       <MobileBottomBar />
       <MobileBackToTop />
 
-      {/* All Drawers & Modals */}
-      <CartDrawer />
-      <CheckoutModal />
-      <ConfirmationModal />
-      <ProductDetailsModal />
+      {/* Modals */}
       <LegalModal />
       <VideoModal />
 
@@ -219,7 +193,7 @@ function LayoutContent() {
             <div className="flex flex-col space-y-1.5 text-xs text-slate-300">
               <Link to="/#quelle" className="hover:text-white transition">H2 Wasser</Link>
               <Link to="/#vergleich" className="hover:text-white transition">Vorteile</Link>
-              <Link to="/shop" className="hover:text-white transition">Shop</Link>
+              <a href="https://shop.fontes-vitae.com" className="hover:text-white transition">Shop</a>
               <Link to="/feedback-faq" className="hover:text-white transition">Feedback &amp; FAQ</Link>
               <Link to="/ueber-uns" className="hover:text-white transition">Über uns</Link>
               <Link to="/wissenschaft" className="hover:text-white transition">News &amp; Studien</Link>
