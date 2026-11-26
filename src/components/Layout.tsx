@@ -5,13 +5,14 @@ import { CartProvider, useCart } from "@/context/CartContext";
 import LegalModal from "@/components/legal/LegalModal";
 import VideoModal from "@/components/video/VideoModal";
 import WaterDropsBackground from "@/components/animation/WaterDropsBackground";
-import { ShoppingBag, Home, GraduationCap, PhoneCall, ArrowUp, MessageSquareHeart } from "lucide-react";
+import { ShoppingBag, Home, GraduationCap, PhoneCall, ArrowUp, MessageSquareHeart, Citrus } from "lucide-react";
 
 function MobileBottomBar() {
   const location = useLocation();
 
   const navItems = [
     { label: "Home", href: "/", icon: Home },
+    { label: "Säfte", href: "/saefte", icon: Citrus },
     { label: "Shop", href: "https://shop.fontes-vitae.com", icon: ShoppingBag },
     { label: "Feedback", href: "/feedback-faq", icon: MessageSquareHeart },
     { label: "Wissenschaft", href: "/wissenschaft", icon: GraduationCap },
@@ -115,6 +116,10 @@ function LayoutContent() {
               href: "/#top"
             },
             {
+              name: "Säfte",
+              href: "/saefte"
+            },
+            {
               name: "Vorteile",
               href: "/#vergleich"
             },
@@ -192,6 +197,7 @@ function LayoutContent() {
             <h4 className="text-xs font-bold uppercase tracking-widest text-sky-400 mb-1">Navigation</h4>
             <div className="flex flex-col space-y-1.5 text-xs text-slate-300">
               <Link to="/#top" onClick={() => { if (window.location.pathname === "/") window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition">H2 Wasser</Link>
+              <Link to="/saefte" className="hover:text-white transition font-medium text-amber-300">Säfte</Link>
               <Link to="/#vergleich" className="hover:text-white transition">Vorteile</Link>
               <Link to="/wissenschaft" className="hover:text-white transition">News &amp; Studien</Link>
               <Link to="/ueber-uns" className="hover:text-white transition">Über uns</Link>

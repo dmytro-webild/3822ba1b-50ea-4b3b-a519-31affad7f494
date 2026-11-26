@@ -74,6 +74,19 @@ const SEARCH_DATABASE: SearchItem[] = [
     icon: Package,
   },
   {
+    id: "page-saefte",
+    title: "FONTES VITAE® Premium Säfte & Frucht-Entdecker",
+    category: "Produkt",
+    description: "6 edle Direktsaft-Kreationen (Blueberry, Raspberry, Grape, Tonic Ginger, Apple & Ginger, Apple & Lime) sowie die Kinderserie Frucht-Entdecker®.",
+    keywords: [
+      "säfte", "saefte", "saft", "fruchtsaft", "direktsaft", "fruchtgenuss", "blueberry", "raspberry",
+      "grape", "tonic ginger", "apple ginger", "apple lime", "frucht-entdecker", "kinderserie", "heidelbeere",
+      "himbeere", "traube", "ingwer", "apfel", "limette"
+    ],
+    href: "/saefte",
+    icon: Sparkles,
+  },
+  {
     id: "prod-juice-blaubeere",
     title: "Blaubeere (Blueberry / Heidelbeere) – Vital-Fruchtsaft",
     category: "Produkt",
