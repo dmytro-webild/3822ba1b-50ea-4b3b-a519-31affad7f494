@@ -449,9 +449,9 @@ const KIDS_CANS: KidCan[] = [
     flavor: "Apfel mit Limette",
     role: "Der Fruchtexperte",
     desc: "Spritzig-frischer Apfel-Limette-Mix für den ultimativen Erfrischungskick.",
-    productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664602289-qq16ntrk.png",
-    characterImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664602289-qq16ntrk.png",
-    profileImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664602289-qq16ntrk.png",
+    productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684319-ney1jb8e.png",
+    characterImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684319-ney1jb8e.png",
+    profileImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684319-ney1jb8e.png",
     color: "border-lime-300/60 text-lime-950",
     badgeBg: "bg-[#15803D] text-white"
   }
@@ -547,9 +547,9 @@ const CHARACTERS: CharacterProfile[] = [
     fullStory:
       "Limetix ist der Gourmet unter den Entdeckern. Mit geschultem Geschmackssinn findet er die saftigsten grünen Limetten und kombiniert sie mit mildem Apfelsaft. Sein Ergebnis ist eine natürliche Erfrischung, die alle strahlen lässt!",
     favoriteFruit: "Sonnige grüne Limetten",
-    productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664602289-qq16ntrk.png",
-    characterImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664602289-qq16ntrk.png",
-    profileImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664602289-qq16ntrk.png",
+    productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684319-ney1jb8e.png",
+    characterImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684319-ney1jb8e.png",
+    profileImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684319-ney1jb8e.png",
     colorTheme: "border-lime-300/80 bg-lime-50/70 text-lime-950",
     bgGradient: "bg-gradient-to-b from-lime-100/90 via-lime-200/50 to-lime-300/40 border border-lime-300/60 shadow-inner",
     btnBg: "bg-[#15803D] hover:bg-[#166534]"
