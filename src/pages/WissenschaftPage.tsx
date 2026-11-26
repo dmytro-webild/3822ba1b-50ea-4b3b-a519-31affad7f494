@@ -124,10 +124,10 @@ export default function WissenschaftPage() {
   }, [selectedCategory, searchQuery]);
 
   return (
-    <div className="bg-transparent min-h-screen text-[#0A1C3A] font-sans pb-24">
+    <div className="bg-transparent min-h-screen text-[#0A1C3A] font-sans pb-12">
       {/* Hero Header */}
-      <section className="bg-[#0A1C3A] text-white py-20 px-6 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto space-y-6 relative z-10">
+      <section className="bg-[#0A1C3A] text-white py-10 sm:py-14 px-4 sm:px-6 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto space-y-4 relative z-10">
           <Link
             to="/"
             className="inline-flex items-center gap-2 text-xs font-bold text-sky-400 hover:text-white transition uppercase tracking-wider bg-white/10 px-4 py-2 rounded-full border border-white/10"
@@ -135,7 +135,7 @@ export default function WissenschaftPage() {
             <ArrowLeft className="w-4 h-4" /> Zurück zur Startseite
           </Link>
 
-          <div className="space-y-4 max-w-3xl">
+          <div className="space-y-3 max-w-3xl">
             <span className="text-sky-400 text-xs font-extrabold tracking-widest uppercase bg-sky-950/60 px-4 py-1.5 rounded-full inline-block border border-sky-800/50">
               Wissenschaftliche Evidenz &amp; Studien
             </span>
@@ -150,10 +150,10 @@ export default function WissenschaftPage() {
       </section>
 
       {/* Main Container */}
-      <section className="max-w-7xl mx-auto px-6 py-16 space-y-20">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10 space-y-10 sm:space-y-12">
         
         {/* ─── NEWS & STUDIENBIBLIOTHEK SECTION ─── */}
-        <div id="news-bibliothek" className="space-y-10">
+        <div id="news-bibliothek" className="space-y-6 sm:space-y-8">
           <div className="space-y-3 text-center sm:text-left">
             <span className="text-xs font-extrabold uppercase tracking-widest text-sky-600 bg-sky-50 px-3.5 py-1.5 rounded-md border border-sky-100 inline-block">
               Forschungsberichte &amp; Fachbeiträge

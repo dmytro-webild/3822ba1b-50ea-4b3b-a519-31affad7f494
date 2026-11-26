@@ -2,11 +2,11 @@ import { Scale, Building2, Phone, ShieldCheck } from "lucide-react";
 
 export default function ImpressumPage() {
   return (
-    <div className="py-24 bg-transparent min-h-svh font-sans text-[#0A1C3A]">
-      <div className="max-w-4xl mx-auto px-6 space-y-12">
+    <div className="py-10 sm:py-14 bg-transparent min-h-svh font-sans text-[#0A1C3A]">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-6 sm:space-y-8">
         
         {/* Header Section */}
-        <div className="text-center space-y-4 max-w-2xl mx-auto">
+        <div className="text-center space-y-2.5 max-w-2xl mx-auto">
           <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-white px-4 py-1.5 rounded-full inline-block border border-slate-300 shadow-sm">
             Rechtliche Informationen
           </span>

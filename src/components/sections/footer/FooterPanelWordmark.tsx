@@ -144,7 +144,7 @@ const FooterPanelWordmark = ({
       aria-label={ariaLabel ?? "Product Showcase & Footer"}
       {...modelChapter(model)}
       className={cn(
-        "relative py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-white via-slate-50 to-slate-100/70 text-[#0A1C3A] overflow-hidden border-t border-slate-200/80 font-sans",
+        "relative py-8 sm:py-10 lg:py-12 bg-gradient-to-b from-white via-slate-50 to-slate-100/70 text-[#0A1C3A] overflow-hidden border-t border-slate-200/80 font-sans",
         className
       )}
     >
@@ -156,7 +156,7 @@ const FooterPanelWordmark = ({
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: slow, ease }}
-            className="flex flex-col items-center justify-center space-y-4 mb-6 sm:mb-8"
+            className="flex flex-col items-center justify-center space-y-3 mb-4 sm:mb-5"
           >
             <div className="relative group cursor-pointer">
               <div className="absolute -inset-1.5 rounded-3xl bg-gradient-to-r from-sky-400 via-blue-600 to-[#0A1C3A] opacity-25 blur-md group-hover:opacity-45 transition duration-500" />
@@ -183,7 +183,7 @@ const FooterPanelWordmark = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: slow, ease, delay: 0.1 }}
-          className="relative w-full max-w-6xl my-4 sm:my-8 bg-white/80 backdrop-blur-md rounded-3xl border border-slate-200/90 p-6 sm:p-10 shadow-2xl overflow-hidden"
+          className="relative w-full max-w-6xl my-2 sm:my-4 bg-white/80 backdrop-blur-md rounded-3xl border border-slate-200/90 p-4 sm:p-6 shadow-2xl overflow-hidden"
         >
           {/* Internal Stream Banner Glow */}
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-blue-500/10 to-indigo-500/5 pointer-events-none" />

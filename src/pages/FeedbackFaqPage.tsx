@@ -9,9 +9,9 @@ export default function FeedbackFaqPage() {
   const [showAdmin, setShowAdmin] = useState(false);
 
   return (
-    <div className="space-y-16 py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto font-sans pt-28">
+    <div className="space-y-8 sm:space-y-10 py-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto font-sans pt-20 sm:pt-24">
       {/* Hero Header */}
-      <div className="text-center space-y-4 max-w-3xl mx-auto">
+      <div className="text-center space-y-2.5 max-w-3xl mx-auto">
         <div className="inline-flex items-center gap-2 bg-[#0A1C3A] text-white text-xs font-extrabold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md">
           <MessageSquareHeart className="w-4 h-4 text-sky-400" />
           <span>Kundenmeinungen &amp; Community</span>

@@ -61,11 +61,11 @@ html {
   --label-tracking: -0.01em;
   --label-case: none;
 
-  --gutter: clamp(1.25rem, 0.7857rem + 1.905vw, 2.5rem);
+  --gutter: clamp(0.75rem, 0.5rem + 0.7vw, 1.25rem);
   --max-w: 1600px;
   --container: min(100% - 2 * var(--gutter), var(--max-w));
-  --section-space: clamp(4.0625rem, 3.3429rem + 2.952vw, 6rem);
-  --gap: clamp(1rem, 0.675rem + 1.333vw, 1.875rem);
+  --section-space: clamp(1.5rem, 1rem + 1.2vw, 2.5rem);
+  --gap: clamp(0.5rem, 0.4rem + 0.5vw, 0.875rem);
   --grid-columns: 12;
 
   --radius: 0.75rem;
