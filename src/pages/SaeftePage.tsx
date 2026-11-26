@@ -401,9 +401,9 @@ const KIDS_CANS: KidCan[] = [
     flavor: "Himbeere",
     role: "Die Sammlerin & Forscherin",
     desc: "Fruchtige Himbeere mit natürlicher Frische. Der Liebling kleiner Entdecker!",
-    productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664547775-k090jjrt.png",
-    characterImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664547775-k090jjrt.png",
-    profileImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664547775-k090jjrt.png",
+    productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684318-4vepg2dg.png",
+    characterImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684318-4vepg2dg.png",
+    profileImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684318-4vepg2dg.png",
     color: "border-rose-300/60 text-rose-950",
     badgeBg: "bg-[#D81B60] text-white"
   },
@@ -413,9 +413,9 @@ const KIDS_CANS: KidCan[] = [
     flavor: "Heidelbeere",
     role: "Der Anführer",
     desc: "Köstlicher Heidelbeer-Direktsaft für mutige Abenteurer und schlaue Köpfe.",
-    productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664563480-v5i65raq.png",
-    characterImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664563480-v5i65raq.png",
-    profileImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664563480-v5i65raq.png",
+    productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684317-dmf43nz0.png",
+    characterImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684317-dmf43nz0.png",
+    profileImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684317-dmf43nz0.png",
     color: "border-purple-300/60 text-purple-950",
     badgeBg: "bg-purple-700 text-white"
   },
@@ -425,9 +425,9 @@ const KIDS_CANS: KidCan[] = [
     flavor: "Apfel",
     role: "Der Kartograf",
     desc: "Knackig-süßer Apfelsaft aus heimischen Früchten – purer Naturgenuss.",
-    productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664584789-e2rxihpn.png",
-    characterImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664584789-e2rxihpn.png",
-    profileImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664584789-e2rxihpn.png",
+    productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684313-6g29t9po.png",
+    characterImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684313-6g29t9po.png",
+    profileImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684313-6g29t9po.png",
     color: "border-orange-300/60 text-orange-950",
     badgeBg: "bg-[#EA580C] text-white"
   },
@@ -437,9 +437,9 @@ const KIDS_CANS: KidCan[] = [
     flavor: "Ingwer Tonic",
     role: "Der Historiker",
     desc: "Milder Apfel mit mohniger Ingwernote – kinderfreundlich ausbalanciert.",
-    productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664594471-0da8mb1m.png",
-    characterImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664594471-0da8mb1m.png",
-    profileImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664594471-0da8mb1m.png",
+    productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684315-h4ectgrf.png",
+    characterImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684315-h4ectgrf.png",
+    profileImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684315-h4ectgrf.png",
     color: "border-amber-300/60 text-amber-950",
     badgeBg: "bg-[#D97706] text-white"
   },
@@ -483,9 +483,9 @@ const CHARACTERS: CharacterProfile[] = [
     fullStory:
       "Himbeerixxa ist die schlaueste Forscherin im Fruchtwald. Wo immer seltene Beeren wachsen, findet sie den Weg! Mit ihrer magischen Lupe prüft sie die Sonne auf den Früchten und sorgt dafür, dass nur die frischesten Himbeeren geerntet werden. Ihr Motto: Natur pur ist das größte Abenteuer!",
     favoriteFruit: "Sonnengereifte Himbeeren",
-    productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664547775-k090jjrt.png",
-    characterImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664547775-k090jjrt.png",
-    profileImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664547775-k090jjrt.png",
+    productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684318-4vepg2dg.png",
+    characterImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684318-4vepg2dg.png",
+    profileImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684318-4vepg2dg.png",
     colorTheme: "border-rose-300/80 bg-rose-50/70 text-rose-950",
     bgGradient: "bg-gradient-to-b from-rose-100/90 via-rose-200/50 to-rose-300/40 border border-rose-300/60 shadow-inner",
     btnBg: "bg-[#D81B60] hover:bg-[#C2185B]"
@@ -499,9 +499,9 @@ const CHARACTERS: CharacterProfile[] = [
     fullStory:
       "Heidelberix liebt den Sport und die freie Natur. Als Anführer der Frucht-Entdecker hat er stets einen klaren Kopf und motiviert das ganze Team. Seine Lieblingsbeere, die blaue Heidelbeere, spendet ihm die nötige Energie für rasante Abenteuer in den Bergen.",
     favoriteFruit: "Wilde Wald-Heidelbeeren",
-    productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664563480-v5i65raq.png",
-    characterImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664563480-v5i65raq.png",
-    profileImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664563480-v5i65raq.png",
+    productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684317-dmf43nz0.png",
+    characterImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684317-dmf43nz0.png",
+    profileImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684317-dmf43nz0.png",
     colorTheme: "border-purple-300/80 bg-purple-50/70 text-purple-950",
     bgGradient: "bg-gradient-to-b from-purple-100/90 via-purple-200/50 to-purple-300/40 border border-purple-300/60 shadow-inner",
     btnBg: "bg-purple-700 hover:bg-purple-800"
@@ -515,9 +515,9 @@ const CHARACTERS: CharacterProfile[] = [
     fullStory:
       "Kein Weg ist Apfelrix zu weit. Als meisterhafter Kartograf zeichnet er genaue Landkarten für die Truppe. Ein knackiger roter Apfel ist seine liebste Stärkung auf langen Wanderungen über wogende Wiesen und Hügel.",
     favoriteFruit: "Knackige rote Äpfel",
-    productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664584789-e2rxihpn.png",
-    characterImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664584789-e2rxihpn.png",
-    profileImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664584789-e2rxihpn.png",
+    productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684313-6g29t9po.png",
+    characterImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684313-6g29t9po.png",
+    profileImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684313-6g29t9po.png",
     colorTheme: "border-orange-300/80 bg-orange-50/70 text-orange-950",
     bgGradient: "bg-gradient-to-b from-orange-100/90 via-orange-200/50 to-orange-300/40 border border-orange-300/60 shadow-inner",
     btnBg: "bg-[#EA580C] hover:bg-[#C2410C]"
@@ -531,9 +531,9 @@ const CHARACTERS: CharacterProfile[] = [
     fullStory:
       "Ingwerix trägt ein altes Buch voller Geschichten mit sich. Er weiß exakt, wie wertvoll die Ingwerwurzel seit Jahrtausenden für Wohlbefinden und Vitalität ist. Seine spannenden Erzählungen am Lagerfeuer begeistern alle Entdecker.",
     favoriteFruit: "Frische Ingwerwurzel & Apfel",
-    productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664594471-0da8mb1m.png",
-    characterImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664594471-0da8mb1m.png",
-    profileImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664594471-0da8mb1m.png",
+    productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684315-h4ectgrf.png",
+    characterImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684315-h4ectgrf.png",
+    profileImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684315-h4ectgrf.png",
     colorTheme: "border-amber-300/80 bg-amber-50/70 text-amber-950",
     bgGradient: "bg-gradient-to-b from-amber-100/90 via-amber-200/50 to-amber-300/40 border border-amber-300/60 shadow-inner",
     btnBg: "bg-[#D97706] hover:bg-[#B45309]"
