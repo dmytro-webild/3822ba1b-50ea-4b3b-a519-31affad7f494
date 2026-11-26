@@ -622,7 +622,7 @@ export default function WissenschaftPage() {
                   className="inline-flex items-center justify-center gap-2 bg-sky-500 hover:bg-sky-400 text-[#0A1C3A] font-black uppercase text-xs sm:text-sm tracking-wider py-3.5 px-7 rounded-xl shadow-lg transition duration-200"
                 >
                   <BookOpen className="w-4 h-4" />
-                  <span>Mehr über das Buch erfahren</span>
+                  <span>Jetzt Bestellen</span>
                   <ExternalLink className="w-4 h-4 ml-1" />
                 </a>
 
