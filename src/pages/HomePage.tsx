@@ -273,7 +273,7 @@ export default function HomePage() {
                 <div>
                   <div className="relative h-44 overflow-hidden bg-slate-200">
                     <img
-                      src="https://images.unsplash.com/photo-1548839140-29a749e1bc4e?auto=compress&w=800&q=80"
+                      src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795141318653-q4fp6ask.png"
                       alt="H2-Konzentration"
                       className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                     />
@@ -296,7 +296,7 @@ export default function HomePage() {
                 <div>
                   <div className="relative h-44 overflow-hidden bg-slate-200">
                     <img
-                      src="https://images.unsplash.com/photo-1527960471264-932f39eb5846?auto=compress&w=800&q=80"
+                      src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795653130858-6zykqvgj.png"
                       alt="Aluminiumdosen-Technologie"
                       className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                     />
