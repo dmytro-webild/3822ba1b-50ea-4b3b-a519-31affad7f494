@@ -273,7 +273,7 @@ export default function HomePage() {
                 <div>
                   <div className="relative h-44 overflow-hidden bg-slate-200">
                     <img
-                      src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795141318653-q4fp6ask.png"
+                      src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795654411022-9o7v5ozx.png"
                       alt="H2-Konzentration"
                       className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                     />
@@ -319,7 +319,7 @@ export default function HomePage() {
                 <div>
                   <div className="relative h-44 overflow-hidden bg-slate-200">
                     <img
-                      src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=compress&w=800&q=80"
+                      src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795654372979-h1aq82jr.png"
                       alt="BPANI-Technologie"
                       className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                     />
@@ -434,7 +434,7 @@ export default function HomePage() {
                 <div>
                   <div className="relative h-44 overflow-hidden bg-slate-200">
                     <img
-                      src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=compress&w=800&q=80"
+                      src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795654811669-5n7rmz1a.png"
                       alt="Innere Polymerbeschichtung"
                       className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                     />
@@ -457,7 +457,7 @@ export default function HomePage() {
                 <div>
                   <div className="relative h-44 overflow-hidden bg-slate-200">
                     <img
-                      src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=compress&w=800&q=80"
+                      src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795654905969-uzt13zda.png"
                       alt="Geschmacks- und Qualitätsschutz"
                       className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                     />
