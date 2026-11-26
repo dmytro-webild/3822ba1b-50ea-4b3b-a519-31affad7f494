@@ -20,8 +20,6 @@ import {
   Zap,
   Users,
   UserCheck,
-  ChevronLeft,
-  ChevronRight,
   Utensils,
   Wine,
   GraduationCap,
@@ -192,18 +190,6 @@ const EINSATZBEREICHE: EinsatzbereichCard[] = [
 
 export default function HomePage() {
   const einsatzbereicheRef = useRef<HTMLDivElement>(null);
-
-  const scrollEinsatzLeft = () => {
-    if (einsatzbereicheRef.current) {
-      einsatzbereicheRef.current.scrollBy({ left: -320, behavior: "smooth" });
-    }
-  };
-
-  const scrollEinsatzRight = () => {
-    if (einsatzbereicheRef.current) {
-      einsatzbereicheRef.current.scrollBy({ left: 320, behavior: "smooth" });
-    }
-  };
 
   return (
     <>
@@ -760,79 +746,10 @@ export default function HomePage() {
         </section>
       </div>
 
-      {/* 5. VORTEILE IM VERGLEICH & EINSATZBEREICHE (HORIZONTAL SWIPEABLE IMAGE CARDS) */}
+      {/* 5. VORTEILE IM VERGLEICH */}
       <div id="vergleich" data-webild-section="ProductCompareTable" data-webild-section-id="ProductCompareTable-1" data-section="product">
         <section className="py-20 px-6 bg-transparent text-[#0A1C3A] font-sans">
-          <div className="max-w-7xl mx-auto space-y-16">
-            {/* Einsatzbereiche Section Header & Navigation */}
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-              <div className="space-y-3 max-w-2xl">
-                <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-white px-4 py-1.5 rounded-full inline-block border border-slate-300">
-                  Performance &amp; Zielgruppen
-                </span>
-                <h2 className="text-4xl lg:text-5xl font-black text-[#0A1C3A] uppercase tracking-tight">
-                  EINSATZBEREICHE &amp; ANWENDUNGSGEBIETE
-                </h2>
-                <p className="text-slate-600 text-sm sm:text-base">
-                  Ob Fitnessstudio, Militär &amp; Streitkräfte, zivile Einsatzkräfte, Fußball- &amp; Sportvereine, Gastronomie, Bars, Universitätsmensen, Personal Training oder Profisport – FONTES VITEA liefert zielgerichtete zelluläre Hydration.
-                </p>
-              </div>
-
-              {/* Desktop Scroll Controls for Einsatzbereiche */}
-              <div className="flex items-center gap-2 shrink-0">
-                <button
-                  onClick={scrollEinsatzLeft}
-                  aria-label="Nach links scrollen"
-                  className="w-11 h-11 bg-white hover:bg-[#0A1C3A] hover:text-white text-[#0A1C3A] border border-slate-300 rounded-full flex items-center justify-center shadow-md transition transform active:scale-95"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-                <button
-                  onClick={scrollEinsatzRight}
-                  aria-label="Nach rechts scrollen"
-                  className="w-11 h-11 bg-white hover:bg-[#0A1C3A] hover:text-white text-[#0A1C3A] border border-slate-300 rounded-full flex items-center justify-center shadow-md transition transform active:scale-95"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
-
-            {/* Horizontally Swipeable Image Cards Carousel */}
-            <div
-              ref={einsatzbereicheRef}
-              className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 pt-2 scrollbar-none scroll-smooth select-none"
-              style={{ WebkitOverflowScrolling: "touch" }}
-            >
-              {EINSATZBEREICHE.map((item) => {
-                const IconComp = item.icon;
-                return (
-                  <div
-                    key={item.id}
-                    className="snap-start shrink-0 w-[280px] sm:w-[320px] bg-white rounded-2xl overflow-hidden border border-slate-300 shadow-lg flex flex-col justify-between hover:border-[#0A1C3A] hover:shadow-xl transition group"
-                  >
-                    <div>
-                      <div className="relative h-48 overflow-hidden bg-slate-200">
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0A1C3A]/85 via-transparent to-transparent" />
-                        <span className="absolute bottom-3 left-3 text-white text-xs font-black uppercase tracking-wider flex items-center gap-1.5">
-                          <IconComp className={`w-4 h-4 ${item.badgeColor}`} /> {item.category}
-                        </span>
-                      </div>
-                      <div className="p-5 space-y-2">
-                        <h3 className="text-base font-black uppercase text-[#0A1C3A]">{item.title}</h3>
-                        <p className="text-xs text-slate-600 leading-relaxed">{item.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Existing Comparison Table */}
+          <div className="max-w-7xl mx-auto">
             <ProductCompareTable
               media="image"
               productImageSrc={CAN_IMAGE_URL}
@@ -842,6 +759,8 @@ export default function HomePage() {
               benefitsLabel="Merkmale"
               name="FONTES VITEA H2"
               otherLabel="Herkömmliches Wasser"
+              shopUrl="https://shop.fontes-vitae.com"
+              shopButtonText="Zum Shop"
               items={[
                 {
                   title: "Min. 2.8 mg/L molekular gelöster Wasserstoff",
@@ -883,6 +802,63 @@ export default function HomePage() {
                 }
               }}
             />
+          </div>
+        </section>
+      </div>
+
+      {/* 6. EINSATZBEREICHE & ANWENDUNGSGEBIETE */}
+      <div id="einsatzbereiche" data-webild-section="Einsatzbereiche" data-webild-section-id="Einsatzbereiche-1" data-section="einsatzbereiche">
+        <section className="py-20 px-6 bg-transparent text-[#0A1C3A] font-sans">
+          <div className="max-w-7xl mx-auto space-y-12">
+            {/* Einsatzbereiche Section Header */}
+            <div className="space-y-3 max-w-2xl text-center md:text-left">
+              <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-white px-4 py-1.5 rounded-full inline-block border border-slate-300">
+                Performance &amp; Zielgruppen
+              </span>
+              <h2 className="text-4xl lg:text-5xl font-black text-[#0A1C3A] uppercase tracking-tight">
+                EINSATZBEREICHE &amp; ANWENDUNGSGEBIETE
+              </h2>
+              <p className="text-slate-600 text-sm sm:text-base">
+                Ob Fitnessstudio, Militär &amp; Streitkräfte, zivile Einsatzkräfte, Fußball- &amp; Sportvereine, Gastronomie, Bars, Universitätsmensen, Personal Training oder Profisport – FONTES VITEA liefert zielgerichtete zelluläre Hydration.
+              </p>
+            </div>
+
+            {/* Grid on Desktop (4 cols), Grid on Tablet (2 cols), Swipe Carousel on Mobile */}
+            <div
+              ref={einsatzbereicheRef}
+              className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-6 md:pb-0 pt-2 scrollbar-none select-none"
+              style={{ WebkitOverflowScrolling: "touch" }}
+            >
+              {EINSATZBEREICHE.map((item) => {
+                const IconComp = item.icon;
+                return (
+                  <div
+                    key={item.id}
+                    className="snap-start shrink-0 w-[280px] sm:w-[320px] md:w-full md:shrink bg-white rounded-2xl overflow-hidden border border-slate-300 shadow-md hover:border-[#0A1C3A] hover:shadow-xl transition-all duration-300 flex flex-col justify-between group h-full"
+                  >
+                    <div className="flex flex-col h-full justify-between">
+                      <div>
+                        <div className="relative h-48 overflow-hidden bg-slate-200 shrink-0">
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#0A1C3A]/85 via-transparent to-transparent" />
+                          <span className="absolute bottom-3 left-3 text-white text-xs font-black uppercase tracking-wider flex items-center gap-1.5">
+                            <IconComp className={`w-4 h-4 ${item.badgeColor}`} /> {item.category}
+                          </span>
+                        </div>
+                        <div className="p-5 space-y-2">
+                          <h3 className="text-base font-black uppercase text-[#0A1C3A]">{item.title}</h3>
+                          <p className="text-xs text-slate-600 leading-relaxed">{item.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </section>
       </div>

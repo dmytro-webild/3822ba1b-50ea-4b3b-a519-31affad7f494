@@ -119,20 +119,20 @@ function LayoutContent() {
               href: "/#vergleich"
             },
             {
-              name: "Shop",
-              href: "https://shop.fontes-vitae.com"
-            },
-            {
-              name: "Feedback & FAQ",
-              href: "/feedback-faq"
+              name: "News & Studien",
+              href: "/wissenschaft"
             },
             {
               name: "Über uns",
               href: "/ueber-uns"
             },
             {
-              name: "News & Studien",
-              href: "/wissenschaft"
+              name: "Feedback & FAQ",
+              href: "/feedback-faq"
+            },
+            {
+              name: "SHOP",
+              href: "https://shop.fontes-vitae.com"
             },
             {
               name: "Kontakt",
@@ -193,10 +193,10 @@ function LayoutContent() {
             <div className="flex flex-col space-y-1.5 text-xs text-slate-300">
               <Link to="/#top" onClick={() => { if (window.location.pathname === "/") window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition">H2 Wasser</Link>
               <Link to="/#vergleich" className="hover:text-white transition">Vorteile</Link>
-              <a href="https://shop.fontes-vitae.com" className="hover:text-white transition">Shop</a>
-              <Link to="/feedback-faq" className="hover:text-white transition">Feedback &amp; FAQ</Link>
-              <Link to="/ueber-uns" className="hover:text-white transition">Über uns</Link>
               <Link to="/wissenschaft" className="hover:text-white transition">News &amp; Studien</Link>
+              <Link to="/ueber-uns" className="hover:text-white transition">Über uns</Link>
+              <Link to="/feedback-faq" className="hover:text-white transition">Feedback &amp; FAQ</Link>
+              <a href="https://shop.fontes-vitae.com" className="hover:text-white transition">SHOP</a>
               <Link to="/kontakt" className="hover:text-white transition">Kontakt</Link>
             </div>
           </div>
