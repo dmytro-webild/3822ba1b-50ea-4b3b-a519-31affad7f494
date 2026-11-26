@@ -28,7 +28,7 @@ const EASE = [0.19, 1, 0.22, 1] as const;
 
 const NavbarPillLinks = ({
   navItems = [
-    { name: "H2 Wasser", href: "/#quelle" },
+    { name: "H2 Wasser", href: "/#top" },
     { name: "Vorteile", href: "/#vergleich" },
     { name: "Shop", href: "https://shop.fontes-vitae.com" },
   ],
@@ -101,6 +101,14 @@ const NavbarPillLinks = ({
                 >
                   <a
                     href={item.href}
+                    onClick={(e) => {
+                      if (item.href === "/#top" || item.href === "/") {
+                        if (window.location.pathname === "/") {
+                          e.preventDefault();
+                          window.scrollTo({ top: 0, behavior: "smooth" });
+                        }
+                      }
+                    }}
                     className="flex h-[2.35rem] items-center rounded-xl bg-white px-3.5 sm:px-4 font-[family-name:var(--font-label)] text-xs sm:text-sm font-extrabold leading-none tracking-tight text-[#0A1C3A] border border-slate-200/90 shadow-xs hover:bg-slate-50 hover:shadow-sm transition-all"
                   >
                     <p className="whitespace-nowrap">{item.name}</p>
@@ -166,7 +174,15 @@ const NavbarPillLinks = ({
                 <li key={`${i}-${item.href}`}>
                   <motion.a
                     href={item.href}
-                    onClick={() => setOpen(false)}
+                    onClick={(e) => {
+                      setOpen(false);
+                      if (item.href === "/#top" || item.href === "/") {
+                        if (window.location.pathname === "/") {
+                          e.preventDefault();
+                          window.scrollTo({ top: 0, behavior: "smooth" });
+                        }
+                      }
+                    }}
                     initial={reduce ? false : { y: "110%" }}
                     animate={{ y: "0%" }}
                     transition={{ duration: 0.9, ease: EASE, delay: 0.25 + i * 0.06 }}

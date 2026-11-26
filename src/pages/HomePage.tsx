@@ -6,13 +6,11 @@ import CustomerReviewsSection from "@/components/sections/feedback/CustomerRevie
 import ScrollToneBackdrop from "@/components/kit/ScrollToneBackdrop";
 import WaterDropIntro from "@/components/loaders/WaterDropIntro";
 import {
-  Check,
   Briefcase,
   Dumbbell,
   Droplets,
   ShieldCheck,
   BookOpen,
-  ArrowRight,
   Trophy,
   Activity,
   Target,
@@ -574,6 +572,28 @@ export default function HomePage() {
                   </ul>
                 </div>
               </div>
+
+              {/* Sie möchten mehr erfahren? Info-Bereich */}
+              <div className="mt-14 pt-10 border-t border-slate-200/80 max-w-3xl mx-auto text-center space-y-5">
+                <div className="inline-flex items-center justify-center size-12 bg-[#0A1C3A] text-white rounded-2xl shadow-sm">
+                  <BookOpen className="w-6 h-6 text-sky-400" />
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#0A1C3A]">
+                  Sie möchten mehr erfahren?
+                </h3>
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium max-w-2xl mx-auto">
+                  Entdecken Sie wissenschaftliche Studien, Forschungsergebnisse, Zertifikate und weiterführende Informationen über molekularen Wasserstoff und unsere Technologie.
+                </p>
+                <div className="pt-2">
+                  <Link
+                    to="/wissenschaft"
+                    className="inline-flex items-center justify-center gap-3 bg-[#0A1C3A] hover:bg-slate-800 text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
+                  >
+                    <BookOpen className="w-4 h-4 shrink-0 text-sky-400" />
+                    <span>WISSEN, STUDIEN &amp; ZERTIFIKATE ENTDECKEN →</span>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -876,74 +896,6 @@ export default function HomePage() {
           showGoogleReviews={true}
         />
       </div>
-
-      {/* 6. VORSCHAU ZUR SEITE WISSEN & STUDIEN */}
-      <div id="wissen-vorschau" data-webild-section="SciencePreview" data-webild-section-id="SciencePreview-1" data-section="science">
-        <section className="py-20 px-6 bg-[#0A1C3A] text-white font-sans relative overflow-hidden">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-            <div className="space-y-6">
-              <span className="text-sky-400 text-xs font-extrabold tracking-widest uppercase bg-sky-950/80 px-4 py-1.5 rounded-full inline-block border border-sky-800/60">
-                Wissenschaftlich Fundiert
-              </span>
-              <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tight leading-tight">
-                WISSEN &amp; STUDIEN VORSCHAU
-              </h2>
-              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                Molekularer Wasserstoff (H2) ist in über 1.000 wissenschaftlichen Publikationen erforscht. Er wirkt als selektives Antioxidans, neutralisiert schädliche freie Radikale (.OH) und fördert die zelluläre ATP-Synthese.
-              </p>
-
-              <div className="space-y-3 pt-2">
-                <div className="flex items-center gap-3 bg-white/10 p-3.5 rounded-xl border border-white/10 text-xs">
-                  <Check className="w-5 h-5 text-sky-400 shrink-0" />
-                  <span>Reduzierung von Laktat im Muskelgewebe während Belastung</span>
-                </div>
-                <div className="flex items-center gap-3 bg-white/10 p-3.5 rounded-xl border border-white/10 text-xs">
-                  <Check className="w-5 h-5 text-sky-400 shrink-0" />
-                  <span>Selektive Neutralisation von Oxidativem Stress (ROS)</span>
-                </div>
-                <div className="flex items-center gap-3 bg-white/10 p-3.5 rounded-xl border border-white/10 text-xs">
-                  <Check className="w-5 h-5 text-sky-400 shrink-0" />
-                  <span>Direkte Bioverfügbarkeit &amp; rasche zelluläre Aufnahme</span>
-                </div>
-              </div>
-
-              <div className="pt-4">
-                <Link
-                  to="/wissenschaft"
-                  className="inline-flex items-center gap-3 bg-white hover:bg-slate-100 text-[#0A1C3A] font-extrabold text-xs uppercase tracking-wider px-8 py-4 rounded-full shadow-xl transition transform hover:scale-105"
-                >
-                  <BookOpen className="w-4 h-4 text-[#0A1C3A]" />
-                  <span>Alle Studien &amp; Videos entdecken</span>
-                  <ArrowRight className="w-4 h-4 text-[#0A1C3A]" />
-                </Link>
-              </div>
-            </div>
-
-            <div className="bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-white/15 space-y-6 text-center">
-              <span className="text-xs text-sky-400 font-extrabold uppercase tracking-widest block">
-                Forschungs-Highlight
-              </span>
-              <h3 className="text-2xl font-black uppercase text-white">
-                Mitochondrien &amp; Zell-Langlebigkeit
-              </h3>
-              <p className="text-xs text-slate-300 leading-relaxed">
-                Erfahre in detaillierten Vorträgen von führenden Molekularbiologen wie Tyler LeBaron, wie Wasserstoffwasser die zelluläre Mitochondrienfunktion schützt und verjüngt.
-              </p>
-
-              <div className="pt-4 flex justify-center">
-                <Link
-                  to="/wissenschaft"
-                  className="bg-sky-500 hover:bg-sky-400 text-white font-extrabold text-xs uppercase px-6 py-3 rounded-xl tracking-wider transition shadow-lg inline-flex items-center gap-2"
-                >
-                  <span>Zur Wissenschafts-Übersicht</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-
     </>
   );
 }

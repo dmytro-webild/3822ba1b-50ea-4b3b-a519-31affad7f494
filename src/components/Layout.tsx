@@ -112,7 +112,7 @@ function LayoutContent() {
           navItems={[
             {
               name: "H2 Wasser",
-              href: "/#quelle"
+              href: "/#top"
             },
             {
               name: "Vorteile",
@@ -191,7 +191,7 @@ function LayoutContent() {
           <div className="flex flex-col items-center md:items-start space-y-2">
             <h4 className="text-xs font-bold uppercase tracking-widest text-sky-400 mb-1">Navigation</h4>
             <div className="flex flex-col space-y-1.5 text-xs text-slate-300">
-              <Link to="/#quelle" className="hover:text-white transition">H2 Wasser</Link>
+              <Link to="/#top" onClick={() => { if (window.location.pathname === "/") window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition">H2 Wasser</Link>
               <Link to="/#vergleich" className="hover:text-white transition">Vorteile</Link>
               <a href="https://shop.fontes-vitae.com" className="hover:text-white transition">Shop</a>
               <Link to="/feedback-faq" className="hover:text-white transition">Feedback &amp; FAQ</Link>
