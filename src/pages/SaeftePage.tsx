@@ -458,7 +458,7 @@ const CHARACTERS: CharacterProfile[] = [
     fullStory:
       "Himbeerixxa ist die schlaueste Forscherin im Fruchtwald. Wo immer seltene Beeren wachsen, findet sie den Weg! Mit ihrer magischen Lupe prüft sie die Sonne auf den Früchten und sorgt dafür, dass nur die frischesten Himbeeren geerntet werden. Ihr Motto: Natur pur ist das größte Abenteuer!",
     favoriteFruit: "Sonnengereifte Himbeeren",
-    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684318-4vepg2dg.png",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664547775-k090jjrt.png",
     colorTheme: "border-rose-300/80 bg-rose-50/70 text-rose-950",
     bgGradient: "bg-gradient-to-b from-rose-100/90 via-rose-200/50 to-rose-300/40 border border-rose-300/60 shadow-inner",
     btnBg: "bg-[#D81B60] hover:bg-[#C2185B]"
@@ -472,7 +472,7 @@ const CHARACTERS: CharacterProfile[] = [
     fullStory:
       "Heidelberix liebt den Sport und die freie Natur. Als Anführer der Frucht-Entdecker hat er stets einen klaren Kopf und motiviert das ganze Team. Seine Lieblingsbeere, die blaue Heidelbeere, spendet ihm die nötige Energie für rasante Abenteuer in den Bergen.",
     favoriteFruit: "Wilde Wald-Heidelbeeren",
-    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684317-dmf43nz0.png",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664563480-v5i65raq.png",
     colorTheme: "border-purple-300/80 bg-purple-50/70 text-purple-950",
     bgGradient: "bg-gradient-to-b from-purple-100/90 via-purple-200/50 to-purple-300/40 border border-purple-300/60 shadow-inner",
     btnBg: "bg-purple-700 hover:bg-purple-800"
@@ -486,7 +486,7 @@ const CHARACTERS: CharacterProfile[] = [
     fullStory:
       "Kein Weg ist Apfelrix zu weit. Als meisterhafter Kartograf zeichnet er genaue Landkarten für die Truppe. Ein knackiger roter Apfel ist seine liebste Stärkung auf langen Wanderungen über wogende Wiesen und Hügel.",
     favoriteFruit: "Knackige rote Äpfel",
-    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684315-h4ectgrf.png",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664584789-e2rxihpn.png",
     colorTheme: "border-orange-300/80 bg-orange-50/70 text-orange-950",
     bgGradient: "bg-gradient-to-b from-orange-100/90 via-orange-200/50 to-orange-300/40 border border-orange-300/60 shadow-inner",
     btnBg: "bg-[#EA580C] hover:bg-[#C2410C]"
@@ -500,7 +500,7 @@ const CHARACTERS: CharacterProfile[] = [
     fullStory:
       "Ingwerix trägt ein altes Buch voller Geschichten mit sich. Er weiß exakt, wie wertvoll die Ingwerwurzel seit Jahrtausenden für Wohlbefinden und Vitalität ist. Seine spannenden Erzählungen am Lagerfeuer begeistern alle Entdecker.",
     favoriteFruit: "Frische Ingwerwurzel & Apfel",
-    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684319-ney1jb8e.png",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664594471-0da8mb1m.png",
     colorTheme: "border-amber-300/80 bg-amber-50/70 text-amber-950",
     bgGradient: "bg-gradient-to-b from-amber-100/90 via-amber-200/50 to-amber-300/40 border border-amber-300/60 shadow-inner",
     btnBg: "bg-[#D97706] hover:bg-[#B45309]"
@@ -514,7 +514,7 @@ const CHARACTERS: CharacterProfile[] = [
     fullStory:
       "Limetix ist der Gourmet unter den Entdeckern. Mit geschultem Geschmackssinn findet er die saftigsten grünen Limetten und kombiniert sie mit mildem Apfelsaft. Sein Ergebnis ist eine natürliche Erfrischung, die alle strahlen lässt!",
     favoriteFruit: "Sonnige grüne Limetten",
-    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684313-6g29t9po.png",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664602289-qq16ntrk.png",
     colorTheme: "border-lime-300/80 bg-lime-50/70 text-lime-950",
     bgGradient: "bg-gradient-to-b from-lime-100/90 via-lime-200/50 to-lime-300/40 border border-lime-300/60 shadow-inner",
     btnBg: "bg-[#15803D] hover:bg-[#166534]"
@@ -1081,11 +1081,11 @@ export default function SaeftePage() {
                     Demnächst
                   </span>
 
-                  {/* Significantly enlarged Can Presentation without unnecessary white space */}
+                  {/* Significantly enlarged Can & Figure Presentation without unnecessary white space */}
                   <div className="w-full h-64 sm:h-72 lg:h-80 flex items-center justify-center p-1 my-1 relative overflow-hidden">
                     <Media
                       src={can.image}
-                      alt={`Kinderserie ${can.name} Getränkedose`}
+                      alt={`Kinderserie ${can.name} Dose und Figur`}
                       className="h-full w-auto max-w-full object-contain filter drop-shadow-xl group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
