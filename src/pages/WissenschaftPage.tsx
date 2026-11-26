@@ -147,18 +147,6 @@ export default function WissenschaftPage() {
         
         {/* ─── NEWS & STUDIENBIBLIOTHEK SECTION ─── */}
         <div id="news-bibliothek" className="space-y-6 sm:space-y-8">
-          <div className="space-y-3 text-center sm:text-left">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-sky-600 bg-sky-50 px-3.5 py-1.5 rounded-md border border-sky-100 inline-block">
-              Forschungsberichte &amp; Fachbeiträge
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black uppercase text-[#0A1C3A] tracking-tight">
-              Wissenschaftlicher News- &amp; Studienbereich
-            </h2>
-            <p className="text-slate-600 text-xs sm:text-sm max-w-2xl leading-relaxed">
-              Durchsuche unsere kontinuierlich erweiterte Bibliothek an wissenschaftlichen Publikationen, Studien und Berichten zu molekularem Wasserstoff.
-            </p>
-          </div>
-
           {/* Search bar & Category filters */}
           <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-md space-y-6">
             {/* Search Input */}
