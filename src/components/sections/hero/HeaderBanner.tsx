@@ -14,7 +14,7 @@ export default function HeaderBanner({
   children,
 }: HeaderBannerProps) {
   const bgImageUrl =
-    "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795707173828-o10axouq.png";
+    "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795708383563-jke0h7jy.png";
 
   return (
     <section className="relative overflow-hidden bg-[#041126] text-white pt-28 sm:pt-32 pb-10 sm:pb-14 px-4 sm:px-6 shadow-xl border-b border-sky-900/40">
