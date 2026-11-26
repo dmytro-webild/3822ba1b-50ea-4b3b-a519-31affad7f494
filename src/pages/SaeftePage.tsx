@@ -388,7 +388,7 @@ const KIDS_CANS = [
     flavor: "Himbeere",
     role: "Die Sammlerin & Forscherin",
     desc: "Fruchtige Himbeere mit natürlicher Frische. Der Liebling kleiner Entdecker!",
-    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216740-l82r4ka1.png",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795663391849-mpo0cl21.png",
     color: "border-rose-300/60 text-rose-950",
     badgeBg: "bg-[#D81B60] text-white"
   },
@@ -398,7 +398,7 @@ const KIDS_CANS = [
     flavor: "Heidelbeere",
     role: "Der Anführer",
     desc: "Köstlicher Heidelbeer-Direktsaft für mutige Abenteurer und schlaue Köpfe.",
-    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216738-2s53ficu.png",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795663404364-of9lczer.png",
     color: "border-purple-300/60 text-purple-950",
     badgeBg: "bg-purple-700 text-white"
   },
@@ -408,7 +408,7 @@ const KIDS_CANS = [
     flavor: "Apfel",
     role: "Der Kartograf",
     desc: "Knackig-süßer Apfelsaft aus heimischen Früchten – purer Naturgenuss.",
-    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216735-kk46ygff.png",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795663417028-s38bgour.png",
     color: "border-orange-300/60 text-orange-950",
     badgeBg: "bg-[#EA580C] text-white"
   },
@@ -418,7 +418,7 @@ const KIDS_CANS = [
     flavor: "Ingwer Tonic",
     role: "Der Historiker",
     desc: "Milder Apfel mit mohniger Ingwernote – kinderfreundlich ausbalanciert.",
-    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216737-r3370ev4.png",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795663425234-f2vccuhc.png",
     color: "border-amber-300/60 text-amber-950",
     badgeBg: "bg-[#D97706] text-white"
   },
@@ -428,7 +428,7 @@ const KIDS_CANS = [
     flavor: "Limette mit Apfel",
     role: "Der Fruchtexperte",
     desc: "Spritzig-frischer Apfel-Limette-Mix für den ultimativen Erfrischungskick.",
-    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216742-q4yi2mw1.png",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795663433690-yjxrccds.png",
     color: "border-lime-300/60 text-lime-950",
     badgeBg: "bg-[#15803D] text-white"
   }
@@ -457,7 +457,7 @@ const CHARACTERS: CharacterProfile[] = [
     fullStory:
       "Himbeerixxa ist die schlaueste Forscherin im Fruchtwald. Wo immer seltene Beeren wachsen, findet sie den Weg! Mit ihrer magischen Lupe prüft sie die Sonne auf den Früchten und sorgt dafür, dass nur die frischesten Himbeeren geerntet werden. Ihr Motto: Natur pur ist das größte Abenteuer!",
     favoriteFruit: "Sonnengereifte Himbeeren",
-    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216740-l82r4ka1.png",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795663391849-mpo0cl21.png",
     colorTheme: "border-rose-300 text-rose-950",
     btnBg: "bg-[#D81B60] hover:bg-[#C2185B]"
   },
@@ -470,7 +470,7 @@ const CHARACTERS: CharacterProfile[] = [
     fullStory:
       "Heidelberix liebt den Sport und die freie Natur. Als Anführer der Frucht-Entdecker hat er stets einen klaren Kopf und motiviert das ganze Team. Seine Lieblingsbeere, die blaue Heidelbeere, spendet ihm die nötige Energie für rasante Abenteuer in den Bergen.",
     favoriteFruit: "Wilde Wald-Heidelbeeren",
-    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216738-2s53ficu.png",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795663404364-of9lczer.png",
     colorTheme: "border-purple-300 text-purple-950",
     btnBg: "bg-purple-700 hover:bg-purple-800"
   },
@@ -483,7 +483,7 @@ const CHARACTERS: CharacterProfile[] = [
     fullStory:
       "Kein Weg ist Apfelrix zu weit. Als meisterhafter Kartograf zeichnet er genaue Landkarten für die Truppe. Ein knackiger roter Apfel ist seine liebste Stärkung auf langen Wanderungen über wogende Wiesen und Hügel.",
     favoriteFruit: "Knackige rote Äpfel",
-    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216735-kk46ygff.png",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795663417028-s38bgour.png",
     colorTheme: "border-orange-300 text-orange-950",
     btnBg: "bg-[#EA580C] hover:bg-[#C2410C]"
   },
@@ -496,7 +496,7 @@ const CHARACTERS: CharacterProfile[] = [
     fullStory:
       "Ingwerix trägt ein altes Buch voller Geschichten mit sich. Er weiß exakt, wie wertvoll die Ingwerwurzel seit Jahrtausenden für Wohlbefinden und Vitalität ist. Seine spannenden Erzählungen am Lagerfeuer begeistern alle Entdecker.",
     favoriteFruit: "Frische Ingwerwurzel & Apfel",
-    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216737-r3370ev4.png",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795663425234-f2vccuhc.png",
     colorTheme: "border-amber-300 text-amber-950",
     btnBg: "bg-[#D97706] hover:bg-[#B45309]"
   },
@@ -509,7 +509,7 @@ const CHARACTERS: CharacterProfile[] = [
     fullStory:
       "Limetix ist der Gourmet unter den Entdeckern. Mit geschultem Geschmackssinn findet er die saftigsten grünen Limetten und kombiniert sie mit mildem Apfelsaft. Sein Ergebnis ist eine natürliche Erfrischung, die alle strahlen lässt!",
     favoriteFruit: "Sonnige grüne Limetten",
-    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216742-q4yi2mw1.png",
+    image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795663433690-yjxrccds.png",
     colorTheme: "border-lime-300 text-lime-950",
     btnBg: "bg-[#15803D] hover:bg-[#166534]"
   }
