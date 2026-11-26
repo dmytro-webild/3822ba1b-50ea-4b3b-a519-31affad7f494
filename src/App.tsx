@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import { ReactLenis } from 'lenis/react'
 import { routes } from './routes'
 import Layout from './components/Layout'
+import StudieDetailPage from './pages/StudieDetailPage'
 
 const pages = import.meta.glob('./pages/*.tsx')
 
@@ -228,6 +229,8 @@ function App() {
           <Routes>
             <Route element={<Layout />}>
               <Route path="/studien" element={<Navigate to="/wissenschaft" replace />} />
+              <Route path="/wissenschaft/beitrag/:slug" element={<StudieDetailPage />} />
+              <Route path="/studien/:slug" element={<StudieDetailPage />} />
               {routes.map((route) => {
                 const Page = getPageComponent(route.pageFile)
                 if (!Page) return null
