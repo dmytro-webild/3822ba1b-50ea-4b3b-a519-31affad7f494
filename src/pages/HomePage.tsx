@@ -221,7 +221,9 @@ export default function HomePage() {
           productImageAlt="FONTES VITEA H2 Wasserstoff Dose"
           brand=""
           title="H2 - HYDROGEN WATER"
-          description="CLEAN & PURE – Maximale Hydration mit molekularem Wasserstoff"
+          subtitle="CLEAN & PURE – HYDRATION EINER NEUEN GENERATION"
+          description="Reines Quellwasser, angereichert mit 2,8 mg/L molekularem Wasserstoff. Inspiriert von der Natur, wissenschaftlich erforscht und durch innovative Verpackungstechnologie geschützt."
+          tagline="Ohne Zucker · Ohne Koffein · Ohne Stimulanzien"
           primaryButton={{
             text: "Jetzt Shop entdecken",
             href: "/shop"

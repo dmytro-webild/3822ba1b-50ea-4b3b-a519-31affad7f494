@@ -4,7 +4,7 @@ import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { useKitMotion } from "@/components/kit/kitMotion";
 import MoreArrowPill from "@/components/kit/MoreArrowPill";
-import { ShieldCheck, Droplets, Zap, Sparkles, Mountain, Flame, X } from "lucide-react";
+import { ShieldCheck, Droplets, Sparkles, Mountain, Flame, CheckCircle2, Quote, X } from "lucide-react";
 
 const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
 
@@ -14,7 +14,9 @@ type Stat = { value: string; unit?: string; title: string };
 type HeroWordmarkProductProps = {
   brand?: string;
   title?: React.ReactNode;
+  subtitle?: string;
   description?: string;
+  tagline?: string;
   primaryButton?: Button;
   items?: Stat[];
   marquee?: string;
@@ -23,6 +25,9 @@ type HeroWordmarkProductProps = {
   media?: "model" | "image";
   productImageSrc?: string;
   productImageAlt?: string;
+  quoteText?: string;
+  quoteAuthor?: string;
+  quoteAuthorTitle?: string;
   ariaLabel?: string;
   className?: string;
 };
@@ -42,9 +47,9 @@ const BUBBLES: BubbleItem[] = [
   {
     id: "h2-konzentration",
     title: "2,8 mg/L H₂",
-    subtitle: "H₂-Konzentration",
+    subtitle: "Messbarer molekularer Wasserstoff",
     popupContent:
-      "Angereichertes Quellwasser mit molekularem Wasserstoff. Hält nach dem Öffnen 6 Stunden: 99 % nach 2 Std. und 80 % nach 6 Std. noch messbar.",
+      "Reines Quellwasser angereichert mit 2,8 mg/L molekularem Wasserstoff. Hochstabil und in jeder Charge messbar.",
     icon: Droplets,
     positionDesktop: "top-[2%] left-1 sm:left-2 md:-left-12 lg:-left-28",
     svgLine: { x2: "16%", y2: "15%" },
@@ -52,55 +57,55 @@ const BUBBLES: BubbleItem[] = [
   },
   {
     id: "quelle",
-    title: "136 m Quellwasser",
-    subtitle: "Quellentiefengestein",
+    title: "Natürliches Quellwasser",
+    subtitle: "Natürlich gefiltert",
     popupContent:
-      "Gewonnen aus 136 Metern Tiefe. Natürlich gefiltered durch Gesteinsschichten.",
+      "Gefiltert durch tiefe Gesteinsschichten. Reinste Quellwasserqualität, unverfälscht und natürlich rein.",
     icon: Mountain,
     positionDesktop: "top-[36%] left-1 sm:left-2 md:-left-16 lg:-left-32",
     svgLine: { x2: "12%", y2: "45%" },
     floatDuration: 4.4,
   },
   {
-    id: "kalorien",
-    title: "0 Kalorien",
-    subtitle: "Reine Hydration",
+    id: "durchmesser",
+    title: "0,289 nm",
+    subtitle: "Kinetischer Durchmesser des H₂-Moleküls",
     popupContent:
-      "Reine Hydration. Ganz ohne Zucker, Kalorien oder künstliche Süßstoffe.",
-    icon: Flame,
+      "Der extrem kleine kinetische Durchmesser von 0,289 nm ermöglicht es dem Wasserstoffmolekül, zelluläre Strukturen optimal zu erreichen.",
+    icon: Sparkles,
     positionDesktop: "bottom-[4%] left-1 sm:left-2 md:-left-12 lg:-left-28",
     svgLine: { x2: "16%", y2: "78%" },
     floatDuration: 4.0,
   },
   {
-    id: "bpa-frei",
-    title: "BPA-Frei",
-    subtitle: "Hormonell Unbedenklich",
+    id: "bpani",
+    title: "BPANI-Schutzbeschichtung",
+    subtitle: "Ohne absichtlichen BPA-Zusatz",
     popupContent:
-      "Maximale Sicherheit. Frei von hormonell schädlichem Bisphenol A (BPA).",
+      "Modernste Innenbeschichtung ohne absichtlichen BPA-Zusatz garantiert maximale Reinheit und unbeeinträchtigten Geschmack.",
     icon: ShieldCheck,
     positionDesktop: "top-[2%] right-1 sm:right-2 md:-right-12 lg:-right-28",
     svgLine: { x2: "84%", y2: "15%" },
     floatDuration: 3.6,
   },
   {
-    id: "energie",
-    title: "Energie",
-    subtitle: "Zelluläre ATP-Synthese",
+    id: "laborgeprueft",
+    title: "Laborgeprüfte Qualität",
+    subtitle: "Kontrolle jeder Produktionscharge",
     popupContent:
-      "Unterstützt die zelluläre Energieproduktion für mehr Kraft und Ausdauer.",
-    icon: Zap,
+      "Jede einzelne Abfüllung unterliegt strengen unabhängigen Laboranalysen zur Sicherung höchster Qualitätsstandards.",
+    icon: CheckCircle2,
     positionDesktop: "top-[36%] right-1 sm:right-2 md:-right-16 lg:-right-32",
     svgLine: { x2: "88%", y2: "45%" },
     floatDuration: 4.2,
   },
   {
-    id: "mineralien",
-    title: "Mineralien",
-    subtitle: "Vollständiges Profil",
+    id: "reinheit",
+    title: "0 Zucker · 0 Koffein",
+    subtitle: "Reine, natürliche Hydration",
     popupContent:
-      "Natürliche Mineralstoffe: Calcium (109 mg/L), Magnesium (14 mg/L), Natrium (7,5 mg/L), Kalium (3,3 mg/L), Sulfat (66,4 mg/L) und Nitrat (12,7 mg/L).",
-    icon: Sparkles,
+      "Erfrischung pur – 100 % frei von Zucker, Kalorien, Koffein und synthetischen Stimulanzien.",
+    icon: Flame,
     positionDesktop: "bottom-[4%] right-1 sm:right-2 md:-right-12 lg:-right-28",
     svgLine: { x2: "84%", y2: "78%" },
     floatDuration: 4.6,
@@ -109,8 +114,13 @@ const BUBBLES: BubbleItem[] = [
 
 const HeroWordmarkProduct = ({
   title = "H2 - HYDROGEN WATER",
-  description = "CLEAN & PURE – Maximale Hydration mit molekularem Wasserstoff",
+  subtitle = "CLEAN & PURE – HYDRATION EINER NEUEN GENERATION",
+  description = "Reines Quellwasser, angereichert mit 2,8 mg/L molekularem Wasserstoff. Inspiriert von der Natur, wissenschaftlich erforscht und durch innovative Verpackungstechnologie geschützt.",
+  tagline = "Ohne Zucker · Ohne Koffein · Ohne Stimulanzien",
   primaryButton = { text: "Jetzt Shop entdecken", href: "/shop" },
+  quoteText = "„Es fühlt sich beinahe göttlich an. Es ist wie ein göttliches Molekül. Gott erschuf die Welt durch ein Wort – dieses Wort wäre Wasserstoff.“",
+  quoteAuthor = "Dr. Tyler W. LeBaron, MSc, PhD (USA)",
+  quoteAuthorTitle = "Biochemiker und Physiologe, Gründer des Molecular Hydrogen Institute (MHI).",
   introDelay = 0,
   productImageSrc = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795132125149-eraq7h8f.png",
   productImageAlt = "FONTES VITEA H2 Wasserstoff Dose",
@@ -165,14 +175,14 @@ const HeroWordmarkProduct = ({
     <section
       aria-label={sectionAriaLabel}
       className={cn(
-        "relative flex min-h-svh flex-col items-center justify-between overflow-hidden bg-transparent text-[#0A1C3A] pt-28 pb-12 md:pt-36 lg:pt-40",
+        "relative flex flex-col items-center justify-start overflow-hidden bg-transparent text-[#0A1C3A] pt-24 pb-10 md:pt-28 lg:pt-32",
         className
       )}
     >
       {/* Prominent Headline & Subtext block at Top Center */}
-      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center flex flex-col items-center gap-4">
+      <div className="relative z-10 w-full max-w-4xl mx-auto px-4 text-center flex flex-col items-center gap-3">
         <motion.h1
-          initial={reduce ? false : { opacity: 0, y: -20 }}
+          initial={reduce ? false : { opacity: 0, y: -16 }}
           animate={show({ opacity: 1, y: 0 })}
           transition={{ duration: slow, ease }}
           className="font-extrabold not-italic text-[#0A1C3A] text-center uppercase tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight"
@@ -180,23 +190,45 @@ const HeroWordmarkProduct = ({
           {formattedTitle}
         </motion.h1>
 
+        {subtitle && (
+          <motion.h2
+            initial={reduce ? false : { opacity: 0, y: 12 }}
+            animate={show({ opacity: 1, y: 0 })}
+            transition={{ duration: slow, ease, delay: 0.08 }}
+            className="text-base sm:text-lg md:text-xl font-extrabold text-[#0A1C3A] uppercase tracking-wider text-center"
+          >
+            {subtitle}
+          </motion.h2>
+        )}
+
         {description && (
           <motion.p
-            initial={reduce ? false : { opacity: 0, y: 16 }}
+            initial={reduce ? false : { opacity: 0, y: 12 }}
             animate={show({ opacity: 1, y: 0 })}
-            transition={{ duration: slow, ease, delay: 0.1 }}
-            className="max-w-2xl text-center text-sm sm:text-base md:text-lg font-bold text-slate-600 leading-relaxed uppercase tracking-wider"
+            transition={{ duration: slow, ease, delay: 0.12 }}
+            className="max-w-2xl text-center text-xs sm:text-sm md:text-base font-medium text-slate-600 leading-relaxed"
           >
             {description}
           </motion.p>
         )}
 
+        {tagline && (
+          <motion.div
+            initial={reduce ? false : { opacity: 0, y: 12 }}
+            animate={show({ opacity: 1, y: 0 })}
+            transition={{ duration: slow, ease, delay: 0.16 }}
+            className="inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-bold text-[#0A1C3A] bg-white/70 backdrop-blur-md px-4 py-1.5 rounded-full border border-slate-200/80 shadow-xs"
+          >
+            {tagline}
+          </motion.div>
+        )}
+
         {primaryButton && (
           <motion.div
-            initial={reduce ? false : { opacity: 0, y: 16 }}
+            initial={reduce ? false : { opacity: 0, y: 12 }}
             animate={show({ opacity: 1, y: 0 })}
-            transition={{ duration: slow, ease, delay: 0.15 }}
-            className="mt-2"
+            transition={{ duration: slow, ease, delay: 0.2 }}
+            className="mt-1"
           >
             <MoreArrowPill text={primaryButton.text} href={primaryButton.href} />
           </motion.div>
@@ -204,8 +236,8 @@ const HeroWordmarkProduct = ({
       </div>
 
       {/* Main Container with 6 Orbiting Glassmorphism Bubbles & 2D Floating Can */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 w-full flex flex-col items-center gap-8 mt-6 md:mt-8">
-        <div className="relative w-full max-w-4xl flex items-center justify-center py-8 sm:py-12 min-h-[460px] sm:min-h-[520px]">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 w-full flex flex-col items-center gap-6 mt-4 md:mt-6">
+        <div className="relative w-full max-w-4xl flex items-center justify-center py-6 sm:py-10 min-h-[420px] sm:min-h-[480px]">
           {/* Thin connecting lines SVG overlay */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-visible" aria-hidden="true">
             {BUBBLES.map((b) => (
@@ -253,7 +285,7 @@ const HeroWordmarkProduct = ({
             <img
               src={productImageSrc}
               alt={productImageAlt}
-              className="w-auto h-[320px] sm:h-[400px] md:h-[460px] lg:h-[500px] max-w-full object-contain filter drop-shadow-2xl"
+              className="w-auto h-[300px] sm:h-[380px] md:h-[440px] lg:h-[480px] max-w-full object-contain filter drop-shadow-2xl"
             />
           </motion.div>
 
@@ -292,7 +324,7 @@ const HeroWordmarkProduct = ({
                   <span className="font-extrabold text-[11px] sm:text-xs md:text-sm uppercase tracking-tight text-[#0A1C3A] leading-tight">
                     {bubble.title}
                   </span>
-                  <span className="text-[9px] sm:text-[10px] md:text-xs text-slate-500 font-semibold group-hover:text-[#0A1C3A] transition-colors truncate">
+                  <span className="text-[9px] sm:text-[10px] md:text-xs text-slate-500 font-semibold group-hover:text-[#0A1C3A] transition-colors leading-tight">
                     {bubble.subtitle}
                   </span>
                 </div>
@@ -300,8 +332,38 @@ const HeroWordmarkProduct = ({
             );
           })}
         </div>
-
       </div>
+
+      {/* Zentrierter Zitatbereich unterhalb der Getränkedose */}
+      {quoteText && (
+        <motion.div
+          initial={reduce ? false : { opacity: 0, y: 20 }}
+          animate={show({ opacity: 1, y: 0 })}
+          transition={{ duration: slow, ease, delay: 0.35 }}
+          className="relative z-10 w-full max-w-3xl mx-auto px-6 py-6 sm:py-8 mt-6 sm:mt-8 text-center bg-white/50 backdrop-blur-md rounded-3xl border border-white/80 shadow-lg"
+        >
+          <div className="flex justify-center mb-3 text-[#D4AF37] opacity-85" aria-hidden="true">
+            <Quote className="w-8 h-8 sm:w-10 sm:h-10 transform -scale-x-100" />
+          </div>
+
+          <blockquote className="font-serif italic text-base sm:text-lg md:text-xl text-[#0A1C3A] leading-relaxed max-w-2xl mx-auto tracking-normal">
+            {quoteText}
+          </blockquote>
+
+          {quoteAuthor && (
+            <div className="mt-4 pt-4 border-t border-slate-200/60 max-w-md mx-auto">
+              <p className="font-extrabold text-xs sm:text-sm text-[#0A1C3A] tracking-wider uppercase">
+                {quoteAuthor}
+              </p>
+              {quoteAuthorTitle && (
+                <p className="text-[11px] sm:text-xs text-slate-500 font-medium leading-normal mt-0.5">
+                  {quoteAuthorTitle}
+                </p>
+              )}
+            </div>
+          )}
+        </motion.div>
+      )}
 
       {/* Interactive Popup Modal when Clicking Floating Bubble */}
       {activeBubble && (
