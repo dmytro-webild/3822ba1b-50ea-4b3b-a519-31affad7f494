@@ -869,7 +869,6 @@ export default function HomePage() {
           title="Echte Erfahrungen aus der FONTES VITAE Community"
           subtitle="Entdecken Sie, was unsere Kundinnen und Kunden über Geschmack und das Wasserstoff-Erlebnis berichten."
           showOrderButton={true}
-          showGoogleReviews={true}
         />
       </div>
     </>

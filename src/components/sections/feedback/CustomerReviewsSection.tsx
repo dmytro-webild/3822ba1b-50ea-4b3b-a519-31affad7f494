@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Star, ShoppingBag, ZoomIn, X, CheckCircle2, Award, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
+import { Star, ShoppingBag, ZoomIn, X, CheckCircle2, Award, ChevronLeft, ChevronRight } from "lucide-react";
 import { getApprovedReviews, type Review } from "@/utils/feedbackStore";
 import Media from "@/components/kit/Media";
 
@@ -7,7 +7,6 @@ interface CustomerReviewsSectionProps {
   title?: string;
   subtitle?: string;
   showOrderButton?: boolean;
-  showGoogleReviews?: boolean;
   className?: string;
 }
 
@@ -15,7 +14,6 @@ export default function CustomerReviewsSection({
   title = "Freigegebene Kundenbewertungen",
   subtitle = "Echte Erfahrungen und Geschmacksprofile unserer Kundinnen und Kunden.",
   showOrderButton = true,
-  showGoogleReviews = true,
   className = "",
 }: CustomerReviewsSectionProps) {
   const [reviews, setReviews] = useState<Review[]>([]);
@@ -226,20 +224,6 @@ export default function CustomerReviewsSection({
 
         {/* Action Buttons Row */}
         <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-          {/* Google Reviews Button */}
-          {showGoogleReviews && (
-            <a
-              href="https://g.page/r/CQ9oyDuP_2cVECE/review"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 bg-white hover:bg-slate-100 text-[#0A1C3A] px-7 py-3.5 rounded-xl font-extrabold uppercase tracking-wider text-xs sm:text-sm border-2 border-slate-300 shadow-md hover:shadow-lg transition duration-300"
-            >
-              <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
-              <span>Jetzt auf Google bewerten</span>
-              <ExternalLink className="w-3.5 h-3.5 text-slate-500" />
-            </a>
-          )}
-
           {/* „Jetzt bestellen“ Button linked to https://shop.fontes-vitae.com (same tab) */}
           {showOrderButton && (
             <a

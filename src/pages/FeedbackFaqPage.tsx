@@ -51,7 +51,6 @@ export default function FeedbackFaqPage() {
           title="Freigegebene Kundenbewertungen"
           subtitle="Erfahrungen und Geschmacksprofile aller Kundinnen und Kunden auf einen Blick."
           showOrderButton={true}
-          showGoogleReviews={true}
         />
       </section>
 
