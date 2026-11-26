@@ -41,8 +41,8 @@ export default function FaqSection() {
   };
 
   return (
-    <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-xl space-y-8 font-sans">
-      <div className="text-center space-y-3">
+    <div className="bg-white rounded-3xl p-4 sm:p-6 border border-slate-200 shadow-xl space-y-5 font-sans">
+      <div className="text-center space-y-2">
         <div className="inline-flex items-center gap-2 bg-[#0A1C3A] text-white text-xs font-extrabold uppercase tracking-widest px-4 py-1.5 rounded-full">
           <HelpCircle className="w-4 h-4 text-sky-400" />
           <span>Häufig Gestellte Fragen</span>
@@ -55,7 +55,7 @@ export default function FaqSection() {
         </p>
       </div>
 
-      <div className="space-y-4 max-w-4xl mx-auto">
+      <div className="space-y-2.5 max-w-4xl mx-auto">
         {FAQS.map((faq, idx) => {
           const isOpen = openIdx === idx;
           return (

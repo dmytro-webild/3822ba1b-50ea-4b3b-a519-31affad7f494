@@ -27,10 +27,10 @@ export default function StudieDetailPage() {
   }
 
   return (
-    <div className="min-h-screen bg-transparent text-[#0A1C3A] font-sans pb-24">
+    <div className="min-h-screen bg-transparent text-[#0A1C3A] font-sans pb-12">
       {/* Header Banner */}
-      <section className="bg-[#0A1C3A] text-white py-16 px-6 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto space-y-6 relative z-10">
+      <section className="bg-[#0A1C3A] text-white py-8 sm:py-12 px-4 sm:px-6 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto space-y-4 relative z-10">
           <Link
             to="/wissenschaft"
             className="inline-flex items-center gap-2 text-xs font-bold text-sky-400 hover:text-white transition uppercase tracking-wider bg-white/10 px-4 py-2 rounded-full border border-white/10"

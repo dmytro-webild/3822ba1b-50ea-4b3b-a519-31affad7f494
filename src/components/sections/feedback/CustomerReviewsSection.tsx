@@ -46,8 +46,8 @@ export default function CustomerReviewsSection({
   };
 
   return (
-    <section className={`py-16 px-4 sm:px-6 bg-transparent text-[#0A1C3A] font-sans border-y border-slate-200/50 ${className}`}>
-      <div className="max-w-7xl mx-auto space-y-10">
+    <section className={`py-8 sm:py-10 px-4 sm:px-6 bg-transparent text-[#0A1C3A] font-sans border-y border-slate-200/50 ${className}`}>
+      <div className="max-w-7xl mx-auto space-y-6 sm:space-y-8">
         {/* Header & Controls */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
           <div className="space-y-2 max-w-2xl">

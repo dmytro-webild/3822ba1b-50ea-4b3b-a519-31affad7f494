@@ -57,8 +57,8 @@ export default function UeberUnsPage() {
   return (
     <div className="bg-transparent min-h-screen text-[#0A1C3A] font-sans pb-24">
       {/* Hero Header */}
-      <section className="bg-[#0A1C3A] text-white py-20 px-6 relative overflow-hidden">
-        <div className="max-w-5xl mx-auto space-y-6 relative z-10">
+      <section className="bg-[#0A1C3A] text-white py-10 sm:py-14 px-4 sm:px-6 relative overflow-hidden">
+        <div className="max-w-5xl mx-auto space-y-4 relative z-10">
           <RouterLink
             to="/"
             className="inline-flex items-center gap-2 text-xs font-bold text-sky-400 hover:text-white transition uppercase tracking-wider bg-white/10 px-4 py-2 rounded-full border border-white/10"
@@ -66,7 +66,7 @@ export default function UeberUnsPage() {
             <ArrowLeft className="w-4 h-4" /> Zurück zur Startseite
           </RouterLink>
 
-          <div className="space-y-4 max-w-3xl">
+          <div className="space-y-3 max-w-3xl">
             <span className="text-sky-400 text-xs font-extrabold tracking-widest uppercase bg-sky-950/60 px-4 py-1.5 rounded-full inline-block border border-sky-800/50">
               Vertriebspartner DACH &amp; Familienunternehmen
             </span>
@@ -77,7 +77,7 @@ export default function UeberUnsPage() {
               Die Quelle des Lebens. Als familiengeführtes Unternehmen und exklusiver Vertriebspartner (Distributor) von WRC SR s.r.o. bringen wir reinstes molekulares H₂-Wasserstoffwasser und Premium-Fruchtsäfte zu unseren Kunden in Deutschland, Österreich und der Schweiz.
             </p>
 
-            <div className="pt-3 flex flex-wrap gap-3">
+            <div className="pt-2 flex flex-wrap gap-3">
               <a
                 href="#b2b"
                 className="inline-flex items-center gap-2 bg-sky-400 hover:bg-sky-300 text-[#0A1C3A] font-black uppercase text-xs tracking-wider px-5 py-3 rounded-xl shadow-lg transition transform hover:scale-105"
@@ -98,7 +98,7 @@ export default function UeberUnsPage() {
       </section>
 
       {/* Main Story & Philosophy */}
-      <section className="max-w-5xl mx-auto px-6 py-16 space-y-20">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-10 space-y-10 sm:space-y-12">
         {/* Family Business Story Card (Distributor Role) */}
         <div className="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-xl space-y-8 relative overflow-hidden">
           <div className="flex items-center gap-3">

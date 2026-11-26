@@ -235,10 +235,10 @@ export default function HomePage() {
 
       {/* 2. TECHNOLOGIE & INNOVATION */}
       <div id="technologie" data-webild-section="TechnologyInnovation" data-webild-section-id="TechnologyInnovation-1" data-section="tech">
-        <section className="py-20 px-6 bg-transparent text-[#0A1C3A] font-sans">
-          <div className="max-w-6xl mx-auto space-y-14">
+        <section className="py-8 sm:py-10 px-4 sm:px-6 bg-transparent text-[#0A1C3A] font-sans">
+          <div className="max-w-6xl mx-auto space-y-6 sm:space-y-8">
             {/* Header */}
-            <div className="text-center space-y-3">
+            <div className="text-center space-y-2">
               <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-[#f4f6f8] px-4 py-1.5 rounded-full inline-block border border-slate-300">
                 FORTSCHRITTLICHE VERPACKUNGSTECHNOLOGIE
               </span>
@@ -251,7 +251,7 @@ export default function HomePage() {
             </div>
 
             {/* 1) Oberes Raster - 3 Bildkarten */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
               {/* Card 1 */}
               <div className="bg-[#f8fafc] rounded-2xl overflow-hidden border border-slate-300 shadow-md hover:border-[#0A1C3A] hover:shadow-xl transition flex flex-col justify-between group">
                 <div>
@@ -266,8 +266,8 @@ export default function HomePage() {
                       <Droplets className="w-5 h-5 text-sky-400" />
                     </div>
                   </div>
-                  <div className="p-6 space-y-2">
-                    <h3 className="text-lg font-black uppercase text-[#0A1C3A]">H₂-KONZENTRATION</h3>
+                  <div className="p-4 sm:p-5 space-y-1.5">
+                    <h3 className="text-base sm:text-lg font-black uppercase text-[#0A1C3A]">H₂-KONZENTRATION</h3>
                     <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
                       2,8 mg/L gelöster molekularer Wasserstoff laut Herstellerangabe. Eine spezielle Anreicherungstechnologie ermöglicht diese hohe Konzentration.
                     </p>
@@ -289,8 +289,8 @@ export default function HomePage() {
                       <Layers className="w-5 h-5 text-sky-400" />
                     </div>
                   </div>
-                  <div className="p-6 space-y-2">
-                    <h3 className="text-lg font-black uppercase text-[#0A1C3A]">ALUMINIUMDOSEN-TECHNOLOGIE</h3>
+                  <div className="p-4 sm:p-5 space-y-1.5">
+                    <h3 className="text-base sm:text-lg font-black uppercase text-[#0A1C3A]">ALUMINIUMDOSEN-TECHNOLOGIE</h3>
                     <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
                       Eine hochfeste Aluminiumlegierung sorgt für Stabilität und Lichtschutz. Die Verpackung schützt das Getränk vor äußeren Einflüssen.
                     </p>
@@ -312,8 +312,8 @@ export default function HomePage() {
                       <ShieldCheck className="w-5 h-5 text-sky-400" />
                     </div>
                   </div>
-                  <div className="p-6 space-y-2">
-                    <h3 className="text-lg font-black uppercase text-[#0A1C3A]">BPANI-TECHNOLOGIE</h3>
+                  <div className="p-4 sm:p-5 space-y-1.5">
+                    <h3 className="text-base sm:text-lg font-black uppercase text-[#0A1C3A]">BPANI-TECHNOLOGIE</h3>
                     <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
                       Moderne Innenbeschichtung ohne absichtlichen Zusatz von Bisphenol A (BPA). Eine innovative Alternative zu herkömmlichen BPA-basierten Epoxidbeschichtungen.
                     </p>
@@ -412,7 +412,7 @@ export default function HomePage() {
             </div>
 
             {/* 3) Unteres Raster - 3 Bildkarten */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
               {/* Card 1 */}
               <div className="bg-[#f8fafc] rounded-2xl overflow-hidden border border-slate-300 shadow-md hover:border-[#0A1C3A] hover:shadow-xl transition flex flex-col justify-between group">
                 <div>
@@ -427,8 +427,8 @@ export default function HomePage() {
                       <Layers className="w-5 h-5 text-sky-400" />
                     </div>
                   </div>
-                  <div className="p-6 space-y-2">
-                    <h3 className="text-lg font-black uppercase text-[#0A1C3A]">INNERE POLYMERBESCHICHTUNG</h3>
+                  <div className="p-4 sm:p-5 space-y-1.5">
+                    <h3 className="text-base sm:text-lg font-black uppercase text-[#0A1C3A]">INNERE POLYMERBESCHICHTUNG</h3>
                     <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
                       Eine ultradünne, durchgehende Polymerschicht bildet eine funktionale Barriere zwischen Getränk und Aluminium.
                     </p>
@@ -450,8 +450,8 @@ export default function HomePage() {
                       <FlaskConical className="w-5 h-5 text-sky-400" />
                     </div>
                   </div>
-                  <div className="p-6 space-y-2">
-                    <h3 className="text-lg font-black uppercase text-[#0A1C3A]">GESCHMACKS- UND QUALITÄTSSCHUTZ</h3>
+                  <div className="p-4 sm:p-5 space-y-1.5">
+                    <h3 className="text-base sm:text-lg font-black uppercase text-[#0A1C3A]">GESCHMACKS- UND QUALITÄTSSCHUTZ</h3>
                     <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
                       Die Innenbeschichtung schützt vor Korrosion und reduziert das Risiko metallischer Geschmacksnoten. Der ursprüngliche Getränkegeschmack bleibt geschützt.
                     </p>
@@ -473,8 +473,8 @@ export default function HomePage() {
                       <ShieldCheck className="w-5 h-5 text-sky-400" />
                     </div>
                   </div>
-                  <div className="p-6 space-y-2">
-                    <h3 className="text-lg font-black uppercase text-[#0A1C3A]">LEBENSMITTELSICHERHEIT</h3>
+                  <div className="p-4 sm:p-5 space-y-1.5">
+                    <h3 className="text-base sm:text-lg font-black uppercase text-[#0A1C3A]">LEBENSMITTELSICHERHEIT</h3>
                     <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
                       Für den Lebensmittelkontakt vorgesehene Materialien und moderne Beschichtungstechnologien unterstützen die Produktsicherheit.
                     </p>
@@ -587,9 +587,9 @@ export default function HomePage() {
 
       {/* 3. DAS QUELLWASSER (inkl. Mineralstoff- & Trinkwasseranalyse) */}
       <div id="quelle" data-webild-section="WaterSourceMinerals" data-webild-section-id="WaterSourceMinerals-1" data-section="source">
-        <section className="py-20 px-6 bg-transparent font-sans text-[#0A1C3A]">
-          <div className="max-w-6xl mx-auto space-y-12">
-            <div className="text-center space-y-3">
+        <section className="py-8 sm:py-10 px-4 sm:px-6 bg-transparent font-sans text-[#0A1C3A]">
+          <div className="max-w-6xl mx-auto space-y-6 sm:space-y-8">
+            <div className="text-center space-y-2">
               <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-[#f4f6f8] px-4 py-1.5 rounded-full inline-block border border-slate-300">
                 Natürliche Herkunft &amp; Reinheit
               </span>
@@ -597,39 +597,39 @@ export default function HomePage() {
                 DAS QUELLWASSER
               </h2>
               <p className="text-slate-700 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed font-medium">
-                Das Quellwasser entspricht höchsten Reinheitsstandards und wird aus einer tiefliegenden unterirdischen Quelle (136 Meter) gewonnen. Durch jahrtausendealte Gesteinsschichten natürlich gefiltert, bietet es ein ausgewogenes Mineralienprofil. FONTES VITAE bringt als spezialisierter Vertriebspartner dieses edle Wasserstoff-Wasser in höchster Qualität direkt zu Ihnen.
+                Das Quellwasser entspricht höchsten Reinheitsstandards und wird aus einer tiefliegenden unterirdischen Quelle (136 Meter) gewonnen. Durch jahrtausendealte Gesteinsschichten naturally gefiltert, bietet es ein ausgewogenes Mineralienprofil. FONTES VITAE bringt als spezialisierter Vertriebspartner dieses edle Wasserstoff-Wasser in höchster Qualität direkt zu Ihnen.
               </p>
             </div>
 
             {/* Depth visual & features banner */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-[#f8fafc] p-6 rounded-2xl border border-slate-300 shadow-sm flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center shrink-0">
-                  <Droplets className="w-6 h-6 text-sky-400" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-[#f8fafc] p-4 sm:p-5 rounded-2xl border border-slate-300 shadow-sm flex items-start gap-3.5">
+                <div className="w-10 h-10 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center shrink-0">
+                  <Droplets className="w-5 h-5 text-sky-400" />
                 </div>
                 <div>
                   <h3 className="text-base font-black uppercase text-[#0A1C3A]">136 Meter Tiefe</h3>
-                  <p className="text-xs text-slate-600 mt-1">Geschützte unterirdische Tiefenquelle für dauerhaft stabile Mineralzusammensetzung.</p>
+                  <p className="text-xs text-slate-600 mt-0.5">Geschützte unterirdische Tiefenquelle für dauerhaft stabile Mineralzusammensetzung.</p>
                 </div>
               </div>
 
-              <div className="bg-[#f8fafc] p-6 rounded-2xl border border-slate-300 shadow-sm flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center shrink-0">
-                  <ShieldCheck className="w-6 h-6 text-sky-400" />
+              <div className="bg-[#f8fafc] p-4 sm:p-5 rounded-2xl border border-slate-300 shadow-sm flex items-start gap-3.5">
+                <div className="w-10 h-10 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center shrink-0">
+                  <ShieldCheck className="w-5 h-5 text-sky-400" />
                 </div>
                 <div>
                   <h3 className="text-base font-black uppercase text-[#0A1C3A]">Geologische Filterung</h3>
-                  <p className="text-xs text-slate-600 mt-1">Natürlich durch Gesteinsschichten gereinigt, frei von Umwelt- und Oberflächenbelastungen.</p>
+                  <p className="text-xs text-slate-600 mt-0.5">Natürlich durch Gesteinsschichten gereinigt, frei von Umwelt- und Oberflächenbelastungen.</p>
                 </div>
               </div>
 
-              <div className="bg-[#f8fafc] p-6 rounded-2xl border border-slate-300 shadow-sm flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center shrink-0">
-                  <Building2 className="w-6 h-6 text-sky-400" />
+              <div className="bg-[#f8fafc] p-4 sm:p-5 rounded-2xl border border-slate-300 shadow-sm flex items-start gap-3.5">
+                <div className="w-10 h-10 rounded-xl bg-[#0A1C3A] text-white flex items-center justify-center shrink-0">
+                  <Building2 className="w-5 h-5 text-sky-400" />
                 </div>
                 <div>
                   <h3 className="text-base font-black uppercase text-[#0A1C3A]">Zertifizierte Abfüllung</h3>
-                  <p className="text-xs text-slate-600 mt-1">Geprüfte Abfüllung durch akkreditierte Partnerunternehmen nach strengsten EU-Richtlinien.</p>
+                  <p className="text-xs text-slate-600 mt-0.5">Geprüfte Abfüllung durch akkreditierte Partnerunternehmen nach strengsten EU-Richtlinien.</p>
                 </div>
               </div>
             </div>
@@ -748,7 +748,7 @@ export default function HomePage() {
 
       {/* 5. VORTEILE IM VERGLEICH */}
       <div id="vergleich" data-webild-section="ProductCompareTable" data-webild-section-id="ProductCompareTable-1" data-section="product">
-        <section className="py-20 px-6 bg-transparent text-[#0A1C3A] font-sans">
+        <section className="py-6 sm:py-8 px-4 sm:px-6 bg-transparent text-[#0A1C3A] font-sans">
           <div className="max-w-7xl mx-auto">
             <ProductCompareTable
               media="image"
@@ -808,10 +808,10 @@ export default function HomePage() {
 
       {/* 6. EINSATZBEREICHE & ANWENDUNGSGEBIETE */}
       <div id="einsatzbereiche" data-webild-section="Einsatzbereiche" data-webild-section-id="Einsatzbereiche-1" data-section="einsatzbereiche">
-        <section className="py-20 px-6 bg-transparent text-[#0A1C3A] font-sans">
-          <div className="max-w-7xl mx-auto space-y-12">
+        <section className="py-8 sm:py-10 px-4 sm:px-6 bg-transparent text-[#0A1C3A] font-sans">
+          <div className="max-w-7xl mx-auto space-y-6 sm:space-y-8">
             {/* Einsatzbereiche Section Header */}
-            <div className="space-y-3 max-w-2xl text-center md:text-left">
+            <div className="space-y-2 max-w-2xl text-center md:text-left">
               <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-white px-4 py-1.5 rounded-full inline-block border border-slate-300">
                 Performance &amp; Zielgruppen
               </span>
@@ -826,7 +826,7 @@ export default function HomePage() {
             {/* Grid on Desktop (4 cols), Grid on Tablet (2 cols), Swipe Carousel on Mobile */}
             <div
               ref={einsatzbereicheRef}
-              className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-6 md:pb-0 pt-2 scrollbar-none select-none"
+              className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-4 md:pb-0 pt-1 scrollbar-none select-none"
               style={{ WebkitOverflowScrolling: "touch" }}
             >
               {EINSATZBEREICHE.map((item) => {

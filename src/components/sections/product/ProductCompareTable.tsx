@@ -84,7 +84,7 @@ const ProductCompareTable = ({
     >
       <div className="mx-auto w-[var(--container)]">
         <div className="grid gap-[clamp(1.5rem,3vw,3rem)] rounded-[var(--radius-card)] bg-secondary p-[clamp(0.75rem,1.5vw,1.5rem)] text-secondary-foreground lg:grid-cols-2 lg:gap-[var(--gap)]">
-          <div ref={frameRef} className="relative flex items-center justify-center lg:min-h-[min(54rem,88svh)]">
+          <div ref={frameRef} className="relative flex items-center justify-center lg:min-h-[min(30rem,50svh)]">
             <motion.div
               aria-hidden="true"
               style={reduce ? undefined : { clipPath: clip }}
@@ -94,19 +94,19 @@ const ProductCompareTable = ({
                 <path d="M-40 300C120 360 220 520 300 640S520 860 680 820" fill="none" stroke="currentColor" strokeLinecap="round" vectorEffect="non-scaling-stroke" style={{ strokeWidth: "clamp(18px, 2.2vw, 36px)" }} />
               </svg>
             </motion.div>
-            <div data-model-anchor={media === "model" ? "" : undefined} aria-hidden={media === "model" || undefined} className="relative flex items-center justify-center min-h-[300px] sm:min-h-[380px] lg:h-[min(76svh,50rem)] w-full">
+            <div data-model-anchor={media === "model" ? "" : undefined} aria-hidden={media === "model" || undefined} className="relative flex items-center justify-center min-h-[220px] sm:min-h-[280px] lg:h-[min(50svh,32rem)] w-full">
               {media === "image" && (
-                <div className="flex h-full w-full items-center justify-center p-4">
+                <div className="flex h-full w-full items-center justify-center p-2 sm:p-4">
                   <img
                     src={productImageSrc}
                     alt={productImageAlt}
-                    className="max-h-[320px] sm:max-h-[420px] md:max-h-[480px] w-auto max-w-full object-contain filter drop-shadow-2xl transition duration-300 hover:scale-105"
+                    className="max-h-[240px] sm:max-h-[320px] md:max-h-[360px] w-auto max-w-full object-contain filter drop-shadow-2xl transition duration-300 hover:scale-105"
                   />
                 </div>
               )}
             </div>
           </div>
-          <div className="flex flex-col justify-center gap-[clamp(1.25rem,2.5vw,2.5rem)] px-[clamp(0.25rem,1.5vw,1.5rem)] pb-[clamp(1.25rem,2.5vw,2.5rem)] lg:pl-[clamp(1rem,3vw,3rem)] lg:pr-[clamp(1rem,2vw,1.5rem)] lg:py-[clamp(1.5rem,3vw,2.5rem)]">
+          <div className="flex flex-col justify-center gap-3 sm:gap-4 px-2 py-3 lg:p-4">
             <MoreTwoTone title={title} accent={accent} accentFirst accentClassName="text-secondary-foreground/70" className="max-w-none text-[length:var(--text-h3)]" />
             <div className="w-full overflow-x-auto scrollbar-thin">
               <table className="w-full border-collapse text-left min-w-[320px] sm:min-w-[440px]">

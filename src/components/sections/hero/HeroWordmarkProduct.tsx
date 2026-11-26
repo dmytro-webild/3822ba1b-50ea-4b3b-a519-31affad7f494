@@ -175,7 +175,7 @@ const HeroWordmarkProduct = ({
     <section
       aria-label={sectionAriaLabel}
       className={cn(
-        "relative flex flex-col items-center justify-start overflow-hidden bg-transparent text-[#0A1C3A] pt-24 pb-10 md:pt-28 lg:pt-32",
+        "relative flex flex-col items-center justify-start overflow-hidden bg-transparent text-[#0A1C3A] pt-16 pb-4 md:pt-20 lg:pt-22",
         className
       )}
     >
@@ -236,8 +236,8 @@ const HeroWordmarkProduct = ({
       </div>
 
       {/* Main Container with 6 Orbiting Glassmorphism Bubbles & 2D Floating Can */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 w-full flex flex-col items-center gap-6 mt-4 md:mt-6">
-        <div className="relative w-full max-w-4xl flex items-center justify-center py-6 sm:py-10 min-h-[420px] sm:min-h-[480px]">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 w-full flex flex-col items-center gap-4 mt-2 md:mt-3">
+        <div className="relative w-full max-w-4xl flex items-center justify-center py-2 sm:py-4 min-h-[340px] sm:min-h-[380px]">
           {/* Thin connecting lines SVG overlay */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-visible" aria-hidden="true">
             {BUBBLES.map((b) => (
@@ -340,7 +340,7 @@ const HeroWordmarkProduct = ({
           initial={reduce ? false : { opacity: 0, y: 20 }}
           animate={show({ opacity: 1, y: 0 })}
           transition={{ duration: slow, ease, delay: 0.35 }}
-          className="relative z-10 w-full max-w-3xl mx-auto px-6 py-6 sm:py-8 mt-6 sm:mt-8 text-center bg-white/50 backdrop-blur-md rounded-3xl border border-white/80 shadow-lg"
+          className="relative z-10 w-full max-w-3xl mx-auto px-5 py-4 sm:py-5 mt-4 text-center bg-white/50 backdrop-blur-md rounded-3xl border border-white/80 shadow-lg"
         >
           <div className="flex justify-center mb-3 text-[#D4AF37] opacity-85" aria-hidden="true">
             <Quote className="w-8 h-8 sm:w-10 sm:h-10 transform -scale-x-100" />

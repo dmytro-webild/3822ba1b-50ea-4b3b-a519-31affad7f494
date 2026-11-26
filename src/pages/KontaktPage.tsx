@@ -91,11 +91,11 @@ export default function KontaktPage() {
   };
 
   return (
-    <div className="py-24 bg-transparent min-h-svh font-sans text-[#0A1C3A]">
-      <div className="max-w-6xl mx-auto px-6 space-y-16">
+    <div className="py-10 sm:py-14 bg-transparent min-h-svh font-sans text-[#0A1C3A]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-8 sm:space-y-10">
         
         {/* Header Section */}
-        <div className="text-center space-y-4 max-w-3xl mx-auto">
+        <div className="text-center space-y-2.5 max-w-3xl mx-auto">
           <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-white px-4 py-1.5 rounded-full inline-block border border-slate-300 shadow-sm">
             Kundenservice &amp; Kontakt
           </span>
