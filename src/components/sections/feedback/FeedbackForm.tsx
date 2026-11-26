@@ -514,7 +514,7 @@ export default function FeedbackForm() {
           </div>
 
           <div className="space-y-4">
-            {/* Süße/}
+            {/* Süße */}
             <TasteBar
               label="Süße (Orange)"
               colorName="orange"
@@ -523,7 +523,7 @@ export default function FeedbackForm() {
               labelsMap={SWEETNESS_MAP}
             />
 
-            {/* Säure/}
+            {/* Säure */}
             <TasteBar
               label="Säure (Blau)"
               colorName="blue"
@@ -532,7 +532,7 @@ export default function FeedbackForm() {
               labelsMap={ACIDITY_MAP}
             />
 
-            {/* Herbheit/}
+            {/* Herbheit */}
             <TasteBar
               label="Herbheit (Grün)"
               colorName="green"
@@ -541,7 +541,7 @@ export default function FeedbackForm() {
               labelsMap={TARTNESS_MAP}
             />
 
-            {/* Geschmacksintensität/}
+            {/* Geschmacksintensität */}
             <TasteBar
               label="Geschmacksintensität (Violett)"
               colorName="purple"
