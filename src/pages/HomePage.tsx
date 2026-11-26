@@ -30,8 +30,7 @@ import {
   Shield,
   Siren,
   Layers,
-  FlaskConical,
-  ChevronsDown
+  FlaskConical
 } from "lucide-react";
 
 const CAN_IMAGE_URL = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795132125149-eraq7h8f.png";
@@ -574,17 +573,6 @@ export default function HomePage() {
                     </li>
                   </ul>
                 </div>
-              </div>
-
-              {/* Transition pill button */}
-              <div className="pt-6 flex flex-col items-center gap-2">
-                <ChevronsDown className="w-6 h-6 text-sky-600 animate-bounce" />
-                <a
-                  href="#quelle"
-                  className="inline-flex items-center gap-2 bg-[#f4f6f8] hover:bg-slate-200 text-[#0A1C3A] font-extrabold text-xs uppercase px-5 py-2.5 rounded-full border border-slate-300 tracking-wider shadow-sm transition"
-                >
-                  DAS QUELLWASSER
-                </a>
               </div>
             </div>
           </div>
