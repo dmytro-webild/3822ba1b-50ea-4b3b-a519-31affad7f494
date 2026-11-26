@@ -401,9 +401,9 @@ const KIDS_CANS: KidCan[] = [
     flavor: "Himbeere",
     role: "Die Sammlerin & Forscherin",
     desc: "Fruchtige Himbeere mit natürlicher Frische. Der Liebling kleiner Entdecker!",
-    productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684318-4vepg2dg.png",
-    characterImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684318-4vepg2dg.png",
-    profileImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684318-4vepg2dg.png",
+    productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664547775-k090jjrt.png",
+    characterImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664547775-k090jjrt.png",
+    profileImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664547775-k090jjrt.png",
     color: "border-rose-300/60 text-rose-950",
     badgeBg: "bg-[#D81B60] text-white"
   },
@@ -483,9 +483,9 @@ const CHARACTERS: CharacterProfile[] = [
     fullStory:
       "Himbeerixxa ist die schlaueste Forscherin im Fruchtwald. Wo immer seltene Beeren wachsen, findet sie den Weg! Mit ihrer magischen Lupe prüft sie die Sonne auf den Früchten und sorgt dafür, dass nur die frischesten Himbeeren geerntet werden. Ihr Motto: Natur pur ist das größte Abenteuer!",
     favoriteFruit: "Sonnengereifte Himbeeren",
-    productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684318-4vepg2dg.png",
-    characterImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684318-4vepg2dg.png",
-    profileImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664684318-4vepg2dg.png",
+    productImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664547775-k090jjrt.png",
+    characterImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664547775-k090jjrt.png",
+    profileImage: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795664547775-k090jjrt.png",
     colorTheme: "border-rose-300/80 bg-rose-50/70 text-rose-950",
     bgGradient: "bg-gradient-to-b from-rose-100/90 via-rose-200/50 to-rose-300/40 border border-rose-300/60 shadow-inner",
     btnBg: "bg-[#D81B60] hover:bg-[#C2185B]"
