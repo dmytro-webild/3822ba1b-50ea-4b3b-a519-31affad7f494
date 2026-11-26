@@ -226,7 +226,7 @@ export default function HomePage() {
           tagline="Ohne Zucker · Ohne Koffein · Ohne Stimulanzien"
           primaryButton={{
             text: "Jetzt Shop entdecken",
-            href: "/shop"
+            href: "https://shop.fontes-vitae.com"
           }}
           items={[
             {

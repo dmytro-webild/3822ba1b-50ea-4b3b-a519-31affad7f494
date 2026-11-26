@@ -70,7 +70,7 @@ const SEARCH_DATABASE: SearchItem[] = [
       "einzeldose", "2.8 mg", "2,8 mg", "0 kcal", "zuckerfrei", "original", "hydrogen",
       "hydrogen water", "quellwasser", "dosen", "gehalt", "mineralwasser"
     ],
-    href: "/shop?product=h2-water",
+    href: "https://shop.fontes-vitae.com",
     icon: Package,
   },
   {
@@ -83,7 +83,7 @@ const SEARCH_DATABASE: SearchItem[] = [
       "fruchtsaft", "direktsaft", "saft", "blaubeersaft", "heidelbeersaft", "blueberries",
       "geschmack", "sorte", "juice"
     ],
-    href: "/shop?product=juice-blaubeere",
+    href: "https://shop.fontes-vitae.com",
     icon: Package,
   },
   {
@@ -95,7 +95,7 @@ const SEARCH_DATABASE: SearchItem[] = [
       "traube", "grape", "weintraube", "weintrauben", "traubensaft", "fruchtsaft",
       "direktsaft", "saft", "grapes", "geschmack", "sorte", "juice"
     ],
-    href: "/shop?product=juice-traube",
+    href: "https://shop.fontes-vitae.com",
     icon: Package,
   },
   {
@@ -107,7 +107,7 @@ const SEARCH_DATABASE: SearchItem[] = [
       "himbeere", "raspberry", "himbeeren", "himbeersaft", "beere", "fruchtsaft",
       "direktsaft", "saft", "raspberries", "geschmack", "sorte", "juice"
     ],
-    href: "/shop?product=juice-himbeere",
+    href: "https://shop.fontes-vitae.com",
     icon: Package,
   },
   {
@@ -119,7 +119,7 @@ const SEARCH_DATABASE: SearchItem[] = [
       "ingwer", "ginger", "ginger tonic", "tonic", "ingwersaft", "fruchtsaft",
       "direktsaft", "saft", "schärfe", "geschmack", "sorte", "juice"
     ],
-    href: "/shop?product=juice-ingwer",
+    href: "https://shop.fontes-vitae.com",
     icon: Package,
   },
   {
@@ -131,7 +131,7 @@ const SEARCH_DATABASE: SearchItem[] = [
       "apfel limette", "apple lime", "apfel", "limette", "apple", "lime", "fruchtsaft",
       "direktsaft", "saft", "citrus", "geschmack", "sorte", "juice"
     ],
-    href: "/shop?product=juice-apfel-limette",
+    href: "https://shop.fontes-vitae.com",
     icon: Package,
   },
   {
@@ -143,7 +143,7 @@ const SEARCH_DATABASE: SearchItem[] = [
       "apfel ingwer", "apple ginger", "apfel", "ingwer", "apple", "ginger", "fruchtsaft",
       "direktsaft", "saft", "geschmack", "sorte", "juice"
     ],
-    href: "/shop?product=juice-apfel-ingwer",
+    href: "https://shop.fontes-vitae.com",
     icon: Package,
   },
   {
@@ -155,7 +155,7 @@ const SEARCH_DATABASE: SearchItem[] = [
       "bundle", "bundles", "probierpaket", "12er", "juice mix", "mix", "fruchtsaft mix",
       "sparset", "vorteilspaket", "paket", "angebot", "rabatt"
     ],
-    href: "/shop?product=bundle-12juices",
+    href: "https://shop.fontes-vitae.com",
     icon: Sparkles,
   },
   {
@@ -167,7 +167,7 @@ const SEARCH_DATABASE: SearchItem[] = [
       "bundle", "bundles", "kombi-paket", "kombipaket", "48 dosen", "bestseller",
       "vorratspaket", "grosses paket", "48er", "sparset", "vorteilspaket"
     ],
-    href: "/shop?product=bundle-combo-48",
+    href: "https://shop.fontes-vitae.com",
     icon: Sparkles,
   },
   {
@@ -180,7 +180,7 @@ const SEARCH_DATABASE: SearchItem[] = [
       "apfelrix", "special", "ingwer tonic", "limette", "heidelbeere", "himbeere",
       "apfel", "blueberry", "blaubeere", "ausverkauft"
     ],
-    href: "/shop?category=kids",
+    href: "https://shop.fontes-vitae.com",
     icon: Sparkles,
   },
   {
@@ -484,6 +484,11 @@ export default function HeaderSearch() {
     setIsOpen(false);
     setQuery("");
     setSelectedIndex(-1);
+
+    if (href.startsWith("http")) {
+      window.location.href = href;
+      return;
+    }
 
     if (href.includes("#")) {
       const [path, hash] = href.split("#");

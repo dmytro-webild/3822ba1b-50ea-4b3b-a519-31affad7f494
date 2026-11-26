@@ -3,10 +3,9 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence, animate, motion, useMotionValue, useMotionValueEvent, useReducedMotion, useScroll } from "motion/react";
-import { Dribbble, Facebook, Github, Globe, Instagram, Linkedin, Mail, Twitter, Youtube, ShoppingBag, Menu, X, type LucideIcon } from "lucide-react";
+import { Dribbble, Facebook, Github, Globe, Instagram, Linkedin, Mail, Twitter, Youtube, Menu, X, type LucideIcon } from "lucide-react";
 import { socialName, type SocialPlatform } from "@/components/shared/socialPlatforms";
 import useMenuDialog from "@/components/kit/useMenuDialog";
-import { useCart } from "@/context/CartContext";
 import HeaderSearch from "@/components/search/HeaderSearch";
 import Media from "@/components/kit/Media";
 
@@ -31,9 +30,9 @@ const NavbarPillLinks = ({
   navItems = [
     { name: "H2 Wasser", href: "/#quelle" },
     { name: "Vorteile", href: "/#vergleich" },
-    { name: "Shop", href: "/shop" },
+    { name: "Shop", href: "https://shop.fontes-vitae.com" },
   ],
-  primaryButton = { text: "Zum Shop", href: "/shop" },
+  primaryButton = { text: "Zum Shop", href: "https://shop.fontes-vitae.com" },
   socials = [],
   menuText = "Menu",
 }: NavbarPillLinksProps) => {
@@ -43,7 +42,6 @@ const NavbarPillLinks = ({
   const hidden = useRef(false);
   const shift = useMotionValue(0);
   const { scrollY } = useScroll();
-  const { setIsCartOpen, totalItemCount } = useCart();
   useMenuDialog(open, panelRef, () => setOpen(false));
 
   useMotionValueEvent(scrollY, "change", (value) => {
@@ -116,29 +114,23 @@ const NavbarPillLinks = ({
             {/* Minimalist Header Search */}
             <HeaderSearch />
 
-            {/* Header Shopping Cart Trigger */}
-            <button
-              type="button"
-              onClick={() => setIsCartOpen(true)}
-              className="relative flex size-[clamp(2.5rem,2.2rem+1vw,3rem)] items-center justify-center rounded-xl bg-white text-[#0A1C3A] hover:bg-slate-50 active:scale-95 transition shadow-xs border border-slate-200"
-              aria-label="Warenkorb öffnen"
-            >
-              <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5 text-[#0A1C3A]" />
-              {totalItemCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-[#0A1C3A] text-white text-[10px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center border border-white">
-                  {totalItemCount}
-                </span>
-              )}
-            </button>
-
             {primaryButton && (
               <div className="hidden sm:block">
-                <Link
-                  to={primaryButton.href}
-                  className="flex h-[2.35rem] items-center justify-center rounded-xl bg-white text-[#0A1C3A] px-4 font-black text-xs uppercase tracking-wider border border-slate-200 shadow-xs hover:bg-slate-50 hover:shadow-sm transition"
-                >
-                  {primaryButton.text}
-                </Link>
+                {primaryButton.href.startsWith("http") ? (
+                  <a
+                    href={primaryButton.href}
+                    className="flex h-[2.35rem] items-center justify-center rounded-xl bg-white text-[#0A1C3A] px-4 font-black text-xs uppercase tracking-wider border border-slate-200 shadow-xs hover:bg-slate-50 hover:shadow-sm transition"
+                  >
+                    {primaryButton.text}
+                  </a>
+                ) : (
+                  <Link
+                    to={primaryButton.href}
+                    className="flex h-[2.35rem] items-center justify-center rounded-xl bg-white text-[#0A1C3A] px-4 font-black text-xs uppercase tracking-wider border border-slate-200 shadow-xs hover:bg-slate-50 hover:shadow-sm transition"
+                  >
+                    {primaryButton.text}
+                  </Link>
+                )}
               </div>
             )}
 
