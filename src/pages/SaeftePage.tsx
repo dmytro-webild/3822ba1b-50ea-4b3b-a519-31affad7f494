@@ -82,7 +82,7 @@ const PREMIUM_JUICES: JuiceProduct[] = [
       text: "text-purple-950",
       accent: "text-purple-700",
       buttonBg: "bg-purple-700 hover:bg-purple-800 text-white shadow-purple-900/20",
-      badgeBg: "bg-purple-100 text-purple-800 border-purple-200",
+      badgeBg: "bg-purple-100 text-purple-900 border-purple-300",
       starColor: "text-purple-600",
       barColor: "bg-purple-600"
     },
@@ -125,7 +125,7 @@ const PREMIUM_JUICES: JuiceProduct[] = [
       text: "text-rose-950",
       accent: "text-rose-700",
       buttonBg: "bg-[#D81B60] hover:bg-[#C2185B] text-white shadow-rose-900/20",
-      badgeBg: "bg-rose-100 text-rose-800 border-rose-200",
+      badgeBg: "bg-rose-100 text-rose-900 border-rose-300",
       starColor: "text-rose-600",
       barColor: "bg-[#D81B60]"
     },
@@ -168,7 +168,7 @@ const PREMIUM_JUICES: JuiceProduct[] = [
       text: "text-emerald-950",
       accent: "text-emerald-700",
       buttonBg: "bg-emerald-700 hover:bg-emerald-800 text-white shadow-emerald-900/20",
-      badgeBg: "bg-emerald-100 text-emerald-800 border-emerald-200",
+      badgeBg: "bg-emerald-100 text-emerald-900 border-emerald-300",
       starColor: "text-emerald-600",
       barColor: "bg-emerald-600"
     },
@@ -203,14 +203,14 @@ const PREMIUM_JUICES: JuiceProduct[] = [
     flavor: "Ingwer",
     tagline: "Würzige Frische",
     description:
-      "100 % natürlicher Direktsaft mit belebender Schärfe von Ingwer – feurig, aktivieren und wohltuend.",
+      "100 % natürlicher Direktsaft mit belebender Schärfe von Ingwer – feurig, aktivierend und wohltuend.",
     colorTheme: {
       bg: "bg-amber-900/10 hover:bg-amber-900/15",
       border: "border-amber-300/40",
       text: "text-amber-950",
       accent: "text-amber-700",
       buttonBg: "bg-[#D97706] hover:bg-[#B45309] text-white shadow-amber-900/20",
-      badgeBg: "bg-amber-100 text-amber-800 border-amber-200",
+      badgeBg: "bg-amber-100 text-amber-900 border-amber-300",
       starColor: "text-amber-600",
       barColor: "bg-[#D97706]"
     },
@@ -252,7 +252,7 @@ const PREMIUM_JUICES: JuiceProduct[] = [
       text: "text-orange-950",
       accent: "text-orange-700",
       buttonBg: "bg-[#EA580C] hover:bg-[#C2410C] text-white shadow-orange-900/20",
-      badgeBg: "bg-orange-100 text-orange-800 border-orange-200",
+      badgeBg: "bg-orange-100 text-orange-900 border-orange-300",
       starColor: "text-orange-600",
       barColor: "bg-[#EA580C]"
     },
@@ -294,7 +294,7 @@ const PREMIUM_JUICES: JuiceProduct[] = [
       text: "text-lime-950",
       accent: "text-lime-700",
       buttonBg: "bg-[#15803D] hover:bg-[#166534] text-white shadow-lime-900/20",
-      badgeBg: "bg-lime-100 text-lime-800 border-lime-200",
+      badgeBg: "bg-lime-100 text-lime-900 border-lime-300",
       starColor: "text-lime-600",
       barColor: "bg-[#15803D]"
     },
@@ -347,37 +347,37 @@ const USE_CASES = [
     title: "Gastronomie & Hotellerie",
     desc: "Edler Begleiter im Restaurant, Frühstücksbuffet und exklusiven Barbereich.",
     icon: Utensils,
-    color: "from-amber-500/20 to-orange-500/10 border-amber-300/40 text-amber-900"
+    color: "border-amber-300/50 text-[#0A1C3A]"
   },
   {
     title: "Büro & Unternehmen",
     desc: "Gesundes Getränkeangebot für Konferenzräume, Mitarbeiter & geschäftliche Gäste.",
     icon: Building2,
-    color: "from-blue-500/20 to-indigo-500/10 border-blue-300/40 text-blue-900"
+    color: "border-blue-300/50 text-[#0A1C3A]"
   },
   {
     title: "Sport & Fitness",
     desc: "Natürliche Energie & Erfrischung vor oder nach dem intensivem Workout.",
     icon: Dumbbell,
-    color: "from-emerald-500/20 to-teal-500/10 border-emerald-300/40 text-emerald-900"
+    color: "border-emerald-300/50 text-[#0A1C3A]"
   },
   {
     title: "Schulen & Bildung",
     desc: "Fruchtiger Naturgenuss ohne Rohrzuckerzusatz für Kinder und Jugendliche.",
     icon: GraduationCap,
-    color: "from-purple-500/20 to-pink-500/10 border-purple-300/40 text-purple-900"
+    color: "border-purple-300/50 text-[#0A1C3A]"
   },
   {
     title: "Events & Veranstaltungen",
     desc: "Der stilvolle Hingucker auf Messen, Catering-Events & feierlichen Anlässen.",
     icon: PartyPopper,
-    color: "from-rose-500/20 to-amber-500/10 border-rose-300/40 text-rose-900"
+    color: "border-rose-300/50 text-[#0A1C3A]"
   },
   {
     title: "Einzelhandel & Kioske",
     desc: "Attraktives Premium-Getränk im Kühlregal für qualitätsbewusste Konsumenten.",
     icon: ShoppingBag,
-    color: "from-sky-500/20 to-cyan-500/10 border-sky-300/40 text-sky-900"
+    color: "border-sky-300/50 text-[#0A1C3A]"
   }
 ];
 
@@ -389,8 +389,8 @@ const KIDS_CANS = [
     role: "Die Sammlerin & Forscherin",
     desc: "Fruchtige Himbeere mit natürlicher Frische. Der Liebling kleiner Entdecker!",
     image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216740-l82r4ka1.png",
-    color: "bg-rose-50/90 border-rose-200 text-rose-900",
-    badgeBg: "bg-rose-600 text-white"
+    color: "border-rose-300/60 text-rose-950",
+    badgeBg: "bg-[#D81B60] text-white"
   },
   {
     id: "heidelberix",
@@ -399,8 +399,8 @@ const KIDS_CANS = [
     role: "Der Anführer",
     desc: "Köstlicher Heidelbeer-Direktsaft für mutige Abenteurer und schlaue Köpfe.",
     image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216738-2s53ficu.png",
-    color: "bg-purple-50/90 border-purple-200 text-purple-900",
-    badgeBg: "bg-purple-600 text-white"
+    color: "border-purple-300/60 text-purple-950",
+    badgeBg: "bg-purple-700 text-white"
   },
   {
     id: "apfelrix",
@@ -409,8 +409,8 @@ const KIDS_CANS = [
     role: "Der Kartograf",
     desc: "Knackig-süßer Apfelsaft aus heimischen Früchten – purer Naturgenuss.",
     image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216735-kk46ygff.png",
-    color: "bg-red-50/90 border-red-200 text-red-900",
-    badgeBg: "bg-red-600 text-white"
+    color: "border-orange-300/60 text-orange-950",
+    badgeBg: "bg-[#EA580C] text-white"
   },
   {
     id: "ingwerix",
@@ -419,8 +419,8 @@ const KIDS_CANS = [
     role: "Der Historiker",
     desc: "Milder Apfel mit mohniger Ingwernote – kinderfreundlich ausbalanciert.",
     image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216737-r3370ev4.png",
-    color: "bg-amber-50/90 border-amber-200 text-amber-900",
-    badgeBg: "bg-amber-600 text-white"
+    color: "border-amber-300/60 text-amber-950",
+    badgeBg: "bg-[#D97706] text-white"
   },
   {
     id: "limetix",
@@ -429,8 +429,8 @@ const KIDS_CANS = [
     role: "Der Fruchtexperte",
     desc: "Spritzig-frischer Apfel-Limette-Mix für den ultimativen Erfrischungskick.",
     image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216742-q4yi2mw1.png",
-    color: "bg-lime-50/90 border-lime-200 text-lime-900",
-    badgeBg: "bg-lime-600 text-white"
+    color: "border-lime-300/60 text-lime-950",
+    badgeBg: "bg-[#15803D] text-white"
   }
 ];
 
@@ -458,7 +458,7 @@ const CHARACTERS: CharacterProfile[] = [
       "Himbeerixxa ist die schlaueste Forscherin im Fruchtwald. Wo immer seltene Beeren wachsen, findet sie den Weg! Mit ihrer magischen Lupe prüft sie die Sonne auf den Früchten und sorgt dafür, dass nur die frischesten Himbeeren geerntet werden. Ihr Motto: Natur pur ist das größte Abenteuer!",
     favoriteFruit: "Sonnengereifte Himbeeren",
     image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216740-l82r4ka1.png",
-    colorTheme: "bg-rose-50 border-rose-300 text-rose-950",
+    colorTheme: "border-rose-300 text-rose-950",
     btnBg: "bg-[#D81B60] hover:bg-[#C2185B]"
   },
   {
@@ -471,7 +471,7 @@ const CHARACTERS: CharacterProfile[] = [
       "Heidelberix liebt den Sport und die freie Natur. Als Anführer der Frucht-Entdecker hat er stets einen klaren Kopf und motiviert das ganze Team. Seine Lieblingsbeere, die blaue Heidelbeere, spendet ihm die nötige Energie für rasante Abenteuer in den Bergen.",
     favoriteFruit: "Wilde Wald-Heidelbeeren",
     image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216738-2s53ficu.png",
-    colorTheme: "bg-purple-50 border-purple-300 text-purple-950",
+    colorTheme: "border-purple-300 text-purple-950",
     btnBg: "bg-purple-700 hover:bg-purple-800"
   },
   {
@@ -484,7 +484,7 @@ const CHARACTERS: CharacterProfile[] = [
       "Kein Weg ist Apfelrix zu weit. Als meisterhafter Kartograf zeichnet er genaue Landkarten für die Truppe. Ein knackiger roter Apfel ist seine liebste Stärkung auf langen Wanderungen über wogende Wiesen und Hügel.",
     favoriteFruit: "Knackige rote Äpfel",
     image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216735-kk46ygff.png",
-    colorTheme: "bg-orange-50 border-orange-300 text-orange-950",
+    colorTheme: "border-orange-300 text-orange-950",
     btnBg: "bg-[#EA580C] hover:bg-[#C2410C]"
   },
   {
@@ -494,10 +494,10 @@ const CHARACTERS: CharacterProfile[] = [
     tagline: "Kennt spannende Geschichten und das Geheimnis des Ingwers.",
     summary: "Der weise Kopf der Gruppe liest in alten Schriften und weiß alles über die Kraft der Wurzeln.",
     fullStory:
-      "Ingwerix trägt ein altes Buch voller Geschichten mit sich. Er weiß exakt, wie wertvoll die Ingwerwurzel seit Jahrtausenden für Wohlbefinden und Vitalität ist. Seine spannenden Erzählungen am Lagerfeuer begeistert alle Entdecker.",
+      "Ingwerix trägt ein altes Buch voller Geschichten mit sich. Er weiß exakt, wie wertvoll die Ingwerwurzel seit Jahrtausenden für Wohlbefinden und Vitalität ist. Seine spannenden Erzählungen am Lagerfeuer begeistern alle Entdecker.",
     favoriteFruit: "Frische Ingwerwurzel & Apfel",
     image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216737-r3370ev4.png",
-    colorTheme: "bg-amber-50 border-amber-300 text-amber-950",
+    colorTheme: "border-amber-300 text-amber-950",
     btnBg: "bg-[#D97706] hover:bg-[#B45309]"
   },
   {
@@ -510,10 +510,12 @@ const CHARACTERS: CharacterProfile[] = [
       "Limetix ist der Gourmet unter den Entdeckern. Mit geschultem Geschmackssinn findet er die saftigsten grünen Limetten und kombiniert sie mit mildem Apfelsaft. Sein Ergebnis ist eine natürliche Erfrischung, die alle strahlen lässt!",
     favoriteFruit: "Sonnige grüne Limetten",
     image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133216742-q4yi2mw1.png",
-    colorTheme: "bg-lime-50 border-lime-300 text-lime-950",
+    colorTheme: "border-lime-300 text-lime-950",
     btnBg: "bg-[#15803D] hover:bg-[#166534]"
   }
 ];
+
+const SAFTE_SHOP_URL = "https://shop.fontes-vitae.com/collections/safte";
 
 // ─── MAIN COMPONENT ──────────────────────────────────────────────────────────
 
@@ -534,12 +536,19 @@ export default function SaeftePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFFDF7] text-slate-900 font-sans pb-20">
+    <div className="min-h-screen text-slate-900 font-sans pb-20 relative isolate">
+      
+      {/* Dedicated Warm Natural Background Image for Säfte Page */}
+      <div
+        className="fixed inset-0 pointer-events-none -z-10 bg-cover bg-center bg-no-repeat bg-fixed"
+        style={{
+          backgroundImage: `url("https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795661668977-alc320uj.png")`
+        }}
+        aria-hidden="true"
+      />
       
       {/* ─── 1. HERO BANNER SECTION ─────────────────────────────────────────── */}
-      <section className="relative pt-24 sm:pt-28 pb-10 sm:pb-14 overflow-hidden bg-gradient-to-b from-[#0A1C3A] via-[#0F2852] to-[#FFFDF7]">
-        {/* Subtle glow effects */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber-400/10 blur-[120px] rounded-full pointer-events-none" />
+      <section className="relative pt-28 sm:pt-32 pb-10 sm:pb-14 overflow-hidden">
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 text-center">
           
@@ -548,9 +557,9 @@ export default function SaeftePage() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-400/20 text-amber-200 border border-amber-300/30 text-xs sm:text-sm font-semibold tracking-wide uppercase mb-4 backdrop-blur-sm"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/15 text-[#0A1C3A] border border-amber-500/30 text-xs sm:text-sm font-extrabold tracking-wide uppercase mb-4 backdrop-blur-md shadow-xs"
           >
-            <Sparkles className="w-4 h-4 text-amber-300" />
+            <Sparkles className="w-4 h-4 text-amber-600" />
             <span>FONTES VITAE® Premium Direktsäfte</span>
           </motion.div>
 
@@ -558,7 +567,7 @@ export default function SaeftePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight uppercase"
+            className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0A1C3A] tracking-tight uppercase"
           >
             PREMIUM FRUCHTGENUSS
           </motion.h1>
@@ -567,7 +576,7 @@ export default function SaeftePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-3 text-lg sm:text-xl text-amber-100/90 font-medium max-w-2xl mx-auto italic"
+            className="mt-3 text-lg sm:text-xl text-amber-950 font-semibold max-w-2xl mx-auto italic"
           >
             „Von der Natur inspiriert. Mit Leidenschaft verfeinert.“
           </motion.p>
@@ -577,7 +586,7 @@ export default function SaeftePage() {
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="mt-6 sm:mt-8 relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-amber-200/40 bg-slate-900/40 backdrop-blur-md group"
+            className="mt-6 sm:mt-8 relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-amber-400/60 bg-white/40 backdrop-blur-md group"
           >
             <Media
               src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795653130858-6zykqvgj.png"
@@ -595,16 +604,14 @@ export default function SaeftePage() {
           >
             <a
               href="#saefte-detail"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-black text-sm uppercase tracking-wider shadow-lg shadow-amber-500/20 transition transform active:scale-95"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-600 hover:to-orange-600 text-white font-black text-sm uppercase tracking-wider shadow-lg shadow-amber-500/25 transition transform active:scale-95"
             >
               <span>Unsere Säfte entdecken</span>
               <ChevronDown className="w-4 h-4" />
             </a>
             <a
-              href="https://shop.fontes-vitae.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#0A1C3A] hover:bg-[#061226] text-white font-bold text-sm uppercase tracking-wider border border-amber-300/40 shadow-lg transition transform active:scale-95"
+              href={SAFTE_SHOP_URL}
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#0A1C3A] hover:bg-[#061226] text-amber-300 font-bold text-sm uppercase tracking-wider border border-amber-400/40 shadow-lg transition transform active:scale-95"
             >
               <ShoppingBag className="w-4 h-4 text-amber-300" />
               <span>Direkt zum Shop</span>
@@ -618,14 +625,14 @@ export default function SaeftePage() {
       <section id="saefte-detail" className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6">
         
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider mb-2">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/15 text-amber-950 border border-amber-400/30 text-xs font-bold uppercase tracking-wider mb-2 backdrop-blur-md">
             <Sparkles className="w-3.5 h-3.5 text-amber-600" />
             Sortiments-Übersicht
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0A1C3A] tracking-tight">
             Unsere Premium-Säfte im Detail
           </h2>
-          <p className="text-slate-600 text-sm sm:text-base mt-2">
+          <p className="text-slate-800 text-sm sm:text-base font-medium mt-2">
             Entdecke unsere sechs Premium-Säfte – natürlich, fruchtig und voller erstklassigem Geschmack.
           </p>
         </div>
@@ -643,7 +650,7 @@ export default function SaeftePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
-                className={`rounded-2xl sm:rounded-3xl border ${juice.colorTheme.border} ${juice.colorTheme.bg} p-5 sm:p-8 transition-all duration-300 shadow-md hover:shadow-xl relative overflow-hidden`}
+                className={`rounded-2xl sm:rounded-3xl border ${juice.colorTheme.border} ${juice.colorTheme.bg} bg-white/75 backdrop-blur-md p-5 sm:p-8 transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden`}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                   
@@ -651,7 +658,7 @@ export default function SaeftePage() {
                   <div className="lg:col-span-4 flex flex-col items-center justify-center relative">
                     <div className="relative group">
                       {/* Glow backdrop */}
-                      <div className="absolute inset-0 bg-white/60 blur-2xl rounded-full scale-110 pointer-events-none" />
+                      <div className="absolute inset-0 bg-white/70 blur-2xl rounded-full scale-110 pointer-events-none" />
                       
                       {/* Can Image (Single View) */}
                       <div className="relative flex items-center justify-center py-2">
@@ -664,7 +671,7 @@ export default function SaeftePage() {
                     </div>
 
                     {/* Can Volume Badge */}
-                    <div className="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 border border-slate-200 text-xs font-extrabold text-slate-800 shadow-xs">
+                    <div className="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 border border-slate-300 text-xs font-extrabold text-[#0A1C3A] shadow-xs">
                       <Sparkles className="w-3.5 h-3.5 text-amber-500" />
                       <span>Füllmenge: {juice.canVolume}</span>
                     </div>
@@ -676,22 +683,22 @@ export default function SaeftePage() {
                     {/* Header info */}
                     <div>
                       <div className="flex flex-wrap items-center gap-2 mb-2">
-                        <span className={`px-3 py-0.5 rounded-full text-xs font-bold border ${juice.colorTheme.badgeBg}`}>
+                        <span className={`px-3 py-0.5 rounded-full text-xs font-extrabold border ${juice.colorTheme.badgeBg}`}>
                           {juice.flavor}
                         </span>
-                        <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide">
+                        <span className="text-xs font-bold text-slate-600 uppercase tracking-wide">
                           100 % Direktsaft
                         </span>
                       </div>
 
                       <h3 className="text-2xl sm:text-3xl font-black text-[#0A1C3A] tracking-tight">
-                        {juice.name} <span className="font-normal text-slate-600">– {juice.flavor}</span>
+                        {juice.name} <span className="font-normal text-slate-700">– {juice.flavor}</span>
                       </h3>
-                      <p className={`text-xs sm:text-sm font-semibold ${juice.colorTheme.accent} mt-0.5 italic`}>
+                      <p className={`text-xs sm:text-sm font-bold ${juice.colorTheme.accent} mt-0.5 italic`}>
                         {juice.tagline}
                       </p>
                       
-                      <p className="mt-3 text-slate-700 text-xs sm:text-sm leading-relaxed">
+                      <p className="mt-3 text-slate-800 text-xs sm:text-sm font-medium leading-relaxed">
                         {juice.description}
                       </p>
                     </div>
@@ -703,14 +710,14 @@ export default function SaeftePage() {
                         return (
                           <div
                             key={hIdx}
-                            className="bg-white/80 backdrop-blur-sm p-3 rounded-xl border border-white/90 shadow-2xs flex items-start gap-2.5"
+                            className="bg-white/90 backdrop-blur-sm p-3 rounded-xl border border-slate-200/80 shadow-xs flex items-start gap-2.5"
                           >
                             <div className={`p-1.5 rounded-lg ${juice.colorTheme.badgeBg} shrink-0`}>
                               <Icon className="w-4 h-4" />
                             </div>
                             <div>
-                              <p className="text-xs font-bold text-slate-900">{hl.title}</p>
-                              <p className="text-[11px] text-slate-600 leading-tight mt-0.5">{hl.desc}</p>
+                              <p className="text-xs font-extrabold text-[#0A1C3A]">{hl.title}</p>
+                              <p className="text-[11px] text-slate-700 leading-tight mt-0.5 font-medium">{hl.desc}</p>
                             </div>
                           </div>
                         );
@@ -718,8 +725,8 @@ export default function SaeftePage() {
                     </div>
 
                     {/* Taste Profile Indicators (Süße, Säure, Herbheit, Intensität) */}
-                    <div className="bg-white/70 backdrop-blur-xs p-4 rounded-xl border border-white/80 shadow-2xs">
-                      <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800 mb-3 flex items-center gap-1.5">
+                    <div className="bg-white/90 backdrop-blur-sm p-4 rounded-xl border border-slate-200/80 shadow-xs">
+                      <h4 className="text-xs font-extrabold uppercase tracking-wider text-[#0A1C3A] mb-3 flex items-center gap-1.5">
                         <Sparkles className="w-3.5 h-3.5 text-amber-500" />
                         Geschmacksprofil
                       </h4>
@@ -727,7 +734,7 @@ export default function SaeftePage() {
                         
                         {/* Süße */}
                         <div>
-                          <div className="flex justify-between text-[11px] font-semibold text-slate-700 mb-1">
+                          <div className="flex justify-between text-[11px] font-bold text-slate-800 mb-1">
                             <span>Süße</span>
                             <span>{juice.tasteProfile.sweetness}/5</span>
                           </div>
@@ -741,7 +748,7 @@ export default function SaeftePage() {
 
                         {/* Säure */}
                         <div>
-                          <div className="flex justify-between text-[11px] font-semibold text-slate-700 mb-1">
+                          <div className="flex justify-between text-[11px] font-bold text-slate-800 mb-1">
                             <span>Säure</span>
                             <span>{juice.tasteProfile.acidity}/5</span>
                           </div>
@@ -755,7 +762,7 @@ export default function SaeftePage() {
 
                         {/* Herbheit */}
                         <div>
-                          <div className="flex justify-between text-[11px] font-semibold text-slate-700 mb-1">
+                          <div className="flex justify-between text-[11px] font-bold text-slate-800 mb-1">
                             <span>Herbheit</span>
                             <span>{juice.tasteProfile.bitterness}/5</span>
                           </div>
@@ -769,7 +776,7 @@ export default function SaeftePage() {
 
                         {/* Geschmacksintensität */}
                         <div>
-                          <div className="flex justify-between text-[11px] font-semibold text-slate-700 mb-1">
+                          <div className="flex justify-between text-[11px] font-bold text-slate-800 mb-1">
                             <span>Intensität</span>
                             <span>{juice.tasteProfile.intensity}/5</span>
                           </div>
@@ -785,11 +792,11 @@ export default function SaeftePage() {
                     </div>
 
                     {/* Pack Sizes & CTA Button */}
-                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pt-2 border-t border-slate-200/60">
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pt-2 border-t border-slate-300/60">
                       
                       {/* Pack selector */}
                       <div className="flex items-center gap-2">
-                        <span className="text-xs font-bold text-slate-700 whitespace-nowrap">Packung:</span>
+                        <span className="text-xs font-extrabold text-[#0A1C3A] whitespace-nowrap">Packung:</span>
                         <div className="flex gap-1.5">
                           {juice.packSizes.map((pack) => {
                             const isSelected = currentPack === pack;
@@ -803,7 +810,7 @@ export default function SaeftePage() {
                                 className={`px-2.5 py-1 rounded-lg text-xs font-bold transition ${
                                   isSelected
                                     ? `${juice.colorTheme.buttonBg} shadow-xs`
-                                    : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
+                                    : "bg-white text-slate-800 hover:bg-slate-100 border border-slate-300"
                                 }`}
                               >
                                 {pack}
@@ -818,7 +825,7 @@ export default function SaeftePage() {
                         <button
                           type="button"
                           onClick={() => toggleAccordion(juice.id)}
-                          className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white/90 text-slate-800 text-xs font-bold border border-slate-300 hover:bg-white transition"
+                          className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white/90 text-slate-900 text-xs font-bold border border-slate-300 hover:bg-white transition"
                         >
                           <Info className="w-3.5 h-3.5 text-slate-600" />
                           <span>Zutaten & Nährwerte</span>
@@ -830,9 +837,7 @@ export default function SaeftePage() {
                         </button>
 
                         <a
-                          href="https://shop.fontes-vitae.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          href={SAFTE_SHOP_URL}
                           className={`inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-black text-xs uppercase tracking-wider transition transform active:scale-95 shadow-md ${juice.colorTheme.buttonBg}`}
                         >
                           <ShoppingBag className="w-3.5 h-3.5" />
@@ -855,21 +860,21 @@ export default function SaeftePage() {
                             
                             {/* Zutaten */}
                             <div>
-                              <h5 className="font-extrabold uppercase tracking-wider text-slate-900 mb-2 flex items-center gap-1.5 text-xs">
+                              <h5 className="font-extrabold uppercase tracking-wider text-[#0A1C3A] mb-2 flex items-center gap-1.5 text-xs">
                                 <Leaf className="w-4 h-4 text-emerald-600" />
                                 Zutaten
                               </h5>
-                              <p className="bg-slate-50 p-3 rounded-xl border border-slate-200/80 leading-relaxed text-slate-700">
+                              <p className="bg-slate-50 p-3 rounded-xl border border-slate-200/80 leading-relaxed text-slate-700 font-medium">
                                 {juice.ingredients}
                               </p>
-                              <p className="mt-2 text-[11px] text-slate-500 italic">
+                              <p className="mt-2 text-[11px] text-slate-600 italic font-medium">
                                 * Ohne künstliche Zusätze, ohne Aspartam, ohne Konservierungsstoffe.
                               </p>
                             </div>
 
                             {/* Nährwertangaben pro 100 ml */}
                             <div>
-                              <h5 className="font-extrabold uppercase tracking-wider text-slate-900 mb-2 flex items-center gap-1.5 text-xs">
+                              <h5 className="font-extrabold uppercase tracking-wider text-[#0A1C3A] mb-2 flex items-center gap-1.5 text-xs">
                                 <Sparkles className="w-4 h-4 text-amber-500" />
                                 Nährwerte pro 100 ml
                               </h5>
@@ -927,17 +932,17 @@ export default function SaeftePage() {
       </section>
 
       {/* ─── 3. BESONDERHEITEN UNSERER SÄFTE (10 ICON-GRID) ───────────────────── */}
-      <section className="py-12 sm:py-16 bg-gradient-to-b from-amber-50/50 via-white to-amber-50/30 border-y border-amber-200/50">
+      <section className="py-12 sm:py-16 bg-white/60 backdrop-blur-md border-y border-amber-300/40 my-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           
           <div className="text-center max-w-3xl mx-auto mb-10">
-            <span className="px-3 py-1 rounded-full bg-[#0A1C3A] text-amber-300 text-xs font-bold uppercase tracking-wider inline-block mb-2">
+            <span className="px-3.5 py-1 rounded-full bg-[#0A1C3A] text-amber-300 text-xs font-extrabold uppercase tracking-wider inline-block mb-2 shadow-xs">
               Warum unsere Säfte so besonders sind?
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0A1C3A] tracking-tight">
               100 % Natur & Höchste Qualitätsstandards
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base mt-2">
+            <p className="text-slate-800 font-medium text-sm sm:text-base mt-2">
               Unverfälschter Fruchtgenuss in einer nachhaltigen Premium-Verpackung.
             </p>
           </div>
@@ -952,15 +957,15 @@ export default function SaeftePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: idx * 0.04 }}
-                  className="bg-white rounded-2xl p-4 border border-amber-200/80 shadow-xs hover:shadow-md transition text-center flex flex-col items-center justify-center group"
+                  className="bg-white/85 hover:bg-white backdrop-blur-sm rounded-2xl p-4 border border-amber-300/60 shadow-sm hover:shadow-md transition text-center flex flex-col items-center justify-center group"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-amber-100/80 text-[#0A1C3A] flex items-center justify-center mb-3 group-hover:bg-[#0A1C3A] group-hover:text-amber-300 transition duration-300">
+                  <div className="w-12 h-12 rounded-2xl bg-amber-500/15 text-[#0A1C3A] flex items-center justify-center mb-3 group-hover:bg-[#0A1C3A] group-hover:text-amber-300 transition duration-300">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">
+                  <h4 className="text-xs sm:text-sm font-extrabold text-[#0A1C3A] leading-tight">
                     {feat.label}
                   </h4>
-                  <p className="text-[11px] text-slate-500 mt-1">{feat.sub}</p>
+                  <p className="text-[11px] text-slate-700 font-medium mt-1">{feat.sub}</p>
                 </motion.div>
               );
             })}
@@ -973,13 +978,13 @@ export default function SaeftePage() {
       <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6">
         
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider inline-block mb-2">
+          <span className="px-3.5 py-1 rounded-full bg-emerald-600/15 text-emerald-950 border border-emerald-500/30 text-xs font-extrabold uppercase tracking-wider inline-block mb-2 backdrop-blur-md">
             Vielseitige Einsatzbereiche
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0A1C3A] tracking-tight">
             Perfekt für jeden Anlass & jedes Umfeld
           </h2>
-          <p className="text-slate-600 text-sm sm:text-base mt-2">
+          <p className="text-slate-800 font-medium text-sm sm:text-base mt-2">
             Unsere Säfte sind die ideale, natürliche Erfrischung – perfekt für viele Gelegenheiten:
           </p>
         </div>
@@ -995,21 +1000,21 @@ export default function SaeftePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.05 }}
-                className={`min-w-[82vw] sm:min-w-[280px] md:min-w-0 snap-center shrink-0 rounded-2xl bg-gradient-to-br ${uc.color} border p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between`}
+                className={`min-w-[82vw] sm:min-w-[280px] md:min-w-0 snap-center shrink-0 rounded-2xl bg-white/80 backdrop-blur-md border ${uc.color} p-6 shadow-md hover:shadow-lg transition flex flex-col justify-between`}
               >
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-white/90 text-[#0A1C3A] flex items-center justify-center mb-4 shadow-2xs">
+                  <div className="w-12 h-12 rounded-xl bg-white text-[#0A1C3A] flex items-center justify-center mb-4 shadow-sm border border-slate-200/60">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">
+                  <h3 className="text-lg font-bold text-[#0A1C3A] mb-2">
                     {uc.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-800 font-medium leading-relaxed">
                     {uc.desc}
                   </p>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-slate-300/40 flex items-center justify-between text-xs font-bold text-[#0A1C3A]">
+                <div className="mt-4 pt-3 border-t border-slate-300/60 flex items-center justify-between text-xs font-extrabold text-[#0A1C3A]">
                   <span>Premium Partner</span>
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                 </div>
@@ -1021,13 +1026,13 @@ export default function SaeftePage() {
       </section>
 
       {/* ─── 5. DIE FRUCHT-ENTDECKER (GROSSFLÄCHIGES BANNER) ────────────────── */}
-      <section className="py-10 max-w-7xl mx-auto px-4 sm:px-6">
+      <section className="py-8 max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.97 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="relative rounded-3xl overflow-hidden border-2 border-amber-300/80 shadow-2xl group bg-amber-950/20"
+          className="relative rounded-3xl overflow-hidden border-2 border-amber-400/80 shadow-2xl group bg-white/40 backdrop-blur-md"
         >
           <Media
             src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795660656826-jcetsu9g.png"
@@ -1038,17 +1043,17 @@ export default function SaeftePage() {
       </section>
 
       {/* ─── 6. UNSERE KINDERSERIE ─────────────────────────────────────────── */}
-      <section className="py-12 sm:py-16 bg-gradient-to-b from-amber-50/40 via-white to-amber-50/60 border-t border-amber-200/50">
+      <section className="py-12 sm:py-16 bg-white/60 backdrop-blur-md border-t border-amber-300/40 my-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           
           <div className="text-center max-w-3xl mx-auto mb-10">
-            <span className="px-3.5 py-1.5 rounded-full bg-rose-600 text-white text-xs font-extrabold uppercase tracking-wider inline-block mb-3 shadow-sm">
+            <span className="px-3.5 py-1.5 rounded-full bg-orange-600 text-white text-xs font-extrabold uppercase tracking-wider inline-block mb-3 shadow-xs">
               Demnächst Erhältlich
             </span>
             <h2 className="text-3xl sm:text-4xl font-black text-[#0A1C3A] tracking-tight">
               Unsere Kinderserie – Die Frucht-Entdecker®
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base mt-2">
+            <p className="text-slate-800 font-medium text-sm sm:text-base mt-2">
               Spannend, lehrreich und natürlich fruchtig! Speziell entwickelte Rezepturen in 5 tollen Geschmacksrichtungen.
             </p>
           </div>
@@ -1061,7 +1066,7 @@ export default function SaeftePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.06 }}
-                className={`rounded-2xl border ${can.color} p-5 flex flex-col items-center text-center justify-between shadow-xs hover:shadow-md transition`}
+                className={`rounded-2xl border ${can.color} bg-white/80 backdrop-blur-md p-5 flex flex-col items-center text-center justify-between shadow-sm hover:shadow-md transition`}
               >
                 <div className="w-full flex flex-col items-center">
                   
@@ -1079,27 +1084,27 @@ export default function SaeftePage() {
                     />
                   </div>
 
-                  <h3 className="text-lg font-black text-slate-900 mt-2">
+                  <h3 className="text-lg font-black text-[#0A1C3A] mt-2">
                     {can.name}
                   </h3>
-                  <p className="text-xs font-bold text-slate-600 mt-0.5">
+                  <p className="text-xs font-extrabold text-amber-900 mt-0.5">
                     {can.flavor}
                   </p>
-                  <p className="text-[11px] font-medium text-slate-500 italic mt-0.5">
+                  <p className="text-[11px] font-semibold text-slate-600 italic mt-0.5">
                     {can.role}
                   </p>
 
-                  <p className="text-xs text-slate-700 mt-3 leading-relaxed">
+                  <p className="text-xs text-slate-800 font-medium mt-3 leading-relaxed">
                     {can.desc}
                   </p>
                 </div>
 
-                <div className="w-full mt-4 pt-3 border-t border-slate-200/80 flex flex-col gap-1.5 text-[11px]">
-                  <div className="flex items-center justify-center gap-1 font-semibold text-slate-700">
-                    <Sparkles className="w-3 h-3 text-amber-500" />
+                <div className="w-full mt-4 pt-3 border-t border-slate-300/70 flex flex-col gap-1.5 text-[11px]">
+                  <div className="flex items-center justify-center gap-1 font-bold text-slate-800">
+                    <Sparkles className="w-3 h-3 text-amber-600" />
                     <span>Füllmenge: 250 ml</span>
                   </div>
-                  <div className="flex items-center justify-center gap-1 text-slate-600">
+                  <div className="flex items-center justify-center gap-1 text-slate-800 font-medium">
                     <CheckCircle2 className="w-3 h-3 text-emerald-600" />
                     <span>Ohne Zuckerzusatz</span>
                   </div>
@@ -1116,13 +1121,13 @@ export default function SaeftePage() {
       <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6">
         
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="px-3.5 py-1.5 rounded-full bg-[#0A1C3A] text-amber-300 text-xs font-extrabold uppercase tracking-wider inline-block mb-3">
+          <span className="px-3.5 py-1.5 rounded-full bg-[#0A1C3A] text-amber-300 text-xs font-extrabold uppercase tracking-wider inline-block mb-3 shadow-xs">
             Charaktere & Geschichten
           </span>
           <h2 className="text-3xl sm:text-4xl font-black text-[#0A1C3A] tracking-tight">
             Die Figuren der Frucht-Entdecker® – Ihre Profile
           </h2>
-          <p className="text-slate-600 text-sm sm:text-base mt-2">
+          <p className="text-slate-800 font-medium text-sm sm:text-base mt-2">
             Lerne die fünf mutigen Helden kennen! Klicke auf ein Profil, um mehr über ihre Abenteuer zu erfahren.
           </p>
         </div>
@@ -1136,7 +1141,7 @@ export default function SaeftePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.06 }}
-              className={`rounded-2xl border ${char.colorTheme} p-5 flex flex-col items-center text-center justify-between shadow-xs hover:shadow-lg transition group`}
+              className={`rounded-2xl border ${char.colorTheme} bg-white/80 backdrop-blur-md p-5 flex flex-col items-center text-center justify-between shadow-sm hover:shadow-lg transition group`}
             >
               <div className="w-full flex flex-col items-center">
                 
@@ -1149,14 +1154,14 @@ export default function SaeftePage() {
                   />
                 </div>
 
-                <h3 className="text-lg font-black text-slate-900">
+                <h3 className="text-lg font-black text-[#0A1C3A]">
                   {char.name}
                 </h3>
-                <p className="text-xs font-bold text-amber-700 mt-0.5">
+                <p className="text-xs font-extrabold text-amber-800 mt-0.5">
                   {char.role}
                 </p>
 
-                <p className="text-xs text-slate-700 mt-3 leading-relaxed">
+                <p className="text-xs text-slate-800 font-medium mt-3 leading-relaxed">
                   {char.summary}
                 </p>
               </div>
@@ -1164,7 +1169,7 @@ export default function SaeftePage() {
               <button
                 type="button"
                 onClick={() => setActiveCharacter(char)}
-                className={`mt-5 w-full py-2 px-3 rounded-xl text-white font-bold text-xs uppercase tracking-wider shadow-xs transition transform active:scale-95 flex items-center justify-center gap-1.5 ${char.btnBg}`}
+                className={`mt-5 w-full py-2.5 px-3 rounded-xl text-white font-extrabold text-xs uppercase tracking-wider shadow-md transition transform active:scale-95 flex items-center justify-center gap-1.5 ${char.btnBg}`}
               >
                 <span>Zum Profil</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -1179,13 +1184,13 @@ export default function SaeftePage() {
       {/* ─── CHARACTER PROFILE MODAL ────────────────────────────────────────── */}
       <AnimatePresence>
         {activeCharacter && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0A1C3A]/70 backdrop-blur-md">
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               transition={{ duration: 0.3 }}
-              className="relative w-full max-w-lg bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-200 text-slate-900"
+              className="relative w-full max-w-lg bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-amber-200 text-slate-900"
             >
               {/* Close Button */}
               <button
@@ -1213,16 +1218,16 @@ export default function SaeftePage() {
                 <h3 className="text-2xl sm:text-3xl font-black text-[#0A1C3A]">
                   {activeCharacter.name}
                 </h3>
-                <p className="text-xs sm:text-sm font-semibold text-amber-700 italic mt-1">
+                <p className="text-xs sm:text-sm font-bold text-amber-800 italic mt-1">
                   „{activeCharacter.tagline}“
                 </p>
 
-                <div className="my-4 p-4 rounded-2xl bg-amber-50/60 border border-amber-200/80 text-left text-xs sm:text-sm text-slate-800 leading-relaxed">
+                <div className="my-4 p-4 rounded-2xl bg-amber-50/70 border border-amber-200/80 text-left text-xs sm:text-sm text-slate-800 leading-relaxed">
                   <p className="font-bold text-amber-900 mb-1 flex items-center gap-1.5">
                     <Sparkles className="w-4 h-4 text-amber-600" />
                     Die Geschichte von {activeCharacter.name}:
                   </p>
-                  <p className="mt-1 text-slate-700">{activeCharacter.fullStory}</p>
+                  <p className="mt-1 text-slate-700 font-medium">{activeCharacter.fullStory}</p>
                   
                   <div className="mt-3 pt-3 border-t border-amber-200/60 flex items-center justify-between text-xs font-semibold text-slate-700">
                     <span>Lieblingsfrucht:</span>
@@ -1233,7 +1238,7 @@ export default function SaeftePage() {
                 <button
                   type="button"
                   onClick={() => setActiveCharacter(null)}
-                  className="w-full py-3 rounded-xl bg-[#0A1C3A] hover:bg-[#061226] text-white font-bold text-xs uppercase tracking-wider transition"
+                  className="w-full py-3 rounded-xl bg-[#0A1C3A] hover:bg-[#061226] text-white font-extrabold text-xs uppercase tracking-wider transition"
                 >
                   Profil Schließen
                 </button>

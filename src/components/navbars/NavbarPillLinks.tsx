@@ -66,7 +66,7 @@ const NavbarPillLinks = ({
       >
         <div className="flex items-center justify-between gap-[0.5rem] sm:gap-[1rem] lg:grid lg:grid-cols-[1fr_auto_1fr]">
           <div className="flex min-w-0 items-center gap-[0.75rem]">
-            <Link to="/" className="min-w-0 flex items-center gap-2.5">
+            <Link to="/" className="min-w-0 flex items-center gap-2.5 p-1 rounded-xl bg-white/80 backdrop-blur-md border border-amber-900/10 shadow-xs hover:bg-white/95 transition">
               <Media
                 src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795656931190-v9zzb3lo.png"
                 alt="FONTES VITAE Logo"
@@ -85,7 +85,7 @@ const NavbarPillLinks = ({
                       initial={reduce ? false : { scale: 0.6, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ type: "spring", stiffness: 320, damping: 18, delay: 0.3 + i * 0.08 }}
-                      className="flex size-[clamp(2.5rem,2.2rem+1vw,3rem)] items-center justify-center rounded-full bg-secondary text-secondary-foreground transition-colors duration-300 hover:bg-primary hover:text-primary-foreground"
+                      className="flex size-[clamp(2.5rem,2.2rem+1vw,3rem)] items-center justify-center rounded-full bg-white/80 backdrop-blur-md text-[#0A1C3A] border border-amber-900/10 transition-colors duration-300 hover:bg-white hover:text-[#0A1C3A] shadow-xs"
                     >
                       <Icon aria-hidden="true" className="size-[1.1rem]" strokeWidth={1.8} />
                     </motion.a>
@@ -122,7 +122,7 @@ const NavbarPillLinks = ({
                         }
                       }
                     }}
-                    className="flex h-[2.35rem] items-center rounded-xl bg-white px-3.5 sm:px-4 font-[family-name:var(--font-label)] text-xs sm:text-sm font-extrabold leading-none tracking-tight text-[#0A1C3A] border border-slate-200/90 shadow-xs hover:bg-slate-50 hover:shadow-sm transition-all"
+                    className="flex h-[2.35rem] items-center rounded-xl bg-white/80 backdrop-blur-md px-3.5 sm:px-4 font-[family-name:var(--font-label)] text-xs sm:text-sm font-extrabold leading-none tracking-tight text-[#0A1C3A] border border-amber-900/10 shadow-xs hover:bg-white hover:shadow-sm transition-all"
                   >
                     <p className="whitespace-nowrap">{item.name}</p>
                   </a>
@@ -140,14 +140,14 @@ const NavbarPillLinks = ({
                 {primaryButton.href.startsWith("http") ? (
                   <a
                     href={primaryButton.href}
-                    className="flex h-[2.35rem] items-center justify-center rounded-xl bg-white text-[#0A1C3A] px-4 font-black text-xs uppercase tracking-wider border border-slate-200 shadow-xs hover:bg-slate-50 hover:shadow-sm transition"
+                    className="flex h-[2.35rem] items-center justify-center rounded-xl bg-[#0A1C3A] text-amber-300 hover:bg-[#061226] hover:text-amber-200 px-4 font-black text-xs uppercase tracking-wider border border-amber-400/40 shadow-xs transition"
                   >
                     {primaryButton.text}
                   </a>
                 ) : (
                   <Link
                     to={primaryButton.href}
-                    className="flex h-[2.35rem] items-center justify-center rounded-xl bg-white text-[#0A1C3A] px-4 font-black text-xs uppercase tracking-wider border border-slate-200 shadow-xs hover:bg-slate-50 hover:shadow-sm transition"
+                    className="flex h-[2.35rem] items-center justify-center rounded-xl bg-[#0A1C3A] text-amber-300 hover:bg-[#061226] hover:text-amber-200 px-4 font-black text-xs uppercase tracking-wider border border-amber-400/40 shadow-xs transition"
                   >
                     {primaryButton.text}
                   </Link>
@@ -159,7 +159,7 @@ const NavbarPillLinks = ({
             <button
               type="button"
               onClick={() => setOpen((prev) => !prev)}
-              className="flex lg:hidden size-[clamp(2.5rem,2.2rem+1vw,3rem)] items-center justify-center rounded-xl bg-white text-[#0A1C3A] hover:bg-slate-50 active:scale-95 transition shadow-xs border border-slate-200"
+              className="flex lg:hidden size-[clamp(2.5rem,2.2rem+1vw,3rem)] items-center justify-center rounded-xl bg-white/80 backdrop-blur-md text-[#0A1C3A] hover:bg-white active:scale-95 transition shadow-xs border border-amber-900/10"
               aria-label={open ? "Menü schließen" : "Menü öffnen"}
             >
               {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
