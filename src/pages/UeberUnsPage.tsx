@@ -71,7 +71,7 @@ export default function UeberUnsPage() {
               Vertriebspartner DACH &amp; Familienunternehmen
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-tight">
-              ÜBER UNS – FONTES VITEA
+              ÜBER UNS – FONTES VITAE
             </h1>
             <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-light">
               Die Quelle des Lebens. Als familiengeführtes Unternehmen und exklusiver Vertriebspartner (Distributor) von WRC SR s.r.o. bringen wir reinstes molekulares H₂-Wasserstoffwasser und Premium-Fruchtsäfte zu unseren Kunden in Deutschland, Österreich und der Schweiz.
@@ -115,7 +115,7 @@ export default function UeberUnsPage() {
               Engagierter Vertriebspartner – Für Deine maximale Lebensqualität
             </h2>
             <p className="text-base sm:text-lg font-medium leading-relaxed text-slate-700">
-              FONTES VITEA steht für leidenschaftlichen Vertrieb und höchsten Kundenservice. Als unabhängiger Vertriebspartner konzentrieren wir uns vollkommen darauf, erstklassige H₂-Wasserstoffgetränke und naturbelassene Fruchtsäfte in der gesamten DACH-Region (Deutschland, Österreich und Schweiz) verfügbar zu machen. Die Herstellung erfolgt durch hochspezialisierte, ISO-zertifizierte externe Produktionspartner an der Tiefenquelle.
+              FONTES VITAE steht für leidenschaftlichen Vertrieb und höchsten Kundenservice. Als unabhängiger Vertriebspartner konzentrieren wir uns vollkommen darauf, erstklassige H₂-Wasserstoffgetränke und naturbelassene Fruchtsäfte in der gesamten DACH-Region (Deutschland, Österreich und Schweiz) verfügbar zu machen. Die Herstellung erfolgt durch hochspezialisierte, ISO-zertifizierte externe Produktionspartner an der Tiefenquelle.
             </p>
             <p className="text-sm sm:text-base leading-relaxed text-slate-600">
               Wir betreiben keine eigene Wasserquelle oder Abfüllanlage, sondern wählen unsere Produktionspartner nach strengsten internationalen Qualitätskriterien (HACCP, EU-Lebensmittelrecht, ISO 17025 Laboranalysen) aus. So stellen wir sicher, dass jede gelieferte Dose mindestens 2,8 mg/L gelösten Wasserstoff enthält und 100 % BPA-frei ist. Wir stehen mit unserem Familiennamen für kompromisslose Transparenz und verlässliche Logistik.
@@ -326,7 +326,7 @@ export default function UeberUnsPage() {
                   <div>
                     <h3 className="text-base font-bold text-[#0A1C3A]">Familienführung &amp; Kundenservice</h3>
                     <p className="text-xs text-slate-500 max-w-xs mx-auto">
-                      Familie FONTES VITEA – Qualität und Herzlichkeit in zweiter Generation
+                      Familie FONTES VITAE – Qualität und Herzlichkeit in zweiter Generation
                     </p>
                   </div>
                 </div>
@@ -380,7 +380,7 @@ export default function UeberUnsPage() {
                 PARTNER WERDEN (B2B)
               </h2>
               <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
-                Werden Sie B2B-Vertriebspartner von FONTES VITEA. Als spezialisierter Distributor (kein Eigenhersteller) beliefern wir Getränkehändler, Fitnessstudios, Biohacking-Zentren, Sportvereine, Premium-Hotels, Wellness-Resorts und den gehobenen Einzelhandel in Deutschland, Österreich und der Schweiz mit höchster Verlässlichkeit und erstklassigem Service.
+                Werden Sie B2B-Vertriebspartner von FONTES VITAE. Als spezialisierter Distributor (kein Eigenhersteller) beliefern wir Getränkehändler, Fitnessstudios, Biohacking-Zentren, Sportvereine, Premium-Hotels, Wellness-Resorts und den gehobenen Einzelhandel in Deutschland, Österreich und der Schweiz mit höchster Verlässlichkeit und erstklassigem Service.
               </p>
             </div>
             <a

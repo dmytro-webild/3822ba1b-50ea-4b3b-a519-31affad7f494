@@ -14,43 +14,43 @@ interface ProductChoice {
 const ALL_PRODUCTS: ProductChoice[] = [
   {
     id: "h2-water",
-    name: "FONTES VITEA H2 (250 ml)",
+    name: "FONTES VITAE H2 (250 ml)",
     image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795132125149-eraq7h8f.png",
     category: "h2",
   },
   {
     id: "juice-blaubeere",
-    name: "FONTES VITEA Blaubeere (Blueberry)",
+    name: "FONTES VITAE Blaubeere (Blueberry)",
     image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795134384024-101x5eut.png",
     category: "juice",
   },
   {
     id: "juice-traube",
-    name: "FONTES VITEA Traube (Grape)",
+    name: "FONTES VITAE Traube (Grape)",
     image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794874862677-cd34mdsd.png",
     category: "juice",
   },
   {
     id: "juice-himbeere",
-    name: "FONTES VITEA Himbeere (Raspberry)",
+    name: "FONTES VITAE Himbeere (Raspberry)",
     image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795134073186-opauqy4r.png",
     category: "juice",
   },
   {
     id: "juice-ingwer",
-    name: "FONTES VITEA Ingwer (Ginger Tonic)",
+    name: "FONTES VITAE Ingwer (Ginger Tonic)",
     image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795133989332-pq9c0ikc.png",
     category: "juice",
   },
   {
     id: "juice-apfel-limette",
-    name: "FONTES VITEA Apfel Limette (Apple Lime)",
+    name: "FONTES VITAE Apfel Limette (Apple Lime)",
     image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795134219308-nr3iwk4m.png",
     category: "juice",
   },
   {
     id: "juice-apfel-ingwer",
-    name: "FONTES VITEA Apfel Ingwer (Apple Ginger)",
+    name: "FONTES VITAE Apfel Ingwer (Apple Ginger)",
     image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795134384023-6vwzgda1.png",
     category: "juice",
   },
@@ -346,7 +346,7 @@ export default function FeedbackForm() {
           Deine Meinung zählt!
         </h2>
         <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
-          Teile deine Erfahrungen mit FONTES VITEA® – deine ehrliche Produktbewertung unterstützt unsere Community und hilft anderen Kunden.
+          Teile deine Erfahrungen mit FONTES VITAE® – deine ehrliche Produktbewertung unterstützt unsere Community und hilft anderen Kunden.
         </p>
       </div>
 

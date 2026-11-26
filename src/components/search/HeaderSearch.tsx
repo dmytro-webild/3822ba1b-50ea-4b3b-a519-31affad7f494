@@ -62,7 +62,7 @@ const SYNONYMS_MAP: Record<string, string[]> = {
 const SEARCH_DATABASE: SearchItem[] = [
   {
     id: "prod-h2-wasser",
-    title: "FONTES VITEA H2 Wasserstoff-Wasser",
+    title: "FONTES VITAE H2 Wasserstoff-Wasser",
     category: "Produkt",
     description: "Reinste zelluläre Hydration mit mindestens 2,8 mg/L gelöstem molekularem Wasserstoff (H₂). 0 kcal, 0 g Zucker, BPA-Frei.",
     keywords: [
@@ -201,7 +201,7 @@ const SEARCH_DATABASE: SearchItem[] = [
     id: "sec-b2b-partner",
     title: "B2B-Partnernetzwerk & Partner werden (Vertriebspartner DACH)",
     category: "Über uns",
-    description: "Werden Sie B2B-Vertriebspartner von FONTES VITEA für Getränkehändler, Fitnessstudios, Hotels, Spas & Einzelhandel. Attraktive Margen & DACH-Logistik.",
+    description: "Werden Sie B2B-Vertriebspartner von FONTES VITAE für Getränkehändler, Fitnessstudios, Hotels, Spas & Einzelhandel. Attraktive Margen & DACH-Logistik.",
     keywords: [
       "partner", "partnernetzwerk", "b2b", "b2b-partner", "partner werden", "vertriebspartner",
       "distributor", "grosshandel", "großhandel", "b2b-vertrieb", "händler", "hotel partner",
@@ -243,10 +243,10 @@ const SEARCH_DATABASE: SearchItem[] = [
     id: "page-ueber-uns",
     title: "Über uns – Philosophie & Vertriebspartner-Rolle",
     category: "Über uns",
-    description: "Die Quelle des Lebens: Erfahre mehr über FONTES VITEA als exklusiver Vertriebspartner in der DACH-Region und unsere Familienphilosophie.",
+    description: "Die Quelle des Lebens: Erfahre mehr über FONTES VITAE als exklusiver Vertriebspartner in der DACH-Region und unsere Familienphilosophie.",
     keywords: [
       "über uns", "ueber uns", "philosophie", "mission", "geschichte", "markenstory",
-      "3 säulen", "qualität", "transparenz", "wer wir sind", "fontes vitea", "familienunternehmen",
+      "3 säulen", "qualität", "transparenz", "wer wir sind", "fontes vitae", "familienunternehmen",
       "vertriebspartner", "distributor"
     ],
     href: "/ueber-uns",
@@ -281,7 +281,7 @@ const SEARCH_DATABASE: SearchItem[] = [
     id: "page-kontakt",
     title: "Kontakt & Kundenservice",
     category: "Kontakt",
-    description: "Erreiche das FONTES VITEA Kundenservice-Team per Formular, E-Mail (info@fontes-vitae.com) oder Telefon (017660945171).",
+    description: "Erreiche das FONTES VITAE Kundenservice-Team per Formular, E-Mail (info@fontes-vitae.com) oder Telefon (017660945171).",
     keywords: [
       "kontakt", "kundenservice", "anfrage", "formular", "telefon", "email", "e-mail",
       "adresse", "standort", "maps", "steinbach", "hilfe", "support", "bestellung"

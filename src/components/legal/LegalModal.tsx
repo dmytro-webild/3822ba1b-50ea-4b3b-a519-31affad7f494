@@ -53,7 +53,7 @@ export default function LegalModal() {
             <div className="space-y-4">
               <div className="bg-white p-5 rounded-xl border border-slate-200 space-y-2">
                 <h3 className="font-bold text-[#0a192f] text-sm">Angaben gemäß § 5 TMG</h3>
-                <p className="font-semibold text-slate-800">FONTES VITEA</p>
+                <p className="font-semibold text-slate-800">FONTES VITAE</p>
                 <p>Industriestr. 23 A</p>
                 <p>61449 Steinbach Ts.</p>
                 <p>Deutschland</p>
@@ -87,7 +87,7 @@ export default function LegalModal() {
               <div className="bg-white p-5 rounded-xl border border-slate-200 space-y-2">
                 <h3 className="font-bold text-[#0a192f] text-sm">1. Datenschutz auf einen Blick</h3>
                 <p>
-                  Der Schutz Ihrer persönlichen Daten ist FONTES VITEA ein besonderes Anliegen. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften (DSGVO) sowie dieser Datenschutzerklärung.
+                  Der Schutz Ihrer persönlichen Daten ist FONTES VITAE ein besonderes Anliegen. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften (DSGVO) sowie dieser Datenschutzerklärung.
                 </p>
               </div>
 
@@ -112,14 +112,14 @@ export default function LegalModal() {
               <div className="bg-white p-5 rounded-xl border border-slate-200 space-y-2">
                 <h3 className="font-bold text-[#0a192f] text-sm">1. Geltungsbereich</h3>
                 <p>
-                  Für alle Bestellungen über unseren Online-Shop gelten die nachfolgenden Allgemeinen Geschäftsbedingungen von FONTES VITEA (Industriestr. 23 A, 61449 Steinbach Ts.).
+                  Für alle Bestellungen über unseren Online-Shop gelten die nachfolgenden Allgemeinen Geschäftsbedingungen von FONTES VITAE (Industriestr. 23 A, 61449 Steinbach Ts.).
                 </p>
               </div>
 
               <div className="bg-white p-5 rounded-xl border border-slate-200 space-y-2">
                 <h3 className="font-bold text-[#0a192f] text-sm">2. Vertragspartner & Vertragsschluss</h3>
                 <p>
-                  Der Kaufvertrag kommt zustande mit FONTES VITEA. Mit Einstellung der Produkte in den Online-Shop geben wir ein verbindliches Angebot zum Vertragsschluss über diese Artikel ab.
+                  Der Kaufvertrag kommt zustande mit FONTES VITAE. Mit Einstellung der Produkte in den Online-Shop geben wir ein verbindliches Angebot zum Vertragsschluss über diese Artikel ab.
                 </p>
               </div>
 
@@ -144,7 +144,7 @@ export default function LegalModal() {
               <div className="bg-white p-5 rounded-xl border border-slate-200 space-y-2">
                 <h3 className="font-bold text-[#0a192f] text-sm">Ausübung des Widerrufs</h3>
                 <p>
-                  Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (FONTES VITEA, Industriestr. 23 A, 61449 Steinbach Ts., E-Mail: bestellung@fontes-vitae.com) mittels einer eindeutigen Erklärung über Ihren Entschluss informieren.
+                  Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (FONTES VITAE, Industriestr. 23 A, 61449 Steinbach Ts., E-Mail: bestellung@fontes-vitae.com) mittels einer eindeutigen Erklärung über Ihren Entschluss informieren.
                 </p>
               </div>
             </div>

@@ -67,9 +67,9 @@ const NavbarPillLinks = ({
           <div className="flex min-w-0 items-center gap-[0.75rem]">
             <Link to="/" className="min-w-0 flex items-center gap-2.5">
               <Media
-                src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795103673176-908st9q6.png"
-                alt="FONTES VITEA Logo"
-                className="h-8 w-auto object-contain rounded"
+                src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795656931190-v9zzb3lo.png"
+                alt="FONTES VITAE Logo"
+                className="h-9 w-auto object-contain"
               />
             </Link>
             {socials.length > 0 && (

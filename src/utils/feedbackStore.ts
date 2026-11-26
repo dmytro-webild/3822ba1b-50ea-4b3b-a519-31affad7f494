@@ -27,7 +27,7 @@ const INITIAL_REVIEWS: Review[] = [
   {
     id: 'rev-1',
     firstName: 'Maximilian S.',
-    product: 'FONTES VITEA H2 (250 ml)',
+    product: 'FONTES VITAE H2 (250 ml)',
     productImage: 'https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795132125149-eraq7h8f.png',
     rating: 5,
     tasteRatings: { sweetness: 1, acidity: 1, tartness: 1, intensity: 5 },
@@ -51,7 +51,7 @@ const INITIAL_REVIEWS: Review[] = [
   {
     id: 'rev-3',
     firstName: 'Alexander K.',
-    product: 'FONTES VITEA Blaubeere (Blueberry)',
+    product: 'FONTES VITAE Blaubeere (Blueberry)',
     productImage: 'https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795134384024-101x5eut.png',
     rating: 5,
     tasteRatings: { sweetness: 4, acidity: 2, tartness: 2, intensity: 5 },

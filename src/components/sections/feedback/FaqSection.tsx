@@ -8,8 +8,8 @@ interface FaqItem {
 
 const FAQS: FaqItem[] = [
   {
-    question: "Was unterscheidet FONTES VITEA Quellwasser von herkömmlichem Wasser?",
-    answer: "FONTES VITEA ist reinste artesische Quellwasser-Perfektion, angereichert mit mindestens 2,8 mg/L hochreinem molekularem Wasserstoff (H2). Im Gegensatz zu gewöhnlichem Mineralwasser wirkt H2 als gezieltes Antioxidans auf zellulärer Ebene und schützt den Körper vor oxidativem Stress.",
+    question: "Was unterscheidet FONTES VITAE Quellwasser von herkömmlichem Wasser?",
+    answer: "FONTES VITAE ist reinste artesische Quellwasser-Perfektion, angereichert mit mindestens 2,8 mg/L hochreinem molekularem Wasserstoff (H2). Im Gegensatz zu gewöhnlichem Mineralwasser wirkt H2 als gezieltes Antioxidans auf zellulärer Ebene und schützt den Körper vor oxidativem Stress.",
   },
   {
     question: "Wie gebe ich meine Produktbewertung ab?",
@@ -51,7 +51,7 @@ export default function FaqSection() {
           Integrierte FAQ-Sektion
         </h2>
         <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
-          Alles, was Sie über FONTES VITEA®, Produktbewertungen, Verpackungen und den Versand wissen müssen.
+          Alles, was Sie über FONTES VITAE®, Produktbewertungen, Verpackungen und den Versand wissen müssen.
         </p>
       </div>
 
