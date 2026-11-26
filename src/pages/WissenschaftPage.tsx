@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
+import HeaderBanner from "@/components/sections/hero/HeaderBanner";
 import {
   Activity,
   ShieldCheck,
@@ -125,29 +126,21 @@ export default function WissenschaftPage() {
 
   return (
     <div className="bg-transparent min-h-screen text-[#0A1C3A] font-sans pb-12">
-      {/* Hero Header */}
-      <section className="bg-[#0A1C3A] text-white py-10 sm:py-14 px-4 sm:px-6 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto space-y-4 relative z-10">
+      {/* Hero Header Banner */}
+      <HeaderBanner
+        title="NEWS & STUDIENBIBLIOTHEK"
+        subtitle="Entdecken Sie wissenschaftliche Studien, aktuelle Forschungsergebnisse und Fachbeiträge rund um molekularen Wasserstoff."
+        badge="Wissenschaftliche Evidenz & Studien"
+      >
+        <div className="pt-2 flex justify-center">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-xs font-bold text-sky-400 hover:text-white transition uppercase tracking-wider bg-white/10 px-4 py-2 rounded-full border border-white/10"
+            className="inline-flex items-center gap-2 text-xs font-bold text-sky-300 hover:text-white transition uppercase tracking-wider bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full border border-white/20 backdrop-blur-md"
           >
             <ArrowLeft className="w-4 h-4" /> Zurück zur Startseite
           </Link>
-
-          <div className="space-y-3 max-w-3xl">
-            <span className="text-sky-400 text-xs font-extrabold tracking-widest uppercase bg-sky-950/60 px-4 py-1.5 rounded-full inline-block border border-sky-800/50">
-              Wissenschaftliche Evidenz &amp; Studien
-            </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-tight">
-              NEWS &amp; STUDIENBIBLIOTHEK
-            </h1>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
-              FONTES VITAE basiert auf über 1.000 wissenschaftlichen Studien zur Wirkung von molekularem Wasserstoff (H₂). Entdecke biochemische Grundlagen, Fachbeiträge zu Laktatabbau, Regeneration und Antidoping sowie laborgeprüfte Zertifikate.
-            </p>
-          </div>
         </div>
-      </section>
+      </HeaderBanner>
 
       {/* Main Container */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10 space-y-10 sm:space-y-12">

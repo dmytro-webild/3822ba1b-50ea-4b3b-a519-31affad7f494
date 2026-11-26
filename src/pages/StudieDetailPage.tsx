@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import HeaderBanner from "@/components/sections/hero/HeaderBanner";
 import {
   ArrowLeft,
   ArrowRight,
@@ -159,37 +160,24 @@ export default function StudieDetailPage() {
       )}
 
       {/* Header Banner */}
-      <section className="bg-[#0A1C3A] text-white py-8 sm:py-12 px-4 sm:px-6 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto space-y-5 relative z-10">
-          {/* Oberhalb des Beitrags: Zurück zu News & Studien Button */}
+      <HeaderBanner
+        title={article.title}
+        subtitle={article.subtitle}
+        badge={article.category}
+      >
+        <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
           <Link
             to="/wissenschaft"
-            className="inline-flex items-center gap-2 text-xs font-bold text-sky-400 hover:text-white transition uppercase tracking-wider bg-white/10 hover:bg-white/20 px-4 py-2.5 rounded-full border border-white/15 shadow-sm"
+            className="inline-flex items-center gap-2 text-xs font-bold text-sky-300 hover:text-white transition uppercase tracking-wider bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full border border-white/20 backdrop-blur-md"
           >
             <ArrowLeft className="w-4 h-4" /> ← Zurück zu News &amp; Studien
           </Link>
-
-          <div className="space-y-4">
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="text-sky-400 text-xs font-extrabold tracking-widest uppercase bg-sky-950/80 px-3.5 py-1 rounded-full border border-sky-800/60 inline-block">
-                {article.category}
-              </span>
-              <span className="text-slate-300 text-xs font-medium flex items-center gap-1.5 bg-white/10 px-3 py-1 rounded-full">
-                <Calendar className="w-3.5 h-3.5 text-sky-400" />
-                {article.publishDate}
-              </span>
-            </div>
-
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-tight text-white">
-              {article.title}
-            </h1>
-
-            <p className="text-sky-300 text-sm sm:text-base font-medium italic leading-relaxed">
-              {article.subtitle}
-            </p>
-          </div>
+          <span className="text-slate-300 text-xs font-medium flex items-center gap-1.5 bg-white/10 px-3 py-1 rounded-full backdrop-blur-md">
+            <Calendar className="w-3.5 h-3.5 text-sky-400" />
+            {article.publishDate}
+          </span>
         </div>
-      </section>
+      </HeaderBanner>
 
       {/* Main Article Body */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 -mt-8 relative z-20 space-y-8 sm:space-y-10">

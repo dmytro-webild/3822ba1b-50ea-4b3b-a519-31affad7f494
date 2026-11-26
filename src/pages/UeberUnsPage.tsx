@@ -1,8 +1,8 @@
 import { useState, type FormEvent } from "react";
 import { sendToOwner } from "@/lib/sendToOwner";
 import { Link as RouterLink } from "react-router-dom";
+import HeaderBanner from "@/components/sections/hero/HeaderBanner";
 import {
-  ArrowLeft,
   ArrowRight,
   ShieldCheck,
   Sparkles,
@@ -56,46 +56,29 @@ export default function UeberUnsPage() {
 
   return (
     <div className="bg-transparent min-h-screen text-[#0A1C3A] font-sans pb-24">
-      {/* Hero Header */}
-      <section className="bg-[#0A1C3A] text-white py-10 sm:py-14 px-4 sm:px-6 relative overflow-hidden">
-        <div className="max-w-5xl mx-auto space-y-4 relative z-10">
-          <RouterLink
-            to="/"
-            className="inline-flex items-center gap-2 text-xs font-bold text-sky-400 hover:text-white transition uppercase tracking-wider bg-white/10 px-4 py-2 rounded-full border border-white/10"
+      {/* Hero Header Banner */}
+      <HeaderBanner
+        title="ÜBER UNS – FONTES VITAE"
+        subtitle="Die Quelle des Lebens. Als familiengeführtes Unternehmen und exklusiver Vertriebspartner (Distributor) von WRC SR s.r.o. bringen wir reinstes molekulares H₂-Wasserstoffwasser und Premium-Fruchtsäfte zu unseren Kunden in Deutschland, Österreich und der Schweiz."
+        badge="Vertriebspartner DACH & Familienunternehmen"
+      >
+        <div className="pt-3 flex flex-wrap justify-center gap-3">
+          <a
+            href="#b2b"
+            className="inline-flex items-center gap-2 bg-sky-400 hover:bg-sky-300 text-[#0A1C3A] font-black uppercase text-xs tracking-wider px-5 py-3 rounded-xl shadow-lg transition transform hover:scale-105"
           >
-            <ArrowLeft className="w-4 h-4" /> Zurück zur Startseite
-          </RouterLink>
-
-          <div className="space-y-3 max-w-3xl">
-            <span className="text-sky-400 text-xs font-extrabold tracking-widest uppercase bg-sky-950/60 px-4 py-1.5 rounded-full inline-block border border-sky-800/50">
-              Vertriebspartner DACH &amp; Familienunternehmen
-            </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-tight">
-              ÜBER UNS – FONTES VITAE
-            </h1>
-            <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-light">
-              Die Quelle des Lebens. Als familiengeführtes Unternehmen und exklusiver Vertriebspartner (Distributor) von WRC SR s.r.o. bringen wir reinstes molekulares H₂-Wasserstoffwasser und Premium-Fruchtsäfte zu unseren Kunden in Deutschland, Österreich und der Schweiz.
-            </p>
-
-            <div className="pt-2 flex flex-wrap gap-3">
-              <a
-                href="#b2b"
-                className="inline-flex items-center gap-2 bg-sky-400 hover:bg-sky-300 text-[#0A1C3A] font-black uppercase text-xs tracking-wider px-5 py-3 rounded-xl shadow-lg transition transform hover:scale-105"
-              >
-                <Users className="w-4 h-4" />
-                <span>B2B Partner werden</span>
-              </a>
-              <a
-                href="#zertifikate"
-                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold uppercase text-xs tracking-wider px-5 py-3 rounded-xl border border-white/20 transition"
-              >
-                <ShieldCheck className="w-4 h-4 text-sky-400" />
-                <span>Zertifikate &amp; Laboranalysen</span>
-              </a>
-            </div>
-          </div>
+            <Users className="w-4 h-4" />
+            <span>B2B Partner werden</span>
+          </a>
+          <a
+            href="#zertifikate"
+            className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold uppercase text-xs tracking-wider px-5 py-3 rounded-xl border border-white/20 backdrop-blur-md transition"
+          >
+            <ShieldCheck className="w-4 h-4 text-sky-400" />
+            <span>Zertifikate &amp; Laboranalysen</span>
+          </a>
         </div>
-      </section>
+      </HeaderBanner>
 
       {/* Main Story & Philosophy */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-10 space-y-10 sm:space-y-12">
