@@ -29,6 +29,7 @@ const EASE = [0.19, 1, 0.22, 1] as const;
 const NavbarPillLinks = ({
   navItems = [
     { name: "H2 Wasser", href: "/#top" },
+    { name: "Säfte", href: "/saefte" },
     { name: "Vorteile", href: "/#vergleich" },
     { name: "News & Studien", href: "/wissenschaft" },
     { name: "Über uns", href: "/ueber-uns" },
