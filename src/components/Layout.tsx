@@ -108,7 +108,7 @@ function LayoutContent() {
 
       <header data-webild-section="Header" className="relative z-20">
         <NavbarPillLinks
-          brand="FONTES VITEA"
+          brand="FONTES VITAE"
           navItems={[
             {
               name: "H2 Wasser",
@@ -174,9 +174,9 @@ function LayoutContent() {
           <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-3">
             <Link to="/" className="inline-block">
               <img
-                src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795653887494-6ttxippk.png"
-                alt="FONTES VITEA Logo"
-                className="h-14 w-auto object-contain rounded-xl bg-white p-2 shadow-md"
+                src="https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795656931189-wo4v3z21.png"
+                alt="FONTES VITAE Logo"
+                className="h-14 w-auto object-contain"
               />
             </Link>
             <div>
@@ -213,7 +213,7 @@ function LayoutContent() {
 
         {/* Legal Links & Copyright */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400 text-center md:text-left">
-          <p>© {new Date().getFullYear()} FONTES VITEA. Alle Rechte vorbehalten.</p>
+          <p>© {new Date().getFullYear()} FONTES VITAE. Alle Rechte vorbehalten.</p>
           <div className="flex flex-wrap justify-center items-center gap-4 text-slate-300">
             <Link to="/impressum" className="hover:text-white transition">Impressum</Link>
             <span>•</span>

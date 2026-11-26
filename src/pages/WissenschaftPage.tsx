@@ -64,12 +64,12 @@ const FAQ_ITEMS: FaqItem[] = [
     answer: "Molekularer Wasserstoff (H₂) ist das kleinste und leichteste Molekül im Universum. Durch seine winzige Molekülgröße kann er Zellmembranen sowie die Blut-Hirn-Schranke mühelos durchdringen und direkt in Zellkerne und Mitochondrien gelangen. Dort wirkt H₂ als selektives Antioxidans: Es neutralisiert gezielt hochreaktive, schädliche Hydroxyl-Radikale (•OH), ohne nützliche Signalmoleküle wie Stickstoffmonoxid zu beeinträchtigen."
   },
   {
-    question: "Sind die FONTES VITEA Aluminiumdosen 100 % BPA-frei?",
-    answer: "Ja, absolut. Sämtliche FONTES VITEA 250-ml-Aluminiumdosen besitzen eine modernste, lebensmittelechte Innenbeschichtung, die zu 100 % frei von Bisphenol A (BPA), Phthalaten und Weichmachern ist. Dadurch wird garantiert, dass keinerlei hormonell wirksame Stoffe oder schädliche Chemikalien an das Wasserstoff-Wasser abgegeben werden."
+    question: "Sind die FONTES VITAE Aluminiumdosen 100 % BPA-frei?",
+    answer: "Ja, absolut. Sämtliche FONTES VITAE 250-ml-Aluminiumdosen besitzen eine modernste, lebensmittelechte Innenbeschichtung, die zu 100 % frei von Bisphenol A (BPA), Phthalaten und Weichmachern ist. Dadurch wird garantiert, dass keinerlei hormonell wirksame Stoffe oder schädliche Chemikalien an das Wasserstoff-Wasser abgegeben werden."
   },
   {
-    question: "Werden für FONTES VITEA Produkte oder Inhaltsstoffe Tierversuche durchgeführt?",
-    answer: "Nein, garantiert nicht! FONTES VITEA steht für strikten Tierschutz und ethische Verantwortung. Für keines unserer Produkte, Abfüllverfahren oder Inhaltsstoffe werden Tierversuche durchgeführt oder in Auftrag gegeben. Unsere Produkte sind zu 100 % tierversuchsfrei und vegan."
+    question: "Werden für FONTES VITAE Produkte oder Inhaltsstoffe Tierversuche durchgeführt?",
+    answer: "Nein, garantiert nicht! FONTES VITAE steht für strikten Tierschutz und ethische Verantwortung. Für keines unserer Produkte, Abfüllverfahren oder Inhaltsstoffe werden Tierversuche durchgeführt oder in Auftrag gegeben. Unsere Produkte sind zu 100 % tierversuchsfrei und vegan."
   },
   {
     question: "Wie stabil ist das gelöste H₂-Gas in der Aluminiumdose?",
@@ -77,15 +77,15 @@ const FAQ_ITEMS: FaqItem[] = [
   },
   {
     question: "Wie lautet die tägliche Verzehrempfehlung?",
-    answer: "Wir empfehlen die Einnahme von 1 bis 2 Dosen (250 ml) FONTES VITEA H₂ Wasserstoff-Wasser täglich. Ideal ist das Trinken direkt nach dem Aufstehen für den optimalen Start in den Tag, vor oder nach dem Sport zur Förderung der Regeneration, bei intensiver geistiger Arbeit im Büro oder auf Reisen."
+    answer: "Wir empfehlen die Einnahme von 1 bis 2 Dosen (250 ml) FONTES VITAE H₂ Wasserstoff-Wasser täglich. Ideal ist das Trinken direkt nach dem Aufstehen für den optimalen Start in den Tag, vor oder nach dem Sport zur Förderung der Regeneration, bei intensiver geistiger Arbeit im Büro oder auf Reisen."
   },
   {
     question: "Wie funktioniert das Dosenpfand und die Rückgabe?",
     answer: "Im Kaufpreis jeder Dose ist ein gesetzliches Dosenpfand von 0,25 € enthalten, das transparent ausgewiesen wird (z. B. 3,00 € Pfand bei einem 12er-Pack). Die leeren Aluminiumdosen können an jedem üblichen Leergutautomaten in Supermärkten und Getränkemärkten zurückgegeben werden. Aluminium ist zu 100 % unendlich oft ohne Qualitätsverlust recycelbar."
   },
   {
-    question: "In welche Länder liefert FONTES VITEA?",
-    answer: "FONTES VITEA beliefert Privatkunden und Geschäftspartner in der gesamten DACH-Region: Deutschland, Österreich und die Schweiz. Die Lieferung erfolgt schnell, zuverlässig und sicher verpackt über unsere Logistikpartner."
+    question: "In welche Länder liefert FONTES VITAE?",
+    answer: "FONTES VITAE beliefert Privatkunden und Geschäftspartner in der gesamten DACH-Region: Deutschland, Österreich und die Schweiz. Die Lieferung erfolgt schnell, zuverlässig und sicher verpackt über unsere Logistikpartner."
   }
 ];
 
@@ -118,7 +118,7 @@ export default function WissenschaftPage() {
               WISSEN &amp; STUDIEN
             </h1>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
-              FONTES VITEA basiert auf über 1.000 wissenschaftlichen Studien zur Wirkung von molekularem Wasserstoff (H₂). Entdecke biochemische Grundlagen, Studien zu Laktatabbau und Mitochondrien, laborgeprüfte Zertifikate und Expertenberichte.
+              FONTES VITAE basiert auf über 1.000 wissenschaftlichen Studien zur Wirkung von molekularem Wasserstoff (H₂). Entdecke biochemische Grundlagen, Studien zu Laktatabbau und Mitochondrien, laborgeprüfte Zertifikate und Expertenberichte.
             </p>
           </div>
         </div>
@@ -403,7 +403,7 @@ export default function WissenschaftPage() {
               </div>
             </div>
             <p className="text-xs text-slate-500 font-semibold max-w-md">
-              Jede Abfüllung von FONTES VITEA wird strengsten unabhängigen Laborkontrollen in Deutschland unterzogen.
+              Jede Abfüllung von FONTES VITAE wird strengsten unabhängigen Laborkontrollen in Deutschland unterzogen.
             </p>
           </div>
 
@@ -598,7 +598,7 @@ export default function WissenschaftPage() {
             href="https://shop.fontes-vitae.com"
             className="inline-flex items-center gap-2 bg-[#0A1C3A] hover:bg-[#12284c] text-white px-8 py-4 rounded-xl text-xs font-black uppercase tracking-wider shadow-md transition"
           >
-            Jetzt FONTES VITEA im Shop bestellen <ArrowLeft className="w-4 h-4 rotate-180" />
+            Jetzt FONTES VITAE im Shop bestellen <ArrowLeft className="w-4 h-4 rotate-180" />
           </a>
         </div>
       </section>

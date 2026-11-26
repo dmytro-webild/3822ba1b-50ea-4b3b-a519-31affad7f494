@@ -53,7 +53,7 @@ const SORTIMENT_ITEMS = [
     isLineup: true,
   },
   {
-    title: "FONTES VITEA H2 Water",
+    title: "FONTES VITAE H2 Water",
     subtitle: "Molekular gelöstes Wasserstoff-Wasser (min. 2.8 mg/L H2)",
     badge: "H2 Molekular",
     image: "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795132125149-eraq7h8f.png",
@@ -104,15 +104,15 @@ const SORTIMENT_ITEMS = [
 ];
 
 const FooterPanelWordmark = ({
-  title = "DAS GESAMTE FONTES VITEA SORTIMENT",
+  title = "DAS GESAMTE FONTES VITAE SORTIMENT",
   subtitle = "H2 WASSERSTOFF-WASSER & 6 EDLE FRUCHTSAFT-KREATIONEN",
   lineupImageSrc = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1794880807544-312gbdxq.png",
-  logoSrc = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795103673176-908st9q6.png",
+  logoSrc = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795656931190-v9zzb3lo.png",
   socials = [
     { label: "Instagram", href: "#", icon: "instagram" },
     { label: "YouTube", href: "#", icon: "youtube" },
   ],
-  copyright = "© FONTES VITEA – Die Quelle des Lebens. Alle Rechte vorbehalten.",
+  copyright = "© FONTES VITAE – Die Quelle des Lebens. Alle Rechte vorbehalten.",
   model,
   ariaLabel,
   className,
@@ -149,7 +149,7 @@ const FooterPanelWordmark = ({
       )}
     >
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 flex flex-col items-center text-center">
-        {/* Prominent FONTES VITEA Logo */}
+        {/* Prominent FONTES VITAE Logo */}
         {logoSrc && (
           <motion.div
             initial={reduce ? false : { opacity: 0, scale: 0.9, y: 16 }}
@@ -162,7 +162,7 @@ const FooterPanelWordmark = ({
               <div className="absolute -inset-1.5 rounded-3xl bg-gradient-to-r from-sky-400 via-blue-600 to-[#0A1C3A] opacity-25 blur-md group-hover:opacity-45 transition duration-500" />
               <Media
                 src={logoSrc}
-                alt="FONTES VITEA Logo"
+                alt="FONTES VITAE Logo"
                 className="relative h-20 sm:h-28 md:h-36 w-auto object-contain rounded-2xl shadow-xl border border-slate-200/90 bg-white p-3.5 sm:p-4 transition hover:scale-105 duration-300"
               />
             </div>

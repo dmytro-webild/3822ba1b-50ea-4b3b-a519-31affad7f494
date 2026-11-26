@@ -103,7 +103,7 @@ export default function KontaktPage() {
             Kontakt
           </h1>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
-            Haben Sie Fragen zu unseren FONTES VITEA H2 Wasserstoff-Wasser Produkten, Ihrer Bestellung oder Kooperationen? Unser Team ist gerne für Sie da.
+            Haben Sie Fragen zu unseren FONTES VITAE H2 Wasserstoff-Wasser Produkten, Ihrer Bestellung oder Kooperationen? Unser Team ist gerne für Sie da.
           </p>
         </div>
 
@@ -117,7 +117,7 @@ export default function KontaktPage() {
                 Direkter Kontakt
               </span>
               <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight">
-                FONTES VITEA TEAM
+                FONTES VITAE TEAM
               </h2>
               <p className="text-slate-300 text-xs leading-relaxed mt-2">
                 Sie erreichen uns telefonisch oder per E-Mail. Wir freuen uns auf Ihre Anfrage!
@@ -160,7 +160,7 @@ export default function KontaktPage() {
                 <div>
                   <span className="text-slate-400 text-xs font-bold block uppercase tracking-wider">Unternehmenssitz</span>
                   <p className="font-semibold text-slate-200 text-sm leading-snug">
-                    FONTES VITEA<br />
+                    FONTES VITAE<br />
                     Industriestr. 23 A<br />
                     61449 Steinbach Ts.<br />
                     Deutschland
@@ -334,13 +334,13 @@ export default function KontaktPage() {
               UNSER STANDORT
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
-              FONTES VITEA • Industriestr. 23 A, 61449 Steinbach Ts., Deutschland
+              FONTES VITAE • Industriestr. 23 A, 61449 Steinbach Ts., Deutschland
             </p>
           </div>
 
           <div className="w-full h-[400px] sm:h-[480px] rounded-3xl overflow-hidden border border-slate-300 shadow-xl relative bg-slate-200">
             <iframe
-              title="FONTES VITEA Unternehmensstandort - Industriestr. 23 A, 61449 Steinbach Ts."
+              title="FONTES VITAE Unternehmensstandort - Industriestr. 23 A, 61449 Steinbach Ts."
               src="https://maps.google.com/maps?q=Industriestr.%2023%20A,%2061449%20Steinbach%20Ts.&t=&z=15&ie=UTF8&iwloc=&output=embed"
               className="w-full h-full border-0"
               allowFullScreen

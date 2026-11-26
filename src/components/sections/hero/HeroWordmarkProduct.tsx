@@ -123,7 +123,7 @@ const HeroWordmarkProduct = ({
   quoteAuthorTitle = "Biochemiker und Physiologe, Gründer des Molecular Hydrogen Institute (MHI).",
   introDelay = 0,
   productImageSrc = "https://storage.googleapis.com/webild/users/user_3MCHHj0ceq4NzsDGHLJ25O0JAmT/uploaded-1795132125149-eraq7h8f.png",
-  productImageAlt = "FONTES VITEA H2 Wasserstoff Dose",
+  productImageAlt = "FONTES VITAE H2 Wasserstoff Dose",
   ariaLabel,
   className,
 }: HeroWordmarkProductProps) => {
@@ -392,7 +392,7 @@ const HeroWordmarkProduct = ({
               </div>
               <div>
                 <span className="text-[10px] font-extrabold uppercase tracking-widest text-slate-500 block">
-                  FONTES VITEA Qualitätsversprechen
+                  FONTES VITAE Qualitätsversprechen
                 </span>
                 <h3 className="text-xl sm:text-2xl font-black text-[#0A1C3A] uppercase tracking-tight">
                   {activeBubble.title}

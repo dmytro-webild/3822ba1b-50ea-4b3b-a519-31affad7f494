@@ -14,7 +14,7 @@ export default function ImpressumPage() {
             Impressum
           </h1>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
-            Angaben gemäß § 5 TMG und rechtliche Hinweise zur FONTES VITEA Website.
+            Angaben gemäß § 5 TMG und rechtliche Hinweise zur FONTES VITAE Website.
           </p>
         </div>
 
@@ -32,7 +32,7 @@ export default function ImpressumPage() {
               </h2>
             </div>
             <div className="text-sm text-slate-700 leading-relaxed space-y-1 border-t border-slate-200 pt-4 font-semibold">
-              <p className="text-base text-[#0A1C3A] font-black">FONTES VITEA</p>
+              <p className="text-base text-[#0A1C3A] font-black">FONTES VITAE</p>
               <p>Industriestr. 23 A</p>
               <p>61449 Steinbach Ts.</p>
               <p>Deutschland</p>

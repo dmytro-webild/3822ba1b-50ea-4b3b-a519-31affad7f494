@@ -19,7 +19,7 @@ export default function VideoModal() {
         <div className="p-4 flex items-center justify-between border-b border-slate-800">
           <div className="flex items-center gap-2 text-xs font-semibold text-sky-400">
             <PlayCircle className="w-4 h-4" />
-            <span>FONTES VITEA Wissenschaftsvideo</span>
+            <span>FONTES VITAE Wissenschaftsvideo</span>
           </div>
           <button
             onClick={closeVideoModal}

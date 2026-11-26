@@ -22,7 +22,7 @@ export default function FeedbackFaqPage() {
         </h1>
 
         <p className="text-slate-600 text-xs sm:text-sm sm:text-base leading-relaxed">
-          Erfahren Sie, was unsere Kunden über FONTES VITEA® berichten, geben Sie Ihre eigene Produktbewertung mit Geschmacksprofil ab oder finden Sie Antworten in unserer FAQ-Sektion.
+          Erfahren Sie, was unsere Kunden über FONTES VITAE® berichten, geben Sie Ihre eigene Produktbewertung mit Geschmacksprofil ab oder finden Sie Antworten in unserer FAQ-Sektion.
         </p>
 
         {/* Admin Moderation Panel Toggle Button */}

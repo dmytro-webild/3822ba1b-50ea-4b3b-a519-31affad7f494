@@ -202,7 +202,7 @@ export default function HomePage() {
         <HeroWordmarkProduct
           media="image"
           productImageSrc={CAN_IMAGE_URL}
-          productImageAlt="FONTES VITEA H2 Wasserstoff Dose"
+          productImageAlt="FONTES VITAE H2 Wasserstoff Dose"
           brand=""
           title="H2 - HYDROGEN WATER"
           subtitle="CLEAN & PURE – HYDRATION EINER NEUEN GENERATION"
@@ -349,7 +349,7 @@ export default function HomePage() {
                     <div className="relative z-10 w-36 sm:w-44 shrink-0 transform -rotate-3 hover:rotate-0 transition duration-500">
                       <img
                         src={CAN_IMAGE_URL}
-                        alt="FONTES VITEA H2 Dose Querschnitt"
+                        alt="FONTES VITAE H2 Dose Querschnitt"
                         className="w-full h-auto drop-shadow-[0_20px_35px_rgba(0,0,0,0.6)]"
                       />
                     </div>
@@ -534,7 +534,7 @@ export default function HomePage() {
                       <h4 className="text-lg font-black uppercase text-emerald-950 tracking-tight">
                         MODERNE BPANI-BESCHICHTUNG
                       </h4>
-                      <p className="text-xs text-emerald-800/80 mt-0.5">FONTES VITEA Qualitätsverpackung</p>
+                      <p className="text-xs text-emerald-800/80 mt-0.5">FONTES VITAE Qualitätsverpackung</p>
                     </div>
                   </div>
 
@@ -597,7 +597,7 @@ export default function HomePage() {
                 DAS QUELLWASSER
               </h2>
               <p className="text-slate-700 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed font-medium">
-                Das Quellwasser entspricht höchsten Reinheitsstandards und wird aus einer tiefliegenden unterirdischen Quelle (136 Meter) gewonnen. Durch jahrtausendealte Gesteinsschichten natürlich gefiltert, bietet es ein ausgewogenes Mineralienprofil. FONTES VITEA bringt als spezialisierter Vertriebspartner dieses edle Wasserstoff-Wasser in höchster Qualität direkt zu Ihnen.
+                Das Quellwasser entspricht höchsten Reinheitsstandards und wird aus einer tiefliegenden unterirdischen Quelle (136 Meter) gewonnen. Durch jahrtausendealte Gesteinsschichten natürlich gefiltert, bietet es ein ausgewogenes Mineralienprofil. FONTES VITAE bringt als spezialisierter Vertriebspartner dieses edle Wasserstoff-Wasser in höchster Qualität direkt zu Ihnen.
               </p>
             </div>
 
@@ -753,11 +753,11 @@ export default function HomePage() {
             <ProductCompareTable
               media="image"
               productImageSrc={CAN_IMAGE_URL}
-              productImageAlt="FONTES VITEA H2 Dose"
+              productImageAlt="FONTES VITAE H2 Dose"
               title="IM VERGLEICH"
               accent="VORTEILE"
               benefitsLabel="Merkmale"
-              name="FONTES VITEA H2"
+              name="FONTES VITAE H2"
               otherLabel="Herkömmliches Wasser"
               shopUrl="https://shop.fontes-vitae.com"
               shopButtonText="Zum Shop"
@@ -819,7 +819,7 @@ export default function HomePage() {
                 EINSATZBEREICHE &amp; ANWENDUNGSGEBIETE
               </h2>
               <p className="text-slate-600 text-sm sm:text-base">
-                Ob Fitnessstudio, Militär &amp; Streitkräfte, zivile Einsatzkräfte, Fußball- &amp; Sportvereine, Gastronomie, Bars, Universitätsmensen, Personal Training oder Profisport – FONTES VITEA liefert zielgerichtete zelluläre Hydration.
+                Ob Fitnessstudio, Militär &amp; Streitkräfte, zivile Einsatzkräfte, Fußball- &amp; Sportvereine, Gastronomie, Bars, Universitätsmensen, Personal Training oder Profisport – FONTES VITAE liefert zielgerichtete zelluläre Hydration.
               </p>
             </div>
 
@@ -866,7 +866,7 @@ export default function HomePage() {
       {/* FREIGEGEBENE KUNDENBEWERTUNGEN UNTER DER VERGLEICHSTABELLE */}
       <div id="kundenbewertungen" data-webild-section="CustomerReviews" data-section="reviews">
         <CustomerReviewsSection
-          title="Echte Erfahrungen aus der FONTES VITEA Community"
+          title="Echte Erfahrungen aus der FONTES VITAE Community"
           subtitle="Entdecken Sie, was unsere Kundinnen und Kunden über Geschmack und das Wasserstoff-Erlebnis berichten."
           showOrderButton={true}
           showGoogleReviews={true}
