@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { sendToOwner } from "@/lib/sendToOwner";
+import HeaderBanner from "@/components/sections/hero/HeaderBanner";
 import { Mail, Phone, MapPin, CheckCircle2, AlertCircle, Send } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
@@ -91,22 +92,15 @@ export default function KontaktPage() {
   };
 
   return (
-    <div className="py-10 sm:py-14 bg-transparent min-h-svh font-sans text-[#0A1C3A]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-8 sm:space-y-10">
-        
-        {/* Header Section */}
-        <div className="text-center space-y-2.5 max-w-3xl mx-auto">
-          <span className="text-[#0A1C3A] text-xs font-extrabold tracking-widest uppercase bg-white px-4 py-1.5 rounded-full inline-block border border-slate-300 shadow-sm">
-            Kundenservice &amp; Kontakt
-          </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-[#0A1C3A]">
-            Kontakt
-          </h1>
-          <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
-            Haben Sie Fragen zu unseren FONTES VITAE H2 Wasserstoff-Wasser Produkten, Ihrer Bestellung oder Kooperationen? Unser Team ist gerne für Sie da.
-          </p>
-        </div>
+    <div className="bg-transparent min-h-svh font-sans text-[#0A1C3A] pb-16">
+      {/* Hero Header Banner */}
+      <HeaderBanner
+        title="KONTAKT"
+        subtitle="Haben Sie Fragen zu unseren FONTES VITAE H2 Wasserstoff-Wasser Produkten, Ihrer Bestellung oder Kooperationen? Unser Team ist gerne für Sie da."
+        badge="Kundenservice & Kontakt"
+      />
 
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-10 space-y-8 sm:space-y-10">
         {/* Form and Direct Info Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
